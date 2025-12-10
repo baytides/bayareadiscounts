@@ -5,48 +5,292 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
   <style>
+    /* Base styles with better colors and spacing */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.6;
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      color: #333;
+      color: #24292e;
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      min-height: 100vh;
     }
+    
+    /* Content wrapper with card effect */
+    main {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+    }
+    
+    /* Enhanced table styling */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      margin: 30px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
+    
     th {
-      background-color: #f6f8fa;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
       font-weight: 600;
+      padding: 16px;
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      letter-spacing: 0.5px;
     }
+    
+    td {
+      padding: 16px;
+      border-bottom: 1px solid #e1e4e8;
+      vertical-align: top;
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+    
+    tbody tr:hover {
+      background-color: #f6f8fa;
+    }
+    
+    /* Link styling with hover effects */
     a {
       color: #0366d6;
       text-decoration: none;
+      transition: all 0.2s ease;
+      position: relative;
     }
+    
     a:hover {
-      text-decoration: underline;
+      color: #0256c7;
     }
-    h1, h2, h3 {
-      margin-top: 24px;
+    
+    a:not(.no-underline):hover::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #0366d6;
+    }
+    
+    /* Header styling with gradient */
+    h1 {
+      font-size: 2.5em;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 0.3em;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-size: 1.8em;
+      color: #24292e;
+      border-bottom: 2px solid #e1e4e8;
+      padding-bottom: 0.3em;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    
+    h3 {
+      font-size: 1.3em;
+      color: #667eea;
+      margin-top: 32px;
       margin-bottom: 16px;
       font-weight: 600;
-      line-height: 1.25;
     }
-    h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: .3em; }
-    h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: .3em; }
-    h3 { font-size: 1.25em; }
+    
+    /* Icon/emoji styling */
+    td:first-child {
+      font-size: 1.2em;
+      text-align: center;
+      width: 80px;
+    }
+    
+    /* Paragraph spacing */
+    p {
+      margin: 16px 0;
+    }
+    
+    /* List styling */
+    ul, ol {
+      margin: 16px 0;
+      padding-left: 30px;
+    }
+    
+    li {
+      margin: 8px 0;
+    }
+    
+    /* Blockquote styling */
+    blockquote {
+      margin: 20px 0;
+      padding: 15px 20px;
+      background: #f6f8fa;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+    
+    /* Code styling */
+    code {
+      background: #f6f8fa;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9em;
+    }
+    
+    pre {
+      background: #f6f8fa;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    
+    pre code {
+      padding: 0;
+      background: none;
+    }
+    
+    /* Back to top button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    
+    #back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+    }
+    
+    /* Table search box */
+    .table-search {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 15px;
+      border: 2px solid #e1e4e8;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+    
+    .table-search:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    /* Footer styling */
+    footer {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+        background: white;
+      }
+      
+      main {
+        padding: 20px;
+        border-radius: 8px;
+      }
+      
+      h1 {
+        font-size: 1.8em;
+      }
+      
+      h2 {
+        font-size: 1.4em;
+      }
+      
+      table {
+        font-size: 0.85em;
+        display: block;
+        overflow-x: auto;
+      }
+      
+      th, td {
+        padding: 10px;
+      }
+      
+      td:first-child {
+        width: 50px;
+        font-size: 1em;
+      }
+      
+      #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+    }
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+      }
+      
+      main, footer {
+        box-shadow: none;
+      }
+      
+      #back-to-top {
+        display: none !important;
+      }
+      
+      .table-search {
+        display: none !important;
+      }
+      
+      a {
+        text-decoration: underline;
+      }
+    }
   </style>
 </head>
 <body>
-  {{ content }}
+  <main>
+    {{ content }}
+  </main>
 
   {% include footer.html %}
 
@@ -64,6 +308,80 @@
           if (!href.includes('bayareadiscounts.com') && !href.includes(window.location.hostname)) {
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener noreferrer');
+          }
+        }
+      });
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Add "back to top" button
+      const backToTop = document.createElement('button');
+      backToTop.id = 'back-to-top';
+      backToTop.innerHTML = '↑ Top';
+      document.body.appendChild(backToTop);
+      
+      window.addEventListener('scroll', () => {
+        backToTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+      });
+      
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Add table search functionality
+      const tables = document.querySelectorAll('table');
+      tables.forEach(table => {
+        // Skip if table is inside footer
+        if (table.closest('footer')) return;
+        
+        const searchBox = document.createElement('input');
+        searchBox.type = 'text';
+        searchBox.className = 'table-search';
+        searchBox.placeholder = '🔍 Search this table...';
+        searchBox.setAttribute('aria-label', 'Search table');
+        
+        table.parentNode.insertBefore(searchBox, table);
+        
+        searchBox.addEventListener('keyup', function() {
+          const filter = this.value.toLowerCase();
+          const rows = table.querySelectorAll('tbody tr');
+          let visibleCount = 0;
+          
+          rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            const isVisible = text.includes(filter);
+            row.style.display = isVisible ? '' : 'none';
+            if (isVisible) visibleCount++;
+          });
+          
+          // Update placeholder with result count
+          if (this.value && visibleCount === 0) {
+            this.style.borderColor = '#d73a49';
+          } else {
+            this.style.borderColor = this.value ? '#28a745' : '#e1e4e8';
+          }
+        });
+      });
+      
+      // Add keyboard shortcut (Ctrl/Cmd + K) to focus first search box
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          const firstSearch = document.querySelector('.table-search');
+          if (firstSearch) {
+            firstSearch.focus();
           }
         }
       });
