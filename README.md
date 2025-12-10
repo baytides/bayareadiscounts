@@ -42,7 +42,8 @@ Before adding something, please ensure:
 
 - Alphabetize programs by name within each category
 - Use icons for eligibility:
-  - 💳 Benefit Card Required
+  - 💳 Benefit Card/Proof of Low Income
+  - 📍 Proof of Residency
   - 🧒 Youth
   - 🎓 College Students
   - 🎖️ Veterans / Military

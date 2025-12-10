@@ -6,9 +6,11 @@
 
 Stretch your budget and explore more of your community.
 
-This guide highlights free and low-cost services and programs within the core counties commonly recognized as the San Francisco Bay Area (Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma counties) for public benefit recipients, seniors, youth, college students, veterans, families, and anyone looking to save on everyday expenses.
+This guide highlights free and low-cost services, programs, and benefits within the core counties commonly recognized as the San Francisco Bay Area (Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma counties) for public benefit recipients, seniors, youth, college students, military/veterans, families, nonprofit organizations, and anyone looking to save on everyday expenses.
 
 Some programs are available only in specific cities or regions, while others apply to all of California or nationwide. Always check the program or resource website for the most current eligibility details.
+
+This is a community-maintained resource—if you notice outdated information or know of programs that should be included, please contribute via our [GitHub repository](https://github.com/bayareadiscounts/bayareadiscounts).
 
 ---
 
@@ -17,7 +19,7 @@ Some programs are available only in specific cities or regions, while others app
 - Browse a category below  
 - Look for icons showing who the deal helps  
 - Check **Timeframe** for seasonal or limited offers  
-- Always confirm details before visiting
+- Always confirm details before using or visiting
 
 ---
 
@@ -25,8 +27,9 @@ Some programs are available only in specific cities or regions, while others app
 
 | Icon | Meaning |
 |------|---------|
-| 💳 | Requires benefit card, proof of income, or residency |
-| 🧒 | Youth (children & teens — age or school ID may be required) |
+| 💳 | Requires benefit card or proof of income (e.g. SNAP/EBT, Medi-Cal/Medicaid) |
+| 📍 | Proof of residency required (e.g. ID card/Driver's license) |
+| 🧒 | Youth |
 | 🎓 | College Students |
 | 🎖️ | Military / Veterans |
 | 👵 | Seniors (65+) |
@@ -48,6 +51,7 @@ Some programs are available only in specific cities or regions, while others app
 - [Legal](#legal)
   - [Tax Preparation](#tax-preparation)
 - [Library Resources](#library-resources)
+- [Pet Resources](#pet-resources)
 - [Recreation](#recreation)
   - [Museums](#museums)
 - [Transportation](#transportation)
@@ -55,7 +59,7 @@ Some programs are available only in specific cities or regions, while others app
 - [Utilities](#utilities)
   
 ### [Nonprofit Resources](nonprofit-resources.md)
-### [Student Resources](college-university.md)
+### [College Student Resources](college-university.md)
 
 ---
 
@@ -86,7 +90,7 @@ Some programs are available only in specific cities or regions, while others app
 |--------|------|-------------|---------|---------------|-----------|------|
 | Bay Area Crisis Nursery - BACN Boutique | Contra Costa County | 💳 👨‍👩‍👧 🧒 🌎 | Free clothing, shoes, books, toys, baby equipment for families; includes maternity and parent items | Visit nursery lobby during open hours | Ongoing | [BACN Boutique](https://bayareacrisisnursery.org/programs/bacn-boutique/) |
 | Bay Area Crisis Nursery - Food Pantry & Diaper Bank | Contra Costa County | 💳 👨‍👩‍👧 🧒 | Free food and diapers for families in need | Order online from website before visiting boutique | Ongoing | [Bay Area Crisis Nursery](https://bayareacrisisnursery.org/) |
-| San Francisco Diaper Bank | SF | 💳 👨‍👩‍👧 🧒 | Free diapers for CalFresh, Medi-Cal, and CalWORKs households with children under age two (up to two cases per child/month) | Enroll through SFHSA; pick up at designated sites | Ongoing | [SFHSA](https://www.sfhsa.org) |
+| San Francisco Diaper Bank | SF | 💳 | Free diapers for CalFresh, Medi-Cal, and CalWORKs households with children under age two (up to two cases per child/month) | Enroll through SFHSA; pick up at designated sites | Ongoing | [SFHSA](https://www.sfhsa.org) |
 | St. Anthony's Free Clothing Program | San Francisco | 🌎 | Free clothing for men, women, and children; SF's largest free clothing program serving 3,000+ people monthly | Appointment required (visit in-person to sign up) | Ongoing | [St. Anthony's Clothing](https://www.stanthonysf.org/services/clothing/shop-for-clothes/) |
 
 ---
@@ -96,7 +100,7 @@ Some programs are available only in specific cities or regions, while others app
 | Service | Eligibility | Benefit | Timeframe | Link |
 |--------|-------------|---------|-----------|------|
 | Amazon Prime Access | 💳 | Prime membership for $6.99/month for eligible government assistance recipients or income verified customers; new customers start with a free 30-day trial | Ongoing | [Amazon Prime Access](https://www.amazon.com/primeaccess) |
-| Instacart EBT SNAP | 💳 | 50% off Instacart+ membership for one year; skip delivery/pickup fees with participating stores; new customers get $0 delivery on first 3 orders | Ongoing | [Instacart](https://www.instacart.com/ebt-snap) |
+| Instacart for EBT/SNAP | 💳 | 50% off Instacart+ membership for one year; skip delivery/pickup fees with participating stores; new customers get $0 delivery on first 3 orders | Ongoing | [Instacart](https://www.instacart.com/ebt-snap) |
 | Kanopy for Students | 🎓 | Free streaming for college students through participating campus libraries | Ongoing | [Kanopy for Students](https://www.kanopy.com/signup/find/university) |
 | Walmart+ Assist | 💳 | Eligible government assistance recipients receive [Walmart+](https://www.walmart.com/plus/) at 50% off ($6.47/mo. or $49/yr.); new customers start with a free 30-day trial | Ongoing | [Walmart+ Assist](https://www.walmart.com/plus/assist) |
 
@@ -147,11 +151,21 @@ Some programs are available only in specific cities or regions, while others app
 
 ## Health
 
+**For primary care clinics:** Use the [HRSA Health Center Finder](https://findahealthcenter.hrsa.gov/) to locate federally qualified health centers offering sliding-scale services.
+
 | Program | Area | Eligibility | Benefit | How to Use It | Timeframe | Link |
 |--------|------|-------------|---------|---------------|-----------|------|
-| Berkeley Free Clinic | Berkeley (Alameda County) | 🌎 | Free limited health, dental, and STI services | Walk-in or by appointment | Ongoing | [Berkeley Free Clinic](https://www.berkeleyfreeclinic.org) |
-| Medi-Cal (Medicaid) | California | 💳  | Free/low-cost health insurance to income-eligible residents | Apply online | Ongoing | [Medi-Cal](https://dhcs.ca.gov/services/medi-cal) |
-| VA Health Benefits | Nationwide | 🎖️ | Health support for veterans | Apply online | Ongoing | [VA Health Care](https://www.va.gov/health-care) |
+| 988 Suicide & Crisis Lifeline | Nationwide | 🌎 | Free 24/7 mental health crisis support via call, text, or chat | Call or text 988, or chat online | 24/7 | [988lifeline.org](https://988lifeline.org) |
+| Crisis Text Line | Nationwide | 🌎 | Free 24/7 crisis support via text message | Text HOME to 741741 | 24/7 | [Crisis Text Line](https://www.crisistextline.org) |
+| Denti-Cal | California | 💳 | Free/low-cost dental care for Medi-Cal recipients | Apply through Medi-Cal | Ongoing | [Denti-Cal](https://www.dental.dhcs.ca.gov/) |
+| EyeCare America | Nationwide | 👵 | Free eye exams and up to one year of care for seniors 65+ at risk for eye disease | Apply online or call 1-877-887-6327 | Ongoing | [EyeCare America](https://www.aao.org/eyecare-america) |
+| Medi-Cal (Medicaid) | California | 💳 | Free/low-cost health insurance to income-eligible residents | Apply online | Ongoing | [Medi-Cal](https://dhcs.ca.gov/services/medi-cal) |
+| NeedyMeds | Nationwide | 🌎 | Database of prescription assistance programs and discount cards | Search by medication name | Ongoing | [NeedyMeds](https://www.needymeds.org) |
+| Planned Parenthood | Bay Area | 💳🌎 | Sexual and reproductive healthcare on sliding scale: birth control, STI testing, cancer screenings, abortion services | Find nearest health center and schedule appointment | Ongoing | [Planned Parenthood Northern CA](https://www.plannedparenthood.org/health-center/california) |
+| Ryan White HIV/AIDS Program | California | 💳 | Free comprehensive care for people living with HIV/AIDS | Contact local provider or call 1-800-367-2437 | Ongoing | [Ryan White Program](https://hab.hrsa.gov/) |
+| SAMHSA National Helpline | Nationwide | 🌎 | Free confidential 24/7 referrals and information for substance use treatment and mental health services | Call 1-800-662-4357 | 24/7 | [SAMHSA Helpline](https://www.samhsa.gov/find-help/national-helpline) |
+| VA Health Benefits | Nationwide | 🎖️ | Comprehensive health support for veterans | Apply online | Ongoing | [VA Health Care](https://www.va.gov/health-care) |
+| WIC (Women, Infants, Children) | California | 💳👨‍👩‍👧 | Free nutrition assistance, health screenings, breastfeeding support for pregnant/postpartum women and children under 5 | Apply at local WIC office | Ongoing | [California WIC](https://www.cdph.ca.gov/Programs/CFH/DWICSN/Pages/Program-Landing1.aspx) |
 
 ---
 
@@ -194,6 +208,38 @@ Public libraries often offer more than books — including access to news, digit
 | Hoopla Digital | Varies (CA libraries) | 🌎 | Free ebooks, audiobooks, music, movies, and TV shows | Sign up with library card; borrow instantly (limits vary by library) | Ongoing | [Hoopla](https://www.hoopladigital.com) |
 | Kanopy | Varies (CA libraries) | 🌎 | Free streaming of films and documentaries for library cardholders | Log in with library card; limited monthly credits | Ongoing | [Kanopy for Library Patrons](https://www.kanopy.com/signup/find/publiclibrary) |
 | New York Times Digital Access | Varies (CA libraries) | 💳 🌎 | Complimentary 72-hour digital access to The New York Times online (articles, cooking, games, archives) | Redeem with library-card number & PIN — create or log in to NYTimes.com account | 72-hour passes, renewable | [NYT Library Access](https://www.library.ca.gov/services/to-libraries/nyt/) |
+
+---
+
+## Pet Resources
+
+| Program | Area | Eligibility | Benefit | How to Use It | Timeframe | Link |
+|--------|------|-------------|---------|---------------|-----------|------|
+| Banfield Foundation - Pet Owner Resources | Nationwide | 🌎 | Comprehensive directory of financial assistance programs, pet food banks, low-cost vet services, and emergency resources | Browse resources online | Ongoing | [Banfield Foundation](https://www.banfieldfoundation.org/Banfield-Foundation-Resources-for-pet-owners) |
+| Berkeley-East Bay Humane Society - Spay the Bay | Pinole | 💳🌎 | Low-cost spay/neuter and vaccinations | Schedule appointment online | Ongoing | [BEBHS Spay the Bay](https://berkeleyhumane.org/spay-the-bay/) |
+| Dog Breed-Specific Assistance Programs | Nationwide | 🌎 | Financial assistance for veterinary care for specific breeds (Dobermans, Labradors) | Visit breed-specific organization websites | Ongoing | [Doberman 911](https://doberman911.org), [Labrador Harbor](https://labradorharbor.org/), [LabMed](https://labmed.org), [Labrador Lifeline](https://labradorlifeline.org) |
+| HSSV Pet Pantry | Santa Clara County | 📍💳 | Free pet food for Santa Clara County residents experiencing financial hardship; pick up every 30 days at warehouse in Milpitas (1116 Wrigley Way) | Visit in person with photo ID; Thu-Sun 12-3:30pm | Every 30 days | [HSSV Pet Pantry](https://www.hssv.org/pet-pantry/) |
+| Humane World | Nationwide | 🌎 | Comprehensive directory of pet financial assistance programs and payment plans | Browse resources online | Ongoing | [Humane World](https://www.humaneworld.org/en/resources/having-trouble-affording-your-pet#finance) |
+| Joybound People & Pets - Community Veterinary Care | Contra Costa County | 📍💳 | Low-cost medical care for dogs and cats for eligible residents | Contact to check eligibility | Ongoing | [Joybound Get Help](https://joybound.org/services/get-help/) |
+| Joybound People & Pets - Free Pet Food | Contra Costa County | 📍💳 | Free pet food for residents who need assistance | Contact for distribution details | Ongoing | [Joybound Get Help](https://joybound.org/services/get-help/) |
+| Joybound People & Pets - Free Vaccination Clinics | Contra Costa County | 📍🌎 | Free pet vaccination clinics at locations across Contra Costa County | Check website for clinic schedule and locations | Monthly | [Joybound Get Help](https://joybound.org/services/get-help/) |
+| Joybound People & Pets - Pet Safety Net | Contra Costa County | 📍💳 | Emergency resources to prevent pet surrender including food, vet care assistance, and supplies | Contact for assistance | As needed | [Joybound Get Help](https://joybound.org/services/get-help/) |
+| Joybound People & Pets - Spay/Neuter Clinic | Contra Costa County | 📍💳🌎 | Low-cost spay/neuter services | Schedule appointment online | Ongoing | [Joybound Get Help](https://joybound.org/services/get-help/) |
+| Marin Humane Society - Pet Care Assistance | Marin County | 💳👵 | Pet care assistance for low-income seniors, people living with HIV/AIDS, and hospice recipients; Pet Meals on Wheels | Call 415-883-4621 | Ongoing | [Marin Humane Society](https://www.marinhumanesociety.org) |
+| Muttville Senior Dog Rescue - Cuddle Club | San Francisco | 👵 | Free cuddle time events with senior dogs for adults 62+ (*no adoption required*) | Email to schedule or find next event | Ongoing | [Muttville](https://muttville.org/seniors_for_seniors#cuddle) |
+| Muttville Senior Dog Rescue - Seniors for Seniors | San Francisco | 👵 | Free adoption of senior dogs (7+ years) for seniors 62+ | Visit adoption center or attend event | Ongoing | [Muttville](https://muttville.org/seniors_for_seniors) |
+| Peninsula Humane Society - Mobile Spay/Neuter Van | San Mateo County | 💳🌎 | Free spay/neuter | By appointment | Call for the mobile's schedule | [PHS](https://phs-spca.org/spayneuter/mobile/), 650-340-7022 x387 |
+| Peninsula Humane Society SPCA Low-Cost Vaccine Clinics | San Mateo County | 🌎 | Low-cost vaccinations, microchipping, nail trims | Walk-in clinic schedule online | Monthly | [PHS](https://phs-spca.org/spayneuter/) |
+| Pet Help Finder | Nationwide | 🌎 | Database of low-cost vet services, financial assistance, and pet resources by location | Search by zip code | Ongoing | [Pet Help Finder](https://www.pethelpfinder.org/) |
+| Pets in Need - Low-Cost Vet Services | Redwood City | 💳🌎 | Low-cost vet care, spay/neuter, vaccinations, microchipping, and more | Schedule appointment | Ongoing | [Pets in Need](https://www.petsinneed.org/communityclinic) |
+| Pets of the Homeless | Nationwide | 💳 | Free veterinary care and pet food assistance for people experiencing homelessness | Find locations online | Ongoing | [Pets of the Homeless](https://petsofthehomeless.org/get-help/find-locations/) |
+| San Francisco SPCA - Community Clinic | San Francisco | 💳🌎 | Affordable preventative care, including vaccines, parasite protection, and treatment for minor conditions | Schedule appointment | Ongoing | [SF SPCA](https://www.sfspca.org/veterinary-care/community-clinic/) |
+| San Francisco SPCA - Spay/Neuter | San Francisco | 📍 | Affordable spay/neuter services with tiered fees for eligible SF residents | Call 415-554-3084 for eligibility and scheduling | Ongoing | [SF SPCA](https://www.sfspca.org) |
+| SF Aid for Animals (SFAFA) | Bay Area | 📍💳 | Finanical support for urgent vet services for Bay Area residents with participating veterinary hospitals | Apply through participating veterinarian | Ongoing | [SFAFA](https://www.sfafa.org/gethelp) |
+| The Pet Fund | Sacramento | 💳 | Financial assistance for non-basic, non-emergency veterinary care (has waitlist) | Apply online | Ongoing | [The Pet Fund](https://www.thepetfund.com/for-pet-owners/) |
+| Vet Billing - Payment Plans | Nationwide | 🌎 | Directory of veterinarians offering payment plans or financing options | Search by location | Ongoing | [Vet Billing](https://vetbilling.com/find-vet/) |
+| VETCO Clinics | Bay Area | 🌎 | Affordable vaccinations and basic pet health services at various locations | Find nearest clinic online or call 1-877-838-7468 | Weekly | [VETCO Clinics](https://www.vetcoclinics.com) |
+| VIP Petcare | Northern California | 🌎 | Walk-in weekend clinics offering vaccinations, microchipping, testing, flea/tick control (no exam fee) | Search by zip code for nearest weekend clinic | Weekly | [VIP Petcare](https://www.vippetcare.com) |
 
 ---
 
@@ -272,7 +318,7 @@ Public libraries often offer more than books — including access to news, digit
 | Stanford Marguerite Shuttle | Palo Alto | 🌎 | Free public shuttle routes connecting Stanford, Palo Alto, and surrounding areas | Just board at designated stops | Ongoing | [Marguerite](https://transportation.stanford.edu/getting-stanford/marguerite) |
 | Union City Transit | Union City | 🧒 🏫 | Free rides for eligible Alameda Co. students (STPP) | Apply through program | Ongoing | [Union City Transit STPP](https://www.alamedactc.org/programs-projects/studentpass) |
 | VTA | Santa Clara County | 🧒 | Summer Youth Pass: unlimited bus/light rail | Buy pass before summer | Seasonal | [VTA Summer Youth Pass](https://www.vta.org/go/fares/summer-youth-pass) |
-| Wheels (LAVTA) | Tri-Valley: Livermore/Dublin/Pleasanton | 🌎 🧒 💼 | East Bay Value Pass, Hacienda Eco Pass, free rides for eligible 6–12 grade students | Based on employer/school eligibility or pass | Ongoing | [Wheels](https://www.wheelsbus.com/fares/) |
+| Wheels (LAVTA) | Tri-Valley: Livermore/Dublin/Pleasanton | 🧒 💼 | East Bay Value Pass, Hacienda Eco Pass, free rides for eligible 6–12 grade students | Based on employer/school eligibility or pass | Ongoing | [Wheels](https://www.wheelsbus.com/fares/) |
 | Youth Clipper Card | Bay Area | 🧒 | Discounted fares for youth | Apply with proof of age | Ongoing | [Youth Clipper](https://www.clippercard.com/ClipperWeb/discounts.html) |
 
 ---
@@ -293,10 +339,3 @@ Medical Baseline Allowance | California (all utilities) | 🧑‍🦽 | Extra lo
 | SFPUC Customer Assistance Program (CAP) | SF | 💳 | Increased 40% discount on water and sewer bills; protections from shutoffs/late fees for CAP participants | Enroll through SFPUC; show eligibility | Ongoing | [SFPUC CAP](https://www.sfpuc.org) |
 
 ---
-
-### Support This Project
-If this guide helps you save, consider supporting us here:
-<a href="https://www.buymeacoffee.com/bayareadiscounts"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=bayareadiscounts&button_colour=40DCA5&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
-
-_Last updated: Dec. 6 2025_  
-Contribute a listing by [opening an issue on GitHub](https://github.com/bayareadiscounts/bayareadiscounts/issues/new).

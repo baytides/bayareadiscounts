@@ -410,4 +410,4 @@ These platforms verify student status and connect you with discounts from many d
 
 ---
 
-_Always verify benefits and eligibility with your college or university as programs and requirements may change._
+_Always verify benefits and eligibility with the service provider or your college/university as programs and requirements may change._
