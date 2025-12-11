@@ -471,47 +471,9 @@
       box-shadow: 0 0 0 4px rgba(255, 111, 0, 0.1);
     }
 
-    /* Quick Filters */
-    .quick-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 15px 0 0 0;
-    }
-
-    .filter-btn {
-      padding: 10px 18px;
-      background: var(--bg-main);
-      border: 2px solid var(--border-light);
-      border-radius: 25px;
-      color: var(--text-primary);
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .filter-btn:hover {
-      background: var(--light-cyan);
-      border-color: var(--primary-teal);
-      transform: translateY(-2px);
-    }
-
-    .filter-btn.active {
-      background: linear-gradient(135deg, var(--primary-teal) 0%, #00bcd4 100%);
-      border-color: var(--primary-teal);
-      color: white;
-    }
-
-    .filter-btn:focus {
-      outline: 2px solid var(--accent-orange);
-      outline-offset: 2px;
-    }
-
     /* Search Results Counter */
     .search-results-info {
-      margin: 15px 0;
+      margin: 15px 0 0 0;
       padding: 12px 20px;
       background: var(--light-cyan);
       border-radius: 8px;
@@ -578,21 +540,6 @@
       transition: max-height 0.5s ease;
     }
 
-    /* Highlight matching text in search */
-    .search-highlight {
-      background: #fff59d;
-      padding: 2px 4px;
-      border-radius: 2px;
-      font-weight: 600;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .search-highlight {
-        background: #b8860b;
-        color: #000;
-      }
-    }
-
     /* Logo styling */
     .site-logo {
       display: block;
@@ -649,15 +596,6 @@
       .global-search-container input {
         font-size: 16px;
         padding: 12px 16px;
-      }
-      
-      .quick-filters {
-        gap: 8px;
-      }
-      
-      .filter-btn {
-        padding: 8px 14px;
-        font-size: 13px;
       }
       
       .section-toggle {
@@ -812,7 +750,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
       
-      // ============== GLOBAL SEARCH & FILTERS ==============
+      // ============== GLOBAL SEARCH (NO FILTERS) ==============
       
       // Create global search bar
       const mainContent = document.querySelector('main');
@@ -824,14 +762,6 @@
                placeholder="🔍 Search all benefits..." 
                aria-label="Search all benefits"
                autocomplete="off">
-        <div class="quick-filters">
-          <button class="filter-btn" data-filter="all">🌎 All</button>
-          <button class="filter-btn" data-filter="🎓">🎓 Students</button>
-          <button class="filter-btn" data-filter="💳">💳 Income-Eligible</button>
-          <button class="filter-btn" data-filter="👵">👵 Seniors</button>
-          <button class="filter-btn" data-filter="🧒">🧒 Youth</button>
-          <button class="filter-btn" data-filter="📍">📍 Residency Required</button>
-        </div>
         <div class="search-results-info" id="search-results-info"></div>
       `;
       
@@ -840,10 +770,8 @@
       mainContent.insertBefore(searchContainer, firstChild);
       
       const globalSearch = document.getElementById('global-search');
-      const filterButtons = document.querySelectorAll('.filter-btn');
       const resultsInfo = document.getElementById('search-results-info');
       
-      let activeFilter = 'all';
       let searchTerm = '';
       
       // Global search function
@@ -873,36 +801,22 @@
           rows.forEach(row => {
             totalCount++;
             const text = row.textContent.toLowerCase();
-            const firstCell = row.querySelector('td:first-child');
-            const eligibilityIcons = firstCell ? firstCell.textContent.trim() : '';
-            
-            // Apply filter
-            let matchesFilter = true;
-            if (activeFilter !== 'all') {
-              // More lenient matching - check if the emoji exists anywhere in the cell
-              matchesFilter = eligibilityIcons.indexOf(activeFilter) !== -1;
-            }
             
             // Apply search
             const matchesSearch = !filter || text.includes(filter);
             
-            const isVisible = matchesFilter && matchesSearch;
-            row.style.display = isVisible ? '' : 'none';
+            row.style.display = matchesSearch ? '' : 'none';
             
-            if (isVisible) visibleCount++;
+            if (matchesSearch) visibleCount++;
           });
         });
         
         // Show results info
-        if (filter || activeFilter !== 'all') {
+        if (filter) {
           resultsInfo.textContent = `Showing ${visibleCount} of ${totalCount} programs`;
           resultsInfo.classList.add('show');
-        } else {
-          resultsInfo.classList.remove('show');
-        }
-        
-        // Open sections that have visible results
-        if (filter || activeFilter !== 'all') {
+          
+          // Open sections that have visible results
           document.querySelectorAll('.section-content').forEach(content => {
             const visibleRows = content.querySelectorAll('tbody tr:not([style*="display: none"])').length;
             if (visibleRows > 0) {
@@ -914,6 +828,8 @@
               }
             }
           });
+        } else {
+          resultsInfo.classList.remove('show');
         }
       }
       
@@ -922,19 +838,6 @@
         searchTerm = this.value;
         performGlobalSearch();
       });
-      
-      // Filter buttons
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          activeFilter = this.dataset.filter;
-          performGlobalSearch();
-        });
-      });
-      
-      // Set "All" as default active
-      filterButtons[0].classList.add('active');
       
       // ============== ACCORDION SECTIONS ==============
       
