@@ -30,8 +30,5 @@ jobs:
         run: |
           gem install html-proofer
           htmlproofer ./_site \
-            --checks Scripts,Images \
             --disable-external \
-            --allow-hash-href \
-            --assume-extension \
-            --ignore-status-codes "999"
+            --ignore-urls "/linkedin.com/,/facebook.com/,/twitter.com/"
