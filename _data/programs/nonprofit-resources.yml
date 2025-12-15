@@ -40,7 +40,7 @@
 - id: "california-federal-surplus-program"
   name: "California Federal Surplus Property Program"
   category: "Computers & Equipment"
-  area: "California"
+  area: "Statewide"
   eligibility:
     - "🤝"
   benefit: "Access to donated federal surplus property including furniture, equipment, vehicles, and technology through the State of California for eligible nonprofit organizations"
@@ -51,7 +51,7 @@
 - id: "city-of-san-jose-surplus"
   name: "City of San José Surplus Property Donation Program"
   category: "Computers & Equipment"
-  area: "San José"
+  area: "Santa Clara County"
   eligibility:
     - "🤝"
   benefit: "Surplus property (valued at $1,500 or less) available to eligible nonprofits, including equipment, furnishings, and other items"
@@ -73,7 +73,7 @@
 - id: "goodstack-nonprofit-discounts"
   name: "Goodstack Nonprofit Discounts"
   category: "Computers & Equipment"
-  area: "Bay Area-based nonprofit access"
+  area: "Nationwide"
   eligibility:
     - "🤝"
   benefit: "Offers discounted access to essential software and tech tools like Zoom, Adobe Acrobat, Asana, and OpenAI plans for eligible nonprofit organizations"
@@ -150,7 +150,7 @@
 - id: "techsoup-discount-marketplace"
   name: "TechSoup Discount Marketplace"
   category: "Computers & Equipment"
-  area: "Bay Area-based nonprofit access"
+  area: "Nationwide"
   eligibility:
     - "🤝"
   benefit: "Provides access to donated and deeply discounted software, hardware, cloud services, and training for nonprofits by verifying nonprofit status"
