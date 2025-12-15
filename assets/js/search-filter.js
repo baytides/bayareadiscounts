@@ -1,7 +1,7 @@
 /**
  * Bay Area Discounts - Search & Filter System
  * Provides client-side full-text search and dynamic filtering
- * Optimized for Vision Pro and responsive design
+ * Optimized for responsive design
  */
 
 class DiscountSearchFilter {
@@ -114,13 +114,26 @@ class DiscountSearchFilter {
         .map(b => b.getAttribute('data-filter-value'))
     };
 
+    // Check if ANY filters are active
+    const hasActiveFilters = activeFilters.eligibility.length > 0 ||
+                             activeFilters.category.length > 0 ||
+                             activeFilters.area.length > 0;
+
+    // If no filters are active, show everything
+    if (!hasActiveFilters) {
+      this.filteredPrograms = [...this.programs];
+      this.render();
+      this.updateResultsCount();
+      return;
+    }
+
     // Filter programs based on active filters
     this.filteredPrograms = this.programs.filter(program => {
       let match = true;
 
       // Check eligibility filters
       if (activeFilters.eligibility.length > 0) {
-        const hasEligibility = activeFilters.eligibility.some(elig => 
+        const hasEligibility = activeFilters.eligibility.some(elig =>
           program.eligibility.includes(elig)
         );
         match = match && hasEligibility;
@@ -131,13 +144,13 @@ class DiscountSearchFilter {
         match = match && activeFilters.category.includes(program.category);
       }
 
-        // Check area filters
-        if (activeFilters.area.length > 0) {
-          const hasArea = activeFilters.area.some(area =>
-            program.area.includes(area)
-          );
-          match = match && hasArea;
-        }
+      // Check area filters
+      if (activeFilters.area.length > 0) {
+        const hasArea = activeFilters.area.some(area =>
+          program.area.includes(area)
+        );
+        match = match && hasArea;
+      }
 
       return match;
     });
@@ -158,7 +171,7 @@ class DiscountSearchFilter {
       this.resultsContainer.innerHTML = `
         <div class="no-results">
           <p>No programs found matching your filters.</p>
-          <button class="reset-btn" onclick="searchFilter.resetFilters()">Reset Filters</button>
+          <button class="reset-btn" onclick="searchFilter.resetFilters()">Clear Filters</button>
         </div>
       `;
       return;
@@ -173,15 +186,24 @@ class DiscountSearchFilter {
   }
 
   /**
-   * Reset search and filters
+   * Reset search results (but keep showing all programs)
    */
   resetResults() {
-    if (this.resultsContainer) {
+    this.filteredPrograms = [...this.programs];
+    
+    // If results container exists and is visible, show all programs
+    if (this.resultsContainer && this.resultsContainer.innerHTML !== '') {
+      this.render();
+    } else if (this.resultsContainer) {
       this.resultsContainer.innerHTML = '';
     }
-    this.filteredPrograms = [...this.programs];
+    
+    this.updateResultsCount();
   }
 
+  /**
+   * Reset all filters and search (shows everything)
+   */
   resetFilters() {
     // Clear all filter buttons
     document.querySelectorAll(this.options.filterButtonsSelector).forEach(btn => {
@@ -193,8 +215,12 @@ class DiscountSearchFilter {
       this.searchInput.value = '';
     }
 
+    // Reset to show all programs
     this.filteredPrograms = [...this.programs];
-    this.resetResults();
+    
+    // Render all programs
+    this.render();
+    this.updateResultsCount();
   }
 
   /**
@@ -213,7 +239,14 @@ class DiscountSearchFilter {
   updateResultsCount() {
     const countEl = document.querySelector('.results-count');
     if (countEl) {
-      countEl.textContent = `${this.filteredPrograms.length} result${this.filteredPrograms.length !== 1 ? 's' : ''}`;
+      const total = this.programs.length;
+      const showing = this.filteredPrograms.length;
+      
+      if (showing === total) {
+        countEl.textContent = `Showing all ${total} programs`;
+      } else {
+        countEl.textContent = `${showing} of ${total} program${showing !== 1 ? 's' : ''}`;
+      }
     }
   }
 }
@@ -227,9 +260,3 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsSelector: '#search-results'
   });
 });
-// Auto-initialize on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', searchFilter.init);
-} else {
-  searchFilter.init();
-}
