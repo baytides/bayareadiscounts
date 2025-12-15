@@ -377,25 +377,25 @@ body.keyboard-nav-helper *:focus::after {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   #accessibility-panel {
-    left: 50%;
-    transform: translateX(-50%) translateY(20px) scale(0.95);
+    left: 20px;
+    right: 20px;
+    transform: translateY(20px) scale(0.95);
     bottom: 90px;
-    min-width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
+    min-width: auto;
+    max-width: none;
   }
   
   #accessibility-panel.open {
-    transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
   
   #accessibility-button {
     bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 16px;
   }
   
   #accessibility-button:hover {
-    transform: translateX(-50%) translateY(-3px);
+    transform: translateY(-3px);
   }
 }
 

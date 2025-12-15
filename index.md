@@ -61,20 +61,11 @@ layout: default
        alt="Bay Area Discounts logo">
 </a>
 
-Stretch your budget and explore more of your community.
+Stretch your budget and discover more of what your community has to offer.
 
-This guide highlights free and low-cost services, programs, and benefits within the core counties commonly recognized as the San Francisco Bay Area (Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma counties) for public benefit recipients, seniors, youth, college students, military/veterans, families, nonprofit organizations, and anyone looking to save on everyday expenses.
+This guide features free and low cost services, programs, and benefits across the counties commonly recognized as the San Francisco Bay Area: Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma. Resources are highlighted for public benefit recipients such as SNAP or EBT and Medi Cal, seniors, youth, college students, military members and veterans, and anyone looking to reduce everyday expenses, including local nonprofit organizations.
 
-Some programs are available only in specific cities or regions, while others apply to all of California or nationwide. Always check the program or resource website for the most current eligibility details.
-
-This is a community-maintained resource—if you notice outdated information or know of programs that should be included, please contribute via our [GitHub repository](https://github.com/bayareadiscounts/bayareadiscounts).
-
-## How to Use This Guide
-
-- Use the search bar to find specific programs
-- Filter by who the program helps, category, or area
-- Check the timeframe for seasonal or limited offers
-- Always confirm details before using or visiting
+As a community driven project, we work to keep information current. However, availability and eligibility can change, and some listings may occasionally be out of date. Always refer to the program’s website for the most up to date details.
 
 ---
 
