@@ -2,10 +2,10 @@
    ACCESSIBILITY TOOLBAR STYLES
    ============================================ */
 
-/* Floating accessibility button (lower-left corner) */
+/* Floating accessibility button (top-left corner) */
 #accessibility-button {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
   width: 56px;
   height: 56px;
@@ -40,7 +40,7 @@
 /* Accessibility panel */
 #accessibility-panel {
   position: fixed;
-  bottom: 90px;
+  top: 90px;
   left: 20px;
   background: white;
   border-radius: 12px;
@@ -50,7 +50,7 @@
   max-width: 350px;
   z-index: 9998;
   opacity: 0;
-  transform: translateY(20px) scale(0.95);
+  transform: translateY(-20px) scale(0.95);
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -379,8 +379,8 @@ body.keyboard-nav-helper *:focus::after {
   #accessibility-panel {
     left: 20px;
     right: 20px;
-    transform: translateY(20px) scale(0.95);
-    bottom: 90px;
+    top: 90px;
+    transform: translateY(-20px) scale(0.95);
     min-width: auto;
     max-width: none;
   }
@@ -390,9 +390,10 @@ body.keyboard-nav-helper *:focus::after {
   }
   
   #accessibility-button {
-    bottom: 16px !important;
+    top: 16px !important;
     left: 16px !important;
     right: auto !important;
+    bottom: auto !important;
     transform: none !important;
   }
   
