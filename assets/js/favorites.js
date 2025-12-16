@@ -73,4 +73,5 @@
   document.addEventListener('favoritesUpdated', () => favorites.updateUI());
 
   window.favorites = favorites;
+  document.dispatchEvent(new Event('favoritesReady'));
 })();
