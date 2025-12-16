@@ -9,6 +9,7 @@
   timeframe: "Ongoing"
   link: "https://www.accfb.org/"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "alameda-meals-on-wheels"
   name: "Alameda Meals on Wheels"
@@ -21,6 +22,7 @@
   timeframe: "Ongoing"
   link: "https://alamedamealsonwheels.org/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "bernal-heights-brown-bag"
   name: "Bernal Heights Neighborhood Center - Brown Bag Program"
@@ -34,6 +36,7 @@
   timeframe: "Ongoing"
   link: "https://bhnc.org/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "calfresh-online"
   name: "CalFresh Online"
@@ -45,6 +48,7 @@
   timeframe: "Ongoing"
   link: "https://www.cdss.ca.gov/ebt-online"
   link_text: "Get Started"
+  last_verified: "2025-12-16"
 
 - id: "calfresh-rmp"
   name: "CalFresh Restaurant Meals Program (RMP)"
@@ -59,6 +63,7 @@
   timeframe: "Ongoing"
   link: "https://www.cdss.ca.gov/rmp"
   link_text: "Find Restaurants"
+  last_verified: "2025-12-16"
 
 - id: "food-bank-contra-costa-solano"
   name: "Food Bank of Contra Costa & Solano"
@@ -71,6 +76,7 @@
   timeframe: "Ongoing"
   link: "https://www.foodbankccs.org/"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "j-sei-meals-on-wheels"
   name: "J-Sei Meals on Wheels"
@@ -82,6 +88,7 @@
   timeframe: "Ongoing"
   link: "https://www.j-sei.org"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "market-match"
   name: "Market Match"
@@ -93,6 +100,7 @@
   timeframe: "Ongoing"
   link: "https://www.marketmatch.org"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "mow-contra-costa"
   name: "Meals on Wheels Contra Costa"
@@ -105,6 +113,7 @@
   timeframe: "Ongoing"
   link: "https://mowcontracosta.org/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "mow-diablo-region"
   name: "Meals on Wheels Diablo Region"
@@ -117,6 +126,7 @@
   timeframe: "Ongoing"
   link: "https://www.mowdiabloregion.org/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "mow-san-francisco"
   name: "Meals on Wheels San Francisco"
@@ -129,6 +139,7 @@
   timeframe: "Ongoing"
   link: "https://www.mowsf.org/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "mow-san-mateo"
   name: "Meals on Wheels San Mateo County (Peninsula Volunteers)"
@@ -141,6 +152,7 @@
   timeframe: "Ongoing"
   link: "https://1pvi.org/mealsonwheels/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "project-open-hand"
   name: "Project Open Hand"
@@ -155,6 +167,7 @@
   timeframe: "Ongoing"
   link: "https://www.openhand.org/"
   link_text: "Contact"
+  last_verified: "2025-12-16"
 
 - id: "rainbow-grocery"
   name: "Rainbow Grocery"
@@ -167,6 +180,7 @@
   timeframe: "Ongoing"
   link: "https://www.rainbow.coop"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "second-harvest-silicon-valley"
   name: "Second Harvest of Silicon Valley"
@@ -181,6 +195,7 @@
   timeframe: "Ongoing"
   link: "https://www.shfb.org/get-food/#tool"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "sf-marin-food-bank"
   name: "SF-Marin Food Bank"
@@ -194,6 +209,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfmfoodbank.org/"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "sos-meals-on-wheels"
   name: "SOS Meals on Wheels"
@@ -206,6 +222,7 @@
   timeframe: "Ongoing"
   link: "https://www.sosmow.org/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "sourcewise-meals-on-wheels"
   name: "Sourcewise Meals on Wheels"
@@ -218,6 +235,7 @@
   timeframe: "Ongoing"
   link: "https://mysourcewise.com/programs-services/meals/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "spectrum-mow"
   name: "Spectrum Community Services Meals on Wheels"
@@ -230,6 +248,7 @@
   timeframe: "Ongoing"
   link: "https://www.spectrumcs.org/senior-services/meals-on-wheels"
   link_text: "Contact"
+  last_verified: "2025-12-16"
 
 - id: "st-anthonys-dining"
   name: "St. Anthony's Dining Room"
@@ -241,6 +260,7 @@
   timeframe: "Ongoing"
   link: "https://www.stanthonysf.org/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "universal-school-meals"
   name: "Universal School Meals"
@@ -253,6 +273,7 @@
   timeframe: "Ongoing (school year)"
   link: "https://www.cde.ca.gov/ls/nu/sn/cauniversalmeals.asp"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "wic-program"
   name: "WIC – Women, Infants & Children"
@@ -266,6 +287,7 @@
   timeframe: "Ongoing"
   link: "https://myfamily.wic.ca.gov/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "ymca-food-pantries"
   name: "YMCA Food Pantries"
@@ -279,3 +301,4 @@
   timeframe: "Ongoing"
   link: "https://www.ymcasf.org/program/food-assistance/"
   link_text: "Find Location"
+  last_verified: "2025-12-16"

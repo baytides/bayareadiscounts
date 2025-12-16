@@ -12,6 +12,7 @@
   timeframe: "Ongoing"
   link: "https://www.7-eleven.com/lp/goldpass"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "amazon-prime-access"
   name: "Amazon Prime Access"
@@ -23,6 +24,7 @@
   timeframe: "Ongoing"
   link: "https://www.amazon.com/primeaccess"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "att-access"
   name: "AT&T Access"
@@ -34,6 +36,7 @@
   timeframe: "Ongoing"
   link: "https://www.att.com/internet/access/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "california-lifeline"
   name: "California LifeLine Program"
@@ -45,6 +48,7 @@
   timeframe: "Ongoing"
   link: "https://www.californialifeline.com"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "good360"
   name: "Good360"
@@ -56,6 +60,7 @@
   timeframe: "Ongoing"
   link: "https://good360.org/"
   link_text: "Become a Member"
+  last_verified: "2025-12-16"
 
 - id: "goodstack-nonprofit-discounts"
   name: "Goodstack Nonprofit Discounts"
@@ -67,6 +72,7 @@
   timeframe: "Ongoing"
   link: "https://causes.goodstack.io/"
   link_text: "Enroll"
+  last_verified: "2025-12-16"
 
 - id: "instacart-ebt"
   name: "Instacart for EBT/SNAP"
@@ -78,6 +84,7 @@
   timeframe: "Ongoing"
   link: "https://www.instacart.com/ebt-snap"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "internet-essentials"
   name: "Internet Essentials by Xfinity"
@@ -89,6 +96,7 @@
   timeframe: "Ongoing"
   link: "https://www.xfinity.com/learn/internet-service/internet-essentials"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "kanopy-students"
   name: "Kanopy for Students"
@@ -100,6 +108,7 @@
   timeframe: "Ongoing"
   link: "https://www.kanopy.com/signup/find/university"
   link_text: "Find Your School"
+  last_verified: "2025-12-16"
 
 - id: "tech-exchange"
   name: "Tech Exchange"
@@ -111,6 +120,7 @@
   timeframe: "Ongoing"
   link: "https://www.techexchange.org/lowcostcomputers"
   link_text: "Request Equipment"
+  last_verified: "2025-12-16"
 
 - id: "techsoup-discount-marketplace"
   name: "TechSoup Discount Marketplace"
@@ -122,6 +132,7 @@
   timeframe: "Ongoing"
   link: "https://www.techsoup.org/"
   link_text: "Explore Discounts"
+  last_verified: "2025-12-16"
 
 - id: "t-mobile-project-10million"
   name: "T-Mobile Project 10Million"
@@ -133,6 +144,7 @@
   timeframe: "Ongoing"
   link: "https://www.t-mobile.com/brand/project-10-million"
   link_text: "Check Eligibility"
+  last_verified: "2025-12-16"
 
 - id: "walmart-plus-assist"
   name: "Walmart+ Assist"
@@ -144,6 +156,7 @@
   timeframe: "Ongoing"
   link: "https://www.walmart.com/plus/assist"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "world-computer-exchange"
   name: "World Computer Exchange"
@@ -155,3 +168,4 @@
   timeframe: "Ongoing"
   link: "https://worldcomputerexchange.org/get-computers/"
   link_text: "Get Computers"
+  last_verified: "2025-12-16"

@@ -12,6 +12,7 @@
   timeframe: "Ongoing"
   link: "https://www.nps.gov/planyourvisit/passes.htm#america-the-beautiful-passes"
   link_text: "Get Pass"
+  last_verified: "2025-12-16"
 
 - id: "ca-state-parks-adventure-pass"
   name: "California State Parks Adventure Pass"
@@ -24,6 +25,7 @@
   timeframe: "Ongoing (funded through 2026)"
   link: "https://www.reservecalifornia.com/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "ca-state-parks-disabled-discount"
   name: "California State Parks Disabled Discount Pass"
@@ -36,6 +38,7 @@
   timeframe: "Lifetime"
   link: "https://www.parks.ca.gov/?page_id=30959"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "ca-state-parks-distinguished-veteran"
   name: "California State Parks Distinguished Veteran Pass"
@@ -48,6 +51,7 @@
   timeframe: "Lifetime"
   link: "https://www.parks.ca.gov/?page_id=30958"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "golden-bear-pass"
   name: "Golden Bear Pass"
@@ -61,6 +65,7 @@
   timeframe: "Annual (calendar year)"
   link: "https://www.parks.ca.gov/?page_id=30960"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "senior-golden-bear-pass"
   name: "Senior Golden Bear Pass"
@@ -73,6 +78,7 @@
   timeframe: "Annual (calendar year)"
   link: "https://www.parks.ca.gov/?page_id=30961"
   link_text: "Purchase"
+  last_verified: "2025-12-16"
 
 # Museums
 - id: "museums-for-all"
@@ -87,6 +93,7 @@
   timeframe: "Ongoing"
   link: "https://museums4all.org"
   link_text: "Find Museum"
+  last_verified: "2025-12-16"
 
 - id: "aquarium-of-bay"
   name: "Aquarium of the Bay"
@@ -102,6 +109,7 @@
   timeframe: "Ongoing"
   link: "https://www.aquariumofthebay.org"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "asian-art-museum"
   name: "Asian Art Museum"
@@ -119,6 +127,7 @@
   timeframe: "Ongoing"
   link: "https://about.asianart.org/plan-your-visit/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "bay-area-discovery-museum"
   name: "Bay Area Discovery Museum"
@@ -134,6 +143,7 @@
   timeframe: "Ongoing"
   link: "https://bayareadiscoverymuseum.org/visit/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "cal-academy"
   name: "California Academy of Sciences"
@@ -147,6 +157,7 @@
   timeframe: "Ongoing"
   link: "https://www.calacademy.org/visit"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "chabot-space-center"
   name: "Chabot Space & Science Center"
@@ -160,6 +171,7 @@
   timeframe: "Ongoing"
   link: "https://chabotspace.org/visit/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "cartoon-art-museum"
   name: "Cartoon Art Museum"
@@ -178,6 +190,7 @@
   timeframe: "Ongoing"
   link: "https://www.cartoonart.org/visit"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "childrens-creativity-museum"
   name: "Children's Creativity Museum"
@@ -192,6 +205,7 @@
   timeframe: "Ongoing"
   link: "https://creativity.org/hours-admission/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "childrens-discovery-museum-sj"
   name: "Children's Discovery Museum"
@@ -204,6 +218,7 @@
   timeframe: "Ongoing"
   link: "https://www.cdm.org/hours-pricing/#museums-for-all"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "childrens-fairyland"
   name: "Children's Fairyland"
@@ -218,6 +233,7 @@
   timeframe: "Ongoing"
   link: "https://fairyland.org/visit/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "exploratorium"
   name: "Exploratorium"
@@ -230,6 +246,7 @@
   timeframe: "Ongoing"
   link: "https://www.exploratorium.edu/visit/reduced-rates"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "fine-arts-museums-sf"
   name: "Fine Arts Museums of San Francisco (de Young Museum and Legion of Honor)"
@@ -248,6 +265,7 @@
   timeframe: "Ongoing"
   link: "https://www.famsf.org/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "golden-gate-park-gardens"
   name: "Gardens of Golden Gate Park (Conservatory of Flowers, Japanese Tea Garden, SF Botanical Garden)"
@@ -262,6 +280,7 @@
   timeframe: "Ongoing; scheduled free days/hours"
   link: "https://gggp.org"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "lawrence-hall-science"
   name: "Lawrence Hall of Science"
@@ -277,6 +296,7 @@
   timeframe: "Ongoing; Cal Day annual"
   link: "https://lawrencehallofscience.org"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "moad-museum"
   name: "Museum of the African Diaspora (MoAD)"
@@ -293,6 +313,7 @@
   timeframe: "Ongoing"
   link: "https://www.moadsf.org/tickets"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "museum-craft-design"
   name: "Museum of Craft and Design"
@@ -310,6 +331,7 @@
   timeframe: "Ongoing"
   link: "https://sfmcd.org/visit/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "oakland-museum"
   name: "Oakland Museum of California"
@@ -323,6 +345,7 @@
   timeframe: "Ongoing; 1st Sunday monthly"
   link: "https://museumca.org/visit"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "oakland-zoo"
   name: "Oakland Zoo – Bay to Zoo"
@@ -337,6 +360,7 @@
   timeframe: "Ongoing"
   link: "https://www.oaklandzoo.org/tickets"
   link_text: "Get Tickets"
+  last_verified: "2025-12-16"
 
 - id: "sfmoma"
   name: "San Francisco Museum of Modern Art (SFMOMA)"
@@ -354,6 +378,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfmoma.org/deals-discounts/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "sj-museum-art"
   name: "San Jose Museum of Art"
@@ -367,6 +392,7 @@
   timeframe: "Ongoing"
   link: "https://sjmusart.org/visit"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "the-tech-interactive"
   name: "The Tech Interactive"
@@ -380,6 +406,7 @@
   timeframe: "Ongoing"
   link: "https://www.thetech.org/visit"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "walt-disney-family-museum"
   name: "Walt Disney Family Museum"
@@ -396,3 +423,4 @@
   timeframe: "Ongoing"
   link: "https://www.waltdisney.org/visit/admission"
   link_text: "Visit"
+  last_verified: "2025-12-16"

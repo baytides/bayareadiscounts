@@ -9,6 +9,7 @@
   timeframe: "Ongoing"
   link: "https://211bayarea.org"
   link_text: "Visit Program"
+  last_verified: "2025-12-16"
 
 - id: "czi-community-space"
   name: "CZI Community Space"
@@ -20,6 +21,7 @@
   timeframe: "Ongoing"
   link: "https://chanzuckerberg.com/communityspace/"
   link_text: "Apply for Access"
+  last_verified: "2025-12-16"
 
 - id: "dolly-parton-library"
   name: "Dolly Parton Imagination Library"
@@ -31,6 +33,7 @@
   timeframe: "Ongoing (monthly until age 5)"
   link: "https://www.library.ca.gov/services/to-public/imagination-library/"
   link_text: "Enroll"
+  last_verified: "2025-12-16"
 
 - id: "generation-thrive-spaces"
   name: "Generation Thrive"
@@ -42,6 +45,7 @@
   timeframe: "Ongoing"
   link: "https://community.warriors.com/generation-thrive/spaces/"
   link_text: "Request Meeting Space"
+  last_verified: "2025-12-16"
 
 - id: "google-community-space"
   name: "Google Community Space"
@@ -53,6 +57,7 @@
   timeframe: "Ongoing"
   link: "https://communityspace.withgoogle.com/"
   link_text: "Apply for Access"
+  last_verified: "2025-12-16"
 
 - id: "ohana-floor-salesforce"
   name: "Salesforce Ohana Floor"
@@ -64,6 +69,7 @@
   timeframe: "Weeknights only"
   link: "https://www.salesforce.com/company/ohana-floors-san-francisco/"
   link_text: "Request for an Event"
+  last_verified: "2025-12-16"
 
 - id: "season-of-sharing"
   name: "Season of Sharing Fund"
@@ -75,6 +81,7 @@
   timeframe: "Ongoing"
   link: "https://seasonofsharing.org"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "sobrato-conference-space"
   name: "Sobrato Nonprofit Centers Conference Space"
@@ -86,6 +93,7 @@
   timeframe: "Ongoing"
   link: "https://www.sobrato.com/sobrato-philanthropies/what-we-do/non-profit-sustainability/conference-space-nonprofit-centers/"
   link_text: "Apply for Access"
+  last_verified: "2025-12-16"
 
 - id: "tides-converge"
   name: "Tides Converge"
@@ -97,6 +105,7 @@
   timeframe: "Ongoing"
   link: "https://www.tides.org/social-purpose-real-estate/office-space/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "va-vet-centers"
   name: "VA Vet Centers"
@@ -108,6 +117,7 @@
   timeframe: "Ongoing"
   link: "https://www.va.gov/find-locations"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "ymca"
   name: "YMCA"
@@ -120,6 +130,7 @@
   timeframe: "Ongoing"
   link: "https://www.ymca.org/get-involved/join"
   link_text: "Find Membership"
+  last_verified: "2025-12-16"
 
 # Childcare Assistance
 - id: "bacn-emergency-childcare"
@@ -134,6 +145,7 @@
   timeframe: "Ongoing"
   link: "https://bayareacrisisnursery.org/programs/emergency-childcare/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "california-state-preschool"
   name: "California State Preschool Program"
@@ -147,6 +159,7 @@
   timeframe: "Ongoing"
   link: "https://mychildcareplan.org/resource/child-care-subsidy-programs/"
   link_text: "Find Providers"
+  last_verified: "2025-12-16"
 
 - id: "calworks-child-care"
   name: "CalWORKs Child Care"
@@ -160,6 +173,7 @@
   timeframe: "Ongoing"
   link: "https://www.cdss.ca.gov/inforesources/calworks-child-care"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "childrens-council-sf"
   name: "Children's Council San Francisco"
@@ -173,6 +187,7 @@
   timeframe: "Ongoing"
   link: "https://www.childrenscouncil.org/families/help-paying-for-child-care/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "choices-for-children"
   name: "Choices for Children"
@@ -186,6 +201,7 @@
   timeframe: "Ongoing (based on funding availability)"
   link: "https://www.cfcscc.org/our-programs/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "head-start"
   name: "Head Start"
@@ -199,6 +215,7 @@
   timeframe: "Ongoing"
   link: "https://mychildcareplan.org/resource/child-care-subsidy-programs/"
   link_text: "Find Programs"
+  last_verified: "2025-12-16"
 
 # Clothing Assistance
 - id: "bacn-boutique"
@@ -214,6 +231,7 @@
   timeframe: "Ongoing"
   link: "https://bayareacrisisnursery.org/programs/bacn-boutique/"
   link_text: "Visit"
+  last_verified: "2025-12-16"
 
 - id: "bacn-food-pantry-diaper"
   name: "Bay Area Crisis Nursery - Food Pantry & Diaper Bank"
@@ -227,6 +245,7 @@
   timeframe: "Ongoing"
   link: "https://bayareacrisisnursery.org/"
   link_text: "Order Online"
+  last_verified: "2025-12-16"
 
 - id: "sf-diaper-bank"
   name: "San Francisco Diaper Bank"
@@ -238,6 +257,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfhsa.org"
   link_text: "Enroll"
+  last_verified: "2025-12-16"
 
 - id: "st-anthonys-clothing"
   name: "St. Anthony's Free Clothing Program"
@@ -249,3 +269,4 @@
   timeframe: "Ongoing"
   link: "https://www.stanthonysf.org/services/clothing/shop-for-clothes/"
   link_text: "Schedule Visit"
+  last_verified: "2025-12-16"

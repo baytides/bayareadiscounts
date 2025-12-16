@@ -8,6 +8,7 @@
   timeframe: "Ongoing"
   link: "https://www.banfieldfoundation.org/Banfield-Foundation-Resources-for-pet-owners"
   link_text: "Browse Resources"
+  last_verified: "2025-12-16"
 
 - id: "bebhs-spay-bay"
   name: "Berkeley-East Bay Humane Society - Spay the Bay"
@@ -20,6 +21,7 @@
   timeframe: "Ongoing"
   link: "https://berkeleyhumane.org/spay-the-bay/"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "hssv-pet-pantry"
   name: "HSSV Pet Pantry"
@@ -32,6 +34,7 @@
   timeframe: "Every 30 days"
   link: "https://www.hssv.org/pet-pantry/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "humane-world"
   name: "Humane World"
@@ -43,6 +46,7 @@
   timeframe: "Ongoing"
   link: "https://www.humaneworld.org/en/resources/having-trouble-affording-your-pet#finance"
   link_text: "Browse Resources"
+  last_verified: "2025-12-16"
 
 - id: "joybound-vet-care"
   name: "Joybound People & Pets - Community Veterinary Care"
@@ -55,6 +59,7 @@
   timeframe: "Ongoing"
   link: "https://joybound.org/services/get-help/"
   link_text: "Contact"
+  last_verified: "2025-12-16"
 
 - id: "joybound-pet-food"
   name: "Joybound People & Pets - Free Pet Food"
@@ -67,6 +72,7 @@
   timeframe: "Ongoing"
   link: "https://joybound.org/services/get-help/"
   link_text: "Contact"
+  last_verified: "2025-12-16"
 
 - id: "joybound-vaccinations"
   name: "Joybound People & Pets - Free Vaccination Clinics"
@@ -79,6 +85,7 @@
   timeframe: "Monthly"
   link: "https://joybound.org/services/get-help/"
   link_text: "Find Clinic"
+  last_verified: "2025-12-16"
 
 - id: "joybound-pet-safety-net"
   name: "Joybound People & Pets - Pet Safety Net"
@@ -91,6 +98,7 @@
   timeframe: "As needed"
   link: "https://joybound.org/services/get-help/"
   link_text: "Get Help"
+  last_verified: "2025-12-16"
 
 - id: "joybound-spay-neuter"
   name: "Joybound People & Pets - Spay/Neuter Clinic"
@@ -104,6 +112,7 @@
   timeframe: "Ongoing"
   link: "https://joybound.org/services/get-help/"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "marin-humane-pet-care"
   name: "Marin Humane Society - Pet Care Assistance"
@@ -116,6 +125,7 @@
   timeframe: "Ongoing"
   link: "https://www.marinhumanesociety.org"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "muttville-cuddle-club"
   name: "Muttville Senior Dog Rescue - Cuddle Club"
@@ -127,6 +137,7 @@
   timeframe: "Ongoing"
   link: "https://muttville.org/seniors_for_seniors#cuddle"
   link_text: "Find Event"
+  last_verified: "2025-12-16"
 
 - id: "muttville-seniors-for-seniors"
   name: "Muttville Senior Dog Rescue - Seniors for Seniors"
@@ -138,6 +149,7 @@
   timeframe: "Ongoing"
   link: "https://muttville.org/seniors_for_seniors"
   link_text: "Adopt"
+  last_verified: "2025-12-16"
 
 - id: "phs-mobile-spay-neuter"
   name: "Peninsula Humane Society - Mobile Spay/Neuter Van"
@@ -150,6 +162,7 @@
   timeframe: "By appointment"
   link: "https://phs-spca.org/spayneuter/mobile/"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "phs-vaccine-clinics"
   name: "Peninsula Humane Society SPCA Low-Cost Vaccine Clinics"
@@ -161,6 +174,7 @@
   timeframe: "Monthly"
   link: "https://phs-spca.org/spayneuter/"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "pet-help-finder"
   name: "Pet Help Finder"
@@ -172,6 +186,7 @@
   timeframe: "Ongoing"
   link: "https://www.pethelpfinder.org/"
   link_text: "Search"
+  last_verified: "2025-12-16"
 
 - id: "pets-in-need"
   name: "Pets in Need - Low-Cost Vet Services"
@@ -184,6 +199,7 @@
   timeframe: "Ongoing"
   link: "https://www.petsinneed.org/communityclinic"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "pets-of-homeless"
   name: "Pets of the Homeless"
@@ -195,6 +211,7 @@
   timeframe: "Ongoing"
   link: "https://petsofthehomeless.org/get-help/find-locations/"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "sf-spca-community-clinic"
   name: "San Francisco SPCA - Community Clinic"
@@ -207,6 +224,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfspca.org/veterinary-care/community-clinic/"
   link_text: "Schedule"
+  last_verified: "2025-12-16"
 
 - id: "sf-spca-spay-neuter"
   name: "San Francisco SPCA - Spay/Neuter"
@@ -218,6 +236,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfspca.org"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "sf-aid-for-animals"
   name: "SF Aid for Animals (SFAFA)"
@@ -230,6 +249,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfafa.org/gethelp"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "the-pet-fund"
   name: "The Pet Fund"
@@ -241,6 +261,7 @@
   timeframe: "Ongoing"
   link: "https://www.thepetfund.com/for-pet-owners/"
   link_text: "Apply"
+  last_verified: "2025-12-16"
 
 - id: "vet-billing"
   name: "Vet Billing - Payment Plans"
@@ -252,6 +273,7 @@
   timeframe: "Ongoing"
   link: "https://vetbilling.com/find-vet/"
   link_text: "Search"
+  last_verified: "2025-12-16"
 
 - id: "vetco-clinics"
   name: "VETCO Clinics"
@@ -263,6 +285,7 @@
   timeframe: "Weekly"
   link: "https://www.vetcoclinics.com"
   link_text: "Find Location"
+  last_verified: "2025-12-16"
 
 - id: "vip-petcare"
   name: "VIP Petcare"
@@ -274,3 +297,4 @@
   timeframe: "Weekly"
   link: "https://www.vippetcare.com"
   link_text: "Find Clinic"
+  last_verified: "2025-12-16"

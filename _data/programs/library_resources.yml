@@ -8,6 +8,7 @@
   timeframe: Ongoing
   link: https://www.berkeleypubliclibrary.org/locations/tool-lending-library
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-002
   name: California State Parks Library Pass
@@ -19,6 +20,7 @@
   timeframe: Ongoing (funded through 2026)
   link: https://www.library.ca.gov/services/to-libraries/parks-pass/
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-003
   name: Calm Meditation App
@@ -30,6 +32,7 @@
   timeframe: Ongoing
   link: https://smcl.org/get-calm
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-004
   name: Discover & Go Museum Passes
@@ -41,6 +44,7 @@
   timeframe: Pass release cycles vary
   link: https://discoverandgo.org
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-005
   name: Hoopla Digital
@@ -52,6 +56,7 @@
   timeframe: Ongoing
   link: https://www.hoopladigital.com
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-006
   name: Kanopy
@@ -63,6 +68,7 @@
   timeframe: Ongoing
   link: https://www.kanopy.com/signup/find/publiclibrary
   link_text: Visit Program
+  last_verified: "2025-12-16"
 
 - id: lib-007
   name: New York Times Digital Access
@@ -75,3 +81,4 @@
   timeframe: 72-hour passes, renewable
   link: https://www.library.ca.gov/services/to-libraries/nyt/
   link_text: Visit Program
+  last_verified: "2025-12-16"

@@ -10,6 +10,7 @@
   timeframe: "Ongoing"
   link: "https://www.agreenersource.com/non-profits/"
   link_text: "Register"
+  last_verified: "2025-12-16"
   
 - id: "alameda-county-property-salvage"
   name: "Alameda County Property & Salvage Donations"
@@ -21,6 +22,7 @@
   timeframe: "Ongoing"
   link: "https://gsa.acgov.org/local-services/property-salvage/donations/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
 
 - id: "building-resources"
   name: "Building Resources"
@@ -33,6 +35,7 @@
   timeframe: "Ongoing"
   link: "https://buildingresources.org/"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
   
 - id: "california-federal-surplus-program"
   name: "California Federal Surplus Property Program"
@@ -44,6 +47,7 @@
   timeframe: "Ongoing"
   link: "https://www.dgs.ca.gov/OFAM/Services/Page-Content/Office-of-Fleet-and-Asset-Management-Services-List-Folder/Apply-or-Renew-as-Federal-Donee-of-Surplus-Property"
   link_text: "Apply as Donee"
+  last_verified: "2025-12-16"
   
 - id: "city-of-san-jose-surplus"
   name: "City of San José Surplus Property Donation Program"
@@ -55,6 +59,7 @@
   timeframe: "Ongoing - subject to availability"
   link: "https://www.sanjoseca.gov/your-government/departments-offices/public-works/surplus-property"
   link_text: "Learn More"
+  last_verified: "2025-12-16"
   
 - id: "santa-clara-county-surplus-donations"
   name: "Santa Clara County Surplus Property Donation Program"
@@ -66,6 +71,7 @@
   timeframe: "Ongoing"
   link: "https://prc.santaclaracounty.gov/surplus-property-program/request-donations-county-surplus-property"
   link_text: "Request Donation"
+  last_verified: "2025-12-16"
 
 - id: "santa-clara-county-library-surplus"
   name: "Santa Clara County Library District Surplus Property Donations"
@@ -77,6 +83,7 @@
   timeframe: "Ongoing"
   link: "https://sccld.org/surplus-property-donation-program/"
   link_text: "Program Details"
+  last_verified: "2025-12-16"
 
 - id: "sf-virtual-warehouse"
   name: "San Francisco Virtual Warehouse"
@@ -88,6 +95,7 @@
   timeframe: "Ongoing"
   link: "https://www.sfenvironment.org/virtual-warehouse-instructions-non-profits-and-schools"
   link_text: "Enrollment Instructions"
+  last_verified: "2025-12-16"
 
 - id: "scrap-sf"
   name: "SCRAP (Scroungers' Center for Re-usable Art Parts)"
@@ -99,6 +107,7 @@
   timeframe: "Ongoing"
   link: "https://www.scrap-sf.org/"
   link_text: "Visit SCRAP"
+  last_verified: "2025-12-16"
 
 - id: "smc-surplus-property"
   name: "San Mateo County Surplus Property Program"
@@ -110,3 +119,4 @@
   timeframe: "Ongoing"
   link: "https://docs.google.com/forms/d/e/1FAIpQLSfwPk-gLzC8SRHZPOj2jCHP9RxJ4ca8zAOoA5FLCl7W2ZJ0Pw/viewform"
   link_text: "Request an Invitation"
+  last_verified: "2025-12-16"
