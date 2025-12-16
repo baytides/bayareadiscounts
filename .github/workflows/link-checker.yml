@@ -7,12 +7,19 @@ on:
   # Allow manual runs from Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Prep lychee output directory
+        run: mkdir -p lychee
       
       - name: Link Checker
         id: lychee
