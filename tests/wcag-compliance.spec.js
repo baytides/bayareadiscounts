@@ -220,11 +220,13 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     await themeSelect.focus();
     await expect(themeSelect).toBeFocused();
 
-    // Translate button should be focusable
+    // Translate button is feature-flagged; only test if present
     const translateBtn = page.locator('#translate-btn');
-    await expect(translateBtn).toBeVisible();
-    await translateBtn.focus();
-    await expect(translateBtn).toBeFocused();
+    if (await translateBtn.count()) {
+      await expect(translateBtn).toBeVisible();
+      await translateBtn.focus();
+      await expect(translateBtn).toBeFocused();
+    }
   });
 
   test('reduced motion preference is respected', async ({ page }) => {
