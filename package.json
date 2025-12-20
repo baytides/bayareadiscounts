@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "playwright": "^1.57.0"
+  },
+  "name": "bayareadiscounts",
+  "version": "1.0.0",
+  "description": "**[BayAreaDiscounts.com](https://bayareadiscounts.com)** — A searchable directory of free and low-cost programs across the San Francisco Bay Area.",
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  },
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve --host 127.0.0.1 --port 4000",
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baytides/bayareadiscounts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/baytides/bayareadiscounts/issues"
+  },
+  "homepage": "https://github.com/baytides/bayareadiscounts#readme"
+}

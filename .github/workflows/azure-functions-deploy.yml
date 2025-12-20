@@ -1,0 +1,50 @@
+name: Deploy Azure Functions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'azure-functions/**'
+      - '.github/workflows/azure-functions-deploy.yml'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Azure Functions
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: azure-functions/package-lock.json
+
+      - name: Install dependencies
+        working-directory: azure-functions
+        run: npm ci --production
+
+      - name: Create deployment zip (pre-built)
+        run: |
+          cd azure-functions
+          # Include node_modules - faster than remote build
+          zip -r /tmp/functions.zip . \
+            -x ".git/*" "README.md" ".gitignore" "*.log" "local.settings.json" \
+               "test-results/*" ".vscode/*"
+
+      - name: Deploy via publish profile (run-from-package)
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ secrets.AZURE_FUNCTION_APP_NAME }}
+          publish-profile: ${{ secrets.AZURE_FUNCTION_APP_PUBLISH_PROFILE }}
+          package: /tmp/functions.zip
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Azure Functions deployment completed!"
+          echo "📍 Function App: ${{ secrets.AZURE_FUNCTION_APP_NAME }}"

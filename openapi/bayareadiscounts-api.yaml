@@ -1,0 +1,270 @@
+openapi: 3.0.3
+info:
+  title: Bay Area Discounts API
+  version: 1.0.0
+  description: REST API for programs, categories, areas, stats, and translation proxy.
+servers:
+  - url: https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api
+paths:
+  /programs:
+    get:
+      summary: List programs
+      description: Returns programs with optional filters.
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+        - in: query
+          name: area
+          schema:
+            type: string
+        - in: query
+          name: eligibility
+          schema:
+            type: string
+        - in: query
+          name: search
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProgramsResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /programs/{id}:
+    get:
+      summary: Get program by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Program'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /categories:
+    get:
+      summary: List categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /areas:
+    get:
+      summary: List areas
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AreasResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /stats:
+    get:
+      summary: Get statistics
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatsResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /translate:
+    post:
+      summary: Translate text batch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranslateRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslateResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  schemas:
+    Program:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        area:
+          type: string
+        eligibility:
+          type: array
+          items:
+            type: string
+        benefit:
+          type: string
+        timeframe:
+          type: string
+        link:
+          type: string
+          format: uri
+        link_text:
+          type: string
+        verified_date:
+          type: string
+          format: date
+    ProgramsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        programs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Program'
+    CategoriesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              category:
+                type: string
+              count:
+                type: integer
+    AreasResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        areas:
+          type: array
+          items:
+            type: object
+            properties:
+              area:
+                type: string
+              count:
+                type: integer
+    StatsResponse:
+      type: object
+      properties:
+        totalPrograms:
+          type: integer
+        categories:
+          type: object
+          properties:
+            count:
+              type: integer
+            breakdown:
+              type: array
+              items:
+                type: object
+                properties:
+                  category:
+                    type: string
+                  count:
+                    type: integer
+        areas:
+          type: object
+          properties:
+            total:
+              type: integer
+            top10:
+              type: array
+              items:
+                type: object
+                properties:
+                  area:
+                    type: string
+                  count:
+                    type: integer
+        eligibility:
+          type: object
+          properties:
+            types:
+              type: integer
+            breakdown:
+              type: array
+              items:
+                type: object
+                properties:
+                  eligibility:
+                    type: string
+                  count:
+                    type: integer
+    TranslateRequest:
+      type: object
+      required: [texts, targetLang]
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+        targetLang:
+          type: string
+        sourceLang:
+          type: string
+    TranslateResponse:
+      type: object
+      properties:
+        translations:
+          type: array
+          items:
+            type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        id:
+          type: string
+  responses:
+    ServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

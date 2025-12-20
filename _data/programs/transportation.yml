@@ -1,0 +1,312 @@
+- id: ac-transit-stpp
+  name: AC Transit
+  category: Public Transit
+  area: Alameda County
+  eligibility:
+  - youth
+  - 🏫
+  benefit: 'Student Transit Pass Program: free unlimited rides for eligible middle
+    and high school students'
+  how_to_use: Apply through eligible schools
+  timeframe: Ongoing
+  link: https://www.alamedactc.org/programs-projects/studentpass
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: bart-discount
+  name: BART
+  category: Public Transit
+  area: Bay Area-wide
+  eligibility:
+  - everyone
+  benefit: 'High-Value Discount: ~6.25% off when using Autoload'
+  how_to_use: Set Autoload in Clipper
+  timeframe: Ongoing
+  link: https://www.bart.gov/tickets/discounts
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: bart-muni-a-pass
+  name: BART + Muni
+  category: Public Transit
+  area: San Francisco
+  eligibility:
+  - everyone
+  benefit: '"A" Fast Pass: Unlimited Muni + BART rides within SF'
+  how_to_use: Buy discounted pass from Clipper
+  timeframe: Monthly
+  link: https://www.bart.gov/tickets/discounts
+  link_text: Buy Pass
+  verified_date: '2025-12-16'
+
+- id: bike-share-for-all
+  name: Bike Share for All (Bay Wheels)
+  category: Transportation
+  area: Bay Area-wide
+  eligibility:
+  - low-income
+  benefit: Discounted bike share membership for income-eligible riders
+  how_to_use: Apply through provider; show proof of eligibility
+  timeframe: Ongoing
+  link: https://www.lyft.com/bikes/bay-wheels/bike-share-for-all
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: caltrain-youth-fares
+  name: Caltrain Dollar Fares for Youth
+  category: Public Transit
+  area: Bay Area-wide
+  eligibility:
+  - youth
+  benefit: $1 One-Way, $2 Day Pass for youth 18 and under
+  how_to_use: Show valid ID or Clipper Youth card
+  timeframe: Ongoing
+  link: https://www.caltrain.com/dollarfares
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: city-coach-solano
+  name: City Coach
+  category: Public Transit
+  area: Solano County
+  eligibility:
+  - college-students
+  benefit: Free rides for Solano College students (within Solano Co.)
+  how_to_use: Show student ID
+  timeframe: Ongoing
+  link: https://citycoach.com/fares/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: clipper-baypass
+  name: Clipper BayPass
+  category: Transportation
+  area: Bay Area-wide
+  eligibility:
+  - college-students
+  benefit: Unlimited rides on all 24 Bay Area transit agencies
+  how_to_use: Register for program
+  timeframe: Ongoing
+  link: https://maps.santarosa.edu/clipper-baypass-faq
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: clipper-start
+  name: Clipper START
+  category: Public Transit
+  area: Bay Area-wide
+  eligibility:
+  - low-income
+  benefit: Reduced transit fares
+  how_to_use: Apply online
+  timeframe: Ongoing
+  link: https://www.clipperstartcard.com
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: dmv-reduced-fee-id
+  name: DMV Reduced-Fee ID Card
+  category: Transportation
+  area: Statewide
+  eligibility:
+  - low-income
+  benefit: Reduced-fee state ID for eligible residents using form DL 937
+  how_to_use: Request DL 937 from your county's Public Assistance Agency; submit to
+    DMV
+  timeframe: Ongoing
+  link: https://sa.dmv.ca.gov/DMV/ukp.aspx?pid=1&ruleid=240
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: emergency-ride-home-marin
+  name: Emergency Ride Home
+  category: Transportation
+  area: Marin County
+  eligibility:
+  - college-students
+  benefit: Reimbursement for eligible emergency rides home (up to $125/ride, capped
+    at $500/year)
+  how_to_use: Apply for reimbursement online
+  timeframe: Ongoing
+  link: https://marincommutes.org/erh/
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: emery-go-round
+  name: Emery Go-Round
+  category: Public Transit
+  area: Alameda County
+  eligibility:
+  - everyone
+  benefit: Free shuttle service throughout Emeryville
+  how_to_use: Just board at any stop
+  timeframe: Ongoing
+  link: https://emerygoround.com
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: 511-emergency-rides-contra-costa
+  name: 511 Emergency Rides
+  category: Transportation
+  area: Contra Costa County
+  eligibility:
+  - college-students
+  benefit: 6 free emergency Lyft/Uber rides annually
+  how_to_use: Register through 511 Contra Costa
+  timeframe: Academic year
+  link: https://511contracosta.org/guaranteed-ride-home/
+  link_text: Register
+  verified_date: '2025-12-16'
+
+- id: 511-transit-incentives-contra-costa
+  name: 511 Transit Incentives
+  category: Transportation
+  area: Contra Costa County
+  eligibility:
+  - college-students
+  benefit: Free $25 Clipper card for taking transit pledge
+  how_to_use: Complete transit pledge online
+  timeframe: Academic year
+  link: https://511contracosta.org/transit/transit-offer/
+  link_text: Claim offer
+  verified_date: '2025-12-16'
+
+- id: lime-access
+  name: Lime Access
+  category: Transportation
+  area: Bay Area-wide
+  eligibility:
+  - low-income
+  benefit: Discounted or free Lime scooter rides (up to a set time per ride) for eligible
+    riders
+  how_to_use: Apply for Lime Access; link account
+  timeframe: Ongoing
+  link: https://www.li.me/why/community/lime-access
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: low-cost-auto-insurance
+  name: Low Cost Auto Insurance
+  category: Transportation
+  area: Statewide
+  eligibility:
+  - low-income
+  benefit: State-sponsored low-cost liability insurance for income-eligible drivers
+  how_to_use: Check eligibility and enroll online or by phone
+  timeframe: Ongoing
+  link: https://www.mylowcostauto.com
+  link_text: Enroll
+  verified_date: '2025-12-16'
+
+- id: marin-transit-students
+  name: Marin Transit
+  category: Public Transit
+  area: Marin County
+  eligibility:
+  - college-students
+  benefit: Free rides for College of Marin students
+  how_to_use: Show student ID
+  timeframe: School-year durations apply
+  link: https://marintransit.org/COM
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: muni-free
+  name: Muni
+  category: Public Transit
+  area: San Francisco
+  eligibility:
+  - youth
+  - veterans
+  - disability
+  - low-income
+  - ⚽
+  benefit: Free Muni for youth (excludes cable cars), income-eligible seniors/people
+    with disabilities, Access Pass, Lifeline Pass, free with Chase Center event ticket
+  how_to_use: Online enrollment or show ticket/ID
+  timeframe: Ongoing; some seasonal
+  link: https://www.sfmta.com/fares
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: petaluma-transit-free
+  name: Petaluma Transit
+  category: Public Transit
+  area: Sonoma County
+  eligibility:
+  - everyone
+  benefit: All local buses free to ride
+  how_to_use: Just board
+  timeframe: Ongoing
+  link: https://transit.cityofpetaluma.net/fares/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: rtc-clipper-card
+  name: RTC Clipper Card
+  category: Public Transit
+  area: Bay Area-wide
+  eligibility:
+  - disability
+  benefit: Reduced fares for riders with disabilities
+  how_to_use: Apply with proof of disability
+  timeframe: Ongoing
+  link: https://511.org/transit/rtc-card/eligibility
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: samtrans
+  name: SamTrans Way2Go Pass
+  category: Transportation
+  area: San Mateo County
+  eligibility:
+  - college-students
+  benefit: FREE unlimited bus pass; transit support for eligible students
+  how_to_use: Apply for pass
+  timeframe: Academic year
+  link: https://skylinecollege.edu/sparkpoint/services/transportation.php
+  link_text: Apply
+  verified_date: '2025-12-16'
+
+- id: samtrans-youth
+  name: SamTrans
+  category: Public Transit
+  area: San Mateo County
+  eligibility:
+  - youth
+  benefit: 'Summer Youth Pass: unlimited local bus rides June–August'
+  how_to_use: Buy pass before summer
+  timeframe: Seasonal
+  link: https://www.samtrans.com/fares/fare-types
+  link_text: Buy Pass
+  verified_date: '2025-12-16'
+
+- id: santa-rosa-citybus
+  name: Santa Rosa CityBus
+  category: Public Transit
+  area: Sonoma County
+  eligibility:
+  - youth
+  - college-students
+  - veterans
+  - everyone
+  benefit: Free rides for youth, children, veterans, SRJC students, some city/county
+    workers
+  how_to_use: Show valid qualifying ID
+  timeframe: Ongoing
+  link: https://srcitybus.org/fares-and-passes/discount-programs/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+
+- id: senior-clipper-card
+  name: Senior Clipper Card
+  category: Public Transit
+  area: Bay Area-wide
+  eligibility:
+  - seniors
+  benefit: Discounted fares for 65+
+  how_to_use: Apply with proof of age
+  timeframe: Ongoing
+  link: https://www.clippercard.com/ClipperWeb/discounts.html
+  link_text: null
+  verified_date: '2025-12-16'

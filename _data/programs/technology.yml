@@ -1,0 +1,168 @@
+- id: 7-eleven-gold-pass
+  name: 7-Eleven Gold Pass
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  - college-students
+  - veterans
+  benefit: 40% off ($5.99/month) Gold Pass membership for EBT/SNAP recipients, military/veterans,
+    and college students (verify eligibility via mobile app under 'Community Discounts');
+    30-day free trial for new customers
+  timeframe: Ongoing
+  link: https://www.7-eleven.com/lp/goldpass
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: amazon-prime-access
+  name: Amazon Prime Access
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: Prime membership for $6.99/month for eligible government assistance recipients
+    or income verified customers; new customers start with a free 30-day trial
+  timeframe: Ongoing
+  link: https://www.amazon.com/primeaccess
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: att-access
+  name: AT&T Access
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: Affordable internet with free installation
+  timeframe: Ongoing
+  link: https://www.att.com/internet/access/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: california-lifeline
+  name: California LifeLine Program
+  category: Technology
+  area: Statewide
+  eligibility:
+  - low-income
+  benefit: Discounted or free phone and wireless service
+  timeframe: Ongoing
+  link: https://www.californialifeline.com
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: good360
+  name: Good360
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - nonprofits
+  benefit: Donated technology and goods including laptops, monitors, tablets, and
+    office supplies; availability varies by donor shipments
+  timeframe: Ongoing
+  link: https://good360.org/
+  link_text: Become a Member
+  verified_date: '2025-12-16'
+- id: goodstack-nonprofit-discounts
+  name: Goodstack Nonprofit Discounts
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - nonprofits
+  benefit: Offers discounted access to essential software and tech tools like Zoom,
+    Adobe Acrobat, Asana, and OpenAI plans for eligible nonprofit organizations
+  timeframe: Ongoing
+  link: https://causes.goodstack.io/
+  link_text: Enroll
+  verified_date: '2025-12-16'
+- id: instacart-ebt
+  name: Instacart for EBT/SNAP
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: 50% off Instacart+ membership for one year; skip delivery/pickup fees with
+    participating stores; new customers get $0 delivery on first 3 orders
+  timeframe: Ongoing
+  link: https://www.instacart.com/ebt-snap
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: internet-essentials
+  name: Internet Essentials by Xfinity
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: Affordable home internet + Wi-Fi modem
+  timeframe: Ongoing
+  link: https://www.xfinity.com/learn/internet-service/internet-essentials
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: kanopy-students
+  name: Kanopy for Students
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - college-students
+  benefit: Free streaming for college students through participating campus libraries
+  timeframe: Ongoing
+  link: https://www.kanopy.com/signup/find/university
+  link_text: Find Your School
+  verified_date: '2025-12-16'
+- id: tech-exchange
+  name: Tech Exchange
+  category: Technology
+  area: Bay Area-wide
+  eligibility:
+  - nonprofits
+  benefit: Refurbished computers and technology equipment for nonprofits and community
+    organizations; also offers digital training and tech support
+  timeframe: Ongoing
+  link: https://www.techexchange.org/lowcostcomputers
+  link_text: Request Equipment
+  verified_date: '2025-12-16'
+- id: techsoup-discount-marketplace
+  name: TechSoup Discount Marketplace
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - nonprofits
+  benefit: Provides access to donated and deeply discounted software, hardware, cloud
+    services, and training for nonprofits by verifying nonprofit status
+  timeframe: Ongoing
+  link: https://www.techsoup.org/
+  link_text: Explore Discounts
+  verified_date: '2025-12-16'
+- id: t-mobile-project-10million
+  name: T-Mobile Project 10Million
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - youth
+  benefit: Free mobile hotspot device for income-eligible households with K-12 students
+    with 200GB high-speed data per year for 5 years; optional $10/10GB data pass available
+    when data limit is reached; free Web Guard content filtering
+  timeframe: Ongoing
+  link: https://www.t-mobile.com/brand/project-10-million
+  link_text: Check Eligibility
+  verified_date: '2025-12-16'
+- id: walmart-plus-assist
+  name: Walmart+ Assist
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: Eligible government assistance recipients receive Walmart+ at 50% off ($6.47/mo.
+    or $49/yr.); new customers start with a free 30-day trial
+  timeframe: Ongoing
+  link: https://www.walmart.com/plus/assist
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: world-computer-exchange
+  name: World Computer Exchange
+  category: Technology
+  area: Nationwide
+  eligibility:
+  - nonprofits
+  benefit: Donated computers and technology equipment for educational and nonprofit
+    use; includes multiple Bay Area drop-off locations
+  timeframe: Ongoing
+  link: https://worldcomputerexchange.org/get-computers/
+  link_text: Get Computers
+  verified_date: '2025-12-16'

@@ -1,0 +1,83 @@
+- id: lib-001
+  name: Berkeley Tool Lending Library
+  category: Library Resources
+  area: Berkeley
+  eligibility:
+  - everyone
+  benefit: Borrow tools (power tools, lawn care equipment, etc.) free with library
+    card
+  timeframe: Ongoing
+  link: https://www.berkeleypubliclibrary.org/locations/tool-lending-library
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-002
+  name: California State Parks Library Pass
+  category: Library Resources
+  area: California
+  eligibility:
+  - everyone
+  benefit: Free vehicle day-use entry to 200+ participating state parks (1 vehicle
+    up to 9 people or 1 motorcycle). Not valid for camping, museums within parks,
+    or special events.
+  timeframe: Ongoing (funded through 2026)
+  link: https://www.library.ca.gov/services/to-libraries/parks-pass/
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-003
+  name: Calm Meditation App
+  category: Library Resources
+  area: San Mateo County
+  eligibility:
+  - everyone
+  benefit: Free Calm access for qualifying library patrons with guided meditations,
+    courses, stories, music, and stress management tools via web and mobile app
+  timeframe: Ongoing
+  link: https://smcl.org/get-calm
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-004
+  name: Discover & Go Museum Passes
+  category: Library Resources
+  area: California
+  eligibility:
+  - everyone
+  benefit: Free/discounted museum tickets and passes via library-partner access
+  timeframe: Pass release cycles vary
+  link: https://discoverandgo.org
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-005
+  name: Hoopla Digital
+  category: Library Resources
+  area: Bay Area
+  eligibility:
+  - everyone
+  benefit: Free ebooks, audiobooks, music, movies, and TV shows
+  timeframe: Ongoing
+  link: https://www.hoopladigital.com
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-006
+  name: Kanopy
+  category: Library Resources
+  area: Bay Area
+  eligibility:
+  - everyone
+  benefit: Free streaming of films and documentaries for library cardholders
+  timeframe: Ongoing
+  link: https://www.kanopy.com/signup/find/publiclibrary
+  link_text: Visit Program
+  verified_date: '2025-12-16'
+- id: lib-007
+  name: New York Times Digital Access
+  category: Library Resources
+  area: Statewide
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Complimentary 72-hour digital access to The New York Times online (articles,
+    cooking, games, archives)
+  timeframe: 72-hour passes, renewable
+  link: https://www.library.ca.gov/services/to-libraries/nyt/
+  link_text: Visit Program
+  verified_date: '2025-12-16'

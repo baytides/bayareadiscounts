@@ -1,0 +1,290 @@
+- id: alameda-food-bank
+  name: Alameda County Community Food Bank
+  category: Food
+  area: Alameda County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free food pantries and distributions throughout county
+  timeframe: Ongoing
+  link: https://www.accfb.org/
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: alameda-meals-on-wheels
+  name: Alameda Meals on Wheels
+  category: Food
+  area: Alameda County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for homebound adults
+  timeframe: Ongoing
+  link: https://alamedamealsonwheels.org/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: bernal-heights-brown-bag
+  name: Bernal Heights Neighborhood Center - Brown Bag Program
+  category: Food
+  area: San Francisco
+  eligibility:
+  - seniors
+  - low-income
+  - everyone
+  benefit: Free supplemental groceries for SF residents 60+ (Thursday) and weekly
+    food pantry for all residents
+  timeframe: Ongoing
+  link: https://bhnc.org/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: calfresh-online
+  name: CalFresh Online
+  category: Food
+  area: California
+  eligibility:
+  - low-income
+  benefit: Use EBT online at select stores
+  timeframe: Ongoing
+  link: https://www.cdss.ca.gov/ebt-online
+  link_text: Get Started
+  verified_date: '2025-12-16'
+- id: calfresh-rmp
+  name: CalFresh Restaurant Meals Program (RMP)
+  category: Food
+  area: Bay Area
+  eligibility:
+  - low-income
+  - seniors
+  - disability
+  - everyone
+  benefit: Use CalFresh EBT to buy prepared meals at participating restaurants (must
+    be 60+, disabled, or homeless)
+  timeframe: Ongoing
+  link: https://www.cdss.ca.gov/rmp
+  link_text: Find Restaurants
+  verified_date: '2025-12-16'
+- id: food-bank-contra-costa-solano
+  name: Food Bank of Contra Costa & Solano
+  category: Food
+  area: Contra Costa County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free groceries at mobile pantries and distribution sites
+  timeframe: Ongoing
+  link: https://www.foodbankccs.org/
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: j-sei-meals-on-wheels
+  name: J-Sei Meals on Wheels
+  category: Food
+  area: Alameda County
+  eligibility:
+  - seniors
+  benefit: Japanese-style meals for seniors 60+ who have difficulty leaving home
+  timeframe: Ongoing
+  link: https://www.j-sei.org
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: market-match
+  name: Market Match
+  category: Food
+  area: Bay Area
+  eligibility:
+  - low-income
+  benefit: Extra dollars for fruits & veggies at farmers markets
+  timeframe: Ongoing
+  link: https://www.marketmatch.org
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: mow-contra-costa
+  name: Meals on Wheels Contra Costa
+  category: Food
+  area: Contra Costa County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for homebound seniors
+  timeframe: Ongoing
+  link: https://mowcontracosta.org/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: mow-diablo-region
+  name: Meals on Wheels Diablo Region
+  category: Food
+  area: Contra Costa County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for vulnerable seniors
+  timeframe: Ongoing
+  link: https://www.mowdiabloregion.org/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: mow-san-francisco
+  name: Meals on Wheels San Francisco
+  category: Food
+  area: San Francisco
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for homebound seniors 60+ and adults with disabilities
+  timeframe: Ongoing
+  link: https://www.mowsf.org/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: mow-san-mateo
+  name: Meals on Wheels San Mateo County (Peninsula Volunteers)
+  category: Food
+  area: San Mateo County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for adults 60+ who are primarily homebound; suggested
+    donation $5.25/meal but never denied
+  timeframe: Ongoing
+  link: https://1pvi.org/mealsonwheels/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: project-open-hand
+  name: Project Open Hand
+  category: Food
+  area: Bay Area
+  eligibility:
+  - low-income
+  - seniors
+  - disability
+  - everyone
+  benefit: Medically-tailored meals and groceries for people with critical illnesses;
+    congregate meals for seniors; home delivery available
+  timeframe: Ongoing
+  link: https://www.openhand.org/
+  link_text: Contact
+  verified_date: '2025-12-16'
+- id: rainbow-grocery
+  name: Rainbow Grocery
+  category: Food
+  area: San Francisco
+  eligibility:
+  - low-income
+  - seniors
+  benefit: 10% discount for shoppers 60+ and EBT card holders
+  timeframe: Ongoing
+  link: https://www.rainbow.coop
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: second-harvest-silicon-valley
+  name: Second Harvest of Silicon Valley
+  category: Food
+  area:
+  - Santa Clara County
+  - San Mateo County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free food resources, groceries, and fresh produce
+  timeframe: Ongoing
+  link: https://www.shfb.org/get-food/#tool
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: sf-marin-food-bank
+  name: SF-Marin Food Bank
+  category: Food
+  area: San Francisco
+  eligibility:
+  - low-income
+  - seniors
+  - everyone
+  benefit: Free food pantries, home delivery for seniors/disabled, supplemental food
+    program for seniors 60+
+  timeframe: Ongoing
+  link: https://www.sfmfoodbank.org/
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: sos-meals-on-wheels
+  name: SOS Meals on Wheels
+  category: Food
+  area: Alameda County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Daily home-delivered meals for homebound seniors 60+
+  timeframe: Ongoing
+  link: https://www.sosmow.org/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: sourcewise-meals-on-wheels
+  name: Sourcewise Meals on Wheels
+  category: Food
+  area: Santa Clara County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Two daily meals meeting 2/3 of nutritional requirements; suggested contribution
+    $3/day but never denied
+  timeframe: Ongoing
+  link: https://mysourcewise.com/programs-services/meals/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: spectrum-mow
+  name: Spectrum Community Services Meals on Wheels
+  category: Food
+  area: Contra Costa County
+  eligibility:
+  - seniors
+  - disability
+  benefit: Home-delivered meals for seniors 60+ unable to prepare food
+  timeframe: Ongoing
+  link: https://www.spectrumcs.org/senior-services/meals-on-wheels
+  link_text: Contact
+  verified_date: '2025-12-16'
+- id: st-anthonys-dining
+  name: St. Anthony's Dining Room
+  category: Food
+  area: San Francisco
+  eligibility:
+  - everyone
+  benefit: Free dine-in or to-go meals daily
+  timeframe: Ongoing
+  link: https://www.stanthonysf.org/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: universal-school-meals
+  name: Universal School Meals
+  category: Food
+  area: Statewide
+  eligibility:
+  - youth
+  - everyone
+  benefit: Free breakfast and lunch daily at all public schools (TK-12), regardless
+    of income
+  timeframe: Ongoing (school year)
+  link: https://www.cde.ca.gov/ls/nu/sn/cauniversalmeals.asp
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: wic-program
+  name: WIC – Women, Infants & Children
+  category: Food
+  area: California
+  eligibility:
+  - low-income
+  - families
+  - youth
+  benefit: Free healthy foods, nutrition education, breastfeeding support for income
+    eligible pregnant/postpartum women, infants, and children under 5
+  timeframe: Ongoing
+  link: https://myfamily.wic.ca.gov/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: ymca-food-pantries
+  name: YMCA Food Pantries
+  category: Food
+  area: Bay Area
+  eligibility:
+  - low-income
+  - families
+  - everyone
+  benefit: Free groceries and essentials at 17 locations serving 6,900+ people weekly
+  timeframe: Ongoing
+  link: https://www.ymcasf.org/program/food-assistance/
+  link_text: Find Location
+  verified_date: '2025-12-16'

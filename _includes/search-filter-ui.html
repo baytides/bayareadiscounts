@@ -1,0 +1,186 @@
+<section class="search-panel active" aria-label="Search and filter programs">
+  <div class="search-container">
+    
+    <!-- Sort Dropdown (Moved to top) -->
+    <div class="sort-field">
+      <label for="sort-select" class="sort-label" id="sort-select-label">Sort by:</label>
+      <select id="sort-select" class="sort-select" aria-labelledby="sort-select-label" aria-describedby="sort-help">
+        <span id="sort-help" class="sr-only">Choose how to order the program list</span>
+        <option value="name-asc">Name (A-Z)</option>
+        <option value="name-desc">Name (Z-A)</option>
+        <option value="category-asc">Category (A-Z)</option>
+        <option value="area-asc">Area (A-Z)</option>
+        <option value="newest">Newest First</option>
+      </select>
+    </div>
+    
+    <!-- Search Input -->
+    <div class="search-field">
+      <label for="search-input" class="sr-only">Search programs</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search (food, museums, transit, seniors...)"
+        aria-label="Search programs"
+        autocomplete="off"
+      >
+      <span class="results-count" aria-live="polite" aria-atomic="true"></span>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filters-section">
+      
+      <!-- Eligibility Filters -->
+      <div class="filter-group">
+        <h3 class="filter-group-label">Eligibility</h3>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn active" data-filter-type="eligibility" data-filter-value="" data-all="true" aria-label="Show all eligibility types">
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="low-income" aria-label="Filter for SNAP, EBT, or Medi-Cal eligible programs">
+            💳 SNAP/EBT/Medi-Cal
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="seniors" aria-label="Filter for seniors programs">
+            👵 Seniors
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="youth" aria-label="Filter for youth programs">
+            🧒 Youth
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="college-students" aria-label="Filter for college students programs">
+            🎓 College Students
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="veterans" aria-label="Filter for active duty military and veterans programs">
+            🎖️ Active Duty / Veterans
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="families" aria-label="Filter for families programs">
+            👨‍👩‍👧 Families
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="disability" aria-label="Filter for disability programs">
+            🧑‍🦽 Disability
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="nonprofits" aria-label="Filter for nonprofits programs">
+            🤝 Nonprofits
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="everyone" aria-label="Filter for programs available to everyone">
+            🌎 Everyone
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="filter-group">
+        <h3 class="filter-group-label">Category</h3>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn active" data-filter-type="category" data-filter-value="" data-all="true" aria-label="Show all categories">
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Childcare Assistance">
+            Childcare Assistance
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Clothing Assistance">
+            Clothing Assistance
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Community Services">
+            Community Services
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Education">
+            Education
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Equipment">
+            Equipment
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Finance">
+            Finance
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Food">
+            Food
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Health">
+            Health
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Legal Services">
+            Legal Services
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Library Resources">
+            Library Resources
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Museums">
+            Museums
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Pet Resources">
+            Pet Resources
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Public Transit">
+            Public Transit
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Recreation">
+            Recreation
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Tax Preparation">
+            Tax Preparation
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Technology">
+            Technology
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Transportation">
+            Transportation
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-value="Utilities">
+            Utilities
+          </button>
+        </div>
+      </div>
+
+      <!-- Area/County Filters -->
+      <div class="filter-group">
+        <h3 class="filter-group-label">Area / County</h3>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn active" data-filter-type="area" data-filter-value="" data-all="true" aria-label="Show all areas">
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="San Francisco">
+            San Francisco
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Alameda County">
+            Alameda County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Contra Costa County">
+            Contra Costa County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="San Mateo County">
+            San Mateo County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Santa Clara County">
+            Santa Clara County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Marin County">
+            Marin County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Napa County">
+            Napa County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Solano County">
+            Solano County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Sonoma County">
+            Sonoma County
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Bay Area">
+            Bay Area-wide
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Statewide">
+            Statewide
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="area" data-filter-value="Nationwide">
+            Nationwide
+          </button>
+        </div>
+      </div>
+
+      <!-- Reset button -->
+      <button type="button" class="reset-btn" onclick="searchFilter.resetFilters()">
+        Clear All Filters
+      </button>
+    </div>
+  </div>
+</section>

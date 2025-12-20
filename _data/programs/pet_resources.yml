@@ -1,0 +1,287 @@
+- id: banfield-foundation
+  name: Banfield Foundation - Pet Owner Resources
+  category: Pet Resources
+  area: Nationwide
+  eligibility:
+  - everyone
+  benefit: Comprehensive directory of financial assistance programs, pet food banks,
+    low-cost vet services, and emergency resources
+  timeframe: Ongoing
+  link: https://www.banfieldfoundation.org/Banfield-Foundation-Resources-for-pet-owners
+  link_text: Browse Resources
+  verified_date: '2025-12-16'
+- id: bebhs-spay-bay
+  name: Berkeley-East Bay Humane Society - Spay the Bay
+  category: Pet Resources
+  area: Alameda County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Low-cost spay/neuter and vaccinations
+  timeframe: Ongoing
+  link: https://berkeleyhumane.org/spay-the-bay/
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: hssv-pet-pantry
+  name: HSSV Pet Pantry
+  category: Pet Resources
+  area: Santa Clara County
+  eligibility:
+  - 📍
+  - low-income
+  benefit: Free pet food for Santa Clara County residents experiencing financial hardship;
+    pick up every 30 days
+  timeframe: Every 30 days
+  link: https://www.hssv.org/pet-pantry/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: humane-world
+  name: Humane World
+  category: Pet Resources
+  area: Nationwide
+  eligibility:
+  - everyone
+  benefit: Comprehensive directory of pet financial assistance programs and payment
+    plans
+  timeframe: Ongoing
+  link: https://www.humaneworld.org/en/resources/having-trouble-affording-your-pet#finance
+  link_text: Browse Resources
+  verified_date: '2025-12-16'
+- id: joybound-vet-care
+  name: Joybound People & Pets - Community Veterinary Care
+  category: Pet Resources
+  area: Contra Costa County
+  eligibility:
+  - 📍
+  - low-income
+  benefit: Low-cost medical care for dogs and cats for eligible residents
+  timeframe: Ongoing
+  link: https://joybound.org/services/get-help/
+  link_text: Contact
+  verified_date: '2025-12-16'
+- id: joybound-pet-food
+  name: Joybound People & Pets - Free Pet Food
+  category: Pet Resources
+  area: Contra Costa County
+  eligibility:
+  - 📍
+  - low-income
+  benefit: Free pet food for residents who need assistance
+  timeframe: Ongoing
+  link: https://joybound.org/services/get-help/
+  link_text: Contact
+  verified_date: '2025-12-16'
+- id: joybound-vaccinations
+  name: Joybound People & Pets - Free Vaccination Clinics
+  category: Pet Resources
+  area: Contra Costa County
+  eligibility:
+  - 📍
+  - everyone
+  benefit: Free pet vaccination clinics at locations across Contra Costa County
+  timeframe: Monthly
+  link: https://joybound.org/services/get-help/
+  link_text: Find Clinic
+  verified_date: '2025-12-16'
+- id: joybound-pet-safety-net
+  name: Joybound People & Pets - Pet Safety Net
+  category: Pet Resources
+  area: Contra Costa County
+  eligibility:
+  - 📍
+  - low-income
+  benefit: Emergency resources to prevent pet surrender including food, vet care assistance,
+    and supplies
+  timeframe: As needed
+  link: https://joybound.org/services/get-help/
+  link_text: Get Help
+  verified_date: '2025-12-16'
+- id: joybound-spay-neuter
+  name: Joybound People & Pets - Spay/Neuter Clinic
+  category: Pet Resources
+  area: Contra Costa County
+  eligibility:
+  - 📍
+  - low-income
+  - everyone
+  benefit: Low-cost spay/neuter services
+  timeframe: Ongoing
+  link: https://joybound.org/services/get-help/
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: marin-humane-pet-care
+  name: Marin Humane Society - Pet Care Assistance
+  category: Pet Resources
+  area: Marin County
+  eligibility:
+  - low-income
+  - seniors
+  benefit: Pet care assistance for low-income seniors, people living with HIV/AIDS,
+    and hospice recipients; Pet Meals on Wheels
+  timeframe: Ongoing
+  link: https://www.marinhumanesociety.org
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: muttville-cuddle-club
+  name: Muttville Senior Dog Rescue - Cuddle Club
+  category: Pet Resources
+  area: San Francisco
+  eligibility:
+  - seniors
+  benefit: Free cuddle time events with senior dogs for adults 62+ (no adoption required)
+  timeframe: Ongoing
+  link: https://muttville.org/seniors_for_seniors#cuddle
+  link_text: Find Event
+  verified_date: '2025-12-16'
+- id: muttville-seniors-for-seniors
+  name: Muttville Senior Dog Rescue - Seniors for Seniors
+  category: Pet Resources
+  area: San Francisco
+  eligibility:
+  - seniors
+  benefit: Free adoption of senior dogs (7+ years) for seniors 62+
+  timeframe: Ongoing
+  link: https://muttville.org/seniors_for_seniors
+  link_text: Adopt
+  verified_date: '2025-12-16'
+- id: phs-mobile-spay-neuter
+  name: Peninsula Humane Society - Mobile Spay/Neuter Van
+  category: Pet Resources
+  area: San Mateo County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free spay/neuter
+  timeframe: By appointment
+  link: https://phs-spca.org/spayneuter/mobile/
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: phs-vaccine-clinics
+  name: Peninsula Humane Society SPCA Low-Cost Vaccine Clinics
+  category: Pet Resources
+  area: San Mateo County
+  eligibility:
+  - everyone
+  benefit: Low-cost vaccinations, microchipping, nail trims
+  timeframe: Monthly
+  link: https://phs-spca.org/spayneuter/
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: pet-help-finder
+  name: Pet Help Finder
+  category: Pet Resources
+  area: Nationwide
+  eligibility:
+  - everyone
+  benefit: Database of low-cost vet services, financial assistance, and pet resources
+    by location
+  timeframe: Ongoing
+  link: https://www.pethelpfinder.org/
+  link_text: Search
+  verified_date: '2025-12-16'
+- id: pets-in-need
+  name: Pets in Need - Low-Cost Vet Services
+  category: Pet Resources
+  area: San Mateo County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Low-cost vet care, spay/neuter, vaccinations, microchipping, and more
+  timeframe: Ongoing
+  link: https://www.petsinneed.org/communityclinic
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: pets-of-homeless
+  name: Pets of the Homeless
+  category: Pet Resources
+  area: Nationwide
+  eligibility:
+  - low-income
+  benefit: Free veterinary care and pet food assistance for people experiencing homelessness
+  timeframe: Ongoing
+  link: https://petsofthehomeless.org/get-help/find-locations/
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: sf-spca-community-clinic
+  name: San Francisco SPCA - Community Clinic
+  category: Pet Resources
+  area: San Francisco
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Affordable preventative care, including vaccines, parasite protection,
+    and treatment for minor conditions
+  timeframe: Ongoing
+  link: https://www.sfspca.org/veterinary-care/community-clinic/
+  link_text: Schedule
+  verified_date: '2025-12-16'
+- id: sf-spca-spay-neuter
+  name: San Francisco SPCA - Spay/Neuter
+  category: Pet Resources
+  area: San Francisco
+  eligibility:
+  - 📍
+  benefit: Affordable spay/neuter services with tiered fees for eligible SF residents
+  timeframe: Ongoing
+  link: https://www.sfspca.org
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: sf-aid-for-animals
+  name: SF Aid for Animals (SFAFA)
+  category: Pet Resources
+  area: Bay Area
+  eligibility:
+  - 📍
+  - low-income
+  benefit: Financial support for urgent vet services for Bay Area residents with participating
+    veterinary hospitals
+  timeframe: Ongoing
+  link: https://www.sfafa.org/gethelp
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: the-pet-fund
+  name: The Pet Fund
+  category: Pet Resources
+  area: Statewide
+  eligibility:
+  - low-income
+  benefit: Financial assistance for non-basic, non-emergency veterinary care (has
+    waitlist)
+  timeframe: Ongoing
+  link: https://www.thepetfund.com/for-pet-owners/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: vet-billing
+  name: Vet Billing - Payment Plans
+  category: Pet Resources
+  area: Nationwide
+  eligibility:
+  - everyone
+  benefit: Directory of veterinarians offering payment plans or financing options
+  timeframe: Ongoing
+  link: https://vetbilling.com/find-vet/
+  link_text: Search
+  verified_date: '2025-12-16'
+- id: vetco-clinics
+  name: VETCO Clinics
+  category: Pet Resources
+  area: Bay Area
+  eligibility:
+  - everyone
+  benefit: Affordable vaccinations and basic pet health services at various locations
+  timeframe: Weekly
+  link: https://www.vetcoclinics.com
+  link_text: Find Location
+  verified_date: '2025-12-16'
+- id: vip-petcare
+  name: VIP Petcare
+  category: Pet Resources
+  area: Northern California
+  eligibility:
+  - everyone
+  benefit: Walk-in weekend clinics offering vaccinations, microchipping, testing,
+    flea/tick control (no exam fee)
+  timeframe: Weekly
+  link: https://www.vippetcare.com
+  link_text: Find Clinic
+  verified_date: '2025-12-16'

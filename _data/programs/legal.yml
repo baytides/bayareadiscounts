@@ -1,0 +1,75 @@
+- id: court-fee-waivers
+  name: Court Fee Waivers
+  category: Legal Services
+  area: Statewide
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Filing fees waived
+  timeframe: Ongoing
+  link: https://selfhelp.courts.ca.gov/fee-waiver
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: justice-diversity-center
+  name: Justice & Diversity Center (JDC)
+  category: Legal Services
+  area: San Francisco
+  eligibility:
+  - nonprofits
+  - low-income
+  benefit: Pro bono legal services for low-income/unhoused San Francisco residents
+    and local nonprofits that serve low-income communities
+  timeframe: Ongoing
+  link: https://www.sfbar.org/jdc/jdc-legal-services-programs/
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: racial-equity-project
+  name: Racial Equity Project (REP)
+  category: Legal Services
+  area: Statewide
+  eligibility:
+  - nonprofits
+  benefit: Pro bono legal support for Black-led nonprofit organizations through partnerships
+    with community foundations
+  timeframe: Ongoing
+  link: https://www.sfbar.org/jdc/jdc-legal-services-programs/corp/rep/
+  link_text: Apply for Support
+  verified_date: '2025-12-16'
+- id: sf-financial-justice-project
+  name: SF Financial Justice Project
+  category: Legal Services
+  area: San Francisco
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Helps reduce or eliminate certain city fines and fees (parking, towing,
+    etc.) for eligible residents
+  timeframe: Ongoing
+  link: https://sfgov.org/financialjustice
+  link_text: Learn More
+  verified_date: '2025-12-16'
+- id: sf-immigrant-support
+  name: San Francisco Immigrant Support
+  category: Legal Services
+  area: San Francisco
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free or low-cost immigration legal help (citizenship, green cards, DACA,
+    etc.)
+  timeframe: Ongoing
+  link: https://immigrants.sfgov.org
+  link_text: Find Provider
+  verified_date: '2025-12-16'
+- id: uscis-i-912-fee-waiver
+  name: USCIS I-912 Fee Waiver
+  category: Legal Services
+  area: Nationwide
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Waiver of filing fees for certain immigration forms based on income/benefits
+  timeframe: Case-by-case
+  link: https://www.uscis.gov/i-912
+  link_text: Learn More
+  verified_date: '2025-12-16'

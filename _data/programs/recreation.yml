@@ -1,0 +1,429 @@
+- id: america-the-beautiful-pass
+  name: America the Beautiful — NPS Pass
+  category: Recreation
+  area: Nationwide
+  eligibility:
+  - seniors
+  - veterans
+  - disability
+  benefit: Covers entrance and day-use fees at federal recreation lands (National
+    Parks, Fish & Wildlife, Forest Service, BLM, Bureau of Reclamation, Army Corps).
+  how_to_use: Purchase online or at federal recreation sites; may cover one vehicle
+    or up to 4 people
+  timeframe: Ongoing
+  link: https://www.nps.gov/planyourvisit/passes.htm#america-the-beautiful-passes
+  link_text: Get Pass
+  verified_date: '2025-12-16'
+- id: ca-state-parks-adventure-pass
+  name: California State Parks Adventure Pass
+  category: Recreation
+  area: Statewide
+  eligibility:
+  - youth
+  benefit: Free day-use passes for fourth graders attending a public school in California
+    and their families to 54 participating state parks.
+  how_to_use: Apply online
+  timeframe: Ongoing (funded through 2026)
+  link: https://www.reservecalifornia.com/
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: ca-state-parks-disabled-discount
+  name: California State Parks Disabled Discount Pass
+  category: Recreation
+  area: Statewide
+  eligibility:
+  - disability
+  benefit: Lifetime pass for individuals with permanent disabilities; 50% discount
+    on vehicle day-use, family camping, and boat-use fees
+  how_to_use: Apply through California State Parks
+  timeframe: Lifetime
+  link: https://www.parks.ca.gov/?page_id=30959
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: ca-state-parks-distinguished-veteran
+  name: California State Parks Distinguished Veteran Pass
+  category: Recreation
+  area: Statewide
+  eligibility:
+  - veterans
+  benefit: Lifetime pass for California residents who are honorably discharged veterans
+    meeting certain requirements; free use of all basic facilities (day-use, camping,
+    and boating) in state parks
+  how_to_use: Apply through California State Parks with proof of eligibility
+  timeframe: Lifetime
+  link: https://www.parks.ca.gov/?page_id=30958
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: golden-bear-pass
+  name: Golden Bear Pass
+  category: Recreation
+  area: Statewide
+  eligibility:
+  - low-income
+  - seniors
+  benefit: Valid for calendar year; free vehicle day-use access to many parks for
+    CalWORKs recipients, SSI recipients, Tribal TANF recipients, and individuals 62+
+    whose income falls under certain threshold
+  how_to_use: Apply online
+  timeframe: Annual (calendar year)
+  link: https://www.parks.ca.gov/?page_id=30960
+  link_text: Apply
+  verified_date: '2025-12-16'
+- id: senior-golden-bear-pass
+  name: Senior Golden Bear Pass
+  category: Recreation
+  area: Statewide
+  eligibility:
+  - seniors
+  benefit: Valid for calendar year; for individuals 62+ and spouse/domestic partner;
+    free entry to many state parks during non-peak season
+  how_to_use: Purchase through California State Parks
+  timeframe: Annual (calendar year)
+  link: https://www.parks.ca.gov/?page_id=30961
+  link_text: Purchase
+  verified_date: '2025-12-16'
+- id: museums-for-all
+  name: Museums for All
+  category: Museums
+  area: Nationwide
+  eligibility:
+  - low-income
+  - families
+  benefit: Free or low-cost admission for EBT cardholders with up to 4 guests at participating
+    museums
+  how_to_use: Bring EBT or other qualifying benefits card and photo ID
+  timeframe: Ongoing
+  link: https://museums4all.org
+  link_text: Find Museum
+  verified_date: '2025-12-16'
+- id: aquarium-of-bay
+  name: Aquarium of the Bay
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - veterans
+  - families
+  - everyone
+  benefit: Locals, military, and other discounts, plus occasional benefit card offers
+  how_to_use: Bring Bay Area ID, military ID, or benefits card as listed on their
+    site
+  timeframe: Ongoing
+  link: https://www.aquariumofthebay.org
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: asian-art-museum
+  name: Asian Art Museum
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - seniors
+  - veterans
+  - families
+  - everyone
+  benefit: Free days, Museums for All admission, and discounts for students, seniors,
+    and military
+  how_to_use: Check free-day calendar and bring EBT, student, senior, or military
+    ID as applicable
+  timeframe: Ongoing
+  link: https://about.asianart.org/plan-your-visit/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: bay-area-discovery-museum
+  name: Bay Area Discovery Museum
+  category: Museums
+  area: Marin County
+  eligibility:
+  - low-income
+  - families
+  - youth
+  - everyone
+  benefit: $5 admission for EBT/WIC cardholders; pay-what-you-can days
+  how_to_use: Show EBT or WIC card at admission; check website for PWYC days
+  timeframe: Ongoing
+  link: https://bayareadiscoverymuseum.org/visit/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: cal-academy
+  name: California Academy of Sciences
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Museums for All admission ($3 per person); free neighborhood days for SF
+    residents
+  how_to_use: Bring EBT card and photo ID; check website for free neighborhood day
+    schedule
+  timeframe: Ongoing
+  link: https://www.calacademy.org/visit
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: chabot-space-center
+  name: Chabot Space & Science Center
+  category: Museums
+  area: Alameda County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: $5 admission with EBT card; free telescope viewing nights
+  how_to_use: Show EBT card at admission; check website for free telescope nights
+  timeframe: Ongoing
+  link: https://chabotspace.org/visit/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: cartoon-art-museum
+  name: Cartoon Art Museum
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - seniors
+  - veterans
+  - youth
+  - families
+  - everyone
+  benefit: Free or reduced admission for EBT/SNAP/Medi-Cal cardholders and discounted
+    tickets for students, seniors, and military
+  how_to_use: Show benefits card or valid ID; see site for pay-what-you-wish days
+  timeframe: Ongoing
+  link: https://www.cartoonart.org/visit
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: childrens-creativity-museum
+  name: Children's Creativity Museum
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - youth
+  - families
+  benefit: Museums for All admission for families plus regular paid admission
+  how_to_use: Present physical benefits card with matching photo ID; at least one
+    child in the group
+  timeframe: Ongoing
+  link: https://creativity.org/hours-admission/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: childrens-discovery-museum-sj
+  name: Children's Discovery Museum
+  category: Museums
+  area: Santa Clara County
+  eligibility:
+  - low-income
+  benefit: $5 per person for up to four people during Museum hours
+  how_to_use: Show EBT, BIC, or WIC card at admission
+  timeframe: Ongoing
+  link: https://www.cdm.org/hours-pricing/#museums-for-all
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: childrens-fairyland
+  name: Children's Fairyland
+  category: Museums
+  area: Alameda County
+  eligibility:
+  - low-income
+  - families
+  - youth
+  benefit: $5 admission with EBT or WIC card
+  how_to_use: Show EBT or WIC card at admission
+  timeframe: Ongoing
+  link: https://fairyland.org/visit/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: exploratorium
+  name: Exploratorium
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  benefit: $3 admission to Daytime or After Dark (ages 18+) for up to 4 tickets; $39
+    Daytime Family Explorers Membership; $19 Dual After Dark Membership (ages 18+)
+  how_to_use: Show EBT/SNAP, Medi-Cal, WIC card, or Lifeline Pass at ticket window
+    (not available online)
+  timeframe: Ongoing
+  link: https://www.exploratorium.edu/visit/reduced-rates
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: fine-arts-museums-sf
+  name: Fine Arts Museums of San Francisco (de Young Museum and Legion of Honor)
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - seniors
+  - veterans
+  - disability
+  - families
+  - everyone
+  benefit: Free Saturdays for Bay Area residents, free first Tuesdays, youth free,
+    Museums for All, military and other discounts
+  how_to_use: Bring Bay Area ID, EBT or Medi-Cal card, military ID, or other proof
+    listed on their discounts page
+  timeframe: Ongoing
+  link: https://www.famsf.org/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: golden-gate-park-gardens
+  name: Gardens of Golden Gate Park (Conservatory of Flowers, Japanese Tea Garden,
+    SF Botanical Garden)
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - veterans
+  - everyone
+  benefit: Free or reduced admission for SF residents, veterans, and Museums for All
+    visitors; select free times for everyone
+  how_to_use: Show SF proof of residency, benefits card, or military ID; visit during
+    posted free hours for general free admission
+  timeframe: Ongoing; scheduled free days/hours
+  link: https://gggp.org
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: lawrence-hall-science
+  name: Lawrence Hall of Science
+  category: Museums
+  area: Alameda County
+  eligibility:
+  - low-income
+  - families
+  - youth
+  - everyone
+  benefit: $1 admission with EBT card; free Cal Day
+  how_to_use: Show EBT card at admission
+  timeframe: Ongoing; Cal Day annual
+  link: https://lawrencehallofscience.org
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: moad-museum
+  name: Museum of the African Diaspora (MoAD)
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - veterans
+  - families
+  - everyone
+  benefit: Museums for All admission, student and senior discounts, some free or community
+    days, and free for active duty military
+  how_to_use: Bring EBT card, student or senior ID, or military ID as applicable
+  timeframe: Ongoing
+  link: https://www.moadsf.org/tickets
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: museum-craft-design
+  name: Museum of Craft and Design
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - seniors
+  - veterans
+  - families
+  - everyone
+  benefit: Free first Thursdays, discounted tickets for students and seniors, free
+    admission for some military, first responders, and benefit cardholders
+  how_to_use: Visit on a free day or show student, senior, military, or benefits documentation
+  timeframe: Ongoing
+  link: https://sfmcd.org/visit/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: oakland-museum
+  name: Oakland Museum of California
+  category: Museums
+  area: Alameda County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: $1 admission with EBT card; free first Sundays
+  how_to_use: Show EBT card at admission
+  timeframe: Ongoing; 1st Sunday monthly
+  link: https://museumca.org/visit
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: oakland-zoo
+  name: Oakland Zoo – Bay to Zoo
+  category: Museums
+  area: Alameda County
+  eligibility:
+  - low-income
+  - families
+  - youth
+  benefit: $5 admission for low-income families
+  how_to_use: Purchase tickets online or at gate with qualifying documentation
+  timeframe: Ongoing
+  link: https://www.oaklandzoo.org/tickets
+  link_text: Get Tickets
+  verified_date: '2025-12-16'
+- id: sfmoma
+  name: San Francisco Museum of Modern Art (SFMOMA)
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - veterans
+  - youth
+  - families
+  - everyone
+  benefit: Free for youth, free days for the public, Museums for All admission for
+    SF residents with benefits cards, military and veteran discounts, and Discover
+    & Go passes
+  how_to_use: Reserve tickets for free days, bring benefits card and SF proof, military
+    ID, or library Discover & Go voucher
+  timeframe: Ongoing
+  link: https://www.sfmoma.org/deals-discounts/
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: sj-museum-art
+  name: San Jose Museum of Art
+  category: Museums
+  area: Santa Clara County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: Free admission with EBT card
+  how_to_use: Show EBT card at admission
+  timeframe: Ongoing
+  link: https://sjmusart.org/visit
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: the-tech-interactive
+  name: The Tech Interactive
+  category: Museums
+  area: Santa Clara County
+  eligibility:
+  - low-income
+  - everyone
+  benefit: $5 admission with EBT card
+  how_to_use: Show EBT card at admission
+  timeframe: Ongoing
+  link: https://www.thetech.org/visit
+  link_text: Visit
+  verified_date: '2025-12-16'
+- id: walt-disney-family-museum
+  name: Walt Disney Family Museum
+  category: Museums
+  area: San Francisco
+  eligibility:
+  - low-income
+  - college-students
+  - veterans
+  - families
+  - everyone
+  benefit: Free general admission for US military and dependents, Museums for All
+    admission for SF EBT/CalFresh/Medi-Cal holders (cardholder plus guests), and student/senior
+    discounts
+  how_to_use: Show military or dependent ID, or present SF benefits card and proof
+    of residency; see site for student and senior rates
+  timeframe: Ongoing
+  link: https://www.waltdisney.org/visit/admission
+  link_text: Visit
+  verified_date: '2025-12-16'

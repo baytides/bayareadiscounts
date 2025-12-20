@@ -1,0 +1,624 @@
+<!-- Utility Bar - Collapsible top bar with theme and other utilities -->
+<div class="utility-bar" id="utility-bar" role="complementary" aria-label="Utility bar with site preferences">
+  <div class="utility-bar-container">
+    <!-- Utility Bar Content -->
+    <div class="utility-bar-content" id="utility-bar-content">
+      <div class="utility-controls">
+        
+        <!-- Theme Toggle -->
+        <div class="utility-item">
+          <label for="theme-select" class="utility-label">
+            <svg class="utility-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
+            </svg>
+            <span>Theme</span>
+          </label>
+          <select id="theme-select" class="utility-select" aria-label="Select color theme">
+            <option value="auto">Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+
+        <!-- Text Spacing Toggle (WCAG 2.2 AAA) -->
+        <div class="utility-item">
+          <button type="button" id="spacing-toggle" class="utility-btn" aria-label="Toggle enhanced text spacing" aria-pressed="false">
+            <svg class="utility-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            <span>Spacing</span>
+          </button>
+        </div>
+
+        <!-- Print -->
+        <div class="utility-item">
+          <button type="button" id="print-btn" class="utility-btn" aria-label="Print this page">
+            <svg class="utility-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+            <span>Print</span>
+          </button>
+        </div>
+
+        <!-- Share -->
+        <div class="utility-item">
+          <button type="button" id="share-btn" class="utility-btn" aria-label="Share this page">
+            <svg class="utility-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <path d="M8.59 13.51l6.83 3.98m-.01-10.98l-6.82 3.98"/>
+            </svg>
+            <span>Share</span>
+          </button>
+        </div>
+
+        <!-- Translate -->
+        <div class="utility-item">
+          <label for="translate-select" class="utility-label">
+            <svg class="utility-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Translate</span>
+          </label>
+          <select id="translate-select" class="utility-select" aria-label="Select a language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="zh-Hans">Chinese (Simplified)</option>
+            <option value="tl">Tagalog</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
+          <button type="button" id="translate-btn" class="utility-btn" aria-label="Translate this page">
+            <span>Translate</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button type="button"
+            id="utility-bar-toggle"
+            class="utility-bar-toggle"
+            aria-expanded="true"
+            aria-controls="utility-bar-content"
+            aria-label="Toggle utility bar">
+      <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+/* ============================================
+   UTILITY BAR STYLES
+   ============================================ */
+
+.utility-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid var(--neutral-200, #e5e7eb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.utility-bar.collapsed {
+  transform: translateY(-100%);
+}
+
+.utility-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.utility-bar-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 200px;
+  opacity: 1;
+}
+
+.utility-bar-content.hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.utility-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.utility-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.utility-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-700, #374151);
+  cursor: pointer;
+}
+
+.utility-icon {
+  flex-shrink: 0;
+}
+
+.utility-select {
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--neutral-300, #d1d5db);
+  border-radius: 0.375rem;
+  background: white;
+  color: var(--neutral-900, #111827);
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 44px; /* WCAG 2.5.5 AAA: minimum 44px */
+  transition: all 0.2s ease;
+}
+
+.utility-select:hover {
+  border-color: var(--primary, #1e40af);
+}
+
+.utility-select:focus {
+  outline: 3px solid var(--primary, #1e40af);
+  outline-offset: 2px;
+  border-color: var(--primary, #1e40af);
+}
+
+.utility-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-700, #374151);
+  background: white;
+  border: 1px solid var(--neutral-300, #d1d5db);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.utility-btn:hover {
+  background: var(--neutral-50, #f9fafb);
+  border-color: var(--primary, #1e40af);
+  color: var(--primary, #1e40af);
+}
+
+.utility-btn:focus {
+  outline: 3px solid var(--primary, #1e40af);
+  outline-offset: 2px;
+  border-color: var(--primary, #1e40af);
+}
+
+.utility-btn:active {
+  transform: translateY(1px);
+}
+
+/* Toggle Button */
+.utility-bar-toggle {
+  position: absolute;
+  bottom: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid var(--neutral-200, #e5e7eb);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  z-index: 1001;
+  min-width: 48px;
+  min-height: 44px; /* WCAG 2.5.5 AAA: minimum 44px */
+}
+
+.utility-bar-toggle:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.utility-bar-toggle:focus {
+  outline: 3px solid var(--primary, #1e40af);
+  outline-offset: 2px;
+}
+
+.utility-bar-toggle .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.utility-bar-toggle[aria-expanded="false"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .utility-bar {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-bottom-color: #374151;
+  }
+
+  .utility-label {
+    color: #e5e7eb;
+  }
+
+  .utility-select,
+  .utility-btn {
+    background: #374151;
+    color: #f3f4f6;
+    border-color: #4b5563;
+  }
+
+  .utility-select:hover,
+  .utility-btn:hover {
+    background: #4b5563;
+    border-color: #60a5fa;
+    color: #60a5fa;
+  }
+
+  .utility-bar-toggle {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-color: #374151;
+  }
+
+  .utility-bar-toggle:hover {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .utility-controls {
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .utility-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .utility-label span,
+  .utility-btn span {
+    font-size: 0.75rem;
+  }
+
+  .utility-select {
+    min-width: 80px;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .utility-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .utility-item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .utility-select,
+  .utility-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .utility-label {
+    flex: 0 0 auto;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .utility-bar,
+  .utility-bar-content,
+  .utility-bar-toggle,
+  .utility-bar-toggle .toggle-icon,
+  .utility-select,
+  .utility-btn {
+    transition: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .utility-bar {
+    border-bottom-width: 2px;
+  }
+
+  .utility-select,
+  .utility-btn {
+    border-width: 2px;
+  }
+
+  .utility-bar-toggle {
+    border-width: 2px;
+  }
+}
+
+/* Applied Theme Classes */
+body[data-theme="dark"] .utility-bar {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-bottom-color: #374151;
+}
+
+body[data-theme="dark"] .utility-label {
+  color: #e5e7eb;
+}
+
+body[data-theme="dark"] .utility-select,
+body[data-theme="dark"] .utility-btn {
+  background: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+body[data-theme="dark"] .utility-select:hover,
+body[data-theme="dark"] .utility-btn:hover {
+  background: #4b5563;
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .utility-bar-toggle {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-color: #374151;
+}
+
+body[data-theme="dark"] .utility-bar-toggle:hover {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+}
+
+/* Font Size Applied Styles */
+body[data-font-size="large"] {
+  font-size: 1.125rem;
+}
+
+body[data-font-size="x-large"] {
+  font-size: 1.25rem;
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  // Utility Bar Functionality
+  const utilityBar = document.getElementById('utility-bar');
+  const utilityBarContent = document.getElementById('utility-bar-content');
+  const utilityBarToggle = document.getElementById('utility-bar-toggle');
+  const themeSelect = document.getElementById('theme-select');
+  const translateSelect = document.getElementById('translate-select');
+  const translateBtn = document.getElementById('translate-btn');
+  const spacingToggle = document.getElementById('spacing-toggle');
+
+  const printBtn = document.getElementById('print-btn');
+  const shareBtn = document.getElementById('share-btn');
+
+  // Keep a single media query listener to reflect system preference changes when in auto mode
+  const colorSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // Initialize preferences on load
+  loadPreferences();
+
+  // Load saved preferences
+  function loadPreferences() {
+    const theme = localStorage.getItem('theme-preference') || 'auto';
+    const fontSize = localStorage.getItem('font-size-preference') || 'normal';
+    const textSpacing = localStorage.getItem('text-spacing-preference') || 'normal';
+    const barExpanded = localStorage.getItem('utility-bar-expanded');
+    const preferredLanguage = localStorage.getItem('preferred_language') || 'en';
+
+    const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+    const defaultExpanded = isMobileViewport ? 'false' : 'true';
+    const initialExpanded = barExpanded === null ? defaultExpanded : barExpanded;
+
+    // Set theme
+    if (themeSelect) {
+      themeSelect.value = theme;
+    }
+    applyTheme(theme);
+
+    if (translateSelect) {
+      translateSelect.value = preferredLanguage;
+    }
+
+    // Set text spacing
+    applyTextSpacing(textSpacing);
+    if (spacingToggle) {
+      spacingToggle.setAttribute('aria-pressed', textSpacing === 'enhanced' ? 'true' : 'false');
+    }
+
+    // Set bar state - expanded by default; only collapse if user explicitly chose to
+    toggleBar(initialExpanded === 'true');
+  }
+
+  function handleColorSchemeChange(event) {
+    const currentTheme = themeSelect ? themeSelect.value : (localStorage.getItem('theme-preference') || 'auto');
+    if (currentTheme === 'auto') {
+      document.body.setAttribute('data-theme', event.matches ? 'dark' : 'light');
+    }
+  }
+
+  function attachColorSchemeListener() {
+    if (typeof colorSchemeMedia.addEventListener === 'function') {
+      colorSchemeMedia.removeEventListener('change', handleColorSchemeChange);
+      colorSchemeMedia.addEventListener('change', handleColorSchemeChange);
+    } else if (typeof colorSchemeMedia.addListener === 'function') {
+      colorSchemeMedia.removeListener(handleColorSchemeChange);
+      colorSchemeMedia.addListener(handleColorSchemeChange);
+    }
+  }
+
+  function detachColorSchemeListener() {
+    if (typeof colorSchemeMedia.removeEventListener === 'function') {
+      colorSchemeMedia.removeEventListener('change', handleColorSchemeChange);
+    } else if (typeof colorSchemeMedia.removeListener === 'function') {
+      colorSchemeMedia.removeListener(handleColorSchemeChange);
+    }
+  }
+
+  // Apply theme
+  function applyTheme(theme) {
+    if (theme === 'auto') {
+      document.body.setAttribute('data-theme', colorSchemeMedia.matches ? 'dark' : 'light');
+      attachColorSchemeListener();
+    } else {
+      document.body.setAttribute('data-theme', theme);
+      detachColorSchemeListener();
+    }
+  }
+
+  // Apply text spacing (WCAG 2.2 AAA compliance)
+  function applyTextSpacing(spacing) {
+    if (spacing === 'enhanced') {
+      document.body.setAttribute('data-text-spacing', 'enhanced');
+    } else {
+      document.body.removeAttribute('data-text-spacing');
+    }
+  }
+
+  // Toggle bar expanded/collapsed
+  function toggleBar(shouldExpand) {
+    // If shouldExpand is provided, use it; otherwise toggle current state
+    const currentlyExpanded = utilityBarToggle.getAttribute('aria-expanded') === 'true';
+    const willBeExpanded = shouldExpand !== undefined ? shouldExpand : !currentlyExpanded;
+    
+    if (willBeExpanded) {
+      utilityBarContent.classList.remove('hidden');
+      utilityBarToggle.setAttribute('aria-expanded', 'true');
+      localStorage.setItem('utility-bar-expanded', 'true');
+    } else {
+      utilityBarContent.classList.add('hidden');
+      utilityBarToggle.setAttribute('aria-expanded', 'false');
+      localStorage.setItem('utility-bar-expanded', 'false');
+    }
+  }
+
+  // Event Listeners
+  if (utilityBarToggle) {
+    utilityBarToggle.addEventListener('click', () => toggleBar());
+  }
+
+  if (themeSelect) {
+    themeSelect.addEventListener('change', (e) => {
+      const theme = e.target.value;
+      localStorage.setItem('theme-preference', theme);
+      applyTheme(theme);
+      console.log('Theme changed to:', theme, 'data-theme attribute:', document.body.getAttribute('data-theme'));
+    });
+  }
+
+  function translateToSelectedLanguage() {
+    if (!translateSelect) return;
+    const targetLang = translateSelect.value;
+    localStorage.setItem('preferred_language', targetLang);
+
+    if (window.azureTranslator && typeof window.azureTranslator.translatePage === 'function') {
+      if (targetLang === 'en' && typeof window.azureTranslator.restorePage === 'function') {
+        window.azureTranslator.restorePage();
+      } else {
+        window.azureTranslator.translatePage(targetLang).catch((err) => {
+          console.error('Translation failed:', err);
+        });
+      }
+    }
+  }
+
+  if (translateSelect) {
+    translateSelect.addEventListener('change', () => {
+      // Update stored preference immediately, but only translate on button press to avoid surprises
+      localStorage.setItem('preferred_language', translateSelect.value);
+    });
+  }
+
+  if (translateBtn) {
+    translateBtn.addEventListener('click', () => {
+      translateToSelectedLanguage();
+    });
+  }
+
+  if (spacingToggle) {
+    spacingToggle.addEventListener('click', () => {
+      const current = document.body.getAttribute('data-text-spacing');
+      const newSpacing = current === 'enhanced' ? 'normal' : 'enhanced';
+
+      localStorage.setItem('text-spacing-preference', newSpacing);
+      applyTextSpacing(newSpacing);
+      spacingToggle.setAttribute('aria-pressed', newSpacing === 'enhanced' ? 'true' : 'false');
+
+      // Visual feedback
+      if (newSpacing === 'enhanced') {
+        spacingToggle.style.background = 'var(--primary, #1e40af)';
+        spacingToggle.style.color = 'white';
+      } else {
+        spacingToggle.style.background = '';
+        spacingToggle.style.color = '';
+      }
+    });
+  }
+
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      // Add UTM parameters to track shares from utility bar
+      const url = new URL(window.location.href);
+      url.searchParams.set('utm_source', 'utility_bar');
+      url.searchParams.set('utm_medium', 'share_button');
+      url.searchParams.set('utm_campaign', 'user_share');
+      const shareUrl = url.toString();
+
+      const shareData = {
+        title: document.title || 'Bay Area Discounts',
+        text: 'Bay Area Discounts - share from utility bar',
+        url: shareUrl
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          // Fallback: Copy to clipboard
+          await navigator.clipboard.writeText(shareUrl);
+          alert('Link copied to clipboard!');
+        }
+      } catch (err) {
+        console.log('Error sharing:', err);
+      }
+    });
+  }
+})();
+</script>

@@ -1,0 +1,25 @@
+title: Bay Area Discounts
+description: Free and low-cost resources across the San Francisco Bay Area
+markdown: kramdown
+url: "https://bayareadiscounts.com"
+baseurl: ""
+
+exclude:
+  - vendor
+  - node_modules
+  - azure-functions
+  - scripts
+  - infrastructure
+  - tests
+  - test-results
+  - shared
+  - openapi
+  - docs
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - LICENSE-DATA

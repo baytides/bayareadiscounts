@@ -1,0 +1,14 @@
+{
+  "name": "bayareadiscounts-scripts",
+  "version": "1.0.0",
+  "description": "Migration and utility scripts for Bay Area Discounts",
+  "private": true,
+  "scripts": {
+    "migrate": "node migrate-to-cosmos.js"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,402 @@
+/**
+ * Bay Area Discounts - Search & Filter System
+ * Provides client-side full-text search and dynamic filtering
+ * Optimized for Vision Pro and responsive design
+ */
+
+const debounce = (fn, delay = 150) => {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), delay);
+  };
+};
+
+class DiscountSearchFilter {
+  constructor(options = {}) {
+    this.programs = [];
+    this.filteredPrograms = [];
+    this.searchIndex = new Map();
+    this.currentSort = 'name-asc';
+    
+    this.options = {
+      containerSelector: options.containerSelector || '#search-results',
+      searchInputSelector: options.searchInputSelector || '#search-input',
+      filterButtonsSelector: options.filterButtonsSelector || '.filter-btn',
+      resultsSelector: options.resultsSelector || '#search-results',
+      sortSelectSelector: options.sortSelectSelector || '#sort-select',
+      minChars: options.minChars || 1,
+      ...options
+    };
+
+    this.init();
+  }
+
+  init() {
+    this.container = document.querySelector(this.options.containerSelector);
+    this.searchInput = document.querySelector(this.options.searchInputSelector);
+    this.resultsContainer = document.querySelector(this.options.resultsSelector) || this.container;
+    this.sortSelect = document.querySelector(this.options.sortSelectSelector);
+    
+    if (this.searchInput) {
+      const debouncedSearch = debounce((e) => this.handleSearch(e));
+      this.searchInput.addEventListener('input', debouncedSearch);
+      this.searchInput.addEventListener('focus', () => this.showSearchUI());
+    }
+
+    if (this.sortSelect) {
+      this.sortSelect.addEventListener('change', (e) => this.handleSort(e));
+    }
+
+    // Set up filter buttons via event delegation
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest(this.options.filterButtonsSelector);
+      if (btn) {
+        this.handleFilter(e, btn);
+      }
+    });
+
+    this.buildSearchIndex();
+  }
+
+  /**
+   * Build searchable index from all program cards
+   */
+  buildSearchIndex() {
+    const cards = document.querySelectorAll('#search-results [data-program]');
+    
+    cards.forEach(card => {
+      const programData = {
+        id: card.getAttribute('data-program-id') || Math.random(),
+        name: card.getAttribute('data-program-name') || '',
+        category: card.getAttribute('data-category') || '',
+        area: card.getAttribute('data-area') || '',
+        eligibility: card.getAttribute('data-eligibility') || '',
+        benefit: card.querySelector('[data-benefit]')?.textContent || '',
+        element: card,
+        visible: true
+      };
+
+      // Build searchable text
+      const searchText = `
+        ${programData.name} 
+        ${programData.category} 
+        ${programData.area} 
+        ${programData.benefit}
+      `.toLowerCase();
+
+      this.programs.push(programData);
+      this.searchIndex.set(programData.id, { ...programData, searchText });
+    });
+
+    this.filteredPrograms = [...this.programs];
+  }
+
+  /**
+   * Handle search input
+   */
+  handleSearch(event) {
+    const query = event.target.value.toLowerCase().trim();
+    
+    if (query.length < this.options.minChars) {
+      this.resetResults();
+      return;
+    }
+
+    this.filteredPrograms = this.programs.filter(program => {
+      const indexed = this.searchIndex.get(program.id);
+      return indexed.searchText.includes(query);
+    });
+
+    this.sortPrograms();
+    this.render();
+    this.updateResultsCount();
+  }
+
+  /**
+   * Handle filter button clicks
+   */
+  handleFilter(event, btn) {
+    const filterType = btn.getAttribute('data-filter-type');
+    const filterValue = btn.getAttribute('data-filter-value');
+    const isAllButton = btn.getAttribute('data-all') === 'true';
+
+    // Handle "All" buttons as exclusive per type
+    if (isAllButton) {
+      document.querySelectorAll(`[data-filter-type="${filterType}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    } else {
+      const allBtn = document.querySelector(`[data-filter-type="${filterType}"][data-all="true"]`);
+      if (allBtn) {
+        allBtn.classList.remove('active');
+      }
+
+      btn.classList.toggle('active');
+
+      // If nothing remains active for this type, restore the "All" state
+      const remainingActive = document.querySelectorAll(`[data-filter-type="${filterType}"].active:not([data-all="true"])`);
+      if (remainingActive.length === 0 && allBtn) {
+        allBtn.classList.add('active');
+      }
+    }
+
+    const activeFilters = this.getActiveFilters();
+    const hasActiveFilters = Object.values(activeFilters).some(list => list.length > 0);
+
+    // If no filters are active, show everything
+    if (!hasActiveFilters) {
+      this.filteredPrograms = [...this.programs];
+      this.render();
+      this.updateResultsCount();
+      return;
+    }
+
+    // Filter programs based on active filters
+    this.filteredPrograms = this.programs.filter(program => {
+      let match = true;
+
+      // Check eligibility filters
+      if (activeFilters.eligibility.length > 0) {
+        const hasEligibility = activeFilters.eligibility.some(elig =>
+          program.eligibility.includes(elig)
+        );
+        match = match && hasEligibility;
+      }
+
+      // Check category filters
+      if (activeFilters.category.length > 0) {
+        match = match && activeFilters.category.includes(program.category);
+      }
+
+      // Check area filters
+      if (activeFilters.area.length > 0) {
+        const hasArea = activeFilters.area.some(area =>
+          program.area.includes(area)
+        );
+        match = match && hasArea;
+      }
+
+      return match;
+    });
+
+    this.render();
+    this.updateResultsCount();
+  }
+
+  /**
+   * Handle sort selection
+   */
+  handleSort(event) {
+    this.currentSort = event.target.value;
+    this.sortPrograms();
+    this.render();
+  }
+
+  /**
+   * Sort programs based on current sort option
+   */
+  sortPrograms() {
+    const [field, order] = this.currentSort.split('-');
+    
+    this.filteredPrograms.sort((a, b) => {
+      let compareA, compareB;
+      
+      switch(field) {
+        case 'name':
+          compareA = a.name.toLowerCase();
+          compareB = b.name.toLowerCase();
+          break;
+        case 'category':
+          compareA = a.category.toLowerCase();
+          compareB = b.category.toLowerCase();
+          break;
+        case 'area':
+          compareA = a.area.toLowerCase();
+          compareB = b.area.toLowerCase();
+          break;
+        case 'newest':
+          // For newest, we'd need added_date in the data attributes
+          // For now, maintain current order
+          return 0;
+        default:
+          return 0;
+      }
+      
+      if (order === 'asc') {
+        return compareA > compareB ? 1 : compareA < compareB ? -1 : 0;
+      } else {
+        return compareA < compareB ? 1 : compareA > compareB ? -1 : 0;
+      }
+    });
+  }
+
+  /**
+   * Render filtered programs
+   */
+  render() {
+    // First, hide all programs
+    this.programs.forEach(program => {
+      program.element.style.display = 'none';
+    });
+    
+    // Then show filtered programs in sorted order
+    this.filteredPrograms.forEach((program, index) => {
+      program.element.style.display = '';
+      program.element.style.order = index;
+    });
+
+    // Show empty state message
+    const emptyId = 'search-empty-state';
+    let empty = document.getElementById(emptyId);
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.id = emptyId;
+      empty.className = 'no-results';
+      const text = window.i18n ? i18n.t('results.none') : 'No programs found. Try clearing filters.';
+      empty.innerHTML = `<p>${text}</p>`;
+      this.resultsContainer?.parentNode?.insertBefore(empty, this.resultsContainer);
+    }
+    empty.style.display = this.filteredPrograms.length ? 'none' : 'block';
+
+    if (window.favorites && typeof window.favorites.updateUI === 'function') {
+      window.favorites.updateUI();
+    }
+  }
+
+  /**
+   * Reset search results (but keep showing all programs)
+   */
+  resetResults() {
+    this.filteredPrograms = [...this.programs];
+
+    this.programs.forEach(program => {
+      program.element.style.display = '';
+    });
+
+    this.updateResultsCount();
+
+    if (window.favorites && typeof window.favorites.updateUI === 'function') {
+      window.favorites.updateUI();
+    }
+  }
+
+  /**
+   * Reset all filters and search (shows everything)
+   */
+  resetFilters() {
+    // Clear all filter buttons
+    document.querySelectorAll(this.options.filterButtonsSelector).forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Reactivate each "All" button to show defaults
+    document.querySelectorAll(`${this.options.filterButtonsSelector}[data-all="true"]`).forEach(btn => {
+      btn.classList.add('active');
+    });
+
+    // Clear search input
+    if (this.searchInput) {
+      this.searchInput.value = '';
+    }
+
+    // Reset to show all programs
+    this.filteredPrograms = [...this.programs];
+    
+    // Render all programs
+    this.sortPrograms();
+    this.render();
+    this.updateResultsCount();
+  }
+
+  /**
+   * Get active filters grouped by type (excludes "All" buttons)
+   */
+  getActiveFilters() {
+    const filtersByType = {};
+    const filterButtons = document.querySelectorAll(this.options.filterButtonsSelector);
+
+    filterButtons.forEach(btn => {
+      const type = btn.getAttribute('data-filter-type');
+      const isAll = btn.getAttribute('data-all') === 'true';
+      if (!type) return;
+
+      if (!filtersByType[type]) {
+        filtersByType[type] = [];
+      }
+
+      if (btn.classList.contains('active') && !isAll) {
+        filtersByType[type].push(btn.getAttribute('data-filter-value'));
+      }
+    });
+
+    ['eligibility', 'category', 'area'].forEach(type => {
+      if (!filtersByType[type]) {
+        filtersByType[type] = [];
+      }
+    });
+
+    return filtersByType;
+  }
+  
+  /**
+   * Show/hide search UI
+   */
+  showSearchUI() {
+    const searchPanel = document.querySelector('.search-panel');
+    if (searchPanel) {
+      searchPanel.classList.add('active');
+    }
+  }
+
+  /**
+   * Update results count display
+   */
+  updateResultsCount() {
+    const countEl = document.querySelector('.results-count');
+    if (countEl) {
+      const total = this.programs.length;
+      const showing = this.filteredPrograms.length;
+      
+      if (showing === total) {
+        countEl.textContent = `Showing all ${total} programs`;
+      } else {
+        countEl.textContent = `${showing} of ${total} program${showing !== 1 ? 's' : ''}`;
+      }
+    }
+  }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  window.searchFilter = new DiscountSearchFilter({
+    containerSelector: '.programs-container',
+    searchInputSelector: '#search-input',
+    filterButtonsSelector: '.filter-btn',
+    resultsSelector: '#search-results'
+  });
+
+  // Restore filters/search from URL parameters
+  if (typeof URLSharing !== 'undefined') {
+    const sharing = new URLSharing();
+    const state = sharing.getInitialState();
+
+    // Apply search term
+    if (state.search) {
+      const input = document.querySelector('#search-input');
+      if (input) {
+        input.value = state.search;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }
+
+    // Apply filters for eligibility, category, area
+    ['eligibility', 'category', 'area'].forEach(type => {
+      const val = state[type];
+      if (!val) return;
+      const btn = document.querySelector(`[data-filter-type="${type}"][data-filter-value="${val}"]`);
+      if (btn) {
+        btn.click();
+      }
+    });
+  }
+});

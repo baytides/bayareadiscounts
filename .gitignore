@@ -1,0 +1,83 @@
+# Jekyll build output
+_site/
+
+# Jekyll caches
+.jekyll-cache/
+.jekyll-metadata
+
+# Sass cache
+.sass-cache/
+
+# Bundler vendor/bundle
+vendor/
+
+# Node modules if present
+node_modules/
+
+# OS & editor files
+.DS_Store
+*.swp
+*~
+
+# Ruby version files
+.ruby-version
+
+# Temporary files
+*.tmp
+*.bak
+
+# Azure Functions
+azure-functions/local.settings.json
+azure-functions/bin/
+azure-functions/obj/
+azure-functions/.python_packages/
+
+# Azure Bicep compiled files
+infrastructure/bicep/*.json
+!infrastructure/bicep/parameters.json.example
+
+# Environment files
+.env
+.env.local
+*.env
+
+# Scripts dependencies
+scripts/node_modules/
+scripts/package-lock.json
+
+# Azure deployment outputs
+infrastructure/bicep/outputs.json
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test results
+/test-results/
+playwright-report/
+
+# Generated data
+_data/git.yml
+
+# Tool history
+.aider.chat.history.md
+bayareadiscounts.code-workspace
+
+# Duplicate files (macOS/backup artifacts)
+* 2
+* 2.*
+* 3
+* 3.*

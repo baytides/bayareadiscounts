@@ -1,0 +1,260 @@
+<article
+  class="program-card"
+  data-program
+  data-program-id="{{ include.program.id }}"
+  data-program-name="{{ include.program.name }}"
+  data-category="{{ include.program.category }}"
+  data-area="{% if include.program.area %}{% assign area_val = include.program.area %}{% if area_val | first %}{{ area_val | join: ' ' }}{% else %}{{ area_val }}{% endif %}{% endif %}"
+  data-eligibility="{% if include.program.eligibility %}{{ include.program.eligibility | join: ' ' }}{% endif %}"
+>
+  <div class="program-card-header">
+    <button
+      class="favorite-toggle favorite-toggle-corner"
+      type="button"
+      aria-label="Save {{ include.program.name }}"
+      title="Save"
+      data-program-id="{{ include.program.id }}"
+    >
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="sr-only">Save program</span>
+    </button>
+    <div style="flex: 1;">
+      <h3 class="program-name">
+        <span class="program-name-text">{{ include.program.name }}</span>
+        {% if include.program.verified_date %}
+          <span class="verified-badge" data-verified="{{ include.program.verified_date }}" title="Last verified {{ include.program.verified_date }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </span>
+        {% endif %}
+      </h3>
+      <div class="program-meta">
+          {% if include.program.area %}
+            {% assign area_val = include.program.area %}
+            {% if area_val | first %}
+              {% for area in area_val %}
+                <span class="program-area">{{ area }}</span>
+              {% endfor %}
+            {% else %}
+              <span class="program-area">{{ area_val }}</span>
+            {% endif %}
+          {% endif %}
+        <span class="program-category">{{ include.program.category }}</span>
+      </div>
+    </div>
+
+    <!-- Badges for new programs -->
+    <div class="program-badges">
+      {% if include.program.added_date %}
+        {% assign added_date = include.program.added_date | date: "%s" %}
+        {% assign current_date = "now" | date: "%s" %}
+        {% assign days_diff = current_date | minus: added_date | divided_by: 86400 %}
+        {% if days_diff <= 30 %}
+          <span class="program-badge program-badge-new">New</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if include.program.eligibility %}
+  <div class="eligibility-badges" role="img" aria-label="Eligibility: {% for elig in include.program.eligibility %}{{ elig }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+    {% for elig in include.program.eligibility %}
+      {% assign badge_emoji = '' %}
+      {% assign badge_label = '' %}
+      {% assign badge_display = '' %}
+      {% case elig %}
+        {% when 'low-income' %}
+          {% assign badge_emoji = '💳' %}
+          {% assign badge_label = 'SNAP/EBT/Medi-Cal or income-eligible households' %}
+          {% assign badge_display = 'Income-eligible households' %}
+        {% when 'seniors' %}
+          {% assign badge_emoji = '👵' %}
+          {% assign badge_label = 'Seniors' %}
+          {% assign badge_display = 'Seniors' %}
+        {% when 'youth' %}
+          {% assign badge_emoji = '🧒' %}
+          {% assign badge_label = 'Youth' %}
+          {% assign badge_display = 'Youth' %}
+        {% when 'college-students' %}
+          {% assign badge_emoji = '🎓' %}
+          {% assign badge_label = 'College students' %}
+          {% assign badge_display = 'College students' %}
+        {% when 'veterans' %}
+          {% assign badge_emoji = '🎖️' %}
+          {% assign badge_label = 'Active duty or veterans' %}
+          {% assign badge_display = 'Active duty / Veterans' %}
+        {% when 'families' %}
+          {% assign badge_emoji = '👨‍👩‍👧' %}
+          {% assign badge_label = 'Families' %}
+          {% assign badge_display = 'Families' %}
+        {% when 'disability' %}
+          {% assign badge_emoji = '🧑‍🦽' %}
+          {% assign badge_label = 'People with disabilities' %}
+          {% assign badge_display = 'Disability' %}
+        {% when 'nonprofits' %}
+          {% assign badge_emoji = '🤝' %}
+          {% assign badge_label = 'Nonprofit organizations' %}
+          {% assign badge_display = 'Nonprofits' %}
+        {% when 'everyone' %}
+          {% assign badge_emoji = '🌎' %}
+          {% assign badge_label = 'Everyone' %}
+          {% assign badge_display = 'Everyone' %}
+        {% else %}
+          {% assign badge_label = elig %}
+          {% assign badge_display = elig %}
+        {% endcase %}
+
+      <span class="eligibility-badge" aria-label="{{ badge_label }}" title="">
+        {% if badge_emoji %}{{ badge_emoji }} {% endif %}{{ badge_display | default: badge_label }}
+      </span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <p class="program-benefit" data-benefit="{{ include.program.benefit }}">
+    {{ include.program.benefit }}
+  </p>
+
+  <div class="program-footer">
+    <span class="program-timeframe">{{ include.program.timeframe }}</span>
+    <a href="{{ include.program.link | append: '?utm_source=bayareadiscounts&utm_medium=referral&utm_campaign=directory' }}" class="program-link" target="_blank" rel="noopener">
+      {{ include.program.link_text | default: "Visit Program" }}
+    </a>
+  </div>
+</article>
+
+<style>
+/* Badge styles */
+.program-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.program-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.program-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.program-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.program-badge-new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* Twitter-style Verified Badge */
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.verified-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Green: Verified within 60 days */
+.verified-badge.fresh {
+  background: #10b981;
+  color: white;
+}
+
+/* Yellow: 61-179 days */
+.verified-badge.aging {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Red: 180+ days - needs verification */
+.verified-badge.stale {
+  background: #ef4444;
+  color: white;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .program-badge-new {
+    background: #1e3a8a;
+    color: #93c5fd;
+  }
+  
+  .verified-badge.fresh {
+    background: #059669;
+  }
+  
+  .verified-badge.aging {
+    background: #d97706;
+  }
+  
+  .verified-badge.stale {
+    background: #dc2626;
+  }
+}
+</style>
+
+<script>
+// Add verification status classes based on age
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.verified-badge').forEach(badge => {
+    const verifiedDate = badge.getAttribute('data-verified');
+    
+    if (verifiedDate) {
+      // Parse date in format "2025-12-16", "2025-12", or "Dec 2025"
+      let date;
+      if (verifiedDate.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        // Format: 2025-12-16 (full date)
+        date = new Date(verifiedDate);
+      } else if (verifiedDate.match(/^\d{4}-\d{2}$/)) {
+        // Format: 2025-12 (year-month)
+        date = new Date(verifiedDate + '-01');
+      } else {
+        // Format: Dec 2025
+        date = new Date(verifiedDate + ' 1');
+      }
+      
+      const now = new Date();
+      const daysDiff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+      
+      if (daysDiff <= 60) {
+        badge.classList.add('fresh');
+        badge.title = `Verified ${daysDiff} days ago - Recently verified ✓`;
+      } else if (daysDiff <= 179) {
+        badge.classList.add('aging');
+        badge.title = `Verified ${daysDiff} days ago - May need update soon`;
+      } else {
+        badge.classList.add('stale');
+        badge.title = `Verified ${daysDiff} days ago - Needs verification`;
+      }
+    }
+  });
+});
+</script>
