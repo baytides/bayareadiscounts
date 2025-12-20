@@ -135,7 +135,7 @@ function createCache(options = {}) {
 
 module.exports = { createCache };
 // Translation helper with pluggable fetch and cache
-const DEFAULT_TRANSLATE_ENDPOINT = 'https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api/translate';
+const DEFAULT_TRANSLATE_ENDPOINT = '';
 
 function hashTexts(texts) {
   let hash = 0;

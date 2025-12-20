@@ -96,22 +96,23 @@ paths:
                 $ref: '#/components/schemas/StatsResponse'
         '500':
           $ref: '#/components/responses/ServerError'
-  /translate:
+  /send-email:
     post:
-      summary: Translate text batch
+      summary: Send a notification email
+      description: Sends a simple email via Azure Communication Services.
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TranslateRequest'
+              $ref: '#/components/schemas/SendEmailRequest'
       responses:
-        '200':
-          description: OK
+        '202':
+          description: Accepted
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TranslateResponse'
+                $ref: '#/components/schemas/SendEmailResponse'
         '400':
           description: Bad request
           content:
@@ -233,25 +234,27 @@ components:
                     type: string
                   count:
                     type: integer
-    TranslateRequest:
+    SendEmailRequest:
       type: object
-      required: [texts, targetLang]
+      required: [to, content]
       properties:
-        texts:
-          type: array
-          items:
-            type: string
-        targetLang:
+        to:
           type: string
-        sourceLang:
+          format: email
+        subject:
           type: string
-    TranslateResponse:
+        content:
+          type: string
+        replyTo:
+          type: string
+          format: email
+    SendEmailResponse:
       type: object
       properties:
-        translations:
-          type: array
-          items:
-            type: string
+        messageId:
+          type: string
+        status:
+          type: string
     ErrorResponse:
       type: object
       properties:

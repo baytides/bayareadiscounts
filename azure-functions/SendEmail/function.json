@@ -1,5 +1,4 @@
 {
-  "disabled": true,
   "bindings": [
     {
       "authLevel": "anonymous",
@@ -7,7 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": ["post", "options"],
-      "route": "translate"
+      "route": "send-email"
     },
     {
       "type": "http",

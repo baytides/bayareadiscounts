@@ -73,12 +73,14 @@
   <!-- Shared client utilities (cache, translation helper) for browser -->
   <script src="{{ '/assets/js/shared-bundle.js' | relative_url }}?v=20251219"></script>
 
+  {% if site.translations_enabled %}
   <!-- Azure AI Translator (Privacy-focused) uses shared helpers -->
   <script>
     window.sharedCache = window.sharedLibs.createCache ? window.sharedLibs.createCache({ storage: window.localStorage }) : null;
     window.DEFAULT_TRANSLATE_ENDPOINT = window.DEFAULT_TRANSLATE_ENDPOINT || '{{ site.translate_endpoint | default: "" }}';
   </script>
   <script src="{{ '/assets/js/azure-translator.js' | relative_url }}"></script>
+  {% endif %}
 
   <!-- Inline JavaScript for PWA and global search -->
   <script>

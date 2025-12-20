@@ -4,6 +4,9 @@ markdown: kramdown
 url: "https://bayareadiscounts.com"
 baseurl: ""
 
+# Feature flags
+translations_enabled: false
+
 exclude:
   - vendor
   - node_modules

@@ -7,7 +7,7 @@
 class AzureTranslator {
   constructor(apiEndpoint) {
     // Use production Azure Function endpoint or local development
-    this.apiEndpoint = apiEndpoint || window.DEFAULT_TRANSLATE_ENDPOINT || 'https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api/translate';
+    this.apiEndpoint = apiEndpoint || window.DEFAULT_TRANSLATE_ENDPOINT || '';
     this.currentLang = 'en';
     this.originalContent = new Map();
 
