@@ -9,10 +9,6 @@
   },
   "routes": [
     {
-      "route": "/api/*",
-      "rewrite": "https://bayareadiscounts-api.azure-api.net/*"
-    },
-    {
       "route": "/.well-known/*",
       "headers": {
         "cache-control": "public, max-age=3600"
