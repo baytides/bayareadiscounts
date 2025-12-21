@@ -15,9 +15,13 @@
   function closeOverlay() {
     const overlay = qs('#step-flow');
     if (overlay) overlay.style.display = 'none';
-    // Show standard filters after overlay closes
+    // Show all content after wizard completes
     const filterUI = qs('.filter-controls');
+    const searchResults = qs('#search-results');
+    const mobileDrawer = qs('.mobile-filter-drawer');
     if (filterUI) filterUI.style.display = 'block';
+    if (searchResults) searchResults.style.display = 'block';
+    if (mobileDrawer) mobileDrawer.style.display = 'block';
   }
 
   function restartOverlay() {
@@ -102,9 +106,13 @@
     const overlay = qs('#step-flow');
     if (!overlay) return;
 
-    // Hide standard filter UI initially
+    // Hide all results and filters initially (wizard-first approach)
     const filterUI = qs('.filter-controls');
+    const searchResults = qs('#search-results');
+    const mobileDrawer = qs('.mobile-filter-drawer');
     if (filterUI) filterUI.style.display = 'none';
+    if (searchResults) searchResults.style.display = 'none';
+    if (mobileDrawer) mobileDrawer.style.display = 'none';
 
     // Avoid interrupting automated tests or explicit opt-out
     const params = new URLSearchParams(window.location.search);

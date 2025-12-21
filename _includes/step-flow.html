@@ -1,33 +1,85 @@
 <div id="step-flow" class="step-flow-overlay" role="dialog" aria-modal="true" aria-label="Find programs">
   <div class="step-flow-content" role="document">
     <div class="step-flow-header">
-      <h2>Find programs in 2 quick steps</h2>
-      <div class="step-flow-controls">
-        <button type="button" class="step-flow-reset" aria-label="Restart and clear selections">Restart</button>
-        <button type="button" class="step-flow-skip" aria-label="Skip and see all programs">Skip</button>
-      </div>
+      <h2>Find programs that match your needs</h2>
+      <button type="button" class="step-flow-skip" aria-label="Skip and browse all programs">Skip to all programs</button>
     </div>
 
     <!-- Step 1: Eligibility -->
     <section class="step" id="step-1" aria-labelledby="step-1-title">
-      <h3 id="step-1-title">Step 1: Select all that apply</h3>
-      <p class="step-help">Choose your eligibility groups (you can select multiple).</p>
+      <div class="step-progress" aria-label="Progress">Step 1 of 2</div>
+      <h3 id="step-1-title">Which of these apply to you?</h3>
+      <p class="step-help">Select all that apply to see relevant programs.</p>
 
       <fieldset class="eligibility-options">
         <legend class="sr-only">Eligibility options</legend>
-        <label><input type="checkbox" name="eligibility" value="low-income"> 💳 SNAP/EBT/Medi-Cal</label>
-        <label><input type="checkbox" name="eligibility" value="seniors"> 👵 Seniors</label>
-        <label><input type="checkbox" name="eligibility" value="youth"> 🧒 Youth</label>
-        <label><input type="checkbox" name="eligibility" value="college-students"> 🎓 College Students</label>
-        <label><input type="checkbox" name="eligibility" value="veterans"> 🎖️ Active Duty / Veterans</label>
-        <label><input type="checkbox" name="eligibility" value="families"> 👨‍👩‍👧 Families</label>
-        <label><input type="checkbox" name="eligibility" value="disability"> 🧑‍🦽 Disability</label>
-        <label><input type="checkbox" name="eligibility" value="nonprofits"> 🤝 Nonprofits</label>
-        <label><input type="checkbox" name="eligibility" value="everyone"> 🌎 Everyone</label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="low-income">
+          <span class="option-content">
+            <span class="option-icon">💳</span>
+            <span class="option-label">SNAP/EBT/Medi-Cal</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="seniors">
+          <span class="option-content">
+            <span class="option-icon">👵</span>
+            <span class="option-label">Seniors (65+)</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="youth">
+          <span class="option-content">
+            <span class="option-icon">🧒</span>
+            <span class="option-label">Youth</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="college-students">
+          <span class="option-content">
+            <span class="option-icon">🎓</span>
+            <span class="option-label">College Students</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="veterans">
+          <span class="option-content">
+            <span class="option-icon">🎖️</span>
+            <span class="option-label">Veterans / Active Duty</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="families">
+          <span class="option-content">
+            <span class="option-icon">👨‍👩‍👧</span>
+            <span class="option-label">Families</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="disability">
+          <span class="option-content">
+            <span class="option-icon">🧑‍🦽</span>
+            <span class="option-label">People with Disabilities</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="nonprofits">
+          <span class="option-content">
+            <span class="option-icon">🤝</span>
+            <span class="option-label">Nonprofit Organizations</span>
+          </span>
+        </label>
+        <label class="option-card">
+          <input type="checkbox" name="eligibility" value="everyone">
+          <span class="option-content">
+            <span class="option-icon">🌎</span>
+            <span class="option-label">Everyone</span>
+          </span>
+        </label>
       </fieldset>
 
       <div class="step-actions">
-        <button type="button" class="step-next" data-next="2">Continue</button>
+        <button type="button" class="btn-primary step-next" data-next="2">Continue</button>
       </div>
     </section>
 
