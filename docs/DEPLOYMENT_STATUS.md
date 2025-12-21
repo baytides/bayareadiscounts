@@ -48,10 +48,29 @@ See [AZURE_SERVICES_GUIDE.md](AZURE_SERVICES_GUIDE.md) for complete documentatio
 
 ## ✅ Recent Fixes
 
+### Infrastructure Recreation (Dec 21, 2025)
+- ✅ Created Cosmos DB: `baytides-discounts-cosmos` 
+  - Database: `bayareadiscounts`
+  - Container: `programs` (partition key: `/category`)
+  - Tier: Free (1000 RU/s free, 25GB free storage)
+  - Cost: $0/month
+  
+- 🔄 Creating Function App: `bayarea-api-prod`
+  - Plan: Basic B1 (Linux, 1 core)
+  - Runtime: Node.js 20
+  - Cost: ~$13/month
+  - Managed Identity: Enabled (secure Cosmos DB access)
+  - Environment Variables: Configured for Cosmos DB
+
+- ✅ Managed Identity configured
+  - Function App MSI granted DocumentDB Data Contributor role on Cosmos DB
+  
+**Total estimated monthly cost: ~$40/month** (well under $150 budget)
+
 ### Azure Static Web Apps Deployment Token (Dec 20, 2025)
 - ✅ Regenerated API deployment token via Azure CLI
-- ✅ Updated GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_PEBBLE_00A40D41E`
-- ✅ Workflow should now deploy successfully to `blue-pebble-00a40d41e.4.azurestaticapps.net`
+- ✅ Updated GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- ✅ Consolidated on `deploy.yml` workflow
 
 ## ⚠️ Pending Tasks
 
