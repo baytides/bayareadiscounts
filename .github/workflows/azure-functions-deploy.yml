@@ -1,4 +1,4 @@
-name: Deploy Azure Functions (Run-from-package)
+name: Deploy Azure Functions
 
 on:
   push:
@@ -29,14 +29,18 @@ jobs:
         working-directory: azure-functions
         run: npm ci
 
-      - name: Deploy Azure Functions
-        uses: Azure/functions-action@v1
+      - name: Login to Azure
+        uses: azure/login@v1
         with:
-          app-name: ${{ secrets.AZURE_FUNCTION_APP_NAME }}
-          package: 'azure-functions'
-          publish-profile: ${{ secrets.AZURE_FUNCTION_APP_PUBLISH_PROFILE }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Functions
+        run: |
+          cd azure-functions
+          func azure functionapp publish bayarea-api-prod --build remote
 
       - name: Deployment summary
         run: |
           echo "✅ Azure Functions deployment completed!"
-          echo "📍 Function App: ${{ secrets.AZURE_FUNCTION_APP_NAME }}"
+          echo "📍 Function App: bayarea-api-prod"
+          echo "🔗 URL: https://bayarea-api-prod.azurewebsites.net"
