@@ -1,6 +1,6 @@
 # Azure Deployment Status
 
-**Date:** December 19, 2025  
+**Date:** December 20, 2025  
 **Status:** ✅ Production Ready - All Services Deployed
 
 ## 🎉 Latest Update: Azure Enhancements Complete
@@ -45,6 +45,13 @@ See [AZURE_SERVICES_GUIDE.md](AZURE_SERVICES_GUIDE.md) for complete documentatio
   - GET /api/categories
 - ✅ Deployed functions to Azure
 - ⚠️ Functions returning 500 errors (needs debugging)
+
+## ✅ Recent Fixes
+
+### Azure Static Web Apps Deployment Token (Dec 20, 2025)
+- ✅ Regenerated API deployment token via Azure CLI
+- ✅ Updated GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_PEBBLE_00A40D41E`
+- ✅ Workflow should now deploy successfully to `blue-pebble-00a40d41e.4.azurestaticapps.net`
 
 ## ⚠️ Pending Tasks
 
