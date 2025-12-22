@@ -142,10 +142,38 @@
     }
   }
 
+  // Focus trap for modal
+  function trapFocus(element) {
+    const focusableElements = element.querySelectorAll(
+      'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      if (e.key !== 'Tab') return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    });
+  }
+
   // Initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     const overlay = qs('#step-flow');
     if (!overlay) return;
+
+    // Set up focus trap for modal
+    trapFocus(overlay);
 
     // Hide all results and filters initially (wizard-first approach)
     const filterUI = qs('.filter-controls');

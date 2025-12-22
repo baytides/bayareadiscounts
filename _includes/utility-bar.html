@@ -469,6 +469,12 @@ body[data-font-size="x-large"] {
     applyTextSpacing(textSpacing);
     if (spacingToggle) {
       spacingToggle.setAttribute('aria-pressed', textSpacing === 'enhanced' ? 'true' : 'false');
+      // Apply visual styling on load
+      if (textSpacing === 'enhanced') {
+        spacingToggle.style.background = 'var(--primary, #1e40af)';
+        spacingToggle.style.color = 'white';
+        spacingToggle.style.borderColor = 'var(--primary, #1e40af)';
+      }
     }
 
     // Set bar state - expanded by default; only collapse if user explicitly chose to

@@ -24,7 +24,7 @@
 /* Dark mode: triggered by system preference OR manual toggle */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-body: linear-gradient(135deg, #0a1a1a15 0%, #0d2626a15 100%);
+    --bg-body: linear-gradient(135deg, #0a1a1a15 0%, #0d262615 100%);
     --bg-main: #0d1117;
     --bg-table-hover: #1b3a3a;
     --bg-footer: #010409;
@@ -41,7 +41,7 @@
 
 /* Manual dark mode toggle (overrides auto) */
 body[data-theme="dark"] {
-  --bg-body: linear-gradient(135deg, #0a1a1a15 0%, #0d2626a15 100%);
+  --bg-body: linear-gradient(135deg, #0a1a1a15 0%, #0d262615 100%);
   --bg-main: #0d1117;
   --bg-table-hover: #1b3a3a;
   --bg-footer: #010409;

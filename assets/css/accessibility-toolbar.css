@@ -477,36 +477,73 @@ body.simple-language .simple-language-summary {
    ACCESSIBILITY FEATURE IMPLEMENTATIONS
    ============================================ */
 
-/* High contrast mode */
-body.high-contrast {
+/* High contrast mode - Light theme */
+body.high-contrast,
+body[data-theme="light"].high-contrast {
   --bg-body: white;
   --bg-main: white;
-  --bg-table-hover: #000;
+  --bg-table-hover: #e6e6e6;
   --bg-footer: white;
   --text-primary: #000;
   --text-heading: #000;
   --text-link: #0000ff;
-  --text-link-hover: #0000ff;
+  --text-link-hover: #0000ee;
   --border-color: #000;
-  --border-light: #000;
+  --border-light: #333;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --primary-teal: #0000ff;
+  --primary-teal-dark: #0000cc;
+  --primary-teal-darker: #000099;
+  --accent-orange: #ff4500;
+  --accent-orange-light: #ff6600;
 }
 
-/* High contrast mode in dark theme */
+/* High contrast mode - Dark theme (system preference) */
 @media (prefers-color-scheme: dark) {
   body.high-contrast {
     --bg-body: #000;
     --bg-main: #000;
-    --bg-table-hover: #fff;
+    --bg-table-hover: #1a1a1a;
     --bg-footer: #000;
     --text-primary: #fff;
     --text-heading: #fff;
     --text-link: #ffff00;
-    --text-link-hover: #ffff00;
+    --text-link-hover: #ffff66;
     --border-color: #fff;
-    --border-light: #fff;
+    --border-light: #ccc;
+    --shadow: rgba(255, 255, 255, 0.5);
+    --shadow-light: rgba(255, 255, 255, 0.3);
+    --primary-teal: #ffff00;
+    --primary-teal-dark: #ffff66;
+    --primary-teal-darker: #ffff99;
+    --accent-orange: #ff8800;
+    --accent-orange-light: #ffaa00;
   }
 }
 
+/* High contrast mode - Dark theme (manual toggle) */
+body[data-theme="dark"].high-contrast {
+  --bg-body: #000;
+  --bg-main: #000;
+  --bg-table-hover: #1a1a1a;
+  --bg-footer: #000;
+  --text-primary: #fff;
+  --text-heading: #fff;
+  --text-link: #ffff00;
+  --text-link-hover: #ffff66;
+  --border-color: #fff;
+  --border-light: #ccc;
+  --shadow: rgba(255, 255, 255, 0.5);
+  --shadow-light: rgba(255, 255, 255, 0.3);
+  --primary-teal: #ffff00;
+  --primary-teal-dark: #ffff66;
+  --primary-teal-darker: #ffff99;
+  --accent-orange: #ff8800;
+  --accent-orange-light: #ffaa00;
+}
+
+/* High contrast mode element styling */
 body.high-contrast a {
   text-decoration: underline;
   font-weight: 600;
@@ -518,12 +555,68 @@ body.high-contrast td {
   border: 2px solid #000;
 }
 
+body.high-contrast button,
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+  border: 2px solid #000 !important;
+  background: white !important;
+  color: #000 !important;
+}
+
+body.high-contrast button:hover,
+body.high-contrast button:focus {
+  background: #e6e6e6 !important;
+  outline: 3px solid #000 !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode - Dark theme element styling */
 @media (prefers-color-scheme: dark) {
   body.high-contrast table,
   body.high-contrast th,
   body.high-contrast td {
     border: 2px solid #fff;
   }
+
+  body.high-contrast button,
+  body.high-contrast input,
+  body.high-contrast select,
+  body.high-contrast textarea {
+    border: 2px solid #fff !important;
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  body.high-contrast button:hover,
+  body.high-contrast button:focus {
+    background: #1a1a1a !important;
+    outline: 3px solid #fff !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* High contrast mode - Dark theme manual toggle element styling */
+body[data-theme="dark"].high-contrast table,
+body[data-theme="dark"].high-contrast th,
+body[data-theme="dark"].high-contrast td {
+  border: 2px solid #fff;
+}
+
+body[data-theme="dark"].high-contrast button,
+body[data-theme="dark"].high-contrast input,
+body[data-theme="dark"].high-contrast select,
+body[data-theme="dark"].high-contrast textarea {
+  border: 2px solid #fff !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body[data-theme="dark"].high-contrast button:hover,
+body[data-theme="dark"].high-contrast button:focus {
+  background: #1a1a1a !important;
+  outline: 3px solid #fff !important;
+  outline-offset: 2px !important;
 }
 
 /* Dyslexia-friendly font */
