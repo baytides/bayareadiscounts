@@ -472,8 +472,8 @@ Create a new repository `bayareadiscounts-mobile` for the mobile app:
 
 **Repository Structure:**
 ```
-bayareadiscounts/          # Current web repo (keep as-is)
-bayareadiscounts-mobile/   # New mobile repo
+baytides/bayareadiscounts/    # Current web repo (keep as-is)
+baytides/mobile-apps/         # Mobile apps repo ✅ Created
 ```
 
 **Sharing Code Between Repos:**
@@ -481,15 +481,11 @@ bayareadiscounts-mobile/   # New mobile repo
 - Types and constants copied to mobile (minimal duplication)
 - OR: Create optional `bayareadiscounts-shared` npm package later if needed
 
-**Create Mobile Repo:**
+**Mobile Repo Setup:**
 ```bash
-# From your local machine
-gh repo create bayareadiscounts-mobile \
-  --public \
-  --description "Native iOS & Android app for Bay Area Discounts" \
-  --clone
-
-cd bayareadiscounts-mobile
+# Clone the mobile apps repo
+gh repo clone baytides/mobile-apps
+cd mobile-apps
 
 # Initialize React Native with Expo
 npx create-expo-app@latest . --template blank-typescript
@@ -509,9 +505,9 @@ git push origin main
 
 ### Immediate (Week 1-2)
 1. ✅ **Decide on mobile framework** - React Native recommended
-2. ✅ **Set up mobile repository** - Create `bayareadiscounts-mobile` (see above)
-3. ✅ **Create app mockups** - Design mobile-specific screens
-4. ✅ **API audit** - Document all endpoints needed
+2. ✅ **Set up mobile repository** - ✅ Created at `baytides/mobile-apps`
+3. ⏳ **Create app mockups** - Design mobile-specific screens
+4. ⏳ **API audit** - Document all endpoints needed
 
 ### Short-term (Week 3-6)
 1. ✅ **Enhance Azure Functions** - Add mobile-specific endpoints
