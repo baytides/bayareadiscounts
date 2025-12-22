@@ -10,6 +10,19 @@ const client = new CosmosClient({ endpoint, aadCredentials: credential });
 const container = client.database(databaseName).container(containerName);
 
 module.exports = async function (context, req) {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    context.res = {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    };
+    return;
+  }
+
   const programId = req.params.id;
   context.log(`GetProgramById triggered for ID: ${programId}`);
 
@@ -30,7 +43,10 @@ module.exports = async function (context, req) {
     if (programs.length === 0) {
       context.res = {
         status: 404,
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
         body: { error: 'Program not found', id: programId }
       };
       return;
@@ -40,7 +56,8 @@ module.exports = async function (context, req) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=300'
+        'Cache-Control': 'public, max-age=300',
+        'Access-Control-Allow-Origin': '*'
       },
       body: programs[0]
     };
@@ -49,8 +66,14 @@ module.exports = async function (context, req) {
     context.log.error('Error fetching program:', error);
     context.res = {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: { error: 'Failed to fetch program', message: error.message }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: {
+        error: 'Failed to fetch program',
+        ...(process.env.NODE_ENV === 'development' && { message: error.message })
+      }
     };
   }
 };

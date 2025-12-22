@@ -10,6 +10,19 @@ const client = new CosmosClient({ endpoint, aadCredentials: credential });
 const container = client.database(databaseName).container(containerName);
 
 module.exports = async function (context, req) {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    context.res = {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    };
+    return;
+  }
+
   context.log('GetCategories function triggered');
 
   try {
@@ -38,7 +51,8 @@ module.exports = async function (context, req) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=3600'
+        'Cache-Control': 'public, max-age=3600',
+        'Access-Control-Allow-Origin': '*'
       },
       body: {
         count: categories.length,
@@ -50,8 +64,14 @@ module.exports = async function (context, req) {
     context.log.error('Error fetching categories:', error);
     context.res = {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: { error: 'Failed to fetch categories', message: error.message }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: {
+        error: 'Failed to fetch categories',
+        ...(process.env.NODE_ENV === 'development' && { message: error.message })
+      }
     };
   }
 };

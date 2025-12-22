@@ -105,7 +105,7 @@ class DiscountSearchFilter {
 
     this.filteredPrograms = this.programs.filter(program => {
       const indexed = this.searchIndex.get(program.id);
-      return indexed.searchText.includes(query);
+      return indexed && indexed.searchText && indexed.searchText.includes(query);
     });
 
     this.sortPrograms();

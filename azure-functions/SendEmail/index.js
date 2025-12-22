@@ -45,7 +45,7 @@ module.exports = async function (context, req) {
         html: renderBrandedHtml({ subject, content })
       },
       recipients: {
-        to: [{ email: to }]
+        to: [{ address: to }]
       }
     };
 

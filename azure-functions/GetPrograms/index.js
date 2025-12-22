@@ -2,7 +2,7 @@ const { CosmosClient } = require('@azure/cosmos');
 const { DefaultAzureCredential } = require('@azure/identity');
 const { cacheGet, cacheSet, appInsights } = require('../shared/init');
 
-// Initialize Cosmos DB client with managed identity (AAD)
+// Initialize Cosmos DB client with Managed Identity
 const endpoint = process.env.COSMOS_DB_ENDPOINT;
 const databaseName = process.env.COSMOS_DB_DATABASE_NAME || 'bayareadiscounts';
 const containerName = process.env.COSMOS_DB_CONTAINER_NAME || 'programs';
@@ -14,6 +14,19 @@ const container = client.database(databaseName).container(containerName);
 module.exports = async function (context, req) {
   const startTime = Date.now();
   context.log('GetPrograms function triggered');
+
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    context.res = {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    };
+    return;
+  }
 
   try {
     if (!endpoint) {
@@ -28,7 +41,7 @@ module.exports = async function (context, req) {
 
     // Create cache key from query params
     const cacheKey = `programs:${category || 'all'}:${area || 'all'}:${eligibility || 'all'}:${search || 'none'}`;
-    
+
     // Try cache first
     const cached = await cacheGet(cacheKey);
     if (cached) {
@@ -38,7 +51,8 @@ module.exports = async function (context, req) {
         headers: {
           'Content-Type': 'application/json',
           'Cache-Control': 'public, max-age=3600',
-          'X-Cache': 'HIT'
+          'X-Cache': 'HIT',
+          'Access-Control-Allow-Origin': '*'
         },
         body: cached
       };
@@ -97,18 +111,14 @@ module.exports = async function (context, req) {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, max-age=3600',
-        'X-Cache': 'MISS'
+        'X-Cache': 'MISS',
+        'Access-Control-Allow-Origin': '*'
       },
       body: response
     };
 
     appInsights.defaultClient?.trackMetric({ name: 'GetPrograms Response Time', value: Date.now() - startTime });
     appInsights.defaultClient?.trackMetric({ name: 'Programs Returned', value: programs.length });
-      body: {
-        count: programs.length,
-        programs: programs
-      }
-    };
 
   } catch (error) {
     context.log.error('Error fetching programs:', error);
@@ -116,11 +126,12 @@ module.exports = async function (context, req) {
     context.res = {
       status: 500,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
       body: {
         error: 'Failed to fetch programs',
-        message: error.message
+        ...(process.env.NODE_ENV === 'development' && { message: error.message })
       }
     };
   }

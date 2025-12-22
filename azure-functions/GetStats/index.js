@@ -1,5 +1,6 @@
 const { CosmosClient } = require('@azure/cosmos');
 const { DefaultAzureCredential } = require('@azure/identity');
+const { cacheGet, cacheSet } = require('../shared/init');
 
 const endpoint = process.env.COSMOS_DB_ENDPOINT;
 const databaseName = process.env.COSMOS_DB_DATABASE_NAME || 'bayareadiscounts';
@@ -10,11 +11,42 @@ const client = new CosmosClient({ endpoint, aadCredentials: credential });
 const container = client.database(databaseName).container(containerName);
 
 module.exports = async function (context, req) {
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    context.res = {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    };
+    return;
+  }
+
   context.log('GetStats function triggered');
 
   try {
     if (!endpoint) {
       throw new Error('COSMOS_DB_ENDPOINT is not configured');
+    }
+
+    // Try cache first
+    const cacheKey = 'stats:all';
+    const cached = await cacheGet(cacheKey);
+    if (cached) {
+      context.log('Returning cached stats');
+      context.res = {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=3600',
+          'X-Cache': 'HIT',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: cached
+      };
+      return;
     }
 
     // Get total count
@@ -82,35 +114,48 @@ module.exports = async function (context, req) {
       .map(([eligibility, count]) => ({ eligibility, count }))
       .sort((a, b) => b.count - a.count);
 
+    const response = {
+      totalPrograms,
+      categories: {
+        count: categories.length,
+        breakdown: categories
+      },
+      areas: {
+        total: topAreas.length,
+        top10: topAreas
+      },
+      eligibility: {
+        types: eligibilityBreakdown.length,
+        breakdown: eligibilityBreakdown
+      }
+    };
+
+    // Cache for 1 hour
+    await cacheSet(cacheKey, response, 3600);
+
     context.res = {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=3600'
+        'Cache-Control': 'public, max-age=3600',
+        'X-Cache': 'MISS',
+        'Access-Control-Allow-Origin': '*'
       },
-      body: {
-        totalPrograms,
-        categories: {
-          count: categories.length,
-          breakdown: categories
-        },
-        areas: {
-          total: topAreas.length,
-          top10: topAreas
-        },
-        eligibility: {
-          types: eligibilityBreakdown.length,
-          breakdown: eligibilityBreakdown
-        }
-      }
+      body: response
     };
 
   } catch (error) {
     context.log.error('Error fetching stats:', error);
     context.res = {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: { error: 'Failed to fetch stats', message: error.message }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: {
+        error: 'Failed to fetch stats',
+        ...(process.env.NODE_ENV === 'development' && { message: error.message })
+      }
     };
   }
 };
