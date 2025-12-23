@@ -48,36 +48,15 @@ When a family visits Crissy Field, Coyote Hills, or Point Reyes because a transi
 
 ---
 
-## Expanding to Eligibility Guides
-
-As we built out the discount listings, we realized something: many visitors didn't know if they qualified for the programs we were listing.
-
-Someone might discover that EBT cardholders get discounted museum admission—but if they don't have an EBT card and don't know how to apply, that information isn't useful to them.
-
-So we expanded. Our [Eligibility Guides](/eligibility/) now help residents understand:
-
-- **[Public Assistance Programs](/eligibility/public-assistance.html)**: How to apply for Medi-Cal, CalFresh, and CalWORKs, with county office locations across all nine Bay Area counties
-- **[Military, Veterans & Families](/eligibility/military-veterans.html)**: Who qualifies under federal definitions, how to verify status, and how to access VA benefits
-- **[Students](/eligibility/students.html)**: What counts as valid student status, enrollment verification methods, and CalFresh rules for college students
-- **[Seniors](/eligibility/seniors.html)**: Age thresholds that vary by program, Medicare enrollment, and Area Agency on Aging resources
-- **[People with Disabilities](/eligibility/disability.html)**: SSDI vs. SSI, Regional Center services, and Independent Living Center locations
-- **[Utility Programs](/eligibility/utility-programs.html)**: CARE, FERA, LIHEAP, and low-cost internet options with application instructions
-
-We're not benefits counselors, and we're not trying to replace the social workers and case managers who do that important work. But we can point people in the right direction and demystify processes that often feel opaque.
-
----
-
 ## Who This Is For
 
-Bay Area Discounts serves anyone in the nine-county San Francisco Bay Area looking to stretch their resources:
+Bay Area Discounts serves anyone in the nine-county San Francisco Bay Area looking to stretch their resources—low-income households, seniors, veterans and military families, students, people with disabilities, families looking for free activities, or anyone who wants to reduce expenses and live more sustainably.
 
-- **Low-income households** navigating public assistance programs
-- **Seniors** seeking discounts on transit, utilities, and recreation
-- **Veterans and military families** accessing earned benefits
-- **Students** managing tight budgets while in school
-- **People with disabilities** connecting to services and accommodations
-- **Families** looking for free and low-cost activities
-- **Anyone** who wants to reduce expenses and live more sustainably
+As we built out the discount listings, we realized many visitors didn't know if they qualified for the programs we were listing. Someone might discover that EBT cardholders get discounted museum admission—but if they don't have an EBT card and don't know how to apply, that information isn't useful.
+
+So we expanded. Our [Eligibility Guides](/eligibility/) help residents understand how to apply for public assistance programs like Medi-Cal and CalFresh, who qualifies for military and veteran benefits, what counts as valid student status, age thresholds for senior programs, disability services and accommodations, and utility assistance options.
+
+We're not benefits counselors, and we're not trying to replace the social workers and case managers who do that work. But we can point people in the right direction and demystify processes that often feel opaque.
 
 We focus on the Bay Area because that's where we live and work, and because local knowledge matters. Knowing which county office to visit, which transit agency serves your area, and which programs have Bay Area-specific rules requires regional expertise.
 
@@ -132,19 +111,6 @@ Bay Area Discounts is free to use and will remain free. If you'd like to support
 ### Join a Cleanup or Restoration Event
 
 The best way to protect the Bay is to show up. Check [baytides.org/events](https://baytides.org/events) for upcoming volunteer opportunities.
-
----
-
-## Contact
-
-**Bay Tides**
-274 Redwood Shores Pkwy #619
-Redwood City, CA 94065
-
-**Email**: hello [at] baytides [dot] org
-**Website**: [baytides.org](https://baytides.org)
-
-**EIN**: 93-3889081
 
 ---
 
