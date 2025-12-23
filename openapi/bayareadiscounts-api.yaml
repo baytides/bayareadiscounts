@@ -1,32 +1,16 @@
 openapi: 3.0.3
 info:
-  title: Bay Area Discounts API
+  title: Bay Area Discounts Static JSON API
   version: 1.0.0
-  description: REST API for programs, categories, areas, stats, and translation proxy.
+  description: Static JSON API for programs, categories, areas, and eligibility types. All endpoints return pre-generated JSON files served via Azure Static Web Apps CDN.
 servers:
-  - url: https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api
+  - url: https://bayareadiscounts.com/api
+    description: Production (CDN-cached static files)
 paths:
-  /programs:
+  /programs.json:
     get:
-      summary: List programs
-      description: Returns programs with optional filters.
-      parameters:
-        - in: query
-          name: category
-          schema:
-            type: string
-        - in: query
-          name: area
-          schema:
-            type: string
-        - in: query
-          name: eligibility
-          schema:
-            type: string
-        - in: query
-          name: search
-          schema:
-            type: string
+      summary: List all programs
+      description: Returns all programs with metadata. Filtering is done client-side.
       responses:
         '200':
           description: OK
@@ -34,9 +18,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProgramsResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /programs/{id}:
+  /programs/{id}.json:
     get:
       summary: Get program by ID
       parameters:
@@ -45,6 +27,7 @@ paths:
           required: true
           schema:
             type: string
+          description: Program ID (URL-friendly slug)
       responses:
         '200':
           description: OK
@@ -53,16 +36,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/Program'
         '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /categories:
+          description: Not found (static file does not exist)
+  /categories.json:
     get:
       summary: List categories
+      description: Returns all categories with program counts and icons.
       responses:
         '200':
           description: OK
@@ -70,11 +48,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CategoriesResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /areas:
+  /areas.json:
     get:
       summary: List areas
+      description: Returns all geographic areas with program counts and types.
       responses:
         '200':
           description: OK
@@ -82,45 +59,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AreasResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /stats:
+  /eligibility.json:
     get:
-      summary: Get statistics
+      summary: List eligibility types
+      description: Returns all eligibility types with descriptions and program counts.
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatsResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
-  /send-email:
-    post:
-      summary: Send a notification email
-      description: Sends a simple email via Azure Communication Services.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SendEmailRequest'
+                $ref: '#/components/schemas/EligibilityResponse'
+  /metadata.json:
+    get:
+      summary: Get API metadata
+      description: Returns API version, generation timestamp, and available endpoints.
       responses:
-        '202':
-          description: Accepted
+        '200':
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SendEmailResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '500':
-          $ref: '#/components/responses/ServerError'
+                $ref: '#/components/schemas/MetadataResponse'
 components:
   schemas:
     Program:
@@ -128,146 +88,133 @@ components:
       properties:
         id:
           type: string
+          description: URL-friendly program identifier
         name:
           type: string
         category:
           type: string
-        area:
+        description:
           type: string
         eligibility:
           type: array
           items:
             type: string
-        benefit:
-          type: string
-        timeframe:
-          type: string
-        link:
+        areas:
+          type: array
+          items:
+            type: string
+        website:
           type: string
           format: uri
-        link_text:
+        cost:
           type: string
-        verified_date:
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        email:
+          type: string
+          format: email
+          nullable: true
+        requirements:
+          type: string
+          nullable: true
+        howToApply:
+          type: string
+          nullable: true
+        lastUpdated:
           type: string
           format: date
     ProgramsResponse:
       type: object
       properties:
+        total:
+          type: integer
         count:
+          type: integer
+        offset:
           type: integer
         programs:
           type: array
           items:
             $ref: '#/components/schemas/Program'
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        icon:
+          type: string
+        programCount:
+          type: integer
     CategoriesResponse:
       type: object
       properties:
-        count:
-          type: integer
         categories:
           type: array
           items:
-            type: object
-            properties:
-              category:
-                type: string
-              count:
-                type: integer
+            $ref: '#/components/schemas/Category'
+    Area:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [county, region, state, nationwide]
+        programCount:
+          type: integer
     AreasResponse:
       type: object
       properties:
-        count:
-          type: integer
         areas:
           type: array
           items:
-            type: object
-            properties:
-              area:
-                type: string
-              count:
-                type: integer
-    StatsResponse:
+            $ref: '#/components/schemas/Area'
+    Eligibility:
       type: object
       properties:
-        totalPrograms:
-          type: integer
-        categories:
-          type: object
-          properties:
-            count:
-              type: integer
-            breakdown:
-              type: array
-              items:
-                type: object
-                properties:
-                  category:
-                    type: string
-                  count:
-                    type: integer
-        areas:
-          type: object
-          properties:
-            total:
-              type: integer
-            top10:
-              type: array
-              items:
-                type: object
-                properties:
-                  area:
-                    type: string
-                  count:
-                    type: integer
-        eligibility:
-          type: object
-          properties:
-            types:
-              type: integer
-            breakdown:
-              type: array
-              items:
-                type: object
-                properties:
-                  eligibility:
-                    type: string
-                  count:
-                    type: integer
-    SendEmailRequest:
-      type: object
-      required: [to, content]
-      properties:
-        to:
-          type: string
-          format: email
-        subject:
-          type: string
-        content:
-          type: string
-        replyTo:
-          type: string
-          format: email
-    SendEmailResponse:
-      type: object
-      properties:
-        messageId:
-          type: string
-        status:
-          type: string
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: string
-        message:
-          type: string
         id:
           type: string
-  responses:
-    ServerError:
-      description: Internal server error
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
+        name:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+        programCount:
+          type: integer
+    EligibilityResponse:
+      type: object
+      properties:
+        eligibility:
+          type: array
+          items:
+            $ref: '#/components/schemas/Eligibility'
+    MetadataResponse:
+      type: object
+      properties:
+        version:
+          type: string
+        generatedAt:
+          type: string
+          format: date-time
+        totalPrograms:
+          type: integer
+        endpoints:
+          type: object
+          properties:
+            programs:
+              type: string
+            categories:
+              type: string
+            eligibility:
+              type: string
+            areas:
+              type: string
+            singleProgram:
+              type: string

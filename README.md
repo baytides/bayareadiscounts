@@ -92,20 +92,20 @@ fetch('https://bayareadiscounts.com/api/programs.json')
 
 ---
 
-## �🛠️ Tech Stack
+## Tech Stack
 
 **Built with:**
 - [Jekyll](https://jekyllrb.com/) - Static site generator
 - [Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/) - Hosting and deployment
-- [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) - NoSQL database (serverless)
-- [Azure Functions](https://azure.microsoft.com/services/functions/) - Serverless REST API
-- YAML - Structured data storage
+- YAML - Structured data storage for programs
+- Static JSON API - Generated from YAML via Node.js script
 - Vanilla JavaScript - Search, filters, and accessibility features
 - Responsive CSS - Mobile-first design optimized for all devices including Apple Vision Pro
 
 **Key Components:**
 - `_data/programs/` - Program data organized by category (YAML files)
-- `azure-functions/` - Serverless API endpoints
+- `api/` - Static JSON API endpoints (auto-generated)
+- `scripts/` - Build scripts including API generator
 - `infrastructure/` - Azure Infrastructure as Code (Bicep)
 - `_includes/` - Reusable components (search UI, program cards, etc.)
 - `_layouts/` - Page templates
@@ -189,32 +189,35 @@ We welcome contributions! There are two ways to help:
 
 ## 🚀 Quick Start
 
-### Using the API (Easiest)
+### Using the Static JSON API (Easiest)
 
-Access all program data via our REST API:
+Access all program data via our static JSON API:
 
 ```bash
 # Get all programs
-curl https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api/programs
+curl https://bayareadiscounts.com/api/programs.json
 
-# Get food programs
-curl https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api/programs?category=Food
+# Get categories
+curl https://bayareadiscounts.com/api/categories.json
 
-# Get statistics
-curl https://bayareadiscounts-func-prod-clx32fwtnzehq.azurewebsites.net/api/stats
+# Get a specific program
+curl https://bayareadiscounts.com/api/programs/alameda-food-bank.json
 ```
 
 See **[API_ENDPOINTS.md](./docs/API_ENDPOINTS.md)** for complete API documentation.
 
-### Local Development (Website)
+### Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/baytides/bayareadiscounts.git
 cd bayareadiscounts
 
-# Install dependencies
+# Install Ruby dependencies
 bundle install
+
+# Install Node dependencies (for API generation)
+npm install
 
 # Run local server
 bundle exec jekyll serve
@@ -222,20 +225,13 @@ bundle exec jekyll serve
 # View at http://localhost:4000
 ```
 
-### Local Development (API Functions)
+### Regenerating the API
 
 ```bash
-# Navigate to Azure Functions
-cd azure-functions
+# After modifying YAML files in _data/programs/
+node scripts/generate-api.js
 
-# Install dependencies
-npm install
-
-# Create local settings (see azure-functions/README.md)
-# Then start functions locally
-func start
-
-# Test at http://localhost:7071
+# API files are generated in /api/ directory
 ```
 
 ---
@@ -379,6 +375,6 @@ This approach ensures:
 
 ---
 
-**Last Updated:** December 18, 2025 
-**Maintained by:** [semicoloncolonel](https://github.com/semicoloncolonel) 
-**Hosted on:** GitHub Pages
+**Last Updated:** December 23, 2025
+**Maintained by:** [semicoloncolonel](https://github.com/semicoloncolonel)
+**Hosted on:** Azure Static Web Apps
