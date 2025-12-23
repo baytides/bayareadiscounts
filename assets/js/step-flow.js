@@ -190,8 +190,9 @@
     const params = new URLSearchParams(window.location.search);
     const isAutomation = !!navigator.webdriver;
     const optOut = params.get('no-step') === '1';
+    const forceStep = params.get('force-step') === '1';
 
-    if (isAutomation || optOut) {
+    if ((isAutomation || optOut) && !forceStep) {
       closeWizard();
       return;
     }

@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 // Use ?no-step=1 to skip the onboarding wizard for tests that need direct access to content
+// Use ?force-step=1 to force-show wizard even in automation mode (navigator.webdriver)
 const home = '/?no-step=1';
-const homeWithWizard = '/';
+const homeWithWizard = '/?force-step=1';
 
 async function acceptConsent(page) {
   // No consent UI yet; placeholder for future
