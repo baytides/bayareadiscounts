@@ -14,11 +14,11 @@ description: Learn why Bay Tides created Bay Area Discounts and how this resourc
 
 ## Why We Built This
 
-We started Bay Area Discounts because we believe **community resilience and environmental stewardship are inseparable**.
+We started Bay Area Discounts because we see a direct connection between **financial barriers and environmental harm**.
 
-People who are struggling to meet basic needs—food, healthcare, transportation, utilities—have less capacity to engage in the volunteer cleanups, advocacy campaigns, and conservation efforts that protect our Bay. By helping residents access the resources they're entitled to, we're removing barriers to participation in the environmental movement.
+When cost is the deciding factor, the cheapest option is often the most damaging—to the environment, to wildlife, and to public health. Driving an old car is cheaper than transit fares. Fast fashion costs less than durable clothing. Processed food is more affordable than local produce. Inefficient appliances stay in use because replacements are out of reach.
 
-But there's a more direct connection too. Many of the programs listed here aren't just good for people—they're good for the planet.
+The programs listed here change that calculus. They make sustainable choices financially viable for people who would otherwise be priced out of them.
 
 ---
 
