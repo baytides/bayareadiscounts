@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-const home = '/';
+// Use ?no-step=1 to skip the onboarding wizard for tests that need direct access to content
+const home = '/?no-step=1';
+const homeWithWizard = '/';
 
 async function acceptConsent(page) {
   // No consent UI yet; placeholder for future
@@ -9,8 +11,7 @@ async function acceptConsent(page) {
 test('home loads and shows programs', async ({ page }) => {
   await page.goto(home, { waitUntil: 'domcontentloaded' });
   await acceptConsent(page);
-  // Ensure the main content H2 is visible (avoid footer landmark H2)
-  await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toBeVisible();
+  // Ensure the searchbox is visible (wizard is skipped)
   await expect(page.getByRole('searchbox', { name: /search programs/i })).toBeVisible();
   await expect(page.locator('[data-program]').first()).toBeVisible();
 });
@@ -53,20 +54,20 @@ test('back to top appears after scroll on mobile', async ({ page }) => {
 test('mobile filter drawer opens and closes', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 667 }); // iPhone SE size
   await page.goto(home, { waitUntil: 'domcontentloaded' });
-  
+
   // Mobile filter button should be visible
   const filterToggle = page.locator('#mobile-filter-toggle');
   await expect(filterToggle).toBeVisible();
-  
+
   // Click to open drawer
   await filterToggle.click();
   const searchPanel = page.locator('.search-panel');
   await expect(searchPanel).toHaveClass(/mobile-open/);
-  
+
   // Backdrop should be visible
   const backdrop = page.locator('.mobile-filter-backdrop');
   await expect(backdrop).toHaveClass(/show/);
-  
+
   // Click close button to close drawer
   const closeBtn = page.locator('.mobile-drawer-close');
   await closeBtn.click();
@@ -76,9 +77,47 @@ test('mobile filter drawer opens and closes', async ({ page }) => {
 test('mobile layout prevents horizontal scroll', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 667 });
   await page.goto(home, { waitUntil: 'domcontentloaded' });
-  
+
   // Check that body doesn't have horizontal scrollbar
   const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
   const viewportWidth = await page.evaluate(() => document.documentElement.clientWidth);
   expect(bodyWidth).toBeLessThanOrEqual(viewportWidth);
+});
+
+test('step flow wizard displays and navigates correctly', async ({ page }) => {
+  await page.goto(homeWithWizard, { waitUntil: 'domcontentloaded' });
+
+  // Step 1: Introduction page should be visible
+  const step1 = page.locator('#step-1');
+  await expect(step1).toBeVisible();
+  await expect(page.locator('#step-1-title')).toContainText('Stretch your budget');
+
+  // Click "Get Started" to go to step 2
+  await page.locator('.step-next[data-next="2"]').click();
+
+  // Step 2: Eligibility selection should be visible
+  const step2 = page.locator('#step-2');
+  await expect(step2).toBeVisible();
+  await expect(page.locator('#step-2-title')).toContainText('Which of these apply to you');
+
+  // Select an eligibility option
+  await page.locator('input[name="eligibility"][value="everyone"]').check();
+
+  // Click "Continue" to go to step 3
+  await page.locator('.step-next[data-next="3"]').click();
+
+  // Step 3: County selection should be visible
+  const step3 = page.locator('#step-3');
+  await expect(step3).toBeVisible();
+  await expect(page.locator('#step-3-title')).toContainText('What county do you live in');
+
+  // Select a county
+  await page.locator('input[name="county"][value="San Francisco"]').check();
+
+  // Click "Show my results" to complete wizard
+  await page.locator('.step-submit').click();
+
+  // Wizard should be hidden and search results visible
+  await expect(page.locator('#step-flow')).not.toBeVisible();
+  await expect(page.getByRole('searchbox', { name: /search programs/i })).toBeVisible();
 });
