@@ -229,7 +229,7 @@
 - id: sf-aid-for-animals
   name: SF Aid for Animals (SFAFA)
   category: Pet Resources
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - 📍
   - low-income
@@ -265,7 +265,7 @@
 - id: vetco-clinics
   name: VETCO Clinics
   category: Pet Resources
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - everyone
   benefit: Affordable vaccinations and basic pet health services at various locations

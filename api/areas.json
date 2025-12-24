@@ -58,7 +58,7 @@
       "id": "bay-area",
       "name": "Bay Area",
       "type": "region",
-      "programCount": 9
+      "programCount": 0
     },
     {
       "id": "statewide",
@@ -70,7 +70,7 @@
       "id": "nationwide",
       "name": "Nationwide",
       "type": "nationwide",
-      "programCount": 38
+      "programCount": 39
     }
   ]
 }

@@ -50,7 +50,7 @@
 - id: calfresh-rmp
   name: CalFresh Restaurant Meals Program (RMP)
   category: Food
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - low-income
   - seniors
@@ -88,7 +88,7 @@
 - id: market-match
   name: Market Match
   category: Food
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - low-income
   benefit: Extra dollars for fruits & veggies at farmers markets
@@ -148,7 +148,7 @@
 - id: project-open-hand
   name: Project Open Hand
   category: Food
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - low-income
   - seniors
@@ -278,7 +278,7 @@
 - id: ymca-food-pantries
   name: YMCA Food Pantries
   category: Food
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - low-income
   - families

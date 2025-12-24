@@ -49,7 +49,7 @@
 - id: lib-005
   name: Hoopla Digital
   category: Library Resources
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - everyone
   benefit: Free ebooks, audiobooks, music, movies, and TV shows
@@ -60,7 +60,7 @@
 - id: lib-006
   name: Kanopy
   category: Library Resources
-  area: Bay Area
+  area: Bay Area-wide
   eligibility:
   - everyone
   benefit: Free streaming of films and documentaries for library cardholders

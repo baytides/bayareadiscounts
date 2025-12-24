@@ -68,7 +68,7 @@
 - id: planned-parenthood
   name: Planned Parenthood
   category: Health
-  area: Bay Area
+  area: Nationwide
   eligibility:
   - low-income
   - everyone
