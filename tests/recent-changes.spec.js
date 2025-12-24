@@ -23,10 +23,10 @@ test.describe('Recent Changes - Site Header and Dark Mode', () => {
     const header = page.locator('.site-header');
     await expect(header).toBeVisible();
 
-    // Check logo is clickable and goes to home
+    // Check logo is clickable and goes to home (with no-step=1 to skip wizard)
     const logo = page.locator('.site-logo');
     await expect(logo).toBeVisible();
-    await expect(logo).toHaveAttribute('href', '/');
+    await expect(logo).toHaveAttribute('href', '/?no-step=1');
   });
 
   test('site header appears only once (no duplicates)', async ({ page }) => {
