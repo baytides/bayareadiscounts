@@ -186,13 +186,19 @@
     if (searchResults) searchResults.style.display = 'none';
     if (mobileDrawer) mobileDrawer.style.display = 'none';
 
-    // Skip wizard in automation/testing or if user opts out
+    // Skip wizard in automation/testing, if user opts out, or if returning visitor with saved prefs
     const params = new URLSearchParams(window.location.search);
     const isAutomation = !!navigator.webdriver;
     const optOut = params.get('no-step') === '1';
     const forceStep = params.get('force-step') === '1';
+    const savedPrefs = getPrefs();
+    const hasCompletedWizard = !!savedPrefs;
 
-    if ((isAutomation || optOut) && !forceStep) {
+    if ((isAutomation || optOut || hasCompletedWizard) && !forceStep) {
+      // If returning visitor with saved preferences, auto-apply them
+      if (hasCompletedWizard && !optOut) {
+        applySelections(savedPrefs.eligibility || [], savedPrefs.county || 'none');
+      }
       closeWizard();
       return;
     }
