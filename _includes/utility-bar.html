@@ -598,11 +598,17 @@ body[data-font-size="x-large"] {
   if (shareBtn) {
     shareBtn.addEventListener('click', async () => {
       // Add UTM parameters to track shares from utility bar
-      const url = new URL(window.location.href);
-      url.searchParams.set('utm_source', 'utility_bar');
-      url.searchParams.set('utm_medium', 'share_button');
-      url.searchParams.set('utm_campaign', 'user_share');
-      const shareUrl = url.toString();
+      let shareUrl = window.location.href;
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('utm_source', 'utility_bar');
+        url.searchParams.set('utm_medium', 'share_button');
+        url.searchParams.set('utm_campaign', 'user_share');
+        shareUrl = url.toString();
+      } catch (e) {
+        // If URL parsing fails, use the original href
+        console.log('URL parsing failed, using original href');
+      }
 
       const shareData = {
         title: document.title || 'Bay Area Discounts',

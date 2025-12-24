@@ -10,9 +10,13 @@ actions: true
     const navLinks = document.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
-      const linkPath = new URL(link.href).pathname;
-      if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
-        link.setAttribute('aria-current', 'page');
+      try {
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+          link.setAttribute('aria-current', 'page');
+        }
+      } catch (e) {
+        // Skip if URL parsing fails
       }
     });
   });

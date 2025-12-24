@@ -167,7 +167,7 @@
         </svg>
         Save Filters
       `;
-      saveBtn.setAttribute('aria-label', 'Save current filters as a preset');
+      saveBtn.setAttribute('aria-label', 'Save Filters - Save current filters as a preset');
       saveBtn.addEventListener('click', () => this.showSaveModal());
 
       // Create presets dropdown button
@@ -182,7 +182,7 @@
         My Presets
         <span class="preset-count" id="preset-count">${this.presets.length}</span>
       `;
-      presetsBtn.setAttribute('aria-label', 'View saved filter presets');
+      presetsBtn.setAttribute('aria-label', 'My Presets - View saved filter presets');
       presetsBtn.setAttribute('aria-haspopup', 'true');
       presetsBtn.setAttribute('aria-expanded', 'false');
       presetsBtn.addEventListener('click', (e) => this.togglePresetsDropdown(e));

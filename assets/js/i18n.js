@@ -150,9 +150,13 @@ class I18n {
     localStorage.setItem('bayarea_lang', lang);
     
     // Update URL without reload
-    const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', url);
+    try {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+    } catch (e) {
+      // URL parsing failed, skip URL update
+    }
     
     this.updateUI();
   }
