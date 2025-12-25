@@ -542,9 +542,15 @@ class DiscountSearchFilter {
 
       // Check area filters
       if (activeFilters.area.length > 0) {
-        const hasArea = activeFilters.area.some(area =>
-          program.area.includes(area)
-        );
+        const hasArea = activeFilters.area.some(area => {
+          // "Other" matches Bay Area-wide, Statewide, or Nationwide programs
+          if (area === 'Other') {
+            return program.area.includes('Bay Area') ||
+                   program.area.includes('Statewide') ||
+                   program.area.includes('Nationwide');
+          }
+          return program.area.includes(area);
+        });
         match = match && hasArea;
       }
 
