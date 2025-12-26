@@ -1,26 +1,39 @@
-<div id="step-flow" class="step-flow-page" role="main" aria-label="Find programs">
+<div id="step-flow" class="step-flow-page" role="dialog" aria-modal="true" aria-label="Find programs wizard">
+  <!-- Screen reader announcement region -->
+  <div class="sr-only" role="status" aria-live="polite" id="step-announcement"></div>
+
   <div class="step-flow-container">
     <!-- Logo -->
     <div class="wizard-logo">
       <img src="{{ site.baseurl | default: '' }}/assets/images/logo/banner.svg" alt="Bay Area Discounts">
     </div>
 
+    <!-- Simple language intro for the whole wizard -->
+    <div class="simple-language-section-header wizard-simple-intro" aria-label="Simple language explanation">
+      <strong>What is this?</strong> This quick guide helps you find programs that match your needs. Answer a few questions, and we'll show you the best options. You can skip this anytime.
+    </div>
+
     <!-- Step 1: Introduction -->
-    <section class="step-page" id="step-1" aria-labelledby="step-1-title">
+    <section class="step-page" id="step-1" aria-labelledby="step-1-title" role="region">
       <div class="step-header">
-        <div class="step-progress">
+        <div class="step-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Step 1 of 3">
           <span class="progress-text">Step 1 of 3</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 33%"></div>
           </div>
         </div>
-        <button type="button" class="step-flow-skip" aria-label="Skip to all programs">
+        <button type="button" class="step-flow-skip" aria-label="Skip wizard and go to all programs">
           Skip to all programs
         </button>
       </div>
 
       <div class="step-content intro-content">
         <h1 id="step-1-title">Stretch your budget and discover more of what your community has to offer.</h1>
+
+        <!-- Simple language summary for step 1 -->
+        <div class="simple-language-helper step-simple-helper">
+          We're going to help you find free and discounted programs. Click "Get Started" to begin - it only takes a minute!
+        </div>
 
         <p class="intro-text">
           This guide features free and low-cost resources across the counties commonly recognized as the San Francisco Bay Area: <strong>Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma</strong>.
@@ -37,23 +50,24 @@
         </div>
 
         <div class="step-actions">
-          <button type="button" class="btn btn-primary step-next" data-next="2">
+          <button type="button" class="btn btn-primary step-next" data-next="2" aria-describedby="step1-next-help">
             Get Started
           </button>
+          <span id="step1-next-help" class="sr-only">Press Enter or click to continue to step 2</span>
         </div>
       </div>
     </section>
 
     <!-- Step 2: Eligibility -->
-    <section class="step-page" id="step-2" aria-labelledby="step-2-title" hidden>
+    <section class="step-page" id="step-2" aria-labelledby="step-2-title" role="region" hidden>
       <div class="step-header">
-        <div class="step-progress">
+        <div class="step-progress" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="3" aria-label="Step 2 of 3">
           <span class="progress-text">Step 2 of 3</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 66%"></div>
           </div>
         </div>
-        <button type="button" class="step-flow-skip" aria-label="Skip to all programs">
+        <button type="button" class="step-flow-skip" aria-label="Skip wizard and go to all programs">
           Skip to all programs
         </button>
       </div>
@@ -62,8 +76,13 @@
         <h1 id="step-2-title">Which of these apply to you?</h1>
         <p class="step-description">Select all that apply to see relevant programs.</p>
 
+        <!-- Simple language helper for step 2 -->
+        <div class="simple-language-helper step-simple-helper">
+          Click on any boxes that describe you. You can pick more than one! For example, if you're a senior with low income, click both "Seniors" and "SNAP/EBT/Medi-Cal".
+        </div>
+
         <fieldset class="eligibility-grid">
-          <legend class="sr-only">Eligibility options</legend>
+          <legend class="sr-only">Eligibility options - select all that apply to you</legend>
 
           <label class="option-card">
             <input type="checkbox" name="eligibility" value="low-income">
@@ -150,15 +169,15 @@
     </section>
 
     <!-- Step 3: County -->
-    <section class="step-page" id="step-3" aria-labelledby="step-3-title" hidden>
+    <section class="step-page" id="step-3" aria-labelledby="step-3-title" role="region" hidden>
       <div class="step-header">
-        <div class="step-progress">
+        <div class="step-progress" role="progressbar" aria-valuenow="3" aria-valuemin="1" aria-valuemax="3" aria-label="Step 3 of 3 - final step">
           <span class="progress-text">Step 3 of 3</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 100%"></div>
           </div>
         </div>
-        <button type="button" class="step-flow-skip" aria-label="Skip to all programs">
+        <button type="button" class="step-flow-skip" aria-label="Skip wizard and go to all programs">
           Skip to all programs
         </button>
       </div>
@@ -167,8 +186,13 @@
         <h1 id="step-3-title">What county do you live in?</h1>
         <p class="step-description">We'll automatically include Bay Area-wide, California statewide, and nationwide programs.</p>
 
+        <!-- Simple language helper for step 3 -->
+        <div class="simple-language-helper step-simple-helper">
+          Pick where you live so we can show you local programs. If you're not sure or don't live in these counties, choose "None of the above" - you'll still see lots of programs!
+        </div>
+
         <fieldset class="county-grid">
-          <legend class="sr-only">County options</legend>
+          <legend class="sr-only">County options - select where you live</legend>
 
           <label class="option-card">
             <input type="radio" name="county" value="San Francisco">
@@ -892,6 +916,367 @@ body[data-theme="dark"] .preferences-section {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Simple language helpers in step flow */
+.wizard-simple-intro {
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.step-simple-helper {
+  margin-bottom: 1.5rem;
+}
+
+/* High Contrast Mode - Step Flow */
+body.high-contrast .step-flow-page {
+  background: #ffffff !important;
+}
+
+body.high-contrast .step-content {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast .step-content h1 {
+  color: #000000 !important;
+}
+
+body.high-contrast .step-description,
+body.high-contrast .intro-text {
+  color: #000000 !important;
+}
+
+body.high-contrast .progress-text {
+  color: #000000 !important;
+}
+
+body.high-contrast .progress-bar {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+body.high-contrast .progress-fill {
+  background: #000000 !important;
+}
+
+body.high-contrast .step-flow-skip {
+  color: #000000 !important;
+  text-decoration: underline !important;
+  border: 2px solid #000000 !important;
+  padding: 0.5rem 1rem !important;
+}
+
+body.high-contrast .card-inner {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast .card-text {
+  color: #000000 !important;
+}
+
+body.high-contrast .option-card input:checked + .card-inner {
+  background: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body.high-contrast .option-card input:checked + .card-inner .card-text {
+  color: #ffffff !important;
+}
+
+body.high-contrast .option-card input:focus + .card-inner {
+  outline: 4px solid #000000 !important;
+  outline-offset: 2px !important;
+}
+
+body.high-contrast .btn-primary {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast .btn-primary:hover,
+body.high-contrast .btn-primary:focus {
+  background: #333333 !important;
+  outline: 3px solid #000000 !important;
+  outline-offset: 2px !important;
+}
+
+body.high-contrast .btn-secondary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast .btn-secondary:hover,
+body.high-contrast .btn-secondary:focus {
+  background: #e6e6e6 !important;
+}
+
+body.high-contrast .disclaimer-section {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+
+body.high-contrast .disclaimer-section p {
+  color: #000000 !important;
+}
+
+body.high-contrast .preferences-section summary {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast .pref-content {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+body.high-contrast .pref-help {
+  color: #000000 !important;
+}
+
+/* High Contrast Dark Mode - Step Flow */
+@media (prefers-color-scheme: dark) {
+  body.high-contrast .step-flow-page {
+    background: #000000 !important;
+  }
+
+  body.high-contrast .step-content {
+    background: #000000 !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  body.high-contrast .step-content h1 {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .step-description,
+  body.high-contrast .intro-text {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .progress-text {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .progress-bar {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+  }
+
+  body.high-contrast .progress-fill {
+    background: #ffffff !important;
+  }
+
+  body.high-contrast .step-flow-skip {
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+  }
+
+  body.high-contrast .card-inner {
+    background: #000000 !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  body.high-contrast .card-text {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .option-card input:checked + .card-inner {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  body.high-contrast .option-card input:checked + .card-inner .card-text {
+    color: #000000 !important;
+  }
+
+  body.high-contrast .option-card input:focus + .card-inner {
+    outline: 4px solid #ffffff !important;
+  }
+
+  body.high-contrast .btn-primary {
+    background: #ffff00 !important;
+    color: #000000 !important;
+    border: 3px solid #ffff00 !important;
+  }
+
+  body.high-contrast .btn-primary:hover,
+  body.high-contrast .btn-primary:focus {
+    background: #ffff66 !important;
+    outline: 3px solid #ffffff !important;
+  }
+
+  body.high-contrast .btn-secondary {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  body.high-contrast .btn-secondary:hover,
+  body.high-contrast .btn-secondary:focus {
+    background: #1a1a1a !important;
+  }
+
+  body.high-contrast .disclaimer-section {
+    background: #000000 !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  body.high-contrast .disclaimer-section p {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .preferences-section summary {
+    color: #ffffff !important;
+  }
+
+  body.high-contrast .pref-content {
+    background: #000000 !important;
+    border: 2px solid #ffffff !important;
+  }
+
+  body.high-contrast .pref-help {
+    color: #ffffff !important;
+  }
+}
+
+/* Manual dark theme high contrast */
+body[data-theme="dark"].high-contrast .step-flow-page {
+  background: #000000 !important;
+}
+
+body[data-theme="dark"].high-contrast .step-content {
+  background: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .step-content h1 {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .step-description,
+body[data-theme="dark"].high-contrast .intro-text {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .progress-text {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .progress-bar {
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .progress-fill {
+  background: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .step-flow-skip {
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .card-inner {
+  background: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .card-text {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .option-card input:checked + .card-inner {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .option-card input:checked + .card-inner .card-text {
+  color: #000000 !important;
+}
+
+body[data-theme="dark"].high-contrast .option-card input:focus + .card-inner {
+  outline: 4px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .btn-primary {
+  background: #ffff00 !important;
+  color: #000000 !important;
+  border: 3px solid #ffff00 !important;
+}
+
+body[data-theme="dark"].high-contrast .btn-primary:hover,
+body[data-theme="dark"].high-contrast .btn-primary:focus {
+  background: #ffff66 !important;
+  outline: 3px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .btn-secondary {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .btn-secondary:hover,
+body[data-theme="dark"].high-contrast .btn-secondary:focus {
+  background: #1a1a1a !important;
+}
+
+body[data-theme="dark"].high-contrast .disclaimer-section {
+  background: #000000 !important;
+  border: 3px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .disclaimer-section p {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .preferences-section summary {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .pref-content {
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast .pref-help {
+  color: #ffffff !important;
+}
+
+/* Focus mode - enhanced focus indicators */
+body.focus-mode .step-flow-skip:focus,
+body.focus-mode .btn:focus,
+body.focus-mode .option-card input:focus + .card-inner,
+body.focus-mode summary:focus {
+  outline: 4px solid #ff6f00 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 6px rgba(255, 111, 0, 0.3) !important;
+}
+
+/* Dyslexia-friendly font in step flow */
+body.dyslexia-font .step-flow-page * {
+  font-family: 'Comic Sans MS', 'OpenDyslexic', Arial, sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .step-page {
+    animation: none;
+  }
+
+  .option-card:hover .card-inner {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
 }
 
 /* Smooth page transitions */

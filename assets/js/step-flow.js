@@ -15,12 +15,36 @@
   function qs(sel) { return document.querySelector(sel); }
   function qsa(sel) { return Array.from(document.querySelectorAll(sel)); }
 
-  // Show specific step
+  // Show specific step with screen reader announcement
   function showStep(n) {
     const steps = qsa('.step-page');
     steps.forEach(step => {
       step.hidden = !step.id.endsWith(`-${n}`);
     });
+
+    // Announce step change to screen readers
+    const announcement = qs('#step-announcement');
+    if (announcement) {
+      const stepTitles = {
+        1: 'Step 1 of 3: Introduction. Learn about Bay Area Discounts.',
+        2: 'Step 2 of 3: Eligibility. Select which groups apply to you.',
+        3: 'Step 3 of 3: Location. Select your county.'
+      };
+      announcement.textContent = stepTitles[n] || `Step ${n} of 3`;
+    }
+
+    // Focus the step heading for keyboard users
+    const currentStep = qs(`#step-${n}`);
+    if (currentStep) {
+      const heading = currentStep.querySelector('h1');
+      if (heading) {
+        // Small delay to ensure visibility change is processed
+        setTimeout(() => {
+          heading.setAttribute('tabindex', '-1');
+          heading.focus();
+        }, 100);
+      }
+    }
   }
 
   // Close the page wizard and show main content
