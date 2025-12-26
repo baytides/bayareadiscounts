@@ -361,8 +361,10 @@
   .utility-bar-toggle,
   .utility-bar-toggle .toggle-icon,
   .utility-select,
-  .utility-btn {
+  .utility-btn,
+  .utility-item {
     transition: none !important;
+    animation: none !important;
   }
 }
 
@@ -434,6 +436,64 @@ body[data-font-size="large"] {
 
 body[data-font-size="x-large"] {
   font-size: 1.25rem;
+}
+
+/* ============================================
+   FADE-IN ANIMATIONS
+   ============================================ */
+
+/* Utility bar entrance animation */
+.utility-bar {
+  animation: utilityBarFadeIn 0.4s ease-out;
+}
+
+@keyframes utilityBarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered fade-in for utility items */
+.utility-item {
+  animation: utilityItemFadeIn 0.3s ease-out backwards;
+}
+
+.utility-item:nth-child(1) { animation-delay: 0.1s; }
+.utility-item:nth-child(2) { animation-delay: 0.15s; }
+.utility-item:nth-child(3) { animation-delay: 0.2s; }
+.utility-item:nth-child(4) { animation-delay: 0.25s; }
+.utility-item:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes utilityItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toggle button fade-in */
+.utility-bar-toggle {
+  animation: toggleFadeIn 0.5s ease-out 0.3s backwards;
+}
+
+@keyframes toggleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 </style>
 
