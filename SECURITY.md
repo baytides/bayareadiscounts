@@ -12,7 +12,7 @@
 We take security seriously. If you discover a security vulnerability, please:
 
 1. **Do NOT** open a public issue
-2. Email security details to: **info [at] baytides [dot] org**
+2. Email security details to: **security [at] baytides [dot] org**
 3. Include:
    - Description of the vulnerability
    - Steps to reproduce
@@ -40,51 +40,58 @@ We take security seriously. If you discover a security vulnerability, please:
 
 ### Infrastructure Security
 
-- ✅ **HTTPS Only**: All traffic encrypted with TLS 1.2+
-- ✅ **Managed Identities**: Passwordless authentication to Azure services
-- ✅ **Network Isolation**: Firewall rules on Redis and Key Vault
-- ✅ **API Gateway**: All API access through API Management with subscription keys
-- ✅ **DDoS Protection**: Azure Front Door with built-in protection
-- ✅ **Rate Limiting**: 10,000 requests/day per subscription key
+- ✅ **HTTPS Only**: All traffic encrypted via TLS 1.3
+- ✅ **Static Site Architecture**: No server-side database to breach
+- ✅ **GitHub Pages Hosting**: Enterprise-grade security infrastructure
+- ✅ **Cloudflare CDN**: DDoS protection and traffic filtering
+- ✅ **No User Accounts**: No passwords or credentials to compromise
 
 ### Application Security
 
-- ✅ **Input Validation**: All user inputs sanitized
-- ✅ **Output Encoding**: XSS prevention via encoding
-- ✅ **Security Headers**: CSP, X-Frame-Options, X-Content-Type-Options
-- ✅ **CORS**: Strict origin policies
-- ✅ **Secrets Management**: All secrets in Azure Key Vault
-- ✅ **Least Privilege**: Minimal RBAC permissions
+- ✅ **Content Security Policy (CSP)**: Prevents XSS attacks and unauthorized scripts
+- ✅ **X-Frame-Options: DENY**: Prevents clickjacking attacks
+- ✅ **X-Content-Type-Options**: Prevents MIME-type sniffing
+- ✅ **Referrer-Policy**: Protects user privacy
+- ✅ **Permissions-Policy**: Disables camera, microphone, geolocation access
+- ✅ **Subresource Integrity (SRI)**: Verifies third-party resource integrity
+- ✅ **Input Sanitization**: All user inputs (search, filters) sanitized client-side
 
 ### Data Security
 
-- ✅ **Encryption at Rest**: Cosmos DB and Storage encrypted
-- ✅ **Encryption in Transit**: TLS 1.2+ for all connections
-- ✅ **No PII Storage**: We don't collect personal information
-- ✅ **Data Validation**: Schema validation on all data operations
-- ✅ **Backup**: Cosmos DB continuous backup enabled
+- ✅ **No PII Collection**: We don't collect personal information
+- ✅ **No Cookies**: Zero tracking cookies used
+- ✅ **Local Storage Only**: User preferences stored on user's device only
+- ✅ **No Server-Side Database**: Nothing to breach
+- ✅ **Open Source**: All code publicly auditable on GitHub
 
-### Monitoring & Response
+### Privacy by Design
 
-- ✅ **Real-time Monitoring**: Application Insights telemetry
-- ✅ **Automated Alerts**: Errors and anomalies trigger notifications
-- ✅ **Audit Logs**: All access logged and retained
-- ✅ **Incident Response**: 24-hour response plan
+- ✅ **Privacy-First Analytics**: Self-hosted Plausible (aggregate data only, no personal identifiers)
+- ✅ **No IP Logging**: We don't log visitor IP addresses
+- ✅ **No User Tracking**: No behavioral tracking or profiling
+- ✅ **GDPR/CCPA Compliant**: Exceeds privacy law requirements
+
+### Accessibility Security
+
+- ✅ **WCAG 2.2 AAA Compliant**: Highest accessibility standard
+- ✅ **Keyboard Accessible**: All features work without mouse
+- ✅ **Screen Reader Compatible**: Proper ARIA labels and semantics
+- ✅ **No Accessibility-Tracking**: Accessibility features work without analytics
 
 ## Security Checklist for Contributors
 
 When contributing code, ensure:
 
-- [ ] No hardcoded secrets or API keys
-- [ ] All external inputs validated
-- [ ] All outputs properly encoded
-- [ ] Dependencies up to date (no known vulnerabilities)
-- [ ] Authentication/authorization implemented correctly
+- [ ] No hardcoded secrets, API keys, or credentials
+- [ ] All user inputs validated and sanitized
+- [ ] All outputs properly encoded (XSS prevention)
+- [ ] Dependencies up to date (run `npm audit`)
 - [ ] Error messages don't leak sensitive information
 - [ ] HTTPS used for all external requests
-- [ ] SQL injection prevention (parameterized queries)
-- [ ] XSS prevention (output encoding)
-- [ ] CSRF protection (where applicable)
+- [ ] No inline JavaScript (CSP compliance)
+- [ ] Accessibility maintained (WCAG 2.2 AAA)
+- [ ] No third-party trackers or analytics scripts
+- [ ] Local storage used appropriately (no sensitive data)
 
 ## Responsible Disclosure
 
@@ -111,11 +118,21 @@ Security updates are released as soon as fixes are available:
 - **High**: Within 48 hours
 - **Medium/Low**: Next scheduled release
 
+## Open Source Transparency
+
+This project is fully open source. You can verify our security claims by:
+
+1. **Reviewing our code**: [github.com/baytides/bayareadiscounts](https://github.com/baytides/bayareadiscounts)
+2. **Inspecting network traffic**: Use browser developer tools (F12) to verify no tracking
+3. **Checking for cookies**: Browser settings will confirm zero cookies
+4. **Auditing dependencies**: Run `npm audit` to check for vulnerabilities
+
 ## Contact
 
-- **General Contact**: info [at] baytides [dot] org
+- **Security Issues**: security [at] baytides [dot] org
+- **General Contact**: hello [at] baytides [dot] org
 - **Project Maintainer**: [@baytides](https://github.com/baytides)
 
 ---
 
-*Last Updated: December 19, 2025*
+*Last Updated: December 26, 2025*

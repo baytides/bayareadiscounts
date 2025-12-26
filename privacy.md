@@ -8,7 +8,7 @@ description: Our commitment to protecting your privacy while helping you access 
 
 # Privacy Policy
 
-**Last Updated**: December 25, 2025
+**Last Updated**: December 26, 2025
 **Effective Date**: December 18, 2025
 
 <div class="simple-language-summary" aria-label="Simple language summary">
@@ -553,10 +553,10 @@ This privacy policy does not cover external websites linked from bayareadiscount
 
 ## Effective Date and Version
 
-**Privacy Policy Version**: 2.1
+**Privacy Policy Version**: 2.2
 **Effective Date**: December 18, 2025
-**Last Updated**: December 25, 2025
-**Next Scheduled Review**: June 25, 2026
+**Last Updated**: December 26, 2025
+**Next Scheduled Review**: June 26, 2026
 
 ---
 
