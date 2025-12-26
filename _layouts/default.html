@@ -32,6 +32,40 @@
   <link rel="preconnect" href="https://plausible.baytides.org" crossorigin>
   <script defer data-domain="{{ site.url | replace: 'https://', '' | replace: 'http://', '' }}" src="https://plausible.baytides.org/js/script.js"></script>
 
+  <!-- Sentry Error Tracking (privacy-preserving, errors only) -->
+  <script
+    src="https://js.sentry-cdn.com/e45b1ba128934c2ef59964ec0fa76b4f.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    if (window.Sentry) {
+      Sentry.onLoad(function() {
+        Sentry.init({
+          // No performance tracing - errors only
+          tracesSampleRate: 0,
+          // No session replay
+          replaysSessionSampleRate: 0,
+          replaysOnErrorSampleRate: 0,
+          // Strip PII from error reports
+          beforeSend(event) {
+            // Remove IP address
+            if (event.user) {
+              delete event.user.ip_address;
+            }
+            // Remove any request headers that might contain PII
+            if (event.request) {
+              delete event.request.cookies;
+              delete event.request.headers;
+            }
+            return event;
+          },
+          // Don't send default PII
+          sendDefaultPii: false,
+        });
+      });
+    }
+  </script>
+
   <!-- SEO / social -->
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
