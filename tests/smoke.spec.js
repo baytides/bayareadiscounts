@@ -19,9 +19,31 @@ test('home loads and shows programs', async ({ page }) => {
 
 test('search filters results', async ({ page }) => {
   await page.goto(home, { waitUntil: 'domcontentloaded' });
+
+  // Wait for programs to be visible first
+  await page.locator('#search-results [data-program]').first().waitFor({ state: 'visible' });
+
   const input = page.getByRole('searchbox', { name: /search programs/i });
   await input.fill('food');
-  await expect(page.locator('#search-results [data-program]').filter({ hasText: /food/i }).first()).toBeVisible();
+
+  // Wait for filter to apply by checking that a non-food program becomes hidden
+  // The "211 Bay Area" program card should be hidden since it doesn't match "food"
+  await expect(page.locator('article.program-card[data-program-id="211-bay-area"]')).toBeHidden({ timeout: 10000 });
+
+  // Now verify that at least one food-related program is visible
+  // Use evaluate to check actual visibility since display:none is used
+  const hasFoodResult = await page.evaluate(() => {
+    const cards = document.querySelectorAll('#search-results [data-program]');
+    for (const card of cards) {
+      if (card.style.display !== 'none' &&
+          card.textContent.toLowerCase().includes('food')) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  expect(hasFoodResult).toBe(true);
 });
 
 // Skip: favorites functionality needs to be wired up for new card design (.card-save-btn)
