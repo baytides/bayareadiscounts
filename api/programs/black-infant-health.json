@@ -1,0 +1,20 @@
+{
+  "id": "black-infant-health",
+  "name": "Black Infant Health Program",
+  "category": "health",
+  "description": "Free group-based prenatal support, stress reduction, and social support for Black women and birthing people 18+ to improve maternal and infant health outcomes",
+  "eligibility": [
+    "families"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://www.cdph.ca.gov/Programs/CFH/DMCAH/BIH/Pages/default.aspx",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

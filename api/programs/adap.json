@@ -1,0 +1,20 @@
+{
+  "id": "adap",
+  "name": "AIDS Drug Assistance Program (ADAP)",
+  "category": "health",
+  "description": "Free HIV/AIDS medications and health insurance premium assistance for California residents 18+ with HIV/AIDS diagnosis and income up to 600% FPL",
+  "eligibility": [
+    "low-income"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://www.cdph.ca.gov/Programs/CID/DOA/pages/OA_adap_eligibility.aspx",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

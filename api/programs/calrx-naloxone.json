@@ -1,0 +1,20 @@
+{
+  "id": "calrx-naloxone",
+  "name": "CalRx OTC Naloxone Nasal Spray",
+  "category": "health",
+  "description": "Over-the-counter 4mg naloxone nasal spray available for $19 (plus shipping) per twin pack to reverse opioid overdose",
+  "eligibility": [
+    "everyone"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://calrx.ca.gov/get-naloxone/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

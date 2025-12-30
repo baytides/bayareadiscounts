@@ -1,0 +1,20 @@
+{
+  "id": "myturn",
+  "name": "MyTurn",
+  "category": "health",
+  "description": "Find and book vaccine appointments (COVID-19, flu, mpox, routine vaccines), access digital vaccine records, and locate walk-in clinics; support in 250+ languages",
+  "eligibility": [
+    "everyone"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://myturn.ca.gov/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cpsp",
+  "name": "Comprehensive Perinatal Services Program (CPSP)",
+  "category": "health",
+  "description": "Enhanced prenatal and postpartum care for Medi-Cal recipients including obstetric services, nutrition counseling, psychosocial support, and health education from conception through 60 days postpartum",
+  "eligibility": [
+    "low-income",
+    "families"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://www.dhcs.ca.gov/services/Pages/CPSP.aspx",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

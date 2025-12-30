@@ -1,0 +1,21 @@
+{
+  "id": "vaccines-for-children",
+  "name": "Vaccines for Children (VFC) Program",
+  "category": "health",
+  "description": "Free vaccines for children 18 and under who are uninsured, underinsured, Medi-Cal eligible, or American Indian/Alaska Native",
+  "eligibility": [
+    "low-income",
+    "families"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://eziz.org/vfc/provider-locations/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}

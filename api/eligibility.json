@@ -5,7 +5,7 @@
       "name": "SNAP/EBT/Medi-Cal",
       "description": "For public benefit recipients",
       "icon": "💳",
-      "programCount": 143
+      "programCount": 149
     },
     {
       "id": "seniors",
@@ -40,7 +40,7 @@
       "name": "Families",
       "description": "For families with children",
       "icon": "👨‍👩‍👧",
-      "programCount": 27
+      "programCount": 32
     },
     {
       "id": "disability",
@@ -54,14 +54,14 @@
       "name": "Nonprofit Organizations",
       "description": "For registered nonprofits",
       "icon": "🤝",
-      "programCount": 24
+      "programCount": 25
     },
     {
       "id": "everyone",
       "name": "Everyone",
       "description": "Available to all residents",
       "icon": "🌎",
-      "programCount": 187
+      "programCount": 191
     }
   ]
 }

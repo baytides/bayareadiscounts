@@ -1,0 +1,20 @@
+{
+  "id": "every-woman-counts",
+  "name": "Every Woman Counts",
+  "category": "health",
+  "description": "Free breast and cervical cancer screenings (mammograms, Pap tests, clinical breast exams, HPV tests) for uninsured or underinsured women 21+ with income at or below 200% FPL",
+  "eligibility": [
+    "low-income"
+  ],
+  "areas": [
+    "California"
+  ],
+  "city": null,
+  "website": "https://www.dhcs.ca.gov/everywomancounts",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "requirements": null,
+  "howToApply": null,
+  "lastUpdated": "2025-12-30"
+}
