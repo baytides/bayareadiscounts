@@ -6,7 +6,7 @@
   "fullDescription": "Haven Family House is a LifeMoves interim housing facility in Menlo Park providing shelter and comprehensive services for families experiencing homelessness, with dedicated capacity for veteran families.",
   "whatTheyOffer": "- Interim shelter for 23 families\n- Dedicated veteran family capacity (9 families)\n- Supportive services included\n- Case management\n- Housing placement assistance\n- Family-focused environment\n",
   "howToGetIt": "1. Contact LifeMoves for referral\n2. Complete intake assessment\n3. Demonstrate family homelessness\n4. Veterans receive priority placement\n5. Accept shelter placement if available\n6. Work with case manager on housing plan\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "veterans"
   ],

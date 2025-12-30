@@ -6,7 +6,7 @@
   "fullDescription": "Peninsula Clean Energy's Home Upgrade Services provides no-cost electrification for income-eligible homeowners, converting gas appliances to electric with a full-service approach from assessment to installation.",
   "whatTheyOffer": "- Free in-home energy assessment\n- No-cost installation of electric appliances\n- Heat pump water heaters and HVAC systems\n- Induction cooktops and electric dryers\n- Electrical panel upgrades if needed\n- All permits and inspections handled\n- Pre-vetted, quality contractors\n- Fixed, transparent pricing\n",
   "howToGetIt": "1. Complete online eligibility survey\n2. Must own single-family home in San Mateo County\n3. Meet income guidelines (typically 80% AMI or below)\n4. Schedule free in-home assessment\n5. Review and approve recommended upgrades\n6. PCE coordinates installation and rebates\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

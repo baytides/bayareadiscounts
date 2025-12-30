@@ -6,7 +6,7 @@
   "fullDescription": "Alameda County Library provides free digital resources including ebooks, audiobooks, databases, and online learning for cardholders.",
   "whatTheyOffer": "- Ebooks and audiobooks via Libby\n- Streaming video and music\n- Online databases and research tools\n- Learning platforms (LinkedIn Learning, etc.)\n- Magazines and newspapers\n- Language learning resources\n",
   "howToGetIt": "1. Get an Alameda County Library card (free for residents)\n2. Visit aclibrary.org/resource\n3. Browse available digital resources\n4. Sign in with your library card\n5. Access content on any device\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

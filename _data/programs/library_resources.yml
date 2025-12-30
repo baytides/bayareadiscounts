@@ -2,7 +2,7 @@
   name: Berkeley Tool Lending Library
   category: Library Resources
   area: Berkeley
-  eligibility:
+  groups:
   - everyone
   description: The Berkeley Public Library operates the only tool lending library in Northern California, allowing library cardholders to borrow tools for free.
   what_they_offer: |
@@ -31,7 +31,7 @@
   name: California State Parks Library Pass
   category: Library Resources
   area: California
-  eligibility:
+  groups:
   - everyone
   description: California State Library's Parks Pass program allows library patrons to check out day-use passes for free entry to over 200 state parks.
   what_they_offer: |
@@ -58,7 +58,7 @@
   name: Calm Meditation App
   category: Library Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County Library provides free access to the Calm app, offering guided meditations, sleep stories, and stress management tools.
   what_they_offer: |
@@ -85,7 +85,7 @@
   name: Discover & Go Museum Passes
   category: Library Resources
   area: California
-  eligibility:
+  groups:
   - everyone
   description: Discover & Go connects library cardholders with free and discounted admission to California museums, zoos, aquariums, and cultural institutions.
   what_they_offer: |
@@ -111,7 +111,7 @@
   name: Hoopla Digital
   category: Library Resources
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Hoopla is a digital media service that allows library cardholders to borrow movies, TV shows, music, ebooks, audiobooks, and comics for free.
   what_they_offer: |
@@ -137,7 +137,7 @@
   name: Kanopy
   category: Library Resources
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Kanopy is a free video streaming service for library cardholders offering thoughtful entertainment including films, documentaries, and educational content.
   what_they_offer: |
@@ -163,7 +163,7 @@
   name: New York Times Digital Access
   category: Library Resources
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: California State Library provides free digital access to The New York Times for all Californians through participating public libraries.
@@ -190,7 +190,7 @@
   name: SFPL eLibrary
   category: Library Resources
   area: San Francisco
-  eligibility:
+  groups:
   - everyone
   description: San Francisco Public Library's eLibrary provides free digital access to ebooks, audiobooks, databases, learning courses, and streaming content.
   what_they_offer: |
@@ -219,7 +219,7 @@
   name: SF Digital Collections
   category: Library Resources
   area: San Francisco
-  eligibility:
+  groups:
   - everyone
   description: San Francisco's digital collections provide free access to digitized historical photos, documents, manuscripts, and audiovisual materials from the city's archives.
   what_they_offer: |
@@ -245,7 +245,7 @@
   name: Open Library
   category: Library Resources
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Open Library is a project of the Internet Archive that provides free access to millions of books, with the goal of creating one web page for every book ever published.
   what_they_offer: |
@@ -273,7 +273,7 @@
   name: Libby by OverDrive
   category: Library Resources
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Libby is the free reading app from OverDrive that connects library cardholders to their library's collection of ebooks, audiobooks, and magazines.
   what_they_offer: |
@@ -301,7 +301,7 @@
   name: California Digital Newspaper Collection
   category: Library Resources
   area: California
-  eligibility:
+  groups:
   - everyone
   description: The California Digital Newspaper Collection provides free access to digitized California newspapers from 1846 to the present for historical research.
   what_they_offer: |
@@ -326,7 +326,7 @@
   name: Career Online High School
   category: Library Resources
   area: California
-  eligibility:
+  groups:
   - everyone
   description: Career Online High School is a free program through participating California libraries that allows adults to earn an accredited high school diploma and career certificate.
   what_they_offer: |
@@ -355,7 +355,7 @@
   name: Online Archive of California
   category: Library Resources
   area: California
-  eligibility:
+  groups:
   - everyone
   description: The Online Archive of California provides free access to finding aids and primary source collections from over 200 California libraries, archives, and museums.
   what_they_offer: |
@@ -382,7 +382,7 @@
   name: Alameda County Library Digital Resources
   category: Library Resources
   area: Alameda County
-  eligibility:
+  groups:
   - everyone
   description: Alameda County Library provides free digital resources including ebooks, audiobooks, databases, and online learning for cardholders.
   what_they_offer: |
@@ -411,7 +411,7 @@
   name: Oakland Public Library Digital Resources
   category: Library Resources
   area: Alameda County
-  eligibility:
+  groups:
   - everyone
   description: Oakland Public Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for Oakland cardholders.
   what_they_offer: |
@@ -440,7 +440,7 @@
   name: San Mateo County Library Digital Resources
   category: Library Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County Library offers free digital resources including ebooks, audiobooks, streaming content, and online learning for all cardholders.
   what_they_offer: |
@@ -469,7 +469,7 @@
   name: Peninsula Library System E-Services
   category: Library Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Peninsula Library System provides e-services and digital resources for cardholders from member libraries throughout San Mateo County.
   what_they_offer: |
@@ -496,7 +496,7 @@
   name: Contra Costa County Library Digital Resources
   category: Library Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - everyone
   description: Contra Costa County Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for cardholders.
   what_they_offer: |
@@ -525,7 +525,7 @@
   name: San Francisco Public Library Services
   category: Library Resources
   area: San Francisco
-  eligibility:
+  groups:
   - everyone
   description: San Francisco Public Library offers a wide range of free services and programs beyond just books, including digital resources, programs, and community offerings.
   what_they_offer: |
@@ -554,7 +554,7 @@
   name: Santa Clara County Library Digital Resources
   category: Library Resources
   area: Santa Clara County
-  eligibility:
+  groups:
   - everyone
   description: Santa Clara County Library District offers free digital resources including ebooks, audiobooks, streaming content, and online learning for cardholders.
   what_they_offer: |
@@ -583,7 +583,7 @@
   name: Marin County Free Library Digital Resources
   category: Library Resources
   area: Marin County
-  eligibility:
+  groups:
   - everyone
   description: Marin County Free Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for cardholders.
   what_they_offer: |
@@ -612,7 +612,7 @@
   name: Sonoma County Library eLibrary
   category: Library Resources
   area: Sonoma County
-  eligibility:
+  groups:
   - everyone
   description: Sonoma County Library provides free eLibrary resources including ebooks, audiobooks, streaming content, and online learning for all cardholders.
   what_they_offer: |
@@ -641,7 +641,7 @@
   name: Solano County Library 24/7 Digital Library
   category: Library Resources
   area: Solano County
-  eligibility:
+  groups:
   - everyone
   description: Solano County Library provides 24/7 digital library resources including ebooks, audiobooks, streaming media, and online learning for cardholders.
   what_they_offer: |
@@ -670,7 +670,7 @@
   name: Napa County Library Databases
   category: Library Resources
   area: Napa County
-  eligibility:
+  groups:
   - everyone
   description: Napa County Library provides free access to research databases and digital resources for all cardholders.
   what_they_offer: |

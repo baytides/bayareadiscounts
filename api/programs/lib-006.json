@@ -6,7 +6,7 @@
   "fullDescription": "Kanopy is a free video streaming service for library cardholders offering thoughtful entertainment including films, documentaries, and educational content.",
   "whatTheyOffer": "- Thousands of films and documentaries\n- Criterion Collection films\n- Independent and international cinema\n- Great Courses educational videos\n- PBS documentaries\n- Monthly credit system (varies by library)\n",
   "howToGetIt": "1. Check if your library offers Kanopy\n2. Visit kanopy.com and find your library\n3. Sign up with your library card\n4. Stream on web, mobile, or TV apps\n5. Credits refresh monthly\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

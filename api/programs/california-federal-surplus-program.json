@@ -6,7 +6,7 @@
   "fullDescription": "The California State Agency for Surplus Property administers federal surplus property, making it available to eligible nonprofits at a fraction of original cost.",
   "whatTheyOffer": "- Federal surplus furniture and office equipment\n- Vehicles (cars, trucks, vans)\n- Technology and electronics\n- Tools and machinery\n- Medical equipment\n- Items at 0-15% of original acquisition cost\n",
   "howToGetIt": "1. Apply to become a Federal Donee through the California DGS\n2. Complete application with proof of 501(c)(3) status\n3. Pay annual enrollment fee\n4. Once approved, browse available federal surplus\n5. Request items and pay nominal service charges\n6. Arrange pickup or delivery\n",
-  "eligibility": [
+  "groups": [
     "nonprofits"
   ],
   "areas": [

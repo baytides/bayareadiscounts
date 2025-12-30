@@ -6,7 +6,7 @@
   "fullDescription": "California State Library's Parks Pass program allows library patrons to check out day-use passes for free entry to over 200 state parks.",
   "whatTheyOffer": "- Free vehicle day-use entry to 200+ state parks\n- Covers 1 vehicle with up to 9 people or 1 motorcycle\n- Valid at participating state parks statewide\n- Does not cover camping or special events\n- Does not cover museums within parks\n",
   "howToGetIt": "1. Have a valid library card from a participating library\n2. Check your library's website for pass availability\n3. Reserve or check out a parks pass\n4. Bring the pass and your library card to the park\n5. Return pass by the due date\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

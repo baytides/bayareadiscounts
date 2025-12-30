@@ -6,7 +6,7 @@
   "fullDescription": "The Justice & Diversity Center is the nonprofit arm of the Bar Association of San Francisco, providing free legal services to those who cannot afford attorneys.",
   "whatTheyOffer": "- Free legal clinics and advice sessions\n- Pro bono representation in civil matters\n- Legal help for housing, family law, immigration, and more\n- Corporate law assistance for nonprofits serving low-income communities\n- Lawyer referral services\n",
   "howToGetIt": "1. Visit the JDC website or call to learn about available programs\n2. Attend a free legal clinic in your area of need\n3. Complete intake and eligibility screening\n4. If eligible, receive free legal advice or representation\n5. Nonprofits can apply for corporate legal assistance separately\n",
-  "eligibility": [
+  "groups": [
     "nonprofits",
     "low-income"
   ],

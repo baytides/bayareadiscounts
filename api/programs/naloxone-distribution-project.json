@@ -6,7 +6,7 @@
   "fullDescription": "California's Naloxone Distribution Project provides free naloxone and fentanyl test strips to eligible nonprofit organizations working to prevent opioid overdose deaths in their communities.",
   "whatTheyOffer": "- Free naloxone nasal sprays\n- Free fentanyl test strips\n- Training materials and resources\n- Support for community distribution\n- Available to eligible nonprofits statewide\n",
   "howToGetIt": "Organizations must apply through the California Department of Health Care Services. Eligible entities include community-based organizations, harm reduction programs, and healthcare providers serving at-risk populations.",
-  "eligibility": [
+  "groups": [
     "nonprofits"
   ],
   "areas": [

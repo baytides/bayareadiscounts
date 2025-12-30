@@ -2,7 +2,7 @@
   name: CalABLE
   category: Finance
   area: Statewide
-  eligibility:
+  groups:
   - disability
   description: CalABLE is California's tax-advantaged savings program for people with disabilities, allowing them to save money without affecting eligibility for public benefits like SSI and Medi-Cal.
   what_they_offer: |
@@ -32,7 +32,7 @@
   name: AARP Foundation Tax-Aide
   category: Tax Preparation
   area: Nationwide
-  eligibility:
+  groups:
   - seniors
   - everyone
   description: AARP Foundation Tax-Aide is the nation's largest free volunteer-run tax assistance program, providing free tax preparation with a focus on taxpayers 50 and older with low to moderate income.
@@ -64,7 +64,7 @@
   name: Alameda County Social Services Agency VITA
   category: Tax Preparation
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Alameda County Social Services Agency offers free tax preparation through the IRS Volunteer Income Tax Assistance (VITA) program for low to moderate income residents.
@@ -91,7 +91,7 @@
   name: Community Gatepath (formerly CCRC) VITA
   category: Tax Preparation
   area: Santa Clara County
-  eligibility:
+  groups:
   - low-income
   description: Community Gatepath provides free tax preparation services for low-income individuals and families in Santa Clara County.
   what_they_offer: |
@@ -115,7 +115,7 @@
   name: CSU East Bay VITA
   category: Tax Preparation
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   description: CSU East Bay's accounting students provide free virtual tax preparation through the VITA program for taxpayers earning $84,000 or less.
   what_they_offer: |
@@ -141,7 +141,7 @@
   name: IRS VITA Site Locator
   category: Tax Preparation
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The IRS VITA (Volunteer Income Tax Assistance) program offers free tax help to people who generally make $64,000 or less, persons with disabilities, and limited English speakers.
@@ -172,7 +172,7 @@
   name: EBALDC VITA
   category: Tax Preparation
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: East Bay Asian Local Development Corporation (EBALDC) offers free tax preparation through the VITA program at their SparkPoint Oakland center.
@@ -199,7 +199,7 @@
   name: Samaritan House VITA
   category: Tax Preparation
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Samaritan House provides free tax preparation services for San Mateo County residents, including a convenient drop-off service option.
@@ -229,7 +229,7 @@
   name: SF State VITA
   category: Tax Preparation
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - college-students
   - everyone
@@ -257,7 +257,7 @@
   name: SparkPoint Fremont VITA
   category: Tax Preparation
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: SparkPoint Fremont at the Fremont Family Resource Center offers free tax preparation for current year and back taxes for low to moderate income families.
@@ -286,7 +286,7 @@
   name: United Way Bay Area
   category: Tax Preparation
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: United Way Bay Area partners with local organizations to provide free, high-quality tax preparation at sites throughout the Bay Area.
   what_they_offer: |
@@ -313,7 +313,7 @@
   name: Bay Area Entrepreneur Center
   category: Finance
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The Bay Area Entrepreneur Center at Skyline College provides free resources and support for aspiring and current entrepreneurs in San Mateo County.
   what_they_offer: |
@@ -343,7 +343,7 @@
   name: San Francisco SCORE
   category: Finance
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: SCORE is a nonprofit network of volunteer business mentors. San Francisco SCORE offers free mentoring and low-cost workshops to help small business owners succeed.
   what_they_offer: |
@@ -372,7 +372,7 @@
   name: San Mateo Small Business Development Center
   category: Finance
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The San Mateo SBDC provides free, confidential business advising to help small businesses start, grow, and succeed in San Mateo County.
   what_they_offer: |
@@ -401,7 +401,7 @@
   name: NOVA Workforce Development
   category: Finance
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: NOVA Workforce connects job seekers with employment opportunities and training services, and helps businesses find qualified workers in Silicon Valley.
   what_they_offer: |
@@ -431,7 +431,7 @@
   name: Small Business Finance Center (IBank)
   category: Finance
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: California's IBank Small Business Finance Center offers loan guarantee programs to help small businesses access capital for growth and recovery.
   what_they_offer: |

@@ -6,7 +6,7 @@
   "fullDescription": "SparkPoint Fremont at the Fremont Family Resource Center offers free tax preparation for current year and back taxes for low to moderate income families.",
   "whatTheyOffer": "- Free current year tax preparation (February-April)\n- Free back tax preparation (year-round)\n- Federal and state returns\n- Help with tax credits\n- IRS-certified preparers\n",
   "howToGetIt": "1. Contact the Fremont Family Resource Center\n2. Schedule an appointment\n3. Gather required tax documents\n4. Attend your appointment\n5. Review and sign your return\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "everyone"
   ],

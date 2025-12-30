@@ -6,7 +6,7 @@
   "fullDescription": "California honors its veterans with free lifetime access to state parks for those who meet distinguished service requirements, recognizing their sacrifice and service to our country.",
   "whatTheyOffer": "- Free lifetime pass to California state parks\n- Covers vehicle day-use fees at all state parks\n- Includes free camping at all state park campgrounds\n- Free boat-use fees at participating locations\n",
   "howToGetIt": "Apply through California State Parks with proof of honorable discharge and eligibility. Qualifying criteria include Medal of Honor recipients, former POWs, and veterans with service-connected disabilities rated 50% or higher.",
-  "eligibility": [
+  "groups": [
     "veterans"
   ],
   "areas": [

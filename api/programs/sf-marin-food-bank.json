@@ -6,7 +6,7 @@
   "fullDescription": "The SF-Marin Food Bank provides food to 1 in 4 San Francisco and Marin County residents, operating the largest food pantry network in the region with free groceries and nutrition programs.",
   "whatTheyOffer": "- Free groceries at 275+ pantry sites\n- Home delivery for homebound seniors and people with disabilities\n- Supplemental food for seniors 60+ at senior centers\n- Fresh produce, proteins, and staples\n- CalFresh application assistance\n- No income verification or ID required\n",
   "howToGetIt": "Use the online Food Locator or call the food bank. Find a pantry near you and check their schedule. Bring your own bags. For home delivery, call to assess eligibility.",
-  "eligibility": [
+  "groups": [
     "low-income",
     "seniors",
     "everyone"

@@ -6,7 +6,7 @@
   name: Alameda County Community Food Bank
   category: Food
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The Alameda County Community Food Bank is one of the largest food banks
@@ -33,7 +33,7 @@
   category: Food
   area: Alameda County
   city: Alameda
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Alameda Meals on Wheels delivers nutritious meals to homebound seniors
@@ -58,7 +58,7 @@
   category: Food
   area: San Francisco
   city: San Francisco
-  eligibility:
+  groups:
   - seniors
   - low-income
   - everyone
@@ -84,7 +84,7 @@
   name: CalFresh Online
   category: Food
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: CalFresh (California's SNAP/food stamps program) now allows beneficiaries
     to purchase groceries online from select retailers, making food access more convenient
@@ -107,7 +107,7 @@
   name: CalFresh Restaurant Meals Program (RMP)
   category: Food
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   - seniors
   - disability
@@ -132,7 +132,7 @@
   name: Food Bank of Contra Costa & Solano
   category: Food
   area: Contra Costa County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The Food Bank of Contra Costa and Solano serves two counties with
@@ -157,7 +157,7 @@
   name: J-Sei Meals on Wheels
   category: Food
   area: Alameda County
-  eligibility:
+  groups:
   - seniors
   description: J-Sei provides culturally appropriate Japanese-style home-delivered
     meals to seniors in Alameda County, honoring cultural food traditions while
@@ -181,7 +181,7 @@
   name: Market Match
   category: Food
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: Market Match doubles the value of CalFresh and WIC benefits at participating
     farmers markets, making fresh, locally grown fruits and vegetables more affordable
@@ -204,7 +204,7 @@
   name: Meals on Wheels Contra Costa
   category: Food
   area: Contra Costa County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Meals on Wheels Contra Costa delivers nutritious meals to homebound
@@ -228,7 +228,7 @@
   name: Meals on Wheels Diablo Region
   category: Food
   area: Contra Costa County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Meals on Wheels Diablo Region serves the eastern Contra Costa County
@@ -252,7 +252,7 @@
   name: Meals on Wheels San Francisco
   category: Food
   area: San Francisco
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Meals on Wheels San Francisco delivers nutritious meals to homebound
@@ -277,7 +277,7 @@
   name: Meals on Wheels San Mateo County (Peninsula Volunteers)
   category: Food
   area: San Mateo County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Peninsula Volunteers operates Meals on Wheels in San Mateo County,
@@ -302,7 +302,7 @@
   name: Project Open Hand
   category: Food
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   - seniors
   - disability
@@ -331,7 +331,7 @@
   category: Food
   area: San Francisco
   city: San Francisco
-  eligibility:
+  groups:
   - low-income
   - seniors
   description: Rainbow Grocery is a worker-owned cooperative grocery store in San
@@ -359,7 +359,7 @@
   area:
   - Santa Clara County
   - San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Second Harvest of Silicon Valley is one of the largest food banks
@@ -385,7 +385,7 @@
   name: SF-Marin Food Bank
   category: Food
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - seniors
   - everyone
@@ -413,7 +413,7 @@
   category: Food
   area: Alameda County
   city: Oakland
-  eligibility:
+  groups:
   - seniors
   - disability
   description: SOS Meals on Wheels serves the Oakland and surrounding areas with
@@ -437,7 +437,7 @@
   name: Sourcewise Meals on Wheels
   category: Food
   area: Santa Clara County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Sourcewise provides Meals on Wheels throughout Santa Clara County,
@@ -462,7 +462,7 @@
   name: Spectrum Community Services Meals on Wheels
   category: Food
   area: Contra Costa County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: Spectrum Community Services delivers Meals on Wheels to seniors in
@@ -487,7 +487,7 @@
   category: Food
   area: San Francisco
   city: San Francisco
-  eligibility:
+  groups:
   - everyone
   description: St. Anthony's Dining Room has served San Francisco's Tenderloin
     neighborhood since 1950, providing free hot meals daily with dignity and respect
@@ -512,7 +512,7 @@
   name: Universal School Meals
   category: Food
   area: Statewide
-  eligibility:
+  groups:
   - youth
   - everyone
   description: California became the first state to offer universal free school meals
@@ -537,7 +537,7 @@
   name: WIC – Women, Infants & Children
   category: Food
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -565,7 +565,7 @@
   name: YMCA Food Pantries
   category: Food
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   - families
   - everyone
@@ -590,7 +590,7 @@
   category: Food
   area: San Mateo County
   city: East Palo Alto
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The Ecumenical Hunger Program serves East Palo Alto and surrounding
@@ -616,7 +616,7 @@
   name: JFCS Food Pantry
   category: Food
   area: Santa Clara County
-  eligibility:
+  groups:
   - low-income
   - seniors
   - disability
@@ -641,7 +641,7 @@
   name: Got Groceries Program
   category: Food
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Peninsula Volunteers' Got Groceries program provides weekly bags of

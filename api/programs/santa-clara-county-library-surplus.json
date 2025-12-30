@@ -6,7 +6,7 @@
   "fullDescription": "The Santa Clara County Library District donates surplus library property to nonprofit organizations located within the county.",
   "whatTheyOffer": "- Library shelving and display units\n- Furniture (tables, chairs, desks)\n- Library equipment\n- Technology items (when available)\n- Other surplus library property\n",
   "howToGetIt": "1. Must be a registered 501(c)(3) nonprofit in Santa Clara County\n2. Apply through the library district website\n3. Describe your organization and intended use\n4. Wait for notification of available surplus\n5. Arrange pickup of approved items\n",
-  "eligibility": [
+  "groups": [
     "nonprofits"
   ],
   "areas": [

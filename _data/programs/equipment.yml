@@ -2,7 +2,7 @@
   name: A Greener Source
   category: Equipment
   area: Bay Area-wide
-  eligibility:
+  groups:
   - nonprofits
   description: A Greener Source is a nonprofit that diverts office furniture from landfills by donating it to other nonprofits, helping organizations furnish their spaces sustainably and at no cost.
   what_they_offer: |
@@ -32,7 +32,7 @@
   name: Alameda County Property & Salvage Donations
   category: Equipment
   area: Alameda County
-  eligibility:
+  groups:
   - nonprofits
   description: Alameda County's General Services Agency donates surplus county property to eligible nonprofit organizations, providing free equipment and supplies that would otherwise be disposed of.
   what_they_offer: |
@@ -59,7 +59,7 @@
   name: Building Resources
   category: Equipment
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   - everyone
   description: Building Resources is a nonprofit reuse center in San Francisco that sells salvaged and donated building materials at affordable prices, with special programs for nonprofits.
@@ -90,7 +90,7 @@
   name: California Federal Surplus Property Program
   category: Equipment
   area: Statewide
-  eligibility:
+  groups:
   - nonprofits
   description: The California State Agency for Surplus Property administers federal surplus property, making it available to eligible nonprofits at a fraction of original cost.
   what_they_offer: |
@@ -121,7 +121,7 @@
   name: City of San José Surplus Property Donation Program
   category: Equipment
   area: Santa Clara County
-  eligibility:
+  groups:
   - nonprofits
   description: The City of San José donates surplus property valued at $1,500 or less to eligible nonprofit organizations, helping local groups access needed equipment and supplies.
   what_they_offer: |
@@ -148,7 +148,7 @@
   name: Santa Clara County Surplus Property Donation Program
   category: Equipment
   area: Santa Clara County
-  eligibility:
+  groups:
   - nonprofits
   description: Santa Clara County donates surplus property to eligible nonprofit organizations, providing free office furniture, equipment, and supplies.
   what_they_offer: |
@@ -174,7 +174,7 @@
   name: Santa Clara County Library District Surplus Property Donations
   category: Equipment
   area: Santa Clara County
-  eligibility:
+  groups:
   - nonprofits
   description: The Santa Clara County Library District donates surplus library property to nonprofit organizations located within the county.
   what_they_offer: |
@@ -200,7 +200,7 @@
   name: San Francisco Virtual Warehouse
   category: Equipment
   area: Bay Area-wide
-  eligibility:
+  groups:
   - nonprofits
   description: The San Francisco Virtual Warehouse is a city program that provides free surplus office furniture, supplies, and equipment to nonprofits and public schools.
   what_they_offer: |
@@ -228,7 +228,7 @@
   name: SCRAP (Scroungers' Center for Re-usable Art Parts)
   category: Equipment
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   description: SCRAP is a creative reuse nonprofit that collects donated art and craft supplies and makes them available to teachers, artists, and nonprofits at very low cost.
   what_they_offer: |
@@ -257,7 +257,7 @@
   name: San Mateo County Surplus Property Program
   category: Equipment
   area: San Mateo County
-  eligibility:
+  groups:
   - nonprofits
   description: San Mateo County provides free surplus office furniture, supplies, and equipment to San Mateo County-based nonprofits and public schools.
   what_they_offer: |

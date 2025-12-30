@@ -6,7 +6,7 @@
   "fullDescription": "PG&E's V2X pilot program provides rebates for bidirectional EV chargers that can power your home using your electric vehicle's battery during outages or peak demand periods.",
   "whatTheyOffer": "- $2,500-$4,000 rebate for V2X charger\n- Additional $1,500 for early adopters\n- Powers home from EV battery\n- Backup power during outages\n- Can sell energy back to grid\n- Compatible with select EVs (Ford F-150 Lightning, etc.)\n",
   "howToGetIt": "1. Must be a PG&E residential customer\n2. Own a V2X-compatible electric vehicle\n3. Purchase approved bidirectional charger\n4. Hire licensed electrician for installation\n5. Apply through PG&E's V2X portal\n6. Receive rebate after installation verification\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

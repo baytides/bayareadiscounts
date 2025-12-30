@@ -2,7 +2,7 @@
   name: Banfield Foundation - Pet Owner Resources
   category: Pet Resources
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: The Banfield Foundation is a nonprofit that helps pets and the people who love them by providing resources, grants, and support to pet owners facing financial hardship.
   what_they_offer: |
@@ -27,7 +27,7 @@
   name: Berkeley-East Bay Humane Society - Spay the Bay
   category: Pet Resources
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Berkeley-East Bay Humane Society's Spay the Bay program provides affordable spay/neuter services to help reduce pet overpopulation in the East Bay.
@@ -55,7 +55,7 @@
   name: HSSV Pet Pantry
   category: Pet Resources
   area: Santa Clara County
-  eligibility:
+  groups:
   - 📍
   - low-income
   description: The Humane Society Silicon Valley's Pet Pantry program helps families keep their pets by providing free pet food during times of financial hardship.
@@ -84,7 +84,7 @@
   name: Humane World
   category: Pet Resources
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Humane World provides a comprehensive directory of resources for pet owners who are struggling to afford their pet's care, helping keep families and pets together.
   what_they_offer: |
@@ -109,7 +109,7 @@
   name: Joybound People & Pets - Community Veterinary Care
   category: Pet Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - 📍
   - low-income
   description: Joybound People & Pets (formerly Tony La Russa's ARF) provides low-cost veterinary care to help Contra Costa County residents keep their pets healthy.
@@ -137,7 +137,7 @@
   name: Joybound People & Pets - Free Pet Food
   category: Pet Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - 📍
   - low-income
   description: Joybound's pet food assistance program helps Contra Costa County families keep their pets by providing free food during financial hardship.
@@ -164,7 +164,7 @@
   name: Joybound People & Pets - Free Vaccination Clinics
   category: Pet Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - 📍
   - everyone
   description: Joybound holds free vaccination clinics throughout Contra Costa County to help ensure all pets have access to essential preventive care.
@@ -190,7 +190,7 @@
   name: Joybound People & Pets - Pet Safety Net
   category: Pet Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - 📍
   - low-income
   description: Joybound's Pet Safety Net provides emergency resources to help families keep their pets during times of crisis or financial hardship.
@@ -218,7 +218,7 @@
   name: Joybound People & Pets - Spay/Neuter Clinic
   category: Pet Resources
   area: Contra Costa County
-  eligibility:
+  groups:
   - 📍
   - low-income
   - everyone
@@ -247,7 +247,7 @@
   name: Marin Humane Society - Pet Care Assistance
   category: Pet Resources
   area: Marin County
-  eligibility:
+  groups:
   - low-income
   - seniors
   description: Marin Humane Society provides pet care assistance to help vulnerable Marin County residents keep and care for their pets.
@@ -276,7 +276,7 @@
   name: Muttville Senior Dog Rescue - Cuddle Club
   category: Pet Resources
   area: San Francisco
-  eligibility:
+  groups:
   - seniors
   description: Muttville's Cuddle Club brings the joy of dogs to seniors 62+ through free events where they can spend time with gentle senior dogs—no adoption required.
   what_they_offer: |
@@ -303,7 +303,7 @@
   name: Muttville Senior Dog Rescue - Seniors for Seniors
   category: Pet Resources
   area: San Francisco
-  eligibility:
+  groups:
   - seniors
   description: Muttville's Seniors for Seniors program offers free adoptions of senior dogs (7+ years) to seniors 62 and older, helping both seniors and dogs find companionship.
   what_they_offer: |
@@ -330,7 +330,7 @@
   name: Peninsula Humane Society - Mobile Spay/Neuter Van
   category: Pet Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Peninsula Humane Society's mobile spay/neuter van travels throughout San Mateo County providing accessible, low-cost sterilization services.
@@ -356,7 +356,7 @@
   name: Peninsula Humane Society SPCA Low-Cost Vaccine Clinics
   category: Pet Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Peninsula Humane Society & SPCA offers regular low-cost vaccine clinics providing essential preventive care for dogs and cats.
   what_they_offer: |
@@ -383,7 +383,7 @@
   name: Pet Help Finder
   category: Pet Resources
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Pet Help Finder is a searchable database that helps pet owners locate low-cost veterinary services and financial assistance programs by zip code.
   what_they_offer: |
@@ -409,7 +409,7 @@
   name: Pets in Need - Low-Cost Vet Services
   category: Pet Resources
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Pets in Need operates a community veterinary clinic in Redwood City providing affordable care to help families keep their pets healthy.
@@ -437,7 +437,7 @@
   name: Pets of the Homeless
   category: Pet Resources
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: Pets of the Homeless is a nonprofit providing free veterinary care and pet food to pets of people experiencing homelessness.
   what_they_offer: |
@@ -462,7 +462,7 @@
   name: San Francisco SPCA - Community Clinic
   category: Pet Resources
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The SF SPCA's Community Clinic provides affordable preventative care to help all San Francisco pets stay healthy.
@@ -490,7 +490,7 @@
   name: San Francisco SPCA - Spay/Neuter
   category: Pet Resources
   area: San Francisco
-  eligibility:
+  groups:
   - 📍
   description: The SF SPCA offers affordable spay and neuter services with tiered pricing to make sterilization accessible to all San Francisco residents.
   what_they_offer: |
@@ -517,7 +517,7 @@
   name: SF Aid for Animals (SFAFA)
   category: Pet Resources
   area: Bay Area-wide
-  eligibility:
+  groups:
   - 📍
   - low-income
   description: SF Aid for Animals provides financial assistance for urgent veterinary care to low-income Bay Area residents, helping them avoid having to surrender or euthanize pets due to cost.
@@ -545,7 +545,7 @@
   name: The Pet Fund
   category: Pet Resources
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Pet Fund provides financial assistance for non-basic, non-emergency veterinary care to pet owners who cannot afford treatment.
   what_they_offer: |
@@ -572,7 +572,7 @@
   name: Vet Billing - Payment Plans
   category: Pet Resources
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Vet Billing maintains a directory of veterinary practices that offer payment plans or financing options, helping pet owners manage veterinary costs over time.
   what_they_offer: |
@@ -596,7 +596,7 @@
   name: VETCO Clinics
   category: Pet Resources
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: VETCO operates walk-in vaccination clinics inside Petco stores, providing convenient and affordable preventive care for dogs and cats.
   what_they_offer: |
@@ -622,7 +622,7 @@
   name: VIP Petcare
   category: Pet Resources
   area: Northern California
-  eligibility:
+  groups:
   - everyone
   description: VIP Petcare provides walk-in wellness clinics at pet stores throughout Northern California, offering affordable preventive care without the need for an appointment.
   what_they_offer: |

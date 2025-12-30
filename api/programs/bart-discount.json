@@ -6,7 +6,7 @@
   "fullDescription": "BART (Bay Area Rapid Transit) is a heavy rail rapid transit system serving the San Francisco Bay Area, connecting San Francisco, Oakland, Berkeley, and surrounding suburbs with 50 stations across 131 miles of track.",
   "whatTheyOffer": "- High-Value Discount: Approximately 6.25% savings when using Clipper Autoload\n- Discount automatically applied when card balance is reloaded\n- Works on all BART stations and routes\n",
   "howToGetIt": "1. Get a Clipper card at any BART station or online\n2. Set up Autoload on your Clipper account at clippercard.com\n3. Choose an amount to automatically add when balance is low\n4. Discount is applied automatically to each Autoload transaction\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

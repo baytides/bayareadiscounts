@@ -46,8 +46,8 @@ const CATEGORY_METADATA = {
   'utilities': { name: 'Utilities', icon: '🏠' }
 };
 
-// Eligibility metadata with icons
-const ELIGIBILITY_METADATA = {
+// Groups metadata with icons (formerly "eligibility")
+const GROUPS_METADATA = {
   'low-income': { name: 'SNAP/EBT/Medi-Cal', description: 'For public benefit recipients', icon: '💳' },
   'seniors': { name: 'Seniors (65+)', description: 'For adults age 65 and older', icon: '👵' },
   'youth': { name: 'Youth', description: 'For children and young adults', icon: '🧒' },
@@ -55,6 +55,16 @@ const ELIGIBILITY_METADATA = {
   'veterans': { name: 'Veterans / Active Duty', description: 'For military veterans and active duty', icon: '🎖️' },
   'families': { name: 'Families', description: 'For families with children', icon: '👨‍👩‍👧' },
   'disability': { name: 'People with Disabilities', description: 'For individuals with disabilities', icon: '🧑‍🦽' },
+  'lgbtq': { name: 'LGBT+', description: 'For LGBTQ+ community members', icon: '🌈' },
+  'first-responders': { name: 'First Responders', description: 'For police, firefighters, EMTs, nurses', icon: '🚒' },
+  'teachers': { name: 'Teachers/Educators', description: 'For K-12 teachers and school staff', icon: '👩‍🏫' },
+  'unemployed': { name: 'Unemployed/Job Seekers', description: 'For people actively seeking employment', icon: '💼' },
+  'immigrants': { name: 'Immigrants/Refugees', description: 'For new arrivals, undocumented, DACA', icon: '🌍' },
+  'unhoused': { name: 'Unhoused', description: 'For people experiencing homelessness', icon: '🏠' },
+  'pregnant': { name: 'Pregnant Women', description: 'For prenatal and maternal care', icon: '🤰' },
+  'caregivers': { name: 'Caregivers', description: 'For people caring for elderly or disabled family', icon: '🤲' },
+  'foster-youth': { name: 'Foster Youth', description: 'For current and former foster youth', icon: '🏡' },
+  'reentry': { name: 'Formerly Incarcerated', description: 'For reentry support programs', icon: '🔓' },
   'nonprofits': { name: 'Nonprofit Organizations', description: 'For registered nonprofits', icon: '🤝' },
   'everyone': { name: 'Everyone', description: 'Available to all residents', icon: '🌎' }
 };
@@ -139,7 +149,7 @@ categoryFiles.forEach(file => {
       fullDescription: program.description || null,
       whatTheyOffer: program.what_they_offer || null,
       howToGetIt: program.how_to_get_it || null,
-      eligibility: program.eligibility || [],
+      groups: program.groups || program.eligibility || [],
       areas: areas,
       city: city,
       website: program.link || program.website || '',
@@ -195,27 +205,27 @@ fs.writeFileSync(
 );
 console.log('✅ Generated categories.json');
 
-// Generate eligibility.json
-const eligibilityCounts = {};
+// Generate groups.json (formerly eligibility.json)
+const groupsCounts = {};
 allPrograms.forEach(p => {
-  p.eligibility.forEach(e => {
-    eligibilityCounts[e] = (eligibilityCounts[e] || 0) + 1;
+  p.groups.forEach(g => {
+    groupsCounts[g] = (groupsCounts[g] || 0) + 1;
   });
 });
 
-const eligibility = Object.keys(ELIGIBILITY_METADATA).map(id => ({
+const groups = Object.keys(GROUPS_METADATA).map(id => ({
   id,
-  name: ELIGIBILITY_METADATA[id].name,
-  description: ELIGIBILITY_METADATA[id].description,
-  icon: ELIGIBILITY_METADATA[id].icon,
-  programCount: eligibilityCounts[id] || 0
+  name: GROUPS_METADATA[id].name,
+  description: GROUPS_METADATA[id].description,
+  icon: GROUPS_METADATA[id].icon,
+  programCount: groupsCounts[id] || 0
 }));
 
 fs.writeFileSync(
-  path.join(API_DIR, 'eligibility.json'),
-  JSON.stringify({ eligibility }, null, 2)
+  path.join(API_DIR, 'groups.json'),
+  JSON.stringify({ groups }, null, 2)
 );
-console.log('✅ Generated eligibility.json');
+console.log('✅ Generated groups.json');
 
 // Generate areas.json
 const areaCounts = {};
@@ -246,7 +256,7 @@ const metadata = {
   endpoints: {
     programs: '/api/programs.json',
     categories: '/api/categories.json',
-    eligibility: '/api/eligibility.json',
+    groups: '/api/groups.json',
     areas: '/api/areas.json',
     singleProgram: '/api/programs/{id}.json'
   }
@@ -262,6 +272,6 @@ console.log('\n🎉 API generation complete!');
 console.log(`📊 Summary:`);
 console.log(`   - Total programs: ${allPrograms.length}`);
 console.log(`   - Categories: ${categories.length}`);
-console.log(`   - Eligibility types: ${eligibility.length}`);
+console.log(`   - Groups: ${groups.length}`);
 console.log(`   - Service areas: ${areas.length}`);
 console.log(`\n📁 Files written to: ${API_DIR}`);

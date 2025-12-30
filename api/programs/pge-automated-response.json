@@ -6,7 +6,7 @@
   "fullDescription": "PG&E's Automated Response Technology Program rewards customers for enrolling smart home devices that can automatically adjust energy use during peak demand periods, helping stabilize the grid.",
   "whatTheyOffer": "- $25 enrollment bonus per device\n- Monthly lottery entry for $500 prize\n- Eligible devices: smart thermostats, batteries, EV chargers\n- Automatic adjustments during peak times\n- Helps reduce energy costs\n- Supports grid reliability\n",
   "howToGetIt": "1. Must be a PG&E residential customer\n2. Own a compatible smart device (Nest, ecobee, Tesla, etc.)\n3. Device must be connected to Wi-Fi\n4. Enroll through PG&E's website or app\n5. Allow device to auto-adjust during demand events\n6. Receive $25 bonus and lottery entries\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

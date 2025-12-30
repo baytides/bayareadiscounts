@@ -6,7 +6,7 @@
   "fullDescription": "AC Transit (Alameda-Contra Costa Transit District) is the third-largest public bus system in California, serving the East Bay including Oakland, Berkeley, and surrounding cities with local and transbay service.",
   "whatTheyOffer": "- Student Transit Pass Program (STPP): Free unlimited rides for eligible middle and high school students\n- Program covers all AC Transit local and transbay routes\n- Valid throughout the school year\n",
   "howToGetIt": "1. Program is available through participating school districts\n2. Your school will provide information about enrollment\n3. Students receive a Clipper card loaded with the pass\n4. Contact your school's administration for enrollment details\n",
-  "eligibility": [
+  "groups": [
     "youth",
     "🏫"
   ],

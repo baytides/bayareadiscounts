@@ -6,7 +6,7 @@
   "fullDescription": "The Cartoon Art Museum is one of only a handful of museums in the United States dedicated to the art of cartoons, animation, and comics. Located in San Francisco's Fisherman's Wharf, it celebrates the history and cultural impact of cartoon art.",
   "whatTheyOffer": "- EBT/SNAP/Medi-Cal: Free or reduced admission\n- Pay-What-You-Wish days: Admission at your chosen price\n- Students with ID: $8 admission\n- Seniors (65+): $8 admission\n- Military: Discounted admission with valid ID\n- Children under 5: Free\n- Regular admission: $12 for adults\n",
   "howToGetIt": "Present your benefits card, student ID, or military ID at admission. Check the museum website for Pay-What-You-Wish day schedule. Advance tickets recommended but walk-ins welcome.",
-  "eligibility": [
+  "groups": [
     "low-income",
     "college-students",
     "seniors",

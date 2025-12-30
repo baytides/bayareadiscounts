@@ -2,7 +2,7 @@
   name: ACT Fee Waivers
   category: Education
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: The ACT offers fee waivers for students from low-income families, removing financial barriers to college entrance testing.
   what_they_offer: |
@@ -30,7 +30,7 @@
   name: AP Exam Fee Reductions
   category: Education
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: The College Board offers significant fee reductions on AP (Advanced Placement) exams for students with demonstrated financial need.
   what_they_offer: |
@@ -57,7 +57,7 @@
   name: California College Promise Grant (CCPG)
   category: Education
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The California College Promise Grant (formerly BOG Fee Waiver) waives enrollment fees at all 116 California Community Colleges for eligible students.
   what_they_offer: |
@@ -83,7 +83,7 @@
   name: Common App Fee Waiver
   category: Education
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: The Common Application offers fee waivers that eliminate college application fees at over 900 participating colleges for students with financial need.
   what_they_offer: |
@@ -109,7 +109,7 @@
   name: SAT Fee Waivers
   category: Education
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: The College Board offers SAT fee waivers for low-income 11th and 12th grade students, covering test fees and providing additional benefits.
   what_they_offer: |

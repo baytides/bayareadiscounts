@@ -6,7 +6,7 @@
   "fullDescription": "WIC is California's nutrition program for pregnant and postpartum women, infants, and children under 5, providing healthy food, nutrition education, breastfeeding support, and healthcare referrals.",
   "whatTheyOffer": "- Monthly benefits for healthy foods (fruits, vegetables, whole grains, milk, eggs)\n- Infant formula and baby food\n- WIC card accepted at most grocery stores\n- Nutrition counseling\n- Breastfeeding support and free breast pumps\n- Farmers market benefits\n- Referrals to healthcare and social services\n",
   "howToGetIt": "Apply online or contact your local WIC office. You'll need proof of income (up to 185% of poverty level), residency, and identity. Pregnant women, new mothers, infants, and children under 5 may qualify.",
-  "eligibility": [
+  "groups": [
     "low-income",
     "families",
     "youth"

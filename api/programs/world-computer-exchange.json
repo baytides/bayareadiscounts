@@ -6,7 +6,7 @@
   "fullDescription": "World Computer Exchange is a nonprofit that collects donated computers and distributes them to schools, libraries, and community organizations in developing countries and underserved US communities.",
   "whatTheyOffer": "- Donated computers and technology equipment\n- Equipment for educational and nonprofit use\n- Multiple Bay Area drop-off locations for donations\n- Computers refurbished and distributed to those in need\n",
   "howToGetIt": "1. Visit worldcomputerexchange.org\n2. Complete the request form for your organization\n3. Provide documentation of nonprofit or educational status\n4. Coordinate pickup or delivery of equipment\n",
-  "eligibility": [
+  "groups": [
     "nonprofits"
   ],
   "areas": [

@@ -6,7 +6,7 @@
   "fullDescription": "California State Parks provides lifetime access to residents with permanent disabilities, making outdoor recreation more accessible and affordable for all Californians.",
   "whatTheyOffer": "- Lifetime pass for individuals with permanent disabilities\n- 50% discount on vehicle day-use fees\n- 50% discount on family camping fees\n- 50% discount on boat-use fees at state parks\n",
   "howToGetIt": "Apply online or by mail through California State Parks. You'll need to provide proof of California residency and documentation of permanent disability from a licensed physician or government agency.",
-  "eligibility": [
+  "groups": [
     "disability"
   ],
   "areas": [

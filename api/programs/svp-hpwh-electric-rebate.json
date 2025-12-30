@@ -6,7 +6,7 @@
   "fullDescription": "Silicon Valley Power offers rebates for Santa Clara residents upgrading from inefficient electric resistance water heaters to efficient heat pump models.",
   "whatTheyOffer": "- $500 rebate for heat pump water heater\n- Additional $500 for income-qualified customers\n- Must replace electric resistance water heater\n- ENERGY STAR certified models required\n- Significant energy savings (50-70%)\n- Lower operating costs\n",
   "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. Obtain permit from City of Santa Clara\n3. Replace electric resistance water heater\n4. Purchase ENERGY STAR heat pump water heater\n5. Apply online through SVP rebate platform\n6. Submit permit and proof of purchase\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

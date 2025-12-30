@@ -6,7 +6,7 @@
   "fullDescription": "The Regional Transit Connection (RTC) Clipper Card provides discounted fares for people with disabilities on participating Bay Area transit systems.",
   "whatTheyOffer": "- Reduced fares on most Bay Area transit agencies\n- Typically 50% or more off regular adult fares\n- Valid on BART, Muni, AC Transit, Caltrain, and more\n- Discounts automatically applied when using RTC Clipper card\n",
   "howToGetIt": "1. Complete the RTC application at 511.org\n2. Provide proof of disability (Medicare card, SSI/SSDI documentation, or medical certification)\n3. Submit application online or by mail\n4. Once approved, receive RTC Clipper card by mail\n5. Load cash value and ride with automatic discounts\n",
-  "eligibility": [
+  "groups": [
     "disability"
   ],
   "areas": [

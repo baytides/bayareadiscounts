@@ -6,7 +6,7 @@
   "fullDescription": "Silicon Valley Power provides rebates for installing EV charging stations at homes, apartments, schools, nonprofits, and businesses in Santa Clara.",
   "whatTheyOffer": "- Up to $550 rebate for EV charger installation\n- Available for residential homes\n- Available for multifamily properties\n- Available for schools and nonprofits\n- Available for commercial facilities\n- Level 2 charging stations eligible\n",
   "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. Purchase and install qualifying EV charger\n3. Use licensed electrician for installation\n4. Apply online through SVP rebate platform\n5. Submit proof of purchase and installation\n6. Receive rebate after approval\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

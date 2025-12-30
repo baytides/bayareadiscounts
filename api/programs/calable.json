@@ -6,7 +6,7 @@
   "fullDescription": "CalABLE is California's tax-advantaged savings program for people with disabilities, allowing them to save money without affecting eligibility for public benefits like SSI and Medi-Cal.",
   "whatTheyOffer": "- Tax-advantaged savings account (529A ABLE account)\n- Save up to $18,000 per year (2024 limit)\n- Account balances up to $100,000 don't affect SSI eligibility\n- Funds can be used for qualified disability expenses\n- Multiple investment options available\n- No California state income tax on earnings\n",
   "howToGetIt": "1. Must have qualifying disability that began before age 26\n2. Visit calable.ca.gov to open an account\n3. Complete online enrollment\n4. Choose investment options\n5. Start saving with as little as $25\n6. Manage account online\n",
-  "eligibility": [
+  "groups": [
     "disability"
   ],
   "areas": [

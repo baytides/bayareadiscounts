@@ -6,7 +6,7 @@
   "fullDescription": "San Jose Clean Energy pays EV owners for enrolling eligible chargers in their managed charging program, pausing charging during peak events with override option.",
   "whatTheyOffer": "- $25 enrollment bonus\n- $9 per month ongoing payment\n- Compatible with Emporia EV charger\n- Managed charging during peak events\n- Option to override any pause\n- Annual earnings of $108+ after bonus\n",
   "howToGetIt": "1. Must be a San Jose Clean Energy customer\n2. Must have Emporia EV charger\n3. Enroll charger through program portal\n4. Allow charger to connect to program\n5. Charging pauses during peak events\n6. Override option always available\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

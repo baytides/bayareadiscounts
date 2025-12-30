@@ -2,7 +2,7 @@
   name: CID Borrow a Backup Battery
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - disability
   description: The Center for Independence of Individuals with Disabilities (CID) provides portable backup batteries to individuals who depend on electricity for medical equipment during Public Safety Power Shutoffs (PSPS).
   what_they_offer: |
@@ -29,7 +29,7 @@
   name: CleanPowerSF
   category: Utilities
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   description: CleanPowerSF is San Francisco's community choice energy program that provides 100% renewable electricity to residents and businesses, with additional bill relief options for qualifying low-income customers.
   what_they_offer: |
@@ -54,7 +54,7 @@
   name: EBMUD Customer Assistance Program
   category: Utilities
   area: Alameda County
-  eligibility:
+  groups:
   - low-income
   description: The East Bay Municipal Utility District (EBMUD) Customer Assistance Program provides significant discounts on water and wastewater bills for income-eligible households in Alameda and Contra Costa counties.
   what_they_offer: |
@@ -80,7 +80,7 @@
   name: LIHEAP
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Low Income Home Energy Assistance Program (LIHEAP) is a federally funded program that helps low-income households pay their energy bills and make energy-efficient home improvements.
   what_they_offer: |
@@ -106,7 +106,7 @@
   name: Medical Baseline Allowance
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - disability
   description: The Medical Baseline Allowance program provides additional low-cost energy to customers with qualifying medical conditions that require extra electricity or gas, and includes priority notification before power shutoffs.
   what_they_offer: |
@@ -133,7 +133,7 @@
   name: E-Bike Rebate
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   description: Peninsula Clean Energy offers e-bike rebates to help income-qualified San Mateo County residents transition to clean transportation, reducing both costs and carbon emissions.
   what_they_offer: |
@@ -159,7 +159,7 @@
   name: Heat Pump Heating & Cooling Rebate
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Peninsula Clean Energy offers rebates for San Mateo County residents to replace gas furnaces with efficient electric heat pumps that provide both heating and cooling.
@@ -188,7 +188,7 @@
   name: Home Upgrade Services
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   description: Peninsula Clean Energy's Home Upgrade Services provides no-cost electrification for income-eligible homeowners, converting gas appliances to electric with a full-service approach from assessment to installation.
   what_they_offer: |
@@ -219,7 +219,7 @@
   name: Used Electric Vehicle Rebate
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   description: Peninsula Clean Energy helps income-qualified San Mateo County residents afford electric vehicles with a $2,000 rebate toward used plug-in hybrids or fully-electric vehicles.
   what_they_offer: |
@@ -247,7 +247,7 @@
   name: Water Heater Rebate
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Peninsula Clean Energy offers substantial rebates for San Mateo County residents to replace gas or electric water heaters with efficient heat pump water heaters.
@@ -278,7 +278,7 @@
   name: Zero Interest Loan for Upgrades
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Peninsula Clean Energy offers zero-interest financing to help San Mateo County residents electrify their homes without upfront costs, with convenient repayment through monthly utility bills.
   what_they_offer: |
@@ -309,7 +309,7 @@
   name: Arrearage Management Plan (AMP)
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: PG&E's Arrearage Management Plan helps CARE-enrolled customers reduce their past-due utility debt by forgiving up to $8,000 over 12 months when they make consistent on-time payments.
   what_they_offer: |
@@ -337,7 +337,7 @@
   name: Automated Response Technology Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: PG&E's Automated Response Technology Program rewards customers for enrolling smart home devices that can automatically adjust energy use during peak demand periods, helping stabilize the grid.
   what_they_offer: |
@@ -365,7 +365,7 @@
   name: PG&E CARE & FERA
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: PG&E's CARE (California Alternate Rates for Energy) and FERA (Family Electric Rate Assistance) programs provide significant utility bill discounts for income-qualified households.
   what_they_offer: |
@@ -393,7 +393,7 @@
   name: CPUC Energy Savings Assistance (ESA) Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Energy Savings Assistance Program provides free home energy upgrades and weatherization services to income-qualified households, helping reduce energy bills and improve comfort.
   what_they_offer: |
@@ -423,7 +423,7 @@
   name: Generator & Battery Rebate
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: PG&E provides rebates for generators and portable battery storage to help customers in high fire-threat areas prepare for power outages during Public Safety Power Shutoffs.
   what_they_offer: |
@@ -452,7 +452,7 @@
   name: Home Battery Rebate (SGIP)
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Self-Generation Incentive Program (SGIP) Equity program provides substantial incentives for income-qualified households to install home battery storage, covering up to 85% of the cost.
   what_they_offer: |
@@ -480,7 +480,7 @@
   name: Induction Cooktop Test Drive
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: PG&E's Induction Cooktop Test Drive lets customers try induction cooking at home before making a purchase decision, with a free two-week loaner including everything needed to get started.
   what_they_offer: |
@@ -508,7 +508,7 @@
   name: PG&E Match My Payment Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: PG&E's Match My Payment Program helps customers reduce past-due balances by matching every dollar they pay, up to $1,000, effectively cutting their debt in half.
   what_they_offer: |
@@ -536,7 +536,7 @@
   name: Permanent Battery Storage Rebate
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: PG&E offers a substantial rebate for permanent home battery storage to customers who have experienced frequent Enhanced Powerline Safety Settings (EPSS) outages, helping them maintain power reliability.
   what_they_offer: |
@@ -565,7 +565,7 @@
   name: Portable Battery Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - disability
   description: PG&E provides free portable backup batteries to customers who depend on electricity for medical equipment and have experienced power shutoffs, ensuring they can maintain critical care during outages.
   what_they_offer: |
@@ -593,7 +593,7 @@
   name: Relief for Energy Assistance through Community Help (REACH)
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The REACH program provides emergency bill assistance for PG&E customers facing disconnection, offering up to $300 to help income-eligible households avoid losing power or gas service.
   what_they_offer: |
@@ -621,7 +621,7 @@
   name: Residential Charging Solutions Rebate
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: PG&E's Residential Charging Solutions Rebate covers up to 100% of the cost of home EV charging equipment and installation for income-qualified customers, making electric vehicle ownership more accessible.
   what_they_offer: |
@@ -649,7 +649,7 @@
   name: Used Electric Vehicle Rebate
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: PG&E offers a $4,000 rebate for income-qualified customers purchasing pre-owned electric vehicles, making EVs more affordable whether buying from dealers or private sellers.
   what_they_offer: |
@@ -677,7 +677,7 @@
   name: Vehicle-to-Everything (V2X) Pilot Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: PG&E's V2X pilot program provides rebates for bidirectional EV chargers that can power your home using your electric vehicle's battery during outages or peak demand periods.
   what_they_offer: |
@@ -705,7 +705,7 @@
   name: WatterSaver
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: WatterSaver is a demand response program that pays customers to enroll their smart electric water heaters, automatically shifting water heating to off-peak times to save money and support the grid.
   what_they_offer: |
@@ -732,7 +732,7 @@
   name: Clean Cars for All - EV
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: The Bay Area Air Quality Management District's Clean Cars for All program provides substantial incentives for income-qualified residents to replace older polluting vehicles with new or used electric vehicles.
   what_they_offer: |
@@ -761,7 +761,7 @@
   name: Clean Cars for All - Fuel Cell Vehicle
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: The Clean Cars for All program also offers rebates for hydrogen fuel cell vehicles, providing another zero-emission option for Bay Area residents replacing older polluting vehicles.
   what_they_offer: |
@@ -790,7 +790,7 @@
   name: Clean Cars for All - E-Bike & Transit Credit
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: For those who don't need a car, Clean Cars for All offers a mobility option combining an e-bike and transit credits, providing sustainable transportation alternatives when trading in an older vehicle.
   what_they_offer: |
@@ -819,7 +819,7 @@
   name: Vehicle Buy Back Program
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: BAAQMD's Vehicle Buy Back program pays $2,000 for older vehicles to be scrapped, reducing air pollution from high-emitting cars while providing owners compensation for retiring their vehicles.
   what_they_offer: |
@@ -848,7 +848,7 @@
   name: Wood Stove Replacement Program
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: BAAQMD's Wood Stove Replacement Program helps Bay Area residents replace wood-burning stoves with clean electric heat pumps, improving air quality and reducing home heating costs.
@@ -879,7 +879,7 @@
   name: E-Bike Rebate
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The California Air Resources Board (CARB) E-Bike Incentive Project provides substantial point-of-sale discounts for income-qualified residents to purchase new electric bicycles.
   what_they_offer: |
@@ -905,7 +905,7 @@
   name: Old Vehicle Retirement
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: California's Consumer Assistance Program offers payment to retire vehicles that have failed smog inspections, helping low-income residents get problem vehicles off the road.
   what_they_offer: |
@@ -933,7 +933,7 @@
   name: 'Driving Clean Assistance Program: Clean Cars 4 All'
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Driving Clean Assistance Program provides comprehensive support for income-qualified Californians to trade in old gas vehicles for clean alternatives, including financial counseling and down payment help.
   what_they_offer: |
@@ -961,7 +961,7 @@
   name: Home EV Charger Federal Tax Credit
   category: Utilities
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: The federal 30C tax credit provides a 30% tax credit for installing electric vehicle charging equipment at home, available in eligible low-income and rural census tracts.
   what_they_offer: |
@@ -988,7 +988,7 @@
   name: Weatherization Assistance Program
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: California's Weatherization Assistance Program provides free energy efficiency upgrades to help low-income households reduce energy costs and improve home comfort and safety.
   what_they_offer: |
@@ -1016,7 +1016,7 @@
   name: Efficiency and Sustainable Energy (EASE) Home Program
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: BayREN's EASE Home Program covers 80% of home efficiency upgrade costs for income-qualified Bay Area homeowners, with a capped out-of-pocket maximum and vetted contractors.
   what_they_offer: |
@@ -1046,7 +1046,7 @@
   name: Home Energy Assessment
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: BayREN offers rebates for professional home energy assessments, providing homeowners with a comprehensive score and report identifying upgrades that can reduce energy costs.
   what_they_offer: |
@@ -1075,7 +1075,7 @@
   name: Water Conservation Rebates
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Cal Water offers a variety of rebates for water-saving products and landscape improvements, plus free conservation kits to help customers reduce water usage and lower bills.
   what_they_offer: |
@@ -1104,7 +1104,7 @@
   name: Whole Building Electrification
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: The Energy Smart Homes program provides incentives for fully electrifying homes by removing all gas appliances and switching to efficient electric alternatives.
   what_they_offer: |
@@ -1133,7 +1133,7 @@
   name: Heat Pump Water Heater
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: Golden State Rebates offers instant discounts on heat pump water heaters at participating retailers, making it easy to upgrade from gas or electric tank water heaters.
   what_they_offer: |
@@ -1160,7 +1160,7 @@
   name: High Efficiency Gas Water Heater
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: For those not ready to switch to electric, Golden State Rebates offers a discount on high-efficiency gas water heaters at participating retailers.
   what_they_offer: |
@@ -1187,7 +1187,7 @@
   name: Room Air Conditioner
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: Golden State Rebates provides instant discounts on Energy Star-certified room air conditioners at participating retailers across California.
   what_they_offer: |
@@ -1213,7 +1213,7 @@
   name: Smart Thermostat
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: Golden State Rebates offers instant discounts on smart thermostats at participating retailers, helping Californians save energy with programmable temperature control.
   what_they_offer: |
@@ -1240,7 +1240,7 @@
   name: OhmConnect
   category: Utilities
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: OhmConnect is a free program that pays Californians to reduce energy use during peak demand times, while offering bonuses and free smart home devices.
   what_they_offer: |
@@ -1267,7 +1267,7 @@
   name: QuitCarbon Rebate
   category: Utilities
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: QuitCarbon offers additional rebates when you use their free home electrification planning service and their network of contractors for qualifying projects over $4,000.
   what_they_offer: |
@@ -1296,7 +1296,7 @@
   name: Recology 25% Low-Income Discount Program
   category: Utilities
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   description: Recology San Francisco offers a 25% discount on garbage collection bills for income-qualified San Francisco residents, helping reduce the cost of essential waste services.
   what_they_offer: |
@@ -1322,7 +1322,7 @@
   name: Building Electrification Rebate Program
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The City of Redwood City offers rebates to help residents electrify their homes with heat pump water heaters, HVAC systems, and electrical panel upgrades.
@@ -1352,7 +1352,7 @@
   name: Electric Vehicle (EV) Charger Rebate Program
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The City of Redwood City offers rebates for residents installing Level 2 EV chargers at home, making electric vehicle ownership more convenient.
   what_they_offer: |
@@ -1379,7 +1379,7 @@
   name: Electric Lawn Care Equipment Rebate
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The City of Redwood City offers rebates for switching from gas-powered lawn equipment to electric, reducing noise and air pollution in the community.
   what_they_offer: |
@@ -1408,7 +1408,7 @@
   name: Solar Rebate Program
   category: Utilities
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The City of Redwood City offers rebates for residents installing solar panels, helping reduce electricity costs and promote renewable energy.
   what_they_offer: |
@@ -1436,7 +1436,7 @@
   name: Green House Call
   category: Utilities
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Rising Sun Center for Opportunity provides free virtual energy assessments and ships free energy and water-saving products directly to Bay Area residents at no cost.
   what_they_offer: |
@@ -1464,7 +1464,7 @@
   name: SFPUC Customer Assistance Program (CAP)
   category: Utilities
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   description: The San Francisco Public Utilities Commission Customer Assistance Program provides significant discounts on water and sewer bills plus protections from shutoffs for income-qualified San Francisco residents.
   what_they_offer: |
@@ -1492,7 +1492,7 @@
   name: Mercury Thermostat Recycling Rebate
   category: Utilities
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Thermostat Recycling Corporation pays $30 per mercury thermostat recycled at designated drop-off locations, helping safely dispose of hazardous mercury while rewarding environmentally responsible behavior.
   what_they_offer: |
@@ -1519,7 +1519,7 @@
   name: Electric Bicycle Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents purchasing new electric bicycles, with additional incentives for income-qualified customers.
   what_they_offer: |
@@ -1547,7 +1547,7 @@
   name: EV Charging Station Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power provides rebates for installing EV charging stations at homes, apartments, schools, nonprofits, and businesses in Santa Clara.
   what_they_offer: |
@@ -1575,7 +1575,7 @@
   name: Income-Qualified Pre-Owned Electric Vehicle Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - low-income
   description: Silicon Valley Power offers substantial rebates for income-qualified Santa Clara residents purchasing pre-owned electric vehicles, with bonuses for efficiency and LIHEAP eligibility.
   what_they_offer: |
@@ -1604,7 +1604,7 @@
   name: Induction Cooktop, Range & Oven Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents switching from gas to induction cooking, with enhanced rebates for income-qualified customers.
   what_they_offer: |
@@ -1632,7 +1632,7 @@
   name: Heat Pump Clothes Dryer Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power provides rebates for Santa Clara residents switching from gas to high-efficiency heat pump dryers, which use less energy than standard electric dryers.
   what_they_offer: |
@@ -1660,7 +1660,7 @@
   name: Electric Clothes Dryer Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents switching from gas to standard electric dryers, with enhanced rebates for income-qualified customers.
   what_they_offer: |
@@ -1688,7 +1688,7 @@
   name: Heat Pump Water Heater Rebate (Gas Replacement)
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers one of the highest heat pump water heater rebates in California for Santa Clara residents replacing gas water heaters.
   what_they_offer: |
@@ -1716,7 +1716,7 @@
   name: Heat Pump Water Heater Rebate (Electric Replacement)
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents upgrading from inefficient electric resistance water heaters to efficient heat pump models.
   what_they_offer: |
@@ -1745,7 +1745,7 @@
   name: Heat Pump HVAC Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers one of the most generous heat pump HVAC rebates in California for Santa Clara residents replacing gas furnaces.
   what_they_offer: |
@@ -1774,7 +1774,7 @@
   name: HVAC Tune-Up Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power provides rebates for Santa Clara residents to have their HVAC systems professionally tuned up, improving efficiency and extending equipment life.
   what_they_offer: |
@@ -1801,7 +1801,7 @@
   name: Circuit Pauser or Splitter Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for circuit pausers/splitters that allow Santa Clara residents to add electric appliances without expensive panel upgrades.
   what_they_offer: |
@@ -1829,7 +1829,7 @@
   name: Smart Electric Panel Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers significant rebates for smart electric panels that enable home electrification without costly main service upgrades.
   what_they_offer: |
@@ -1858,7 +1858,7 @@
   name: Main Service Panel Upgrade Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power provides rebates for Santa Clara residents upgrading electrical panels to support EV chargers and electric appliances.
   what_they_offer: |
@@ -1887,7 +1887,7 @@
   name: New Circuits for Future Electric Appliances Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents to prewire circuits for future electric appliances, making electrification easier down the road.
   what_they_offer: |
@@ -1916,7 +1916,7 @@
   name: Battery Storage Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power provides rebates for battery storage systems paired with solar PV, with enhanced incentives for income-qualified customers.
   what_they_offer: |
@@ -1944,7 +1944,7 @@
   name: Energy Efficiency Grant for HOAs
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers substantial grants to HOAs in Santa Clara for energy efficiency upgrades to common areas, reducing shared utility costs for residents.
   what_they_offer: |
@@ -1972,7 +1972,7 @@
   name: Income-Qualified Solar Grant
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - low-income
   description: Silicon Valley Power provides substantial solar grants to income-qualified Santa Clara homeowners who have been on the FRAP assistance program, helping low-income residents access renewable energy.
   what_they_offer: |
@@ -2000,7 +2000,7 @@
   name: Variable Speed Pool Pump Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents who upgrade to energy-efficient variable speed pool pumps, reducing electricity consumption for pool maintenance.
   what_they_offer: |
@@ -2028,7 +2028,7 @@
   name: Solar Tune-Up Rebate
   category: Utilities
   area: City of Santa Clara
-  eligibility:
+  groups:
   - everyone
   description: Silicon Valley Power offers rebates for Santa Clara residents to have their existing solar PV systems professionally inspected and tuned up, ensuring optimal performance and energy generation.
   what_they_offer: |
@@ -2055,7 +2055,7 @@
   name: SJ Cares Discount
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - low-income
   description: San Jose Clean Energy provides an additional 10% discount on electricity charges for income-qualified customers already enrolled in PG&E's CARE or FERA programs, helping reduce energy costs.
   what_they_offer: |
@@ -2083,7 +2083,7 @@
   name: Solar Access Program
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - low-income
   description: San Jose Clean Energy's Solar Access Program provides significant electricity bill discounts for income-qualified residents living in Environmental Justice Communities, stackable with other discounts for up to 55% savings.
   what_they_offer: |
@@ -2110,7 +2110,7 @@
   name: EcoHome Heat Pump Water Heater Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy offers substantial rebates for replacing gas water heaters with energy-efficient heat pump water heaters, with enhanced rebates for income-qualified residents and Environmental Justice Communities.
   what_they_offer: |
@@ -2138,7 +2138,7 @@
   name: EcoHome Heat Pump HVAC Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy offers rebates for replacing gas furnaces with efficient heat pump HVAC systems that provide both heating and cooling, with enhanced rebates for qualifying residents.
   what_they_offer: |
@@ -2166,7 +2166,7 @@
   name: EcoHome Battery Storage Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy provides substantial rebates for home battery storage systems paired with solar PV, with significantly enhanced rebates for income-qualified residents and Environmental Justice Communities.
   what_they_offer: |
@@ -2194,7 +2194,7 @@
   name: EcoHome Panel Upgrade Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy offers rebates for electrical panel upgrades when done alongside other EcoHome electrification projects, helping homes support additional electric appliances.
   what_they_offer: |
@@ -2221,7 +2221,7 @@
   name: EcoHome Attic Insulation Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy offers rebates for attic insulation when done alongside other EcoHome electrification projects, improving home energy efficiency and comfort.
   what_they_offer: |
@@ -2248,7 +2248,7 @@
   name: EcoHome Circuit Prewiring Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy offers rebates for circuit prewiring when done alongside other EcoHome electrification projects, preparing homes for future electric appliance installations.
   what_they_offer: |
@@ -2275,7 +2275,7 @@
   name: New EV Instant Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - low-income
   description: San Jose Clean Energy offers substantial instant rebates on new electric vehicles for income-qualified residents, making EV ownership more accessible for lower-income households.
   what_they_offer: |
@@ -2303,7 +2303,7 @@
   name: Used EV Instant Rebate
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - low-income
   description: San Jose Clean Energy provides instant rebates on used electric vehicles for income-qualified residents, offering an affordable pathway to EV ownership.
   what_they_offer: |
@@ -2331,7 +2331,7 @@
   name: Peak Rewards Program
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy's Peak Rewards program pays customers to reduce electricity usage during peak demand periods, with no penalty for non-participation.
   what_they_offer: |
@@ -2359,7 +2359,7 @@
   name: Peak Rewards for Smart Thermostats
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy pays customers annually for enrolling eligible smart thermostats in their demand response program, with automatic adjustments during peak events.
   what_they_offer: |
@@ -2387,7 +2387,7 @@
   name: Peak Rewards for EV Chargers
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy pays EV owners for enrolling eligible chargers in their managed charging program, pausing charging during peak events with override option.
   what_they_offer: |
@@ -2416,7 +2416,7 @@
   name: Peak Rewards for Battery Storage
   category: Utilities
   area: City of San Jose
-  eligibility:
+  groups:
   - everyone
   description: San Jose Clean Energy rewards battery storage owners for enrolling in their demand response program, providing both upfront bonuses and ongoing quarterly payments.
   what_they_offer: |
@@ -2444,7 +2444,7 @@
   name: Rate Assistance Program (RAP)
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - low-income
   - disability
   description: The City of Palo Alto Utilities Rate Assistance Program provides significant discounts on utility bills for residents experiencing financial hardship or medical conditions requiring higher utility use.
@@ -2473,7 +2473,7 @@
   name: Residential Energy Assistance Program (REAP)
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - low-income
   description: The City of Palo Alto's REAP program provides free home energy and water efficiency upgrades to income-qualified residents, helping reduce utility costs through improved efficiency.
   what_they_offer: |
@@ -2501,7 +2501,7 @@
   name: ProjectPLEDGE
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - low-income
   description: ProjectPLEDGE provides one-time utility bill assistance for Palo Alto residents facing financial hardship, helping cover past-due utility balances.
   what_they_offer: |
@@ -2528,7 +2528,7 @@
   name: Heat Pump Water Heater Rebate
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto Utilities offers one of the most generous heat pump water heater rebates in the region, with affordable financing options that make the switch accessible for all residents.
   what_they_offer: |
@@ -2557,7 +2557,7 @@
   name: Heat Pump HVAC Rebate
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto Utilities offers rebates for replacing gas furnaces with efficient heat pump HVAC systems that provide both heating and cooling from a single unit.
   what_they_offer: |
@@ -2584,7 +2584,7 @@
   name: Gas Meter Removal Incentive
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto Utilities rewards residents who fully electrify their homes and disconnect from natural gas service, supporting the city's sustainability goals.
   what_they_offer: |
@@ -2612,7 +2612,7 @@
   name: EV Charger Rebate for Multi-Family and Non-Profits
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto Utilities provides substantial rebates for installing EV charging infrastructure at multi-family buildings, schools, and non-profit organizations.
   what_they_offer: |
@@ -2640,7 +2640,7 @@
   name: Transformer Upgrade Rebate Program
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto Utilities helps offset the cost of electrical infrastructure upgrades needed for EV charger installations, making charging infrastructure more affordable.
   what_they_offer: |
@@ -2668,7 +2668,7 @@
   name: Landscape Conversion Rebate
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto offers rebates for converting water-intensive lawns and pools to sustainable, drought-tolerant landscaping through a partnership with Valley Water.
   what_they_offer: |
@@ -2696,7 +2696,7 @@
   name: Graywater Laundry-to-Landscape Rebate
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto offers rebates for installing graywater systems that reuse washing machine water for landscape irrigation, reducing water consumption.
   what_they_offer: |
@@ -2724,7 +2724,7 @@
   name: Stormwater Rebates Program
   category: Utilities
   area: City of Palo Alto
-  eligibility:
+  groups:
   - everyone
   description: City of Palo Alto offers rebates for various stormwater management features that capture and filter rainwater, reducing runoff and protecting local waterways.
   what_they_offer: |

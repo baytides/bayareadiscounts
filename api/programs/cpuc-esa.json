@@ -6,7 +6,7 @@
   "fullDescription": "The Energy Savings Assistance Program provides free home energy upgrades and weatherization services to income-qualified households, helping reduce energy bills and improve comfort.",
   "whatTheyOffer": "- Free energy assessment of your home\n- LED lighting upgrades\n- New energy-efficient refrigerator\n- Weatherization (insulation, caulking, weather stripping)\n- HVAC repairs or replacement\n- Heat pump water heater installation\n- Smart power strips\n- All services and equipment at no cost\n",
   "howToGetIt": "1. Check income eligibility (typically 200% federal poverty level)\n2. Contact PG&E to request free assessment\n3. Technician visits home to evaluate needs\n4. Receive free installation of qualifying upgrades\n5. Renters and homeowners both eligible\n6. May qualify through CARE enrollment\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

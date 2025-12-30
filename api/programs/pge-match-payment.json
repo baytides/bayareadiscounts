@@ -6,7 +6,7 @@
   "fullDescription": "PG&E's Match My Payment Program helps customers reduce past-due balances by matching every dollar they pay, up to $1,000, effectively cutting their debt in half.",
   "whatTheyOffer": "- PG&E matches your payments dollar-for-dollar\n- Up to $1,000 in matching funds\n- Pay $500, PG&E pays $500 for you\n- Helps clear past-due balances faster\n- One-time program (once per account)\n- Available while funds last\n",
   "howToGetIt": "1. Must be a PG&E residential customer\n2. Must have at least $100 past due balance\n3. Meet income eligibility requirements\n4. Contact PG&E to check availability and enroll\n5. Make payments toward your balance\n6. PG&E matches each payment up to $1,000 total\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

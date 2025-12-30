@@ -2,7 +2,7 @@
   name: 2-1-1 Bay Area
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: 2-1-1 Bay Area is a free, confidential helpline connecting residents to essential community services 24 hours a day, 7 days a week, in over 180 languages.
   what_they_offer: |
@@ -29,7 +29,7 @@
   name: CZI Community Space
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - nonprofits
   description: The Chan Zuckerberg Initiative Community Space provides free meeting and event venues for local nonprofits at their Redwood City headquarters, supporting community organizations with professional facilities.
   what_they_offer: |
@@ -57,7 +57,7 @@
   name: Dolly Parton Imagination Library
   category: Community Services
   area: Statewide
-  eligibility:
+  groups:
   - youth
   description: Dolly Parton's Imagination Library sends a free, high-quality book every month to registered children from birth to age five, building home libraries and fostering early literacy across California.
   what_they_offer: |
@@ -85,7 +85,7 @@
   name: Generation Thrive
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - nonprofits
   description: Generation Thrive, a partnership between the Golden State Warriors and Kaiser Permanente, provides free meeting and workspace to Bay Area nonprofits at their state-of-the-art facility.
   what_they_offer: |
@@ -113,7 +113,7 @@
   name: Google Community Space
   category: Community Services
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   description: Google Community Space offers free professional event and meeting facilities for Bay Area nonprofits, providing access to Google's technology tools and resources.
   what_they_offer: |
@@ -142,7 +142,7 @@
   name: Salesforce Ohana Floor
   category: Community Services
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   description: Salesforce offers their stunning 61st-floor Ohana Floor with panoramic city views as a free event venue for Bay Area nonprofits, complete with professional event support.
   what_they_offer: |
@@ -171,7 +171,7 @@
   name: Season of Sharing Fund
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   description: The Season of Sharing Fund, a partnership of the San Francisco Chronicle and Bay Area community foundations, provides emergency financial assistance to prevent homelessness for families and individuals in crisis.
   what_they_offer: |
@@ -197,7 +197,7 @@
   name: Sobrato Nonprofit Centers Conference Space
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - nonprofits
   description: Sobrato Philanthropies provides free meeting and conference facilities at their nonprofit centers throughout the Bay Area, helping organizations save on venue costs.
   what_they_offer: |
@@ -224,7 +224,7 @@
   name: Tides Converge
   category: Community Services
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   description: Tides Converge is a shared nonprofit campus in the Presidio providing meeting spaces, affordable coworking, and office leases for nonprofits and social enterprises.
   what_they_offer: |
@@ -253,7 +253,7 @@
   name: VA Vet Centers
   category: Community Services
   area: Nationwide
-  eligibility:
+  groups:
   - veterans
   description: VA Vet Centers provide confidential community-based counseling, outreach, and referral services for eligible veterans, service members, and their families outside of traditional VA medical facilities.
   what_they_offer: |
@@ -280,7 +280,7 @@
   name: YMCA
   category: Community Services
   area: Nationwide
-  eligibility:
+  groups:
   - families
   - youth
   description: The YMCA provides community programs and facilities focused on youth development, healthy living, and social responsibility, with financial assistance available to ensure access for all.
@@ -307,7 +307,7 @@
   name: Bay Area Crisis Nursery - Emergency Childcare
   category: Childcare Assistance
   area: Contra Costa County
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -338,7 +338,7 @@
   name: California State Preschool Program
   category: Childcare Assistance
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -366,7 +366,7 @@
   name: CalWORKs Child Care
   category: Childcare Assistance
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -394,7 +394,7 @@
   name: Children's Council San Francisco
   category: Childcare Assistance
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -424,7 +424,7 @@
   name: Choices for Children
   category: Childcare Assistance
   area: Santa Clara County
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -454,7 +454,7 @@
   name: Head Start
   category: Childcare Assistance
   area: Bay Area-wide
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -482,7 +482,7 @@
   name: Bay Area Crisis Nursery - BACN Boutique
   category: Clothing Assistance
   area: Contra Costa County
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -514,7 +514,7 @@
   name: Bay Area Crisis Nursery - Food Pantry & Diaper Bank
   category: Clothing Assistance
   area: Contra Costa County
-  eligibility:
+  groups:
   - low-income
   - families
   - youth
@@ -544,7 +544,7 @@
   name: San Francisco Diaper Bank
   category: Clothing Assistance
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   description: The San Francisco Diaper Bank provides free diapers to low-income families enrolled in public assistance programs, helping reduce the financial burden of essential baby supplies.
   what_they_offer: |
@@ -572,7 +572,7 @@
   name: St. Anthony's Free Clothing Program
   category: Clothing Assistance
   area: San Francisco
-  eligibility:
+  groups:
   - everyone
   description: St. Anthony's Free Clothing Program is San Francisco's largest free clothing resource, providing dignity and essential clothing to over 3,000 people monthly regardless of income or circumstances.
   what_they_offer: |
@@ -601,7 +601,7 @@
   name: California Grants Portal
   category: Community Services
   area: California
-  eligibility:
+  groups:
   - nonprofits
   description: The California Grants Portal is a centralized, free searchable database of all state grant opportunities, helping nonprofits and community organizations find and apply for funding.
   what_they_offer: |
@@ -628,7 +628,7 @@
   name: HIP Housing Home Sharing Program
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: HIP Housing's Home Sharing Program is a free matching service that connects homeowners with extra space to compatible individuals seeking affordable housing arrangements in San Mateo County.
   what_they_offer: |
@@ -657,7 +657,7 @@
   name: LifeMoves Opportunity Services Center
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: LifeMoves provides comprehensive services to help individuals and families experiencing homelessness transition to stable housing through shelter, case management, and supportive programs.
@@ -686,7 +686,7 @@
   name: Haven Family House (LifeMoves)
   category: Community Services
   area: City of Menlo Park
-  eligibility:
+  groups:
   - low-income
   - veterans
   description: Haven Family House is a LifeMoves interim housing facility in Menlo Park providing shelter and comprehensive services for families experiencing homelessness, with dedicated capacity for veteran families.
@@ -716,7 +716,7 @@
   name: Friendly Voices Phone Buddies for Seniors
   category: Community Services
   area: Statewide
-  eligibility:
+  groups:
   - seniors
   description: Friendly Voices connects isolated and homebound seniors with trained volunteer phone buddies for weekly friendly conversations, reducing loneliness and providing social connection.
   what_they_offer: |
@@ -743,7 +743,7 @@
   name: Housing Accessibility Modifications Program
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - disability
   - seniors
   description: The Center for Independence of Individuals with Disabilities provides grants for home accessibility modifications, helping seniors and disabled persons remain safely in their homes.
@@ -773,7 +773,7 @@
   name: ECHO Housing
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: ECHO Housing is a fair housing organization that investigates discrimination complaints, provides housing counseling, and works to ensure equal access to housing for all Bay Area residents.
   what_they_offer: |
@@ -801,7 +801,7 @@
   name: Fixit Clinics
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County's Fixit Clinics are free community repair events where volunteer coaches help residents fix broken items, reducing waste and saving money on replacements.
   what_they_offer: |
@@ -829,7 +829,7 @@
   name: San Mateo County Library Open Sewing Programs
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County Libraries offer free open sewing and mending programs at multiple branches, helping residents repair clothing and learn sewing skills.
   what_they_offer: |
@@ -856,7 +856,7 @@
   name: Recyclestuff.org
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Recyclestuff.org is a free online search tool helping San Mateo County residents find the right place to recycle, donate, or properly dispose of household items.
   what_they_offer: |
@@ -883,7 +883,7 @@
   name: ReFuel Your Fun Program
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County's ReFuel Your Fun program offers discounted propane refills for reusable cylinders, providing an eco-friendly and cost-effective alternative to disposable propane.
   what_they_offer: |
@@ -910,7 +910,7 @@
   name: American Cancer Society Discovery Shop (Menlo Park)
   category: Community Services
   area: City of Menlo Park
-  eligibility:
+  groups:
   - everyone
   description: The American Cancer Society Discovery Shop in Menlo Park is a thrift store accepting donations and selling quality secondhand items, with proceeds supporting cancer research and patient programs.
   what_they_offer: |
@@ -939,7 +939,7 @@
   name: Ecumenical Hunger Program Donations
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The Ecumenical Hunger Program accepts donations of household items and clothing to support their services for low-income families in East Palo Alto and surrounding communities.
   what_they_offer: |
@@ -969,7 +969,7 @@
   name: Family Connections Donations
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Family Connections accepts donations of baby and child-related items to support their programs serving families with young children in San Mateo County.
   what_they_offer: |
@@ -998,7 +998,7 @@
   name: Goodwill Industries (SF, San Mateo, Marin)
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Goodwill Industries operates thrift stores and donation centers throughout the Bay Area, with proceeds funding job training and employment programs for people facing barriers.
   what_they_offer: |
@@ -1026,7 +1026,7 @@
   name: Latino Commission Donations
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The Latino Commission accepts donations of household items and clothing to support their alcohol and drug recovery programs serving the community.
   what_they_offer: |
@@ -1053,7 +1053,7 @@
   name: Nine Lives Foundation
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Nine Lives Foundation accepts donations of pet supplies and cat-related items to support their cat rescue, rehabilitation, and adoption programs in San Mateo County.
   what_they_offer: |
@@ -1082,7 +1082,7 @@
   name: PARCA Thrift Shop
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: PARCA Thrift Shop accepts donations and operates a thrift store with proceeds supporting programs for adults with developmental disabilities in San Mateo County.
   what_they_offer: |
@@ -1112,7 +1112,7 @@
   name: Peninsula Humane Society & SPCA Donations
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Peninsula Humane Society & SPCA accepts donations of pet supplies and household goods to support their animal rescue, care, and adoption programs in San Mateo County.
   what_they_offer: |
@@ -1141,7 +1141,7 @@
   name: Pick of the Litter Books
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Pick of the Litter Books is a used bookstore accepting book donations with all proceeds supporting Peninsula Humane Society & SPCA animal welfare programs.
   what_they_offer: |
@@ -1169,7 +1169,7 @@
   name: Puente de la Costa Sur
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Puente de la Costa Sur accepts donations of household items and building materials to support their programs serving rural South Coast San Mateo County communities.
   what_they_offer: |
@@ -1198,7 +1198,7 @@
   name: St. Francis Center (Redwood City)
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: St. Francis Center in Redwood City accepts donations of clothing and household items to support their programs serving low-income families in the Redwood City area.
   what_they_offer: |
@@ -1227,7 +1227,7 @@
   name: St. Vincent de Paul Society (San Mateo County)
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: St. Vincent de Paul Society operates thrift stores and accepts donations throughout San Mateo County, with proceeds supporting homeless services and low-income assistance programs.
   what_they_offer: |
@@ -1256,7 +1256,7 @@
   name: Samaritan House Thrift Stores
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: Samaritan House operates thrift stores throughout San Mateo County, with proceeds supporting their free food, health, and housing programs for low-income residents.
   what_they_offer: |
@@ -1285,7 +1285,7 @@
   name: Savers Thrift Stores
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Savers is a for-profit thrift store chain that partners with local nonprofits, paying them for donated goods based on donation volume.
   what_they_offer: |
@@ -1312,7 +1312,7 @@
   name: South Coast Children's Services
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: South Coast Children's Services accepts donations of children's items to support their programs serving families with children on San Mateo County's South Coast.
   what_they_offer: |
@@ -1339,7 +1339,7 @@
   name: The Salvation Army (San Mateo County)
   category: Community Services
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: The Salvation Army operates thrift stores and accepts donations throughout San Mateo County, with proceeds funding their social services, emergency assistance, and community programs.
   what_they_offer: |
@@ -1368,7 +1368,7 @@
   name: United Cerebral Palsy Association of the Golden Gate
   category: Community Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: United Cerebral Palsy Association of the Golden Gate accepts donations of household items and vehicles, with proceeds supporting services for people with developmental disabilities.
   what_they_offer: |

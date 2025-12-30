@@ -2,7 +2,7 @@
   name: 7-Eleven Gold Pass
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   - college-students
   - veterans
@@ -30,7 +30,7 @@
   name: Amazon Prime Access
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: Amazon is the world's largest online retailer. Prime Access offers a discounted Prime membership for those receiving government assistance, providing free shipping, streaming, and more.
   what_they_offer: |
@@ -56,7 +56,7 @@
   name: AT&T Access
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: AT&T is one of the largest telecommunications companies in the United States. AT&T Access provides affordable high-speed internet service to qualifying low-income households.
   what_they_offer: |
@@ -82,7 +82,7 @@
   name: California LifeLine Program
   category: Technology
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: California LifeLine is a state program that provides discounted home phone and cell phone services to eligible low-income households, ensuring everyone has access to basic communication services.
   what_they_offer: |
@@ -107,7 +107,7 @@
   name: Good360
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - nonprofits
   description: Good360 is a nonprofit organization that partners with major retailers and manufacturers to distribute donated goods to nonprofits and schools, including technology equipment.
   what_they_offer: |
@@ -132,7 +132,7 @@
   name: Goodstack Nonprofit Discounts
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - nonprofits
   description: Goodstack (formerly Percent) is a platform that helps nonprofits access discounted software and technology tools from major companies like Zoom, Adobe, Asana, and OpenAI.
   what_they_offer: |
@@ -157,7 +157,7 @@
   name: Instacart for EBT/SNAP
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: Instacart is a grocery delivery and pickup service. They offer special discounts for EBT/SNAP recipients, making grocery delivery more accessible and affordable.
   what_they_offer: |
@@ -182,7 +182,7 @@
   name: Internet Essentials by Xfinity
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: Internet Essentials is Comcast/Xfinity's low-cost internet program designed to help connect low-income families to affordable high-speed internet at home.
   what_they_offer: |
@@ -207,7 +207,7 @@
   name: Kanopy for Students
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - college-students
   description: Kanopy is a video streaming service that partners with libraries and universities to provide free access to thousands of films, documentaries, and educational videos.
   what_they_offer: |
@@ -231,7 +231,7 @@
   name: Tech Exchange
   category: Technology
   area: Bay Area-wide
-  eligibility:
+  groups:
   - nonprofits
   description: Tech Exchange is a Bay Area nonprofit that provides affordable refurbished technology to nonprofits, schools, and community organizations, along with digital training and support.
   what_they_offer: |
@@ -258,7 +258,7 @@
   name: TechSoup Discount Marketplace
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - nonprofits
   description: TechSoup is the leading nonprofit technology assistance organization, helping nonprofits access donated and discounted software, hardware, and cloud services from major tech companies.
   what_they_offer: |
@@ -284,7 +284,7 @@
   name: T-Mobile Project 10Million
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - youth
   description: T-Mobile Project 10Million is a $10.7 billion initiative to provide free internet connectivity to millions of underserved student households across America, helping close the homework gap.
   what_they_offer: |
@@ -311,7 +311,7 @@
   name: Walmart+ Assist
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   description: Walmart+ is Walmart's membership program offering free delivery, fuel discounts, and more. Walmart+ Assist provides this membership at half price for those receiving government assistance.
   what_they_offer: |
@@ -337,7 +337,7 @@
   name: World Computer Exchange
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - nonprofits
   description: World Computer Exchange is a nonprofit that collects donated computers and distributes them to schools, libraries, and community organizations in developing countries and underserved US communities.
   what_they_offer: |
@@ -361,7 +361,7 @@
   name: Spectrum Internet Assist
   category: Technology
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   - seniors
   description: Spectrum Internet Assist is Charter Communications' affordable internet program for qualifying low-income households, including seniors receiving SSI and families with students in free lunch programs.
@@ -390,7 +390,7 @@
   name: Menlo Park Library Wi-Fi Hotspots
   category: Technology
   area: City of Menlo Park
-  eligibility:
+  groups:
   - everyone
   description: The Menlo Park Library offers portable WiFi hotspot devices that library cardholders can borrow, providing free internet access at home or on the go.
   what_they_offer: |

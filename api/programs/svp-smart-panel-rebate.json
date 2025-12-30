@@ -6,7 +6,7 @@
   "fullDescription": "Silicon Valley Power offers significant rebates for smart electric panels that enable home electrification without costly main service upgrades.",
   "whatTheyOffer": "- $4,000 rebate for smart electric panel\n- Additional $1,000-$2,000 for income-qualified\n- Supports KOBEN, Lumin, SPAN panels\n- Avoids expensive main service upgrade\n- Smart load management and monitoring\n- Enables full home electrification\n",
   "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. For projects starting July 1, 2025 or later\n3. Purchase qualifying smart panel (KOBEN, Lumin, SPAN)\n4. Have installed by licensed electrician\n5. Apply online through SVP rebate platform\n6. Submit proof of purchase and installation\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

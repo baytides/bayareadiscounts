@@ -6,7 +6,7 @@
   "fullDescription": "Vet Billing maintains a directory of veterinary practices that offer payment plans or financing options, helping pet owners manage veterinary costs over time.",
   "whatTheyOffer": "- Directory of vets offering payment plans\n- Information on veterinary financing options\n- Searchable by location\n- Details on each vet's payment policies\n",
   "howToGetIt": "1. Visit vetbilling.com\n2. Enter your location to search\n3. Browse list of participating veterinarians\n4. Contact vets directly to discuss payment options\n5. Arrange payment plan at time of service\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

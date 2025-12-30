@@ -6,7 +6,7 @@
   "fullDescription": "The San Francisco Diaper Bank provides free diapers to low-income families enrolled in public assistance programs, helping reduce the financial burden of essential baby supplies.",
   "whatTheyOffer": "- Free diapers for eligible families\n- For children under age two\n- Up to two cases per child/month\n- Available to CalFresh recipients\n- Available to Medi-Cal recipients\n- Available to CalWORKs households\n",
   "howToGetIt": "1. Must be enrolled in CalFresh, Medi-Cal, or CalWORKs\n2. Child must be under age two\n3. Enroll through SFHSA website\n4. Provide proof of benefit enrollment\n5. Select diaper size and pickup location\n6. Pick up monthly allotment\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

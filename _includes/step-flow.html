@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <!-- Step 2: Eligibility -->
+    <!-- Step 2: Groups (formerly Eligibility) -->
     <section class="step-page" id="step-2" aria-labelledby="step-2-title" role="region" hidden>
       <div class="step-header">
         <div class="step-progress" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="3" aria-label="Step 2 of 3">
@@ -106,11 +106,11 @@
           Click on any boxes that describe you. You can pick more than one! For example, if you're a senior with low income, click both "Seniors" and "SNAP/EBT/Medi-Cal".
         </div>
 
-        <fieldset class="eligibility-grid">
-          <legend class="sr-only">Eligibility options - select all that apply to you</legend>
+        <fieldset class="groups-grid">
+          <legend class="sr-only">Group options - select all that apply to you</legend>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="low-income">
+            <input type="checkbox" name="groups" value="low-income">
             <span class="card-inner">
               <span class="card-icon">💳</span>
               <span class="card-text">SNAP/EBT/Medi-Cal</span>
@@ -118,7 +118,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="seniors">
+            <input type="checkbox" name="groups" value="seniors">
             <span class="card-inner">
               <span class="card-icon">👵</span>
               <span class="card-text">Seniors (65+)</span>
@@ -126,7 +126,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="youth">
+            <input type="checkbox" name="groups" value="youth">
             <span class="card-inner">
               <span class="card-icon">🧒</span>
               <span class="card-text">Youth</span>
@@ -134,7 +134,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="college-students">
+            <input type="checkbox" name="groups" value="college-students">
             <span class="card-inner">
               <span class="card-icon">🎓</span>
               <span class="card-text">College Students</span>
@@ -142,7 +142,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="veterans">
+            <input type="checkbox" name="groups" value="veterans">
             <span class="card-inner">
               <span class="card-icon">🎖️</span>
               <span class="card-text">Veterans / Active Duty</span>
@@ -150,7 +150,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="families">
+            <input type="checkbox" name="groups" value="families">
             <span class="card-inner">
               <span class="card-icon">👨‍👩‍👧</span>
               <span class="card-text">Families</span>
@@ -158,7 +158,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="disability">
+            <input type="checkbox" name="groups" value="disability">
             <span class="card-inner">
               <span class="card-icon">🧑‍🦽</span>
               <span class="card-text">People with Disabilities</span>
@@ -166,7 +166,87 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="nonprofits">
+            <input type="checkbox" name="groups" value="lgbtq">
+            <span class="card-inner">
+              <span class="card-icon">🌈</span>
+              <span class="card-text">LGBT+</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="first-responders">
+            <span class="card-inner">
+              <span class="card-icon">🚒</span>
+              <span class="card-text">First Responders</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="teachers">
+            <span class="card-inner">
+              <span class="card-icon">👩‍🏫</span>
+              <span class="card-text">Teachers/Educators</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="unemployed">
+            <span class="card-inner">
+              <span class="card-icon">💼</span>
+              <span class="card-text">Unemployed/Job Seekers</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="immigrants">
+            <span class="card-inner">
+              <span class="card-icon">🌍</span>
+              <span class="card-text">Immigrants/Refugees</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="unhoused">
+            <span class="card-inner">
+              <span class="card-icon">🏠</span>
+              <span class="card-text">Unhoused</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="pregnant">
+            <span class="card-inner">
+              <span class="card-icon">🤰</span>
+              <span class="card-text">Pregnant Women</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="caregivers">
+            <span class="card-inner">
+              <span class="card-icon">🤲</span>
+              <span class="card-text">Caregivers</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="foster-youth">
+            <span class="card-inner">
+              <span class="card-icon">🏡</span>
+              <span class="card-text">Foster Youth</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="reentry">
+            <span class="card-inner">
+              <span class="card-icon">🔓</span>
+              <span class="card-text">Formerly Incarcerated</span>
+            </span>
+          </label>
+
+          <label class="option-card">
+            <input type="checkbox" name="groups" value="nonprofits">
             <span class="card-inner">
               <span class="card-icon">🤝</span>
               <span class="card-text">Nonprofit Organizations</span>
@@ -174,7 +254,7 @@
           </label>
 
           <label class="option-card">
-            <input type="checkbox" name="eligibility" value="everyone">
+            <input type="checkbox" name="groups" value="everyone">
             <span class="card-inner">
               <span class="card-icon">🌎</span>
               <span class="card-text">Everyone</span>
@@ -502,7 +582,7 @@
 }
 
 /* Option cards grid */
-.eligibility-grid,
+.groups-grid,
 .county-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -916,7 +996,7 @@ body[data-theme="dark"] .preferences-section {
     padding: 1.25rem;
   }
 
-  .eligibility-grid,
+  .groups-grid,
   .county-grid {
     grid-template-columns: 1fr;
   }

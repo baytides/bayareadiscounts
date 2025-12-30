@@ -6,7 +6,7 @@
   "fullDescription": "Marin County Free Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for cardholders.",
   "whatTheyOffer": "- Ebooks and audiobooks via Libby\n- Streaming video and music\n- Online learning platforms\n- Research databases\n- Digital magazines and newspapers\n- Language learning\n",
   "howToGetIt": "1. Get a Marin County Free Library card (free for residents)\n2. Visit marinlibrary.org/resource\n3. Browse available digital resources\n4. Sign in with your library card\n5. Access content on any device\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

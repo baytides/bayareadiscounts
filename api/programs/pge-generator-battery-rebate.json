@@ -6,7 +6,7 @@
   "fullDescription": "PG&E provides rebates for generators and portable battery storage to help customers in high fire-threat areas prepare for power outages during Public Safety Power Shutoffs.",
   "whatTheyOffer": "- $300 rebate on generator purchase\n- $300 rebate on portable battery storage\n- For customers in Tier 2 or 3 High Fire-Threat Districts\n- Must be enrolled in CARE or FERA\n- Helps maintain power during PSPS events\n- One rebate per household per year\n",
   "howToGetIt": "1. Verify you're in Tier 2 or 3 High Fire-Threat District\n2. Must be enrolled in CARE or FERA program\n3. Purchase qualifying generator or battery\n4. Apply online within 90 days of purchase\n5. Submit proof of purchase and CARE/FERA enrollment\n6. Receive rebate check\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

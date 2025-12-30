@@ -169,12 +169,12 @@ class DiscountSearchFilter {
    */
   initQuickFilters() {
     const quickFilters = {
-      'seniors-health': { eligibility: ['seniors'], category: ['Health'] },
-      'snap-food': { eligibility: ['low-income'], category: ['Food'] },
-      'families-food': { eligibility: ['families'], category: ['Food'] },
-      'veterans-health': { eligibility: ['veterans'], category: ['Health'] },
-      'students-transit': { eligibility: ['college-students'], category: ['Public Transit'] },
-      'everyone-free': { eligibility: ['everyone'], category: [] }
+      'seniors-health': { groups: ['seniors'], category: ['Health'] },
+      'snap-food': { groups: ['low-income'], category: ['Food'] },
+      'families-food': { groups: ['families'], category: ['Food'] },
+      'veterans-health': { groups: ['veterans'], category: ['Health'] },
+      'students-transit': { groups: ['college-students'], category: ['Public Transit'] },
+      'everyone-free': { groups: ['everyone'], category: [] }
     };
 
     document.addEventListener('click', (e) => {
@@ -188,9 +188,9 @@ class DiscountSearchFilter {
       // Reset all filters first
       this.resetFilters();
 
-      // Apply eligibility filters
-      config.eligibility.forEach(elig => {
-        const btn = document.querySelector(`[data-filter-type="eligibility"][data-filter-value="${elig}"]`);
+      // Apply groups filters
+      config.groups.forEach(group => {
+        const btn = document.querySelector(`[data-filter-type="groups"][data-filter-value="${group}"]`);
         if (btn && !btn.classList.contains('active')) {
           btn.click();
         }
@@ -216,7 +216,7 @@ class DiscountSearchFilter {
   updateFilterCounts() {
     // Count programs per category
     const categoryCounts = {};
-    const eligibilityCounts = {};
+    const groupsCounts = {};
 
     this.programs.forEach(program => {
       // Category counts
@@ -224,12 +224,12 @@ class DiscountSearchFilter {
         categoryCounts[program.category] = (categoryCounts[program.category] || 0) + 1;
       }
 
-      // Eligibility counts
-      if (program.eligibility) {
-        const eligList = program.eligibility.split(' ');
-        eligList.forEach(elig => {
-          if (elig.trim()) {
-            eligibilityCounts[elig.trim()] = (eligibilityCounts[elig.trim()] || 0) + 1;
+      // Groups counts (formerly eligibility)
+      if (program.groups) {
+        const groupsList = program.groups.split(' ');
+        groupsList.forEach(group => {
+          if (group.trim()) {
+            groupsCounts[group.trim()] = (groupsCounts[group.trim()] || 0) + 1;
           }
         });
       }
@@ -238,7 +238,7 @@ class DiscountSearchFilter {
     // Update category count badges
     document.querySelectorAll('.filter-count[data-count-for]').forEach(badge => {
       const countFor = badge.getAttribute('data-count-for');
-      const count = categoryCounts[countFor] || eligibilityCounts[countFor] || 0;
+      const count = categoryCounts[countFor] || groupsCounts[countFor] || 0;
       badge.textContent = count > 0 ? count : '';
     });
   }
@@ -422,7 +422,7 @@ class DiscountSearchFilter {
         category: card.getAttribute('data-category') || '',
         area: card.getAttribute('data-area') || '',
         city: card.getAttribute('data-city') || '',
-        eligibility: card.getAttribute('data-eligibility') || '',
+        groups: card.getAttribute('data-groups') || card.getAttribute('data-eligibility') || '',
         benefit: card.querySelector('[data-benefit]')?.textContent || '',
         verifiedDate: card.querySelector('.verified-badge')?.getAttribute('data-verified') || '',
         element: card,
@@ -616,12 +616,12 @@ class DiscountSearchFilter {
     this.filteredPrograms = this.programs.filter(program => {
       let match = true;
 
-      // Check eligibility filters
-      if (activeFilters.eligibility.length > 0) {
-        const hasEligibility = activeFilters.eligibility.some(elig =>
-          program.eligibility.includes(elig)
+      // Check groups filters (formerly eligibility)
+      if (activeFilters.groups.length > 0) {
+        const hasGroup = activeFilters.groups.some(group =>
+          program.groups.includes(group)
         );
-        match = match && hasEligibility;
+        match = match && hasGroup;
       }
 
       // Check category filters
@@ -814,7 +814,7 @@ class DiscountSearchFilter {
       }
     });
 
-    ['eligibility', 'category', 'area'].forEach(type => {
+    ['groups', 'category', 'area'].forEach(type => {
       if (!filtersByType[type]) {
         filtersByType[type] = [];
       }
@@ -874,8 +874,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Apply filters for eligibility, category, area
-    ['eligibility', 'category', 'area'].forEach(type => {
+    // Apply filters for groups, category, area
+    ['groups', 'category', 'area'].forEach(type => {
       const val = state[type];
       if (!val) return;
       const btn = document.querySelector(`[data-filter-type="${type}"][data-filter-value="${val}"]`);

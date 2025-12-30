@@ -6,7 +6,7 @@
   "fullDescription": "Bay Area Crisis Nursery operates a food pantry and diaper bank providing free groceries and diapers to families with young children in Contra Costa County.",
   "whatTheyOffer": "- Free food assistance\n- Free diapers for babies and toddlers\n- Online ordering available\n- Regular distribution schedule\n- Essential items for families\n- No-cost support for families in need\n",
   "howToGetIt": "1. Visit website to order online\n2. Or call to request assistance\n3. Provide family information\n4. Select needed items\n5. Schedule pickup time\n6. Pick up at Concord location\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "families",
     "youth"

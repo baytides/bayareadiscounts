@@ -6,7 +6,7 @@
   "fullDescription": "T-Mobile Project 10Million is a $10.7 billion initiative to provide free internet connectivity to millions of underserved student households across America, helping close the homework gap.",
   "whatTheyOffer": "- Free mobile hotspot device\n- 200GB high-speed data per year for 5 years\n- Free Web Guard content filtering for safety\n- Optional $10 data pass for additional 10GB when needed\n",
   "howToGetIt": "1. Household must have K-12 student(s)\n2. Must qualify for National School Lunch Program or similar\n3. School district or school must participate\n4. Apply through your school or district\n5. Receive hotspot device and instructions\n",
-  "eligibility": [
+  "groups": [
     "youth"
   ],
   "areas": [

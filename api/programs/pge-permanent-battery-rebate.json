@@ -6,7 +6,7 @@
   "fullDescription": "PG&E offers a substantial rebate for permanent home battery storage to customers who have experienced frequent Enhanced Powerline Safety Settings (EPSS) outages, helping them maintain power reliability.",
   "whatTheyOffer": "- $7,500 rebate for permanent battery storage\n- For customers with 5+ EPSS outages since Jan 2023\n- Must enroll in Automated Demand Response\n- Must be on time-of-use rate plan\n- Can combine with SGIP incentives\n- Covers Tesla Powerwall, Enphase, and other systems\n",
   "howToGetIt": "1. Use PG&E lookup tool to check EPSS outage history\n2. Must have 5+ outages since January 1, 2023\n3. Enroll in Automated Demand Response program\n4. Switch to time-of-use rate plan\n5. Apply and get approved before installation\n6. Install qualifying battery storage system\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

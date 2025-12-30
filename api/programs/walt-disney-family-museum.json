@@ -6,7 +6,7 @@
   "fullDescription": "The Walt Disney Family Museum in San Francisco's Presidio tells the story of Walt Disney's life through interactive galleries featuring original artwork, early drawings, films, music, and a stunning model of Disneyland.",
   "whatTheyOffer": "- US Military/Dependents: Free general admission with ID\n- Museums for All: Reduced admission for SF EBT/CalFresh/Medi-Cal holders\n- Discount covers cardholder plus guests\n- Students with ID: $25 admission\n- Seniors (65+): $25 admission\n- Children 6-17: $20 admission\n- Children under 6: Free with adult\n- Regular admission: $30 adults\n",
   "howToGetIt": "For military free admission, show valid military or dependent ID. For Museums for All, present your SF benefits card and proof of SF residency at the admissions desk.",
-  "eligibility": [
+  "groups": [
     "low-income",
     "college-students",
     "veterans",

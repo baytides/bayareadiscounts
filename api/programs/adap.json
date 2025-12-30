@@ -6,7 +6,7 @@
   "fullDescription": "California's AIDS Drug Assistance Program provides life-saving HIV/AIDS medications and health insurance assistance to low-income Californians living with HIV who lack adequate coverage.",
   "whatTheyOffer": "- Free HIV/AIDS medications (200+ drugs covered)\n- Health insurance premium assistance (OA-HIPP)\n- Medicare Part D premium assistance\n- Medi-Cal share of cost assistance\n- Covers residents with income up to 600% FPL\n- Available regardless of immigration status\n",
   "howToGetIt": "Apply through an ADAP enrollment site (clinics, AIDS service organizations, hospitals). You'll need proof of HIV diagnosis, California residency, income, and current insurance status.",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

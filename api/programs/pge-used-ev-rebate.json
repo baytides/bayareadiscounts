@@ -6,7 +6,7 @@
   "fullDescription": "PG&E offers a $4,000 rebate for income-qualified customers purchasing pre-owned electric vehicles, making EVs more affordable whether buying from dealers or private sellers.",
   "whatTheyOffer": "- $4,000 rebate for used EV purchase\n- Covers Battery Electric Vehicles (BEV)\n- Covers Plug-in Hybrid Electric Vehicles (PHEV)\n- Purchase from dealer or private party\n- Can combine with federal tax credits\n- Can combine with other state/local rebates\n",
   "howToGetIt": "1. Must be a PG&E customer\n2. Meet income eligibility (CARE/FERA or income-qualified)\n3. Purchase or lease qualifying used EV\n4. Apply within 180 days of purchase\n5. Submit proof of purchase and registration\n6. Receive rebate after approval\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

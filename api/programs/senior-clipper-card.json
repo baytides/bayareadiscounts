@@ -6,7 +6,7 @@
   "fullDescription": "The Senior Clipper Card provides discounted fares for riders 65 and older on participating Bay Area transit systems.",
   "whatTheyOffer": "- Discounted fares on most Bay Area transit agencies\n- Typically 50% off regular adult fares\n- Valid on BART, Muni, AC Transit, Caltrain, and more\n- Discounts automatically applied when using Senior Clipper card\n",
   "howToGetIt": "1. Visit clippercard.com to apply online\n2. Provide proof of age (65 or older)\n3. Valid ID options include driver's license, passport, or Medicare card\n4. Receive Senior Clipper card by mail\n5. Load cash value or passes and ride with automatic senior discounts\n",
-  "eligibility": [
+  "groups": [
     "seniors"
   ],
   "areas": [

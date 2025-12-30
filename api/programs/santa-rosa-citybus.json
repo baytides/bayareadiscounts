@@ -6,7 +6,7 @@
   "fullDescription": "Santa Rosa CityBus provides local public transit service throughout the City of Santa Rosa in Sonoma County, with multiple routes connecting neighborhoods, schools, shopping, and employment centers.",
   "whatTheyOffer": "- Free rides for youth 18 and under\n- Free rides for children with paying adult\n- Free rides for veterans with valid ID\n- Free rides for SRJC students with student ID\n- Free rides for some city and county workers\n",
   "howToGetIt": "1. Youth: Show ID proving age 18 or under\n2. Veterans: Show valid military or VA ID\n3. SRJC Students: Show current student ID\n4. City/County Workers: Show employee ID (if eligible)\n5. No separate application needed—just show ID when boarding\n",
-  "eligibility": [
+  "groups": [
     "youth",
     "college-students",
     "veterans",

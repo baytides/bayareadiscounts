@@ -6,7 +6,7 @@
   name: 988 Suicide & Crisis Lifeline
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: The 988 Suicide & Crisis Lifeline is a national network of local crisis
     centers providing free, confidential emotional support 24/7 to people in suicidal
@@ -29,7 +29,7 @@
   name: Crisis Text Line
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: Crisis Text Line is a free, 24/7 text-based mental health support service
     connecting people in crisis with trained volunteer counselors through text messages.
@@ -50,7 +50,7 @@
   name: Denti-Cal
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: Denti-Cal is California's Medicaid dental program, providing comprehensive
     dental care to Medi-Cal beneficiaries at no cost, helping ensure oral health for
@@ -74,7 +74,7 @@
   name: EyeCare America
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - seniors
   description: EyeCare America is a public service program of the American Academy
     of Ophthalmology providing eye care to seniors through volunteer ophthalmologists
@@ -98,7 +98,7 @@
   name: Medi-Cal (Medicaid)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: Medi-Cal is California's Medicaid program, providing free or low-cost
     health coverage to millions of Californians including low-income adults, families,
@@ -125,7 +125,7 @@
   name: NeedyMeds
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: NeedyMeds is a nonprofit providing a comprehensive database of patient
     assistance programs, helping people find affordable medications and healthcare
@@ -149,7 +149,7 @@
   name: Planned Parenthood
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: Planned Parenthood is a trusted healthcare provider offering sexual
@@ -177,7 +177,7 @@
   name: Ryan White HIV/AIDS Program
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: The Ryan White HIV/AIDS Program provides comprehensive care and support
     services for people living with HIV who are uninsured or underinsured, filling
@@ -203,7 +203,7 @@
   name: SAMHSA National Helpline
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - everyone
   description: SAMHSA's National Helpline is a free, confidential, 24/7 treatment
     referral and information service for individuals and families facing mental health
@@ -229,7 +229,7 @@
   name: VA Health Benefits
   category: Health
   area: Nationwide
-  eligibility:
+  groups:
   - veterans
   description: VA Health Benefits provide comprehensive healthcare services to eligible
     veterans through the Veterans Health Administration, the nation's largest integrated
@@ -256,7 +256,7 @@
   name: WIC (Women, Infants, Children)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   description: WIC is a nutrition program providing healthy food, nutrition education,
@@ -283,7 +283,7 @@
   name: Behavioral Health and Recovery Services (BHRS)
   category: Health
   area: San Mateo County
-  eligibility:
+  groups:
   - everyone
   description: San Mateo County Behavioral Health and Recovery Services provides mental
     health and substance use treatment, prevention, and recovery services to residents
@@ -310,7 +310,7 @@
   name: Aging and Adult Services
   category: Health
   area: San Mateo County
-  eligibility:
+  groups:
   - seniors
   - disability
   description: San Mateo County Aging and Adult Services provides protective services,
@@ -337,7 +337,7 @@
   name: San Mateo County Pregnancy, Children and Families
   category: Health
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   - families
   description: San Mateo County's Family Health Services provides prenatal care, home
@@ -364,7 +364,7 @@
   name: CalRx OTC Naloxone Nasal Spray
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: CalRx is California's initiative to make naloxone, a life-saving medication
     that reverses opioid overdoses, affordable and accessible to all residents without
@@ -388,7 +388,7 @@
   name: Naloxone Distribution Project (NDP)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - nonprofits
   description: California's Naloxone Distribution Project provides free naloxone and
     fentanyl test strips to eligible nonprofit organizations working to prevent opioid
@@ -411,7 +411,7 @@
   name: AIDS Drug Assistance Program (ADAP)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: California's AIDS Drug Assistance Program provides life-saving HIV/AIDS
     medications and health insurance assistance to low-income Californians living
@@ -435,7 +435,7 @@
   name: Kick It California (Quit Smoking Helpline)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: Kick It California is the state's free quit smoking and tobacco helpline,
     offering personalized coaching, a mobile app, and resources to help Californians
@@ -462,7 +462,7 @@
   name: Black Infant Health Program
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - families
   description: The Black Infant Health Program is California's community-based program
     providing group support and education to Black women and birthing people during
@@ -488,7 +488,7 @@
   name: California Home Visiting Program
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   description: The California Home Visiting Program provides free, voluntary home
@@ -515,7 +515,7 @@
   name: Vaccines for Children (VFC) Program
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   description: The Vaccines for Children program provides free vaccines to children
@@ -540,7 +540,7 @@
   name: PrEP Assistance Program (PrEP-AP)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: California's PrEP Assistance Program makes HIV prevention medication
@@ -566,7 +566,7 @@
   name: Every Woman Counts
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   description: Every Woman Counts provides free breast and cervical cancer screenings
     to uninsured and underinsured California women, helping detect cancer early when
@@ -592,7 +592,7 @@
   name: Comprehensive Perinatal Services Program (CPSP)
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - families
   description: The Comprehensive Perinatal Services Program provides enhanced prenatal
@@ -619,7 +619,7 @@
   name: Childhood Lead Poisoning Prevention Program
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - families
   description: California's Childhood Lead Poisoning Prevention Program provides screening,
     case management, and environmental investigation to protect children from lead
@@ -644,7 +644,7 @@
   name: MyTurn
   category: Health
   area: Statewide
-  eligibility:
+  groups:
   - everyone
   description: MyTurn is California's official vaccine scheduling and digital record
     system, making it easy to find vaccine appointments, access your immunization

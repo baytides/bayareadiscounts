@@ -6,7 +6,7 @@
   "fullDescription": "BAAQMD's Wood Stove Replacement Program helps Bay Area residents replace wood-burning stoves with clean electric heat pumps, improving air quality and reducing home heating costs.",
   "whatTheyOffer": "- Up to $6,500 base incentive for heat pump replacement\n- Additional $4,000 for Food Stamps/WIC/SSI recipients\n- Up to $10,500 total for income-qualified households\n- Up to $1,000 for removal only (no replacement)\n- Priority for disadvantaged communities\n- Covers installation costs\n",
   "howToGetIt": "1. Sign up for program notifications on BAAQMD website\n2. Must have wood-burning stove or fireplace\n3. Apply when program reopens (January 13, 2026)\n4. Submit income documentation if claiming additional rebate\n5. Get approved and schedule installation\n6. Receive incentive after project completion\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "everyone"
   ],

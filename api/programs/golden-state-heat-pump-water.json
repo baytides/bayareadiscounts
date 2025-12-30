@@ -6,7 +6,7 @@
   "fullDescription": "Golden State Rebates offers instant discounts on heat pump water heaters at participating retailers, making it easy to upgrade from gas or electric tank water heaters.",
   "whatTheyOffer": "- $500-$900 instant discount at checkout\n- No rebate forms to submit\n- Applied when replacing gas water heater\n- Applied when replacing electric tank heater\n- Can combine with utility and federal incentives\n- Available at major home improvement stores\n",
   "howToGetIt": "1. Find participating retailer on website\n2. Shop for qualifying heat pump water heater\n3. Discount applied automatically at checkout\n4. Must replace existing gas or electric tank\n5. No paperwork required\n6. Stack with other available incentives\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

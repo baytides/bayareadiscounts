@@ -6,7 +6,7 @@
   "fullDescription": "The Tech Interactive (formerly The Tech Museum) is a hands-on science and technology center in downtown San Jose. Featuring innovative exhibits on robotics, virtual reality, renewable energy, and more, it inspires the next generation of innovators.",
   "whatTheyOffer": "- EBT cardholders: $5 admission per person\n- Children under 3: Free admission\n- Regular admission: $32 adults, $27 children\n- IMAX films: Additional fee\n",
   "howToGetIt": "Present your EBT card at the admissions desk. Discount applies to everyone in your party. Advance tickets recommended on weekends and during school breaks.",
-  "eligibility": [
+  "groups": [
     "low-income",
     "everyone"
   ],

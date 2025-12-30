@@ -6,7 +6,7 @@
   "fullDescription": "Choices for Children provides subsidized childcare services to income-eligible families in Santa Clara County, helping parents work or attend school while their children receive quality care.",
   "whatTheyOffer": "- Subsidized child care services\n- For income-eligible families\n- Multiple childcare options\n- Quality care for children\n- Supports working parents\n- Help with childcare costs\n",
   "howToGetIt": "1. Check income eligibility requirements\n2. Contact Choices for Children\n3. Complete application process\n4. Provide income documentation\n5. Choose approved childcare provider\n6. Receive subsidy based on funding\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "families",
     "youth"

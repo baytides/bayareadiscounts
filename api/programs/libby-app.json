@@ -6,7 +6,7 @@
   "fullDescription": "Libby is the free reading app from OverDrive that connects library cardholders to their library's collection of ebooks, audiobooks, and magazines.",
   "whatTheyOffer": "- Ebooks from your library's collection\n- Audiobooks for on-the-go listening\n- Digital magazines\n- Sync across devices\n- Read offline\n- Works with multiple library cards\n",
   "howToGetIt": "1. Download the free Libby app (iOS or Android)\n2. Open the app and find your library\n3. Sign in with your library card number\n4. Browse and borrow from your library's collection\n5. Books automatically return—no late fees\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

@@ -2,7 +2,7 @@
   name: Court Fee Waivers
   category: Legal Services
   area: Statewide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: California courts offer fee waivers for individuals who cannot afford to pay court filing fees, ensuring access to the justice system regardless of income.
@@ -29,7 +29,7 @@
   name: Justice & Diversity Center (JDC)
   category: Legal Services
   area: San Francisco
-  eligibility:
+  groups:
   - nonprofits
   - low-income
   description: The Justice & Diversity Center is the nonprofit arm of the Bar Association of San Francisco, providing free legal services to those who cannot afford attorneys.
@@ -58,7 +58,7 @@
   name: Racial Equity Project (REP)
   category: Legal Services
   area: Statewide
-  eligibility:
+  groups:
   - nonprofits
   description: The Racial Equity Project provides free legal support to Black-led nonprofit organizations in California, helping strengthen their organizational capacity and mission.
   what_they_offer: |
@@ -85,7 +85,7 @@
   name: SF Financial Justice Project
   category: Legal Services
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: The San Francisco Financial Justice Project works to reduce the impact of fines, fees, and financial penalties on low-income residents and communities of color.
@@ -113,7 +113,7 @@
   name: San Francisco Immigrant Support
   category: Legal Services
   area: San Francisco
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: San Francisco provides resources and support for immigrants, including connections to free and low-cost immigration legal services regardless of immigration status.
@@ -141,7 +141,7 @@
   name: USCIS I-912 Fee Waiver
   category: Legal Services
   area: Nationwide
-  eligibility:
+  groups:
   - low-income
   - everyone
   description: U.S. Citizenship and Immigration Services (USCIS) offers fee waivers for certain immigration applications for individuals who cannot afford the filing fees.
@@ -167,7 +167,7 @@
   name: Community Legal Services in East Palo Alto
   category: Legal Services
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   description: Community Legal Services in East Palo Alto (CLSEPA) provides free legal assistance to low-income families in San Mateo County and surrounding areas.
   what_they_offer: |
@@ -196,7 +196,7 @@
   name: Legal Aid Society of San Mateo County
   category: Legal Services
   area: San Mateo County
-  eligibility:
+  groups:
   - low-income
   description: The Legal Aid Society of San Mateo County provides free civil legal services to low-income residents, helping protect their rights and improve their lives.
   what_they_offer: |
@@ -225,7 +225,7 @@
   name: Project Sentinel Fair Housing
   category: Legal Services
   area: Bay Area-wide
-  eligibility:
+  groups:
   - everyone
   description: Project Sentinel is a nonprofit fair housing agency that works to eliminate housing discrimination and ensure equal housing opportunity for all Bay Area residents.
   what_they_offer: |

@@ -6,7 +6,7 @@
   "fullDescription": "The Center for Independence of Individuals with Disabilities (CID) provides portable backup batteries to individuals who depend on electricity for medical equipment during Public Safety Power Shutoffs (PSPS).",
   "whatTheyOffer": "- Portable backup battery loans during PSPS events\n- Batteries sized for medical equipment (CPAP, oxygen, etc.)\n- No cost to borrow\n- Priority support for Medical Baseline customers\n- Advance notification of PSPS events\n",
   "howToGetIt": "1. Enroll in PG&E's Medical Baseline program\n2. Register with CID's PSPS preparedness program\n3. Provide medical documentation of equipment needs\n4. When PSPS is announced, contact CID to arrange battery pickup\n5. Return battery after power is restored\n",
-  "eligibility": [
+  "groups": [
     "disability"
   ],
   "areas": [

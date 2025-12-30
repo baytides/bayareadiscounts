@@ -6,7 +6,7 @@
   "fullDescription": "Kanopy is a video streaming service that partners with libraries and universities to provide free access to thousands of films, documentaries, and educational videos.",
   "whatTheyOffer": "- Free streaming of thousands of films and documentaries\n- Criterion Collection, indie films, and world cinema\n- Educational and documentary content\n- Access through participating campus libraries\n",
   "howToGetIt": "1. Check if your college or university participates\n2. Visit kanopy.com/signup/find/university\n3. Search for your school\n4. Sign in with your campus credentials\n5. Start streaming immediately\n",
-  "eligibility": [
+  "groups": [
     "college-students"
   ],
   "areas": [

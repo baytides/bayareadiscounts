@@ -45,39 +45,69 @@
     <!-- Filter Section -->
     <div class="filters-section" role="search" aria-label="Filter programs">
 
-      <!-- Eligibility Filters -->
-      <div class="filter-group" role="group" aria-labelledby="eligibility-filter-label">
-        <h2 class="filter-group-label" id="eligibility-filter-label">Eligibility</h2>
+      <!-- Groups Filters (formerly Eligibility) -->
+      <div class="filter-group" role="group" aria-labelledby="groups-filter-label">
+        <h2 class="filter-group-label" id="groups-filter-label">Show programs for...</h2>
         <div class="simple-language-helper">Click a button to show programs for that group. You can click more than one.</div>
         <div class="filter-buttons">
-          <button type="button" class="filter-btn active" data-filter-type="eligibility" data-filter-value="" data-all="true" aria-label="Show all eligibility types">
+          <button type="button" class="filter-btn active" data-filter-type="groups" data-filter-value="" data-all="true" aria-label="Show all groups">
             All
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="low-income" aria-label="SNAP/EBT/Medi-Cal - Filter for income-eligible programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="low-income" aria-label="SNAP/EBT/Medi-Cal - Filter for income-eligible programs">
             💳 SNAP/EBT/Medi-Cal <span class="filter-count" data-count-for="low-income"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="seniors" aria-label="Filter for seniors programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="seniors" aria-label="Filter for seniors programs">
             👵 Seniors <span class="filter-count" data-count-for="seniors"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="youth" aria-label="Filter for youth programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="youth" aria-label="Filter for youth programs">
             🧒 Youth <span class="filter-count" data-count-for="youth"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="college-students" aria-label="Filter for college students programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="college-students" aria-label="Filter for college students programs">
             🎓 College Students <span class="filter-count" data-count-for="college-students"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="veterans" aria-label="Active Duty / Veterans - Filter for military and veterans programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="veterans" aria-label="Active Duty / Veterans - Filter for military and veterans programs">
             🎖️ Active Duty / Veterans <span class="filter-count" data-count-for="veterans"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="families" aria-label="Filter for families programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="families" aria-label="Filter for families programs">
             👨‍👩‍👧 Families <span class="filter-count" data-count-for="families"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="disability" aria-label="Filter for disability programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="disability" aria-label="Filter for disability programs">
             🧑‍🦽 Disability <span class="filter-count" data-count-for="disability"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="nonprofits" aria-label="Filter for nonprofits programs">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="lgbtq" aria-label="Filter for LGBT+ programs">
+            🌈 LGBT+ <span class="filter-count" data-count-for="lgbtq"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="first-responders" aria-label="Filter for first responders programs">
+            🚒 First Responders <span class="filter-count" data-count-for="first-responders"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="teachers" aria-label="Filter for teachers and educators programs">
+            👩‍🏫 Teachers/Educators <span class="filter-count" data-count-for="teachers"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="unemployed" aria-label="Filter for unemployed and job seekers programs">
+            💼 Unemployed/Job Seekers <span class="filter-count" data-count-for="unemployed"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="immigrants" aria-label="Filter for immigrants and refugees programs">
+            🌍 Immigrants/Refugees <span class="filter-count" data-count-for="immigrants"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="unhoused" aria-label="Filter for unhoused programs">
+            🏠 Unhoused <span class="filter-count" data-count-for="unhoused"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="pregnant" aria-label="Filter for pregnant women programs">
+            🤰 Pregnant Women <span class="filter-count" data-count-for="pregnant"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="caregivers" aria-label="Filter for caregivers programs">
+            🤲 Caregivers <span class="filter-count" data-count-for="caregivers"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="foster-youth" aria-label="Filter for foster youth programs">
+            🏡 Foster Youth <span class="filter-count" data-count-for="foster-youth"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="reentry" aria-label="Filter for formerly incarcerated programs">
+            🔓 Formerly Incarcerated <span class="filter-count" data-count-for="reentry"></span>
+          </button>
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="nonprofits" aria-label="Filter for nonprofits programs">
             🤝 Nonprofits <span class="filter-count" data-count-for="nonprofits"></span>
           </button>
-          <button type="button" class="filter-btn" data-filter-type="eligibility" data-filter-value="everyone" aria-label="Filter for programs available to everyone">
+          <button type="button" class="filter-btn" data-filter-type="groups" data-filter-value="everyone" aria-label="Filter for programs available to everyone">
             🌎 Everyone <span class="filter-count" data-count-for="everyone"></span>
           </button>
         </div>

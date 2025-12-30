@@ -6,7 +6,7 @@
   "fullDescription": "Lime is a micromobility company offering electric scooters and bikes for short trips. Lime Access makes these transportation options affordable for low-income riders.",
   "whatTheyOffer": "- Discounted or free Lime scooter and bike rides\n- Up to 30 minutes free per ride (varies by market)\n- 50% off all rides after free minutes\n- Available in Bay Area cities where Lime operates\n",
   "howToGetIt": "1. Download the Lime app on your smartphone\n2. Create an account\n3. Apply for Lime Access in the app settings\n4. Provide proof of income eligibility (SNAP, Medicaid, LIHEAP, or similar)\n5. Approval usually within a few days\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

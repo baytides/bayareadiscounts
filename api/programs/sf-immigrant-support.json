@@ -6,7 +6,7 @@
   "fullDescription": "San Francisco provides resources and support for immigrants, including connections to free and low-cost immigration legal services regardless of immigration status.",
   "whatTheyOffer": "- Free or low-cost immigration legal consultations\n- Help with citizenship and naturalization applications\n- DACA renewal assistance\n- Green card and visa support\n- Know Your Rights information\n- Referrals to trusted legal providers\n",
   "howToGetIt": "1. Visit immigrants.sfgov.org for list of legal service providers\n2. Call 311 for referrals to immigration legal help\n3. Attend a free immigration legal clinic\n4. Complete intake and eligibility screening with provider\n5. Receive legal assistance based on your needs\n",
-  "eligibility": [
+  "groups": [
     "low-income",
     "everyone"
   ],

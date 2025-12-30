@@ -6,7 +6,7 @@
   "fullDescription": "Silicon Valley Power offers substantial rebates for income-qualified Santa Clara residents purchasing pre-owned electric vehicles, with bonuses for efficiency and LIHEAP eligibility.",
   "whatTheyOffer": "- $1,500 rebate for fully electric vehicles\n- $1,000 rebate for plug-in hybrids\n- Additional $1,000 bonus for LIHEAP-eligible\n- Additional $1,000 for vehicles with MPGe 117+\n- Up to $3,500 total possible\n- Pre-owned vehicles qualify\n",
   "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. Meet income eligibility requirements\n3. Purchase qualifying pre-owned EV\n4. Apply online after purchase\n5. Submit proof of purchase and income\n6. LIHEAP customers submit additional documentation\n",
-  "eligibility": [
+  "groups": [
     "low-income"
   ],
   "areas": [

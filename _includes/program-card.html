@@ -17,7 +17,7 @@
   data-category="{{ program.category }}"
   data-area="{% if program.area %}{% assign area_val = program.area %}{% if area_val | first %}{{ area_val | join: ' ' }}{% else %}{{ area_val }}{% endif %}{% endif %}"
   data-city="{% if program.city %}{{ program.city }}{% endif %}"
-  data-eligibility="{% if program.eligibility %}{{ program.eligibility | join: ' ' }}{% endif %}"
+  data-groups="{% if program.groups %}{{ program.groups | join: ' ' }}{% elsif program.eligibility %}{{ program.eligibility | join: ' ' }}{% endif %}"
   tabindex="0"
   role="button"
   aria-label="View details for {{ program.name }}"
@@ -158,12 +158,13 @@
       {% endif %}
     </p>
 
-    <!-- Eligibility Tags -->
-    {% if program.eligibility %}
-    <div class="card-eligibility">
-      {% for elig in program.eligibility limit:3 %}
+    <!-- Groups Tags (formerly Eligibility) -->
+    {% assign groups_list = program.groups | default: program.eligibility %}
+    {% if groups_list %}
+    <div class="card-groups">
+      {% for group in groups_list limit:3 %}
         {% assign tag_text = '' %}
-        {% case elig %}
+        {% case group %}
           {% when 'low-income' %}{% assign tag_text = 'Low Income' %}
           {% when 'seniors' %}{% assign tag_text = 'Seniors' %}
           {% when 'youth' %}{% assign tag_text = 'Youth' %}
@@ -171,14 +172,24 @@
           {% when 'veterans' %}{% assign tag_text = 'Veterans' %}
           {% when 'families' %}{% assign tag_text = 'Families' %}
           {% when 'disability' %}{% assign tag_text = 'Disability' %}
+          {% when 'lgbtq' %}{% assign tag_text = 'LGBT+' %}
+          {% when 'first-responders' %}{% assign tag_text = 'First Responders' %}
+          {% when 'teachers' %}{% assign tag_text = 'Teachers' %}
+          {% when 'unemployed' %}{% assign tag_text = 'Job Seekers' %}
+          {% when 'immigrants' %}{% assign tag_text = 'Immigrants' %}
+          {% when 'unhoused' %}{% assign tag_text = 'Unhoused' %}
+          {% when 'pregnant' %}{% assign tag_text = 'Pregnant' %}
+          {% when 'caregivers' %}{% assign tag_text = 'Caregivers' %}
+          {% when 'foster-youth' %}{% assign tag_text = 'Foster Youth' %}
+          {% when 'reentry' %}{% assign tag_text = 'Reentry' %}
           {% when 'nonprofits' %}{% assign tag_text = 'Nonprofits' %}
           {% when 'everyone' %}{% assign tag_text = 'Everyone' %}
-          {% else %}{% assign tag_text = elig %}
+          {% else %}{% assign tag_text = group %}
         {% endcase %}
         <span class="card-tag">{{ tag_text }}</span>
       {% endfor %}
-      {% if program.eligibility.size > 3 %}
-        <span class="card-tag card-tag-more">+{{ program.eligibility.size | minus: 3 }}</span>
+      {% if groups_list.size > 3 %}
+        <span class="card-tag card-tag-more">+{{ groups_list.size | minus: 3 }}</span>
       {% endif %}
     </div>
     {% endif %}
@@ -204,7 +215,7 @@
   "category": {{ program.category | jsonify }},
   "area": {{ program.area | jsonify }},
   "city": {{ program.city | default: "" | jsonify }},
-  "eligibility": {{ program.eligibility | jsonify }},
+  "groups": {{ program.groups | default: program.eligibility | jsonify }},
   "benefit": {{ program.benefit | default: "" | jsonify }},
   "description": {{ program.description | default: program.benefit | jsonify }},
   "what_they_offer": {{ program.what_they_offer | default: "" | jsonify }},
@@ -412,8 +423,8 @@
   overflow: hidden;
 }
 
-/* Eligibility Tags */
-.card-eligibility {
+/* Groups Tags (formerly Eligibility) */
+.card-groups {
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;

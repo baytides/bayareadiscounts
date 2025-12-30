@@ -6,7 +6,7 @@
   "fullDescription": "Oakland Public Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for Oakland cardholders.",
   "whatTheyOffer": "- Ebooks and audiobooks\n- Streaming movies and music\n- Online learning courses\n- Research databases\n- Magazines and newspapers\n- Language learning\n",
   "howToGetIt": "1. Get an Oakland Public Library card (free for Oakland residents)\n2. Visit oaklandlibrary.org/resource\n3. Browse available digital resources\n4. Sign in with your library card\n5. Access content on any device\n",
-  "eligibility": [
+  "groups": [
     "everyone"
   ],
   "areas": [

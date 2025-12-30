@@ -6,7 +6,7 @@
   "fullDescription": "Meals on Wheels Contra Costa delivers nutritious meals to homebound seniors and adults with disabilities, providing nutrition, independence, and social connection through daily visits.",
   "whatTheyOffer": "- Hot meal delivered Monday-Friday\n- Frozen weekend meals available\n- Special diets accommodated (diabetic, low-sodium, etc.)\n- Friendly safety check with each delivery\n- Suggested donation, but no one turned away for inability to pay\n",
   "howToGetIt": "Call to apply. You must be 60+ or have a qualifying disability and be primarily homebound. Staff will assess your needs and schedule meal deliveries.",
-  "eligibility": [
+  "groups": [
     "seniors",
     "disability"
   ],

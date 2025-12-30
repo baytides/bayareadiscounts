@@ -6,7 +6,7 @@
   "fullDescription": "City Coach is the local public transit service for the City of Vacaville in Solano County, providing fixed-route bus service throughout the city.",
   "whatTheyOffer": "- Free rides for Solano Community College students\n- Valid on all City Coach routes within Vacaville\n- No additional fees or passes required\n",
   "howToGetIt": "1. Must be currently enrolled at Solano Community College\n2. Show your valid student ID to the bus driver when boarding\n3. No separate application or pass needed\n",
-  "eligibility": [
+  "groups": [
     "college-students"
   ],
   "areas": [
