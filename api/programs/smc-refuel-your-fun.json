@@ -3,6 +3,9 @@
   "name": "ReFuel Your Fun Program",
   "category": "community",
   "description": "Discounted propane refills for reusable cylinders as alternative to single-use 1 lb. propane cylinders",
+  "fullDescription": "San Mateo County's ReFuel Your Fun program offers discounted propane refills for reusable cylinders, providing an eco-friendly and cost-effective alternative to disposable propane.",
+  "whatTheyOffer": "- Discounted propane refills\n- For reusable cylinders\n- Alternative to single-use 1 lb. cylinders\n- Reduces waste\n- Saves money on propane\n- Environmentally friendly option\n",
+  "howToGetIt": "1. Get reusable propane cylinder\n2. Find participating refill location\n3. Bring empty cylinder\n4. Receive discounted refill\n5. Reuse cylinder for camping/grilling\n6. Return for future refills\n",
   "eligibility": [
     "everyone"
   ],
@@ -14,6 +17,7 @@
   "cost": null,
   "phone": null,
   "email": null,
+  "address": null,
   "requirements": null,
   "howToApply": null,
   "lastUpdated": "2025-12-30"

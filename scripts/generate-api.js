@@ -22,6 +22,11 @@ if (!fs.existsSync(API_DIR)) {
 }
 if (!fs.existsSync(PROGRAMS_DIR)) {
   fs.mkdirSync(PROGRAMS_DIR, { recursive: true });
+} else {
+  // Clean up old program files to remove deleted programs
+  const oldFiles = fs.readdirSync(PROGRAMS_DIR).filter(f => f.endsWith('.json'));
+  oldFiles.forEach(f => fs.unlinkSync(path.join(PROGRAMS_DIR, f)));
+  console.log(`🧹 Cleaned up ${oldFiles.length} old program files`);
 }
 
 // Category metadata with icons
@@ -131,6 +136,9 @@ categoryFiles.forEach(file => {
       name: program.name,
       category: categoryId,
       description: program.benefit || program.description || '',
+      fullDescription: program.description || null,
+      whatTheyOffer: program.what_they_offer || null,
+      howToGetIt: program.how_to_get_it || null,
       eligibility: program.eligibility || [],
       areas: areas,
       city: city,
@@ -138,6 +146,7 @@ categoryFiles.forEach(file => {
       cost: program.cost || null,
       phone: program.phone || null,
       email: program.email || null,
+      address: program.address || null,
       requirements: program.requirements || null,
       howToApply: program.how_to_apply || null,
       lastUpdated: new Date().toISOString().split('T')[0]

@@ -3,6 +3,9 @@
   "name": "Caltrain Dollar Fares for Youth",
   "category": "transportation",
   "description": "$1 One-Way, $2 Day Pass for youth 18 and under",
+  "fullDescription": "Caltrain is a commuter rail line running 77 miles along the San Francisco Peninsula, connecting San Francisco to San Jose and Gilroy. The Dollar Fares program makes train travel extremely affordable for young riders.",
+  "whatTheyOffer": "- $1 One-Way fare for youth 18 and under\n- $2 Day Pass for unlimited rides in one day\n- Valid on all Caltrain routes and zones\n- No income requirements—available to all youth\n",
+  "howToGetIt": "1. Get a Clipper card with Youth designation at clippercard.com\n2. Or show valid ID proving age 18 or under when purchasing tickets\n3. Tap Clipper card or show ticket when boarding\n4. Youth ages 4 and under ride free with paying adult\n",
   "eligibility": [
     "youth"
   ],
@@ -14,6 +17,7 @@
   "cost": null,
   "phone": "800-660-4287",
   "email": null,
+  "address": null,
   "requirements": null,
   "howToApply": null,
   "lastUpdated": "2025-12-30"

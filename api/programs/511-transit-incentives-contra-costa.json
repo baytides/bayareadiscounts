@@ -3,6 +3,9 @@
   "name": "511 Transit Incentives",
   "category": "transportation",
   "description": "Free $25 Clipper card for taking transit pledge",
+  "fullDescription": "511 Contra Costa offers incentives to encourage college students to try public transit, providing free Clipper card value when you commit to taking transit.",
+  "whatTheyOffer": "- Free $25 Clipper card for taking the transit pledge\n- One-time incentive to try transit\n- Can be used on any transit agency that accepts Clipper\n",
+  "howToGetIt": "1. Visit the 511 Contra Costa website\n2. Complete the transit pledge online\n3. Must be a college student in Contra Costa County\n4. Receive $25 Clipper card by mail or at designated pickup location\n",
   "eligibility": [
     "college-students"
   ],
@@ -14,6 +17,7 @@
   "cost": null,
   "phone": "925-942-9043",
   "email": null,
+  "address": null,
   "requirements": null,
   "howToApply": null,
   "lastUpdated": "2025-12-30"

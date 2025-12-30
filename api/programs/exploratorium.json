@@ -3,6 +3,9 @@
   "name": "Exploratorium",
   "category": "recreation",
   "description": "The Exploratorium is San Francisco's world-renowned museum of science, art, and human perception. Located on Pier 15, it features over 650 interactive exhibits that encourage hands-on exploration and discovery.",
+  "fullDescription": "The Exploratorium is San Francisco's world-renowned museum of science, art, and human perception. Located on Pier 15, it features over 650 interactive exhibits that encourage hands-on exploration and discovery.",
+  "whatTheyOffer": "- Museums for All: $3 admission for up to 4 people\n- Valid with EBT/SNAP, Medi-Cal, WIC, or Lifeline Pass\n- After Dark (18+): $3 admission with qualifying card\n- Discounted memberships: $39 Family, $19 Dual After Dark\n- Must purchase at ticket window (not available online)\n",
+  "howToGetIt": "Visit the ticket window in person with your EBT, SNAP, Medi-Cal, WIC card, or Lifeline Pass. This discount is not available for online purchases. Reservations recommended for all visits.",
   "eligibility": [
     "low-income"
   ],
@@ -14,6 +17,7 @@
   "cost": null,
   "phone": "415-528-4444",
   "email": null,
+  "address": "Pier 15, The Embarcadero, San Francisco, CA 94111",
   "requirements": null,
   "howToApply": null,
   "lastUpdated": "2025-12-30"

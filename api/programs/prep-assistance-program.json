@@ -3,6 +3,9 @@
   "name": "PrEP Assistance Program (PrEP-AP)",
   "category": "health",
   "description": "California's PrEP Assistance Program makes HIV prevention medication accessible to residents who might not otherwise afford it, covering the cost of PrEP medication, doctor visits, and lab tests.",
+  "fullDescription": "California's PrEP Assistance Program makes HIV prevention medication accessible to residents who might not otherwise afford it, covering the cost of PrEP medication, doctor visits, and lab tests.",
+  "whatTheyOffer": "- Free PrEP medication (Truvada, Descovy, or generic)\n- Coverage for doctor visits and HIV testing\n- Lab work costs covered\n- Available to residents with income up to 500% FPL\n- PrEP-AP Immediate Access: One free month for anyone\n- No immigration status requirements\n- Helps uninsured and underinsured individuals\n",
+  "howToGetIt": "Enroll through an ADAP enrollment site or healthcare provider. For immediate access to one free month, contact a PrEP-AP provider. You'll need proof of California residency and income.",
   "eligibility": [
     "low-income",
     "everyone"
@@ -15,6 +18,7 @@
   "cost": null,
   "phone": null,
   "email": null,
+  "address": null,
   "requirements": null,
   "howToApply": null,
   "lastUpdated": "2025-12-30"
