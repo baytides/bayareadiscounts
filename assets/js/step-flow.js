@@ -55,10 +55,11 @@
     const filterUI = qs('.filter-controls');
     const mobileDrawer = qs('.mobile-filter-drawer');
 
-    // Check for reduced motion preference
+    // Check for reduced motion preference or automation mode
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isAutomation = !!navigator.webdriver;
 
-    if (wizard && !prefersReducedMotion) {
+    if (wizard && !prefersReducedMotion && !isAutomation) {
       // Add closing animation class
       wizard.classList.add('closing');
 
@@ -86,7 +87,7 @@
         }
       }, 400);
     } else {
-      // Instant transition for reduced motion or no wizard
+      // Instant transition for reduced motion, automation, or no wizard
       if (wizard) wizard.style.display = 'none';
       if (filterUI) filterUI.style.display = '';
       if (searchPanel) searchPanel.style.display = '';
@@ -268,14 +269,11 @@
     // Set up focus trap for wizard
     trapFocus(wizard);
 
-    // Hide search results and filters initially (wizard-first approach)
+    // Get elements that need to be hidden/shown
     const filterUI = qs('.filter-controls');
+    const searchPanel = qs('.search-panel');
     const searchResults = qs('#search-results');
     const mobileDrawer = qs('.mobile-filter-drawer');
-
-    if (filterUI) filterUI.style.display = 'none';
-    if (searchResults) searchResults.style.display = 'none';
-    if (mobileDrawer) mobileDrawer.style.display = 'none';
 
     // Skip wizard in automation/testing, if user opts out, or if returning visitor with saved prefs
     const params = new URLSearchParams(window.location.search);
@@ -285,14 +283,28 @@
     const savedPrefs = getPrefs();
     const hasCompletedWizard = !!savedPrefs;
 
+    // Check if we should skip the wizard BEFORE hiding elements
     if ((isAutomation || optOut || hasCompletedWizard) && !forceStep) {
       // If returning visitor with saved preferences, auto-apply them
       if (hasCompletedWizard && !optOut) {
         applySelections(savedPrefs.eligibility || [], savedPrefs.county || 'none');
       }
-      closeWizard();
+      // Hide wizard immediately, show content immediately (no animation for skip)
+      wizard.style.display = 'none';
+      // Ensure all content elements are visible
+      if (filterUI) filterUI.style.display = '';
+      if (searchPanel) searchPanel.style.display = '';
+      if (searchResults) searchResults.style.display = '';
+      if (mobileDrawer) mobileDrawer.style.display = '';
       return;
     }
+
+    // Hide search results and filters initially (wizard-first approach)
+    // Only do this if we're actually showing the wizard
+    if (filterUI) filterUI.style.display = 'none';
+    if (searchPanel) searchPanel.style.display = 'none';
+    if (searchResults) searchResults.style.display = 'none';
+    if (mobileDrawer) mobileDrawer.style.display = 'none';
 
     // Check for saved wizard progress (user abandoned mid-wizard)
     const savedProgress = getWizardProgress();

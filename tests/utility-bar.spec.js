@@ -2,7 +2,8 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Utility Bar', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    // Use ?no-step=1 to skip the onboarding wizard
+    await page.goto('/?no-step=1');
   });
 
   test('utility bar is visible and accessible', async ({ page }) => {
@@ -99,19 +100,19 @@ test.describe('Utility Bar', () => {
   });
 
   test('keyboard navigation works', async ({ page }) => {
-    // Tab to theme select
-    await page.keyboard.press('Tab'); // Skip link
-    await page.keyboard.press('Tab'); // Theme select
-
+    // Focus on the theme select directly instead of assuming tab order
+    // Tab order varies depending on sidebar visibility (viewport width >= 1024px shows sidebar)
     const themeSelect = page.locator('#theme-select');
+    await themeSelect.focus();
     await expect(themeSelect).toBeFocused();
 
-    // Continue tabbing through controls
-    await page.keyboard.press('Tab'); // Spacing toggle
+    // Tab to next control (spacing toggle)
+    await page.keyboard.press('Tab');
     const spacingToggle = page.locator('#spacing-toggle');
     await expect(spacingToggle).toBeFocused();
 
-    await page.keyboard.press('Tab'); // Share button (print button was removed)
+    // Tab to next control (share button)
+    await page.keyboard.press('Tab');
     const shareBtn = page.locator('#share-btn');
     await expect(shareBtn).toBeFocused();
   });
