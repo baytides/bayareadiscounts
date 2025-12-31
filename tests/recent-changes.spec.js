@@ -39,7 +39,9 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     await expect(sidebars).toHaveCount(1);
   });
 
-  test('dark mode toggle applies correct CSS variables', async ({ page }) => {
+  test('dark mode toggle applies correct CSS variables (mobile)', async ({ page }) => {
+    // Use mobile viewport where utility bar is visible
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     const body = page.locator('body');
@@ -67,7 +69,34 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     expect(['white', '#ffffff']).toContain(lightBgColor); // Light mode background
   });
 
-  test('dark mode toggle overrides system preference', async ({ page }) => {
+  test('sidebar theme toggle cycles through modes (desktop)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+
+    const body = page.locator('body');
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+    const themeLabel = page.locator('#theme-label');
+
+    // Initial state should be System/Auto
+    await expect(themeLabel).toHaveText('System');
+
+    // Click to cycle to Light
+    await themeToggle.click();
+    await expect(themeLabel).toHaveText('Light');
+    await expect(body).toHaveAttribute('data-theme', 'light');
+
+    // Click to cycle to Dark
+    await themeToggle.click();
+    await expect(themeLabel).toHaveText('Dark');
+    await expect(body).toHaveAttribute('data-theme', 'dark');
+
+    // Click to cycle back to Auto/System
+    await themeToggle.click();
+    await expect(themeLabel).toHaveText('System');
+  });
+
+  test('dark mode toggle overrides system preference (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     const body = page.locator('body');
@@ -89,7 +118,8 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     expect(['white', '#ffffff']).toContain(bgColor); // Should stay light
   });
 
-  test('auto mode respects system preference', async ({ page }) => {
+  test('auto mode respects system preference (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     const body = page.locator('body');
@@ -111,11 +141,16 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     await expect(body).toHaveAttribute('data-theme', 'light');
   });
 
-  test('privacy policy text is visible in dark mode', async ({ page }) => {
+  test('privacy policy text is visible in dark mode (desktop via sidebar)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/privacy.html');
 
-    const themeSelect = page.locator('#theme-select');
-    await themeSelect.selectOption('dark');
+    // Use sidebar theme toggle
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+
+    // Click twice to get to dark mode (auto -> light -> dark)
+    await themeToggle.click();
+    await themeToggle.click();
 
     // Check content wrapper is visible
     const contentWrapper = page.locator('.content-wrapper');
@@ -151,11 +186,11 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     const sidebar = page.locator('#desktop-sidebar');
     await expect(sidebar).not.toBeInViewport();
 
-    // Utility bar should be visible
+    // Utility bar should be visible on mobile
     const utilityBar = page.locator('#utility-bar');
     await expect(utilityBar).toBeVisible();
 
-    // Theme select should be visible (utility bar is always expanded now)
+    // Theme select should be visible on mobile
     const themeSelect = page.locator('#theme-select');
     await expect(themeSelect).toBeVisible();
   });
@@ -168,6 +203,7 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     const sidebar = page.locator('#desktop-sidebar');
     await expect(sidebar).not.toBeInViewport();
 
+    // Utility bar should be visible on tablet
     const utilityBar = page.locator('#utility-bar');
     await expect(utilityBar).toBeVisible();
   });
@@ -184,5 +220,9 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
 
     const nav = page.locator('#desktop-sidebar nav');
     await expect(nav).toBeVisible();
+
+    // Utility bar should be hidden on desktop
+    const utilityBar = page.locator('#utility-bar');
+    await expect(utilityBar).not.toBeVisible();
   });
 });

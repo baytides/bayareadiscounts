@@ -1,12 +1,14 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('Utility Bar', () => {
+test.describe('Utility Bar (Mobile)', () => {
   test.beforeEach(async ({ page }) => {
+    // Set mobile viewport - utility bar is hidden on desktop (controls in sidebar)
+    await page.setViewportSize({ width: 375, height: 667 });
     // Use ?no-step=1 to skip the onboarding wizard
     await page.goto('/?no-step=1');
   });
 
-  test('utility bar is visible', async ({ page }) => {
+  test('utility bar is visible on mobile', async ({ page }) => {
     // Check utility bar is visible
     const utilityBar = page.locator('#utility-bar');
     await expect(utilityBar).toBeVisible();
@@ -16,7 +18,7 @@ test.describe('Utility Bar', () => {
     await expect(content).toBeVisible();
   });
 
-  test('theme selector works', async ({ page }) => {
+  test('theme selector works on mobile', async ({ page }) => {
     const themeSelect = page.locator('#theme-select');
 
     // Check theme select is visible
@@ -34,7 +36,7 @@ test.describe('Utility Bar', () => {
     await expect(page.locator('body')).toHaveAttribute('data-theme', 'light');
   });
 
-  test('utility buttons are accessible', async ({ page }) => {
+  test('utility buttons are accessible on mobile', async ({ page }) => {
     // Check spacing toggle button
     const spacingToggle = page.locator('#spacing-toggle');
     await expect(spacingToggle).toBeVisible();
@@ -46,22 +48,8 @@ test.describe('Utility Bar', () => {
     await expect(shareBtn).toHaveAttribute('aria-label', /share/i);
   });
 
-  test('utility bar works on mobile viewport', async ({ page }) => {
-    // Set mobile viewport
-    await page.setViewportSize({ width: 375, height: 667 });
-
-    // Check utility bar is still visible
-    const utilityBar = page.locator('#utility-bar');
-    await expect(utilityBar).toBeVisible();
-
-    // Check controls are accessible
-    const themeSelect = page.locator('#theme-select');
-    await expect(themeSelect).toBeVisible();
-  });
-
-  test('keyboard navigation works', async ({ page }) => {
-    // Focus on the theme select directly instead of assuming tab order
-    // Tab order varies depending on sidebar visibility (viewport width >= 1024px shows sidebar)
+  test('keyboard navigation works on mobile', async ({ page }) => {
+    // Focus on the theme select directly
     const themeSelect = page.locator('#theme-select');
     await themeSelect.focus();
     await expect(themeSelect).toBeFocused();
@@ -77,7 +65,7 @@ test.describe('Utility Bar', () => {
     await expect(shareBtn).toBeFocused();
   });
 
-  test('preferences persist after page reload', async ({ page }) => {
+  test('preferences persist after page reload on mobile', async ({ page }) => {
     // Set dark theme
     const themeSelect = page.locator('#theme-select');
     await themeSelect.selectOption('dark');
@@ -93,5 +81,20 @@ test.describe('Utility Bar', () => {
 
     // Check preferences were saved
     await expect(page.locator('body')).toHaveAttribute('data-theme', 'dark');
+  });
+});
+
+test.describe('Utility Bar Hidden on Desktop', () => {
+  test('utility bar is hidden on desktop with sidebar', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/?no-step=1');
+
+    // Utility bar should be hidden on desktop
+    const utilityBar = page.locator('#utility-bar');
+    await expect(utilityBar).not.toBeVisible();
+
+    // Sidebar should be visible instead
+    const sidebar = page.locator('#desktop-sidebar');
+    await expect(sidebar).toBeVisible();
   });
 });

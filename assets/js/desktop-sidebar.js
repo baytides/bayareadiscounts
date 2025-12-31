@@ -294,15 +294,15 @@
     if (updateFiltersBtn) {
       updateFiltersBtn.addEventListener('click', () => {
         // Trigger the step flow wizard if available
-        const stepFlowWizard = document.getElementById('step-flow-wizard');
-        if (stepFlowWizard) {
-          stepFlowWizard.style.display = '';
-          stepFlowWizard.hidden = false;
-        }
-        // Or trigger the utility bar's update filters
-        const utilityUpdateBtn = document.getElementById('update-filters-btn');
-        if (utilityUpdateBtn) {
-          utilityUpdateBtn.click();
+        const stepFlow = document.getElementById('step-flow');
+        if (stepFlow) {
+          stepFlow.style.display = '';
+          stepFlow.hidden = false;
+          // Focus the first interactive element for accessibility
+          const firstBtn = stepFlow.querySelector('button');
+          if (firstBtn) {
+            firstBtn.focus();
+          }
         }
       });
     }

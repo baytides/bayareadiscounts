@@ -3,11 +3,11 @@
    Modern frosted glass design with refined interactions
    ============================================ */
 
-/* Floating accessibility button (bottom-left corner) */
+/* Floating accessibility button (bottom-right corner) */
 #accessibility-button {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   width: 52px;
   height: 52px;
   background: linear-gradient(135deg, var(--color-primary, #00acc1) 0%, var(--color-primary-dark, #00838f) 100%);
@@ -25,13 +25,6 @@
   justify-content: center;
   color: white;
   font-size: 22px;
-}
-
-/* On desktop with sidebar, offset the accessibility button */
-@media (min-width: 1024px) {
-  body.has-sidebar #accessibility-button {
-    left: 240px; /* 220px sidebar + 20px margin */
-  }
 }
 
 #accessibility-button:hover {
@@ -58,7 +51,7 @@
 #accessibility-panel {
   position: fixed;
   bottom: 85px;
-  left: 20px;
+  right: 20px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -81,13 +74,6 @@
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
-}
-
-/* On desktop with sidebar, offset the accessibility panel */
-@media (min-width: 1024px) {
-  body.has-sidebar #accessibility-panel {
-    left: 240px; /* 220px sidebar + 20px margin */
-  }
 }
 
 /* Dark mode panel styling */
@@ -1499,8 +1485,8 @@ body.keyboard-nav-helper *:focus::after {
 
   #accessibility-button {
     bottom: 80px !important; /* Above the mobile bottom nav */
-    left: 16px !important;
-    right: auto !important;
+    right: 16px !important;
+    left: auto !important;
     top: auto !important;
     transform: none !important;
   }

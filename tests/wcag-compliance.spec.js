@@ -26,10 +26,12 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     await expect(svg).toBeVisible();
   });
 
-  test('utility bar controls are accessible', async ({ page }) => {
+  test('utility bar controls are accessible (mobile)', async ({ page }) => {
+    // Utility bar is only visible on mobile/tablet
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
-    // Theme select should be visible
+    // Theme select should be visible on mobile
     const themeSelect = page.locator('#theme-select');
     await expect(themeSelect).toBeVisible();
     const themeBox = await themeSelect.boundingBox();
@@ -51,7 +53,31 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     }
   });
 
-  test('all interactive elements have focus indicators', async ({ page }) => {
+  test('sidebar controls are accessible (desktop)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+
+    // Sidebar should be visible on desktop
+    const sidebar = page.locator('#desktop-sidebar');
+    await expect(sidebar).toBeVisible();
+
+    // Theme toggle button in sidebar
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+    await expect(themeToggle).toBeVisible();
+
+    // Check it has proper accessibility attributes
+    await expect(themeToggle).toHaveAttribute('type', 'button');
+    await expect(themeToggle).toHaveAttribute('aria-label', 'Toggle dark mode');
+
+    // Spacing toggle button in sidebar
+    const spacingToggle = page.locator('#sidebar-spacing-toggle');
+    await expect(spacingToggle).toBeVisible();
+    await expect(spacingToggle).toHaveAttribute('type', 'button');
+    await expect(spacingToggle).toHaveAttribute('aria-label', 'Toggle enhanced text spacing');
+  });
+
+  test('all interactive elements have focus indicators (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     // Test theme select focus
@@ -72,8 +98,9 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
       focusStyle.outlineWidth !== '0px' ||
       focusStyle.boxShadow !== 'none';
     expect(hasFocusIndicator).toBeTruthy();
+  });
 
-    // Test sidebar nav items on desktop
+  test('all interactive elements have focus indicators (desktop sidebar)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/');
 
@@ -95,7 +122,8 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     expect(hasNavFocus).toBeTruthy();
   });
 
-  test('color contrast meets WCAG AAA (7:1)', async ({ page }) => {
+  test('color contrast meets WCAG AAA (7:1) - mobile utility bar', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     // Test utility bar background contrast
@@ -128,10 +156,11 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     }
   });
 
-  test('dark mode maintains WCAG AAA contrast', async ({ page }) => {
+  test('dark mode maintains WCAG AAA contrast (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
-    // Set dark mode
+    // Set dark mode via utility bar (visible on mobile)
     const themeSelect = page.locator('#theme-select');
     await themeSelect.selectOption('dark');
 
@@ -149,9 +178,20 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     });
 
     expect(utilityStyles.background).toBeTruthy();
+  });
 
-    // Test sidebar in dark mode on desktop
+  test('dark mode maintains WCAG AAA contrast (desktop sidebar)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+
+    // Set dark mode via sidebar toggle
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+    // Click twice to get to dark mode (auto -> light -> dark)
+    await themeToggle.click();
+    await themeToggle.click();
+
+    const body = page.locator('body');
+    await expect(body).toHaveAttribute('data-theme', 'dark');
 
     const sidebar = page.locator('#desktop-sidebar');
     const sidebarStyles = await sidebar.evaluate((el) => {
@@ -164,7 +204,8 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     expect(sidebarStyles.background).toBeTruthy();
   });
 
-  test('keyboard navigation works for all controls', async ({ page }) => {
+  test('keyboard navigation works for all controls (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
 
     // Theme select should be focusable and visible
@@ -175,6 +216,22 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
 
     // Spacing toggle should be focusable
     const spacingToggle = page.locator('#spacing-toggle');
+    await spacingToggle.focus();
+    await expect(spacingToggle).toBeFocused();
+  });
+
+  test('keyboard navigation works for sidebar controls (desktop)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+
+    // Sidebar theme toggle should be focusable
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+    await expect(themeToggle).toBeVisible();
+    await themeToggle.focus();
+    await expect(themeToggle).toBeFocused();
+
+    // Sidebar spacing toggle should be focusable
+    const spacingToggle = page.locator('#sidebar-spacing-toggle');
     await spacingToggle.focus();
     await expect(spacingToggle).toBeFocused();
   });
@@ -194,10 +251,11 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     // (this is tested by code inspection - the actual file has this check at line 100)
   });
 
-  test('content wrapper maintains readability in dark mode', async ({ page }) => {
+  test('content wrapper maintains readability in dark mode (mobile)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/privacy.html');
 
-    // Set dark mode
+    // Set dark mode via utility bar (visible on mobile)
     const themeSelect = page.locator('#theme-select');
     await themeSelect.selectOption('dark');
 
@@ -223,6 +281,31 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
 
     expect(pColor).not.toBe('rgb(0, 0, 0)');
     expect(pColor).toBeTruthy();
+  });
+
+  test('content wrapper maintains readability in dark mode (desktop)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/privacy.html');
+
+    // Set dark mode via sidebar toggle
+    const themeToggle = page.locator('#sidebar-theme-toggle');
+    // Click twice to get to dark mode (auto -> light -> dark)
+    await themeToggle.click();
+    await themeToggle.click();
+
+    // Check content wrapper
+    const contentWrapper = page.locator('.content-wrapper');
+    await expect(contentWrapper).toBeVisible();
+
+    // Check heading color
+    const h1 = contentWrapper.locator('h1').first();
+    const h1Color = await h1.evaluate((el) => {
+      return window.getComputedStyle(el).color;
+    });
+
+    // Should not be black (which would be invisible on dark background)
+    expect(h1Color).not.toBe('rgb(0, 0, 0)');
+    expect(h1Color).toBeTruthy();
   });
 
   test('mobile: no overlapping touch targets', async ({ page }) => {
