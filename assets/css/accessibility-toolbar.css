@@ -3,68 +3,142 @@
    Modern frosted glass design with refined interactions
    ============================================ */
 
-/* Accessibility button in footer */
-#accessibility-button {
-  display: inline-flex;
+/* Fixed corner accessibility button */
+#accessibility-button.corner-a11y-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  min-height: 32px;
-  background: transparent;
-  border: none;
-  border-radius: 4px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
   cursor: pointer;
-  color: var(--text-secondary, #6b7280);
-  font-size: 0.8125rem;
-  font-family: inherit;
-  text-decoration: none;
-  transition: color 0.15s ease, background 0.15s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#accessibility-button:hover,
-#accessibility-button:focus {
-  color: var(--color-primary, #00acc1);
-  background: rgba(0, 172, 193, 0.08);
+#accessibility-button.corner-a11y-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--color-primary, #00acc1);
+  box-shadow: 0 4px 16px rgba(0, 172, 193, 0.25), 0 2px 4px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
-#accessibility-button:focus-visible {
+#accessibility-button.corner-a11y-btn:focus-visible {
   outline: 2px solid var(--color-primary, #00acc1);
   outline-offset: 2px;
+  background: rgba(255, 255, 255, 1);
 }
 
-#accessibility-button .a11y-icon {
-  font-size: 1rem;
+#accessibility-button.corner-a11y-btn .a11y-icon {
+  font-size: 1.375rem;
+  line-height: 1;
 }
 
-/* Dark mode button styling */
+/* Dark mode corner button */
 @media (prefers-color-scheme: dark) {
-  #accessibility-button {
-    color: var(--dark-text-secondary, #8b949e);
+  #accessibility-button.corner-a11y-btn {
+    background: rgba(31, 41, 55, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 
-  #accessibility-button:hover,
-  #accessibility-button:focus {
-    color: var(--text-link, #79d8eb);
-    background: rgba(121, 216, 235, 0.1);
+  #accessibility-button.corner-a11y-btn:hover {
+    background: rgba(55, 65, 81, 1);
+    border-color: var(--text-link, #79d8eb);
+    box-shadow: 0 4px 16px rgba(121, 216, 235, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  #accessibility-button.corner-a11y-btn:focus-visible {
+    outline-color: var(--text-link, #79d8eb);
+    background: rgba(55, 65, 81, 1);
   }
 }
 
-body[data-theme="dark"] #accessibility-button {
-  color: var(--dark-text-secondary, #8b949e);
+body[data-theme="dark"] #accessibility-button.corner-a11y-btn {
+  background: rgba(31, 41, 55, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-body[data-theme="dark"] #accessibility-button:hover,
-body[data-theme="dark"] #accessibility-button:focus {
-  color: var(--text-link, #79d8eb);
-  background: rgba(121, 216, 235, 0.1);
+body[data-theme="dark"] #accessibility-button.corner-a11y-btn:hover {
+  background: rgba(55, 65, 81, 1);
+  border-color: var(--text-link, #79d8eb);
+  box-shadow: 0 4px 16px rgba(121, 216, 235, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] #accessibility-button.corner-a11y-btn:focus-visible {
+  outline-color: var(--text-link, #79d8eb);
+  background: rgba(55, 65, 81, 1);
+}
+
+/* High contrast corner button */
+body.high-contrast #accessibility-button.corner-a11y-btn {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  box-shadow: none !important;
+}
+
+body.high-contrast #accessibility-button.corner-a11y-btn:hover {
+  background: #e6e6e6 !important;
+  transform: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.high-contrast #accessibility-button.corner-a11y-btn {
+    background: #000000 !important;
+    border-color: #ffffff !important;
+  }
+
+  body.high-contrast #accessibility-button.corner-a11y-btn:hover {
+    background: #1a1a1a !important;
+  }
+}
+
+body[data-theme="dark"].high-contrast #accessibility-button.corner-a11y-btn {
+  background: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+body[data-theme="dark"].high-contrast #accessibility-button.corner-a11y-btn:hover {
+  background: #1a1a1a !important;
+}
+
+/* Mobile adjustments for corner button */
+@media (max-width: 768px) {
+  #accessibility-button.corner-a11y-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+
+  #accessibility-button.corner-a11y-btn .a11y-icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* Hide corner button when step flow is visible */
+.step-flow-page:not([style*="display: none"]) ~ #accessibility-button.corner-a11y-btn,
+.step-flow-page:not(.closing) ~ #accessibility-button.corner-a11y-btn {
+  display: none;
 }
 
 /* Accessibility panel - Frosted glass */
 #accessibility-panel {
   position: fixed;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px) scale(0.97);
+  bottom: 80px;
+  right: 20px;
+  transform: translateY(12px) scale(0.97);
+  transform-origin: bottom right;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -84,7 +158,7 @@ body[data-theme="dark"] #accessibility-button:focus {
 
 #accessibility-panel.open {
   opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
@@ -1486,13 +1560,14 @@ body.keyboard-nav-helper *:focus::after {
     left: 16px;
     right: 16px;
     bottom: 70px;
-    transform: translateX(0) translateY(20px) scale(0.95);
+    transform: translateY(20px) scale(0.95);
+    transform-origin: bottom center;
     min-width: auto;
     max-width: none;
   }
 
   #accessibility-panel.open {
-    transform: translateX(0) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
