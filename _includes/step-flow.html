@@ -2,6 +2,14 @@
   <!-- Screen reader announcement region -->
   <div class="sr-only" role="status" aria-live="polite" id="step-announcement"></div>
 
+  <!-- Top accessibility bar -->
+  <div class="wizard-top-bar">
+    <button type="button" id="wizard-accessibility-button" class="wizard-a11y-btn">
+      <span class="a11y-icon" aria-hidden="true">♿</span>
+      <span class="a11y-text">Accessibility</span>
+    </button>
+  </div>
+
   <div class="step-flow-container">
     <!-- Logo -->
     <div class="wizard-logo">
@@ -391,13 +399,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Wizard Footer with Accessibility -->
-    <footer class="wizard-footer" aria-label="Wizard footer">
-      <button type="button" id="wizard-accessibility-button" class="wizard-a11y-btn">
-        <span class="a11y-icon" aria-hidden="true">♿</span> Accessibility
-      </button>
-    </footer>
   </div>
 </div>
 
@@ -1479,88 +1480,132 @@ body[data-theme="dark"] .quick-jump-btn:hover {
   }
 }
 
-/* Wizard Footer */
-.wizard-footer {
-  margin-top: auto;
-  padding: 1rem;
-  text-align: center;
+/* Wizard Top Bar */
+.wizard-top-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  z-index: 1001;
+  background: linear-gradient(to bottom, rgba(249, 250, 251, 0.95) 0%, rgba(249, 250, 251, 0) 100%);
 }
 
 .wizard-a11y-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
   cursor: pointer;
-  color: #6b7280;
+  color: #4b5563;
   font-size: 0.875rem;
+  font-weight: 500;
   font-family: inherit;
-  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.wizard-a11y-btn:hover,
-.wizard-a11y-btn:focus {
-  color: #2563eb;
+.wizard-a11y-btn:hover {
+  background: rgba(255, 255, 255, 1);
   border-color: #2563eb;
-  background: rgba(37, 99, 235, 0.05);
+  color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
 .wizard-a11y-btn:focus-visible {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
+  background: rgba(255, 255, 255, 1);
 }
 
 .wizard-a11y-btn .a11y-icon {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
-/* Dark mode wizard footer */
+.wizard-a11y-btn .a11y-text {
+  font-weight: 600;
+}
+
+/* Dark mode wizard top bar */
 @media (prefers-color-scheme: dark) {
-  .wizard-a11y-btn {
-    color: #9ca3af;
-    border-color: #4b5563;
+  .wizard-top-bar {
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0.95) 0%, rgba(17, 24, 39, 0) 100%);
   }
 
-  .wizard-a11y-btn:hover,
-  .wizard-a11y-btn:focus {
-    color: #60a5fa;
-    border-color: #60a5fa;
-    background: rgba(96, 165, 250, 0.1);
+  .wizard-a11y-btn {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #d1d5db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
   }
+
+  .wizard-a11y-btn:hover {
+    background: rgba(55, 65, 81, 1);
+    border-color: #60a5fa;
+    color: #93c5fd;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .wizard-a11y-btn:focus-visible {
+    outline-color: #60a5fa;
+    background: rgba(55, 65, 81, 1);
+  }
+}
+
+body[data-theme="dark"] .wizard-top-bar {
+  background: linear-gradient(to bottom, rgba(17, 24, 39, 0.95) 0%, rgba(17, 24, 39, 0) 100%);
 }
 
 body[data-theme="dark"] .wizard-a11y-btn {
-  color: #9ca3af;
-  border-color: #4b5563;
+  background: rgba(31, 41, 55, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-body[data-theme="dark"] .wizard-a11y-btn:hover,
-body[data-theme="dark"] .wizard-a11y-btn:focus {
-  color: #60a5fa;
+body[data-theme="dark"] .wizard-a11y-btn:hover {
+  background: rgba(55, 65, 81, 1);
   border-color: #60a5fa;
-  background: rgba(96, 165, 250, 0.1);
+  color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* High contrast wizard footer */
+body[data-theme="dark"] .wizard-a11y-btn:focus-visible {
+  outline-color: #60a5fa;
+  background: rgba(55, 65, 81, 1);
+}
+
+/* High contrast wizard top bar */
+body.high-contrast .wizard-top-bar {
+  background: transparent;
+}
+
 body.high-contrast .wizard-a11y-btn {
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
   background: #ffffff !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  box-shadow: none !important;
 }
 
 body.high-contrast .wizard-a11y-btn:hover,
 body.high-contrast .wizard-a11y-btn:focus {
   background: #e6e6e6 !important;
+  transform: none !important;
 }
 
 @media (prefers-color-scheme: dark) {
   body.high-contrast .wizard-a11y-btn {
+    background: #000000 !important;
     color: #ffffff !important;
     border-color: #ffffff !important;
-    background: #000000 !important;
   }
 
   body.high-contrast .wizard-a11y-btn:hover,
@@ -1570,14 +1615,30 @@ body.high-contrast .wizard-a11y-btn:focus {
 }
 
 body[data-theme="dark"].high-contrast .wizard-a11y-btn {
+  background: #000000 !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
-  background: #000000 !important;
 }
 
 body[data-theme="dark"].high-contrast .wizard-a11y-btn:hover,
 body[data-theme="dark"].high-contrast .wizard-a11y-btn:focus {
   background: #1a1a1a !important;
+}
+
+/* Mobile adjustments for top bar */
+@media (max-width: 640px) {
+  .wizard-top-bar {
+    padding: 10px 16px;
+  }
+
+  .wizard-a11y-btn {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .wizard-a11y-btn .a11y-icon {
+    font-size: 1rem;
+  }
 }
 
 /* Reduced motion preference */
