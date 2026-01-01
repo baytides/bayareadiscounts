@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Free First Thursdays: Free admission for everyone\n- EBT/Benefits cardholders: Free admission\n- First responders: Free admission with ID\n- Military: Free admission with ID\n- Students with ID: $6 admission\n- Seniors (65+): $6 admission\n- Children under 6: Free admission\n- Regular admission: $12 adults\n",
   "howToGetIt": "Visit on First Thursday for free entry, or show your EBT card, military/first responder ID, student ID, or proof of age at admission. Walk-ins welcome.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "college-students",
     "seniors",
     "veterans",

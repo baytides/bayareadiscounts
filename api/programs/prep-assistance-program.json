@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Free PrEP medication (Truvada, Descovy, or generic)\n- Coverage for doctor visits and HIV testing\n- Lab work costs covered\n- Available to residents with income up to 500% FPL\n- PrEP-AP Immediate Access: One free month for anyone\n- No immigration status requirements\n- Helps uninsured and underinsured individuals\n",
   "howToGetIt": "Enroll through an ADAP enrollment site or healthcare provider. For immediate access to one free month, contact a PrEP-AP provider. You'll need proof of California residency and income.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "everyone"
   ],
   "areas": [

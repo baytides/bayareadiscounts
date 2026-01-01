@@ -30,7 +30,7 @@
   category: Utilities
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   description: CleanPowerSF is San Francisco's community choice energy program that provides 100% renewable electricity to residents and businesses, with additional bill relief options for qualifying low-income customers.
   what_they_offer: |
     - 100% renewable electricity at competitive rates
@@ -55,7 +55,7 @@
   category: Utilities
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   description: The East Bay Municipal Utility District (EBMUD) Customer Assistance Program provides significant discounts on water and wastewater bills for income-eligible households in Alameda and Contra Costa counties.
   what_they_offer: |
     - 35% discount on water and wastewater bills (Tier 1)
@@ -81,7 +81,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Low Income Home Energy Assistance Program (LIHEAP) is a federally funded program that helps low-income households pay their energy bills and make energy-efficient home improvements.
   what_they_offer: |
     - Up to $3,000 per year for energy bill assistance
@@ -134,7 +134,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   description: Peninsula Clean Energy offers e-bike rebates to help income-qualified San Mateo County residents transition to clean transportation, reducing both costs and carbon emissions.
   what_they_offer: |
     - Up to $1,000 rebate for new electric bicycle
@@ -160,7 +160,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Peninsula Clean Energy offers rebates for San Mateo County residents to replace gas furnaces with efficient electric heat pumps that provide both heating and cooling.
   what_they_offer: |
@@ -189,7 +189,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   description: Peninsula Clean Energy's Home Upgrade Services provides no-cost electrification for income-eligible homeowners, converting gas appliances to electric with a full-service approach from assessment to installation.
   what_they_offer: |
     - Free in-home energy assessment
@@ -220,7 +220,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   description: Peninsula Clean Energy helps income-qualified San Mateo County residents afford electric vehicles with a $2,000 rebate toward used plug-in hybrids or fully-electric vehicles.
   what_they_offer: |
     - $2,000 rebate for used EV purchase
@@ -248,7 +248,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Peninsula Clean Energy offers substantial rebates for San Mateo County residents to replace gas or electric water heaters with efficient heat pump water heaters.
   what_they_offer: |
@@ -310,7 +310,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: PG&E's Arrearage Management Plan helps CARE-enrolled customers reduce their past-due utility debt by forgiving up to $8,000 over 12 months when they make consistent on-time payments.
   what_they_offer: |
     - Up to $8,000 in debt forgiveness
@@ -366,7 +366,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: PG&E's CARE (California Alternate Rates for Energy) and FERA (Family Electric Rate Assistance) programs provide significant utility bill discounts for income-qualified households.
   what_they_offer: |
     - CARE: 35% discount on electricity, 20% on natural gas
@@ -394,7 +394,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Energy Savings Assistance Program provides free home energy upgrades and weatherization services to income-qualified households, helping reduce energy bills and improve comfort.
   what_they_offer: |
     - Free energy assessment of your home
@@ -453,7 +453,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Self-Generation Incentive Program (SGIP) Equity program provides substantial incentives for income-qualified households to install home battery storage, covering up to 85% of the cost.
   what_they_offer: |
     - 85% discount on battery storage systems
@@ -509,7 +509,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: PG&E's Match My Payment Program helps customers reduce past-due balances by matching every dollar they pay, up to $1,000, effectively cutting their debt in half.
   what_they_offer: |
     - PG&E matches your payments dollar-for-dollar
@@ -594,7 +594,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The REACH program provides emergency bill assistance for PG&E customers facing disconnection, offering up to $300 to help income-eligible households avoid losing power or gas service.
   what_they_offer: |
     - Up to $300 energy bill credit
@@ -622,7 +622,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: PG&E's Residential Charging Solutions Rebate covers up to 100% of the cost of home EV charging equipment and installation for income-qualified customers, making electric vehicle ownership more accessible.
   what_they_offer: |
     - Up to 100% rebate on EV charger cost
@@ -650,7 +650,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: PG&E offers a $4,000 rebate for income-qualified customers purchasing pre-owned electric vehicles, making EVs more affordable whether buying from dealers or private sellers.
   what_they_offer: |
     - $4,000 rebate for used EV purchase
@@ -733,7 +733,7 @@
   category: Utilities
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: The Bay Area Air Quality Management District's Clean Cars for All program provides substantial incentives for income-qualified residents to replace older polluting vehicles with new or used electric vehicles.
   what_they_offer: |
     - $10,000-$12,000 rebate for EV purchase or lease
@@ -762,7 +762,7 @@
   category: Utilities
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: The Clean Cars for All program also offers rebates for hydrogen fuel cell vehicles, providing another zero-emission option for Bay Area residents replacing older polluting vehicles.
   what_they_offer: |
     - $10,000 rebate for fuel cell vehicle
@@ -791,7 +791,7 @@
   category: Utilities
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: For those who don't need a car, Clean Cars for All offers a mobility option combining an e-bike and transit credits, providing sustainable transportation alternatives when trading in an older vehicle.
   what_they_offer: |
     - $7,500 total value mobility package
@@ -849,7 +849,7 @@
   category: Utilities
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: BAAQMD's Wood Stove Replacement Program helps Bay Area residents replace wood-burning stoves with clean electric heat pumps, improving air quality and reducing home heating costs.
   what_they_offer: |
@@ -880,7 +880,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The California Air Resources Board (CARB) E-Bike Incentive Project provides substantial point-of-sale discounts for income-qualified residents to purchase new electric bicycles.
   what_they_offer: |
     - Up to $2,000 instant discount on new e-bike
@@ -906,7 +906,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: California's Consumer Assistance Program offers payment to retire vehicles that have failed smog inspections, helping low-income residents get problem vehicles off the road.
   what_they_offer: |
     - $1,500 for vehicles that failed previous smog check
@@ -934,7 +934,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Driving Clean Assistance Program provides comprehensive support for income-qualified Californians to trade in old gas vehicles for clean alternatives, including financial counseling and down payment help.
   what_they_offer: |
     - Up to $10,000 toward clean vehicle purchase
@@ -989,7 +989,7 @@
   category: Utilities
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: California's Weatherization Assistance Program provides free energy efficiency upgrades to help low-income households reduce energy costs and improve home comfort and safety.
   what_they_offer: |
     - Free home energy audit
@@ -1017,7 +1017,7 @@
   category: Utilities
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: BayREN's EASE Home Program covers 80% of home efficiency upgrade costs for income-qualified Bay Area homeowners, with a capped out-of-pocket maximum and vetted contractors.
   what_they_offer: |
     - 80% of upgrade costs covered by BayREN
@@ -1297,7 +1297,7 @@
   category: Utilities
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   description: Recology San Francisco offers a 25% discount on garbage collection bills for income-qualified San Francisco residents, helping reduce the cost of essential waste services.
   what_they_offer: |
     - 25% discount on garbage collection bills
@@ -1323,7 +1323,7 @@
   category: Utilities
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The City of Redwood City offers rebates to help residents electrify their homes with heat pump water heaters, HVAC systems, and electrical panel upgrades.
   what_they_offer: |
@@ -1465,7 +1465,7 @@
   category: Utilities
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   description: The San Francisco Public Utilities Commission Customer Assistance Program provides significant discounts on water and sewer bills plus protections from shutoffs for income-qualified San Francisco residents.
   what_they_offer: |
     - 40% discount on water and sewer bills
@@ -1576,7 +1576,7 @@
   category: Utilities
   area: City of Santa Clara
   groups:
-  - low-income
+  - income-eligible
   description: Silicon Valley Power offers substantial rebates for income-qualified Santa Clara residents purchasing pre-owned electric vehicles, with bonuses for efficiency and LIHEAP eligibility.
   what_they_offer: |
     - $1,500 rebate for fully electric vehicles
@@ -1973,7 +1973,7 @@
   category: Utilities
   area: City of Santa Clara
   groups:
-  - low-income
+  - income-eligible
   description: Silicon Valley Power provides substantial solar grants to income-qualified Santa Clara homeowners who have been on the FRAP assistance program, helping low-income residents access renewable energy.
   what_they_offer: |
     - Free solar PV system grant
@@ -2056,7 +2056,7 @@
   category: Utilities
   area: City of San Jose
   groups:
-  - low-income
+  - income-eligible
   description: San Jose Clean Energy provides an additional 10% discount on electricity charges for income-qualified customers already enrolled in PG&E's CARE or FERA programs, helping reduce energy costs.
   what_they_offer: |
     - 10% discount on SJCE electricity charges
@@ -2084,7 +2084,7 @@
   category: Utilities
   area: City of San Jose
   groups:
-  - low-income
+  - income-eligible
   description: San Jose Clean Energy's Solar Access Program provides significant electricity bill discounts for income-qualified residents living in Environmental Justice Communities, stackable with other discounts for up to 55% savings.
   what_they_offer: |
     - 20% off electricity bill
@@ -2276,7 +2276,7 @@
   category: Utilities
   area: City of San Jose
   groups:
-  - low-income
+  - income-eligible
   description: San Jose Clean Energy offers substantial instant rebates on new electric vehicles for income-qualified residents, making EV ownership more accessible for lower-income households.
   what_they_offer: |
     - $4,000 instant rebate on new EV
@@ -2304,7 +2304,7 @@
   category: Utilities
   area: City of San Jose
   groups:
-  - low-income
+  - income-eligible
   description: San Jose Clean Energy provides instant rebates on used electric vehicles for income-qualified residents, offering an affordable pathway to EV ownership.
   what_they_offer: |
     - $2,000 instant rebate on used EV
@@ -2445,7 +2445,7 @@
   category: Utilities
   area: City of Palo Alto
   groups:
-  - low-income
+  - income-eligible
   - disability
   description: The City of Palo Alto Utilities Rate Assistance Program provides significant discounts on utility bills for residents experiencing financial hardship or medical conditions requiring higher utility use.
   what_they_offer: |
@@ -2474,7 +2474,7 @@
   category: Utilities
   area: City of Palo Alto
   groups:
-  - low-income
+  - income-eligible
   description: The City of Palo Alto's REAP program provides free home energy and water efficiency upgrades to income-qualified residents, helping reduce utility costs through improved efficiency.
   what_they_offer: |
     - Free weather stripping installation
@@ -2502,7 +2502,7 @@
   category: Utilities
   area: City of Palo Alto
   groups:
-  - low-income
+  - income-eligible
   description: ProjectPLEDGE provides one-time utility bill assistance for Palo Alto residents facing financial hardship, helping cover past-due utility balances.
   what_they_offer: |
     - One-time utility bill assistance

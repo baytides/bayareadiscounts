@@ -156,7 +156,7 @@
       "whatTheyOffer": "- Emergency rental assistance\n- Move-in cost support\n- Basic needs assistance\n- Prevents eviction and homelessness\n- One-time financial support\n- Available through partner agencies\n",
       "howToGetIt": "1. Contact 2-1-1 or local social services\n2. Get referral to Season of Sharing partner\n3. Demonstrate financial emergency\n4. Show risk of homelessness\n5. Work with case manager\n6. Funds paid directly to landlord/vendor\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -277,7 +277,7 @@
       "whatTheyOffer": "- FREE emergency childcare\n- For children birth to age 6\n- Up to 30 days per 6 months\n- Maximum 60 days per year\n- Safe, nurturing environment\n- Helps families during crisis\n",
       "howToGetIt": "1. Call Bay Area Crisis Nursery\n2. Explain your emergency situation\n3. Complete intake process\n4. Provide child's information\n5. Drop off child during operating hours\n6. Access ongoing support as needed\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -303,7 +303,7 @@
       "whatTheyOffer": "- Free part-day preschool\n- For children ages 3-5\n- High-quality early education\n- Kindergarten readiness focus\n- Available at multiple locations\n- Includes meals and snacks\n",
       "howToGetIt": "1. Check income eligibility requirements\n2. Find participating preschool providers\n3. Complete application process\n4. Provide income documentation\n5. Submit required paperwork\n6. Enroll child once approved\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -329,7 +329,7 @@
       "whatTheyOffer": "- Free or subsidized child care\n- Stage 1: County-administered (current CalWORKs)\n- Stage 2: Transitional (leaving CalWORKs)\n- Stage 3: Long-term subsidized care\n- Supports work and training\n- Continuous coverage through stages\n",
       "howToGetIt": "1. Must be receiving CalWORKs benefits\n2. Contact your county welfare office\n3. Request child care assistance\n4. Choose approved child care provider\n5. Complete required paperwork\n6. Transition through stages as eligible\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -355,7 +355,7 @@
       "whatTheyOffer": "- Partial or complete childcare coverage\n- For children ages 0-13\n- State-funded subsidy programs\n- Help finding quality care\n- Ongoing support and resources\n- Multiple program options\n",
       "howToGetIt": "1. Check income eligibility requirements\n2. Contact Children's Council\n3. Complete subsidy application\n4. Provide income documentation\n5. Choose approved childcare provider\n6. Receive ongoing subsidy support\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -381,7 +381,7 @@
       "whatTheyOffer": "- Subsidized child care services\n- For income-eligible families\n- Multiple childcare options\n- Quality care for children\n- Supports working parents\n- Help with childcare costs\n",
       "howToGetIt": "1. Check income eligibility requirements\n2. Contact Choices for Children\n3. Complete application process\n4. Provide income documentation\n5. Choose approved childcare provider\n6. Receive subsidy based on funding\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -407,7 +407,7 @@
       "whatTheyOffer": "- Free preschool education\n- For children ages 3-4\n- Comprehensive child development\n- Health and nutrition services\n- Family support programs\n- Special needs support included\n",
       "howToGetIt": "1. Check income eligibility requirements\n2. Find local Head Start program\n3. Complete application process\n4. Provide income and family documentation\n5. Participate in enrollment screening\n6. Enroll child in program\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -434,7 +434,7 @@
       "howToGetIt": "1. Visit BACN Boutique during hours\n2. No appointment necessary\n3. Browse available items\n4. Select needed items for family\n5. Take items home at no cost\n6. Return for future needs\n",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families",
         "youth",
         "everyone"
@@ -461,7 +461,7 @@
       "whatTheyOffer": "- Free food assistance\n- Free diapers for babies and toddlers\n- Online ordering available\n- Regular distribution schedule\n- Essential items for families\n- No-cost support for families in need\n",
       "howToGetIt": "1. Visit website to order online\n2. Or call to request assistance\n3. Provide family information\n4. Select needed items\n5. Schedule pickup time\n6. Pick up at Concord location\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -487,7 +487,7 @@
       "whatTheyOffer": "- Free diapers for eligible families\n- For children under age two\n- Up to two cases per child/month\n- Available to CalFresh recipients\n- Available to Medi-Cal recipients\n- Available to CalWORKs households\n",
       "howToGetIt": "1. Must be enrolled in CalFresh, Medi-Cal, or CalWORKs\n2. Child must be under age two\n3. Enroll through SFHSA website\n4. Provide proof of benefit enrollment\n5. Select diaper size and pickup location\n6. Pick up monthly allotment\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -584,7 +584,7 @@
       "howToGetIt": "1. Call LifeMoves hotline\n2. Complete intake assessment\n3. Meet with case manager\n4. Develop housing stability plan\n5. Access shelter and services\n6. Work toward permanent housing\n",
       "groups": [
         "unhoused",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -611,7 +611,7 @@
       "groups": [
         "unhoused",
         "families",
-        "low-income",
+        "income-eligible",
         "veterans"
       ],
       "areas": [
@@ -1402,7 +1402,7 @@
       "howToGetIt": "1. Visit queerlifespace.org\n2. Complete intake form\n3. Schedule consultation\n4. Discuss fee based on income\n5. Begin therapy services\n",
       "groups": [
         "lgbtq",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -1429,7 +1429,7 @@
       "groups": [
         "lgbtq",
         "youth",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -1480,7 +1480,7 @@
       "howToGetIt": "1. Visit API Wellness or TRANS:THRIVE\n2. Walk in for HIV/STD testing\n3. Schedule appointment for primary care\n4. Drop in for TRANS:THRIVE services\n5. Join support groups and events\n",
       "groups": [
         "lgbtq",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -1507,7 +1507,7 @@
       "groups": [
         "lgbtq",
         "seniors",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -1609,7 +1609,7 @@
       "groups": [
         "lgbtq",
         "immigrants",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -1635,7 +1635,7 @@
       "groups": [
         "lgbtq",
         "reentry",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -1661,7 +1661,7 @@
       "groups": [
         "lgbtq",
         "immigrants",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -1687,7 +1687,7 @@
       "groups": [
         "lgbtq",
         "seniors",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -1909,7 +1909,7 @@
       "howToGetIt": "1. Visit OEWD website or local One-Stop Career Center\n2. Complete intake and assessment\n3. Meet with employment specialist\n4. Receive job placement assistance\n5. Employer receives wage subsidy when you're hired\n",
       "groups": [
         "unemployed",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -1960,7 +1960,7 @@
       "howToGetIt": "1. Attend CityBuild orientation session\n2. Complete application and interview\n3. Pass assessment tests\n4. Commit to full 18-week program\n5. Graduate and enter union apprenticeship\n",
       "groups": [
         "unemployed",
-        "low-income",
+        "income-eligible",
         "reentry"
       ],
       "areas": [
@@ -1986,7 +1986,7 @@
       "howToGetIt": "1. Visit TechSF website\n2. Complete interest form\n3. Attend orientation session\n4. Apply for training programs\n5. Receive job placement support\n",
       "groups": [
         "unemployed",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2013,7 +2013,7 @@
       "groups": [
         "unemployed",
         "immigrants",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -2038,7 +2038,7 @@
       "howToGetIt": "1. Call IIBA to schedule appointment\n2. Complete intake and eligibility screening\n3. Attend consultation with immigration specialist\n4. Receive case assessment and options\n5. Proceed with legal services if eligible\n",
       "groups": [
         "immigrants",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -2063,7 +2063,7 @@
       "howToGetIt": "1. Call EBCLC intake line\n2. Complete screening for services\n3. Must be low-income Alameda County resident\n4. Attend appointment with immigration attorney\n5. Receive representation or referrals\n",
       "groups": [
         "immigrants",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Alameda County"
@@ -2088,7 +2088,7 @@
       "howToGetIt": "1. Call SF Homeless Outreach Team at 415-734-4233\n2. Or call 311 for shelter information\n3. Connect with street outreach if unsheltered\n4. Complete intake at navigation center\n5. Receive housing and service referrals\n",
       "groups": [
         "unhoused",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -2113,7 +2113,7 @@
       "howToGetIt": "1. Attend Project Homeless Connect events\n2. Visit their service hub for ongoing support\n3. Access free services without appointment\n4. Connect with case managers\n5. Receive referrals to housing and benefits\n",
       "groups": [
         "unhoused",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2139,7 +2139,7 @@
       "howToGetIt": "1. Visit St. Anthony's Dining Room\n2. No reservation or registration needed\n3. Meals served during posted hours\n4. All are welcome regardless of status\n5. Access other services as needed\n",
       "groups": [
         "unhoused",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2193,7 +2193,7 @@
         "caregivers",
         "seniors",
         "disability",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -2319,7 +2319,7 @@
       "howToGetIt": "1. Contact Five Keys enrollment\n2. Complete intake assessment\n3. Enroll in education or training program\n4. Attend classes (in-person or hybrid)\n5. Receive supportive services\n6. Graduate and access job placement\n",
       "groups": [
         "reentry",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2417,7 +2417,7 @@
       "whatTheyOffer": "- Two free ACT tests (with or without writing)\n- Free access to official ACT Self-Paced Course (Kaplan prep)\n- Send scores to up to 20 colleges for free\n- Ability to request college application fee waivers\n- Waived fees for late registration, standby testing, and test date changes\n",
       "howToGetIt": "1. Must be in 11th or 12th grade\n2. Must meet income eligibility guidelines\n3. Talk to your high school counselor about eligibility\n4. Counselor will provide fee waiver form\n5. Use fee waiver code when registering for ACT\n6. Present fee waiver at test center\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -2441,7 +2441,7 @@
       "whatTheyOffer": "- $37 College Board fee reduction per AP exam\n- Schools forgo $9 rebate, adding to the reduction\n- Final cost typically $53-62 per exam (down from $99)\n- Some California districts provide additional funding\n- Some students pay $0 for exams in participating districts\n",
       "howToGetIt": "1. Must demonstrate financial need (qualify for free/reduced lunch, etc.)\n2. Talk to your AP teacher or school counselor\n3. School will verify eligibility\n4. Fee reduction automatically applied at registration\n5. Pay reduced fee by deadline\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -2465,7 +2465,7 @@
       "whatTheyOffer": "- Waiver of enrollment fees ($46 per unit)\n- Covers entire academic year\n- Valid at all California Community Colleges\n- May qualify for additional financial aid\n- No limit on number of units covered\n",
       "howToGetIt": "1. Complete the FAFSA or California Dream Act Application\n2. Apply through CCCApply when enrolling in a community college\n3. Qualify based on income, receiving public benefits (CalFresh, TANF, etc.), or other criteria\n4. Grant automatically applied to your enrollment fees\n5. Renew each academic year\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -2489,7 +2489,7 @@
       "whatTheyOffer": "- Waived application fees at participating colleges\n- Valid at over 900 Common App member schools\n- No limit on number of colleges\n- Covers the full application fee (typically $50-90)\n- Accepted at most selective colleges and universities\n",
       "howToGetIt": "1. Create a Common App account\n2. Complete the Profile section\n3. Answer the fee waiver questions in the Profile\n4. If eligible, fee waiver automatically applied\n5. Can also obtain fee waiver through school counselor\n6. Fee waiver travels with you to all Common App colleges\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -2513,7 +2513,7 @@
       "whatTheyOffer": "- Two free SAT tests (with or without Essay)\n- Unlimited score reports to colleges\n- Waived college application fees at many participating schools\n- Free CSS Profile for financial aid applications\n- Waived fees for late registration, standby testing, and changes\n- Access to Khan Academy Official SAT Practice (free for all)\n",
       "howToGetIt": "1. Must be in 11th or 12th grade\n2. Must meet income eligibility guidelines (similar to free/reduced lunch)\n3. Request fee waiver from your school counselor\n4. Counselor provides fee waiver card/code\n5. Use when registering for SAT online\n6. Present at test center if requested\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -2828,7 +2828,7 @@
       "whatTheyOffer": "- Free tax preparation for income up to $64,000\n- Help claiming Earned Income Tax Credit (EITC)\n- CalEITC (California Earned Income Tax Credit) assistance\n- IRS-certified volunteer preparers\n- E-filing available\n",
       "howToGetIt": "1. Check the Alameda County website for VITA site locations\n2. Make appointment through online scheduler (opens late January)\n3. Gather required documents (W-2s, 1099s, ID, Social Security cards)\n4. Attend your scheduled appointment\n5. File your return\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2853,7 +2853,7 @@
       "whatTheyOffer": "- Free tax preparation\n- Help with federal and state returns\n- Assistance with tax credits\n- IRS-certified volunteer preparers\n",
       "howToGetIt": "1. Check the Community Gatepath website for current information\n2. Locations and schedules vary by year\n3. Gather required tax documents\n4. Attend your appointment\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Santa Clara County"
@@ -2877,7 +2877,7 @@
       "whatTheyOffer": "- Free virtual tax preparation via Zoom\n- Available for income up to $84,000\n- Federal and state tax returns\n- IRS-certified student preparers supervised by faculty\n- Convenient online service\n",
       "howToGetIt": "1. Visit the CSU East Bay VITA website\n2. Schedule an appointment online\n3. Gather and scan/photograph your tax documents\n4. Attend your Zoom appointment\n5. Review and sign your return electronically\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Alameda County"
@@ -2901,7 +2901,7 @@
       "whatTheyOffer": "- Free tax preparation and e-filing\n- Help with EITC, Child Tax Credit, and other credits\n- Service for income generally $64,000 or less\n- Assistance in multiple languages\n- IRS-certified volunteers\n- Available at community centers, libraries, schools\n",
       "howToGetIt": "1. Use the IRS VITA locator tool to find a site\n2. Check site requirements (appointment vs. walk-in)\n3. Bring required documents (ID, Social Security cards, W-2s, 1099s)\n4. Meet with a volunteer preparer\n5. Review, sign, and file your return\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2926,7 +2926,7 @@
       "whatTheyOffer": "- Free tax preparation\n- Federal and state returns\n- Help with tax credits (EITC, CalEITC)\n- IRS-certified preparers\n- Multilingual assistance available\n",
       "howToGetIt": "1. Email sparkpoint@ebaldc.org for information\n2. Check website for current year schedule\n3. Make an appointment when available\n4. Bring required tax documents\n5. Complete your tax filing\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2951,7 +2951,7 @@
       "whatTheyOffer": "- Free tax preparation\n- Drop-off service available (no need to wait)\n- Federal and state returns\n- Help with tax credits\n- IRS-certified volunteers\n",
       "howToGetIt": "1. Call for tax questions or to schedule\n2. Gather all required documents\n3. Drop off documents or attend in-person appointment\n4. Receive call when return is ready for review\n5. Sign and file your return\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -2976,7 +2976,7 @@
       "whatTheyOffer": "- Free tax preparation\n- Federal and California state returns\n- IRS-certified student preparers\n- Faculty supervision\n- Service for students and community members\n",
       "howToGetIt": "1. Check SF State VITA website for schedule and location\n2. Gather required tax documents\n3. Attend during scheduled hours\n4. Work with a student preparer\n5. Review, sign, and file your return\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "everyone"
       ],
@@ -3002,7 +3002,7 @@
       "whatTheyOffer": "- Free current year tax preparation (February-April)\n- Free back tax preparation (year-round)\n- Federal and state returns\n- Help with tax credits\n- IRS-certified preparers\n",
       "howToGetIt": "1. Contact the Fremont Family Resource Center\n2. Schedule an appointment\n3. Gather required tax documents\n4. Attend your appointment\n5. Review and sign your return\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3027,7 +3027,7 @@
       "whatTheyOffer": "- Free tax preparation at multiple sites\n- Service for low to moderate income residents\n- Help with EITC and other credits\n- IRS-certified volunteers\n- Multiple languages available\n",
       "howToGetIt": "1. Visit United Way Bay Area website\n2. Find a free tax preparation site near you\n3. Check if appointment is required\n4. Gather required documents\n5. Get your taxes filed for free\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -3172,7 +3172,7 @@
       "whatTheyOffer": "- Free groceries at 350+ distribution sites\n- Fresh produce, proteins, and staples\n- Mobile food pantries in underserved areas\n- No ID or income verification required\n- Culturally appropriate foods available\n- CalFresh (food stamps) application assistance\n",
       "howToGetIt": "Use the online Food Finder tool to locate a distribution site near you. Most sites operate on a first-come, first-served basis. Some require appointments; check individual site details.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3223,7 +3223,7 @@
       "howToGetIt": "For the Brown Bag program, visit on Thursdays and bring proof of age (60+) and SF residency. For the general food pantry, visit during open hours. Contact the center for current schedule.",
       "groups": [
         "seniors",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3248,7 +3248,7 @@
       "whatTheyOffer": "- Online grocery ordering with EBT card\n- Available at Amazon, Walmart, Safeway, and more\n- Same eligible food items as in-store\n- Home delivery or store pickup options\n- Delivery fees may apply (varies by retailer)\n",
       "howToGetIt": "If you have a CalFresh EBT card, visit a participating retailer's website. Create an account, add your EBT card, and shop for eligible groceries. Check the CDSS website for the full list of participating stores.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -3273,7 +3273,7 @@
       "howToGetIt": "You must be a CalFresh recipient who is 60+, disabled, or homeless. Check if your county participates, then use the CDSS Restaurant Locator to find participating restaurants. Show your EBT card and ID when ordering.",
       "groups": [
         "unhoused",
-        "low-income",
+        "income-eligible",
         "seniors",
         "disability"
       ],
@@ -3299,7 +3299,7 @@
       "whatTheyOffer": "- Free groceries at distribution sites\n- Mobile food pantries\n- Senior food programs\n- Fresh produce distributions\n- CalFresh enrollment assistance\n- No ID or proof of income required\n",
       "howToGetIt": "Use the online Food Locator to find a distribution site near you. Bring bags to carry food. Most sites operate weekly; check individual site schedules.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3348,7 +3348,7 @@
       "whatTheyOffer": "- Double your CalFresh/EBT dollars (up to $10-15 match per visit)\n- Bonus funds for fresh fruits and vegetables only\n- Available at 250+ farmers markets statewide\n- WIC participants also eligible at many markets\n- Some markets offer senior bonus programs\n",
       "howToGetIt": "Bring your CalFresh EBT card to a participating farmers market. Visit the info booth, swipe your card, and receive matching tokens or scrip to spend on fresh produce. Check the website for participating markets.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -3472,7 +3472,7 @@
       "whatTheyOffer": "- Medically tailored meals for people with critical illnesses\n- Nutrition counseling from registered dietitians\n- Home delivery available\n- Congregate meal programs for seniors\n- Grocery bags and wellness checks\n- Services available regardless of income\n",
       "howToGetIt": "Call or apply online. Programs available for people with HIV/AIDS, cancer, diabetes, kidney disease, and other serious illnesses. Senior congregate meals available at community sites. Referrals from healthcare providers welcome.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors",
         "disability",
         "everyone"
@@ -3499,7 +3499,7 @@
       "whatTheyOffer": "- 10% discount for shoppers 60+\n- 10% discount for EBT cardholders\n- Natural, organic, and local foods\n- Bulk foods to save money\n- Vegan and specialty diet options\n- Discounts apply to all purchases\n",
       "howToGetIt": "Show your EBT card or proof of age (60+) at checkout to receive 10% off your purchase. Discounts cannot be combined. Open daily.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors"
       ],
       "areas": [
@@ -3524,7 +3524,7 @@
       "whatTheyOffer": "- Free groceries at 900+ distribution sites\n- Fresh produce, proteins, dairy, and staples\n- Mobile food pantries\n- Home delivery for homebound individuals\n- No income verification required\n- CalFresh enrollment assistance\n",
       "howToGetIt": "Use the online Food Locator tool or call the Food Connection hotline. Find a site near you, check the schedule, and bring bags to carry food. Most sites require no ID or paperwork.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3550,7 +3550,7 @@
       "whatTheyOffer": "- Free groceries at 275+ pantry sites\n- Home delivery for homebound seniors and people with disabilities\n- Supplemental food for seniors 60+ at senior centers\n- Fresh produce, proteins, and staples\n- CalFresh application assistance\n- No income verification or ID required\n",
       "howToGetIt": "Use the online Food Locator or call the food bank. Find a pantry near you and check their schedule. Bring your own bags. For home delivery, call to assess eligibility.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors",
         "everyone"
       ],
@@ -3701,7 +3701,7 @@
       "howToGetIt": "Apply online or contact your local WIC office. You'll need proof of income (up to 185% of poverty level), residency, and identity. Pregnant women, new mothers, infants, and children under 5 may qualify.",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -3727,7 +3727,7 @@
       "whatTheyOffer": "- Free groceries at 17 Bay Area locations\n- Serves 6,900+ people weekly\n- Fresh produce, proteins, and staples\n- Diapers and essentials at some locations\n- No income verification required\n- Family-friendly environment\n",
       "howToGetIt": "Visit any YMCA food pantry location during open hours. Check the website for locations, days, and times. No registration required at most sites.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "everyone"
       ],
@@ -3753,7 +3753,7 @@
       "whatTheyOffer": "- Nutritionally balanced food boxes\n- Fresh produce when available\n- Available for families and individuals\n- Appointment required\n- Serving East Palo Alto and neighboring communities\n- Additional services including clothing and furniture\n",
       "howToGetIt": "Call to schedule an appointment. First-time clients should bring proof of address. Food distribution is available on scheduled days.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3778,7 +3778,7 @@
       "whatTheyOffer": "- High-protein nutritious food boxes\n- Available for seniors on fixed income\n- Serves disabled adults and low-income families\n- Kosher options available\n- Culturally sensitive food choices\n",
       "howToGetIt": "Contact JFCS to learn about eligibility and how to access the food pantry. Services available to Santa Clara County residents.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors",
         "disability"
       ],
@@ -3804,7 +3804,7 @@
       "whatTheyOffer": "- Full bag of groceries weekly\n- Fresh produce, proteins, and breads\n- Available to individuals and families\n- Distribution every Wednesday\n- No income verification required\n",
       "howToGetIt": "Visit a Got Groceries distribution site on Wednesdays. Check the Peninsula Volunteers website for locations and times. No registration required.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3877,7 +3877,7 @@
       "whatTheyOffer": "- Preventive care (cleanings, exams, x-rays)\n- Restorative services (fillings, crowns)\n- Extractions and oral surgery\n- Dentures and partials\n- Emergency dental services\n- Orthodontics for children under 21 (when medically necessary)\n",
       "howToGetIt": "If you have Medi-Cal, you automatically have Denti-Cal. Find a Denti-Cal provider using the online provider search or call the Denti-Cal hotline at 1-800-322-6384.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -3925,7 +3925,7 @@
       "whatTheyOffer": "- Doctor and hospital visits\n- Prescription medications\n- Preventive care and screenings\n- Mental health services\n- Dental care (Denti-Cal)\n- Vision care\n- Substance use treatment\n- Long-term care services\n",
       "howToGetIt": "Apply online at CoveredCA.com, through your county human services office, or by phone at 1-800-300-1506. You'll need proof of income, residency, and identity. Many people can enroll year-round.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -3973,7 +3973,7 @@
       "whatTheyOffer": "- Birth control and contraception counseling\n- STI testing and treatment\n- HIV testing\n- Cancer screenings (breast, cervical)\n- Pregnancy testing and options counseling\n- Abortion services\n- Transgender hormone therapy\n- General health care and wellness exams\n",
       "howToGetIt": "Find your nearest health center online or call 1-800-230-PLAN. Walk-ins welcome at many locations, but appointments recommended. Payment based on income; many services covered by Medi-Cal and Family PACT.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -3998,7 +3998,7 @@
       "whatTheyOffer": "- Primary medical care and specialist visits\n- HIV medications and treatment\n- Mental health services\n- Substance abuse treatment\n- Case management\n- Transportation to appointments\n- Emergency financial assistance\n- Housing assistance\n",
       "howToGetIt": "Contact your local Ryan White provider or AIDS service organization. You'll need proof of HIV diagnosis, residency, and income. Use the HIV care locator to find services near you.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -4071,7 +4071,7 @@
       "howToGetIt": "Contact your local WIC office or call 1-888-942-9675. You'll need proof of income (up to 185% of poverty level), residency, and identity. Pregnant women, new mothers, infants, and children under 5 may qualify.",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -4147,7 +4147,7 @@
       "howToGetIt": "Call (650) 573-2501 for program information. Free for Medi-Cal recipients; sliding fee scale for other county residents based on income.",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -4220,7 +4220,7 @@
       "whatTheyOffer": "- Free HIV/AIDS medications (200+ drugs covered)\n- Health insurance premium assistance (OA-HIPP)\n- Medicare Part D premium assistance\n- Medi-Cal share of cost assistance\n- Covers residents with income up to 600% FPL\n- Available regardless of immigration status\n",
       "howToGetIt": "Apply through an ADAP enrollment site (clinics, AIDS service organizations, hospitals). You'll need proof of HIV diagnosis, California residency, income, and current insurance status.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -4294,7 +4294,7 @@
       "howToGetIt": "Contact your local health department or use the state website to find programs in your area. Priority given to first-time parents, low-income families, and families with risk factors.",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -4319,7 +4319,7 @@
       "whatTheyOffer": "- All recommended childhood vaccines free of charge\n- Available for children 0-18 years old\n- DTaP, Polio, MMR, Hepatitis, HPV, and more\n- Flu vaccines\n- COVID-19 vaccines\n- Catch-up vaccines for older children\n",
       "howToGetIt": "Find a VFC provider near you through the state immunization registry. Children qualify if uninsured, enrolled in Medi-Cal, underinsured, or American Indian/Alaska Native. Bring your child's immunization record.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -4344,7 +4344,7 @@
       "whatTheyOffer": "- Free PrEP medication (Truvada, Descovy, or generic)\n- Coverage for doctor visits and HIV testing\n- Lab work costs covered\n- Available to residents with income up to 500% FPL\n- PrEP-AP Immediate Access: One free month for anyone\n- No immigration status requirements\n- Helps uninsured and underinsured individuals\n",
       "howToGetIt": "Enroll through an ADAP enrollment site or healthcare provider. For immediate access to one free month, contact a PrEP-AP provider. You'll need proof of California residency and income.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -4369,7 +4369,7 @@
       "whatTheyOffer": "- Free mammograms\n- Clinical breast exams\n- Pap tests (cervical cancer screening)\n- HPV tests\n- Follow-up diagnostic testing if needed\n- Connection to treatment through BCCTP\n- Available at hundreds of providers statewide\n",
       "howToGetIt": "Call 1-800-511-2300 to find a provider and check eligibility. You must be a California resident, age 21+, with income at or below 200% of the federal poverty level, and uninsured or underinsured for these services.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -4394,7 +4394,7 @@
       "howToGetIt": "If you're pregnant and have Medi-Cal, ask your prenatal care provider if they're a CPSP provider. CPSP services are covered at no additional cost through Medi-Cal.",
       "groups": [
         "pregnant",
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -4467,7 +4467,7 @@
       "whatTheyOffer": "- Waiver of court filing fees\n- Waiver of motion fees and jury fees\n- Waiver of fees for court-appointed interpreter\n- Free copies of necessary court documents\n- Fee waiver for court reporter services in some cases\n",
       "howToGetIt": "1. Obtain Form FW-001 (Request to Waive Court Fees) from the court clerk or online\n2. Complete the form with income and household information\n3. You automatically qualify if you receive public benefits (Medi-Cal, CalFresh, SSI, etc.)\n4. Or if household income is 125% or below Federal Poverty Level\n5. Submit form to the court clerk before or with your first court filing\n6. Judge will review and approve or deny within 5 court days\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -4493,7 +4493,7 @@
       "howToGetIt": "1. Visit the JDC website or call to learn about available programs\n2. Attend a free legal clinic in your area of need\n3. Complete intake and eligibility screening\n4. If eligible, receive free legal advice or representation\n5. Nonprofits can apply for corporate legal assistance separately\n",
       "groups": [
         "nonprofits",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -4541,7 +4541,7 @@
       "whatTheyOffer": "- Reduction or elimination of parking tickets based on income\n- Help with towing and booting fee relief\n- Assistance with court fines and fees\n- Information about payment plans\n- Advocacy for systemic reform of punitive fees\n",
       "howToGetIt": "1. Visit sfgov.org/financialjustice to learn about available programs\n2. For parking ticket relief: Apply through SFMTA's Low-Income Payment Plan\n3. For towing relief: Contact the office directly\n4. Provide proof of income or public benefits enrollment\n5. Receive determination on fee reduction or elimination\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -4567,7 +4567,7 @@
       "howToGetIt": "1. Visit immigrants.sfgov.org for list of legal service providers\n2. Call 311 for referrals to immigration legal help\n3. Attend a free immigration legal clinic\n4. Complete intake and eligibility screening with provider\n5. Receive legal assistance based on your needs\n",
       "groups": [
         "immigrants",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -4593,7 +4593,7 @@
       "howToGetIt": "1. Download Form I-912 from uscis.gov\n2. Determine your basis for fee waiver (means-tested benefit, income below 150% FPL, or hardship)\n3. Gather supporting documents (benefit letters, tax returns, pay stubs)\n4. Submit I-912 with your immigration application\n5. USCIS will review and notify you of approval or denial\n6. If denied, you must pay the fee to continue your application\n",
       "groups": [
         "immigrants",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -4620,7 +4620,7 @@
       "groups": [
         "immigrants",
         "reentry",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Mateo County"
@@ -4644,7 +4644,7 @@
       "whatTheyOffer": "- Housing law (eviction defense, habitability issues)\n- Healthcare access (Medi-Cal, insurance appeals)\n- Economic security (public benefits, consumer issues)\n- Immigration assistance\n- Education rights\n- Protection from domestic violence and abuse\n",
       "howToGetIt": "1. Call the intake line or apply online\n2. Complete eligibility screening (income must be 200% FPL or below)\n3. Describe your legal issue\n4. If eligible, schedule appointment with attorney\n5. Receive legal advice, brief services, or full representation\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Mateo County"
@@ -4836,7 +4836,7 @@
       "whatTheyOffer": "- Full access to NYTimes.com\n- New York Times Cooking\n- New York Times Games (Wordle, crosswords)\n- Archives back to 1851\n- 72-hour passes, renewable unlimited times\n",
       "howToGetIt": "1. Visit your library's website or the State Library's NYT page\n2. Click the link to access the New York Times\n3. Create a free NYT account or log in\n4. Enjoy 72 hours of full access\n5. Return to library site to renew when pass expires\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5317,7 +5317,7 @@
       "whatTheyOffer": "- Low-cost spay and neuter surgeries\n- Vaccinations at reduced prices\n- Microchipping services\n- Services for cats and dogs\n- Additional discounts for low-income residents\n",
       "howToGetIt": "1. Visit the Spay the Bay website\n2. Check eligibility for low-income discounts (if applicable)\n3. Schedule an appointment online or by phone\n4. Bring your pet to the scheduled appointment\n5. Pay the reduced fee at time of service\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5343,7 +5343,7 @@
       "howToGetIt": "1. Must be a Santa Clara County resident\n2. Visit the HSSV Pet Pantry during distribution hours\n3. Bring ID showing Santa Clara County address\n4. Receive up to 30 days of food per visit\n5. Return monthly as needed\n",
       "groups": [
         "📍",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Santa Clara County"
@@ -5392,7 +5392,7 @@
       "howToGetIt": "1. Must be a Contra Costa County resident\n2. Contact Joybound to verify eligibility\n3. Provide proof of income if applying for reduced rates\n4. Schedule appointment for your pet\n5. Pay reduced fee at time of service\n",
       "groups": [
         "📍",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Contra Costa County"
@@ -5417,7 +5417,7 @@
       "howToGetIt": "1. Must be a Contra Costa County resident\n2. Contact Joybound to request assistance\n3. Provide basic information about your pets\n4. Arrange pickup or delivery of food\n",
       "groups": [
         "📍",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Contra Costa County"
@@ -5467,7 +5467,7 @@
       "howToGetIt": "1. Must be a Contra Costa County resident\n2. Contact Joybound to explain your situation\n3. Staff will assess needs and available resources\n4. Receive assistance based on availability and need\n",
       "groups": [
         "📍",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Contra Costa County"
@@ -5492,7 +5492,7 @@
       "howToGetIt": "1. Contact Joybound to schedule an appointment\n2. Provide proof of income for discounted rates (if applicable)\n3. Follow pre-surgery instructions\n4. Bring pet to scheduled appointment\n5. Pay reduced fee at time of service\n",
       "groups": [
         "📍",
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5517,7 +5517,7 @@
       "whatTheyOffer": "- Pet Meals on Wheels (food delivery for homebound seniors)\n- Financial assistance for veterinary care\n- Pet food pantry\n- Services for people living with HIV/AIDS\n- Support for hospice recipients\n",
       "howToGetIt": "1. Contact Marin Humane Society to inquire about assistance\n2. Must be a Marin County resident\n3. Explain your situation and needs\n4. Provide documentation as required (age, income, medical status)\n5. Receive assistance based on program eligibility\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors"
       ],
       "areas": [
@@ -5590,7 +5590,7 @@
       "whatTheyOffer": "- Free or low-cost spay/neuter surgeries\n- Services for cats and dogs\n- Mobile van visits different neighborhoods\n- Additional services may include vaccines\n- Income-qualified pricing available\n",
       "howToGetIt": "1. Check the PHS website for mobile van schedule and locations\n2. Call to schedule an appointment\n3. Provide proof of income for free services (if applicable)\n4. Bring pet to scheduled location on appointment day\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5663,7 +5663,7 @@
       "whatTheyOffer": "- Low-cost wellness exams\n- Spay and neuter surgeries\n- Vaccinations and preventive care\n- Microchipping\n- Basic medical treatments\n- Additional discounts for income-qualified\n",
       "howToGetIt": "1. Visit the Pets in Need website or call for appointment\n2. Schedule your pet's appointment\n3. Bring proof of income for discounted rates (if applicable)\n4. Pay reduced fees at time of service\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5689,7 +5689,7 @@
       "howToGetIt": "1. Visit petsofthehomeless.org\n2. Use the locator to find participating providers near you\n3. Contact the provider directly for services\n4. Bring your pet during operating hours\n5. Most services are first come, first served\n",
       "groups": [
         "unhoused",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -5713,7 +5713,7 @@
       "whatTheyOffer": "- Affordable wellness exams\n- Vaccinations at reduced prices\n- Parasite prevention (flea, tick, heartworm)\n- Treatment for minor conditions\n- Microchipping services\n",
       "howToGetIt": "1. Call or book online for an appointment\n2. Income verification not required but discounts available\n3. Bring your pet to the clinic at scheduled time\n4. Pay affordable fees at time of service\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -5763,7 +5763,7 @@
       "howToGetIt": "1. Must be a Bay Area resident\n2. Must demonstrate financial need\n3. Pet must be treated at a participating veterinary hospital\n4. Apply through the SFAFA website\n5. Hospital will work with SFAFA on payment\n",
       "groups": [
         "📍",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -5787,7 +5787,7 @@
       "whatTheyOffer": "- Financial assistance for non-emergency vet care\n- Help with ongoing treatment costs\n- Covers conditions like diabetes, cancer treatment, etc.\n- Does NOT cover routine care or emergencies\n- Waitlist may apply\n",
       "howToGetIt": "1. Visit thepetfund.com to apply\n2. Complete the application form\n3. Provide documentation of financial need\n4. Provide veterinary estimate for needed care\n5. Wait for approval (waitlist common)\n6. If approved, funds sent to veterinarian\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -5981,7 +5981,7 @@
       "whatTheyOffer": "- Free vehicle day-use access to many California state parks\n- Valid for one calendar year\n- Available to CalWORKs, SSI, and Tribal TANF recipients\n- Also available to seniors 62+ below income threshold\n",
       "howToGetIt": "Apply online at the California State Parks website. You'll need to show proof of enrollment in CalWORKs, SSI, or Tribal TANF, or proof of age 62+ with income documentation.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors"
       ],
       "areas": [
@@ -6030,7 +6030,7 @@
       "whatTheyOffer": "- Free or reduced admission ($3 or less per person)\n- Admission for EBT cardholder plus up to 4 guests\n- Access to 1,700+ participating museums nationwide\n- Includes science centers, children's museums, art museums, and more\n",
       "howToGetIt": "Visit any participating museum and present your EBT (SNAP/CalFresh) card along with a photo ID at the admissions desk. No reservation needed at most locations, but some may require advance booking.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families"
       ],
       "areas": [
@@ -6055,7 +6055,7 @@
       "whatTheyOffer": "- Bay Area residents: $5 off general admission with local ID\n- Military discount: 10% off for active duty, veterans, and families\n- EBT/Museums for All: Reduced admission (check current rates)\n- Children under 3: Free admission\n- Annual passes available with unlimited visits\n",
       "howToGetIt": "Purchase tickets at the door or online. Bring valid Bay Area ID for local discount, military ID for military discount, or EBT card for Museums for All pricing. Discounts cannot be combined.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "veterans",
         "families",
         "everyone"
@@ -6082,7 +6082,7 @@
       "whatTheyOffer": "- Free admission: First Sundays each month for everyone\n- Museums for All: $1 admission for EBT cardholders + guests\n- Seniors (65+): $12 admission (regularly $20)\n- Students with ID: $12 admission\n- Military/Veterans: Free admission with valid ID\n- Children under 6: Always free\n- SF residents: Free admission on select Thursdays\n",
       "howToGetIt": "Visit the museum and present your EBT card, student ID, military ID, or proof of age at the admissions desk. Check the website for free day schedules and any advance reservation requirements.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "seniors",
         "veterans",
@@ -6113,7 +6113,7 @@
       "groups": [
         "caregivers",
         "disability",
-        "low-income",
+        "income-eligible",
         "families",
         "youth",
         "everyone"
@@ -6140,7 +6140,7 @@
       "whatTheyOffer": "- Museums for All: $3 per person with EBT card\n- SF Resident Free Days: Free admission for SF residents (check schedule)\n- Neighborhood Free Days: Free for specific SF zip codes (rotating)\n- Children under 3: Always free\n- Regular admission: $34-39 for adults\n",
       "howToGetIt": "For Museums for All, present your EBT card and photo ID at the admissions desk. For SF Resident Free Days, bring proof of residence. Reservations are required for all visits - book online in advance.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -6165,7 +6165,7 @@
       "whatTheyOffer": "- EBT cardholders: $5 admission per person\n- Free telescope viewing: Friday and Saturday evenings (weather permitting)\n- Children under 2: Free admission\n- Members: Unlimited visits plus guest discounts\n- Regular admission: $24 for adults, $18 for children\n",
       "howToGetIt": "Show your EBT card at the admissions desk for reduced admission. Telescope viewing is free and open to the public on clear Friday and Saturday nights - no reservation needed.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -6190,7 +6190,7 @@
       "whatTheyOffer": "- EBT/SNAP/Medi-Cal: Free or reduced admission\n- Pay-What-You-Wish days: Admission at your chosen price\n- Students with ID: $8 admission\n- Seniors (65+): $8 admission\n- Military: Discounted admission with valid ID\n- Children under 5: Free\n- Regular admission: $12 for adults\n",
       "howToGetIt": "Present your benefits card, student ID, or military ID at admission. Check the museum website for Pay-What-You-Wish day schedule. Advance tickets recommended but walk-ins welcome.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "seniors",
         "veterans",
@@ -6220,7 +6220,7 @@
       "whatTheyOffer": "- Museums for All: Reduced admission with EBT card (cardholder + guests)\n- Must have at least one child in the group\n- Children under 2: Free admission\n- Regular admission: $16 per person\n",
       "howToGetIt": "Present your physical EBT or SNAP benefits card along with a photo ID at the admissions desk. Groups must include at least one child to qualify. Reservations recommended.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "youth",
         "families"
       ],
@@ -6246,7 +6246,7 @@
       "whatTheyOffer": "- Museums for All: $5 per person for up to 4 people\n- Valid for EBT, BIC, or WIC cardholders\n- Children under 1: Free admission\n- Regular admission: $18 per person\n",
       "howToGetIt": "Present your EBT, BIC (Benefits Identification Card), or WIC card at the admissions desk. Discount applies to cardholder plus up to 3 additional guests. Advance reservations recommended.",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Santa Clara County"
@@ -6270,7 +6270,7 @@
       "whatTheyOffer": "- EBT/WIC cardholders: $5 admission per person\n- Children under 1: Free admission\n- Regular admission: $15 per person\n- Annual passes available for frequent visitors\n",
       "howToGetIt": "Present your EBT or WIC card at the admission booth. Discount applies to all members of your party. No advance reservation required but recommended on weekends and holidays.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -6297,7 +6297,7 @@
       "howToGetIt": "California PreK-12 public school teachers can apply for free admission online and bring teacher ID. For low-income discounts, visit the ticket window with your EBT, SNAP, Medi-Cal, WIC card, or Lifeline Pass. These discounts are not available for online purchases.",
       "groups": [
         "teachers",
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -6321,7 +6321,7 @@
       "whatTheyOffer": "- Free Saturdays: Free for all Bay Area residents (proof required)\n- Free First Tuesdays: Free admission for everyone\n- Museums for All: $3 with EBT or Medi-Cal card\n- Youth under 18: Always free\n- College students with ID: Discounted admission\n- Military/Veterans: Free with valid ID\n- Seniors (65+): $12 admission\n",
       "howToGetIt": "Bring Bay Area ID for Free Saturdays, EBT/Medi-Cal card for reduced admission, or other qualifying documentation. Check website for specific dates and any reservation requirements.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "seniors",
         "veterans",
@@ -6351,7 +6351,7 @@
       "whatTheyOffer": "- SF Residents: Free admission to Botanical Garden with ID\n- Veterans/Active Military: Free admission with ID\n- Museums for All: Reduced admission with EBT card\n- Free hours: Early morning entry at select gardens\n- Children under 5: Free at all gardens\n- Regular admission varies by garden ($10-15 adults)\n",
       "howToGetIt": "Show SF proof of residency, military ID, or EBT card at the entrance. Visit early mornings for free admission hours at certain gardens. Check individual garden websites for current free hours and policies.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "veterans",
         "everyone"
       ],
@@ -6377,7 +6377,7 @@
       "whatTheyOffer": "- EBT cardholders: $1 admission per person\n- Cal Day: Free admission (one day per year in April)\n- Children under 3: Free admission\n- UC Berkeley students/staff: Free with ID\n- Regular admission: $16 adults, $13 children\n",
       "howToGetIt": "Present your EBT card at the admissions desk. No limit on number of people in your party. Advance reservations recommended on weekends and during school breaks.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth",
         "everyone"
@@ -6404,7 +6404,7 @@
       "whatTheyOffer": "- Museums for All: $3 admission with EBT card\n- Active Military: Free admission with valid ID\n- Students with ID: $8 admission\n- Seniors (65+): $8 admission\n- Children under 5: Free admission\n- Community/Free days: Check website for schedule\n- Regular admission: $12 adults\n",
       "howToGetIt": "Present your EBT card, military ID, student ID, or proof of age at the admissions desk. Check website for community free day schedules.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "veterans",
         "families",
@@ -6432,7 +6432,7 @@
       "whatTheyOffer": "- Free First Thursdays: Free admission for everyone\n- EBT/Benefits cardholders: Free admission\n- First responders: Free admission with ID\n- Military: Free admission with ID\n- Students with ID: $6 admission\n- Seniors (65+): $6 admission\n- Children under 6: Free admission\n- Regular admission: $12 adults\n",
       "howToGetIt": "Visit on First Thursday for free entry, or show your EBT card, military/first responder ID, student ID, or proof of age at admission. Walk-ins welcome.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "seniors",
         "veterans",
@@ -6462,7 +6462,7 @@
       "whatTheyOffer": "- EBT cardholders: $1 admission per person\n- Free First Sundays: Free admission for everyone\n- Children under 9: Free admission\n- Friday Nights @ OMCA: Half-price admission with food trucks and live music\n- Regular admission: $16 adults\n",
       "howToGetIt": "Present your EBT card at the admissions desk for $1 admission any day. Visit on the first Sunday of each month for free entry. No reservations required for most visits.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -6487,7 +6487,7 @@
       "whatTheyOffer": "- Bay to Zoo program: $5 admission for low-income families\n- Must show qualifying documentation\n- Children under 2: Free admission\n- Regular admission: $28 adults, $22 children\n",
       "howToGetIt": "Purchase Bay to Zoo tickets online or at the gate. You'll need to show documentation of participation in CalFresh, WIC, Medi-Cal, or similar assistance programs. Valid for cardholder and immediate family members.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "families",
         "youth"
       ],
@@ -6513,7 +6513,7 @@
       "whatTheyOffer": "- Youth under 19: Always free\n- Museums for All: $5 for SF residents with EBT/Medi-Cal\n- Free days: Several free admission days throughout the year\n- Military/Veterans: $5 admission with ID\n- Discover & Go: Free passes through local libraries\n- Regular admission: $30 adults\n",
       "howToGetIt": "Youth enter free without reservation. For Museums for All, bring EBT or Medi-Cal card plus SF proof of residence. Check library for Discover & Go passes. Reserve tickets online for free days.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "veterans",
         "youth",
@@ -6542,7 +6542,7 @@
       "whatTheyOffer": "- EBT cardholders: Free admission\n- Children under 6: Free admission\n- First Fridays: Free admission for everyone (5-10pm)\n- Students with ID: $5 admission\n- Seniors (65+): $8 admission\n- Regular admission: $12 adults\n",
       "howToGetIt": "Present your EBT card at the admissions desk for free entry any day. No reservation required. Visit on First Friday evenings for free community nights with art activities and entertainment.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -6567,7 +6567,7 @@
       "whatTheyOffer": "- EBT cardholders: $5 admission per person\n- Children under 3: Free admission\n- Regular admission: $32 adults, $27 children\n- IMAX films: Additional fee\n",
       "howToGetIt": "Present your EBT card at the admissions desk. Discount applies to everyone in your party. Advance tickets recommended on weekends and during school breaks.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -6592,7 +6592,7 @@
       "whatTheyOffer": "- US Military/Dependents: Free general admission with ID\n- Museums for All: Reduced admission for SF EBT/CalFresh/Medi-Cal holders\n- Discount covers cardholder plus guests\n- Students with ID: $25 admission\n- Seniors (65+): $25 admission\n- Children 6-17: $20 admission\n- Children under 6: Free with adult\n- Regular admission: $30 adults\n",
       "howToGetIt": "For military free admission, show valid military or dependent ID. For Museums for All, present your SF benefits card and proof of SF residency at the admissions desk.",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "veterans",
         "families",
@@ -6620,7 +6620,7 @@
       "whatTheyOffer": "- 40% off Gold Pass membership ($5.99/month instead of regular price)\n- Available for EBT/SNAP recipients, military/veterans, and college students\n- Exclusive member deals on food, drinks, and snacks\n- 30-day free trial for new customers\n",
       "howToGetIt": "1. Download the 7-Eleven app on your smartphone\n2. Create an account or sign in\n3. Go to 'Community Discounts' in the app settings\n4. Verify your eligibility (EBT card, military ID, or .edu email)\n5. Start your discounted membership\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "college-students",
         "veterans"
       ],
@@ -6646,7 +6646,7 @@
       "whatTheyOffer": "- Discounted Prime membership at $6.99/month (regularly $14.99/month)\n- Free two-day shipping on millions of items\n- Prime Video streaming (movies, TV shows)\n- Prime Music, Prime Reading, and more\n- 30-day free trial for new customers\n",
       "howToGetIt": "1. Visit amazon.com/primeaccess\n2. Verify eligibility through EBT card or government assistance documentation\n3. Or verify income through a third-party service\n4. Complete enrollment and start your membership\n5. Re-verify eligibility every 12 months\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -6670,7 +6670,7 @@
       "whatTheyOffer": "- Affordable high-speed internet service\n- Free installation (no installation fees)\n- No annual contract required\n- In-home WiFi included\n- Access to AT&T WiFi hotspots\n",
       "howToGetIt": "1. Check if AT&T service is available at your address\n2. Verify eligibility through SNAP, SSI, or other qualifying programs\n3. Apply online at att.com/access or call customer service\n4. Schedule installation appointment\n5. No credit check required\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -6694,7 +6694,7 @@
       "whatTheyOffer": "- Discounted or free home phone service\n- Discounted or free cell phone service with data\n- Choice of multiple participating phone companies\n- Basic features included (caller ID, voicemail, etc.)\n",
       "howToGetIt": "1. Check eligibility (must participate in Medi-Cal, CalFresh, SSI, or meet income guidelines)\n2. Visit californialifeline.com or call the hotline\n3. Choose a participating phone company\n4. Submit application with proof of eligibility\n5. Receive service within a few weeks of approval\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -6766,7 +6766,7 @@
       "whatTheyOffer": "- 50% off Instacart+ membership for one year\n- Skip delivery and pickup fees at participating stores\n- New customers get $0 delivery on first 3 orders\n- Use EBT/SNAP benefits for eligible food items\n",
       "howToGetIt": "1. Download the Instacart app or visit instacart.com\n2. Create an account\n3. Add your EBT card to your payment methods\n4. Apply for the discounted Instacart+ membership\n5. Start shopping with reduced fees\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -6790,7 +6790,7 @@
       "whatTheyOffer": "- Affordable high-speed internet (up to 50 Mbps)\n- WiFi modem included at no extra cost\n- No credit check or term contract\n- Option to purchase low-cost computer\n- Free internet training resources\n",
       "howToGetIt": "1. Check if Xfinity service is available in your area\n2. Verify eligibility through SNAP, Medicaid, SSI, public housing, or other programs\n3. Apply online at internetessentials.com or by phone\n4. Receive equipment and self-install or schedule technician\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -6910,7 +6910,7 @@
       "whatTheyOffer": "- 50% off Walmart+ membership ($6.47/month or $49/year)\n- Free delivery from your local store (no minimum order)\n- Member prices on fuel at Walmart and Murphy stations\n- Scan & Go for faster in-store checkout\n- Free 30-day trial for new customers\n",
       "howToGetIt": "1. Visit walmart.com/plus/assist\n2. Verify eligibility through SNAP, Medicaid, SSI, TANF, or WIC\n3. Complete verification through third-party service\n4. Start your discounted membership\n5. Re-verify eligibility annually\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Nationwide"
@@ -6958,7 +6958,7 @@
       "whatTheyOffer": "- Affordable high-speed internet service (30 Mbps)\n- No data caps or contracts\n- Free modem included\n- Free internet security suite\n- In-home WiFi available for additional fee\n",
       "howToGetIt": "1. Check if Spectrum service is available in your area\n2. Must have student in National School Lunch Program (NSLP) or Community Eligibility Provision (CEP)\n3. Or be 65+ and receiving Supplemental Security Income (SSI)\n4. Apply online or call Spectrum\n5. Cannot have prior Spectrum debt within last 12 months\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "seniors"
       ],
       "areas": [
@@ -7080,7 +7080,7 @@
       "whatTheyOffer": "- Discounted annual membership: $5/year for first year (regularly $149)\n- Unlimited 60-minute rides on classic bikes\n- Reduced per-minute rates for e-bikes\n- No credit card required—can pay with cash or prepaid card\n",
       "howToGetIt": "1. Visit the Bike Share for All website or call customer service\n2. Provide proof of eligibility (Clipper START, Calfresh/EBT, or income verification)\n3. Complete enrollment online or at a Lyft community hub\n4. Receive your membership and start riding\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -7176,7 +7176,7 @@
       "whatTheyOffer": "- 50% off single-ride fares on most participating transit agencies\n- 20% off on BART\n- Valid on AC Transit, BART, Caltrain, Golden Gate Transit/Ferry, Muni, SamTrans, and more\n- Discounts automatically applied when using Clipper card\n",
       "howToGetIt": "1. Check income eligibility (200% or below Federal Poverty Level)\n2. Apply online at clipperstartcard.com\n3. Provide proof of income or participation in qualifying benefit programs\n4. Receive Clipper START card by mail within 2-3 weeks\n5. Load cash value and ride with automatic discounts\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -7200,7 +7200,7 @@
       "whatTheyOffer": "- Reduced-fee state ID card (regularly $35, reduced to $8)\n- Valid government-issued photo identification\n- Can be used for identification purposes, voting, and more\n- Available to qualifying low-income residents\n",
       "howToGetIt": "1. Contact your county's Public Assistance Agency or social services office\n2. Request Form DL 937 (Fee Waiver Certification)\n3. Agency will verify your eligibility and complete the form\n4. Take the certified DL 937 form to any DMV office\n5. Complete ID card application and pay reduced fee\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7320,7 +7320,7 @@
       "whatTheyOffer": "- Discounted or free Lime scooter and bike rides\n- Up to 30 minutes free per ride (varies by market)\n- 50% off all rides after free minutes\n- Available in Bay Area cities where Lime operates\n",
       "howToGetIt": "1. Download the Lime app on your smartphone\n2. Create an account\n3. Apply for Lime Access in the app settings\n4. Provide proof of income eligibility (SNAP, Medicaid, LIHEAP, or similar)\n5. Approval usually within a few days\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -7344,7 +7344,7 @@
       "whatTheyOffer": "- State-sponsored low-cost liability insurance\n- Meets California's minimum insurance requirements\n- Annual premiums typically $400-$800 depending on county\n- Covers bodily injury and property damage liability\n",
       "howToGetIt": "1. Check income eligibility (250% of Federal Poverty Level or less)\n2. Must have valid California driver's license\n3. Must own a vehicle valued at $25,000 or less\n4. Good driving record required (limited violations allowed)\n5. Apply online or by phone\n6. Choose from participating insurance companies\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7395,7 +7395,7 @@
         "youth",
         "veterans",
         "disability",
-        "low-income",
+        "income-eligible",
         "⚽"
       ],
       "areas": [
@@ -7591,7 +7591,7 @@
       "whatTheyOffer": "- 100% renewable electricity at competitive rates\n- Automatic enrollment for SF residents and businesses\n- Bill relief programs for low-income customers\n- SuperGreen option for 100% CA solar/wind\n- Combined savings with PG&E CARE/FERA programs\n",
       "howToGetIt": "1. CleanPowerSF enrollment is automatic for SF residents\n2. For bill relief, enroll in PG&E's CARE or FERA program\n3. CARE/FERA discounts apply to both PG&E delivery and CleanPowerSF generation\n4. Contact CleanPowerSF for additional assistance options\n5. Low-income customers can request rate comparisons\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -7615,7 +7615,7 @@
       "whatTheyOffer": "- 35% discount on water and wastewater bills (Tier 1)\n- 50% discount for households at 100% federal poverty level (Tier 2)\n- Crisis assistance for customers facing shutoff\n- Flexible payment arrangements\n- Free leak detection assistance\n",
       "howToGetIt": "1. Check income eligibility (based on federal poverty guidelines)\n2. Download application from EBMUD website or call to request\n3. Provide proof of income (tax return, benefit letter, pay stubs)\n4. Submit application by mail, email, or in person\n5. Renew every two years to maintain discount\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Alameda County"
@@ -7639,7 +7639,7 @@
       "whatTheyOffer": "- Up to $3,000 per year for energy bill assistance\n- Help preventing utility disconnection\n- Energy efficiency improvements (weatherization)\n- Energy-related home repairs\n- Crisis assistance for emergencies\n- Assistance with heating and cooling costs\n",
       "howToGetIt": "1. Find your local LIHEAP provider through CSD website\n2. Check income eligibility (typically 60% of state median income)\n3. Gather documents: ID, utility bills, income verification\n4. Submit application through local Community Action Agency\n5. If approved, payment goes directly to utility company\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7687,7 +7687,7 @@
       "whatTheyOffer": "- Up to $1,000 rebate for new electric bicycle\n- Available to CARE or FERA program participants\n- Can combine with state CARB e-bike rebate\n- Works with most e-bike retailers\n- Covers standard and cargo e-bikes\n",
       "howToGetIt": "1. Must be a Peninsula Clean Energy customer\n2. Must be enrolled in PG&E's CARE or FERA program\n3. Purchase a new qualifying electric bicycle\n4. Submit rebate application with proof of purchase\n5. Receive rebate check within 6-8 weeks\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Mateo County"
@@ -7711,7 +7711,7 @@
       "whatTheyOffer": "- $1,500 base rebate for heat pump installation\n- Additional $1,000 for CARE/FERA customers ($2,500 total)\n- Replaces gas furnace with electric heat pump\n- Provides both heating and air conditioning\n- Can combine with BayREN and federal incentives\n- Access to vetted contractor network\n",
       "howToGetIt": "1. Verify you're a Peninsula Clean Energy customer\n2. Get quotes from licensed HVAC contractors\n3. Choose a qualifying heat pump system\n4. Complete installation with required permits\n5. Submit rebate application with documentation\n6. Receive rebate check after approval\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -7736,7 +7736,7 @@
       "whatTheyOffer": "- Free in-home energy assessment\n- No-cost installation of electric appliances\n- Heat pump water heaters and HVAC systems\n- Induction cooktops and electric dryers\n- Electrical panel upgrades if needed\n- All permits and inspections handled\n- Pre-vetted, quality contractors\n- Fixed, transparent pricing\n",
       "howToGetIt": "1. Complete online eligibility survey\n2. Must own single-family home in San Mateo County\n3. Meet income guidelines (typically 80% AMI or below)\n4. Schedule free in-home assessment\n5. Review and approve recommended upgrades\n6. PCE coordinates installation and rebates\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Mateo County"
@@ -7760,7 +7760,7 @@
       "whatTheyOffer": "- $2,000 rebate for used EV purchase\n- Covers plug-in hybrid and fully-electric vehicles\n- Must purchase from licensed dealer\n- Can combine with federal tax credits\n- Can combine with other state/local rebates\n- Stackable with Clean Cars for All program\n",
       "howToGetIt": "1. Verify you're a Peninsula Clean Energy customer\n2. Confirm income eligibility (CARE/FERA enrollment)\n3. Purchase qualifying used EV from licensed dealer\n4. Apply within 180 days of purchase\n5. Submit proof of purchase and vehicle registration\n6. Receive rebate check after approval\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Mateo County"
@@ -7784,7 +7784,7 @@
       "whatTheyOffer": "- $2,500 rebate for replacing gas water heater\n- $500 rebate for replacing electric resistance water heater\n- Additional $1,000 for CARE/FERA customers\n- Additional $1,000 for electrical panel upgrade\n- Up to $4,000 total rebate possible\n- Can combine with zero-interest loan program\n- Access to pre-vetted contractors\n",
       "howToGetIt": "1. Verify you're a Peninsula Clean Energy customer\n2. Get quotes from licensed plumbers/contractors\n3. Choose a qualifying heat pump water heater\n4. Complete installation with required permits\n5. Submit rebate application with documentation\n6. Optional: Apply for zero-interest loan for remaining costs\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -7833,7 +7833,7 @@
       "whatTheyOffer": "- Up to $8,000 in debt forgiveness\n- 1/12 of debt forgiven each month\n- Must make on-time payments for 12 months\n- Prevents disconnection while enrolled\n- Can re-enroll if you fall behind\n- Works alongside CARE discount\n",
       "howToGetIt": "1. Must be enrolled in PG&E CARE program\n2. Must owe at least $500 on your account\n3. Account must be more than 90 days past due\n4. Contact PG&E or apply online to enroll\n5. Make on-time monthly payments for 12 months\n6. 1/12 of your debt is forgiven each month you pay on time\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7881,7 +7881,7 @@
       "whatTheyOffer": "- CARE: 35% discount on electricity, 20% on natural gas\n- FERA: 18% discount on electricity for larger households\n- Gateway to many other programs and rebates\n- Protection from service disconnection during extreme weather\n- Eligibility for Medical Baseline if medically necessary\n- Automatic re-enrollment every 2 years\n",
       "howToGetIt": "1. Check income eligibility (based on household size and income)\n2. CARE: Income at or below 200% federal poverty level\n3. FERA: 3+ person household, slightly higher income limits\n4. Apply online at pge.com/care\n5. Or call PG&E or submit mail-in application\n6. Provide income verification if requested\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7905,7 +7905,7 @@
       "whatTheyOffer": "- Free energy assessment of your home\n- LED lighting upgrades\n- New energy-efficient refrigerator\n- Weatherization (insulation, caulking, weather stripping)\n- HVAC repairs or replacement\n- Heat pump water heater installation\n- Smart power strips\n- All services and equipment at no cost\n",
       "howToGetIt": "1. Check income eligibility (typically 200% federal poverty level)\n2. Contact PG&E to request free assessment\n3. Technician visits home to evaluate needs\n4. Receive free installation of qualifying upgrades\n5. Renters and homeowners both eligible\n6. May qualify through CARE enrollment\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -7953,7 +7953,7 @@
       "whatTheyOffer": "- 85% discount on battery storage systems\n- $850 per kWh incentive\n- Covers Tesla Powerwall, Enphase, and other brands\n- Backup power during outages\n- Can pair with solar for maximum savings\n- Priority for Medical Baseline customers\n",
       "howToGetIt": "1. Must meet income eligibility (CARE/FERA or similar)\n2. Work with SGIP-registered contractor\n3. Contractor submits application on your behalf\n4. Get approved before installation\n5. Install qualifying battery storage system\n6. Incentive applied to project cost\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8001,7 +8001,7 @@
       "whatTheyOffer": "- PG&E matches your payments dollar-for-dollar\n- Up to $1,000 in matching funds\n- Pay $500, PG&E pays $500 for you\n- Helps clear past-due balances faster\n- One-time program (once per account)\n- Available while funds last\n",
       "howToGetIt": "1. Must be a PG&E residential customer\n2. Must have at least $100 past due balance\n3. Meet income eligibility requirements\n4. Contact PG&E to check availability and enroll\n5. Make payments toward your balance\n6. PG&E matches each payment up to $1,000 total\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8073,7 +8073,7 @@
       "whatTheyOffer": "- Up to $300 energy bill credit\n- Helps prevent service disconnection\n- For customers who received shutoff notice\n- Available once every 12 months\n- Payment goes directly to PG&E bill\n- Can combine with other assistance programs\n",
       "howToGetIt": "1. Must be income-eligible (up to 200% federal poverty level)\n2. Must have received 15-day or 48-hour disconnection notice\n3. Apply online or call REACH hotline\n4. Provide proof of income if requested\n5. Credit applied directly to your PG&E account\n6. Can reapply after 12 months if needed\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8097,7 +8097,7 @@
       "whatTheyOffer": "- Up to 100% rebate on EV charger cost\n- Covers installation by licensed electrician\n- PG&E-approved charging equipment\n- Available for CARE/FERA customers\n- Level 2 charging capability\n- Faster home charging than standard outlet\n",
       "howToGetIt": "1. Must be enrolled in CARE or FERA program\n2. Must own or lease an electric vehicle\n3. Choose PG&E-approved charging equipment\n4. Hire licensed California electrician\n5. Complete installation and inspection\n6. Apply for rebate with documentation\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8121,7 +8121,7 @@
       "whatTheyOffer": "- $4,000 rebate for used EV purchase\n- Covers Battery Electric Vehicles (BEV)\n- Covers Plug-in Hybrid Electric Vehicles (PHEV)\n- Purchase from dealer or private party\n- Can combine with federal tax credits\n- Can combine with other state/local rebates\n",
       "howToGetIt": "1. Must be a PG&E customer\n2. Meet income eligibility (CARE/FERA or income-qualified)\n3. Purchase or lease qualifying used EV\n4. Apply within 180 days of purchase\n5. Submit proof of purchase and registration\n6. Receive rebate after approval\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8193,7 +8193,7 @@
       "whatTheyOffer": "- $10,000-$12,000 rebate for EV purchase or lease\n- New or used battery electric vehicles qualify\n- Additional $2,000 for home EV charger\n- Trade in pre-2008 gas or diesel vehicle\n- Covers purchase or lease up to 4 years\n- Can combine with federal tax credits\n",
       "howToGetIt": "1. Must live in Bay Area (9-county region)\n2. Household income at or below 400% federal poverty level\n3. Own a registered pre-2008 gas/diesel vehicle\n4. Vehicle must be running and pass smog\n5. Apply and get pre-approved BEFORE purchase\n6. Trade in old vehicle and buy/lease qualifying EV\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -8217,7 +8217,7 @@
       "whatTheyOffer": "- $10,000 rebate for fuel cell vehicle\n- New or used fuel cell vehicles qualify\n- Trade in pre-2007 gas or diesel vehicle\n- Covers purchase or lease\n- Zero emissions, hydrogen-powered\n- Can combine with other incentives\n",
       "howToGetIt": "1. Must live in Bay Area (9-county region)\n2. Household income at or below 400% federal poverty level\n3. Own a registered pre-2007 gas/diesel vehicle\n4. Vehicle must be running and pass smog\n5. Apply and get pre-approved BEFORE purchase\n6. Trade in old vehicle and buy/lease fuel cell vehicle\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -8241,7 +8241,7 @@
       "whatTheyOffer": "- $7,500 total value mobility package\n- Electric bicycle included\n- Bay Area transit credit/passes\n- Trade in pre-2008 gas or diesel vehicle\n- Supports car-free lifestyle\n- Covers multiple transit agencies\n",
       "howToGetIt": "1. Must live in Bay Area (9-county region)\n2. Household income at or below 400% federal poverty level\n3. Own a registered pre-2008 gas/diesel vehicle\n4. Vehicle must be running and pass smog\n5. Apply and get pre-approved\n6. Trade in old vehicle and receive e-bike + transit credits\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -8289,7 +8289,7 @@
       "whatTheyOffer": "- Up to $6,500 base incentive for heat pump replacement\n- Additional $4,000 for Food Stamps/WIC/SSI recipients\n- Up to $10,500 total for income-qualified households\n- Up to $1,000 for removal only (no replacement)\n- Priority for disadvantaged communities\n- Covers installation costs\n",
       "howToGetIt": "1. Sign up for program notifications on BAAQMD website\n2. Must have wood-burning stove or fireplace\n3. Apply when program reopens (January 13, 2026)\n4. Submit income documentation if claiming additional rebate\n5. Get approved and schedule installation\n6. Receive incentive after project completion\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -8314,7 +8314,7 @@
       "whatTheyOffer": "- Up to $2,000 instant discount on new e-bike\n- Point-of-sale reduction (no waiting for rebate)\n- Covers standard and cargo e-bikes\n- Additional for adaptive e-bikes\n- Available at participating retailers\n- Vouchers released in rounds\n",
       "howToGetIt": "1. Sign up for email notifications on CARB website\n2. When vouchers available, apply online quickly\n3. Meet income eligibility (typically 300% federal poverty level)\n4. Receive voucher code if selected\n5. Use voucher at participating e-bike retailer\n6. Discount applied at checkout\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8338,7 +8338,7 @@
       "whatTheyOffer": "- $1,500 for vehicles that failed previous smog check\n- $2,000 for vehicles that failed most recent inspection\n- Vehicle must be retired (scrapped)\n- No repair required before retiring\n- Payment issued after vehicle retirement\n- Helps reduce air pollution\n",
       "howToGetIt": "1. Vehicle must have failed a smog check\n2. Check income eligibility on BAR website\n3. Must have owned and registered vehicle for 2+ years\n4. Submit application through Bureau of Automotive Repair\n5. Get vehicle dismantled at authorized facility\n6. Receive payment after retirement confirmation\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8362,7 +8362,7 @@
       "whatTheyOffer": "- Up to $10,000 toward clean vehicle purchase\n- Additional $2,000 charging/fueling card\n- Alternative: $7,500 mobility option (e-bike + transit)\n- Down payment assistance\n- Financial counseling services\n- Lender referrals for financing\n",
       "howToGetIt": "1. Check income eligibility on DCAP website\n2. MUST apply BEFORE trading in your car\n3. Vehicle must meet age and emissions requirements\n4. Complete application with income documentation\n5. Get pre-approved before vehicle purchase\n6. Trade in old vehicle and purchase/lease clean vehicle\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8410,7 +8410,7 @@
       "whatTheyOffer": "- Free home energy audit\n- Insulation (attic, wall, floor)\n- Air sealing and weatherstripping\n- Heating system repairs or replacement\n- Water heater repairs or replacement\n- Minor home repairs for energy efficiency\n- All services at no cost\n",
       "howToGetIt": "1. Find your local weatherization provider\n2. Check income eligibility (typically 200% federal poverty level)\n3. Submit application with income documentation\n4. Technician conducts home energy audit\n5. Eligible improvements installed at no cost\n6. Both homeowners and renters can apply\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Statewide"
@@ -8434,7 +8434,7 @@
       "whatTheyOffer": "- 80% of upgrade costs covered by BayREN\n- Your share capped at $1,000 maximum\n- Insulation upgrades\n- Duct sealing and HVAC improvements\n- Help applying for additional rebates\n- Fixed pricing with pre-vetted contractors\n- No surprise costs\n",
       "howToGetIt": "1. Check income eligibility (varies by household size)\n2. Apply through BayREN website\n3. Schedule free home energy assessment\n4. Review recommended improvements and costs\n5. BayREN handles rebate applications\n6. Pay your capped share (max $1,000)\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "Bay Area-wide"
@@ -8674,7 +8674,7 @@
       "whatTheyOffer": "- 25% discount on garbage collection bills\n- Applies to all Recology refuse services\n- Includes recycling and composting\n- Automatic discount once enrolled\n- Available to income-qualified residents\n- Renew periodically to maintain discount\n",
       "howToGetIt": "1. Must be a San Francisco resident\n2. Check income eligibility requirements\n3. Submit application through SF.gov\n4. Provide income documentation\n5. Once approved, discount applied to future bills\n6. Re-certify as required\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -8698,7 +8698,7 @@
       "whatTheyOffer": "- $500 rebate for heat pump water heater\n- $500 rebate for high-efficiency heat pump HVAC\n- Up to $500 for electrical panel upgrade\n- Additional $500 for CARE customers on each rebate\n- Can combine with other incentives\n- For Redwood City residents only\n",
       "howToGetIt": "1. Must be a Redwood City resident\n2. Install qualifying equipment\n3. Apply through City of Redwood City website\n4. Submit proof of purchase and installation\n5. CARE customers submit CARE enrollment proof\n6. Receive rebate check\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "everyone"
       ],
       "areas": [
@@ -8819,7 +8819,7 @@
       "whatTheyOffer": "- 40% discount on water and sewer bills\n- Protection from service shutoffs\n- No late fees for CAP participants\n- Applies to all SFPUC water/sewer charges\n- Automatic enrollment renewal\n- Crisis assistance available\n",
       "howToGetIt": "1. Must be a San Francisco resident\n2. Check income eligibility requirements\n3. Enroll through SFPUC website or call\n4. Provide proof of income\n5. Once approved, discount applied to bills\n6. Re-certify periodically\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "San Francisco"
@@ -8915,7 +8915,7 @@
       "whatTheyOffer": "- $1,500 rebate for fully electric vehicles\n- $1,000 rebate for plug-in hybrids\n- Additional $1,000 bonus for LIHEAP-eligible\n- Additional $1,000 for vehicles with MPGe 117+\n- Up to $3,500 total possible\n- Pre-owned vehicles qualify\n",
       "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. Meet income eligibility requirements\n3. Purchase qualifying pre-owned EV\n4. Apply online after purchase\n5. Submit proof of purchase and income\n6. LIHEAP customers submit additional documentation\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of Santa Clara"
@@ -9251,7 +9251,7 @@
       "whatTheyOffer": "- Free solar PV system grant\n- $3.50 per watt incentive\n- Up to 3 kW system covered\n- Significant reduction in electricity bills\n- Access to clean renewable energy\n- First come, first served basis\n",
       "howToGetIt": "1. Must be a Silicon Valley Power customer\n2. Must be on FRAP assistance program for 1+ year\n3. Must be a homeowner in Santa Clara\n4. Apply through SVP rebate program\n5. Wait for approval (funds limited)\n6. Work with approved solar installer\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of Santa Clara"
@@ -9323,7 +9323,7 @@
       "whatTheyOffer": "- 10% discount on SJCE electricity charges\n- Automatic enrollment for CARE/FERA customers\n- Stacks with existing PG&E discounts\n- No separate application needed\n- Applies to monthly electricity bill\n- Ongoing savings while enrolled\n",
       "howToGetIt": "1. Must be a San Jose Clean Energy customer\n2. Enroll in CARE or FERA through PG&E\n3. Once enrolled, SJ Cares discount is automatic\n4. No additional application required\n5. Discount appears on monthly bill\n6. Maintain CARE/FERA eligibility to keep discount\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of San Jose"
@@ -9347,7 +9347,7 @@
       "whatTheyOffer": "- 20% off electricity bill\n- Stacks with CARE/FERA discounts\n- Up to 55% total savings possible\n- Available in Environmental Justice Communities\n- No solar installation required\n- Access to community solar benefits\n",
       "howToGetIt": "1. Must be a San Jose Clean Energy customer\n2. Must live in qualifying Environmental Justice Community\n3. Must meet income eligibility requirements\n4. Verify qualification on Solar Access webpage\n5. Complete enrollment process\n6. Discount applied to monthly bill\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of San Jose"
@@ -9515,7 +9515,7 @@
       "whatTheyOffer": "- $4,000 instant rebate on new EV\n- Applied at point of sale\n- Maximum vehicle price $60,000\n- For battery electric vehicles only\n- Available at participating dealerships\n- Immediate savings, no waiting for rebate\n",
       "howToGetIt": "1. Must be a San Jose Clean Energy customer\n2. Must be within 100% Area Median Income\n3. Or be enrolled in CARE or FERA program\n4. Apply online for income verification\n5. Or present CARE/FERA documentation at dealership\n6. Purchase new EV at participating dealership\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of San Jose"
@@ -9539,7 +9539,7 @@
       "whatTheyOffer": "- $2,000 instant rebate on used EV\n- Applied at point of sale\n- Maximum vehicle price $60,000\n- For battery electric vehicles only\n- Available at participating dealerships\n- More affordable entry to EV ownership\n",
       "howToGetIt": "1. Must be a San Jose Clean Energy customer\n2. Must be within 100% Area Median Income\n3. Or be enrolled in CARE or FERA program\n4. Apply online for income verification\n5. Or present CARE/FERA documentation at dealership\n6. Purchase used EV at participating dealership\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of San Jose"
@@ -9659,7 +9659,7 @@
       "whatTheyOffer": "- Up to 25% off gas charges\n- Up to 25% off electricity charges\n- For financial hardship situations\n- For medical conditions requiring higher utility use\n- Applied to monthly utility bills\n- Ongoing assistance while eligible\n",
       "howToGetIt": "1. Must be a City of Palo Alto Utilities customer\n2. Must demonstrate financial hardship\n3. Or have medical condition requiring higher utility use\n4. Complete application form\n5. Submit supporting documentation\n6. Discount applied once approved\n",
       "groups": [
-        "low-income",
+        "income-eligible",
         "disability"
       ],
       "areas": [
@@ -9684,7 +9684,7 @@
       "whatTheyOffer": "- Free weather stripping installation\n- Free attic insulation\n- Free heating system upgrades\n- Free water heater replacement\n- Free efficient showerheads\n- Free energy-efficient lighting\n",
       "howToGetIt": "1. Must be a City of Palo Alto Utilities customer\n2. Must be eligible for RAP program\n3. Or live in deed-restricted affordable housing\n4. Or participate in other income-qualified programs\n5. Complete application and home assessment\n6. Receive free efficiency installations\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of Palo Alto"
@@ -9708,7 +9708,7 @@
       "whatTheyOffer": "- One-time utility bill assistance\n- Up to $750 in assistance\n- Covers past-due amounts\n- Credit cannot exceed outstanding balance\n- Helps prevent service disconnection\n- Funded through community donations\n",
       "howToGetIt": "1. Must be a City of Palo Alto Utilities customer\n2. Must be the customer-of-record on account\n3. Must have past-due utility balance\n4. Demonstrate financial hardship\n5. Complete application process\n6. Credit applied to account if approved\n",
       "groups": [
-        "low-income"
+        "income-eligible"
       ],
       "areas": [
         "City of Palo Alto"

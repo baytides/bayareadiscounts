@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Online grocery ordering with EBT card\n- Available at Amazon, Walmart, Safeway, and more\n- Same eligible food items as in-store\n- Home delivery or store pickup options\n- Delivery fees may apply (varies by retailer)\n",
   "howToGetIt": "If you have a CalFresh EBT card, visit a participating retailer's website. Create an account, add your EBT card, and shop for eligible groceries. Check the CDSS website for the full list of participating stores.",
   "groups": [
-    "low-income"
+    "income-eligible"
   ],
   "areas": [
     "Statewide"

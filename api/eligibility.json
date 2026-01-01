@@ -1,7 +1,7 @@
 {
   "eligibility": [
     {
-      "id": "low-income",
+      "id": "income-eligible",
       "name": "SNAP/EBT/Medi-Cal",
       "description": "For public benefit recipients",
       "icon": "💳",

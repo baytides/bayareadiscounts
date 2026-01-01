@@ -10,7 +10,7 @@
 
   // Available groups for selection
   const GROUPS = [
-    { id: 'low-income', name: 'Low Income' },
+    { id: 'income-eligible', name: 'Income-Eligible' },
     { id: 'seniors', name: 'Seniors (60+)' },
     { id: 'youth', name: 'Youth/Minors' },
     { id: 'college-students', name: 'Students' },

@@ -7,7 +7,7 @@
   "whatTheyOffer": "- All recommended childhood vaccines free of charge\n- Available for children 0-18 years old\n- DTaP, Polio, MMR, Hepatitis, HPV, and more\n- Flu vaccines\n- COVID-19 vaccines\n- Catch-up vaccines for older children\n",
   "howToGetIt": "Find a VFC provider near you through the state immunization registry. Children qualify if uninsured, enrolled in Medi-Cal, underinsured, or American Indian/Alaska Native. Bring your child's immunization record.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "families"
   ],
   "areas": [

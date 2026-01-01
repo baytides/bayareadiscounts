@@ -7,7 +7,7 @@
   "whatTheyOffer": "- 35% discount on water and wastewater bills (Tier 1)\n- 50% discount for households at 100% federal poverty level (Tier 2)\n- Crisis assistance for customers facing shutoff\n- Flexible payment arrangements\n- Free leak detection assistance\n",
   "howToGetIt": "1. Check income eligibility (based on federal poverty guidelines)\n2. Download application from EBMUD website or call to request\n3. Provide proof of income (tax return, benefit letter, pay stubs)\n4. Submit application by mail, email, or in person\n5. Renew every two years to maintain discount\n",
   "groups": [
-    "low-income"
+    "income-eligible"
   ],
   "areas": [
     "Alameda County"

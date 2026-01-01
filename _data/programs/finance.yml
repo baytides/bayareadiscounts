@@ -65,7 +65,7 @@
   category: Tax Preparation
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Alameda County Social Services Agency offers free tax preparation through the IRS Volunteer Income Tax Assistance (VITA) program for low to moderate income residents.
   what_they_offer: |
@@ -92,7 +92,7 @@
   category: Tax Preparation
   area: Santa Clara County
   groups:
-  - low-income
+  - income-eligible
   description: Community Gatepath provides free tax preparation services for low-income individuals and families in Santa Clara County.
   what_they_offer: |
     - Free tax preparation
@@ -116,7 +116,7 @@
   category: Tax Preparation
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   description: CSU East Bay's accounting students provide free virtual tax preparation through the VITA program for taxpayers earning $84,000 or less.
   what_they_offer: |
     - Free virtual tax preparation via Zoom
@@ -142,7 +142,7 @@
   category: Tax Preparation
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The IRS VITA (Volunteer Income Tax Assistance) program offers free tax help to people who generally make $64,000 or less, persons with disabilities, and limited English speakers.
   what_they_offer: |
@@ -173,7 +173,7 @@
   category: Tax Preparation
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: East Bay Asian Local Development Corporation (EBALDC) offers free tax preparation through the VITA program at their SparkPoint Oakland center.
   what_they_offer: |
@@ -200,7 +200,7 @@
   category: Tax Preparation
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Samaritan House provides free tax preparation services for San Mateo County residents, including a convenient drop-off service option.
   what_they_offer: |
@@ -230,7 +230,7 @@
   category: Tax Preparation
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - everyone
   description: San Francisco State University accounting students provide free tax preparation through the IRS VITA program for low to moderate income taxpayers.
@@ -258,7 +258,7 @@
   category: Tax Preparation
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: SparkPoint Fremont at the Fremont Family Resource Center offers free tax preparation for current year and back taxes for low to moderate income families.
   what_they_offer: |
@@ -287,7 +287,7 @@
   category: Tax Preparation
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: United Way Bay Area partners with local organizations to provide free, high-quality tax preparation at sites throughout the Bay Area.
   what_they_offer: |
     - Free tax preparation at multiple sites

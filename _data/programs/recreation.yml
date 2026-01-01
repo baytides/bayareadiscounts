@@ -95,7 +95,7 @@
   category: Recreation
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - seniors
   description: California State Parks offers the Golden Bear Pass to ensure that
     cost is not a barrier to enjoying the state's natural treasures, providing free
@@ -138,7 +138,7 @@
   category: Museums
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   - families
   description: Museums for All is a national program connecting low-income families
     with cultural institutions, ensuring that financial barriers don't prevent anyone
@@ -162,7 +162,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - veterans
   - families
   - everyone
@@ -192,7 +192,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - seniors
   - veterans
@@ -227,7 +227,7 @@
   groups:
   - caregivers
   - disability
-  - low-income
+  - income-eligible
   - families
   - youth
   - everyone
@@ -257,7 +257,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The California Academy of Sciences in Golden Gate Park is a world-class
     scientific and cultural institution featuring a natural history museum, aquarium,
@@ -284,7 +284,7 @@
   area: Alameda County
   city: Oakland
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Chabot Space & Science Center in the Oakland hills features interactive
     space science exhibits, planetarium shows, and three historic telescopes offering
@@ -312,7 +312,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - seniors
   - veterans
@@ -347,7 +347,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - youth
   - families
   description: The Children's Creativity Museum in San Francisco's Yerba Buena Gardens
@@ -375,7 +375,7 @@
   area: Santa Clara County
   city: San Jose
   groups:
-  - low-income
+  - income-eligible
   description: Children's Discovery Museum of San Jose is one of the largest children's
     museums in the country, featuring interactive exhibits that inspire children
     to explore, question, and discover the world around them.
@@ -400,7 +400,7 @@
   area: Alameda County
   city: Oakland
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Children's Fairyland is a whimsical storybook theme park on the shores
@@ -429,7 +429,7 @@
   city: San Francisco
   groups:
   - teachers
-  - low-income
+  - income-eligible
   description: The Exploratorium is San Francisco's world-renowned museum of science,
     art, and human perception. Located on Pier 15, it features over 650 interactive
     exhibits that encourage hands-on exploration and discovery.
@@ -457,7 +457,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - seniors
   - veterans
@@ -492,7 +492,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - veterans
   - everyone
   description: Golden Gate Park's gardens include the Conservatory of Flowers (a
@@ -520,7 +520,7 @@
   area: Alameda County
   city: Berkeley
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   - everyone
@@ -549,7 +549,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - veterans
   - families
@@ -581,7 +581,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - seniors
   - veterans
@@ -615,7 +615,7 @@
   area: Alameda County
   city: Oakland
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The Oakland Museum of California (OMCA) is a multidisciplinary museum
     celebrating California's art, history, and natural sciences. Located near Lake
@@ -643,7 +643,7 @@
   area: Alameda County
   city: Oakland
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Oakland Zoo is home to over 850 native and exotic animals on 100 acres
@@ -670,7 +670,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - veterans
   - youth
@@ -703,7 +703,7 @@
   area: Santa Clara County
   city: San Jose
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The San Jose Museum of Art is the leading museum of modern and contemporary
     art in Silicon Valley, located in a beautiful historic building in downtown San
@@ -731,7 +731,7 @@
   area: Santa Clara County
   city: San Jose
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The Tech Interactive (formerly The Tech Museum) is a hands-on science
     and technology center in downtown San Jose. Featuring innovative exhibits on
@@ -758,7 +758,7 @@
   area: San Francisco
   city: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - veterans
   - families

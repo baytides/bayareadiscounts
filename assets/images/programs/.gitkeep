@@ -1,0 +1,23 @@
+# Program Images Directory
+
+Place custom program images here.
+
+## Usage
+Add the `image` field to any program in `_data/programs/*.yml`:
+
+```yaml
+- id: example-program
+  name: Example Program
+  category: Recreation
+  image: /assets/images/programs/example-program.jpg  # <-- Add this line
+  # ... other fields ...
+```
+
+## Recommended Image Specs
+- Aspect ratio: 16:9 or similar landscape
+- Minimum size: 400x225 pixels
+- Formats: JPG, PNG, WebP
+- Keep file size under 100KB for performance
+
+## Fallback
+If no image is provided, the card displays a category-colored gradient with an icon.

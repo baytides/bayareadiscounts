@@ -51,7 +51,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: Denti-Cal is California's Medicaid dental program, providing comprehensive
     dental care to Medi-Cal beneficiaries at no cost, helping ensure oral health for
     low-income individuals and families.
@@ -99,7 +99,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: Medi-Cal is California's Medicaid program, providing free or low-cost
     health coverage to millions of Californians including low-income adults, families,
     seniors, pregnant women, and people with disabilities.
@@ -150,7 +150,7 @@
   category: Health
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Planned Parenthood is a trusted healthcare provider offering sexual
     and reproductive health services on a sliding fee scale, ensuring care is accessible
@@ -178,7 +178,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Ryan White HIV/AIDS Program provides comprehensive care and support
     services for people living with HIV who are uninsured or underinsured, filling
     gaps in care not covered by other sources.
@@ -258,7 +258,7 @@
   area: Statewide
   groups:
   - pregnant
-  - low-income
+  - income-eligible
   - families
   description: WIC is a nutrition program providing healthy food, nutrition education,
     breastfeeding support, and healthcare referrals to pregnant and postpartum women,
@@ -341,7 +341,7 @@
   area: San Mateo County
   groups:
   - pregnant
-  - low-income
+  - income-eligible
   - families
   description: San Mateo County's Family Health Services provides prenatal care, home
     visiting, and child health programs to support healthy pregnancies and child development
@@ -415,7 +415,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: California's AIDS Drug Assistance Program provides life-saving HIV/AIDS
     medications and health insurance assistance to low-income Californians living
     with HIV who lack adequate coverage.
@@ -494,7 +494,7 @@
   area: Statewide
   groups:
   - pregnant
-  - low-income
+  - income-eligible
   - families
   description: The California Home Visiting Program provides free, voluntary home
     visits to pregnant women and families with young children, offering parenting
@@ -521,7 +521,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - families
   description: The Vaccines for Children program provides free vaccines to children
     18 and under who might not otherwise be vaccinated because of inability to pay,
@@ -546,7 +546,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: California's PrEP Assistance Program makes HIV prevention medication
     accessible to residents who might not otherwise afford it, covering the cost of
@@ -572,7 +572,7 @@
   category: Health
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: Every Woman Counts provides free breast and cervical cancer screenings
     to uninsured and underinsured California women, helping detect cancer early when
     treatment is most effective.
@@ -599,7 +599,7 @@
   area: Statewide
   groups:
   - pregnant
-  - low-income
+  - income-eligible
   - families
   description: The Comprehensive Perinatal Services Program provides enhanced prenatal
     and postpartum care to Medi-Cal recipients, offering additional support services

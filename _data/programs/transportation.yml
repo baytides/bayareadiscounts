@@ -78,7 +78,7 @@
   category: Transportation
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: Bay Wheels (operated by Lyft) is the Bay Area's bike share system with thousands of bikes available at stations throughout San Francisco, Oakland, Berkeley, and San Jose. Bike Share for All makes it affordable for low-income residents.
   what_they_offer: |
     - Discounted annual membership: $5/year for first year (regularly $149)
@@ -176,7 +176,7 @@
   category: Public Transit
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: Clipper START is a regional program that provides discounted transit fares for low-income adults on participating Bay Area transit systems, helping make public transportation more accessible.
   what_they_offer: |
     - 50% off single-ride fares on most participating transit agencies
@@ -202,7 +202,7 @@
   category: Transportation
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The California Department of Motor Vehicles offers reduced-fee identification cards for income-eligible residents, providing an affordable way to obtain government-issued photo ID.
   what_they_offer: |
     - Reduced-fee state ID card (regularly $35, reduced to $8)
@@ -331,7 +331,7 @@
   category: Transportation
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: Lime is a micromobility company offering electric scooters and bikes for short trips. Lime Access makes these transportation options affordable for low-income riders.
   what_they_offer: |
     - Discounted or free Lime scooter and bike rides
@@ -357,7 +357,7 @@
   category: Transportation
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: California's Low Cost Automobile Insurance Program (CLCA) is a state-sponsored program providing affordable liability insurance for income-eligible drivers who might otherwise go uninsured.
   what_they_offer: |
     - State-sponsored low-cost liability insurance
@@ -412,7 +412,7 @@
   - youth
   - veterans
   - disability
-  - low-income
+  - income-eligible
   - ⚽
   description: San Francisco Municipal Transportation Agency (SFMTA) operates Muni, the city's public transit system including buses, light rail (Metro), cable cars, and historic streetcars. Multiple free and discounted fare programs are available.
   what_they_offer: |

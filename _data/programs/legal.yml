@@ -3,7 +3,7 @@
   category: Legal Services
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: California courts offer fee waivers for individuals who cannot afford to pay court filing fees, ensuring access to the justice system regardless of income.
   what_they_offer: |
@@ -31,7 +31,7 @@
   area: San Francisco
   groups:
   - nonprofits
-  - low-income
+  - income-eligible
   description: The Justice & Diversity Center is the nonprofit arm of the Bar Association of San Francisco, providing free legal services to those who cannot afford attorneys.
   what_they_offer: |
     - Free legal clinics and advice sessions
@@ -86,7 +86,7 @@
   category: Legal Services
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The San Francisco Financial Justice Project works to reduce the impact of fines, fees, and financial penalties on low-income residents and communities of color.
   what_they_offer: |
@@ -115,7 +115,7 @@
   area: San Francisco
   groups:
   - immigrants
-  - low-income
+  - income-eligible
   - everyone
   description: San Francisco provides resources and support for immigrants, including connections to free and low-cost immigration legal services regardless of immigration status.
   what_they_offer: |
@@ -144,7 +144,7 @@
   area: Nationwide
   groups:
   - immigrants
-  - low-income
+  - income-eligible
   - everyone
   description: U.S. Citizenship and Immigration Services (USCIS) offers fee waivers for certain immigration applications for individuals who cannot afford the filing fees.
   what_they_offer: |
@@ -172,7 +172,7 @@
   groups:
   - immigrants
   - reentry
-  - low-income
+  - income-eligible
   description: Community Legal Services in East Palo Alto (CLSEPA) provides free legal assistance to low-income families in San Mateo County and surrounding areas.
   what_they_offer: |
     - Immigration legal services (family petitions, DACA, citizenship)
@@ -201,7 +201,7 @@
   category: Legal Services
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   description: The Legal Aid Society of San Mateo County provides free civil legal services to low-income residents, helping protect their rights and improve their lives.
   what_they_offer: |
     - Housing law (eviction defense, habitability issues)

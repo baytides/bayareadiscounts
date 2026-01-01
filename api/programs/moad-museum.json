@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Museums for All: $3 admission with EBT card\n- Active Military: Free admission with valid ID\n- Students with ID: $8 admission\n- Seniors (65+): $8 admission\n- Children under 5: Free admission\n- Community/Free days: Check website for schedule\n- Regular admission: $12 adults\n",
   "howToGetIt": "Present your EBT card, military ID, student ID, or proof of age at the admissions desk. Check website for community free day schedules.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "college-students",
     "veterans",
     "families",

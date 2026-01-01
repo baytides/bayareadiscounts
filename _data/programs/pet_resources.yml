@@ -28,7 +28,7 @@
   category: Pet Resources
   area: Alameda County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Berkeley-East Bay Humane Society's Spay the Bay program provides affordable spay/neuter services to help reduce pet overpopulation in the East Bay.
   what_they_offer: |
@@ -57,7 +57,7 @@
   area: Santa Clara County
   groups:
   - 📍
-  - low-income
+  - income-eligible
   description: The Humane Society Silicon Valley's Pet Pantry program helps families keep their pets by providing free pet food during times of financial hardship.
   what_they_offer: |
     - Free dog and cat food
@@ -111,7 +111,7 @@
   area: Contra Costa County
   groups:
   - 📍
-  - low-income
+  - income-eligible
   description: Joybound People & Pets (formerly Tony La Russa's ARF) provides low-cost veterinary care to help Contra Costa County residents keep their pets healthy.
   what_they_offer: |
     - Low-cost medical exams and treatments
@@ -139,7 +139,7 @@
   area: Contra Costa County
   groups:
   - 📍
-  - low-income
+  - income-eligible
   description: Joybound's pet food assistance program helps Contra Costa County families keep their pets by providing free food during financial hardship.
   what_they_offer: |
     - Free dog food
@@ -192,7 +192,7 @@
   area: Contra Costa County
   groups:
   - 📍
-  - low-income
+  - income-eligible
   description: Joybound's Pet Safety Net provides emergency resources to help families keep their pets during times of crisis or financial hardship.
   what_they_offer: |
     - Emergency pet food assistance
@@ -220,7 +220,7 @@
   area: Contra Costa County
   groups:
   - 📍
-  - low-income
+  - income-eligible
   - everyone
   description: Joybound offers low-cost spay and neuter services to help reduce pet overpopulation and keep pets healthy.
   what_they_offer: |
@@ -248,7 +248,7 @@
   category: Pet Resources
   area: Marin County
   groups:
-  - low-income
+  - income-eligible
   - seniors
   description: Marin Humane Society provides pet care assistance to help vulnerable Marin County residents keep and care for their pets.
   what_they_offer: |
@@ -331,7 +331,7 @@
   category: Pet Resources
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Peninsula Humane Society's mobile spay/neuter van travels throughout San Mateo County providing accessible, low-cost sterilization services.
   what_they_offer: |
@@ -410,7 +410,7 @@
   category: Pet Resources
   area: San Mateo County
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: Pets in Need operates a community veterinary clinic in Redwood City providing affordable care to help families keep their pets healthy.
   what_they_offer: |
@@ -439,7 +439,7 @@
   area: Nationwide
   groups:
   - unhoused
-  - low-income
+  - income-eligible
   description: Pets of the Homeless is a nonprofit providing free veterinary care and pet food to pets of people experiencing homelessness.
   what_they_offer: |
     - Free veterinary care through participating providers
@@ -464,7 +464,7 @@
   category: Pet Resources
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - everyone
   description: The SF SPCA's Community Clinic provides affordable preventative care to help all San Francisco pets stay healthy.
   what_they_offer: |
@@ -520,7 +520,7 @@
   area: Bay Area-wide
   groups:
   - 📍
-  - low-income
+  - income-eligible
   description: SF Aid for Animals provides financial assistance for urgent veterinary care to low-income Bay Area residents, helping them avoid having to surrender or euthanize pets due to cost.
   what_they_offer: |
     - Financial grants for urgent veterinary care
@@ -547,7 +547,7 @@
   category: Pet Resources
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: The Pet Fund provides financial assistance for non-basic, non-emergency veterinary care to pet owners who cannot afford treatment.
   what_they_offer: |
     - Financial assistance for non-emergency vet care

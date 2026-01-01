@@ -3,7 +3,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   - college-students
   - veterans
   description: 7-Eleven is one of the world's largest convenience store chains. Their Gold Pass membership offers exclusive deals, rewards, and discounts on food, drinks, and everyday items.
@@ -31,7 +31,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   description: Amazon is the world's largest online retailer. Prime Access offers a discounted Prime membership for those receiving government assistance, providing free shipping, streaming, and more.
   what_they_offer: |
     - Discounted Prime membership at $6.99/month (regularly $14.99/month)
@@ -57,7 +57,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   description: AT&T is one of the largest telecommunications companies in the United States. AT&T Access provides affordable high-speed internet service to qualifying low-income households.
   what_they_offer: |
     - Affordable high-speed internet service
@@ -83,7 +83,7 @@
   category: Technology
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   description: California LifeLine is a state program that provides discounted home phone and cell phone services to eligible low-income households, ensuring everyone has access to basic communication services.
   what_they_offer: |
     - Discounted or free home phone service
@@ -158,7 +158,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   description: Instacart is a grocery delivery and pickup service. They offer special discounts for EBT/SNAP recipients, making grocery delivery more accessible and affordable.
   what_they_offer: |
     - 50% off Instacart+ membership for one year
@@ -183,7 +183,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   description: Internet Essentials is Comcast/Xfinity's low-cost internet program designed to help connect low-income families to affordable high-speed internet at home.
   what_they_offer: |
     - Affordable high-speed internet (up to 50 Mbps)
@@ -312,7 +312,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   description: Walmart+ is Walmart's membership program offering free delivery, fuel discounts, and more. Walmart+ Assist provides this membership at half price for those receiving government assistance.
   what_they_offer: |
     - 50% off Walmart+ membership ($6.47/month or $49/year)
@@ -362,7 +362,7 @@
   category: Technology
   area: Nationwide
   groups:
-  - low-income
+  - income-eligible
   - seniors
   description: Spectrum Internet Assist is Charter Communications' affordable internet program for qualifying low-income households, including seniors receiving SSI and families with students in free lunch programs.
   what_they_offer: |

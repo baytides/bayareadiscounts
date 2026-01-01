@@ -7,7 +7,7 @@
   "whatTheyOffer": "- CARE: 35% discount on electricity, 20% on natural gas\n- FERA: 18% discount on electricity for larger households\n- Gateway to many other programs and rebates\n- Protection from service disconnection during extreme weather\n- Eligibility for Medical Baseline if medically necessary\n- Automatic re-enrollment every 2 years\n",
   "howToGetIt": "1. Check income eligibility (based on household size and income)\n2. CARE: Income at or below 200% federal poverty level\n3. FERA: 3+ person household, slightly higher income limits\n4. Apply online at pge.com/care\n5. Or call PG&E or submit mail-in application\n6. Provide income verification if requested\n",
   "groups": [
-    "low-income"
+    "income-eligible"
   ],
   "areas": [
     "Statewide"

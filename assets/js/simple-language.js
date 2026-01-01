@@ -38,7 +38,7 @@
 
   // Eligibility explanations in simple language
   const eligibilityExplanations = {
-    'low-income': 'For people who don\'t make a lot of money, or who get help like SNAP, EBT, or Medi-Cal',
+    'income-eligible': 'For people who qualify based on income, including those who receive SNAP, EBT, or Medi-Cal',
     'seniors': 'For older adults, usually 60 or 65 years old and up',
     'youth': 'For children and teenagers',
     'college-students': 'For people going to college or university',

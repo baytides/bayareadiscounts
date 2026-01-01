@@ -172,7 +172,7 @@
   category: Community Services
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   description: The Season of Sharing Fund, a partnership of the San Francisco Chronicle and Bay Area community foundations, provides emergency financial assistance to prevent homelessness for families and individuals in crisis.
   what_they_offer: |
     - Emergency rental assistance
@@ -308,7 +308,7 @@
   category: Childcare Assistance
   area: Contra Costa County
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Bay Area Crisis Nursery provides free emergency childcare for families in crisis, offering a safe, nurturing environment for young children while parents address urgent situations.
@@ -339,7 +339,7 @@
   category: Childcare Assistance
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: The California State Preschool Program provides free, high-quality preschool education to income-eligible families, preparing children ages 3-5 for kindergarten success.
@@ -367,7 +367,7 @@
   category: Childcare Assistance
   area: Statewide
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: CalWORKs Child Care provides free or subsidized childcare for families receiving CalWORKs benefits, helping parents participate in work or training activities through three progressive stages.
@@ -395,7 +395,7 @@
   category: Childcare Assistance
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Children's Council San Francisco helps income-eligible families access subsidized childcare, providing partial or complete coverage of childcare costs through state-funded programs.
@@ -425,7 +425,7 @@
   category: Childcare Assistance
   area: Santa Clara County
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Choices for Children provides subsidized childcare services to income-eligible families in Santa Clara County, helping parents work or attend school while their children receive quality care.
@@ -455,7 +455,7 @@
   category: Childcare Assistance
   area: Bay Area-wide
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Head Start is a federally-funded program providing free, comprehensive early childhood education, health, nutrition, and family support services to low-income children and families.
@@ -484,7 +484,7 @@
   area: Contra Costa County
   groups:
   - pregnant
-  - low-income
+  - income-eligible
   - families
   - youth
   - everyone
@@ -516,7 +516,7 @@
   category: Clothing Assistance
   area: Contra Costa County
   groups:
-  - low-income
+  - income-eligible
   - families
   - youth
   description: Bay Area Crisis Nursery operates a food pantry and diaper bank providing free groceries and diapers to families with young children in Contra Costa County.
@@ -546,7 +546,7 @@
   category: Clothing Assistance
   area: San Francisco
   groups:
-  - low-income
+  - income-eligible
   description: The San Francisco Diaper Bank provides free diapers to low-income families enrolled in public assistance programs, helping reduce the financial burden of essential baby supplies.
   what_they_offer: |
     - Free diapers for eligible families
@@ -660,7 +660,7 @@
   area: San Mateo County
   groups:
   - unhoused
-  - low-income
+  - income-eligible
   - everyone
   description: LifeMoves provides comprehensive services to help individuals and families experiencing homelessness transition to stable housing through shelter, case management, and supportive programs.
   what_they_offer: |
@@ -691,7 +691,7 @@
   groups:
   - unhoused
   - families
-  - low-income
+  - income-eligible
   - veterans
   description: Haven Family House is a LifeMoves interim housing facility in Menlo Park providing shelter and comprehensive services for families experiencing homelessness, with dedicated capacity for veteran families.
   what_they_offer: |
@@ -1636,7 +1636,7 @@
   city: San Francisco
   groups:
   - lgbtq
-  - low-income
+  - income-eligible
   - everyone
   description: Queer LifeSpace provides low-cost mental health counseling, substance abuse services, and group therapy for the LGBTQ+ community on a sliding scale fee basis.
   what_they_offer: |
@@ -1668,7 +1668,7 @@
   groups:
   - lgbtq
   - youth
-  - low-income
+  - income-eligible
   description: LYRIC provides education, career training, health services, housing navigation, and leadership development for LGBTQQ+ youth ages 12-24 in San Francisco.
   what_they_offer: |
     - Education enhancement programs
@@ -1729,7 +1729,7 @@
   city: San Francisco
   groups:
   - lgbtq
-  - low-income
+  - income-eligible
   - everyone
   description: API Wellness offers primary care, PrEP prescriptions, free HIV/STD testing, and runs TRANS:THRIVE, a drop-in care center specifically for transgender individuals.
   what_they_offer: |
@@ -1762,7 +1762,7 @@
   groups:
   - lgbtq
   - seniors
-  - low-income
+  - income-eligible
   description: Openhouse provides housing, community programs, case management, and mental health services specifically for LGBTQ+ seniors in San Francisco.
   what_they_offer: |
     - LGBTQ+-affirming senior housing
@@ -1881,7 +1881,7 @@
   groups:
   - lgbtq
   - immigrants
-  - low-income
+  - income-eligible
   description: The LGBT Asylum Project provides free legal representation and support to LGBTQ+ asylum seekers fleeing persecution based on their sexual orientation or gender identity.
   what_they_offer: |
     - Free legal representation for asylum cases
@@ -1910,7 +1910,7 @@
   groups:
   - lgbtq
   - reentry
-  - low-income
+  - income-eligible
   description: TGI Justice Project supports transgender and intersex people who are currently or formerly incarcerated, providing reentry services, advocacy, and community support.
   what_they_offer: |
     - Reentry support services
@@ -1941,7 +1941,7 @@
   groups:
   - lgbtq
   - immigrants
-  - low-income
+  - income-eligible
   description: El/La Para TransLatinas provides community building, protection, and support services specifically for transgender Latina women in the Bay Area.
   what_they_offer: |
     - Community support groups
@@ -1973,7 +1973,7 @@
   groups:
   - lgbtq
   - seniors
-  - low-income
+  - income-eligible
   - everyone
   description: The GLBT Historical Society Museum in the Castro preserves and exhibits LGBTQ+ history, culture, and arts, with free admission days and reduced rates available.
   what_they_offer: |
@@ -2224,7 +2224,7 @@
   city: San Francisco
   groups:
   - unemployed
-  - low-income
+  - income-eligible
   - everyone
   description: SF JobsNOW! is San Francisco's subsidized employment program, providing wage subsidies to employers who hire unemployed San Francisco residents, making it easier for job seekers to find work.
   what_they_offer: |
@@ -2282,7 +2282,7 @@
   city: San Francisco
   groups:
   - unemployed
-  - low-income
+  - income-eligible
   - reentry
   description: CityBuild Academy is San Francisco's pre-apprenticeship construction training program, providing free job training and placement into union construction careers.
   what_they_offer: |
@@ -2312,7 +2312,7 @@
   city: San Francisco
   groups:
   - unemployed
-  - low-income
+  - income-eligible
   - everyone
   description: TechSF provides free technology job training and placement services for San Francisco residents seeking careers in the tech industry.
   what_they_offer: |
@@ -2343,7 +2343,7 @@
   groups:
   - unemployed
   - immigrants
-  - low-income
+  - income-eligible
   description: Mission Economic Development Agency (MEDA) provides workforce development, job training, and career services with a focus on Latino and low-income communities in San Francisco's Mission District.
   what_they_offer: |
     - Job readiness training
@@ -2374,7 +2374,7 @@
   area: Bay Area-wide
   groups:
   - immigrants
-  - low-income
+  - income-eligible
   description: The Immigration Institute of the Bay Area (IIBA) provides affordable immigration legal services to immigrant families throughout the Bay Area.
   what_they_offer: |
     - Low-cost immigration legal consultations
@@ -2404,7 +2404,7 @@
   city: Berkeley
   groups:
   - immigrants
-  - low-income
+  - income-eligible
   description: East Bay Community Law Center provides free immigration legal services to low-income immigrants in Alameda County, including representation and community education.
   what_they_offer: |
     - Free immigration legal consultations
@@ -2436,7 +2436,7 @@
   city: San Francisco
   groups:
   - unhoused
-  - low-income
+  - income-eligible
   description: San Francisco's Department of Homelessness and Supportive Housing (HSH) coordinates the city's response to homelessness, providing shelter, housing, and supportive services.
   what_they_offer: |
     - Emergency shelter access
@@ -2465,7 +2465,7 @@
   city: San Francisco
   groups:
   - unhoused
-  - low-income
+  - income-eligible
   - everyone
   description: Project Homeless Connect organizes community events and ongoing services connecting people experiencing homelessness with essential resources and care.
   what_they_offer: |
@@ -2497,7 +2497,7 @@
   city: San Francisco
   groups:
   - unhoused
-  - low-income
+  - income-eligible
   - everyone
   description: St. Anthony's operates San Francisco's largest free dining room, serving nutritious meals daily to anyone in need without questions or requirements.
   what_they_offer: |
@@ -2562,7 +2562,7 @@
   - caregivers
   - seniors
   - disability
-  - low-income
+  - income-eligible
   description: In-Home Supportive Services (IHSS) is California's program that pays family members or others to provide in-home care for aged, blind, or disabled individuals who qualify for Medi-Cal.
   what_they_offer: |
     - Paid caregiving by family members
@@ -2715,7 +2715,7 @@
   area: Bay Area-wide
   groups:
   - reentry
-  - low-income
+  - income-eligible
   - everyone
   description: Five Keys provides education and workforce development for justice-involved individuals, offering high school diplomas, career training, and reentry support in the Bay Area.
   what_they_offer: |

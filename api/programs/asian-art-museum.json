@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Free admission: First Sundays each month for everyone\n- Museums for All: $1 admission for EBT cardholders + guests\n- Seniors (65+): $12 admission (regularly $20)\n- Students with ID: $12 admission\n- Military/Veterans: Free admission with valid ID\n- Children under 6: Always free\n- SF residents: Free admission on select Thursdays\n",
   "howToGetIt": "Visit the museum and present your EBT card, student ID, military ID, or proof of age at the admissions desk. Check the website for free day schedules and any advance reservation requirements.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "college-students",
     "seniors",
     "veterans",

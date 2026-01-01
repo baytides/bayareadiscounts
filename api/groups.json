@@ -1,9 +1,9 @@
 {
   "groups": [
     {
-      "id": "low-income",
-      "name": "SNAP/EBT/Medi-Cal",
-      "description": "For public benefit recipients",
+      "id": "income-eligible",
+      "name": "Income-Eligible",
+      "description": "For people who qualify based on income",
       "icon": "💳",
       "programCount": 167
     },

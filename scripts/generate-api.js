@@ -48,7 +48,7 @@ const CATEGORY_METADATA = {
 
 // Groups metadata with icons (formerly "eligibility")
 const GROUPS_METADATA = {
-  'low-income': { name: 'SNAP/EBT/Medi-Cal', description: 'For public benefit recipients', icon: '💳' },
+  'income-eligible': { name: 'Income-Eligible', description: 'For people who qualify based on income', icon: '💳' },
   'seniors': { name: 'Seniors (65+)', description: 'For adults age 65 and older', icon: '👵' },
   'youth': { name: 'Youth', description: 'For children and young adults', icon: '🧒' },
   'college-students': { name: 'College Students', description: 'For enrolled college students', icon: '🎓' },

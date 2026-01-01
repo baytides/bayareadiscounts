@@ -166,7 +166,7 @@
       {% for group in groups_list limit:3 %}
         {% assign tag_text = '' %}
         {% case group %}
-          {% when 'low-income' %}{% assign tag_text = 'Low Income' %}
+          {% when 'income-eligible' %}{% assign tag_text = 'Income-Eligible' %}
           {% when 'seniors' %}{% assign tag_text = 'Seniors' %}
           {% when 'youth' %}{% assign tag_text = 'Youth' %}
           {% when 'college-students' %}{% assign tag_text = 'Students' %}

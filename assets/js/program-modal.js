@@ -420,7 +420,7 @@
 
   function formatEligibility(elig) {
     const map = {
-      'low-income': 'Low Income',
+      'income-eligible': 'Income-Eligible',
       'seniors': 'Seniors',
       'youth': 'Youth',
       'college-students': 'Students',

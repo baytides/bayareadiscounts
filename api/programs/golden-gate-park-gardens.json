@@ -7,7 +7,7 @@
   "whatTheyOffer": "- SF Residents: Free admission to Botanical Garden with ID\n- Veterans/Active Military: Free admission with ID\n- Museums for All: Reduced admission with EBT card\n- Free hours: Early morning entry at select gardens\n- Children under 5: Free at all gardens\n- Regular admission varies by garden ($10-15 adults)\n",
   "howToGetIt": "Show SF proof of residency, military ID, or EBT card at the entrance. Visit early mornings for free admission hours at certain gardens. Check individual garden websites for current free hours and policies.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "veterans",
     "everyone"
   ],

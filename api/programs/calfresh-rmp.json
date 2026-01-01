@@ -8,7 +8,7 @@
   "howToGetIt": "You must be a CalFresh recipient who is 60+, disabled, or homeless. Check if your county participates, then use the CDSS Restaurant Locator to find participating restaurants. Show your EBT card and ID when ordering.",
   "groups": [
     "unhoused",
-    "low-income",
+    "income-eligible",
     "seniors",
     "disability"
   ],

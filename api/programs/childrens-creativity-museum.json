@@ -7,7 +7,7 @@
   "whatTheyOffer": "- Museums for All: Reduced admission with EBT card (cardholder + guests)\n- Must have at least one child in the group\n- Children under 2: Free admission\n- Regular admission: $16 per person\n",
   "howToGetIt": "Present your physical EBT or SNAP benefits card along with a photo ID at the admissions desk. Groups must include at least one child to qualify. Reservations recommended.",
   "groups": [
-    "low-income",
+    "income-eligible",
     "youth",
     "families"
   ],
