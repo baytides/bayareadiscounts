@@ -1,11 +1,26 @@
 const { test, expect } = require('@playwright/test');
 
+// Helper to expand utility bar on mobile (collapsed by default)
+async function expandUtilityBar(page) {
+  const toggle = page.locator('#utility-bar-toggle');
+  const content = page.locator('#utility-bar-content');
+
+  // Check if content is hidden
+  const isHidden = await content.evaluate(el => el.classList.contains('hidden'));
+  if (isHidden) {
+    await toggle.click();
+    await expect(content).not.toHaveClass(/hidden/);
+  }
+}
+
 test.describe('Utility Bar (Mobile)', () => {
   test.beforeEach(async ({ page }) => {
     // Set mobile viewport - utility bar is hidden on desktop (controls in sidebar)
     await page.setViewportSize({ width: 375, height: 667 });
     // Use ?no-step=1 to skip the onboarding wizard
     await page.goto('/?no-step=1');
+    // Expand utility bar (collapsed by default on mobile)
+    await expandUtilityBar(page);
   });
 
   test('utility bar is visible on mobile', async ({ page }) => {
@@ -13,7 +28,7 @@ test.describe('Utility Bar (Mobile)', () => {
     const utilityBar = page.locator('#utility-bar');
     await expect(utilityBar).toBeVisible();
 
-    // Utility bar content should always be visible (static, no toggle)
+    // Utility bar content should be visible after expanding
     const content = page.locator('#utility-bar-content');
     await expect(content).toBeVisible();
   });

@@ -14,6 +14,19 @@ async function triggerBeforeInstallPrompt(page, outcome = 'accepted') {
   }, outcome);
 }
 
+// Helper to expand utility bar on mobile (collapsed by default)
+async function expandUtilityBar(page) {
+  const toggle = page.locator('#utility-bar-toggle');
+  const content = page.locator('#utility-bar-content');
+
+  // Check if content is hidden
+  const isHidden = await content.evaluate(el => el.classList.contains('hidden'));
+  if (isHidden) {
+    await toggle.click();
+    await expect(content).not.toHaveClass(/hidden/);
+  }
+}
+
 test.describe('PWA Install Button (Mobile Utility Bar)', () => {
   test.beforeEach(async ({ page }) => {
     // Utility bar is only visible on mobile/tablet
@@ -22,6 +35,7 @@ test.describe('PWA Install Button (Mobile Utility Bar)', () => {
 
   test('utility bar install button appears on beforeinstallprompt and triggers install', async ({ page }) => {
     await page.goto(home, { waitUntil: 'domcontentloaded' });
+    await expandUtilityBar(page);
 
     const installItem = page.locator('#install-app-item');
     const installBtn = page.locator('#install-app-btn');
@@ -49,6 +63,7 @@ test.describe('PWA Install Button (Mobile Utility Bar)', () => {
 
   test('utility bar install button hides on appinstalled event', async ({ page }) => {
     await page.goto(home, { waitUntil: 'domcontentloaded' });
+    await expandUtilityBar(page);
 
     const installItem = page.locator('#install-app-item');
 
@@ -71,6 +86,7 @@ test.describe('PWA Install Button (Mobile Utility Bar)', () => {
 
   test('install button has correct accessibility attributes', async ({ page }) => {
     await page.goto(home, { waitUntil: 'domcontentloaded' });
+    await expandUtilityBar(page);
 
     // Fire beforeinstallprompt to show the button
     await triggerBeforeInstallPrompt(page, 'accepted');

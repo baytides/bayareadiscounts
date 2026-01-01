@@ -1,5 +1,18 @@
 const { test, expect } = require('@playwright/test');
 
+// Helper to expand utility bar on mobile (collapsed by default)
+async function expandUtilityBar(page) {
+  const toggle = page.locator('#utility-bar-toggle');
+  const content = page.locator('#utility-bar-content');
+
+  // Check if content is hidden
+  const isHidden = await content.evaluate(el => el.classList.contains('hidden'));
+  if (isHidden) {
+    await toggle.click();
+    await expect(content).not.toHaveClass(/hidden/);
+  }
+}
+
 test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
   test('desktop sidebar appears on index page (1024px+ viewport)', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
@@ -43,6 +56,7 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     // Use mobile viewport where utility bar is visible
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
     const body = page.locator('body');
     const themeSelect = page.locator('#theme-select');
@@ -98,6 +112,7 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
   test('dark mode toggle overrides system preference (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
     const body = page.locator('body');
     const themeSelect = page.locator('#theme-select');
@@ -121,6 +136,7 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
   test('auto mode respects system preference (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
     const body = page.locator('body');
     const themeSelect = page.locator('#theme-select');
@@ -190,7 +206,10 @@ test.describe('Recent Changes - Desktop Sidebar and Dark Mode', () => {
     const utilityBar = page.locator('#utility-bar');
     await expect(utilityBar).toBeVisible();
 
-    // Theme select should be visible on mobile
+    // Expand utility bar (collapsed by default on mobile)
+    await expandUtilityBar(page);
+
+    // Theme select should be visible on mobile after expanding
     const themeSelect = page.locator('#theme-select');
     await expect(themeSelect).toBeVisible();
   });

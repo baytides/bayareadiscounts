@@ -1,5 +1,18 @@
 const { test, expect } = require('@playwright/test');
 
+// Helper to expand utility bar on mobile (collapsed by default)
+async function expandUtilityBar(page) {
+  const toggle = page.locator('#utility-bar-toggle');
+  const content = page.locator('#utility-bar-content');
+
+  // Check if content is hidden
+  const isHidden = await content.evaluate(el => el.classList.contains('hidden'));
+  if (isHidden) {
+    await toggle.click();
+    await expect(content).not.toHaveClass(/hidden/);
+  }
+}
+
 test.describe('WCAG 2.2 AAA Compliance Verification', () => {
   test('back-to-top button meets WCAG requirements (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
@@ -30,8 +43,9 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
     // Utility bar is only visible on mobile/tablet
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
-    // Theme select should be visible on mobile
+    // Theme select should be visible on mobile after expanding
     const themeSelect = page.locator('#theme-select');
     await expect(themeSelect).toBeVisible();
     const themeBox = await themeSelect.boundingBox();
@@ -79,6 +93,7 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
   test('all interactive elements have focus indicators (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
     // Test theme select focus
     const themeSelect = page.locator('#theme-select');
@@ -159,6 +174,7 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
   test('dark mode maintains WCAG AAA contrast (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
     // Set dark mode via utility bar (visible on mobile)
     const themeSelect = page.locator('#theme-select');
@@ -207,8 +223,9 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
   test('keyboard navigation works for all controls (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
+    await expandUtilityBar(page);
 
-    // Theme select should be focusable and visible
+    // Theme select should be focusable and visible after expanding
     const themeSelect = page.locator('#theme-select');
     await expect(themeSelect).toBeVisible();
     await themeSelect.focus();
@@ -254,6 +271,7 @@ test.describe('WCAG 2.2 AAA Compliance Verification', () => {
   test('content wrapper maintains readability in dark mode (mobile)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/privacy.html');
+    await expandUtilityBar(page);
 
     // Set dark mode via utility bar (visible on mobile)
     const themeSelect = page.locator('#theme-select');
