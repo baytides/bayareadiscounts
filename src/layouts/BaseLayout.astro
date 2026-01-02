@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SmartAssistant from '../components/SmartAssistant.astro';
 
 interface Props {
   title: string;
@@ -8,6 +9,9 @@ interface Props {
 
 const { title, description = 'Free and low-cost resources across the San Francisco Bay Area' } = Astro.props;
 const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator`;
+
+// Azure Function endpoint for smart assistant
+const assistantEndpoint = import.meta.env.PUBLIC_ASSISTANT_API || 'https://baytides-link-checker.azurewebsites.net/api/assistant';
 ---
 
 <!DOCTYPE html>
@@ -206,5 +210,8 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
       setupThemeToggle();
       setupMobileMenu();
     </script>
+
+    <!-- Smart Assistant -->
+    <SmartAssistant apiEndpoint={assistantEndpoint} />
   </body>
 </html>

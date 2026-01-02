@@ -33,26 +33,143 @@ const sizeClasses = size === 'large'
     placeholder={placeholder}
     autocomplete="off"
   />
+  <!-- Search hints -->
+  <div id="search-hints" class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-3 z-50">
+    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-2">Try searching for:</p>
+    <div class="flex flex-wrap gap-2">
+      <button type="button" class="search-hint-btn">food assistance</button>
+      <button type="button" class="search-hint-btn">utility bill help</button>
+      <button type="button" class="search-hint-btn">healthcare</button>
+      <button type="button" class="search-hint-btn">senior programs</button>
+    </div>
+  </div>
 </div>
 
-<script>
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+<!-- Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs" type="module"></script>
 
-  searchInput?.addEventListener('input', (e) => {
-    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    const cards = document.querySelectorAll('[data-category]');
+<script type="module">
+  import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.esm.min.js';
 
-    cards.forEach((card) => {
-      const text = card.textContent?.toLowerCase() || '';
-      const matches = query === '' || text.includes(query);
-      (card as HTMLElement).style.display = matches ? '' : 'none';
-    });
+  // Build search index from program cards
+  const cards = document.querySelectorAll('[data-category]');
+  const programs = Array.from(cards).map((card, index) => {
+    const nameEl = card.querySelector('h3');
+    const descEl = card.querySelector('p');
+    const categoryEl = card.querySelector('[class*="category-badge"]');
+    const areaEl = card.querySelector('[class*="text-neutral-500"]');
 
-    // Update count if counter exists
+    return {
+      index,
+      element: card,
+      name: nameEl?.textContent?.trim() || '',
+      description: descEl?.textContent?.trim() || '',
+      category: card.getAttribute('data-category') || '',
+      area: areaEl?.textContent?.trim() || '',
+      text: card.textContent?.trim() || ''
+    };
+  });
+
+  // Configure Fuse.js with weighted search
+  const fuse = new Fuse(programs, {
+    keys: [
+      { name: 'name', weight: 0.4 },
+      { name: 'description', weight: 0.3 },
+      { name: 'category', weight: 0.2 },
+      { name: 'area', weight: 0.1 }
+    ],
+    threshold: 0.4,           // Lower = stricter matching
+    distance: 100,            // How far to search for fuzzy match
+    minMatchCharLength: 2,    // Minimum characters before matching
+    includeScore: true,
+    includeMatches: true,
+    ignoreLocation: true,     // Search entire string, not just beginning
+    useExtendedSearch: true   // Enable advanced search patterns
+  });
+
+  const searchInput = document.getElementById('search-input');
+  const searchHints = document.getElementById('search-hints');
+  const hintButtons = document.querySelectorAll('.search-hint-btn');
+  let activeCategory = 'all';
+  let debounceTimer;
+
+  // Track active category filter
+  document.addEventListener('click', (e) => {
+    const filterBtn = (e.target as Element).closest('[data-filter]');
+    if (filterBtn) {
+      activeCategory = filterBtn.getAttribute('data-filter') || 'all';
+      performSearch();
+    }
+  });
+
+  function performSearch() {
+    const query = (searchInput as HTMLInputElement)?.value.trim();
+
+    if (!query) {
+      // No search query - show all (respect category filter)
+      programs.forEach(p => {
+        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+        (p.element as HTMLElement).style.display = matchesCategory ? '' : 'none';
+      });
+    } else {
+      // Fuzzy search with Fuse.js
+      const results = fuse.search(query);
+      const matchedIndices = new Set(results.map(r => r.item.index));
+
+      programs.forEach(p => {
+        const matchesSearch = matchedIndices.has(p.index);
+        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+        (p.element as HTMLElement).style.display = (matchesSearch && matchesCategory) ? '' : 'none';
+      });
+    }
+
+    // Update count
     const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
     const counter = document.getElementById('results-count');
     if (counter) {
-      counter.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found`;
+      const queryInfo = query ? ` for "${query}"` : '';
+      counter.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found${queryInfo}`;
+    }
+  }
+
+  // Debounced search on input
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(performSearch, 150);
+  });
+
+  // Show hints on focus if empty
+  searchInput?.addEventListener('focus', () => {
+    if (!(searchInput as HTMLInputElement).value) {
+      searchHints?.classList.remove('hidden');
     }
   });
+
+  // Hide hints on blur (with delay for click)
+  searchInput?.addEventListener('blur', () => {
+    setTimeout(() => searchHints?.classList.add('hidden'), 200);
+  });
+
+  // Hide hints when typing
+  searchInput?.addEventListener('input', () => {
+    if ((searchInput as HTMLInputElement).value) {
+      searchHints?.classList.add('hidden');
+    }
+  });
+
+  // Handle hint button clicks
+  hintButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      (searchInput as HTMLInputElement).value = btn.textContent || '';
+      searchHints?.classList.add('hidden');
+      performSearch();
+      searchInput?.focus();
+    });
+  });
 </script>
+
+<style>
+  .search-hint-btn {
+    @apply text-xs px-2 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors;
+  }
+</style>

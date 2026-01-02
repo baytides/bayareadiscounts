@@ -1,8 +1,7 @@
 {
-  "name": "baytides-link-checker",
+  "name": "baynavigator-functions",
   "version": "1.0.0",
-  "description": "Azure Functions for Bay Navigator link checking and monitoring",
-  "main": "link-checker/index.js",
+  "description": "Azure Functions for Bay Navigator - link checking and smart assistant",
   "scripts": {
     "start": "func start",
     "test": "node test-local.js"
