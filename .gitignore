@@ -1,26 +1,14 @@
-# Jekyll build output
-_site/
+# Astro build output
+dist/
+.astro/
 
-# Jekyll caches
-.jekyll-cache/
-.jekyll-metadata
-
-# Sass cache
-.sass-cache/
-
-# Bundler vendor/bundle
-vendor/
-
-# Node modules if present
+# Node modules
 node_modules/
 
 # OS & editor files
 .DS_Store
 *.swp
 *~
-
-# Ruby version files
-.ruby-version
 
 # Temporary files
 *.tmp
@@ -82,8 +70,6 @@ baynavigator.code-workspace
 * 2.*
 * 3
 * 3.*
-CLEANUP-SUMMARY.md
-ROADMAP.md
 
 # Flutter App (apps)
 apps/.dart_tool/

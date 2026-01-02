@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BayNavigator Global Styles */
+
+@layer base {
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-700;
+  }
+
+  /* Smooth scrolling with reduced motion respect */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Better text rendering */
+  body {
+    @apply text-neutral-900 bg-white antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Dark mode base */
+  .dark body {
+    @apply bg-neutral-900 text-neutral-100;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* Links */
+  a {
+    @apply text-primary-700 underline decoration-1 underline-offset-2
+           hover:text-primary-900 hover:decoration-2
+           focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700;
+  }
+
+  .dark a {
+    @apply text-primary-300 hover:text-primary-100;
+  }
+
+  /* Prose content */
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply pl-6;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply my-1;
+  }
+}
+
+@layer components {
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50
+           focus:bg-primary-700 focus:text-white focus:px-4 focus:py-2 focus:rounded
+           focus:no-underline;
+  }
+
+  /* Official banner (usa.gov inspired) */
+  .official-banner {
+    @apply bg-neutral-100 border-b border-neutral-200 py-2 text-sm;
+  }
+
+  .dark .official-banner {
+    @apply bg-neutral-800 border-neutral-700;
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-white rounded-lg shadow-card border border-neutral-200 p-6
+           transition-shadow duration-200 hover:shadow-card-hover;
+  }
+
+  .dark .card {
+    @apply bg-neutral-800 border-neutral-700;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded font-medium
+           transition-colors duration-150 focus:outline-none focus-visible:ring-2
+           focus-visible:ring-offset-2 no-underline;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-700 text-white hover:bg-primary-800
+           focus-visible:ring-primary-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-primary-700 border-2 border-primary-700
+           hover:bg-primary-50 focus-visible:ring-primary-700;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-neutral-800 text-primary-300 border-primary-400 hover:bg-neutral-700;
+  }
+
+  /* Container */
+  .container-page {
+    @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-12 md:py-16;
+  }
+
+  /* Hero section */
+  .hero {
+    @apply bg-gradient-to-br from-primary-700 to-primary-900 text-white py-16 md:py-24;
+  }
+
+  /* Category badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-food {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-health {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-housing {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .badge-utilities {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-transit {
+    @apply bg-purple-100 text-purple-800;
+  }
+
+  .badge-education {
+    @apply bg-indigo-100 text-indigo-800;
+  }
+
+  /* Search input */
+  .search-input {
+    @apply w-full px-4 py-3 rounded-lg border border-neutral-300
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none
+           placeholder:text-neutral-500;
+  }
+
+  .dark .search-input {
+    @apply bg-neutral-800 border-neutral-600 text-white placeholder:text-neutral-400;
+  }
+}
+
+@layer utilities {
+  /* Visually hidden but accessible */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* Content width for readability */
+  .prose-width {
+    @apply max-w-content;
+  }
+}

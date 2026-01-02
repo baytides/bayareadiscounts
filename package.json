@@ -1,34 +1,30 @@
 {
-  "dependencies": {
-    "js-yaml": "^4.1.0",
-    "playwright": "^1.57.0",
-    "sharp": "^0.34.5"
-  },
   "name": "baynavigator",
-  "version": "0.1.0",
-  "description": "**[BayNavigator.org](https://baynavigator.org)** — A searchable directory of free and low-cost programs across the San Francisco Bay Area.",
-  "main": "playwright.config.js",
-  "directories": {
-    "test": "tests"
+  "type": "module",
+  "version": "2.0.0",
+  "description": "Bay Area community resources - Free and low-cost programs",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [
+    "bay-area",
+    "community",
+    "resources",
+    "assistance"
+  ],
+  "author": "Bay Tides",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.16.6",
+    "js-yaml": "^4.1.1",
+    "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0"
-  },
-  "scripts": {
-    "build": "bundle exec jekyll build",
-    "serve": "bundle exec jekyll serve --host 127.0.0.1 --port 4000",
-    "test": "npx playwright test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/baytides/baynavigator.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/baytides/baynavigator/issues"
-  },
-  "homepage": "https://github.com/baytides/baynavigator#readme"
+    "@types/js-yaml": "^4.0.9"
+  }
 }
