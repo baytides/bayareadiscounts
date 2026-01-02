@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import SearchBar from '../components/SearchBar.astro';
 import CategoryFilter from '../components/CategoryFilter.astro';
+import LocationFilter from '../components/LocationFilter.astro';
 import yaml from 'js-yaml';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -122,14 +123,19 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
   <!-- All Programs -->
   <section class="section" id="programs">
     <div class="container-page">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-neutral-900 dark:text-white">All Programs</h2>
-          <p id="results-count" class="text-neutral-600 dark:text-neutral-400 mt-1">
-            {allPrograms.length} programs found
-          </p>
+      <div class="flex flex-col gap-4 mb-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-bold text-neutral-900 dark:text-white">All Programs</h2>
+            <p id="results-count" class="text-neutral-600 dark:text-neutral-400 mt-1">
+              {allPrograms.length} programs found
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4">
+            <LocationFilter />
+            <CategoryFilter categories={categories} />
+          </div>
         </div>
-        <CategoryFilter categories={categories} />
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

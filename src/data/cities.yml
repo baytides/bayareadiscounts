@@ -1,6 +1,7 @@
 # Bay Area Cities to County Mapping
 # Used to auto-derive county from city for program filtering
-# Cities marked with † are county seats
+# Includes incorporated cities, towns, and census-designated places (CDPs)
+# Cities marked with county_seat: true are county seats
 
 # Alameda County
 - name: Alameda
@@ -13,6 +14,10 @@
 
 - name: Berkeley
   type: City
+  county: Alameda County
+
+- name: Castro Valley
+  type: CDP
   county: Alameda County
 
 - name: Dublin
@@ -56,17 +61,41 @@
   type: City
   county: Alameda County
 
+- name: San Lorenzo
+  type: CDP
+  county: Alameda County
+
+- name: Sunol
+  type: CDP
+  county: Alameda County
+
 - name: Union City
   type: City
   county: Alameda County
 
 # Contra Costa County
+- name: Alamo
+  type: CDP
+  county: Contra Costa County
+
 - name: Antioch
   type: City
   county: Contra Costa County
 
+- name: Bethel Island
+  type: CDP
+  county: Contra Costa County
+
 - name: Brentwood
   type: City
+  county: Contra Costa County
+
+- name: Byron
+  type: CDP
+  county: Contra Costa County
+
+- name: Canyon
+  type: CDP
   county: Contra Costa County
 
 - name: Clayton
@@ -77,16 +106,36 @@
   type: City
   county: Contra Costa County
 
+- name: Crockett
+  type: CDP
+  county: Contra Costa County
+
 - name: Danville
   type: Town
+  county: Contra Costa County
+
+- name: Diablo
+  type: CDP
+  county: Contra Costa County
+
+- name: Discovery Bay
+  type: CDP
   county: Contra Costa County
 
 - name: El Cerrito
   type: City
   county: Contra Costa County
 
+- name: El Sobrante
+  type: CDP
+  county: Contra Costa County
+
 - name: Hercules
   type: City
+  county: Contra Costa County
+
+- name: Knightsen
+  type: CDP
   county: Contra Costa County
 
 - name: Lafayette
@@ -122,8 +171,16 @@
   type: City
   county: Contra Costa County
 
+- name: Port Costa
+  type: CDP
+  county: Contra Costa County
+
 - name: Richmond
   type: City
+  county: Contra Costa County
+
+- name: Rodeo
+  type: CDP
   county: Contra Costa County
 
 - name: San Pablo
@@ -143,24 +200,72 @@
   type: City
   county: Marin County
 
+- name: Belvedere Tiburon
+  type: CDP
+  county: Marin County
+
+- name: Bolinas
+  type: CDP
+  county: Marin County
+
 - name: Corte Madera
   type: Town
+  county: Marin County
+
+- name: Dillon Beach
+  type: CDP
   county: Marin County
 
 - name: Fairfax
   type: Town
   county: Marin County
 
+- name: Forest Knolls
+  type: CDP
+  county: Marin County
+
+- name: Greenbrae
+  type: CDP
+  county: Marin County
+
+- name: Inverness
+  type: CDP
+  county: Marin County
+
+- name: Kentfield
+  type: CDP
+  county: Marin County
+
+- name: Lagunitas
+  type: CDP
+  county: Marin County
+
 - name: Larkspur
   type: City
+  county: Marin County
+
+- name: Marshall
+  type: CDP
   county: Marin County
 
 - name: Mill Valley
   type: City
   county: Marin County
 
+- name: Nicasio
+  type: CDP
+  county: Marin County
+
 - name: Novato
   type: City
+  county: Marin County
+
+- name: Olema
+  type: CDP
+  county: Marin County
+
+- name: Point Reyes Station
+  type: CDP
   county: Marin County
 
 - name: Ross
@@ -169,6 +274,14 @@
 
 - name: San Anselmo
   type: Town
+  county: Marin County
+
+- name: San Geronimo
+  type: CDP
+  county: Marin County
+
+- name: San Quentin
+  type: CDP
   county: Marin County
 
 - name: San Rafael
@@ -180,8 +293,20 @@
   type: City
   county: Marin County
 
+- name: Stinson Beach
+  type: CDP
+  county: Marin County
+
 - name: Tiburon
   type: Town
+  county: Marin County
+
+- name: Tomales
+  type: CDP
+  county: Marin County
+
+- name: Woodacre
+  type: CDP
   county: Marin County
 
 # Napa County
@@ -189,14 +314,34 @@
   type: City
   county: Napa County
 
+- name: Angwin
+  type: CDP
+  county: Napa County
+
 - name: Calistoga
   type: City
+  county: Napa County
+
+- name: Deer Park
+  type: CDP
   county: Napa County
 
 - name: Napa
   type: City
   county: Napa County
   county_seat: true
+
+- name: Oakville
+  type: CDP
+  county: Napa County
+
+- name: Pope Valley
+  type: CDP
+  county: Napa County
+
+- name: Rutherford
+  type: CDP
+  county: Napa County
 
 - name: St. Helena
   type: City
@@ -241,6 +386,10 @@
   type: City
   county: San Mateo County
 
+- name: El Granada
+  type: CDP
+  county: San Mateo County
+
 - name: Foster City
   type: City
   county: San Mateo County
@@ -253,6 +402,14 @@
   type: Town
   county: San Mateo County
 
+- name: La Honda
+  type: CDP
+  county: San Mateo County
+
+- name: Loma Mar
+  type: CDP
+  county: San Mateo County
+
 - name: Menlo Park
   type: City
   county: San Mateo County
@@ -261,8 +418,20 @@
   type: City
   county: San Mateo County
 
+- name: Montara
+  type: CDP
+  county: San Mateo County
+
+- name: Moss Beach
+  type: CDP
+  county: San Mateo County
+
 - name: Pacifica
   type: City
+  county: San Mateo County
+
+- name: Pescadero
+  type: CDP
   county: San Mateo County
 
 - name: Portola Valley
@@ -282,6 +451,10 @@
   type: City
   county: San Mateo County
 
+- name: San Gregorio
+  type: CDP
+  county: San Mateo County
+
 - name: San Mateo
   type: City
   county: San Mateo County
@@ -295,8 +468,16 @@
   county: San Mateo County
 
 # Santa Clara County
+- name: Alviso
+  type: CDP
+  county: Santa Clara County
+
 - name: Campbell
   type: City
+  county: Santa Clara County
+
+- name: Coyote
+  type: CDP
   county: Santa Clara County
 
 - name: Cupertino
@@ -305,6 +486,10 @@
 
 - name: Gilroy
   type: City
+  county: Santa Clara County
+
+- name: Holy City
+  type: CDP
   county: Santa Clara County
 
 - name: Los Altos
@@ -331,12 +516,24 @@
   type: City
   county: Santa Clara County
 
+- name: Mount Hamilton
+  type: CDP
+  county: Santa Clara County
+
 - name: Mountain View
   type: City
   county: Santa Clara County
 
+- name: New Almaden
+  type: CDP
+  county: Santa Clara County
+
 - name: Palo Alto
   type: City
+  county: Santa Clara County
+
+- name: Redwood Estates
+  type: CDP
   county: Santa Clara County
 
 - name: San Jose
@@ -344,12 +541,20 @@
   county: Santa Clara County
   county_seat: true
 
+- name: San Martin
+  type: CDP
+  county: Santa Clara County
+
 - name: Santa Clara
   type: City
   county: Santa Clara County
 
 - name: Saratoga
   type: City
+  county: Santa Clara County
+
+- name: Stanford
+  type: CDP
   county: Santa Clara County
 
 - name: Sunnyvale
@@ -361,8 +566,16 @@
   type: City
   county: Solano County
 
+- name: Birds Landing
+  type: CDP
+  county: Solano County
+
 - name: Dixon
   type: City
+  county: Solano County
+
+- name: Elmira
+  type: CDP
   county: Solano County
 
 - name: Fairfield
@@ -370,12 +583,20 @@
   county: Solano County
   county_seat: true
 
+- name: Mare Island
+  type: CDP
+  county: Solano County
+
 - name: Rio Vista
   type: City
   county: Solano County
 
 - name: Suisun City
   type: City
+  county: Solano County
+
+- name: Travis AFB
+  type: CDP
   county: Solano County
 
 - name: Vacaville
@@ -387,6 +608,30 @@
   county: Solano County
 
 # Sonoma County
+- name: Annapolis
+  type: CDP
+  county: Sonoma County
+
+- name: Bodega
+  type: CDP
+  county: Sonoma County
+
+- name: Bodega Bay
+  type: CDP
+  county: Sonoma County
+
+- name: Boyes Hot Springs
+  type: CDP
+  county: Sonoma County
+
+- name: Camp Meeker
+  type: CDP
+  county: Sonoma County
+
+- name: Cazadero
+  type: CDP
+  county: Sonoma County
+
 - name: Cloverdale
   type: City
   county: Sonoma County
@@ -395,12 +640,72 @@
   type: City
   county: Sonoma County
 
+- name: Duncans Mills
+  type: CDP
+  county: Sonoma County
+
+- name: El Verano
+  type: CDP
+  county: Sonoma County
+
+- name: Eldridge
+  type: CDP
+  county: Sonoma County
+
+- name: Forestville
+  type: CDP
+  county: Sonoma County
+
+- name: Fulton
+  type: CDP
+  county: Sonoma County
+
+- name: Geyserville
+  type: CDP
+  county: Sonoma County
+
+- name: Glen Ellen
+  type: CDP
+  county: Sonoma County
+
+- name: Graton
+  type: CDP
+  county: Sonoma County
+
+- name: Guerneville
+  type: CDP
+  county: Sonoma County
+
 - name: Healdsburg
   type: City
   county: Sonoma County
 
+- name: Jenner
+  type: CDP
+  county: Sonoma County
+
+- name: Kenwood
+  type: CDP
+  county: Sonoma County
+
+- name: Monte Rio
+  type: CDP
+  county: Sonoma County
+
+- name: Occidental
+  type: CDP
+  county: Sonoma County
+
+- name: Penngrove
+  type: CDP
+  county: Sonoma County
+
 - name: Petaluma
   type: City
+  county: Sonoma County
+
+- name: Rio Nido
+  type: CDP
   county: Sonoma County
 
 - name: Rohnert Park
@@ -418,6 +723,22 @@
 
 - name: Sonoma
   type: City
+  county: Sonoma County
+
+- name: Stewarts Point
+  type: CDP
+  county: Sonoma County
+
+- name: Valley Ford
+  type: CDP
+  county: Sonoma County
+
+- name: Villa Grande
+  type: CDP
+  county: Sonoma County
+
+- name: Vineburg
+  type: CDP
   county: Sonoma County
 
 - name: Windsor

@@ -1,0 +1,275 @@
+---
+/**
+ * LocationFilter component
+ * Allows users to filter programs by ZIP code or city
+ * Shows programs for their county + Bay Area + Statewide + Nationwide
+ */
+import yaml from 'js-yaml';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load ZIP codes mapping
+const zipcodesPath = path.join(process.cwd(), 'src/data/zipcodes.yml');
+const zipcodesContent = fs.readFileSync(zipcodesPath, 'utf-8');
+const zipcodes = yaml.load(zipcodesContent) as Record<string, string>;
+
+// Load cities mapping
+const citiesPath = path.join(process.cwd(), 'src/data/cities.yml');
+const citiesContent = fs.readFileSync(citiesPath, 'utf-8');
+const cities = yaml.load(citiesContent) as Array<{ name: string; county: string; type: string }>;
+
+// Create city to county lookup
+const cityToCounty: Record<string, string> = {};
+cities.forEach(city => {
+  cityToCounty[city.name.toLowerCase()] = city.county;
+});
+
+// Get unique city names for autocomplete
+const cityNames = cities.map(c => c.name).sort();
+---
+
+<div class="location-filter">
+  <div class="flex items-center gap-2">
+    <label for="location-input" class="sr-only">Enter ZIP code or city</label>
+    <div class="relative flex-1">
+      <svg
+        class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
+      <input
+        type="text"
+        id="location-input"
+        class="w-full py-2 pl-9 pr-8 text-sm rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        placeholder="ZIP code or city..."
+        autocomplete="off"
+        list="city-suggestions"
+      />
+      <button
+        type="button"
+        id="clear-location"
+        class="hidden absolute right-2 top-1/2 -translate-y-1/2 p-1 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+        aria-label="Clear location"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Location status -->
+  <div id="location-status" class="hidden mt-2 text-sm">
+    <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300">
+      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+      </svg>
+      <span id="location-county"></span>
+    </span>
+  </div>
+
+  <!-- City suggestions datalist -->
+  <datalist id="city-suggestions">
+    {cityNames.map(city => (
+      <option value={city} />
+    ))}
+  </datalist>
+</div>
+
+<!-- Pass data to client -->
+<script type="application/json" id="location-data">
+  {JSON.stringify({ zipcodes, cityToCounty })}
+</script>
+
+<script type="module">
+  // Load data
+  const dataEl = document.getElementById('location-data');
+  const { zipcodes, cityToCounty } = JSON.parse(dataEl?.textContent || '{}');
+
+  const locationInput = document.getElementById('location-input') as HTMLInputElement;
+  const clearBtn = document.getElementById('clear-location');
+  const statusEl = document.getElementById('location-status');
+  const countyEl = document.getElementById('location-county');
+
+  // Bay Area counties for matching
+  const BAY_AREA_COUNTIES = [
+    'Alameda County',
+    'Contra Costa County',
+    'Marin County',
+    'Napa County',
+    'San Francisco',
+    'San Mateo County',
+    'Santa Clara County',
+    'Solano County',
+    'Sonoma County'
+  ];
+
+  // Geographic areas that always show (in addition to local county)
+  const ALWAYS_SHOW_AREAS = ['Bay Area', 'Statewide', 'Nationwide'];
+
+  let currentCounty: string | null = null;
+  let debounceTimer: ReturnType<typeof setTimeout>;
+
+  function lookupLocation(input: string): string | null {
+    const normalized = input.trim();
+
+    if (!normalized) return null;
+
+    // Check if it's a ZIP code (5 digits)
+    if (/^\d{5}$/.test(normalized)) {
+      const city = zipcodes[normalized];
+      if (city) {
+        return cityToCounty[city.toLowerCase()] || null;
+      }
+      return null;
+    }
+
+    // Check if it's a city name
+    const lowerInput = normalized.toLowerCase();
+    return cityToCounty[lowerInput] || null;
+  }
+
+  function filterByLocation(county: string | null) {
+    const cards = document.querySelectorAll('[data-category]');
+
+    cards.forEach(card => {
+      const areaEl = card.querySelector('.text-neutral-500, [class*="text-neutral-500"]');
+      const area = areaEl?.textContent?.trim() || '';
+
+      // Determine visibility
+      let show = true;
+
+      if (county) {
+        // If location is set, show:
+        // 1. Programs in the user's county
+        // 2. Programs marked as "Bay Area" (regional)
+        // 3. Programs marked as "Statewide"
+        // 4. Programs marked as "Nationwide"
+        const matchesCounty = area === county;
+        const matchesRegionalOrWider = ALWAYS_SHOW_AREAS.some(a => area.includes(a));
+        show = matchesCounty || matchesRegionalOrWider;
+      }
+
+      // Get current display state (might be hidden by search/category filter)
+      const currentDisplay = (card as HTMLElement).style.display;
+      const wasHiddenByOtherFilter = currentDisplay === 'none' && !card.hasAttribute('data-location-hidden');
+
+      if (show) {
+        card.removeAttribute('data-location-hidden');
+        // Only show if not hidden by other filters
+        if (!wasHiddenByOtherFilter) {
+          (card as HTMLElement).style.display = '';
+        }
+      } else {
+        card.setAttribute('data-location-hidden', 'true');
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    // Update count
+    updateResultsCount();
+
+    // Dispatch event for other components
+    window.dispatchEvent(new CustomEvent('locationChanged', {
+      detail: { county }
+    }));
+  }
+
+  function updateResultsCount() {
+    const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+    const counter = document.getElementById('results-count');
+    if (counter) {
+      const searchInput = document.getElementById('search-input') as HTMLInputElement;
+      const query = searchInput?.value?.trim() || '';
+      const queryInfo = query ? ` for "${query}"` : '';
+      const locationInfo = currentCounty ? ` in ${currentCounty}` : '';
+      counter.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found${queryInfo}${locationInfo}`;
+    }
+  }
+
+  function handleInput() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const value = locationInput.value.trim();
+
+      // Show/hide clear button
+      if (value) {
+        clearBtn?.classList.remove('hidden');
+      } else {
+        clearBtn?.classList.add('hidden');
+        statusEl?.classList.add('hidden');
+        currentCounty = null;
+        filterByLocation(null);
+        return;
+      }
+
+      const county = lookupLocation(value);
+
+      if (county) {
+        currentCounty = county;
+        if (countyEl) countyEl.textContent = county;
+        statusEl?.classList.remove('hidden');
+        filterByLocation(county);
+      } else {
+        // Input doesn't match - keep showing status if we had a match before
+        if (currentCounty) {
+          // User might be editing, don't clear yet
+        } else {
+          statusEl?.classList.add('hidden');
+        }
+      }
+    }, 300);
+  }
+
+  function clearLocation() {
+    locationInput.value = '';
+    clearBtn?.classList.add('hidden');
+    statusEl?.classList.add('hidden');
+    currentCounty = null;
+    filterByLocation(null);
+    locationInput.focus();
+  }
+
+  // Event listeners
+  locationInput?.addEventListener('input', handleInput);
+  clearBtn?.addEventListener('click', clearLocation);
+
+  // Handle keyboard
+  locationInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      clearLocation();
+    }
+  });
+
+  // Coordinate with search filter - listen for search events
+  const searchInput = document.getElementById('search-input');
+  searchInput?.addEventListener('input', () => {
+    // Re-apply location filter after search updates
+    setTimeout(() => {
+      if (currentCounty) {
+        filterByLocation(currentCounty);
+      }
+    }, 200);
+  });
+</script>
+
+<style>
+  .location-filter {
+    @apply min-w-[200px];
+  }
+</style>
