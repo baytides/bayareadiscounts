@@ -194,7 +194,7 @@
 
   /* Print metadata header */
   .programs-container::before {
-    content: "Printed from Bay Area Discounts (bayareadiscounts.com) on " attr(data-print-date);
+    content: "Printed from Bay Navigator (baynavigator.org) on " attr(data-print-date);
     display: block;
     font-size: 10pt;
     color: #666 !important;
@@ -228,7 +228,7 @@
   /* Add header on each page */
   @page {
     @top-center {
-      content: "Bay Area Discounts - bayareadiscounts.com";
+      content: "Bay Navigator - baynavigator.org";
       font-size: 10pt;
       font-weight: bold;
     }

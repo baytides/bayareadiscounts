@@ -5,16 +5,20 @@ on:
     branches:
       - main
     paths:
-      - 'lib/**'
-      - 'test/**'
-      - 'pubspec.yaml'
+      - 'apps/lib/**'
+      - 'apps/test/**'
+      - 'apps/pubspec.yaml'
   pull_request:
     branches:
       - main
     paths:
-      - 'lib/**'
-      - 'test/**'
-      - 'pubspec.yaml'
+      - 'apps/lib/**'
+      - 'apps/test/**'
+      - 'apps/pubspec.yaml'
+
+defaults:
+  run:
+    working-directory: apps
 
 jobs:
   test:

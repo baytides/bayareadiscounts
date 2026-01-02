@@ -79,17 +79,17 @@ To add or update programs:
 2. Edit the appropriate YAML file in this directory
 3. Submit a pull request
 
-Or simply [open an issue](https://github.com/baytides/bayareadiscounts/issues/new) with program details.
+Or simply [open an issue](https://github.com/baytides/baynavigator/issues/new) with program details.
 
 ## Data Accuracy
 
 This is a community-maintained dataset. While we verify programs periodically:
 - Always check official websites for current information
 - Availability and eligibility can change
-- Report outdated information via [GitHub issues](https://github.com/baytides/bayareadiscounts/issues/new)
+- Report outdated information via [GitHub issues](https://github.com/baytides/baynavigator/issues/new)
 
 ---
 
 **Full license:** [LICENSE-DATA](../../LICENSE-DATA)
 **Project homepage:** [BayNavigator.com](https://baynavigator.org)
-**GitHub repository:** [github.com/baytides/bayareadiscounts](https://github.com/baytides/bayareadiscounts)
+**GitHub repository:** [github.com/baytides/baynavigator](https://github.com/baytides/baynavigator)

@@ -19,7 +19,7 @@ fi
 KEEP_COUNT=${1:-5}
 
 echo "Fetching all deployments..."
-ALL_DEPLOYMENTS=$(gh api repos/baytides/bayareadiscounts/deployments --paginate --jq '.[] | {id: .id, created: .created_at, env: .environment}')
+ALL_DEPLOYMENTS=$(gh api repos/baytides/baynavigator/deployments --paginate --jq '.[] | {id: .id, created: .created_at, env: .environment}')
 
 if [ -z "$ALL_DEPLOYMENTS" ]; then
   echo "✅ No deployments found. Repository is clean!"
@@ -31,7 +31,7 @@ echo "Found $TOTAL total deployments"
 
 # Get IDs of deployments to delete (all except the most recent $KEEP_COUNT)
 echo "Keeping the $KEEP_COUNT most recent deployments..."
-DEPLOYMENT_IDS=$(gh api repos/baytides/bayareadiscounts/deployments --paginate --jq '.[].id' | tail -n +$((KEEP_COUNT + 1)))
+DEPLOYMENT_IDS=$(gh api repos/baytides/baynavigator/deployments --paginate --jq '.[].id' | tail -n +$((KEEP_COUNT + 1)))
 
 if [ -z "$DEPLOYMENT_IDS" ]; then
   echo "✅ Only $TOTAL deployments found, all will be kept!"
@@ -58,11 +58,11 @@ for DEPLOYMENT_ID in $DEPLOYMENT_IDS; do
   echo -n "[$COUNT/$TO_DELETE] Deleting deployment $DEPLOYMENT_ID... "
 
   # Set deployment to inactive first
-  gh api -X POST "repos/baytides/bayareadiscounts/deployments/$DEPLOYMENT_ID/statuses" \
+  gh api -X POST "repos/baytides/baynavigator/deployments/$DEPLOYMENT_ID/statuses" \
     -f state=inactive > /dev/null 2>&1 || true
 
   # Delete the deployment
-  if gh api -X DELETE "repos/baytides/bayareadiscounts/deployments/$DEPLOYMENT_ID" > /dev/null 2>&1; then
+  if gh api -X DELETE "repos/baytides/baynavigator/deployments/$DEPLOYMENT_ID" > /dev/null 2>&1; then
     echo "✅"
     DELETED=$((DELETED + 1))
   else

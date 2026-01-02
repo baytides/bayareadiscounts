@@ -21,7 +21,7 @@ These Terms of Service ("Terms") govern your access to and use of the Bay Naviga
 
 ## Quick Navigation
 
-1. [About Bay Navigator](#about-bay-area-discounts)
+1. [About Bay Navigator](#about-bay-navigator)
 2. [Use License](#use-license)
 3. [Content Accuracy and Disclaimers](#content-accuracy-and-disclaimers)
 4. [Limitation of Liability](#limitation-of-liability)
@@ -38,7 +38,7 @@ These Terms of Service ("Terms") govern your access to and use of the Bay Naviga
 
 ---
 
-## 1. About Bay Navigator {#about-bay-area-discounts}
+## 1. About Bay Navigator {#about-bay-navigator}
 
 **Important Disclaimer**: This website and associated mobile applications are **not affiliated with, endorsed by, or connected to any government agency**. Bay Navigator is an independent community resource.
 

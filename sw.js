@@ -1,5 +1,5 @@
 const CACHE_VERSION = 'v4';
-const CACHE_NAME = `bay-area-discounts-${CACHE_VERSION}`;
+const CACHE_NAME = `bay-navigator-${CACHE_VERSION}`;
 const API_CACHE_NAME = `bay-area-api-${CACHE_VERSION}`;
 const BASE_URL = self.registration.scope.replace(/\/$/, '');
 const OFFLINE_URL = `${BASE_URL}/offline.html`;

@@ -85,40 +85,40 @@ baynavigator.code-workspace
 CLEANUP-SUMMARY.md
 ROADMAP.md
 
-# Flutter App (apps/flutter)
-apps/flutter/.dart_tool/
-apps/flutter/.flutter-plugins
-apps/flutter/.flutter-plugins-dependencies
-apps/flutter/build/
-apps/flutter/.packages
-apps/flutter/*.iml
-apps/flutter/.metadata
-apps/flutter/pubspec.lock
+# Flutter App (apps)
+apps/.dart_tool/
+apps/.flutter-plugins
+apps/.flutter-plugins-dependencies
+apps/build/
+apps/.packages
+apps/*.iml
+apps/.metadata
+apps/pubspec.lock
 
 # Flutter Android
-apps/flutter/android/.gradle/
-apps/flutter/android/local.properties
-apps/flutter/android/app/debug/
-apps/flutter/android/app/profile/
-apps/flutter/android/app/release/
+apps/android/.gradle/
+apps/android/local.properties
+apps/android/app/debug/
+apps/android/app/profile/
+apps/android/app/release/
 
 # Flutter iOS/macOS
-apps/flutter/ios/Pods/
-apps/flutter/ios/.symlinks/
-apps/flutter/ios/Flutter/ephemeral/
-apps/flutter/ios/Flutter/Generated.xcconfig
-apps/flutter/macos/Pods/
-apps/flutter/macos/Flutter/ephemeral/
-apps/flutter/macos/Flutter/GeneratedPluginRegistrant.swift
+apps/ios/Pods/
+apps/ios/.symlinks/
+apps/ios/Flutter/ephemeral/
+apps/ios/Flutter/Generated.xcconfig
+apps/macos/Pods/
+apps/macos/Flutter/ephemeral/
+apps/macos/Flutter/GeneratedPluginRegistrant.swift
 
 # Flutter visionOS
-apps/flutter/visionos/Pods/
+apps/visionos/Pods/
 
 # Flutter Linux
-apps/flutter/linux/flutter/ephemeral/
+apps/linux/flutter/ephemeral/
 
 # Flutter Windows
-apps/flutter/windows/flutter/ephemeral/
+apps/windows/flutter/ephemeral/
 
 # Flutter credentials and signing
 *.jks

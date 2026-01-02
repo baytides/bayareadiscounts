@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'lib/**'
-      - 'web/**'
-      - 'pubspec.yaml'
+      - 'apps/lib/**'
+      - 'apps/web/**'
+      - 'apps/pubspec.yaml'
       - '.github/workflows/deploy-web.yml'
   workflow_dispatch:
 
@@ -19,6 +19,10 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: apps
 
 jobs:
   build:
@@ -41,12 +45,12 @@ jobs:
         run: flutter test
 
       - name: Build web app
-        run: flutter build web --release --base-href "/baynavigator-app/"
+        run: flutter build web --release --base-href "/baynavigator/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: apps/build/web
 
   deploy:
     environment:

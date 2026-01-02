@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    working-directory: apps
+
 jobs:
   build-foss:
     runs-on: ubuntu-latest
@@ -49,12 +53,12 @@ jobs:
 
       - name: Rename FOSS artifact
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk bay-area-discounts-foss.apk
+          cp build/app/outputs/flutter-apk/app-release.apk bay-navigator-foss.apk
 
       - name: Add to existing GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ inputs.version }}
-          files: bay-area-discounts-foss.apk
+          files: apps/bay-navigator-foss.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

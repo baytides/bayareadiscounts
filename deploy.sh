@@ -1,10 +1,10 @@
 #!/bin/bash
-# Simple deployment script for Bay Area Discounts
+# Simple deployment script for Bay Navigator
 # Uses Azure SWA CLI to deploy the static site
 
 set -e
 
-echo "🚀 Bay Area Discounts Deployment Script"
+echo "🚀 Bay Navigator Deployment Script"
 echo "========================================"
 
 # Check if SWA CLI is installed
@@ -26,7 +26,7 @@ fi
 echo "   Using build from run: $LATEST_RUN"
 rm -rf /tmp/bayarea-deploy
 mkdir -p /tmp/bayarea-deploy
-gh run download "$LATEST_RUN" -n site -D /tmp/bayarea-deploy -R baytides/bayareadiscounts
+gh run download "$LATEST_RUN" -n site -D /tmp/bayarea-deploy -R baytides/baynavigator
 
 DEPLOY_DIR="/tmp/bayarea-deploy"
 
@@ -52,5 +52,5 @@ swa deploy "$DEPLOY_DIR" \
 
 echo ""
 echo "✅ Deployment complete!"
-echo "🌐 Site: https://bayareadiscounts.com"
+echo "🌐 Site: https://baynavigator.org"
 echo "🔗 Azure: https://blue-pebble-00a40d41e.4.azurestaticapps.net"

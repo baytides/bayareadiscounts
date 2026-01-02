@@ -1,2 +1,2 @@
-# Require bayareadiscounts approval for verification date changes
-_data/**/*.yml @bayareadiscounts
+# Require baynavigator approval for verification date changes
+_data/**/*.yml @baynavigator

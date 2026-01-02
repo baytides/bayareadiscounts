@@ -56,8 +56,8 @@ jobs:
           gh release download "$TAG" --pattern "*-foss.apk" --dir repo --clobber || true
 
           # Rename to standard F-Droid format
-          if [ -f "repo/bay-area-discounts-foss.apk" ]; then
-            mv "repo/bay-area-discounts-foss.apk" "repo/org.baytides.baynavigator_${VERSION}.apk"
+          if [ -f "repo/bay-navigator-foss.apk" ]; then
+            mv "repo/bay-navigator-foss.apk" "repo/org.baytides.baynavigator_${VERSION}.apk"
           fi
 
       - name: Setup F-Droid repo keystore

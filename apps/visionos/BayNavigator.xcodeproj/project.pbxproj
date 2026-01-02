@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0000001256D9A0000000001 /* BayNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000001 /* BayNavigatorApp.swift */; };
+		A0000001256D9A0000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000002 /* ContentView.swift */; };
+		A0000001256D9A0000000003 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000003 /* Program.swift */; };
+		A0000001256D9A0000000004 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000004 /* APIService.swift */; };
+		A0000001256D9A0000000005 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000005 /* CacheService.swift */; };
+		A0000001256D9A0000000006 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000006 /* ProgramsViewModel.swift */; };
+		A0000001256D9A0000000007 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000007 /* SettingsViewModel.swift */; };
+		A0000001256D9A0000000008 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000008 /* Color+Theme.swift */; };
+		A0000001256D9A0000000016 /* WarmModeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000016 /* WarmModeModifier.swift */; };
+		A0000001256D9A0000000009 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000009 /* HomeView.swift */; };
+		A0000001256D9A0000000010 /* ProgramCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000010 /* ProgramCardView.swift */; };
+		A0000001256D9A0000000011 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000011 /* FilterSheetView.swift */; };
+		A0000001256D9A0000000012 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000012 /* FavoritesView.swift */; };
+		A0000001256D9A0000000013 /* ProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000013 /* ProgramDetailView.swift */; };
+		A0000001256D9A0000000014 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000014 /* SettingsView.swift */; };
+		A0000001256D9A0000000015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000015 /* Assets.xcassets */; };
+		A0000001256D9A0000000017 /* UserPrefsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000017 /* UserPrefsViewModel.swift */; };
+		A0000001256D9A0000000018 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000018 /* OnboardingView.swift */; };
+		A0000001256D9A0000000019 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000019 /* ForYouView.swift */; };
+		A0000001256D9A0000000020 /* ImmersiveWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000002256D9A0000000020 /* ImmersiveWelcomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A0000002256D9A0000000001 /* BayNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayNavigatorApp.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000003 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000004 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000005 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000006 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewModel.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000007 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000008 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		A0000002256D9A0000000016 /* WarmModeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmModeModifier.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000009 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000010 /* ProgramCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCardView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000011 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000012 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000013 /* ProgramDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000014 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0000003256D9A0000000001 /* BayNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0000004256D9A0000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0000002256D9A0000000017 /* UserPrefsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrefsViewModel.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000018 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000019 /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
+		A0000002256D9A0000000020 /* ImmersiveWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveWelcomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0000005256D9A0000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0000006256D9A0000000001 = {
+			isa = PBXGroup;
+			children = (
+				A0000006256D9A0000000002 /* BayNavigator */,
+				A0000006256D9A0000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000002 /* BayNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000001 /* BayNavigatorApp.swift */,
+				A0000004256D9A0000000001 /* Info.plist */,
+				A0000002256D9A0000000015 /* Assets.xcassets */,
+				A0000006256D9A0000000004 /* Models */,
+				A0000006256D9A0000000005 /* Services */,
+				A0000006256D9A0000000006 /* ViewModels */,
+				A0000006256D9A0000000007 /* Views */,
+				A0000006256D9A0000000008 /* Extensions */,
+			);
+			path = BayNavigator;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0000003256D9A0000000001 /* BayNavigator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000003 /* Program.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000004 /* APIService.swift */,
+				A0000002256D9A0000000005 /* CacheService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000006 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000006 /* ProgramsViewModel.swift */,
+				A0000002256D9A0000000007 /* SettingsViewModel.swift */,
+				A0000002256D9A0000000017 /* UserPrefsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000002 /* ContentView.swift */,
+				A0000006256D9A0000000013 /* ForYou */,
+				A0000006256D9A0000000009 /* Home */,
+				A0000006256D9A0000000010 /* Favorites */,
+				A0000006256D9A0000000011 /* Detail */,
+				A0000006256D9A0000000012 /* Settings */,
+				A0000006256D9A0000000014 /* Onboarding */,
+				A0000006256D9A0000000015 /* Immersive */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000015 /* Immersive */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000020 /* ImmersiveWelcomeView.swift */,
+			);
+			path = Immersive;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000013 /* ForYou */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000019 /* ForYouView.swift */,
+			);
+			path = ForYou;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000014 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000018 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000008 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000008 /* Color+Theme.swift */,
+				A0000002256D9A0000000016 /* WarmModeModifier.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000009 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000009 /* HomeView.swift */,
+				A0000002256D9A0000000010 /* ProgramCardView.swift */,
+				A0000002256D9A0000000011 /* FilterSheetView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000010 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000012 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000011 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000013 /* ProgramDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A0000006256D9A0000000012 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A0000002256D9A0000000014 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0000007256D9A0000000001 /* BayNavigator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0000008256D9A0000000001 /* Build configuration list for PBXNativeTarget "BayNavigator" */;
+			buildPhases = (
+				A0000009256D9A0000000001 /* Sources */,
+				A0000005256D9A0000000001 /* Frameworks */,
+				A000000A256D9A0000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BayNavigator;
+			productName = BayNavigator;
+			productReference = A0000003256D9A0000000001 /* BayNavigator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A000000B256D9A0000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A0000007256D9A0000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A000000C256D9A0000000001 /* Build configuration list for PBXProject "BayNavigator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0000006256D9A0000000001;
+			productRefGroup = A0000006256D9A0000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0000007256D9A0000000001 /* BayNavigator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A000000A256D9A0000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001256D9A0000000015 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0000009256D9A0000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001256D9A0000000001 /* BayNavigatorApp.swift in Sources */,
+				A0000001256D9A0000000002 /* ContentView.swift in Sources */,
+				A0000001256D9A0000000003 /* Program.swift in Sources */,
+				A0000001256D9A0000000004 /* APIService.swift in Sources */,
+				A0000001256D9A0000000005 /* CacheService.swift in Sources */,
+				A0000001256D9A0000000006 /* ProgramsViewModel.swift in Sources */,
+				A0000001256D9A0000000007 /* SettingsViewModel.swift in Sources */,
+				A0000001256D9A0000000008 /* Color+Theme.swift in Sources */,
+				A0000001256D9A0000000016 /* WarmModeModifier.swift in Sources */,
+				A0000001256D9A0000000009 /* HomeView.swift in Sources */,
+				A0000001256D9A0000000010 /* ProgramCardView.swift in Sources */,
+				A0000001256D9A0000000011 /* FilterSheetView.swift in Sources */,
+				A0000001256D9A0000000012 /* FavoritesView.swift in Sources */,
+				A0000001256D9A0000000013 /* ProgramDetailView.swift in Sources */,
+				A0000001256D9A0000000014 /* SettingsView.swift in Sources */,
+				A0000001256D9A0000000017 /* UserPrefsViewModel.swift in Sources */,
+				A0000001256D9A0000000018 /* OnboardingView.swift in Sources */,
+				A0000001256D9A0000000019 /* ForYouView.swift in Sources */,
+				A0000001256D9A0000000020 /* ImmersiveWelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A000000D256D9A0000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		A000000E256D9A0000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		A000000F256D9A0000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 71;
+				DEVELOPMENT_TEAM = C5U8Z5536K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BayNavigator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.7.0001;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.baynavigatorapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		A0000010256D9A0000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 71;
+				DEVELOPMENT_TEAM = C5U8Z5536K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BayNavigator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.7.0001;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.baynavigatorapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Bay Navigator Distribution";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0000008256D9A0000000001 /* Build configuration list for PBXNativeTarget "BayNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000F256D9A0000000001 /* Debug */,
+				A0000010256D9A0000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000000C256D9A0000000001 /* Build configuration list for PBXProject "BayNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000000D256D9A0000000001 /* Debug */,
+				A000000E256D9A0000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A000000B256D9A0000000001 /* Project object */;
+}

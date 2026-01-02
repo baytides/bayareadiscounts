@@ -14,6 +14,10 @@ on:
 env:
   FLUTTER_VERSION: '3.38.5'
 
+defaults:
+  run:
+    working-directory: apps
+
 jobs:
   build-macos:
     runs-on: macos-latest
@@ -78,13 +82,13 @@ jobs:
             --icon "Bay Navigator.app" 150 185 \
             --hide-extension "Bay Navigator.app" \
             --app-drop-link 450 185 \
-            "Bay-Area-Discounts-macOS.dmg" \
+            "Bay-Navigator-macOS.dmg" \
             "build/macos/Build/Products/Release/Bay Navigator.app" || true
 
           # If create-dmg fails, create a simple zip
-          if [ ! -f "Bay-Area-Discounts-macOS.dmg" ]; then
+          if [ ! -f "Bay-Navigator-macOS.dmg" ]; then
             cd "build/macos/Build/Products/Release"
-            zip -r "../../../../../Bay-Area-Discounts-macOS.zip" "Bay Navigator.app"
+            zip -r "../../../../../Bay-Navigator-macOS.zip" "Bay Navigator.app"
             cd -
           fi
 
@@ -99,13 +103,13 @@ jobs:
             echo "Skipping notarization: Apple credentials not configured"
             exit 0
           fi
-          if [ -f "Bay-Area-Discounts-macOS.dmg" ]; then
-            xcrun notarytool submit "Bay-Area-Discounts-macOS.dmg" \
+          if [ -f "Bay-Navigator-macOS.dmg" ]; then
+            xcrun notarytool submit "Bay-Navigator-macOS.dmg" \
               --apple-id "$APPLE_ID" \
               --password "$APPLE_APP_PASSWORD" \
               --team-id "$APPLE_TEAM_ID" \
               --wait
-            xcrun stapler staple "Bay-Area-Discounts-macOS.dmg"
+            xcrun stapler staple "Bay-Navigator-macOS.dmg"
           fi
 
       - name: Upload macOS artifact
@@ -113,8 +117,8 @@ jobs:
         with:
           name: macos-app
           path: |
-            Bay-Area-Discounts-macOS.dmg
-            Bay-Area-Discounts-macOS.zip
+            apps/Bay-Navigator-macOS.dmg
+            apps/Bay-Navigator-macOS.zip
           if-no-files-found: warn
 
   build-windows:
@@ -149,7 +153,7 @@ jobs:
           DefaultDirName={autopf}\Bay Navigator
           DefaultGroupName=Bay Navigator
           OutputDir=.
-          OutputBaseFilename=Bay-Area-Discounts-Windows-Setup
+          OutputBaseFilename=Bay-Navigator-Windows-Setup
           Compression=lzma
           SolidCompression=yes
           WizardStyle=modern
@@ -178,28 +182,16 @@ jobs:
 
       - name: Also create ZIP
         run: |
-          Compress-Archive -Path "build\windows\x64\runner\Release\*" -DestinationPath "Bay-Area-Discounts-Windows.zip"
+          Compress-Archive -Path "build\windows\x64\runner\Release\*" -DestinationPath "Bay-Navigator-Windows.zip"
         shell: pwsh
-
-      # TODO: Add Azure Trusted Signing when identity validation is complete
-      # - name: Sign with Azure Trusted Signing
-      #   env:
-      #     AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      #     AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      #     AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      #   run: |
-      #     # Install Azure SignTool
-      #     dotnet tool install --global AzureSignTool
-      #     # Sign the exe
-      #     AzureSignTool sign -kvu "https://wus.codesigning.azure.net/" ...
 
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
           name: windows-app
           path: |
-            Bay-Area-Discounts-Windows-Setup.exe
-            Bay-Area-Discounts-Windows.zip
+            apps/Bay-Navigator-Windows-Setup.exe
+            apps/Bay-Navigator-Windows.zip
 
   build-linux:
     runs-on: ubuntu-latest
@@ -226,7 +218,7 @@ jobs:
       - name: Create tarball
         run: |
           cd build/linux/x64/release/bundle
-          tar -czvf ../../../../../Bay-Area-Discounts-Linux.tar.gz *
+          tar -czvf ../../../../../Bay-Navigator-Linux.tar.gz *
 
       - name: Create AppImage (optional)
         run: |
@@ -252,8 +244,8 @@ jobs:
           Categories=Utility;
           EOF
 
-          # Copy icon
-          cp assets/images/favicons/web-app-manifest-192x192.png AppDir/usr/share/icons/hicolor/256x256/apps/baynavigator.png || true
+          # Copy icon (from root repo path)
+          cp ../../assets/images/favicons/web-app-manifest-192x192.png AppDir/usr/share/icons/hicolor/256x256/apps/baynavigator.png || true
 
           # Create AppRun
           cat > AppDir/AppRun << 'EOF'
@@ -270,15 +262,15 @@ jobs:
           ln -sf usr/share/icons/hicolor/256x256/apps/baynavigator.png AppDir/baynavigator.png || true
 
           # Build AppImage
-          ./appimagetool-x86_64.AppImage AppDir Bay-Area-Discounts-Linux.AppImage || true
+          ./appimagetool-x86_64.AppImage AppDir Bay-Navigator-Linux.AppImage || true
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
           name: linux-app
           path: |
-            Bay-Area-Discounts-Linux.tar.gz
-            Bay-Area-Discounts-Linux.AppImage
+            apps/Bay-Navigator-Linux.tar.gz
+            apps/Bay-Navigator-Linux.AppImage
           if-no-files-found: warn
 
   create-release:

@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    working-directory: apps
+
 jobs:
   build-android:
     runs-on: ubuntu-latest
@@ -63,8 +67,8 @@ jobs:
 
       - name: Rename artifacts
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk bay-area-discounts.apk
-          cp build/app/outputs/bundle/release/app-release.aab bay-area-discounts.aab
+          cp build/app/outputs/flutter-apk/app-release.apk bay-navigator.apk
+          cp build/app/outputs/bundle/release/app-release.aab bay-navigator.aab
 
       # ============================================
       # FOSS Build - No proprietary dependencies (no Sentry)
@@ -79,15 +83,15 @@ jobs:
 
       - name: Rename FOSS artifact
         run: |
-          cp build/app/outputs/flutter-apk/app-release.apk bay-area-discounts-foss.apk
+          cp build/app/outputs/flutter-apk/app-release.apk bay-navigator-foss.apk
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            bay-area-discounts.apk
-            bay-area-discounts.aab
-            bay-area-discounts-foss.apk
+            apps/bay-navigator.apk
+            apps/bay-navigator.aab
+            apps/bay-navigator-foss.apk
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -98,11 +102,11 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
           packageName: org.baytides.baynavigator
-          releaseFiles: bay-area-discounts.aab
+          releaseFiles: apps/bay-navigator.aab
           track: internal
           status: completed
           releaseName: ${{ steps.version.outputs.VERSION }}
-          whatsNewDirectory: whatsnew
+          whatsNewDirectory: apps/whatsnew
 
   build-ios:
     runs-on: macos-latest
@@ -119,9 +123,11 @@ jobs:
           cache: true
 
       - name: Get dependencies
+        working-directory: apps
         run: flutter pub get
 
       - name: Install CocoaPods dependencies
+        working-directory: apps
         run: |
           cd ios
           pod install
@@ -157,6 +163,7 @@ jobs:
           cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
 
       - name: Build iOS IPA
+        working-directory: apps
         run: |
           flutter build ipa --release \
             --dart-define=SENTRY_DSN=${{ secrets.SENTRY_DSN }} \
@@ -167,13 +174,14 @@ jobs:
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
       - name: Rename iOS artifact
+        working-directory: apps
         run: |
-          cp build/ios/ipa/*.ipa bay-area-discounts.ipa
+          cp build/ios/ipa/*.ipa bay-navigator.ipa
 
       - name: Upload iOS to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: bay-area-discounts.ipa
+          files: apps/bay-navigator.ipa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -186,7 +194,7 @@ jobs:
           # Upload to App Store Connect
           xcrun altool --upload-app \
             --type ios \
-            --file bay-area-discounts.ipa \
+            --file apps/bay-navigator.ipa \
             --apiKey ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }} \
             --apiIssuer ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
 
@@ -241,20 +249,20 @@ jobs:
           cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
 
       - name: Build visionOS archive
-        working-directory: visionos
+        working-directory: apps/visionos
         run: |
-          xcodebuild -project BayAreaDiscounts.xcodeproj \
-            -scheme BayAreaDiscounts \
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme BayNavigator \
             -destination 'generic/platform=visionOS' \
             -configuration Release \
-            -archivePath $RUNNER_TEMP/BayAreaDiscounts.xcarchive \
+            -archivePath $RUNNER_TEMP/BayNavigator.xcarchive \
             archive
 
       - name: Export visionOS IPA
-        working-directory: visionos
+        working-directory: apps/visionos
         run: |
           xcodebuild -exportArchive \
-            -archivePath $RUNNER_TEMP/BayAreaDiscounts.xcarchive \
+            -archivePath $RUNNER_TEMP/BayNavigator.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
             -exportPath $RUNNER_TEMP/export
 
@@ -264,12 +272,12 @@ jobs:
 
       - name: Rename visionOS artifact
         run: |
-          cp $RUNNER_TEMP/export/BayAreaDiscounts.ipa bay-area-discounts-visionos.ipa
+          cp $RUNNER_TEMP/export/BayNavigator.ipa bay-navigator-visionos.ipa
 
       - name: Upload visionOS to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: bay-area-discounts-visionos.ipa
+          files: bay-navigator-visionos.ipa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -282,7 +290,7 @@ jobs:
           # Upload to App Store Connect
           xcrun altool --upload-app \
             --type visionos \
-            --file bay-area-discounts-visionos.ipa \
+            --file bay-navigator-visionos.ipa \
             --apiKey ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }} \
             --apiIssuer ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
 

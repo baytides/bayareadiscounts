@@ -1,4 +1,4 @@
-# robots.txt for Bay Area Discounts
+# robots.txt for Bay Navigator
 
 User-agent: *
 Allow: /
@@ -6,7 +6,7 @@ Disallow: /admin/
 Disallow: /*.json$
 
 # Sitemap location
-Sitemap: https://bayareadiscounts.com/sitemap.xml
+Sitemap: https://baynavigator.org/sitemap.xml
 
 # Crawl delay (be nice to small servers)
 Crawl-delay: 1

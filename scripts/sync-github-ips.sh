@@ -6,7 +6,7 @@
 set -e
 
 # Configuration
-RESOURCE_GROUP="bayareadiscounts-rg"
+RESOURCE_GROUP="baynavigator-rg"
 STORAGE_ACCOUNT="badfuncstoragepe"
 GITHUB_META_URL="https://api.github.com/meta"
 MAX_RULES=200  # Azure Storage limit
