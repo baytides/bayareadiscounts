@@ -7,14 +7,14 @@ export default defineConfig({
   retries: 0,
   timeout: 120000,
   use: {
-    baseURL: 'http://localhost:4000',
+    baseURL: 'http://localhost:4321',
     headless: true,
     trace: 'on-first-retry',
     navigationTimeout: 120000,
   },
   webServer: {
-    command: 'npm run serve',
-    port: 4000,
+    command: 'npm run build && npm run preview',
+    port: 4321,
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },
