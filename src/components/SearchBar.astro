@@ -1,0 +1,58 @@
+---
+interface Props {
+  placeholder?: string;
+  size?: 'default' | 'large';
+}
+
+const { placeholder = 'Search programs...', size = 'default' } = Astro.props;
+const sizeClasses = size === 'large'
+  ? 'py-4 pl-12 pr-4 text-lg'
+  : 'py-3 pl-10 pr-4';
+---
+
+<div class="relative">
+  <label for="search-input" class="sr-only">Search programs</label>
+  <svg
+    class={`absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 ${size === 'large' ? 'w-6 h-6 left-4' : 'w-5 h-5'}`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    />
+  </svg>
+  <input
+    type="search"
+    id="search-input"
+    class={`search-input ${sizeClasses}`}
+    placeholder={placeholder}
+    autocomplete="off"
+  />
+</div>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    const cards = document.querySelectorAll('[data-category]');
+
+    cards.forEach((card) => {
+      const text = card.textContent?.toLowerCase() || '';
+      const matches = query === '' || text.includes(query);
+      (card as HTMLElement).style.display = matches ? '' : 'none';
+    });
+
+    // Update count if counter exists
+    const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+    const counter = document.getElementById('results-count');
+    if (counter) {
+      counter.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found`;
+    }
+  });
+</script>

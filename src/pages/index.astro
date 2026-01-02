@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import SearchBar from '../components/SearchBar.astro';
+import CategoryFilter from '../components/CategoryFilter.astro';
+import yaml from 'js-yaml';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load all program YAML files
+const dataDir = path.join(process.cwd(), 'src/data');
+const programFiles = [
+  'food.yml',
+  'health.yml',
+  'housing.yml',
+  'utilities.yml',
+  'transportation.yml',
+  'education.yml',
+  'legal.yml',
+  'finance.yml',
+  'technology.yml',
+  'recreation.yml',
+  'community.yml',
+];
+
+interface Program {
+  id: string;
+  name: string;
+  category: string;
+  area: string;
+  description: string;
+  what_they_offer?: string;
+  how_to_get_it?: string;
+  phone?: string;
+  link?: string;
+  link_text?: string;
+  groups?: string[];
+}
+
+let allPrograms: Program[] = [];
+
+for (const file of programFiles) {
+  const filePath = path.join(dataDir, file);
+  if (fs.existsSync(filePath)) {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const programs = yaml.load(content) as Program[];
+    if (Array.isArray(programs)) {
+      allPrograms = [...allPrograms, ...programs];
+    }
+  }
+}
+
+// Get unique categories
+const categories = [...new Set(allPrograms.map(p => p.category))].sort();
+
+// Sort programs by name
+allPrograms.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<BaseLayout title="Home" description="Find free and low-cost programs for food, housing, healthcare, utilities, and more across the San Francisco Bay Area.">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container-page text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Find programs and services in the Bay Area
+      </h1>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Discover free and low-cost resources for food, housing, healthcare, utilities, and more.
+      </p>
+      <div class="max-w-2xl mx-auto">
+        <SearchBar
+          placeholder="Search for food assistance, utilities, healthcare..."
+          size="large"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section bg-neutral-50 dark:bg-neutral-800">
+    <div class="container-page">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6 text-center">
+        Popular Resources
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="#food" class="card text-center group no-underline hover:no-underline">
+          <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-green-700 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-primary-400">Food Assistance</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Food banks, CalFresh, meal programs</p>
+        </a>
+
+        <a href="#utilities" class="card text-center group no-underline hover:no-underline">
+          <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-yellow-700 dark:text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-primary-400">Utility Assistance</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">CARE, FERA, LIHEAP, bill assistance</p>
+        </a>
+
+        <a href="/eligibility" class="card text-center group no-underline hover:no-underline">
+          <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-blue-700 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-primary-400">Eligibility Guides</h3>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Learn what you qualify for</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Programs -->
+  <section class="section" id="programs">
+    <div class="container-page">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-900 dark:text-white">All Programs</h2>
+          <p id="results-count" class="text-neutral-600 dark:text-neutral-400 mt-1">
+            {allPrograms.length} programs found
+          </p>
+        </div>
+        <CategoryFilter categories={categories} />
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {allPrograms.map((program) => (
+          <ProgramCard
+            id={program.id}
+            name={program.name}
+            category={program.category}
+            area={program.area}
+            description={program.description}
+            whatTheyOffer={program.what_they_offer}
+            howToGetIt={program.how_to_get_it}
+            phone={program.phone}
+            link={program.link}
+            linkText={program.link_text}
+            groups={program.groups}
+          />
+        ))}
+      </div>
+
+      {allPrograms.length === 0 && (
+        <div class="text-center py-12">
+          <p class="text-neutral-600 dark:text-neutral-400">No programs found. Check back soon!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
