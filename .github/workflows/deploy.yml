@@ -34,6 +34,11 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Sync programs to Azure AI Search
+        run: node scripts/sync-search-index.cjs
+        env:
+          AZURE_SEARCH_KEY: ${{ secrets.AZURE_SEARCH_KEY }}
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

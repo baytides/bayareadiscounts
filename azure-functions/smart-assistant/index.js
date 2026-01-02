@@ -1,6 +1,6 @@
 /**
- * Smart Assistant Azure Function
- * Uses Azure OpenAI to help users find relevant programs based on their needs
+ * Smart Assistant Azure Function with RAG (Retrieval-Augmented Generation)
+ * Searches Azure AI Search for relevant programs, then uses Azure OpenAI for response
  */
 
 const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT;
@@ -8,50 +8,141 @@ const AZURE_OPENAI_KEY = process.env.AZURE_OPENAI_KEY;
 const AZURE_OPENAI_DEPLOYMENT = process.env.AZURE_OPENAI_DEPLOYMENT || 'gpt-4o-mini';
 const API_VERSION = '2024-02-15-preview';
 
+const AZURE_SEARCH_ENDPOINT = process.env.AZURE_SEARCH_ENDPOINT || 'https://baynavigator-search.search.windows.net';
+const AZURE_SEARCH_KEY = process.env.AZURE_SEARCH_KEY;
+const SEARCH_INDEX = 'programs';
+
 // System prompt that guides the AI assistant
 const SYSTEM_PROMPT = `You are Bay Navigator's helpful assistant, designed to help Bay Area residents find free and low-cost community programs and services.
 
+You have access to a database of programs. When the user asks a question, you will receive relevant program information to use in your response.
+
 Your role is to:
 1. Understand what the user is looking for (food assistance, utility help, healthcare, etc.)
-2. Ask clarifying questions if needed (location, eligibility factors like age, income, veteran status)
-3. Provide relevant program recommendations from the available categories
+2. Recommend specific programs from the provided search results
+3. Explain how each program might help and key eligibility requirements
 4. Be warm, empathetic, and helpful - many users may be in difficult situations
 
-Available program categories:
-- Food: Food banks, CalFresh, meal programs, groceries
-- Health: Medical clinics, mental health, dental, vision, prescriptions
-- Housing: Rental assistance, emergency shelter, housing programs
-- Utilities: PG&E CARE/FERA, water assistance, phone programs, internet
-- Transportation: Clipper discounts, paratransit, car programs
-- Education: Job training, GED, college assistance, tutoring
-- Legal: Free legal aid, immigration help, tenant rights
-- Finance: Tax prep, banking, financial counseling
-- Technology: Free computers, internet access, digital literacy
-- Recreation: Free museum days, park programs, library services
-- Community: Senior centers, disability services, veteran programs
-
-Eligibility groups that programs may serve:
-- Seniors (65+)
-- Veterans
-- Low-income households
-- Students
-- Families with children
-- People with disabilities
-- Immigrants/refugees
-- Homeless/at-risk of homelessness
-
 When responding:
-- Keep responses concise and actionable (2-3 paragraphs max)
-- Suggest specific program categories to explore
-- If the user shares their situation, acknowledge it with empathy
-- Always encourage them to check program details as eligibility may vary
-- End with a helpful next step or question
+- Reference specific program names from the search results
+- Include key details like phone numbers and websites when available
+- Keep responses concise but informative (3-4 paragraphs max)
+- If no relevant programs are found, suggest categories to explore on the website
+- Acknowledge the user's situation with empathy
+- Always encourage them to verify details as eligibility may vary
 
 Do NOT:
-- Make up specific program names or phone numbers
+- Make up program names, phone numbers, or details not in the search results
 - Promise eligibility for any program
 - Provide legal, medical, or financial advice
 - Share information outside of Bay Area community resources`;
+
+/**
+ * Search Azure AI Search for relevant programs
+ */
+async function searchPrograms(query, filters = {}) {
+  if (!AZURE_SEARCH_KEY) {
+    console.log('Azure Search not configured, skipping search');
+    return [];
+  }
+
+  const searchParams = {
+    search: query,
+    queryType: 'simple',
+    searchMode: 'any',
+    top: 8,
+    select: 'id,name,category,description,whatTheyOffer,howToGetIt,groups,areas,city,website,phone',
+  };
+
+  // Add filters if provided
+  const filterParts = [];
+  if (filters.category) {
+    filterParts.push(`category eq '${filters.category}'`);
+  }
+  if (filters.area) {
+    filterParts.push(`areas/any(a: a eq '${filters.area}')`);
+  }
+  if (filters.group) {
+    filterParts.push(`groups/any(g: g eq '${filters.group}')`);
+  }
+  if (filterParts.length > 0) {
+    searchParams.filter = filterParts.join(' and ');
+  }
+
+  try {
+    const response = await fetch(
+      `${AZURE_SEARCH_ENDPOINT}/indexes/${SEARCH_INDEX}/docs/search?api-version=2023-11-01`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-key': AZURE_SEARCH_KEY,
+        },
+        body: JSON.stringify(searchParams),
+      }
+    );
+
+    if (!response.ok) {
+      console.error('Search error:', await response.text());
+      return [];
+    }
+
+    const data = await response.json();
+    return data.value || [];
+  } catch (error) {
+    console.error('Search error:', error);
+    return [];
+  }
+}
+
+/**
+ * Format search results for the AI context
+ */
+function formatProgramsForContext(programs) {
+  if (!programs || programs.length === 0) {
+    return 'No matching programs found in the database.';
+  }
+
+  return programs.map((p, i) => {
+    let text = `${i + 1}. ${p.name} (${p.category})`;
+    text += `\n   Description: ${p.description}`;
+    if (p.whatTheyOffer) {
+      text += `\n   What they offer: ${p.whatTheyOffer.slice(0, 300)}`;
+    }
+    if (p.howToGetIt) {
+      text += `\n   How to get it: ${p.howToGetIt.slice(0, 200)}`;
+    }
+    if (p.groups && p.groups.length > 0) {
+      text += `\n   For: ${p.groups.join(', ')}`;
+    }
+    if (p.city) {
+      text += `\n   Location: ${p.city}`;
+    } else if (p.areas && p.areas.length > 0) {
+      text += `\n   Areas: ${p.areas.join(', ')}`;
+    }
+    if (p.phone) {
+      text += `\n   Phone: ${p.phone}`;
+    }
+    if (p.website) {
+      text += `\n   Website: ${p.website}`;
+    }
+    return text;
+  }).join('\n\n');
+}
+
+/**
+ * Extract search keywords from conversation
+ */
+function extractSearchQuery(message, conversationHistory) {
+  // Combine recent messages for context
+  const recentContext = conversationHistory
+    .slice(-2)
+    .map(m => m.content)
+    .join(' ');
+
+  // Use the current message, augmented with recent context keywords
+  return message;
+}
 
 async function callAzureOpenAI(messages) {
   const url = `${AZURE_OPENAI_ENDPOINT}/openai/deployments/${AZURE_OPENAI_DEPLOYMENT}/chat/completions?api-version=${API_VERSION}`;
@@ -64,7 +155,7 @@ async function callAzureOpenAI(messages) {
     },
     body: JSON.stringify({
       messages,
-      max_tokens: 500,
+      max_tokens: 800,
       temperature: 0.7,
       top_p: 0.9,
       frequency_penalty: 0.3,
@@ -128,17 +219,26 @@ module.exports = async function (context, req) {
       return;
     }
 
-    // Rate limiting check (simple in-memory, would use Redis in production)
-    const userMessage = message.trim().slice(0, 500); // Limit message length
+    const userMessage = message.trim().slice(0, 500);
 
-    // Build conversation messages
+    // Search for relevant programs
+    const searchQuery = extractSearchQuery(userMessage, conversationHistory);
+    const programs = await searchPrograms(searchQuery);
+    const programContext = formatProgramsForContext(programs);
+
+    context.log(`Found ${programs.length} programs for query: "${searchQuery}"`);
+
+    // Build conversation messages with program context
     const messages = [
       { role: 'system', content: SYSTEM_PROMPT },
       ...conversationHistory.slice(-6).map(msg => ({
         role: msg.role,
         content: msg.content.slice(0, 500)
       })),
-      { role: 'user', content: userMessage }
+      {
+        role: 'user',
+        content: `User question: ${userMessage}\n\n---\nRelevant programs from database:\n${programContext}`
+      }
     ];
 
     // Call Azure OpenAI
@@ -151,6 +251,7 @@ module.exports = async function (context, req) {
       headers: corsHeaders,
       body: JSON.stringify({
         message: assistantMessage,
+        programsFound: programs.length,
         usage: {
           promptTokens: completion.usage?.prompt_tokens,
           completionTokens: completion.usage?.completion_tokens
