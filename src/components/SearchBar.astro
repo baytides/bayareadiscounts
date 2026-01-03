@@ -114,17 +114,34 @@ const sizeClasses = size === 'large'
   const config = JSON.parse(configEl?.textContent || '{}');
   const API_ENDPOINT = config.apiEndpoint;
 
-  // Build search index from program cards
-  const cards = document.querySelectorAll('[data-category]');
+  // Check if we're on the homepage (has home-program-card elements)
+  const isHomepage = document.querySelectorAll('.home-program-card').length > 0;
+  const homeResultsSection = document.getElementById('search-results');
+  const homeResultsCount = document.getElementById('home-results-count');
+  const noResultsEl = document.getElementById('no-results');
+  const clearSearchBtn = document.getElementById('clear-search');
+
+  // Build search index from program cards (directory page or homepage)
+  const cards = isHomepage
+    ? document.querySelectorAll('.home-program-card [data-category]')
+    : document.querySelectorAll('[data-category]');
+
+  const cardWrappers = isHomepage
+    ? document.querySelectorAll('.home-program-card')
+    : null;
+
   const programs = Array.from(cards).map((card, index) => {
     const nameEl = card.querySelector('h3');
     const descEl = card.querySelector('p');
     const areaEl = card.querySelector('[class*="text-neutral-500"]');
     const id = card.id?.replace('program-', '') || '';
+    // For homepage, the wrapper element controls visibility
+    const wrapper = isHomepage && cardWrappers ? cardWrappers[index] : null;
 
     return {
       index,
       element: card,
+      wrapper,
       id,
       name: nameEl?.textContent?.trim() || '',
       description: descEl?.textContent?.trim() || '',
@@ -401,19 +418,50 @@ const sizeClasses = size === 'large'
 
       // Filter cards based on AI results
       let visibleCount = 0;
-      programs.forEach(p => {
-        const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
-        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
-        const shouldShow = matchesAI && matchesCategory;
 
-        (p.element as HTMLElement).style.display = shouldShow ? '' : 'none';
-        if (shouldShow) visibleCount++;
-      });
+      if (isHomepage) {
+        // Homepage: show results section and filter cards
+        homeResultsSection?.classList.remove('hidden');
+
+        programs.forEach(p => {
+          const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
+          if (p.wrapper) {
+            if (matchesAI) {
+              (p.wrapper as HTMLElement).classList.remove('hidden');
+              visibleCount++;
+            } else {
+              (p.wrapper as HTMLElement).classList.add('hidden');
+            }
+          }
+        });
+
+        // Update count
+        if (homeResultsCount) {
+          homeResultsCount.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found`;
+        }
+        if (visibleCount === 0) {
+          noResultsEl?.classList.remove('hidden');
+        } else {
+          noResultsEl?.classList.add('hidden');
+        }
+      } else {
+        // Directory page
+        programs.forEach(p => {
+          const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
+          const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+          const shouldShow = matchesAI && matchesCategory;
+
+          (p.element as HTMLElement).style.display = shouldShow ? '' : 'none';
+          if (shouldShow) visibleCount++;
+        });
+      }
 
       // If AI returned programs, show them; otherwise fall back to fuzzy search
       if (matchedIds.size > 0 && visibleCount > 0) {
         showAIIndicator(`AI found ${visibleCount}`);
-        updateResultsCount(visibleCount, query, true);
+        if (!isHomepage) {
+          updateResultsCount(visibleCount, query, true);
+        }
       } else {
         // Fall back to fuzzy search
         hideAIIndicator();
@@ -432,31 +480,75 @@ const sizeClasses = size === 'large'
   }
 
   function performFuzzySearch(query: string) {
-    if (!query) {
-      // No search query - show all (respect category filter)
-      programs.forEach(p => {
-        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
-        // Also respect location filter if active
-        const locationHidden = p.element.hasAttribute('data-location-hidden');
-        (p.element as HTMLElement).style.display = (matchesCategory && !locationHidden) ? '' : 'none';
-      });
-      hideAIIndicator();
-    } else {
+    if (isHomepage) {
+      // Homepage: show/hide search results section
+      if (!query) {
+        // No query - hide results section
+        homeResultsSection?.classList.add('hidden');
+        programs.forEach(p => {
+          if (p.wrapper) (p.wrapper as HTMLElement).classList.add('hidden');
+        });
+        noResultsEl?.classList.add('hidden');
+        return;
+      }
+
+      // Show results section
+      homeResultsSection?.classList.remove('hidden');
+
       // Fuzzy search with Fuse.js
       const results = fuse.search(query);
       const matchedIndices = new Set(results.map(r => r.item.index));
 
+      let visibleCount = 0;
       programs.forEach(p => {
         const matchesSearch = matchedIndices.has(p.index);
-        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
-        const locationHidden = p.element.hasAttribute('data-location-hidden');
-        (p.element as HTMLElement).style.display = (matchesSearch && matchesCategory && !locationHidden) ? '' : 'none';
+        if (p.wrapper) {
+          if (matchesSearch) {
+            (p.wrapper as HTMLElement).classList.remove('hidden');
+            visibleCount++;
+          } else {
+            (p.wrapper as HTMLElement).classList.add('hidden');
+          }
+        }
       });
-    }
 
-    // Update count
-    const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
-    updateResultsCount(visibleCount, query, false);
+      // Update count and show/hide no results
+      if (homeResultsCount) {
+        homeResultsCount.textContent = `${visibleCount} program${visibleCount !== 1 ? 's' : ''} found`;
+      }
+      if (visibleCount === 0) {
+        noResultsEl?.classList.remove('hidden');
+      } else {
+        noResultsEl?.classList.add('hidden');
+      }
+    } else {
+      // Directory page: original behavior
+      if (!query) {
+        // No search query - show all (respect category filter)
+        programs.forEach(p => {
+          const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+          // Also respect location filter if active
+          const locationHidden = p.element.hasAttribute('data-location-hidden');
+          (p.element as HTMLElement).style.display = (matchesCategory && !locationHidden) ? '' : 'none';
+        });
+        hideAIIndicator();
+      } else {
+        // Fuzzy search with Fuse.js
+        const results = fuse.search(query);
+        const matchedIndices = new Set(results.map(r => r.item.index));
+
+        programs.forEach(p => {
+          const matchesSearch = matchedIndices.has(p.index);
+          const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+          const locationHidden = p.element.hasAttribute('data-location-hidden');
+          (p.element as HTMLElement).style.display = (matchesSearch && matchesCategory && !locationHidden) ? '' : 'none';
+        });
+      }
+
+      // Update count
+      const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+      updateResultsCount(visibleCount, query, false);
+    }
   }
 
   function updateResultsCount(count: number, query: string, isAI: boolean) {
@@ -506,6 +598,16 @@ const sizeClasses = size === 'large'
     }
   });
 
+  // Handle Enter key - immediately perform search
+  searchInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      clearTimeout(debounceTimer);
+      searchHints?.classList.add('hidden');
+      performSearch();
+    }
+  });
+
   // Show hints on focus if empty
   searchInput?.addEventListener('focus', () => {
     if (!searchInput.value) {
@@ -539,6 +641,15 @@ const sizeClasses = size === 'large'
   window.addEventListener('locationChanged', () => {
     if (searchInput.value) {
       performSearch();
+    }
+  });
+
+  // Clear search button (homepage only)
+  clearSearchBtn?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = '';
+      performFuzzySearch('');
+      searchInput.focus();
     }
   });
 </script>

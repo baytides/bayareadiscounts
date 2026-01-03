@@ -197,6 +197,7 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');
     const groupParam = urlParams.get('group');
+    const searchParam = urlParams.get('q');
 
     const categorySelect = document.getElementById('category-select') as HTMLSelectElement;
     const verifiedCheckbox = document.getElementById('verified-only') as HTMLInputElement;
@@ -204,6 +205,7 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
     const clearBtn = document.getElementById('clear-filters');
     const cards = document.querySelectorAll('[data-category]');
     const resultsCount = document.getElementById('results-count');
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
 
     let activeCategory = 'all';
     let activeGroup: string | null = null;
