@@ -1,3 +1,6 @@
+# DISABLED: This workflow was used for GitHub Pages Flutter demo.
+# Keeping for potential F-Droid repo page in the future.
+# To re-enable, remove the `if: false` condition below.
 name: Deploy Web App
 
 on:
@@ -26,6 +29,7 @@ defaults:
 
 jobs:
   build:
+    if: false  # Disabled - remove this line to re-enable
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
