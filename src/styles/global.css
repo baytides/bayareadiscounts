@@ -197,6 +197,7 @@
   /* Search input */
   .search-input {
     @apply w-full px-4 py-3 rounded-lg border border-neutral-300
+           bg-white text-neutral-900
            focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none
            placeholder:text-neutral-500;
   }

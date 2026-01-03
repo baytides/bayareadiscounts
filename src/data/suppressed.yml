@@ -1,0 +1,14 @@
+# Suppressed Programs
+# These programs are hidden from the directory due to being outdated,
+# discontinued, or containing inaccurate information.
+#
+# Format:
+#   - id: program-id-to-suppress
+#     reason: Brief explanation
+#     date_suppressed: YYYY-MM-DD
+#     source: Where this was reported/discovered
+
+- id: federal-federal-emergency-covid-19-funeral-assistance
+  reason: Program has ended - COVID-19 funeral assistance is no longer accepting applications
+  date_suppressed: 2025-01-02
+  source: Manual review - program concluded

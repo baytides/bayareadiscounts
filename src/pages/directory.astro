@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import SearchBar from '../components/SearchBar.astro';
-import CategoryFilter from '../components/CategoryFilter.astro';
-import LocationFilter from '../components/LocationFilter.astro';
 import yaml from 'js-yaml';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,6 +12,16 @@ const groupsData = yaml.load(fs.readFileSync(groupsPath, 'utf-8')) as {
   groups: Array<{ id: string; name: string; icon: string; description: string }>;
   categories: Array<{ id: string; name: string; icon: string }>;
 };
+
+// Load suppressed programs list
+const suppressedPath = path.join(process.cwd(), 'src/data/suppressed.yml');
+let suppressedIds: Set<string> = new Set();
+if (fs.existsSync(suppressedPath)) {
+  const suppressedData = yaml.load(fs.readFileSync(suppressedPath, 'utf-8')) as Array<{ id: string }> | null;
+  if (Array.isArray(suppressedData)) {
+    suppressedIds = new Set(suppressedData.map(s => s.id));
+  }
+}
 
 // Load all program YAML files
 const dataDir = path.join(process.cwd(), 'src/data');
@@ -61,6 +69,9 @@ for (const file of programFiles) {
   }
 }
 
+// Filter out suppressed programs
+allPrograms = allPrograms.filter(p => !suppressedIds.has(p.id));
+
 // Get unique categories
 const categories = [...new Set(allPrograms.map(p => p.category))].sort();
 
@@ -87,14 +98,48 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
     </div>
   </section>
 
-  <!-- Filters & Groups Section -->
+  <!-- Filters Section -->
   <section class="bg-neutral-50 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 py-6">
     <div class="container-page">
+      <!-- Filter Controls Row -->
+      <div class="flex flex-wrap items-center gap-4 mb-4">
+        <!-- Category Dropdown -->
+        <div class="flex items-center gap-2">
+          <label for="category-select" class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Category:</label>
+          <select
+            id="category-select"
+            class="px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          >
+            <option value="all">All Categories</option>
+            {categories.map((cat) => (
+              <option value={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
+
+        <!-- Verified Only Checkbox -->
+        <label class="inline-flex items-center gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            id="verified-only"
+            class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-600 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700"
+          />
+          <span class="text-sm text-neutral-600 dark:text-neutral-400">Verified only</span>
+        </label>
+
+        <!-- Clear Filters Button -->
+        <button
+          type="button"
+          id="clear-filters"
+          class="hidden text-sm text-primary-600 dark:text-primary-400 hover:underline"
+        >
+          Clear filters
+        </button>
+      </div>
+
       <!-- Group Pills -->
-      <div class="mb-6">
-        <h2 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">
-          Filter by Group
-        </h2>
+      <div>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">Filter by group:</p>
         <div class="flex flex-wrap gap-2" id="group-filters">
           {groupsData.groups.slice(0, 12).map((group) => (
             <button
@@ -108,30 +153,15 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
           ))}
         </div>
       </div>
-
-      <!-- Category & Location Filters -->
-      <div class="flex flex-wrap items-center gap-4">
-        <LocationFilter />
-        <CategoryFilter categories={categories} />
-      </div>
     </div>
   </section>
 
   <!-- Programs List -->
   <section class="section" id="programs">
     <div class="container-page">
-      <div class="flex items-center justify-between mb-6">
-        <p id="results-count" class="text-neutral-600 dark:text-neutral-400">
-          {allPrograms.length} programs found
-        </p>
-        <button
-          type="button"
-          id="clear-filters"
-          class="hidden text-sm text-primary-600 dark:text-primary-400 hover:underline"
-        >
-          Clear all filters
-        </button>
-      </div>
+      <p id="results-count" class="text-neutral-600 dark:text-neutral-400 mb-6">
+        {allPrograms.length} programs found
+      </p>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="programs-grid">
         {allPrograms.map((program) => (
@@ -163,112 +193,169 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
 </BaseLayout>
 
 <script>
-  // Handle URL parameters for initial filtering
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');
     const groupParam = urlParams.get('group');
 
-    // Apply category filter from URL
-    if (categoryParam) {
-      const categorySelect = document.querySelector('[data-category-filter]') as HTMLSelectElement;
+    const categorySelect = document.getElementById('category-select') as HTMLSelectElement;
+    const verifiedCheckbox = document.getElementById('verified-only') as HTMLInputElement;
+    const groupBtns = document.querySelectorAll('.group-filter-btn');
+    const clearBtn = document.getElementById('clear-filters');
+    const cards = document.querySelectorAll('[data-category]');
+    const resultsCount = document.getElementById('results-count');
+
+    let activeCategory = 'all';
+    let activeGroup: string | null = null;
+    let verifiedOnly = false;
+
+    // Update results count
+    function updateCount() {
+      const visible = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+      if (resultsCount) {
+        resultsCount.textContent = `${visible} program${visible !== 1 ? 's' : ''} found`;
+      }
+    }
+
+    // Filter programs based on current state
+    function filterPrograms() {
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const cardGroups = (card.getAttribute('data-groups') || '').split(',').filter(Boolean);
+        const cardVerified = card.getAttribute('data-verified') === 'true';
+
+        const matchesCategory = activeCategory === 'all' || cardCategory.toLowerCase() === activeCategory.toLowerCase();
+        const matchesGroup = !activeGroup || cardGroups.includes(activeGroup);
+        const matchesVerified = !verifiedOnly || cardVerified;
+
+        (card as HTMLElement).style.display = (matchesCategory && matchesGroup && matchesVerified) ? '' : 'none';
+      });
+
+      updateCount();
+
+      // Show/hide clear button
+      if (activeCategory !== 'all' || activeGroup || verifiedOnly) {
+        clearBtn?.classList.remove('hidden');
+      } else {
+        clearBtn?.classList.add('hidden');
+      }
+    }
+
+    // Verified checkbox change handler
+    verifiedCheckbox?.addEventListener('change', () => {
+      verifiedOnly = verifiedCheckbox.checked;
+      filterPrograms();
+    });
+
+    // Category select change handler
+    categorySelect?.addEventListener('change', () => {
+      activeCategory = categorySelect.value;
+
+      // Update URL
+      const url = new URL(window.location.href);
+      if (activeCategory === 'all') {
+        url.searchParams.delete('category');
+      } else {
+        url.searchParams.set('category', activeCategory);
+      }
+      window.history.replaceState({}, '', url);
+
+      filterPrograms();
+    });
+
+    // Group button click handler
+    groupBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = (btn as HTMLElement).dataset.group || '';
+
+        if (activeGroup === group) {
+          // Deselect
+          activeGroup = null;
+          btn.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600', 'text-primary-700', 'dark:text-primary-300');
+          btn.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
+
+          const url = new URL(window.location.href);
+          url.searchParams.delete('group');
+          window.history.replaceState({}, '', url);
+        } else {
+          // Deselect all first
+          groupBtns.forEach(b => {
+            b.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600', 'text-primary-700', 'dark:text-primary-300');
+            b.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
+          });
+
+          // Select this one
+          activeGroup = group;
+          btn.classList.remove('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
+          btn.classList.add('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600', 'text-primary-700', 'dark:text-primary-300');
+
+          const url = new URL(window.location.href);
+          url.searchParams.set('group', group);
+          window.history.replaceState({}, '', url);
+        }
+
+        filterPrograms();
+      });
+    });
+
+    // Clear all filters
+    clearBtn?.addEventListener('click', () => {
+      activeCategory = 'all';
+      activeGroup = null;
+      verifiedOnly = false;
+
+      // Reset category select
       if (categorySelect) {
-        // Find and select the matching option
-        const options = categorySelect.options;
+        categorySelect.value = 'all';
+      }
+
+      // Reset verified checkbox
+      if (verifiedCheckbox) {
+        verifiedCheckbox.checked = false;
+      }
+
+      // Reset group buttons
+      groupBtns.forEach(btn => {
+        btn.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600', 'text-primary-700', 'dark:text-primary-300');
+        btn.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
+      });
+
+      // Clear URL params
+      const url = new URL(window.location.href);
+      url.searchParams.delete('category');
+      url.searchParams.delete('group');
+      window.history.replaceState({}, '', url);
+
+      filterPrograms();
+    });
+
+    // Apply initial filters from URL
+    if (categoryParam) {
+      // Find matching option (case-insensitive)
+      const options = categorySelect?.options;
+      if (options) {
         for (let i = 0; i < options.length; i++) {
-          if (options[i].value.toLowerCase() === categoryParam.toLowerCase() ||
-              options[i].text.toLowerCase() === categoryParam.toLowerCase()) {
+          if (options[i].value.toLowerCase() === categoryParam.toLowerCase()) {
             categorySelect.selectedIndex = i;
-            categorySelect.dispatchEvent(new Event('change'));
+            activeCategory = options[i].value;
             break;
           }
         }
       }
     }
 
-    // Apply group filter from URL
     if (groupParam) {
-      const groupBtn = document.querySelector(`[data-group="${groupParam}"]`) as HTMLButtonElement;
-      if (groupBtn) {
-        groupBtn.click();
+      activeGroup = groupParam;
+      const matchingBtn = document.querySelector(`[data-group="${groupParam}"]`);
+      if (matchingBtn) {
+        matchingBtn.classList.remove('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
+        matchingBtn.classList.add('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600', 'text-primary-700', 'dark:text-primary-300');
       }
     }
 
-    // Group filter button handling
-    const groupBtns = document.querySelectorAll('.group-filter-btn');
-    const clearBtn = document.getElementById('clear-filters');
-    let activeGroup: string | null = groupParam;
-
-    groupBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const group = (btn as HTMLElement).dataset.group;
-
-        if (activeGroup === group) {
-          // Deselect
-          activeGroup = null;
-          btn.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600');
-          btn.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
-          clearBtn?.classList.add('hidden');
-
-          // Update URL
-          const url = new URL(window.location.href);
-          url.searchParams.delete('group');
-          window.history.replaceState({}, '', url);
-        } else {
-          // Deselect previous
-          groupBtns.forEach(b => {
-            b.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600');
-            b.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
-          });
-
-          // Select new
-          activeGroup = group || null;
-          btn.classList.remove('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
-          btn.classList.add('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600');
-          clearBtn?.classList.remove('hidden');
-
-          // Update URL
-          const url = new URL(window.location.href);
-          url.searchParams.set('group', group || '');
-          window.history.replaceState({}, '', url);
-        }
-
-        // Filter programs (dispatch custom event)
-        window.dispatchEvent(new CustomEvent('groupFilterChange', { detail: { group: activeGroup } }));
-      });
-
-      // Apply initial styling if group matches URL param
-      if (groupParam && (btn as HTMLElement).dataset.group === groupParam) {
-        btn.classList.remove('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
-        btn.classList.add('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600');
-        clearBtn?.classList.remove('hidden');
-      }
-    });
-
-    // Clear all filters
-    clearBtn?.addEventListener('click', () => {
-      activeGroup = null;
-      groupBtns.forEach(btn => {
-        btn.classList.remove('bg-primary-100', 'dark:bg-primary-900/50', 'border-primary-400', 'dark:border-primary-600');
-        btn.classList.add('bg-white', 'dark:bg-neutral-700', 'border-neutral-200', 'dark:border-neutral-600');
-      });
-      clearBtn.classList.add('hidden');
-
-      // Clear URL params
-      const url = new URL(window.location.href);
-      url.searchParams.delete('group');
-      url.searchParams.delete('category');
-      window.history.replaceState({}, '', url);
-
-      // Reset filters
-      window.dispatchEvent(new CustomEvent('groupFilterChange', { detail: { group: null } }));
-
-      // Reset category select
-      const categorySelect = document.querySelector('[data-category-filter]') as HTMLSelectElement;
-      if (categorySelect) {
-        categorySelect.selectedIndex = 0;
-        categorySelect.dispatchEvent(new Event('change'));
-      }
-    });
+    // Apply initial filter
+    if (categoryParam || groupParam) {
+      filterPrograms();
+    }
   });
 </script>

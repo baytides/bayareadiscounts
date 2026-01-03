@@ -102,10 +102,21 @@ if (fs.existsSync(CITIES_FILE)) {
   console.log(`📍 Loaded ${cities.length} city-to-county mappings`);
 }
 
+// Load suppressed programs list
+const SUPPRESSED_FILE = path.join(DATA_DIR, 'suppressed.yml');
+let suppressedIds = new Set();
+if (fs.existsSync(SUPPRESSED_FILE)) {
+  const suppressedData = yaml.load(fs.readFileSync(SUPPRESSED_FILE, 'utf8'));
+  if (Array.isArray(suppressedData)) {
+    suppressedIds = new Set(suppressedData.map(s => s.id));
+    console.log(`🚫 Loaded ${suppressedIds.size} suppressed program IDs`);
+  }
+}
+
 // Load all programs from YAML files
 const allPrograms = [];
-// Filter out non-program files (cities.yml, groups.yml, zipcodes.yml are metadata files)
-const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml'];
+// Filter out non-program files (cities.yml, groups.yml, zipcodes.yml, suppressed.yml are metadata files)
+const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml'];
 const categoryFiles = fs.readdirSync(DATA_DIR)
   .filter(f => f.endsWith('.yml') && !NON_PROGRAM_FILES.includes(f));
 
@@ -125,6 +136,12 @@ categoryFiles.forEach(file => {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '');
+
+    // Skip suppressed programs
+    if (suppressedIds.has(id)) {
+      console.log(`      ⏭️  Skipping suppressed program: ${program.name}`);
+      return;
+    }
 
     // Transform program data
     // Ensure areas is always an array

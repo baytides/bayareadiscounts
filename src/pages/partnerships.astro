@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Partnerships" description="Partner with BayNavigator to share your program data and reach more people in need across the San Francisco Bay Area.">
+  <!-- Header Section -->
+  <section class="bg-gradient-to-b from-primary-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-12">
+    <div class="container-page">
+      <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+        Partner With Us
+      </h1>
+      <p class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl">
+        Help us connect more Bay Area residents to the programs and services they need. We welcome partnerships with government agencies, nonprofits, and community organizations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section">
+    <div class="container-page">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8">
+        Why Partner with BayNavigator?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="card">
+          <div class="text-3xl mb-4" aria-hidden="true">🎯</div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Reach More People</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">
+            Your programs are discovered by thousands of Bay Area residents searching for assistance.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="text-3xl mb-4" aria-hidden="true">✓</div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Verified Badge</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">
+            Programs from official sources display a verification badge, building trust with users.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="text-3xl mb-4" aria-hidden="true">🔄</div>
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Automatic Updates</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">
+            API integrations keep your program information current without manual updates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section bg-neutral-50 dark:bg-neutral-800">
+    <div class="container-page">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-8">
+        How to Share Your Data
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Option 1: API Integration -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full font-bold">1</span>
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">API Integration</h3>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+            If you have an existing public API with program data, we can integrate it directly. Your data stays up-to-date automatically.
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            <strong>Ideal for:</strong> Government agencies, large nonprofits with existing data systems
+          </p>
+        </div>
+
+        <!-- Option 2: Data Submission -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 rounded-full font-bold">2</span>
+            <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Data Submission</h3>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+            Submit your program information via spreadsheet or structured data format. We'll import and maintain it for you.
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            <strong>Ideal for:</strong> Community organizations, smaller nonprofits, individual programs
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Requirements Section -->
+  <section class="section">
+    <div class="container-page">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+        What Information We Need
+      </h2>
+
+      <div class="max-w-2xl">
+        <p class="text-neutral-600 dark:text-neutral-300 mb-6">
+          For each program, we collect the following information to help users find and access services:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="text-green-600 dark:text-green-400 mt-1">●</span>
+            <div>
+              <strong class="text-neutral-900 dark:text-white">Required:</strong>
+              <span class="text-neutral-600 dark:text-neutral-300"> Program name, category, description, service area, website or contact</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="text-blue-600 dark:text-blue-400 mt-1">●</span>
+            <div>
+              <strong class="text-neutral-900 dark:text-white">Recommended:</strong>
+              <span class="text-neutral-600 dark:text-neutral-300"> Eligibility requirements, how to apply, phone number, address</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="text-neutral-400 mt-1">●</span>
+            <div>
+              <strong class="text-neutral-900 dark:text-white">Optional:</strong>
+              <span class="text-neutral-600 dark:text-neutral-300"> Cost, hours of operation, languages served, accessibility features</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Partners Section -->
+  <section class="section bg-neutral-50 dark:bg-neutral-800">
+    <div class="container-page">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+        Current Data Sources
+      </h2>
+
+      <p class="text-neutral-600 dark:text-neutral-300 mb-6">
+        BayNavigator integrates data from trusted sources:
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg">
+          <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span class="text-neutral-900 dark:text-white font-medium">USA.gov Benefits</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg">
+          <span class="text-neutral-600 dark:text-neutral-300">Community Contributions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container-page">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-4">
+          Ready to Partner?
+        </h2>
+        <p class="text-neutral-600 dark:text-neutral-300 mb-8">
+          Contact us to discuss how we can work together to help Bay Area residents find the resources they need.
+        </p>
+
+        <a
+          href="mailto:partnerships@baynavigator.org?subject=Partnership%20Inquiry"
+          class="btn-primary inline-flex items-center gap-2"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Contact Us
+        </a>
+
+        <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+          Or email us directly at partnerships@baynavigator.org
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
