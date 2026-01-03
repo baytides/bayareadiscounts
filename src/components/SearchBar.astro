@@ -98,21 +98,15 @@ const sizeClasses = size === 'large'
   </div>
 </div>
 
-<!-- Store API endpoint for client script -->
-<script type="application/json" id="search-config">
-  {JSON.stringify({ apiEndpoint })}
-</script>
+<!-- Store API endpoint in data attribute -->
+<div id="search-config" data-api-endpoint={apiEndpoint} class="hidden"></div>
 
-<!-- Fuse.js for fuzzy search -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.mjs" type="module"></script>
-
-<script type="module">
-  import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.esm.min.js';
+<script>
+  import Fuse from 'fuse.js';
 
   // Load config
   const configEl = document.getElementById('search-config');
-  const config = JSON.parse(configEl?.textContent || '{}');
-  const API_ENDPOINT = config.apiEndpoint;
+  const API_ENDPOINT = configEl?.dataset?.apiEndpoint || '';
 
   // Check if we're on the homepage (has home-program-card elements)
   const isHomepage = document.querySelectorAll('.home-program-card').length > 0;
@@ -169,7 +163,7 @@ const sizeClasses = size === 'large'
     useExtendedSearch: true
   });
 
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchInput = document.getElementById('search-input');
   const searchHints = document.getElementById('search-hints');
   const aiIndicator = document.getElementById('ai-indicator');
   const aiStatusText = document.getElementById('ai-status-text');
@@ -178,7 +172,7 @@ const sizeClasses = size === 'large'
   const hintButtons = document.querySelectorAll('.search-hint-btn');
 
   let activeCategory = 'all';
-  let debounceTimer: ReturnType<typeof setTimeout>;
+  let debounceTimer;
   let isAISearching = false;
   let lastAIQuery = '';
   let isOffline = !navigator.onLine;
@@ -270,7 +264,7 @@ const sizeClasses = size === 'large'
   });
 
   // Detect if query needs AI assistance
-  function isComplexQuery(query: string): boolean {
+  function isComplexQuery(query) {
     const trimmed = query.trim();
 
     // Demographic terms that should trigger AI even as single words
@@ -354,14 +348,14 @@ const sizeClasses = size === 'large'
 
   // Track active category filter
   document.addEventListener('click', (e) => {
-    const filterBtn = (e.target as Element).closest('[data-filter]');
+    const filterBtn = e.target.closest('[data-filter]');
     if (filterBtn) {
       activeCategory = filterBtn.getAttribute('data-filter') || 'all';
       performSearch();
     }
   });
 
-  function showLoading(show: boolean) {
+  function showLoading(show) {
     if (show) {
       searchLoading?.classList.remove('hidden');
       aiIndicator?.classList.add('hidden');
@@ -370,7 +364,7 @@ const sizeClasses = size === 'large'
     }
   }
 
-  function showAIIndicator(status: string) {
+  function showAIIndicator(status) {
     aiIndicator?.classList.remove('hidden');
     searchLoading?.classList.add('hidden');
     if (aiStatusText) aiStatusText.textContent = status;
@@ -380,7 +374,7 @@ const sizeClasses = size === 'large'
     aiIndicator?.classList.add('hidden');
   }
 
-  async function performAISearch(query: string) {
+  async function performAISearch(query) {
     if (isAISearching || query === lastAIQuery) return;
 
     isAISearching = true;
@@ -404,7 +398,7 @@ const sizeClasses = size === 'large'
 
       // Extract program IDs/names from AI response
       const matchedPrograms = data.programs || [];
-      const matchedIds = new Set(matchedPrograms.map((p: any) =>
+      const matchedIds = new Set(matchedPrograms.map((p) =>
         (p.id || p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-')
       ));
 
@@ -427,10 +421,10 @@ const sizeClasses = size === 'large'
           const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
           if (p.wrapper) {
             if (matchesAI) {
-              (p.wrapper as HTMLElement).classList.remove('hidden');
+              p.wrapper.classList.remove('hidden');
               visibleCount++;
             } else {
-              (p.wrapper as HTMLElement).classList.add('hidden');
+              p.wrapper.classList.add('hidden');
             }
           }
         });
@@ -451,7 +445,7 @@ const sizeClasses = size === 'large'
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
           const shouldShow = matchesAI && matchesCategory;
 
-          (p.element as HTMLElement).style.display = shouldShow ? '' : 'none';
+          p.element.style.display = shouldShow ? '' : 'none';
           if (shouldShow) visibleCount++;
         });
       }
@@ -479,14 +473,14 @@ const sizeClasses = size === 'large'
     }
   }
 
-  function performFuzzySearch(query: string) {
+  function performFuzzySearch(query) {
     if (isHomepage) {
       // Homepage: show/hide search results section
       if (!query) {
         // No query - hide results section
         homeResultsSection?.classList.add('hidden');
         programs.forEach(p => {
-          if (p.wrapper) (p.wrapper as HTMLElement).classList.add('hidden');
+          if (p.wrapper) p.wrapper.classList.add('hidden');
         });
         noResultsEl?.classList.add('hidden');
         return;
@@ -504,10 +498,10 @@ const sizeClasses = size === 'large'
         const matchesSearch = matchedIndices.has(p.index);
         if (p.wrapper) {
           if (matchesSearch) {
-            (p.wrapper as HTMLElement).classList.remove('hidden');
+            p.wrapper.classList.remove('hidden');
             visibleCount++;
           } else {
-            (p.wrapper as HTMLElement).classList.add('hidden');
+            p.wrapper.classList.add('hidden');
           }
         }
       });
@@ -529,7 +523,7 @@ const sizeClasses = size === 'large'
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
           // Also respect location filter if active
           const locationHidden = p.element.hasAttribute('data-location-hidden');
-          (p.element as HTMLElement).style.display = (matchesCategory && !locationHidden) ? '' : 'none';
+          p.element.style.display = (matchesCategory && !locationHidden) ? '' : 'none';
         });
         hideAIIndicator();
       } else {
@@ -541,7 +535,7 @@ const sizeClasses = size === 'large'
           const matchesSearch = matchedIndices.has(p.index);
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
           const locationHidden = p.element.hasAttribute('data-location-hidden');
-          (p.element as HTMLElement).style.display = (matchesSearch && matchesCategory && !locationHidden) ? '' : 'none';
+          p.element.style.display = (matchesSearch && matchesCategory && !locationHidden) ? '' : 'none';
         });
       }
 
@@ -551,7 +545,7 @@ const sizeClasses = size === 'large'
     }
   }
 
-  function updateResultsCount(count: number, query: string, isAI: boolean) {
+  function updateResultsCount(count, query, isAI) {
     const counter = document.getElementById('results-count');
     if (counter) {
       const queryInfo = query ? ` for "${query}"` : '';
@@ -561,7 +555,7 @@ const sizeClasses = size === 'large'
   }
 
   // Crisis detection - show appropriate help resources
-  function checkForCrisis(query: string): 'emergency' | 'mental-health' | null {
+  function checkForCrisis(query) {
     const lowerQuery = query.toLowerCase();
 
     // Emergency keywords (911)
@@ -607,7 +601,7 @@ const sizeClasses = size === 'large'
     return null;
   }
 
-  function showCrisisBanner(type: 'emergency' | 'mental-health') {
+  function showCrisisBanner(type) {
     // Remove existing banner if any
     const existingBanner = document.getElementById('crisis-banner');
     if (existingBanner) existingBanner.remove();

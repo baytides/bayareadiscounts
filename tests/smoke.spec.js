@@ -12,22 +12,25 @@ test('home page loads', async ({ page }) => {
 });
 
 test('homepage search shows results', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/', { waitUntil: 'networkidle' });
 
   // Search results should be hidden initially
   const searchResults = page.locator('#search-results');
   await expect(searchResults).toHaveClass(/hidden/);
+
+  // Wait for search script to be initialized
+  await page.waitForTimeout(1000);
 
   // Type in search box and press Enter
   const input = page.locator('#search-input');
   await input.fill('food');
   await input.press('Enter');
 
-  // Wait for results to appear
-  await page.waitForTimeout(500);
+  // Wait for search to complete
+  await page.waitForTimeout(1000);
 
-  // Search results section should now be visible
-  await expect(searchResults).not.toHaveClass(/hidden/);
+  // Verify section is visible
+  await expect(searchResults).not.toHaveClass(/hidden/, { timeout: 5000 });
 
   // Should show some program cards
   const visibleCards = page.locator('.home-program-card:not(.hidden)');
@@ -76,11 +79,11 @@ test('category links work', async ({ page }) => {
   // Should navigate to directory page
   await expect(page).toHaveURL(/\/directory/);
 
-  // Wait for programs to load
-  await page.locator('[data-category]').first().waitFor({ state: 'visible', timeout: 10000 });
+  // Wait for food programs to load (filtered by category=Food)
+  await page.locator('[data-category="food"]:not([style*="display: none"])').first().waitFor({ state: 'visible', timeout: 10000 });
 
   // Should show food programs
-  const foodCards = page.locator('[data-category="food"]');
+  const foodCards = page.locator('[data-category="food"]:not([style*="display: none"])');
   const count = await foodCards.count();
   expect(count).toBeGreaterThan(0);
 });

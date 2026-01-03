@@ -105,7 +105,7 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
       <div class="flex flex-wrap items-center gap-4 mb-4">
         <!-- Category Dropdown -->
         <div class="flex items-center gap-2">
-          <label for="category-select" class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Category:</label>
+          <label for="category-select" class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Category:</label>
           <select
             id="category-select"
             class="px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -124,14 +124,14 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
             id="verified-only"
             class="w-4 h-4 rounded border-neutral-300 dark:border-neutral-600 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700"
           />
-          <span class="text-sm text-neutral-600 dark:text-neutral-400">Verified only</span>
+          <span class="text-sm text-neutral-600 dark:text-neutral-300">Verified only</span>
         </label>
 
         <!-- Clear Filters Button -->
         <button
           type="button"
           id="clear-filters"
-          class="hidden text-sm text-primary-600 dark:text-primary-400 hover:underline"
+          class="hidden text-sm text-primary-600 dark:text-primary-300 hover:underline"
         >
           Clear filters
         </button>
@@ -159,7 +159,7 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
   <!-- Programs List -->
   <section class="section" id="programs">
     <div class="container-page">
-      <p id="results-count" class="text-neutral-600 dark:text-neutral-400 mb-6">
+      <p id="results-count" class="text-neutral-600 dark:text-neutral-300 mb-6">
         {allPrograms.length} programs found
       </p>
 
@@ -185,7 +185,7 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
 
       {allPrograms.length === 0 && (
         <div class="text-center py-12">
-          <p class="text-neutral-600 dark:text-neutral-400">No programs found. Check back soon!</p>
+          <p class="text-neutral-600 dark:text-neutral-300">No programs found. Check back soon!</p>
         </div>
       )}
     </div>

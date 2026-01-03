@@ -46,7 +46,7 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
     <!-- Official Banner -->
     <div class="official-banner">
       <div class="container-page flex items-center gap-2">
-        <svg class="w-4 h-4 text-primary-700 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <svg class="w-4 h-4 text-primary-700 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-3a1 1 0 100-2 1 1 0 000 2z"/>
         </svg>
         <span class="text-neutral-700 dark:text-neutral-300">
@@ -67,16 +67,16 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center gap-6">
-            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium">Home</a>
-            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium">Directory</a>
-            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium">Eligibility</a>
-            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium">About</a>
+            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Home</a>
+            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Directory</a>
+            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Eligibility</a>
+            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">About</a>
 
             <!-- Theme Toggle -->
             <button
               id="theme-toggle"
               type="button"
-              class="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              class="p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
               aria-label="Toggle dark mode"
             >
               <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
@@ -92,7 +92,7 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
           <button
             id="mobile-menu-btn"
             type="button"
-            class="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            class="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             aria-label="Open menu"
             aria-expanded="false"
           >
@@ -105,10 +105,10 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200 dark:border-neutral-700 pt-4">
           <div class="flex flex-col gap-3">
-            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium py-2">Home</a>
-            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium py-2">Directory</a>
-            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium py-2">Eligibility</a>
-            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-400 no-underline font-medium py-2">About</a>
+            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Home</a>
+            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Directory</a>
+            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Eligibility</a>
+            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">About</a>
             <button
               id="theme-toggle-mobile"
               type="button"
@@ -143,7 +143,7 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
               <img src="/assets/images/logo/logo.webp" alt="Bay Navigator" class="w-10 h-10 rounded-lg" width="40" height="40" />
               <span class="text-xl font-bold text-white">Bay Navigator</span>
             </div>
-            <p class="text-neutral-400 max-w-md">
+            <p class="text-neutral-300 max-w-md">
               A community resource by Bay Tides. Connecting Bay Area residents with free and low-cost programs for food, housing, healthcare, utilities, and more.
             </p>
           </div>
@@ -152,10 +152,10 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
           <div>
             <h3 class="text-white font-semibold mb-4">Resources</h3>
             <ul class="space-y-2 list-none pl-0">
-              <li><a href="/directory" class="text-neutral-400 hover:text-white no-underline">Directory</a></li>
-              <li><a href="/eligibility" class="text-neutral-400 hover:text-white no-underline">Eligibility Guides</a></li>
-              <li><a href="/partnerships" class="text-neutral-400 hover:text-white no-underline">Partnerships</a></li>
-              <li><a href="/about" class="text-neutral-400 hover:text-white no-underline">About</a></li>
+              <li><a href="/directory" class="text-neutral-300 hover:text-white no-underline">Directory</a></li>
+              <li><a href="/eligibility" class="text-neutral-300 hover:text-white no-underline">Eligibility Guides</a></li>
+              <li><a href="/partnerships" class="text-neutral-300 hover:text-white no-underline">Partnerships</a></li>
+              <li><a href="/about" class="text-neutral-300 hover:text-white no-underline">About</a></li>
             </ul>
           </div>
 
@@ -163,18 +163,18 @@ const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator
           <div>
             <h3 class="text-white font-semibold mb-4">Legal</h3>
             <ul class="space-y-2 list-none pl-0">
-              <li><a href="/privacy" class="text-neutral-400 hover:text-white no-underline">Privacy Policy</a></li>
-              <li><a href="/terms" class="text-neutral-400 hover:text-white no-underline">Terms of Service</a></li>
-              <li><a href="https://github.com/baytides/baynavigator" class="text-neutral-400 hover:text-white no-underline">GitHub</a></li>
+              <li><a href="/privacy" class="text-neutral-300 hover:text-white no-underline">Privacy Policy</a></li>
+              <li><a href="/terms" class="text-neutral-300 hover:text-white no-underline">Terms of Service</a></li>
+              <li><a href="https://github.com/baytides/baynavigator" class="text-neutral-300 hover:text-white no-underline">GitHub</a></li>
             </ul>
           </div>
         </div>
 
         <div class="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-neutral-400 text-sm">
+          <p class="text-neutral-300 text-sm">
             &copy; {new Date().getFullYear()} Bay Tides. Open source under MIT license.
           </p>
-          <p class="text-neutral-400 text-sm">
+          <p class="text-neutral-300 text-sm">
             Made with care in the San Francisco Bay Area
           </p>
         </div>

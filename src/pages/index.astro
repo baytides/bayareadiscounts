@@ -26,15 +26,19 @@ const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.yml') && !NON_PRO
 for (const file of files) {
   const content = fs.readFileSync(path.join(dataDir, file), 'utf8');
   const data = yaml.load(content) as any;
-  const category = data.category || file.replace('.yml', '');
-  const programs = data.programs || [];
+
+  // Handle both formats: array of programs or object with {category, programs}
+  const programs = Array.isArray(data) ? data : (data.programs || []);
 
   for (const program of programs) {
-    const id = `${category.toLowerCase().replace(/\s+/g, '-')}-${(program.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+    // Use program's own category if present, otherwise derive from filename
+    const category = program.category || file.replace('.yml', '').replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
+    const id = program.id || `${category.toLowerCase().replace(/\s+/g, '-')}-${(program.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
     if (!suppressedIds.has(id)) {
       allPrograms.push({
-        id,
         ...program,
+        id,
         category,
         groups: program.groups || []
       });
@@ -66,10 +70,10 @@ for (const file of files) {
   <section id="search-results" class="section hidden">
     <div class="container-page">
       <div class="flex items-center justify-between mb-6">
-        <p id="home-results-count" class="text-neutral-600 dark:text-neutral-400">
+        <p id="home-results-count" class="text-neutral-600 dark:text-neutral-300">
           0 programs found
         </p>
-        <button id="clear-search" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">
+        <button id="clear-search" class="text-sm text-primary-700 dark:text-primary-300 hover:underline">
           Clear search
         </button>
       </div>
@@ -97,12 +101,12 @@ for (const file of files) {
       </div>
 
       <div id="no-results" class="hidden text-center py-8">
-        <p class="text-neutral-600 dark:text-neutral-400 mb-4">No programs found matching your search.</p>
+        <p class="text-neutral-600 dark:text-neutral-300 mb-4">No programs found matching your search.</p>
         <a href="/directory" class="btn-primary">Browse All Programs</a>
       </div>
 
       <div class="text-center mt-8">
-        <a href="/directory" class="text-primary-600 dark:text-primary-400 hover:underline">
+        <a href="/directory" class="text-primary-700 dark:text-primary-300 hover:underline">
           View all programs in directory →
         </a>
       </div>
@@ -115,7 +119,7 @@ for (const file of files) {
       <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-2 text-center">
         Browse by Category
       </h2>
-      <p class="text-neutral-600 dark:text-neutral-400 text-center mb-8">
+      <p class="text-neutral-600 dark:text-neutral-300 text-center mb-8">
         Select a category to find programs and services
       </p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -171,8 +175,8 @@ for (const file of files) {
         <!-- View All -->
         <a href="/directory" class="card text-center group no-underline hover:no-underline hover:shadow-lg transition-shadow bg-primary-50 dark:bg-primary-900/30 border-primary-200 dark:border-primary-800">
           <div class="text-4xl mb-3" aria-hidden="true">📋</div>
-          <h3 class="text-base font-semibold text-primary-700 dark:text-primary-400 group-hover:text-primary-800 dark:group-hover:text-primary-300">View All</h3>
-          <p class="text-xs text-primary-600 dark:text-primary-400 mt-1">Browse full directory</p>
+          <h3 class="text-base font-semibold text-primary-900 dark:text-primary-200 group-hover:text-primary-800 dark:group-hover:text-primary-100">View All</h3>
+          <p class="text-xs text-primary-800 dark:text-primary-200 mt-1">Browse full directory</p>
         </a>
       </div>
 

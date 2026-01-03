@@ -320,7 +320,7 @@ const { apiEndpoint = 'https://baytides-link-checker.azurewebsites.net/api/assis
           ${program.description ? `<p class="text-neutral-600 dark:text-neutral-300 mt-1">${escapeHtml(program.description)}</p>` : ''}
           <div class="flex flex-wrap gap-2 mt-2">
             ${hasPageCard ? `<a href="#program-${programId}" class="text-xs text-primary-700 dark:text-primary-300 hover:underline" onclick="closeAndScroll('program-${programId}')">View details</a>` : ''}
-            ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-400 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
+            ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-300 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
             ${program.website ? `<a href="${program.website}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary-600 dark:text-primary-300 hover:underline">Website</a>` : ''}
           </div>
         `;
@@ -435,7 +435,7 @@ const { apiEndpoint = 'https://baytides-link-checker.azurewebsites.net/api/assis
         </div>
         ${program.description ? `<p class="text-neutral-600 dark:text-neutral-300 mt-1">${escapeHtml(program.description)}</p>` : ''}
         <div class="flex flex-wrap gap-2 mt-2">
-          ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-400 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
+          ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-300 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
           ${program.website ? `<a href="${program.website}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary-600 dark:text-primary-300 hover:underline">Website</a>` : ''}
         </div>
       `;

@@ -56,10 +56,17 @@ test.describe('Accessibility - Home Page', () => {
     const h1 = await page.locator('h1').count();
     expect(h1).toBeGreaterThanOrEqual(1);
 
-    // Check headings don't skip levels (h1 -> h3 without h2)
+    // Check visible headings don't skip levels (h1 -> h3 without h2)
+    // Only check headings that are visible (not in hidden sections like search results)
     const headings = await page.evaluate(() => {
       const hs = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-      return Array.from(hs).map(h => parseInt(h.tagName[1]));
+      return Array.from(hs)
+        .filter(h => {
+          // Check if heading is visible (not inside a hidden parent)
+          let parent = h.closest('.hidden');
+          return !parent;
+        })
+        .map(h => parseInt(h.tagName[1]));
     });
 
     for (let i = 1; i < headings.length; i++) {
