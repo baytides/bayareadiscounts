@@ -218,3 +218,9 @@ sync_sources:
   - id: ca-state-parks
     name: California State Parks
     script: scripts/sync-ca-state-parks.cjs
+
+  - id: imls-museums
+    name: Institute of Museum and Library Services
+    source: https://www.kaggle.com/datasets/imls/museum-directory
+    script: scripts/sync-imls-museums.cjs
+    notes: Dataset from 2014, entries marked verified=false

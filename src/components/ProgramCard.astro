@@ -4,6 +4,17 @@ interface Amenity {
   link?: string;
 }
 
+// Amenities can be either objects with name/link or just strings
+type AmenityInput = Amenity | string;
+
+// Normalize amenity to consistent format
+function normalizeAmenity(amenity: AmenityInput): Amenity {
+  if (typeof amenity === 'string') {
+    return { name: amenity };
+  }
+  return amenity;
+}
+
 interface Props {
   id: string;
   name: string;
@@ -22,7 +33,7 @@ interface Props {
   city?: string;
   address?: string;
   mapLink?: string;
-  amenities?: Amenity[];
+  amenities?: AmenityInput[];
   feeInfo?: string;
 }
 
@@ -147,8 +158,9 @@ const displayLocation = city || area;
   {/* Amenities */}
   {amenities.length > 0 && (
     <div class="flex flex-wrap gap-2 mb-4">
-      {amenities.map((amenity) => (
-        amenity.link ? (
+      {amenities.map((rawAmenity) => {
+        const amenity = normalizeAmenity(rawAmenity);
+        return amenity.link ? (
           <a href={amenity.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded text-xs text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-600">
             {amenity.name}
           </a>
@@ -156,8 +168,8 @@ const displayLocation = city || area;
           <span class="inline-flex items-center px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded text-xs text-neutral-700 dark:text-neutral-200">
             {amenity.name}
           </span>
-        )
-      ))}
+        );
+      })}
     </div>
   )}
 
