@@ -11,8 +11,32 @@ test('home page loads', async ({ page }) => {
   await expect(heroTitle).toContainText('Bay Area');
 });
 
-test('program cards are displayed', async ({ page }) => {
+test('homepage search shows results', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+  // Search results should be hidden initially
+  const searchResults = page.locator('#search-results');
+  await expect(searchResults).toHaveClass(/hidden/);
+
+  // Type in search box and press Enter
+  const input = page.locator('#search-input');
+  await input.fill('food');
+  await input.press('Enter');
+
+  // Wait for results to appear
+  await page.waitForTimeout(500);
+
+  // Search results section should now be visible
+  await expect(searchResults).not.toHaveClass(/hidden/);
+
+  // Should show some program cards
+  const visibleCards = page.locator('.home-program-card:not(.hidden)');
+  const count = await visibleCards.count();
+  expect(count).toBeGreaterThan(0);
+});
+
+test('directory page shows program cards', async ({ page }) => {
+  await page.goto('/directory', { waitUntil: 'domcontentloaded' });
 
   // Wait for program cards to load
   const programCards = page.locator('[data-category]');
@@ -23,17 +47,18 @@ test('program cards are displayed', async ({ page }) => {
   expect(count).toBeGreaterThan(10);
 });
 
-test('search filters results', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'domcontentloaded' });
+test('directory search filters results', async ({ page }) => {
+  await page.goto('/directory', { waitUntil: 'domcontentloaded' });
 
   // Wait for programs to load
   await page.locator('[data-category]').first().waitFor({ state: 'visible', timeout: 10000 });
 
   const input = page.locator('#search-input');
   await input.fill('food');
+  await input.press('Enter');
 
   // Wait for filter to apply
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
 
   // Verify that food programs are visible
   const visibleCards = page.locator('[data-category]:not([style*="display: none"])');
@@ -41,22 +66,22 @@ test('search filters results', async ({ page }) => {
   expect(count).toBeGreaterThan(0);
 });
 
-test('category filter works', async ({ page }) => {
+test('category links work', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+  // Click on Food category tile
+  const foodLink = page.locator('a[href="/directory?category=Food"]');
+  await foodLink.click();
+
+  // Should navigate to directory page
+  await expect(page).toHaveURL(/\/directory/);
 
   // Wait for programs to load
   await page.locator('[data-category]').first().waitFor({ state: 'visible', timeout: 10000 });
 
-  // Click on Food category button
-  const foodButton = page.locator('.category-btn', { hasText: 'Food' });
-  await foodButton.click();
-
-  // Wait for filter to apply
-  await page.waitForTimeout(300);
-
-  // All visible cards should be food category
-  const visibleCards = page.locator('[data-category="food"]:not([style*="display: none"])');
-  const count = await visibleCards.count();
+  // Should show food programs
+  const foodCards = page.locator('[data-category="food"]');
+  const count = await foodCards.count();
   expect(count).toBeGreaterThan(0);
 });
 
@@ -74,6 +99,14 @@ test('eligibility page loads', async ({ page }) => {
   // Check page title
   const title = page.locator('h1');
   await expect(title).toContainText('Eligibility Guides');
+});
+
+test('partnerships page loads', async ({ page }) => {
+  await page.goto('/partnerships', { waitUntil: 'domcontentloaded' });
+
+  // Check page title
+  const title = page.locator('h1');
+  await expect(title).toContainText('Partner');
 });
 
 test('dark mode toggle works', async ({ page }) => {

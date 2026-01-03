@@ -1,6 +1,6 @@
 /**
  * Accessibility Tests using axe-core
- * Based on WCAG 2.1 AA standards
+ * Based on WCAG 2.2 AAA standards
  * Powered by Microsoft Accessibility Insights engine
  */
 import { test, expect } from '@playwright/test';
@@ -9,7 +9,7 @@ import AxeBuilder from '@axe-core/playwright';
 // Helper to run axe and format violations
 async function checkAccessibility(page, pageName) {
   const results = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+    .withTags(['wcag2a', 'wcag2aa', 'wcag2aaa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
     .analyze();
 
   // Create detailed violation report
@@ -114,9 +114,9 @@ test.describe('Accessibility - Home Page', () => {
   });
 });
 
-test.describe('Accessibility - Program Cards', () => {
+test.describe('Accessibility - Directory Page', () => {
   test('program cards should be keyboard accessible', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/directory');
 
     // Find first program card link
     const firstCard = page.locator('[data-category]').first();
@@ -128,18 +128,30 @@ test.describe('Accessibility - Program Cards', () => {
     expect(count).toBeGreaterThan(0);
   });
 
-  test('category filter buttons should be accessible', async ({ page }) => {
-    await page.goto('/');
+  test('smart search toggle should be keyboard accessible', async ({ page }) => {
+    await page.goto('/directory');
 
-    const filterButtons = page.locator('[data-filter]');
-    const count = await filterButtons.count();
+    const toggle = page.locator('#ai-toggle');
+    await expect(toggle).toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-label');
+    await expect(toggle).toHaveAttribute('role', 'switch');
 
-    for (let i = 0; i < Math.min(count, 5); i++) {
-      const btn = filterButtons.nth(i);
-      // Should have aria-pressed for toggle state
-      const pressed = await btn.getAttribute('aria-pressed');
-      expect(pressed !== null, 'Filter buttons should have aria-pressed').toBe(true);
-    }
+    // Should be focusable
+    await toggle.focus();
+    await expect(toggle).toBeFocused();
+  });
+
+  test('directory page should have no critical violations', async ({ page }) => {
+    await page.goto('/directory');
+    await page.waitForLoadState('networkidle');
+
+    const { violations } = await checkAccessibility(page, 'Directory');
+
+    const critical = violations.filter(v =>
+      v.impact === 'critical' || v.impact === 'serious'
+    );
+
+    expect(critical).toHaveLength(0);
   });
 });
 
@@ -159,33 +171,6 @@ test.describe('Accessibility - Dark Mode', () => {
     );
 
     expect(critical, 'Dark mode has accessibility issues').toHaveLength(0);
-  });
-});
-
-test.describe('Accessibility - Smart Assistant', () => {
-  test('assistant toggle should be keyboard accessible', async ({ page }) => {
-    await page.goto('/');
-
-    const toggle = page.locator('#assistant-toggle');
-    await expect(toggle).toBeVisible();
-    await expect(toggle).toHaveAttribute('aria-label');
-    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
-
-    // Should be focusable
-    await toggle.focus();
-    await expect(toggle).toBeFocused();
-  });
-
-  test('assistant panel should have proper ARIA', async ({ page }) => {
-    await page.goto('/');
-
-    // Open assistant
-    await page.click('#assistant-toggle');
-
-    const panel = page.locator('#assistant-panel');
-    await expect(panel).toBeVisible();
-    await expect(panel).toHaveAttribute('role', 'dialog');
-    await expect(panel).toHaveAttribute('aria-labelledby');
   });
 });
 
@@ -210,6 +195,21 @@ test.describe('Accessibility - Eligibility Page', () => {
     await page.waitForLoadState('networkidle');
 
     const { violations } = await checkAccessibility(page, 'Eligibility');
+
+    const critical = violations.filter(v =>
+      v.impact === 'critical' || v.impact === 'serious'
+    );
+
+    expect(critical).toHaveLength(0);
+  });
+});
+
+test.describe('Accessibility - Partnerships Page', () => {
+  test('partnerships page should have no critical violations', async ({ page }) => {
+    await page.goto('/partnerships');
+    await page.waitForLoadState('networkidle');
+
+    const { violations } = await checkAccessibility(page, 'Partnerships');
 
     const critical = violations.filter(v =>
       v.impact === 'critical' || v.impact === 'serious'

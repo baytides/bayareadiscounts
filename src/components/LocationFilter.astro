@@ -148,7 +148,7 @@ const cityNames = cities.map(c => c.name).sort();
     const cards = document.querySelectorAll('[data-category]');
 
     cards.forEach(card => {
-      const areaEl = card.querySelector('.text-neutral-500, [class*="text-neutral-500"]');
+      const areaEl = card.querySelector('.text-neutral-600, [class*="text-neutral-600"], .text-neutral-500, [class*="text-neutral-500"]');
       const area = areaEl?.textContent?.trim() || '';
 
       // Determine visibility

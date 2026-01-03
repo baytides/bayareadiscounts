@@ -65,7 +65,7 @@ const sizeClasses = size === 'large'
 
   <!-- AI Toggle Pill -->
   <div class="relative flex items-center justify-end mt-2 gap-2">
-    <span class="text-xs text-neutral-500 dark:text-neutral-400">Smart search</span>
+    <span class="text-xs text-neutral-600 dark:text-neutral-300">Smart search</span>
     <button
       type="button"
       id="ai-toggle"
@@ -83,14 +83,14 @@ const sizeClasses = size === 'large'
 
   <!-- Search hints -->
   <div id="search-hints" class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-3 z-50">
-    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-2">Try searching for:</p>
+    <p class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">Try searching for:</p>
     <div class="flex flex-wrap gap-2 mb-3">
       <button type="button" class="search-hint-btn" data-type="keyword">food assistance</button>
       <button type="button" class="search-hint-btn" data-type="keyword">utility bill help</button>
       <button type="button" class="search-hint-btn" data-type="keyword">healthcare</button>
       <button type="button" class="search-hint-btn" data-type="keyword">senior programs</button>
     </div>
-    <p class="text-xs text-neutral-500 dark:text-neutral-400 mb-2">Or ask a question:</p>
+    <p class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">Or ask a question:</p>
     <div class="flex flex-wrap gap-2">
       <button type="button" class="search-hint-btn ai-hint" data-type="ai">I'm a senior who needs help with bills</button>
       <button type="button" class="search-hint-btn ai-hint" data-type="ai">Low-income family looking for food</button>
@@ -133,7 +133,7 @@ const sizeClasses = size === 'large'
   const programs = Array.from(cards).map((card, index) => {
     const nameEl = card.querySelector('h3');
     const descEl = card.querySelector('p');
-    const areaEl = card.querySelector('[class*="text-neutral-500"]');
+    const areaEl = card.querySelector('[class*="text-neutral-600"], [class*="text-neutral-500"]');
     const id = card.id?.replace('program-', '') || '';
     // For homepage, the wrapper element controls visibility
     const wrapper = isHomepage && cardWrappers ? cardWrappers[index] : null;
