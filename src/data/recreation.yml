@@ -1931,6 +1931,7 @@
   groups:
     - everyone
   address: 2 Solano St, Brisbane, CA 94005
+  link: https://www.brisbaneca.org/parksrec/page/community-pool
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -1945,6 +1946,7 @@
   groups:
     - everyone
   address: 1520 Hillside Boulevard, Colma, CA 94014
+  link: https://www.colma.ca.gov/locations/colma-community-center/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -1959,6 +1961,7 @@
   groups:
     - everyone
   address: 450 Martin Street, Daly City, CA 94014
+  link: https://www.dalycity.org/gallery.aspx?AID=3
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -1973,6 +1976,7 @@
   groups:
     - everyone
   address: 501 87th Street, Daly City, CA 94015
+  link: https://www.dalycity.org/327/Recreation
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -1987,6 +1991,7 @@
   groups:
     - everyone
   address: 350 90th Street, Daly City, CA 94015
+  link: https://www.dalycity.org/327/Recreation
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2001,6 +2006,7 @@
   groups:
     - everyone
   address: 101 Lake Merced Blvd, Daly City, CA 94015
+  link: https://www.dalycity.org/329/Active-AdultsSeniors
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2015,6 +2021,7 @@
   groups:
     - everyone
   address: 2778 Junipero Serra Blvd, Daly City, CA 94015
+  link: https://www.smchealth.org/location/daly-city-clinic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2029,6 +2036,7 @@
   groups:
     - everyone
   address: 901 Brunswick Street, Daly City, CA 94104
+  link: https://www.dalycity.org/1098/Lincoln-Park-Community-Center
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2043,6 +2051,7 @@
   groups:
     - everyone
   address: 145 Lake Merced Blvd, Daly City, CA 94015
+  link: https://www.dalycity.org/327/Recreation
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2057,6 +2066,7 @@
   groups:
     - everyone
   address: 6655 Mission St, Daly City, CA 94014
+  link: https://www.dalycity.org/directory.aspx?EID=319
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2070,7 +2080,9 @@
   city: East Palo Alto
   groups:
     - everyone
+    - reentry
   address: 2277 University Avenue, East Palo Alto, CA 94303
+  link: https://www.smc-connect.org/locations/city-of-east-palo-alto/david-lewis-reentry-program-service-connect
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2084,7 +2096,10 @@
   city: East Palo Alto
   groups:
     - everyone
+    - pregnant
+    - families
   address: 2160 Euclid Ave, East Palo Alto, CA 94303
+  link: https://www.smchealth.org/wic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2098,7 +2113,9 @@
   city: El Granada
   groups:
     - everyone
+    - income-eligible
   address: 99 Avenue Alhambra, El Granada, CA 94018
+  link: https://coastsidehope.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2113,6 +2130,7 @@
   groups:
     - everyone
   address: 225 Cabrillo Hwy S, Half Moon Bay, CA 94019
+  link: https://www.smchealth.org/location/coastside-clinic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2127,6 +2145,7 @@
   groups:
     - everyone
   address: 120 Scenic Drive, La Honda, CA 94020
+  link: https://www.clhguild.com/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2141,6 +2160,7 @@
   groups:
     - everyone
   address: 8865 La Honda Road, La Honda, CA 94020
+  link: https://www.mypuente.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2155,6 +2175,7 @@
   groups:
     - everyone
   address: 9500 Pescadero Creek Rd, Loma Mar, CA 94021
+  link: https://www.smcgov.org/parks/memorial-park
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2163,12 +2184,13 @@
 - id: moss-beach-fitzgerald-marine-reserve
   name: Fitzgerald Marine Reserve
   sync_source: smc-wifi
-  category: Technology
+  category: Recreation
   area: San Mateo County
   city: Moss Beach
   groups:
     - everyone
   address: 200 Nevada Avenue, Moss Beach, CA 94038
+  link: https://www.smcgov.org/parks/fitzgerald-marine-reserve
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2183,6 +2205,7 @@
   groups:
     - everyone
   address: 164 Culebra Street, Moss Beach, CA 94038
+  link: https://pillarridge.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2197,6 +2220,7 @@
   groups:
     - everyone
   address: 600 Oddstadd Blvd, Pacifica, CA 94044
+  link: https://www.smcgov.org/parks/san-pedro-valley-park
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2211,6 +2235,7 @@
   groups:
     - everyone
   address: 620 North Avenue, Pescadero, CA 94060
+  link: https://www.mypuente.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2225,6 +2250,7 @@
   groups:
     - everyone
   address: 765 Portola Valley Rd, Portola Valley, CA 94028
+  link: https://www.portolavalley.net/departments/town-center
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2239,6 +2265,7 @@
   groups:
     - everyone
   address: 2600 Middlefield Road, Redwood City, CA 94063
+  link: https://www.redwoodcity.org/departments/parks-recreation-community-services/facilities/community-centers/fair-oaks-community-center
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2252,7 +2279,9 @@
   city: Redwood City
   groups:
     - everyone
+    - youth
   address: 200 James Ave, Redwood City, CA 94062
+  link: https://www.smchealth.org/location/sequoia-teen-wellness-center
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2267,6 +2296,7 @@
   groups:
     - everyone
   address: 501 Winslow St, Redwood City, CA 94063
+  link: https://www.redwoodcitypar.org/motorpool
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2281,6 +2311,7 @@
   groups:
     - everyone
   address: 2710 Middlefield Rd, Redwood City, CA 94063
+  link: https://www.sanmateomedicalcenter.org/locations/fair-oaks-health-center/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2294,7 +2325,9 @@
   city: Redwood City
   groups:
     - everyone
+    - youth
   address: 2625 Marlborough Avenue, Redwood City, CA 94063
+  link: https://www.sienayouthcenter.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2309,6 +2342,7 @@
   groups:
     - everyone
   address: 151 Buckingham Ave, Redwood City, CA 94063
+  link: https://www.stfrancisrwc.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2322,7 +2356,10 @@
   city: Redwood City
   groups:
     - everyone
+    - youth
+    - unhoused
   address: 639 Douglas Avenue, Redwood City, CA 94063
+  link: https://star-vista.org/daybreak-30/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2336,7 +2373,10 @@
   city: Redwood City
   groups:
     - everyone
+    - pregnant
+    - families
   address: 2342 El Camino Real, Redwood City, CA 94063
+  link: https://www.smchealth.org/wic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2351,6 +2391,7 @@
   groups:
     - everyone
   address: 620 Airport Way, San Carlos, CA 94070
+  link: https://www.smcgov.org/sancarlosairport
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2365,6 +2406,7 @@
   groups:
     - everyone
   address: 1201 E Poplar Ave, San Mateo, CA 94401
+  link: https://www.smcgov.org/parks/coyote-point-marina
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2379,6 +2421,7 @@
   groups:
     - everyone
   address: 222 W. 39th Avenue San Mateo, San Mateo, CA 94403
+  link: https://www.sanmateomedicalcenter.org/
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2392,7 +2435,10 @@
   city: San Mateo
   groups:
     - everyone
+    - pregnant
+    - families
   address: 477 9th Ave, San Mateo, CA 94402
+  link: https://www.smchealth.org/wic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2407,6 +2453,7 @@
   groups:
     - everyone
   address: 306 S Spruce Ave, South San Francisco, CA 94080
+  link: https://www.smchealth.org/location/south-san-francisco-clinic
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2421,6 +2468,7 @@
   groups:
     - everyone
   address: 1486 Huntington Ave, South San Francisco, CA 94080
+  link: https://www.ymcasf.org/locations/ymca-community-resource-center
   amenities:
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
@@ -2437,6 +2485,7 @@
   imls_id: '8400602451'
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 707 W Hornet Ave
+  link: https://uss-hornet.org/
   map_link: https://www.google.com/maps/search/?api=1&query=707%20W%20Hornet%20Ave%2C%20Alameda%2C%20CA
   phone: (510) 521-8448
 - id: imls-alexander-f-morrison-planetarium
@@ -2539,8 +2588,9 @@
     - everyone
   sync_source: imls-museums
   imls_id: '8400601783'
-  description: Museum with diverse collections and exhibits.
+  description: Museum dedicated to the life and art of Peanuts creator Charles M. Schulz.
   address: 2301 Hardies Ln
+  link: https://schulzmuseum.org/
   map_link: https://www.google.com/maps/search/?api=1&query=2301%20Hardies%20Ln%2C%20Santa%20Rosa%2C%20CA
   phone: (707) 579-4452
 - id: imls-children-s-museum-of-sonoma-county
@@ -2980,6 +3030,7 @@
   imls_id: '8409500138'
   description: Wildlife facility dedicated to animal conservation and education.
   address: 9777 Golf Links Road
+  link: https://www.oaklandzoo.org/
   map_link: https://www.google.com/maps/search/?api=1&query=9777%20Golf%20Links%20Road%2C%20Oakland%2C%20CA
   phone: (510) 632-9525
 - id: imls-pacific-bus-museum
@@ -3078,8 +3129,9 @@
     - everyone
   sync_source: imls-museums
   imls_id: '8400600199'
-  description: Museum with diverse collections and exhibits.
+  description: Largest collection of Egyptian artifacts on exhibit in western North America.
   address: 1660 Park Ave
+  link: https://www.egyptianmuseum.org/
   map_link: https://www.google.com/maps/search/?api=1&query=1660%20Park%20Ave%2C%20San%20Jose%2C%20CA
   phone: (408) 947-3630
 - id: imls-rosicrucian-planetarium
