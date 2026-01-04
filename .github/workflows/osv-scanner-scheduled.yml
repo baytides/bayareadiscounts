@@ -24,6 +24,4 @@ jobs:
       scan-args: |-
         --recursive
         --skip-git
-        --format=sarif
-        --output=results.sarif
         ./
