@@ -1,0 +1,1872 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4104,
+          37.80032
+        ]
+      },
+      "properties": {
+        "id": "aquarium-of-bay",
+        "name": "Aquarium of the Bay",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco",
+        "city": "San Francisco",
+        "address": "PIER 39, The Embarcadero & Beach Street, San Francisco, CA 94133",
+        "description": "Aquarium of the Bay is a nonprofit aquarium located on Pier 39 in San Francisco, dedicated to protecting, restoring, and inspiring conservation of San...",
+        "groups": [
+          "income-eligible",
+          "veterans",
+          "families",
+          "everyone"
+        ],
+        "phone": "415-623-5300",
+        "link": "https://www.aquariumofthebay.org",
+        "linkText": "Get Tickets"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88873,
+          37.32674
+        ]
+      },
+      "properties": {
+        "id": "bay-area-discovery-museum",
+        "name": "Bay Area Discovery Museum",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Sausalito",
+        "address": "557 McReynolds Road, Sausalito, CA 94965",
+        "description": "The Bay Area Discovery Museum is a hands-on children's museum nestled at the foot of the Golden Gate Bridge in Sausalito, featuring indoor and outdoor...",
+        "groups": [
+          "caregivers",
+          "disability",
+          "income-eligible",
+          "families",
+          "youth",
+          "everyone"
+        ],
+        "phone": "415-339-3900",
+        "link": "https://bayareadiscoverymuseum.org/visit/",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.46932,
+          37.77025
+        ]
+      },
+      "properties": {
+        "id": "cal-academy",
+        "name": "California Academy of Sciences",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco",
+        "city": "San Francisco",
+        "address": "55 Music Concourse Drive, San Francisco, CA 94118",
+        "description": "The California Academy of Sciences in Golden Gate Park is a world-class scientific and cultural institution featuring a natural history museum, aquari...",
+        "groups": [
+          "income-eligible",
+          "everyone"
+        ],
+        "phone": "415-379-8000",
+        "link": "https://www.calacademy.org/visit",
+        "linkText": "Reserve Tickets"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.1841,
+          37.81972
+        ]
+      },
+      "properties": {
+        "id": "chabot-space-center",
+        "name": "Chabot Space & Science Center",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Oakland",
+        "address": "10000 Skyline Boulevard, Oakland, CA 94619",
+        "description": "Chabot Space & Science Center in the Oakland hills features interactive space science exhibits, planetarium shows, and three historic telescopes offer...",
+        "groups": [
+          "income-eligible",
+          "everyone"
+        ],
+        "phone": "510-336-7300",
+        "link": "https://chabotspace.org/visit/",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.27276,
+          37.80679
+        ]
+      },
+      "properties": {
+        "id": "childrens-creativity-museum",
+        "name": "Children's Creativity Museum",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco",
+        "city": "San Francisco",
+        "address": "221 Fourth Street, San Francisco, CA 94103",
+        "description": "The Children's Creativity Museum in San Francisco's Yerba Buena Gardens is an interactive arts and technology museum for children ages 2-12, featuring...",
+        "groups": [
+          "income-eligible",
+          "youth",
+          "families"
+        ],
+        "phone": "415-820-3320",
+        "link": "https://creativity.org/hours-admission/",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.40032,
+          37.79553
+        ]
+      },
+      "properties": {
+        "id": "exploratorium",
+        "name": "Exploratorium",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco",
+        "city": "San Francisco",
+        "address": "Pier 15, The Embarcadero, San Francisco, CA 94111",
+        "description": "The Exploratorium is San Francisco's world-renowned museum of science, art, and human perception. Located on Pier 15, it features over 650 interactive...",
+        "groups": [
+          "teachers",
+          "income-eligible"
+        ],
+        "phone": "415-528-4444",
+        "link": "https://www.exploratorium.edu/visit/reduced-rates",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.26051,
+          37.86701
+        ]
+      },
+      "properties": {
+        "id": "lawrence-hall-science",
+        "name": "Lawrence Hall of Science",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Berkeley",
+        "address": "1 Centennial Drive, Berkeley, CA 94720",
+        "description": "The Lawrence Hall of Science is UC Berkeley's public science center, perched in the hills above campus with stunning bay views. It offers hands-on exh...",
+        "groups": [
+          "income-eligible",
+          "families",
+          "youth",
+          "everyone"
+        ],
+        "phone": "510-642-5132",
+        "link": "https://lawrencehallofscience.org",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.40104,
+          37.7869
+        ]
+      },
+      "properties": {
+        "id": "moad-museum",
+        "name": "Museum of the African Diaspora (MoAD)",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco",
+        "city": "San Francisco",
+        "address": "685 Mission Street, San Francisco, CA 94105",
+        "description": "The Museum of the African Diaspora (MoAD) in San Francisco celebrates the history, art, and cultural contributions of people of African descent. Locat...",
+        "groups": [
+          "income-eligible",
+          "college-students",
+          "veterans",
+          "families",
+          "everyone"
+        ],
+        "phone": "415-358-7200",
+        "link": "https://www.moadsf.org/tickets",
+        "linkText": "Get Tickets"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.26453,
+          37.79829
+        ]
+      },
+      "properties": {
+        "id": "oakland-museum",
+        "name": "Oakland Museum of California",
+        "category": "Museums",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Oakland",
+        "address": "1000 Oak Street, Oakland, CA 94607",
+        "description": "The Oakland Museum of California (OMCA) is a multidisciplinary museum celebrating California's art, history, and natural sciences. Located near Lake M...",
+        "groups": [
+          "income-eligible",
+          "everyone"
+        ],
+        "phone": "510-318-8400",
+        "link": "https://museumca.org/visit",
+        "linkText": "Plan Visit"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3170132127729,
+          37.88940496050942
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-albany-smr",
+        "name": "Albany SMR",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Albany",
+        "address": "Buchanan St, Albany, CA, 94710",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=22880",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6172060950359,
+          37.78289700235521
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-bethany-reservoir-sra",
+        "name": "Bethany Reservoir SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Byron",
+        "address": "Christensen Rd, Byron, CA, 94514",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=562",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3134730061372,
+          37.83683544715083
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-emeryville-crescent-smr",
+        "name": "Emeryville Crescent SMR",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Emeryville",
+        "address": "3500 Powell St, Emeryville, CA, 94608",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=22881",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6890130826805,
+          37.58420498000815
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-lake-del-valle-sra",
+        "name": "Lake Del Valle SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Livermore",
+        "address": "7000 Del Valle Road, Livermore, CA, 94550",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=537",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3109626272448,
+          37.86423286765766
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-mclaughlin-eastshore-sp-ss",
+        "name": "McLaughlin Eastshore SP SS",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Berkeley",
+        "address": "Eastshore Highway, Berkeley, CA, 94710",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=520",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.2716871924683,
+          37.76617795332411
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-robert-w-crown-memorial-sb",
+        "name": "Robert W Crown Memorial SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Alameda County",
+        "city": "Alameda",
+        "address": "McKay Ave, Alameda, CA, 94501",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=526",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6322692667055,
+          38.04218743384816
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-franks-tract-sra",
+        "name": "Franks Tract SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Bethel Island",
+        "address": "Harbor Rd (and boat-in), Bethel Island, CA, 94561",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=490",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7207170230673,
+          37.89174041547541
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-marsh-creek-state-park",
+        "name": "Marsh Creek State Park",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Brentwood",
+        "address": "21520 Marsh Creek Road, Brentwood, CA, 94513",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=525",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9254891500108,
+          37.85203098602892
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-mount-diablo-sp",
+        "name": "Mount Diablo SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Walnut Creek",
+        "address": "1260 N Gate Rd, Walnut Creek, CA, 94598",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=517",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4561638717421,
+          37.87286113242551
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-angel-island-sp",
+        "name": "Angel Island SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Belvedere-Tiburon",
+        "address": "21 Main St, Belvedere-Tiburon, CA, 94920",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=468",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4626132481711,
+          38.00171495884563
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-china-camp-sp",
+        "name": "China Camp SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "San Rafael",
+        "address": "896 N San Pedro Road, San Rafael, CA, 94901",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=466",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.8766323266951,
+          38.1436029389256
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-marconi-conference-center-shp",
+        "name": "Marconi Conference Center SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Marshall",
+        "address": "18500 Highway 1, Marshall, CA, 94940",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=467",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5799742566243,
+          37.92737194392879
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-mount-tamalpais-sp",
+        "name": "Mount Tamalpais SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Mill Valley",
+        "address": "801 Panoramic Highway, Mill Valley, CA, 94941",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=471",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5703992819958,
+          38.1513189627345
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-olompali-shp",
+        "name": "Olompali SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Novato",
+        "address": "8198 Redwood Blvd, Novato, CA, 94948",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=465",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.7295612901378,
+          38.01959494091057
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-samuel-p-taylor-sp",
+        "name": "Samuel P Taylor SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Lagunitas",
+        "address": "8888 Sir Francis Drake Blvd, Lagunitas, CA, 94938",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=469",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.8968308982478,
+          38.12230626618275
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-tomales-bay-sp",
+        "name": "Tomales Bay SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Point Reyes Station",
+        "address": "Pierce Point Rd, Point Reyes Station, CA, 94956",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=470",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5110133195477,
+          38.54000499865661
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-bale-grist-mill-shp",
+        "name": "Bale Grist Mill SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Napa County",
+        "city": "St. Helena",
+        "address": "3369 North St.Helena Highway, St. Helena, CA, 94574",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=482",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5257172549352,
+          38.55322303919026
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-bothe-napa-valley-sp",
+        "name": "Bothe Napa Valley SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Napa County",
+        "city": "Calistoga",
+        "address": "Bale Lane, Calistoga, CA, 94515",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=477",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5951613472942,
+          38.65768000193324
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-robert-louis-stevenson-sp",
+        "name": "Robert Louis Stevenson SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Napa County",
+        "city": "Calistoga",
+        "address": "4777 Highway 29, Calistoga, CA, 94515",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=472",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3813432016093,
+          37.7126749404489
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-candlestick-point-sra",
+        "name": "Candlestick Point SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco",
+        "address": "Jamestown Ave, San Francisco, CA, 94124",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=519",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3084691250016,
+          37.12403889758433
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-ano-nuevo-sp",
+        "name": "Ano Nuevo SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pescadero",
+        "address": "1 New Years Creek Road & Hwy 1, Pescadero, CA, 94060",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=523",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4088521515531,
+          37.22574989846692
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-bean-hollow-sb",
+        "name": "Bean Hollow SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pescadero",
+        "address": "Bean Hollow Rd, Pescadero, CA, 94060",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=527",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4030131749699,
+          37.44490491712637
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-burleigh-h-murray-ranch-prop",
+        "name": "Burleigh H Murray Ranch Prop",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Half Moon Bay",
+        "address": "1980 Higgins Canyon Rd, Half Moon Bay, CA, 94019",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=535",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3400331384099,
+          37.20168490186801
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-butano-sp",
+        "name": "Butano SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pescadero",
+        "address": "1500 Cloverdale Road, Pescadero, CA, 94060",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=536",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5129724634356,
+          37.56424342071782
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-gray-whale-cove-sb",
+        "name": "Gray Whale Cove SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pacifica",
+        "address": "Highway 1, Pacifica, CA, 94044",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=528",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4450131838334,
+          37.46650491594417
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-half-moon-bay-sb",
+        "name": "Half Moon Bay SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Half Moon Bay",
+        "address": "95 Kelly Avenue, Half Moon Bay, CA, 94019",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=531",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5143703920364,
+          37.54549125412203
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-montara-sb",
+        "name": "Montara SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Montara",
+        "address": "130 2nd St, Montara, CA, 94037",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=532",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5027852258556,
+          37.59727851582696
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-pacifica-sb",
+        "name": "Pacifica SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pacifica",
+        "address": "500 Crespi Dr, Pacifica, CA, 94044",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=524",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.409177156633,
+          37.27395490174883
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-pescadero-sb",
+        "name": "Pescadero SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pescadero",
+        "address": "13618 Cabrillo Hwy, Pescadero, CA, 94060",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=522",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3935710503921,
+          37.18259595793476
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-pigeon-point-light-station-shp",
+        "name": "Pigeon Point Light Station SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Pescadero",
+        "address": "210 Pigeon Point Road, Pescadero, CA, 94060",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=533",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5193189441369,
+          37.53616069948441
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-point-montara-light-station",
+        "name": "Point Montara Light Station",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Montara",
+        "address": "8840 Cabrillo Hwy, Montara, CA, 94037",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.norcalhostels.org/montara/",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4052291588757,
+          37.29981890473393
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-pomponio-sb",
+        "name": "Pomponio SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "San Gregorio",
+        "address": "Cabrillo Highway, San Gregorio, CA, 94074",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=521",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.2123671259378,
+          37.26237291554725
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-portola-redwoods-sp",
+        "name": "Portola Redwoods SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "La Honda",
+        "address": "9000 Portola State Park Road, La Honda, CA, 94020",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=539",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4347381296461,
+          37.69649004640326
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-san-bruno-mountain-sp",
+        "name": "San Bruno Mountain SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Daly City",
+        "address": "555 Guadalupe Canyon Parkway, Daly City, CA, 94014",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=518",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4012701603493,
+          37.32315790701678
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-san-gregorio-sb",
+        "name": "San Gregorio SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "San Gregorio",
+        "address": "La Honda Rd, San Gregorio, CA, 94074",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=529",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4970538791215,
+          37.69776794764287
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-thornton-sb",
+        "name": "Thornton SB",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Mateo County",
+        "city": "Daly City",
+        "address": "1 Skyline Drive, Daly City, CA, 94014",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=530",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.5480130171201,
+          37.18800495571056
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-henry-w-coe-sp",
+        "name": "Henry W Coe SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Santa Clara County",
+        "city": "Morgan Hill",
+        "address": "4100 E Dunne Road, Morgan Hill, CA, 95036",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=561",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8371215089993,
+          37.25956366350673
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-martial-cottle-park-sra",
+        "name": "Martial Cottle Park SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Santa Clara County",
+        "city": "San Jose",
+        "address": "Bordered by Snell Ave, Branham Lane and Chynoweth Ave, San Jose, CA, 95136",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=23450",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.158862867541,
+          38.0501244253629
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-benicia-capitol-shp",
+        "name": "Benicia Capitol SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Solano County",
+        "city": "Benicia",
+        "address": "115 West G Street, Benicia, CA, 94510",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=475",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.1932732171815,
+          38.07809498427198
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-benicia-sra",
+        "name": "Benicia SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Solano County",
+        "city": "Benicia",
+        "address": "1197 Rose Drive, Benicia, CA, 94510",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=476",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.0030133925781,
+          38.53200496050503
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-armstrong-redwoods-snr",
+        "name": "Armstrong Redwoods SNR",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Guerneville",
+        "address": "17150 Armstrong Woods Road, Guerneville, CA, 95446",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=450",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.0110133977313,
+          38.5656049615644
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-austin-creek-sra",
+        "name": "Austin Creek SRA",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Guerneville",
+        "address": "17000 Armstrong Woods Road, Guerneville, CA, 95446",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=452",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.2470134262329,
+          38.51760494045567
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-fort-ross-shp",
+        "name": "Fort Ross SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Jenner",
+        "address": "25662 Highway 1, Jenner, CA, 95450",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=449",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.544013302514,
+          38.35670498105038
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-jack-london-shp",
+        "name": "Jack London SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Glen Ellen",
+        "address": "2400 London Ranch Road, Glen Ellen, CA, 95442",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=478",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.3450134505078,
+          38.59410493876351
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-kruse-rhododendron-snr",
+        "name": "Kruse Rhododendron SNR",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Cazadero",
+        "address": "Hwy 1 & Kruse Ranch Rd, Cazadero, CA, 95421",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=448",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5826451420001,
+          38.25449031951841
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-petaluma-adobe-shp",
+        "name": "Petaluma Adobe SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Petaluma",
+        "address": "3325 Adobe Road, Petaluma, CA, 94954",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=474",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.332710445075,
+          38.56710593730674
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-salt-point-sp",
+        "name": "Salt Point SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Cazadero",
+        "address": "25050 Coast Hwy, Cazadero, CA, 95421",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=453",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.1090133950566,
+          38.43090494412414
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-sonoma-coast-sp",
+        "name": "Sonoma Coast SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Bodega Bay",
+        "address": "Keefe Ave, Bodega Bay, CA, 94923",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=451",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4609826891494,
+          38.29429753035416
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-sonoma-shp",
+        "name": "Sonoma SHP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Sonoma",
+        "address": "14 East Spain Street, Sonoma, CA, 95476",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=479",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5143303083101,
+          38.43786799040365
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-sugarloaf-ridge-sp",
+        "name": "Sugarloaf Ridge SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Kenwood",
+        "address": "2605 Adobe Canyon Road, Kenwood, CA, 95452",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=481",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6334753277984,
+          38.4519279820972
+        ]
+      },
+      "properties": {
+        "id": "ca-sp-trione-annadel-sp",
+        "name": "Trione Annadel SP",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Sonoma County",
+        "city": "Santa Rosa",
+        "address": "6201 Channel Drive, Santa Rosa, CA, 95409",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "http://www.parks.ca.gov/?page_id=480",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4230206,
+          37.82676234
+        ]
+      },
+      "properties": {
+        "id": "nps-alca",
+        "name": "Alcatraz Island",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco Bay",
+        "address": "Alcatraz Island, San Francisco Bay, CA, 94133",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/alca/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0271566,
+          37.82604456
+        ]
+      },
+      "properties": {
+        "id": "nps-euon",
+        "name": "Eugene O'Neill National Historic Site",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Danville",
+        "address": "205 Railroad Avenue, Danville, CA, 94526",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/euon/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.473747,
+          37.80837439
+        ]
+      },
+      "properties": {
+        "id": "nps-fopo",
+        "name": "Fort Point National Historic Site",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco",
+        "address": "Fort Point National Historic Site, San Francisco, CA, 94129",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/fopo/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6007386,
+          37.85982543
+        ]
+      },
+      "properties": {
+        "id": "nps-goga",
+        "name": "Golden Gate National Recreation Area",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco",
+        "address": "Golden Gate National Recreation Area, San Francisco, CA, 94123",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/goga/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.1326097,
+          37.9828422
+        ]
+      },
+      "properties": {
+        "id": "nps-jomu",
+        "name": "John Muir National Historic Site",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Martinez",
+        "address": "4202 Alhambra Ave, Martinez, CA, 94553",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/jomu/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5808047,
+          37.89658027
+        ]
+      },
+      "properties": {
+        "id": "nps-muwo",
+        "name": "Muir Woods National Monument",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Mill Valley",
+        "address": "Muir Woods National Monument, Mill Valley, CA, 94941",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/muwo/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.8797804,
+          38.05511241
+        ]
+      },
+      "properties": {
+        "id": "nps-pore",
+        "name": "Point Reyes National Seashore",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Marin County",
+        "city": "Point Reyes Station",
+        "address": "1 Bear Valley Road, Point Reyes Station, CA, 94956",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/pore/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.0301603,
+          38.05685472
+        ]
+      },
+      "properties": {
+        "id": "nps-poch",
+        "name": "Port Chicago Naval Magazine National Memorial",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Martinez",
+        "address": "4202 Alhambra Ave, Martinez, CA, 94553",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/poch/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4671,
+          37.797
+        ]
+      },
+      "properties": {
+        "id": "nps-prsf",
+        "name": "Presidio of San Francisco",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco",
+        "address": "Presidio of San Francisco, San Francisco, CA, 94129",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/prsf/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.360156,
+          37.90999027
+        ]
+      },
+      "properties": {
+        "id": "nps-rori",
+        "name": "Rosie the Riveter WWII Home Front National Historical Park",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "Contra Costa County",
+        "city": "Richmond",
+        "address": "1414 Harbour Way South, Suite 3000, Richmond, CA, 94804",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/rori/index.htm",
+        "linkText": "Visit Website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4244415,
+          37.81005871
+        ]
+      },
+      "properties": {
+        "id": "nps-safr",
+        "name": "San Francisco Maritime National Historical Park",
+        "category": "Parks & Open Space",
+        "categoryColor": "#14B8A6",
+        "area": "San Francisco County",
+        "city": "San Francisco",
+        "address": "2905 Hyde Street, San Francisco, CA, 94109",
+        "description": "",
+        "groups": [
+          "everyone"
+        ],
+        "phone": "",
+        "link": "https://www.nps.gov/safr/index.htm",
+        "linkText": "Visit Website"
+      }
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Get PMTiles URL from environment variable
+const pmtilesUrl = import.meta.env.PUBLIC_PMTILES_URL || 'https://baytidesstorage.blob.core.windows.net/tiles/bayarea.pmtiles';
+---
+
+<BaseLayout title="Map" description="Explore Bay Area resources on an interactive map">
+  <!-- Pass PMTiles URL to client-side script -->
+  <script is:inline define:vars={{ pmtilesUrl }}>
+    window.__PMTILES_URL__ = pmtilesUrl;
+  </script>
+  <!-- Map Container -->
+  <div id="map-container" class="relative w-full" style="height: calc(100vh - 180px); min-height: 500px;">
+    <!-- Loading State -->
+    <div id="map-loading" class="absolute inset-0 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 z-10">
+      <div class="text-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+        <p class="text-neutral-600 dark:text-neutral-300">Loading map...</p>
+      </div>
+    </div>
+
+    <!-- The Map -->
+    <div id="map" class="w-full h-full"></div>
+
+    <!-- Map Controls -->
+    <div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
+      <!-- Legend Toggle -->
+      <button
+        id="legend-toggle"
+        class="bg-white dark:bg-neutral-800 px-3 py-2 rounded-lg shadow-lg text-sm font-medium text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-700 flex items-center gap-2"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
+        Legend
+      </button>
+    </div>
+
+    <!-- Legend Panel -->
+    <div id="legend-panel" class="hidden absolute top-16 left-4 z-20 bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-4 max-w-xs">
+      <h3 class="font-semibold text-neutral-900 dark:text-white mb-3">Categories</h3>
+      <div class="space-y-2 text-sm" id="legend-items">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Program Count -->
+    <div class="absolute bottom-4 left-4 z-20 bg-white dark:bg-neutral-800 px-3 py-2 rounded-lg shadow-lg">
+      <p class="text-sm text-neutral-600 dark:text-neutral-300">
+        <span id="program-count">0</span> locations on map
+      </p>
+    </div>
+
+    <!-- View Directory Link -->
+    <div class="absolute bottom-4 right-4 z-20">
+      <a
+        href="/directory"
+        class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg shadow-lg text-sm font-medium flex items-center gap-2 no-underline"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+        </svg>
+        View Full Directory
+      </a>
+    </div>
+  </div>
+
+  <!-- Attribution -->
+  <div class="bg-neutral-100 dark:bg-neutral-800 py-2 px-4 text-xs text-neutral-500 dark:text-neutral-400">
+    <div class="container-page flex flex-wrap items-center gap-x-4 gap-y-1">
+      <span>Map data:</span>
+      <a href="https://www.openstreetmap.org/copyright" class="hover:underline" target="_blank" rel="noopener">OpenStreetMap</a>
+      <span>|</span>
+      <a href="https://protomaps.com" class="hover:underline" target="_blank" rel="noopener">Protomaps</a>
+      <span>|</span>
+      <a href="https://maplibre.org" class="hover:underline" target="_blank" rel="noopener">MapLibre GL JS</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /* MapLibre popup styles */
+  :global(.maplibregl-popup-content) {
+    padding: 0 !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    max-width: 300px;
+  }
+
+  :global(.dark .maplibregl-popup-content) {
+    background: #1f2937 !important;
+    color: #f3f4f6 !important;
+  }
+
+  :global(.maplibregl-popup-close-button) {
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    color: #6b7280;
+  }
+
+  :global(.dark .maplibregl-popup-close-button) {
+    color: #9ca3af;
+  }
+
+  :global(.maplibregl-popup-close-button:hover) {
+    background: #f3f4f6;
+  }
+
+  :global(.dark .maplibregl-popup-close-button:hover) {
+    background: #374151;
+  }
+
+  /* Cluster styling */
+  :global(.cluster-marker) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+<script>
+  import maplibregl from 'maplibre-gl';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+  import * as pmtiles from 'pmtiles';
+
+  // Category colors matching the GeoJSON
+  const CATEGORY_COLORS: Record<string, string> = {
+    'Community Services': '#8B5CF6',
+    'Education': '#3B82F6',
+    'Equipment': '#6B7280',
+    'Finance': '#10B981',
+    'Food': '#F59E0B',
+    'Health': '#EF4444',
+    'Legal': '#6366F1',
+    'Library Resources': '#8B5CF6',
+    'Pet Resources': '#EC4899',
+    'Recreation': '#14B8A6',
+    'Museums': '#14B8A6',
+    'Parks': '#22C55E',
+    'Technology': '#0EA5E9',
+    'Transportation': '#F97316',
+    'Utilities': '#84CC16',
+    'Federal Benefits': '#1D4ED8'
+  };
+
+  // Get PMTiles URL from window (set by Astro)
+  const PMTILES_URL = (window as any).__PMTILES_URL__ || 'https://baytidesstorage.blob.core.windows.net/tiles/bayarea.pmtiles';
+
+  // Light and dark map styles
+  const LIGHT_STYLE = {
+    version: 8 as const,
+    sources: {
+      protomaps: {
+        type: 'vector' as const,
+        url: `pmtiles://${PMTILES_URL}`,
+        attribution: '© OpenStreetMap'
+      }
+    },
+    layers: [
+      // Background
+      { id: 'background', type: 'background' as const, paint: { 'background-color': '#f8fafc' } },
+      // Water
+      { id: 'water', type: 'fill' as const, source: 'protomaps', 'source-layer': 'water', paint: { 'fill-color': '#a5d8ff' } },
+      // Land use
+      { id: 'landuse-park', type: 'fill' as const, source: 'protomaps', 'source-layer': 'landuse', filter: ['==', 'pmap:kind', 'park'], paint: { 'fill-color': '#bbf7d0' } },
+      // Buildings
+      { id: 'buildings', type: 'fill' as const, source: 'protomaps', 'source-layer': 'buildings', minzoom: 13, paint: { 'fill-color': '#e2e8f0', 'fill-opacity': 0.8 } },
+      // Roads
+      { id: 'roads-highway', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['==', 'pmap:kind', 'highway'], paint: { 'line-color': '#fbbf24', 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1, 14, 4] } },
+      { id: 'roads-major', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['in', 'pmap:kind', 'major_road', 'medium_road'], paint: { 'line-color': '#e2e8f0', 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.5, 14, 2] } },
+      { id: 'roads-minor', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['==', 'pmap:kind', 'minor_road'], minzoom: 12, paint: { 'line-color': '#f1f5f9', 'line-width': 1 } },
+      // Labels
+      { id: 'places-city', type: 'symbol' as const, source: 'protomaps', 'source-layer': 'places', filter: ['==', 'pmap:kind', 'city'], layout: { 'text-field': ['get', 'name'], 'text-size': 14, 'text-font': ['Noto Sans Regular'] }, paint: { 'text-color': '#1e293b', 'text-halo-color': '#ffffff', 'text-halo-width': 1.5 } },
+      { id: 'places-town', type: 'symbol' as const, source: 'protomaps', 'source-layer': 'places', filter: ['==', 'pmap:kind', 'town'], minzoom: 9, layout: { 'text-field': ['get', 'name'], 'text-size': 12, 'text-font': ['Noto Sans Regular'] }, paint: { 'text-color': '#475569', 'text-halo-color': '#ffffff', 'text-halo-width': 1 } }
+    ],
+    glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf'
+  };
+
+  const DARK_STYLE = {
+    version: 8 as const,
+    sources: {
+      protomaps: {
+        type: 'vector' as const,
+        url: `pmtiles://${PMTILES_URL}`,
+        attribution: '© OpenStreetMap'
+      }
+    },
+    layers: [
+      { id: 'background', type: 'background' as const, paint: { 'background-color': '#1a1a2e' } },
+      { id: 'water', type: 'fill' as const, source: 'protomaps', 'source-layer': 'water', paint: { 'fill-color': '#16213e' } },
+      { id: 'landuse-park', type: 'fill' as const, source: 'protomaps', 'source-layer': 'landuse', filter: ['==', 'pmap:kind', 'park'], paint: { 'fill-color': '#1e3a29' } },
+      { id: 'buildings', type: 'fill' as const, source: 'protomaps', 'source-layer': 'buildings', minzoom: 13, paint: { 'fill-color': '#2d2d44', 'fill-opacity': 0.8 } },
+      { id: 'roads-highway', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['==', 'pmap:kind', 'highway'], paint: { 'line-color': '#b45309', 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1, 14, 4] } },
+      { id: 'roads-major', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['in', 'pmap:kind', 'major_road', 'medium_road'], paint: { 'line-color': '#374151', 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.5, 14, 2] } },
+      { id: 'roads-minor', type: 'line' as const, source: 'protomaps', 'source-layer': 'roads', filter: ['==', 'pmap:kind', 'minor_road'], minzoom: 12, paint: { 'line-color': '#1f2937', 'line-width': 1 } },
+      { id: 'places-city', type: 'symbol' as const, source: 'protomaps', 'source-layer': 'places', filter: ['==', 'pmap:kind', 'city'], layout: { 'text-field': ['get', 'name'], 'text-size': 14, 'text-font': ['Noto Sans Regular'] }, paint: { 'text-color': '#e5e7eb', 'text-halo-color': '#111827', 'text-halo-width': 1.5 } },
+      { id: 'places-town', type: 'symbol' as const, source: 'protomaps', 'source-layer': 'places', filter: ['==', 'pmap:kind', 'town'], minzoom: 9, layout: { 'text-field': ['get', 'name'], 'text-size': 12, 'text-font': ['Noto Sans Regular'] }, paint: { 'text-color': '#9ca3af', 'text-halo-color': '#111827', 'text-halo-width': 1 } }
+    ],
+    glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf'
+  };
+
+  // Initialize map
+  async function initMap() {
+    const loadingEl = document.getElementById('map-loading');
+    const programCountEl = document.getElementById('program-count');
+    const legendToggle = document.getElementById('legend-toggle');
+    const legendPanel = document.getElementById('legend-panel');
+    const legendItems = document.getElementById('legend-items');
+
+    // Register PMTiles protocol
+    const protocol = new pmtiles.Protocol();
+    maplibregl.addProtocol('pmtiles', protocol.tile);
+
+    // Check dark mode
+    const isDark = document.documentElement.classList.contains('dark');
+
+    // Create map
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: isDark ? DARK_STYLE : LIGHT_STYLE,
+      center: [-122.2, 37.8], // Bay Area center
+      zoom: 9,
+      minZoom: 7,
+      maxZoom: 18
+    });
+
+    // Add navigation controls
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+    // Load GeoJSON data
+    map.on('load', async () => {
+      try {
+        const response = await fetch('/api/programs.geojson');
+        const geojson = await response.json();
+
+        // Add source
+        map.addSource('programs', {
+          type: 'geojson',
+          data: geojson,
+          cluster: true,
+          clusterMaxZoom: 14,
+          clusterRadius: 50
+        });
+
+        // Cluster circles
+        map.addLayer({
+          id: 'clusters',
+          type: 'circle',
+          source: 'programs',
+          filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': [
+              'step',
+              ['get', 'point_count'],
+              '#3b82f6',   // blue for small clusters
+              10, '#8b5cf6', // purple for medium
+              25, '#ef4444'  // red for large
+            ],
+            'circle-radius': [
+              'step',
+              ['get', 'point_count'],
+              18,
+              10, 24,
+              25, 30
+            ],
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#ffffff'
+          }
+        });
+
+        // Cluster count labels
+        map.addLayer({
+          id: 'cluster-count',
+          type: 'symbol',
+          source: 'programs',
+          filter: ['has', 'point_count'],
+          layout: {
+            'text-field': ['get', 'point_count_abbreviated'],
+            'text-font': ['Noto Sans Bold'],
+            'text-size': 12
+          },
+          paint: {
+            'text-color': '#ffffff'
+          }
+        });
+
+        // Individual program points
+        map.addLayer({
+          id: 'program-points',
+          type: 'circle',
+          source: 'programs',
+          filter: ['!', ['has', 'point_count']],
+          paint: {
+            'circle-color': ['get', 'categoryColor'],
+            'circle-radius': 8,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#ffffff'
+          }
+        });
+
+        // Update program count
+        if (programCountEl) {
+          programCountEl.textContent = String(geojson.features.length);
+        }
+
+        // Build legend
+        const categories = new Set<string>();
+        geojson.features.forEach((f: any) => {
+          if (f.properties.category) {
+            categories.add(f.properties.category);
+          }
+        });
+
+        if (legendItems) {
+          legendItems.innerHTML = Array.from(categories).sort().map(cat => `
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full" style="background-color: ${CATEGORY_COLORS[cat] || '#6B7280'}"></span>
+              <span class="text-neutral-700 dark:text-neutral-300">${cat}</span>
+            </div>
+          `).join('');
+        }
+
+        // Hide loading
+        if (loadingEl) {
+          loadingEl.style.display = 'none';
+        }
+
+        // Click on cluster to zoom
+        map.on('click', 'clusters', (e) => {
+          const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+          const clusterId = features[0].properties?.cluster_id;
+          const source = map.getSource('programs') as maplibregl.GeoJSONSource;
+
+          source.getClusterExpansionZoom(clusterId, (err, zoom) => {
+            if (err) return;
+            map.easeTo({
+              center: (features[0].geometry as GeoJSON.Point).coordinates as [number, number],
+              zoom: zoom ?? 12
+            });
+          });
+        });
+
+        // Click on program point to show popup
+        map.on('click', 'program-points', (e) => {
+          if (!e.features || e.features.length === 0) return;
+
+          const feature = e.features[0];
+          const props = feature.properties;
+          const coords = (feature.geometry as GeoJSON.Point).coordinates.slice() as [number, number];
+
+          const popupContent = `
+            <div class="p-3">
+              <h3 class="font-semibold text-neutral-900 dark:text-white text-sm mb-1">${props.name}</h3>
+              <p class="text-xs text-primary-600 dark:text-primary-400 mb-2">${props.category}</p>
+              ${props.description ? `<p class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">${props.description}</p>` : ''}
+              ${props.address ? `<p class="text-xs text-neutral-500 dark:text-neutral-400 mb-2">${props.address}</p>` : ''}
+              <a href="/directory#${props.id}" class="text-xs text-primary-600 dark:text-primary-400 hover:underline">View details &rarr;</a>
+            </div>
+          `;
+
+          new maplibregl.Popup({ offset: 15 })
+            .setLngLat(coords)
+            .setHTML(popupContent)
+            .addTo(map);
+        });
+
+        // Cursor changes
+        map.on('mouseenter', 'clusters', () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', 'clusters', () => { map.getCanvas().style.cursor = ''; });
+        map.on('mouseenter', 'program-points', () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', 'program-points', () => { map.getCanvas().style.cursor = ''; });
+
+      } catch (error) {
+        console.error('Error loading programs:', error);
+        if (loadingEl) {
+          loadingEl.innerHTML = `
+            <div class="text-center text-red-600">
+              <p>Failed to load map data</p>
+              <button onclick="location.reload()" class="mt-2 text-primary-600 hover:underline">Retry</button>
+            </div>
+          `;
+        }
+      }
+    });
+
+    // Legend toggle
+    legendToggle?.addEventListener('click', () => {
+      legendPanel?.classList.toggle('hidden');
+    });
+
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isDarkNow = document.documentElement.classList.contains('dark');
+          map.setStyle(isDarkNow ? DARK_STYLE : LIGHT_STYLE);
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+</script>

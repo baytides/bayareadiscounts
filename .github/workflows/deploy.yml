@@ -33,6 +33,8 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+        env:
+          PUBLIC_PMTILES_URL: ${{ secrets.PUBLIC_PMTILES_URL }}
 
       - name: Sync programs to Azure AI Search
         run: node scripts/sync-search-index.cjs

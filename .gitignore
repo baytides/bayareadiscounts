@@ -116,3 +116,4 @@ key.properties
 ExportOptions.plist
 scripts/filter-bay-area-schools.cjs
 scripts/sync-smc-parks.cjs
+.env.example
