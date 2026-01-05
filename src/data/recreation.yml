@@ -3159,6 +3159,7 @@
   phone: (510) 521-8448
   latitude: 37.7727402
   longitude: -122.3028775
+  verified_date: 2026-01
 - id: imls-alexander-f-morrison-planetarium
   name: Alexander F. Morrison Planetarium
   category: Museums
@@ -3174,6 +3175,7 @@
   phone: (415) 750-7127
   latitude: 37.7698266
   longitude: -122.4660927
+  verified_date: 2026-01
 - id: imls-american-bookbinders-museum
   name: American Bookbinders Museum
   category: Museums
@@ -3189,6 +3191,7 @@
   phone: (415) 824-9754
   latitude: 37.7810891
   longitude: -122.4024901
+  verified_date: 2026-01
 - id: imls-anderson-art-collection
   name: Anderson Art Collection
   category: Museums
@@ -3202,6 +3205,7 @@
   address: 2440 Sand Hill Rd
   link: https://www.aacollection.com/
   phone: (650) 854-5160
+  verified_date: 2026-01
 - id: imls-art-works-downtown
   name: Art Works Downtown
   category: Museums
@@ -3215,6 +3219,7 @@
   address: 1337 4th St
   link: https://www.artworksdowntown.org/
   phone: (415) 451-8119
+  verified_date: 2026-01
 - id: imls-arts-benicia
   name: Arts Benicia
   category: Museums
@@ -3228,6 +3233,7 @@
   address: "991 Tyler Street #114"
   link: https://artsbenicia.org/
   phone: (707) 747-0131
+  verified_date: 2026-01
 - id: imls-bolinas-museum
   name: Bolinas Museum
   category: Museums
@@ -3243,6 +3249,7 @@
   phone: (415) 868-0330
   latitude: 37.9100883
   longitude: -122.6848127
+  verified_date: 2026-01
 - id: imls-c-e-smith-museum-of-anthropology
   name: C. E. Smith Museum of Anthropology
   category: Museums
@@ -3258,6 +3265,7 @@
   phone: (510) 885-3104
   latitude: 37.6610808
   longitude: -122.0719959
+  verified_date: 2026-01
 - id: imls-charles-m-schulz-museum-and-research-center
   name: Charles M Schulz Museum and Research Center
   category: Museums
@@ -3273,6 +3281,7 @@
   phone: (707) 579-4452
   latitude: 38.4602345
   longitude: -122.735717
+  verified_date: 2026-01
 - id: imls-children-s-museum-of-sonoma-county
   name: Children's Museum of Sonoma County
   category: Museums
@@ -3286,6 +3295,7 @@
   address: 1835 W Steele Ln
   link: https://www.cmosc.org/
   phone: (707) 546-4069
+  verified_date: 2026-01
 - id: imls-di-rosa-preserve
   name: di Rosa Center for Contemporary Art
   category: Museums
@@ -3301,6 +3311,7 @@
   phone: (707) 226-5991
   latitude: 38.256474
   longitude: -122.350731
+  verified_date: 2026-01
 - id: imls-dutra-museum-foundation
   name: Dutra Museum Foundation
   category: Museums
@@ -3340,6 +3351,7 @@
   address: 1408 Mission Avenue at E Street
   link: https://www.cityofsanrafael.org/falkirk/
   phone: (415) 485-3328
+  verified_date: 2026-01
 - id: imls-gallery-route-one
   name: Gallery Route One
   category: Museums
@@ -3353,6 +3365,7 @@
   address: 11101 Highway One
   link: https://galleryrouteone.org/
   phone: (415) 663-1347
+  verified_date: 2026-01
 - id: imls-gardens-at-heather-farms
   name: Gardens at Heather Farms
   category: Parks & Open Space
@@ -3381,6 +3394,7 @@
   phone: (510) 234-4884
   latitude: 37.9152529
   longitude: -122.3835547
+  verified_date: 2026-01
 - id: imls-happy-hollow-park-zoo
   name: Happy Hollow Park & Zoo
   category: Museums
@@ -3396,6 +3410,7 @@
   phone: (408) 794-6403
   latitude: 37.3258672
   longitude: -121.8629016
+  verified_date: 2026-01
 - id: imls-headlands-center-for-the-arts
   name: Headlands Center for the Arts
   category: Museums
@@ -3411,6 +3426,7 @@
   phone: (415) 331-2787
   latitude: 37.8296267
   longitude: -122.5221461
+  verified_date: 2026-01
 - id: imls-heritage-museum-of-san-francisco
   name: Heritage Museum of San Francisco
   category: Museums
@@ -3531,6 +3547,7 @@
   phone: (925) 449-9927
   latitude: 37.6796552
   longitude: -121.7685757
+  verified_date: 2026-01
 - id: imls-marin-womens-hall-of-fame
   name: Marin Womens Hall of Fame
   category: Museums
@@ -3558,6 +3575,7 @@
   address: 2 Marina Boulevard Building E
   link: https://www.nps.gov/safr/planyourvisit/maritime-museum.htm
   phone: (415) 561-6662
+  verified_date: 2026-01
 - id: imls-markham-arboretum
   name: Markham Arboretum
   category: Parks & Open Space
@@ -3583,6 +3601,7 @@
   address: 2 Marina Boulevard Building D
   link: https://www.mexicanmuseum.org/
   phone: (415) 202-9700
+  verified_date: 2026-01
 - id: imls-musee-mecanique
   name: Musée Mécanique
   category: Museums
@@ -3596,6 +3615,7 @@
   address: Pier 45 at the End of Taylor Street Fishermans Wharf
   link: https://museemecanique.com/
   phone: (415) 346-2000
+  verified_date: 2026-01
 - id: imls-museo-italo-americano
   name: Museo Italo Americano
   category: Museums
@@ -3611,6 +3631,7 @@
   phone: (415) 673-2200
   latitude: 37.8069681
   longitude: -122.4314174
+  verified_date: 2026-01
 - id: imls-museum-of-performance-design
   name: Museum of Performance & Design
   category: Museums
@@ -3652,6 +3673,7 @@
   address: 205 Railroad Ave
   link: https://museumsrv.org/
   phone: (925) 837-3750
+  verified_date: 2026-01
 - id: imls-napa-auto-museum
   name: Napa Auto Museum
   category: Museums
@@ -3678,6 +3700,7 @@
   address: 55 Presidents Circle
   link: https://napavalleymuseum.org/
   phone: (707) 944-0500
+  verified_date: 2026-01
 - id: imls-natalie-and-james-thompson-art-gallery
   name: Natalie and James Thompson Art Gallery
   category: Museums
@@ -3701,7 +3724,8 @@
   imls_id: "8400602293"
   description: Rare survivor of the 6,939-ship D-Day armada, one of only two operational Liberty ships remaining. National Historic Landmark.
   address: Pier 35 Embarcadero
-  link: https://www.ssjeremiahobrien.org/
+  link: https://ssjeremiahobrien.org/
+  verified_date: 2026-01
   phone: (415) 544-0100
   latitude: 37.8097743
   longitude: -122.4173154
@@ -3732,6 +3756,7 @@
   phone: (510) 632-9525
   latitude: 37.7509305
   longitude: -122.1478481
+  verified_date: 2026-01
 - id: imls-pacific-bus-museum
   name: Pacific Bus Museum
   category: Museums
@@ -3746,6 +3771,7 @@
   link: https://pacbus.org/
   latitude: 37.5669046
   longitude: -121.9844941
+  verified_date: 2026-01
 - id: imls-peninsula-museum-of-art
   name: Peninsula Museum of Art
   category: Museums
@@ -3758,6 +3784,7 @@
   description: Nonprofit art museum (physical locations closed; virtual exhibitions available online).
   address: 1777 California Drive
   link: https://www.peninsulamuseum.org/
+  verified_date: 2026-01
 - id: imls-philippine-folklife-museum-foundation
   name: Philippine Folklife Museum Foundation
   category: Museums
@@ -3798,6 +3825,7 @@
   phone: (510) 592-3002
   latitude: 37.9169145
   longitude: -122.3127829
+  verified_date: 2026-01
 - id: imls-portuguese-heritage-society-of-california
   name: Portuguese Heritage Society of California
   category: Museums
@@ -3834,6 +3862,7 @@
   address: 1660 Park Ave
   link: https://www.egyptianmuseum.org/
   phone: (408) 947-3630
+  verified_date: 2026-01
 - id: imls-rosicrucian-planetarium
   name: Rosicrucian Planetarium
   category: Museums
@@ -3874,6 +3903,7 @@
   phone: (415) 753-7080
   latitude: 37.731184
   longitude: -122.500579
+  verified_date: 2026-01
 - id: imls-sanchez-art-center
   name: Sanchez Art Center
   category: Museums
@@ -3889,6 +3919,7 @@
   phone: (650) 355-1894
   latitude: 37.5891523
   longitude: -122.4941167
+  verified_date: 2026-01
 - id: imls-secession-gallery
   name: Secession Gallery
   category: Museums
@@ -3930,6 +3961,7 @@
   address: 551 Broadway
   link: https://svma.org/
   phone: (707) 939-7862
+  verified_date: 2026-01
 - id: imls-starab-planetarium
   name: Starab Planetarium
   category: Museums
@@ -3958,6 +3990,7 @@
   phone: (408) 749-0220
   latitude: 37.3564687
   longitude: -122.0254814
+  verified_date: 2026-01
 - id: imls-treasure-island-museum-association
   name: Treasure Island Museum
   category: Museums
@@ -3971,6 +4004,7 @@
   address: 1 Avenue of the Palms
   link: https://www.treasureislandmuseum.org/
   phone: (415) 413-8462
+  verified_date: 2026-01
 - id: imls-u-s-army-corps-of-engineers-bay-model-visitor-cent
   name: Bay Model Visitor Center
   category: Museums
@@ -3985,6 +4019,7 @@
   link: https://www.spn.usace.army.mil/Missions/Recreation/Bay-Model-Visitor-Center/
   latitude: 37.8635594
   longitude: -122.4948555
+  verified_date: 2026-01
 - id: imls-uc-berkeley-art-museum
   name: UC Berkeley Art Museum (BAMPFA)
   category: Museums
@@ -4000,6 +4035,7 @@
   phone: (510) 642-0808
   latitude: 37.7711735
   longitude: -122.2110224
+  verified_date: 2026-01
 - id: imls-valle-del-sur
   name: Valle Del Sur
   category: Museums
@@ -4039,6 +4075,7 @@
   phone: (415) 450-8000
   latitude: 37.9878802
   longitude: -122.5897105
+  verified_date: 2026-01
 - id: imls-mountain-bike-hall-of-fame-and-museum
   name: Marin Museum of Bicycling & Mountain Bike Hall of Fame
   category: Museums
@@ -4053,3 +4090,4 @@
   link: https://mmbhof.org/
   latitude: 37.9878802
   longitude: -122.5897105
+  verified_date: 2026-01
