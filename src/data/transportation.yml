@@ -3,7 +3,7 @@
   category: Transportation
   area: Statewide
   groups:
-  - veterans
+    - veterans
   description: The California Troops to Trucks program allows qualifying service members and veterans with military driving experience to obtain a commercial driver's license (CDL) without taking the driving skills test. This fast-tracks veterans into high-demand trucking careers.
   what_they_offer: |
     - CDL skills test waiver for qualified veterans
@@ -18,20 +18,19 @@
     4. Provide DD214 showing MOS with driving duties
     5. Complete written CDL knowledge test
     6. Skills test is waived - receive CDL
-  phone: '800-777-0133'
+  phone: 800-777-0133
   benefit: CDL skills test waiver for veterans with military driving experience; fast-track to commercial trucking career
   how_to_use: Apply at DMV with military driving records and DD214
   timeframe: Ongoing
   link: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/commercial-driver-licenses-cdl/
   link_text: Learn More
-  verified_date: '2026-01-03'
-
+  verified_date: "2026-01-03"
 - id: ac-transit-stpp
   name: AC Transit
   category: Transportation
   area: Alameda County
   groups:
-  - youth
+    - youth
   description: AC Transit (Alameda-Contra Costa Transit District) is the third-largest public bus system in California, serving the East Bay including Oakland, Berkeley, and surrounding cities with local and transbay service.
   what_they_offer: |
     - Student Transit Pass Program (STPP): Free unlimited rides for eligible middle and high school students
@@ -42,22 +41,21 @@
     2. Your school will provide information about enrollment
     3. Students receive a Clipper card loaded with the pass
     4. Contact your school's administration for enrollment details
-  phone: '510-891-4777'
+  phone: 510-891-4777
   address: 1600 Franklin Street, Oakland, CA 94612
-  benefit: 'Student Transit Pass Program: free unlimited rides for eligible middle
-    and high school students'
+  benefit: "Student Transit Pass Program: free unlimited rides for eligible middle and high school students"
   how_to_use: Apply through eligible schools
   timeframe: Ongoing
   link: https://www.alamedactc.org/programs-projects/studentpass
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.8054359,-122.2685498
 - id: bart-discount
   name: BART
   category: Transportation
   area: Bay Area-wide
   groups:
-  - everyone
+    - everyone
   description: BART (Bay Area Rapid Transit) is a heavy rail rapid transit system serving the San Francisco Bay Area, connecting San Francisco, Oakland, Berkeley, and surrounding suburbs with 50 stations across 131 miles of track.
   what_they_offer: |
     - High-Value Discount: Approximately 6.25% savings when using Clipper Autoload
@@ -68,20 +66,19 @@
     2. Set up Autoload on your Clipper account at clippercard.com
     3. Choose an amount to automatically add when balance is low
     4. Discount is applied automatically to each Autoload transaction
-  phone: '510-464-6000'
-  benefit: 'High-Value Discount: ~6.25% off when using Autoload'
+  phone: 510-464-6000
+  benefit: "High-Value Discount: ~6.25% off when using Autoload"
   how_to_use: Set Autoload in Clipper
   timeframe: Ongoing
   link: https://www.bart.gov/tickets/discounts
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: bart-muni-a-pass
   name: BART + Muni
   category: Transportation
   area: San Francisco
   groups:
-  - everyone
+    - everyone
   description: A joint program between BART and SFMTA offering unlimited transit within San Francisco on both systems with a single monthly pass.
   what_they_offer: |
     - "A" Fast Pass: Unlimited Muni rides plus unlimited BART rides within San Francisco
@@ -92,20 +89,19 @@
     2. Load the monthly "A" pass onto your Clipper card
     3. Pass is valid for one calendar month
     4. Tap Clipper card when boarding Muni or entering BART
-  phone: '877-878-8883'
-  benefit: '"A" Fast Pass: Unlimited Muni + BART rides within SF'
+  phone: 877-878-8883
+  benefit: "\"A\" Fast Pass: Unlimited Muni + BART rides within SF"
   how_to_use: Buy discounted pass from Clipper
   timeframe: Monthly
   link: https://www.bart.gov/tickets/discounts
   link_text: Buy Pass
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: bike-share-for-all
   name: Bike Share for All (Bay Wheels)
   category: Transportation
   area: Bay Area-wide
   groups:
-  - income-eligible
+    - income-eligible
   description: Bay Wheels (operated by Lyft) is the Bay Area's bike share system with thousands of bikes available at stations throughout San Francisco, Oakland, Berkeley, and San Jose. Bike Share for All makes it affordable for low-income residents.
   what_they_offer: |
     - Discounted annual membership: $5/year for first year (regularly $149)
@@ -117,20 +113,19 @@
     2. Provide proof of eligibility (Clipper START, Calfresh/EBT, or income verification)
     3. Complete enrollment online or at a Lyft community hub
     4. Receive your membership and start riding
-  phone: '855-480-2453'
+  phone: 855-480-2453
   benefit: Discounted bike share membership for income-eligible riders
   how_to_use: Apply through provider; show proof of eligibility
   timeframe: Ongoing
   link: https://www.lyft.com/bikes/bay-wheels/bike-share-for-all
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: caltrain-youth-fares
   name: Caltrain Dollar Fares for Youth
   category: Transportation
   area: Bay Area-wide
   groups:
-  - youth
+    - youth
   description: Caltrain is a commuter rail line running 77 miles along the San Francisco Peninsula, connecting San Francisco to San Jose and Gilroy. The Dollar Fares program makes train travel extremely affordable for young riders.
   what_they_offer: |
     - $1 One-Way fare for youth 18 and under
@@ -142,20 +137,19 @@
     2. Or show valid ID proving age 18 or under when purchasing tickets
     3. Tap Clipper card or show ticket when boarding
     4. Youth ages 4 and under ride free with paying adult
-  phone: '800-660-4287'
+  phone: 800-660-4287
   benefit: $1 One-Way, $2 Day Pass for youth 18 and under
   how_to_use: Show valid ID or Clipper Youth card
   timeframe: Ongoing
   link: https://www.caltrain.com/dollarfares
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: city-coach-solano
   name: City Coach
   category: Transportation
   area: Solano County
   groups:
-  - college-students
+    - college-students
   description: City Coach is the local public transit service for the City of Vacaville in Solano County, providing fixed-route bus service throughout the city.
   what_they_offer: |
     - Free rides for Solano Community College students
@@ -165,20 +159,19 @@
     1. Must be currently enrolled at Solano Community College
     2. Show your valid student ID to the bus driver when boarding
     3. No separate application or pass needed
-  phone: '707-449-6000'
+  phone: 707-449-6000
   benefit: Free rides for Solano College students (within Solano Co.)
   how_to_use: Show student ID
   timeframe: Ongoing
   link: https://citycoach.com/fares/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: clipper-baypass
   name: Clipper BayPass
   category: Transportation
   area: Bay Area-wide
   groups:
-  - college-students
+    - college-students
   description: Clipper BayPass is a pilot program providing unlimited transit access across all 24 Bay Area transit agencies on a single pass, designed primarily for college students at participating institutions.
   what_they_offer: |
     - Unlimited rides on all 24 Bay Area transit agencies
@@ -190,20 +183,19 @@
     2. Register through your school's transportation or parking office
     3. Link your student ID to a Clipper card
     4. Program eligibility and fees vary by institution
-  phone: '877-878-8883'
+  phone: 877-878-8883
   benefit: Unlimited rides on all 24 Bay Area transit agencies
   how_to_use: Register for program
   timeframe: Ongoing
   link: https://maps.santarosa.edu/clipper-baypass-faq
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: clipper-start
   name: Clipper START
   category: Transportation
   area: Bay Area-wide
   groups:
-  - income-eligible
+    - income-eligible
   description: Clipper START is a regional program that provides discounted transit fares for low-income adults on participating Bay Area transit systems, helping make public transportation more accessible.
   what_they_offer: |
     - 50% off single-ride fares on most participating transit agencies
@@ -216,20 +208,19 @@
     3. Provide proof of income or participation in qualifying benefit programs
     4. Receive Clipper START card by mail within 2-3 weeks
     5. Load cash value and ride with automatic discounts
-  phone: '800-660-4287'
+  phone: 800-660-4287
   benefit: Reduced transit fares
   how_to_use: Apply online
   timeframe: Ongoing
   link: https://www.clipperstartcard.com
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: dmv-reduced-fee-id
   name: DMV Reduced-Fee ID Card
   category: Transportation
   area: Statewide
   groups:
-  - income-eligible
+    - income-eligible
   description: The California Department of Motor Vehicles offers reduced-fee identification cards for income-eligible residents, providing an affordable way to obtain government-issued photo ID.
   what_they_offer: |
     - Reduced-fee state ID card (regularly $35, reduced to $8)
@@ -242,21 +233,19 @@
     3. Agency will verify your eligibility and complete the form
     4. Take the certified DL 937 form to any DMV office
     5. Complete ID card application and pay reduced fee
-  phone: '800-777-0133'
+  phone: 800-777-0133
   benefit: Reduced-fee state ID for eligible residents using form DL 937
-  how_to_use: Request DL 937 from your county's Public Assistance Agency; submit to
-    DMV
+  how_to_use: Request DL 937 from your county's Public Assistance Agency; submit to DMV
   timeframe: Ongoing
   link: https://sa.dmv.ca.gov/DMV/ukp.aspx?pid=1&ruleid=240
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: emergency-ride-home-marin
   name: Emergency Ride Home
   category: Transportation
   area: Marin County
   groups:
-  - everyone
+    - everyone
   description: Marin Commutes provides emergency ride home reimbursement for people who use alternative transportation to get to work or school, ensuring you can get home quickly in case of an emergency.
   what_they_offer: |
     - Reimbursement for emergency rides home
@@ -269,21 +258,19 @@
     3. When emergency occurs, take taxi/rideshare/rental car home
     4. Submit reimbursement request online within 5 business days
     5. Include receipt and reason for emergency
-  phone: '415-257-4465'
-  benefit: Reimbursement for eligible emergency rides home (up to $125/ride, capped
-    at $500/year)
+  phone: 415-257-4465
+  benefit: Reimbursement for eligible emergency rides home (up to $125/ride, capped at $500/year)
   how_to_use: Apply for reimbursement online
   timeframe: Ongoing
   link: https://marincommutes.org/erh/
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: emery-go-round
   name: Emery Go-Round
   category: Transportation
   area: Alameda County
   groups:
-  - everyone
+    - everyone
   description: Emery Go-Round is a free shuttle bus service operated by the Emeryville Transportation Management Association, connecting Emeryville destinations with the MacArthur BART station.
   what_they_offer: |
     - Completely free shuttle service
@@ -296,21 +283,21 @@
     2. Check the route map and schedule online
     3. Go to any Emery Go-Round stop
     4. Board when shuttle arrives—no fare required
-  phone: '510-451-8711'
+  phone: 510-451-8711
   address: 1300 Park Avenue, Emeryville, CA 94608
   benefit: Free shuttle service throughout Emeryville
   how_to_use: Just board at any stop
   timeframe: Ongoing
   link: https://emerygoround.com
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.831262,-122.286036
 - id: 511-emergency-rides-contra-costa
   name: 511 Emergency Rides
   category: Transportation
   area: Contra Costa County
   groups:
-  - everyone
+    - everyone
   description: 511 Contra Costa provides emergency ride services for commuters who use alternative transportation, ensuring workers and students can get home safely in case of unexpected emergencies.
   what_they_offer: |
     - 6 free emergency Lyft or Uber rides per year
@@ -321,20 +308,19 @@
     2. Must work or attend college in Contra Costa County
     3. Use alternative transportation (transit, carpool, bike, walk) at least 2 days/week
     4. Request ride through the program when emergency occurs
-  phone: '925-942-9043'
+  phone: 925-942-9043
   benefit: 6 free emergency Lyft/Uber rides annually
   how_to_use: Register through 511 Contra Costa
   timeframe: Ongoing
   link: https://511contracosta.org/guaranteed-ride-home/
   link_text: Register
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: 511-transit-incentives-contra-costa
   name: 511 Transit Incentives
   category: Transportation
   area: Contra Costa County
   groups:
-  - everyone
+    - everyone
   description: 511 Contra Costa offers incentives to encourage workers and students to try public transit, providing free Clipper card value when you commit to taking transit.
   what_they_offer: |
     - Free $25 Clipper card for taking the transit pledge
@@ -345,20 +331,19 @@
     2. Complete the transit pledge online
     3. Must work or attend college in Contra Costa County
     4. Receive $25 Clipper card by mail or at designated pickup location
-  phone: '925-942-9043'
+  phone: 925-942-9043
   benefit: Free $25 Clipper card for taking transit pledge
   how_to_use: Complete transit pledge online
   timeframe: Ongoing
   link: https://511contracosta.org/transit/transit-offer/
   link_text: Claim offer
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lime-access
   name: Lime Access
   category: Transportation
   area: Bay Area-wide
   groups:
-  - income-eligible
+    - income-eligible
   description: Lime is a micromobility company offering electric scooters and bikes for short trips. Lime Access makes these transportation options affordable for low-income riders.
   what_they_offer: |
     - Discounted or free Lime scooter and bike rides
@@ -371,20 +356,18 @@
     3. Apply for Lime Access in the app settings
     4. Provide proof of income eligibility (SNAP, Medicaid, LIHEAP, or similar)
     5. Approval usually within a few days
-  benefit: Discounted or free Lime scooter rides (up to a set time per ride) for eligible
-    riders
+  benefit: Discounted or free Lime scooter rides (up to a set time per ride) for eligible riders
   how_to_use: Apply for Lime Access; link account
   timeframe: Ongoing
   link: https://www.li.me/why/community/lime-access
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: low-cost-auto-insurance
   name: Low Cost Auto Insurance
   category: Transportation
   area: Statewide
   groups:
-  - income-eligible
+    - income-eligible
   description: California's Low Cost Automobile Insurance Program (CLCA) is a state-sponsored program providing affordable liability insurance for income-eligible drivers who might otherwise go uninsured.
   what_they_offer: |
     - State-sponsored low-cost liability insurance
@@ -398,20 +381,19 @@
     4. Good driving record required (limited violations allowed)
     5. Apply online or by phone
     6. Choose from participating insurance companies
-  phone: '866-602-8861'
+  phone: 866-602-8861
   benefit: State-sponsored low-cost liability insurance for income-eligible drivers
   how_to_use: Check eligibility and enroll online or by phone
   timeframe: Ongoing
   link: https://www.mylowcostauto.com
   link_text: Enroll
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: marin-transit-students
   name: Marin Transit
   category: Transportation
   area: Marin County
   groups:
-  - college-students
+    - college-students
   description: Marin Transit provides local bus service throughout Marin County, connecting communities with schools, shopping, and employment centers. The agency partners with College of Marin to offer free rides for students.
   what_they_offer: |
     - Free rides for College of Marin students
@@ -423,24 +405,23 @@
     2. Obtain your valid student ID from the college
     3. Show student ID to bus driver when boarding
     4. Ride any Marin Transit local route for free
-  phone: '415-455-2000'
+  phone: 415-455-2000
   benefit: Free rides for College of Marin students
   how_to_use: Show student ID
   timeframe: School-year durations apply
   link: https://marintransit.org/COM
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: muni-free
   name: Muni
   category: Transportation
   area: San Francisco
   groups:
-  - youth
-  - seniors
-  - veterans
-  - disability
-  - income-eligible
+    - youth
+    - seniors
+    - veterans
+    - disability
+    - income-eligible
   description: San Francisco Municipal Transportation Agency (SFMTA) operates Muni, the city's public transit system including buses, light rail (Metro), cable cars, and historic streetcars. Multiple free and discounted fare programs are available.
   what_they_offer: |
     - Free Muni for Youth (ages 5-18): Free on all Muni except cable cars
@@ -454,21 +435,19 @@
     3. Lifeline Pass: Apply through SFMTA with proof of low income
     4. Chase Center: Show your event ticket on game day for free Muni
     5. All programs require Clipper card
-  phone: '311'
-  benefit: Free Muni for youth (excludes cable cars), income-eligible seniors/people
-    with disabilities, Access Pass, Lifeline Pass, free with Chase Center event ticket
+  phone: "311"
+  benefit: Free Muni for youth (excludes cable cars), income-eligible seniors/people with disabilities, Access Pass, Lifeline Pass, free with Chase Center event ticket
   how_to_use: Online enrollment or show ticket/ID
   timeframe: Ongoing; some seasonal
   link: https://www.sfmta.com/fares
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: petaluma-transit-free
   name: Petaluma Transit
   category: Transportation
   area: Sonoma County
   groups:
-  - everyone
+    - everyone
   description: Petaluma Transit is the local public bus service for the City of Petaluma in Sonoma County, providing fixed-route service throughout the city and connections to regional transit.
   what_they_offer: |
     - All local bus routes are completely free
@@ -480,20 +459,19 @@
     2. Check route map and schedule online
     3. Go to any Petaluma Transit stop
     4. Board when bus arrives—completely free
-  phone: '707-778-4460'
+  phone: 707-778-4460
   benefit: All local buses free to ride
   how_to_use: Just board
   timeframe: Ongoing
   link: https://transit.cityofpetaluma.net/fares/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: rtc-clipper-card
   name: RTC Clipper Card
   category: Transportation
   area: Bay Area-wide
   groups:
-  - disability
+    - disability
   description: The Regional Transit Connection (RTC) Clipper Card provides discounted fares for people with disabilities on participating Bay Area transit systems.
   what_they_offer: |
     - Reduced fares on most Bay Area transit agencies
@@ -506,20 +484,19 @@
     3. Submit application online or by mail
     4. Once approved, receive RTC Clipper card by mail
     5. Load cash value and ride with automatic discounts
-  phone: '877-878-8883'
+  phone: 877-878-8883
   benefit: Reduced fares for riders with disabilities
   how_to_use: Apply with proof of disability
   timeframe: Ongoing
   link: https://511.org/transit/rtc-card/eligibility
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: samtrans
   name: SamTrans Way2Go Pass
   category: Transportation
   area: San Mateo County
   groups:
-  - college-students
+    - college-students
   description: SamTrans is San Mateo County's public transit bus service. The Way2Go Pass program provides free unlimited transit for eligible college students through SparkPoint centers.
   what_they_offer: |
     - FREE unlimited SamTrans bus pass
@@ -531,20 +508,19 @@
     2. Visit your campus SparkPoint center
     3. Complete program intake and eligibility verification
     4. Receive Way2Go pass loaded on Clipper card
-  phone: '650-508-6200'
+  phone: 650-508-6200
   benefit: FREE unlimited bus pass; transit support for eligible students
   how_to_use: Apply for pass
   timeframe: Academic year
   link: https://skylinecollege.edu/sparkpoint/services/transportation.php
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: samtrans-youth
   name: SamTrans
   category: Transportation
   area: San Mateo County
   groups:
-  - youth
+    - youth
   description: SamTrans offers a special Summer Youth Pass for young riders, making it easy and affordable for youth to travel throughout San Mateo County during summer months.
   what_they_offer: |
     - Summer Youth Pass: Unlimited local bus rides June through August
@@ -557,23 +533,22 @@
     3. Must be 18 years old or younger
     4. Load pass onto Clipper card
     5. Valid June 1 through August 31
-  phone: '650-508-6200'
-  benefit: 'Summer Youth Pass: unlimited local bus rides June–August'
+  phone: 650-508-6200
+  benefit: "Summer Youth Pass: unlimited local bus rides June–August"
   how_to_use: Buy pass before summer
   timeframe: Seasonal
   link: https://www.samtrans.com/fares/fare-types
   link_text: Buy Pass
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: santa-rosa-citybus
   name: Santa Rosa CityBus
   category: Transportation
   area: Sonoma County
   groups:
-  - youth
-  - college-students
-  - veterans
-  - everyone
+    - youth
+    - college-students
+    - veterans
+    - everyone
   description: Santa Rosa CityBus provides local public transit service throughout the City of Santa Rosa in Sonoma County, with multiple routes connecting neighborhoods, schools, shopping, and employment centers.
   what_they_offer: |
     - Free rides for youth 18 and under
@@ -587,22 +562,21 @@
     3. SRJC Students: Show current student ID
     4. City/County Workers: Show employee ID (if eligible)
     5. No separate application needed—just show ID when boarding
-  phone: '707-543-3333'
+  phone: 707-543-3333
   address: 600 Morgan Street, Santa Rosa, CA 95401
-  benefit: Free rides for youth, children, veterans, SRJC students, some city/county
-    workers
+  benefit: Free rides for youth, children, veterans, SRJC students, some city/county workers
   how_to_use: Show valid qualifying ID
   timeframe: Ongoing
   link: https://srcitybus.org/fares-and-passes/discount-programs/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=38.440655,-122.7197253
 - id: senior-clipper-card
   name: Senior Clipper Card
   category: Transportation
   area: Bay Area-wide
   groups:
-  - seniors
+    - seniors
   description: The Senior Clipper Card provides discounted fares for riders 65 and older on participating Bay Area transit systems.
   what_they_offer: |
     - Discounted fares on most Bay Area transit agencies
@@ -615,10 +589,10 @@
     3. Valid ID options include driver's license, passport, or Medicare card
     4. Receive Senior Clipper card by mail
     5. Load cash value or passes and ride with automatic senior discounts
-  phone: '877-878-8883'
+  phone: 877-878-8883
   benefit: Discounted fares for 65+
   how_to_use: Apply with proof of age
   timeframe: Ongoing
   link: https://www.clippercard.com/ClipperWeb/discounts.html
   link_text: Visit website
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"

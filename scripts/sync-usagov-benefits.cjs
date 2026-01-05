@@ -37,18 +37,34 @@ const LIFE_EVENT_KEYWORDS = {
 
 // Map USAGov agencies to our category system (fallback)
 const AGENCY_TO_CATEGORY = {
-  'Social Security Administration (SSA)': 'finance',
-  'Veterans Affairs Department (VA)': 'finance',  // Default, overridden by keywords
-  'Department of Defense (DOD)': 'finance',
-  'Centers for Medicare and Medicaid (CMS)': 'health',
-  'Federal Emergency Management Agency (FEMA)': 'community',
-  'Department of Labor (DOL)': 'finance',
-  'Department of Justice (DOJ)': 'legal',
-  'Department of Housing and Urban Development (HUD)': 'community', // No housing category
-  'Internal Revenue Service (IRS)': 'finance',
-  'Department of Interior (DOI) - Indian Affairs': 'community',
-  'Library of Congress (LOC)': 'education',
-  'Federal Retirement Thrift Investment Board (FRTIB)': 'finance',
+  'Social Security Administration (SSA)': 'Finance',
+  'Veterans Affairs Department (VA)': 'Finance',  // Default, overridden by keywords
+  'Department of Defense (DOD)': 'Finance',
+  'Centers for Medicare and Medicaid (CMS)': 'Health',
+  'Federal Emergency Management Agency (FEMA)': 'Community Services',
+  'Department of Labor (DOL)': 'Finance',
+  'Department of Justice (DOJ)': 'Legal Services',
+  'Department of Housing and Urban Development (HUD)': 'Community Services', // No housing category
+  'Internal Revenue Service (IRS)': 'Finance',
+  'Department of Interior (DOI) - Indian Affairs': 'Community Services',
+  'Library of Congress (LOC)': 'Education',
+  'Federal Retirement Thrift Investment Board (FRTIB)': 'Finance',
+};
+
+// Short agency names for display
+const AGENCY_SHORT_NAMES = {
+  'Social Security Administration (SSA)': 'Social Security',
+  'Veterans Affairs Department (VA)': 'VA',
+  'Department of Defense (DOD)': 'DOD',
+  'Centers for Medicare and Medicaid (CMS)': 'Medicare/Medicaid',
+  'Federal Emergency Management Agency (FEMA)': 'FEMA',
+  'Department of Labor (DOL)': 'Dept of Labor',
+  'Department of Justice (DOJ)': 'DOJ',
+  'Department of Housing and Urban Development (HUD)': 'HUD',
+  'Internal Revenue Service (IRS)': 'IRS',
+  'Department of Interior (DOI) - Indian Affairs': 'BIA',
+  'Library of Congress (LOC)': 'Library of Congress',
+  'Federal Retirement Thrift Investment Board (FRTIB)': 'TSP',
 };
 
 // Categorize based on benefit title/description keywords (more accurate than agency)
@@ -58,29 +74,54 @@ function categorizeByKeywords(title, summary) {
   // Health/Medical
   if (text.includes('medicare') || text.includes('medicaid') || text.includes('health') ||
       text.includes('medical') || text.includes('champva') || text.includes('prescription')) {
-    return 'health';
+    return 'Health';
   }
 
   // Education
   if (text.includes('education') || text.includes('gi bill') || text.includes('school') ||
       text.includes('braille') || text.includes('library')) {
-    return 'education';
+    return 'Education';
   }
 
   // Legal
   if (text.includes('legal') || text.includes('court') || text.includes('justice')) {
-    return 'legal';
+    return 'Legal Services';
   }
 
   // Community services (burial, emergency, social services)
   if (text.includes('burial') || text.includes('funeral') || text.includes('cemetery') ||
       text.includes('headstone') || text.includes('grave') || text.includes('memorial') ||
       text.includes('flag')) {
-    return 'community';
+    return 'Community Services';
   }
 
   // Finance is the default for most benefits (pension, disability payments, SSI, etc.)
   return null; // Will use agency fallback
+}
+
+// Format benefit name to be clearer
+// e.g. "Retirement benefits for child" -> "Social Security: Retirement Benefits for Children"
+function formatBenefitName(title, agencyTitle) {
+  const agencyShort = AGENCY_SHORT_NAMES[agencyTitle] || 'Federal';
+
+  // Capitalize title properly
+  let formattedTitle = title
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+
+  // Fix common plural/clarity issues
+  formattedTitle = formattedTitle
+    .replace(/\bFor Child\b/gi, 'for Children')
+    .replace(/\bFor Spouse\b/gi, 'for Spouses')
+    .replace(/\bFor Parents\b/gi, 'for Parents')
+    .replace(/\bFor Adults\b/gi, 'for Adults')
+    .replace(/\bWith Disability\b/gi, 'with Disabilities')
+    .replace(/\bWith Disabilities\b/gi, 'with Disabilities')
+    .replace(/\bFor Veteran\b/gi, 'for Veterans')
+    .replace(/\bFor Survivors\b/gi, 'for Survivors');
+
+  return `${agencyShort}: ${formattedTitle}`;
 }
 
 // Map eligibility criteria to our target groups
@@ -288,7 +329,7 @@ function transformBenefit(benefitWrapper) {
 
   return {
     id: generateId(benefit.title, agencyTitle),
-    name: benefit.title,
+    name: formatBenefitName(benefit.title, agencyTitle),
     category: category,
     area: 'Nationwide',
     description: stripHtml(benefit.summary) || `Federal benefit program administered by ${agencyTitle}.`,
@@ -338,13 +379,16 @@ async function syncBenefits() {
 # DO NOT EDIT MANUALLY - This file is regenerated by sync-usagov-benefits.cjs
 
 ${programs.map(p => {
+  // Helper to quote strings that need it
+  const quote = (s) => (s && (s.includes(':') || s.includes('#'))) ? `"${s.replace(/"/g, '\\"')}"` : s;
+
   const lines = [
     `- id: ${p.id}`,
-    `  name: ${p.name}`,
+    `  name: ${quote(p.name)}`,
     `  category: ${p.category}`,
     `  area: ${p.area}`,
     `  source: federal`,
-    `  agency: ${p.agency}`,
+    `  agency: ${quote(p.agency)}`,
     `  verified_by: USA.gov`,
     `  verified_date: '${syncDate}'`,
   ];

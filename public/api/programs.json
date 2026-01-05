@@ -1,6 +1,6 @@
 {
-  "total": 675,
-  "count": 675,
+  "total": 639,
+  "count": 639,
   "offset": 0,
   "programs": [
     {
@@ -2130,21 +2130,21 @@
       "lastUpdated": "2026-01-05"
     },
     {
-      "id": "apple-first-responders",
-      "name": "Apple First Responders Store",
+      "id": "apple-veterans-military",
+      "name": "Apple Veterans and Military Purchase Program",
       "category": "community",
-      "description": "Discounted pricing on Mac, iPad, and accessories for verified first responders",
-      "fullDescription": "Apple offers special pricing for verified first responders on Mac computers, iPads, and accessories through their First Responders store.",
-      "whatTheyOffer": "- Discounted Mac computers\n- iPad discounts\n- AppleCare+ savings\n- Accessories at reduced prices\n- Same warranty and service as regular purchases\n",
-      "howToGetIt": "1. Visit Apple's First Responders store online\n2. Sign in with ID.me verification\n3. Verify first responder employment\n4. Access exclusive pricing\n5. Purchase with standard Apple checkout\n",
+      "description": "10% discount on Mac, iPad, and accessories for verified military and veterans",
+      "fullDescription": "Apple offers a 10% discount for current and veteran members of the US Military, National Guard, and Reserve. Discount also extends to immediate family members in the same household.",
+      "whatTheyOffer": "- 10% discount on Mac computers\n- 10% discount on iPad\n- 10% discount on accessories\n- Same warranty and service as regular purchases\n- Available to eligible family members in same household\n",
+      "howToGetIt": "1. Visit Apple's Veterans and Military store online\n2. Sign in with ID.me verification\n3. Verify military or veteran status\n4. Access exclusive 10% pricing\n5. Purchase with standard Apple checkout (Apple Card Monthly Installments not available)\n",
       "groups": [
-        "first-responders"
+        "veterans"
       ],
       "areas": [
         "Nationwide"
       ],
       "city": null,
-      "website": "https://www.apple.com/us-gov/",
+      "website": "https://www.apple.com/shop/browse/home/veterans_military",
       "cost": null,
       "phone": null,
       "email": null,
@@ -3215,7 +3215,7 @@
     },
     {
       "id": "federal-social-security-retirement-benefits-for-child",
-      "name": "Retirement benefits for child",
+      "name": "Social Security: Retirement Benefits for Children",
       "category": "federal-benefits",
       "description": "Replacement income for underaged children of qualified retirees and families receiving retirement benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Replacement income for underaged children of qualified retirees and families receiving retirement benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -3275,7 +3275,7 @@
     },
     {
       "id": "federal-social-security-supplemental-security-income-ssi-for-child",
-      "name": "Supplemental Security Income (SSI) for Child",
+      "name": "Social Security: Supplemental Security Income (ssi) for Children",
       "category": "federal-benefits",
       "description": "Monthly cash payments to meet the basic needs of children with disabilities and caretakers with limited income, savings, or other resources. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Monthly cash payments to meet the basic needs of children with disabilities and caretakers with limited income, savings, or other resources. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -3321,7 +3321,7 @@
     },
     {
       "id": "federal-centers-for-medicare-with-disability",
-      "name": "Medicare with disability",
+      "name": "Medicare/Medicaid: Medicare with Disabilities",
       "category": "federal-benefits",
       "description": "A health insurance program for Americans aged 65 and older, and for people with disabilities.\n",
       "fullDescription": "A health insurance program for Americans aged 65 and older, and for people with disabilities.\n",
@@ -3382,7 +3382,7 @@
     },
     {
       "id": "federal-veterans-affairs-veteran-s-pension-with-disability",
-      "name": "Veteran's pension with disability",
+      "name": "VA: Veteran's Pension with Disabilities",
       "category": "federal-benefits",
       "description": "Monthly payments to wartime veterans with specific age, disability, income, or net worth.\n",
       "fullDescription": "Monthly payments to wartime veterans with specific age, disability, income, or net worth.\n",
@@ -3447,7 +3447,7 @@
     },
     {
       "id": "federal-veterans-affairs-veteran-readiness-and-employment-vr-e",
-      "name": "Veteran readiness and employment (VR&E)",
+      "name": "VA: Veteran Readiness And Employment (vr&e)",
       "category": "federal-benefits",
       "description": "Employment support for service members and veterans with a disability that limits their ability to work.\n",
       "fullDescription": "Employment support for service members and veterans with a disability that limits their ability to work.\n",
@@ -3496,7 +3496,7 @@
     },
     {
       "id": "federal-department-of-combat-related-special-compensation-crsc",
-      "name": "Combat-Related Special Compensation (CRSC)",
+      "name": "DOD: Combat-related Special Compensation (crsc)",
       "category": "federal-benefits",
       "description": "Pays added benefits to retirees with at least 20 years of service and who receive VA compensation for combat-related disabilities.\n",
       "fullDescription": "Pays added benefits to retirees with at least 20 years of service and who receive VA compensation for combat-related disabilities.\n",
@@ -3559,7 +3559,7 @@
     },
     {
       "id": "federal-social-security-ticket-to-work-program",
-      "name": "Ticket to Work Program",
+      "name": "Social Security: Ticket To Work Program",
       "category": "federal-benefits",
       "description": "Career development for Social Security disability beneficiaries ages 18 to 64 years who would like to work.\n",
       "fullDescription": "Career development for Social Security disability beneficiaries ages 18 to 64 years who would like to work.\n",
@@ -3617,7 +3617,7 @@
     },
     {
       "id": "federal-social-security-supplemental-security-income-ssi",
-      "name": "Supplemental Security Income (SSI)",
+      "name": "Social Security: Supplemental Security Income (ssi)",
       "category": "federal-benefits",
       "description": "Financial assistance to adults with disabilities, and people 65 and older without disabilities who meet specific financial limits. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to adults with disabilities, and people 65 and older without disabilities who meet specific financial limits. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -3662,7 +3662,7 @@
     },
     {
       "id": "federal-social-security-social-security-disability-insurance-for-child-wit",
-      "name": "Social Security disability insurance for child with disabilities",
+      "name": "Social Security: Social Security Disability Insurance for Children with Disabilities",
       "category": "federal-benefits",
       "description": "Financial assistance to adult children with disabilities who are unable to work and whose parents receive disability benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to adult children with disabilities who are unable to work and whose parents receive disability benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -3724,7 +3724,7 @@
     },
     {
       "id": "federal-social-security-social-security-disability-insurance",
-      "name": "Social Security Disability Insurance",
+      "name": "Social Security: Social Security Disability Insurance",
       "category": "federal-benefits",
       "description": "Financial assistance to people with disabilities. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to people with disabilities. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -3782,7 +3782,7 @@
     },
     {
       "id": "federal-department-of-financial-assistance-and-social-services-fass",
-      "name": "Financial Assistance and Social Services (FASS)",
+      "name": "BIA: Financial Assistance And Social Services (fass)",
       "category": "federal-benefits",
       "description": "Direct assistance to American Indians and Alaska Natives, including financial, child, burial, emergency, and adult care assistance.\n",
       "fullDescription": "Direct assistance to American Indians and Alaska Natives, including financial, child, burial, emergency, and adult care assistance.\n",
@@ -3830,7 +3830,7 @@
     },
     {
       "id": "federal-federal-retirement-thrift-savings-plan-tsp",
-      "name": "Thrift Savings Plan (TSP)",
+      "name": "TSP: Thrift Savings Plan (tsp)",
       "category": "federal-benefits",
       "description": "A retirement savings and investment plan sponsored by the Federal Government for members of the uniformed services and federal employees. The TSP offers similar savings and tax benefits that private corporations offer under '401(k)' plans.\n",
       "fullDescription": "A retirement savings and investment plan sponsored by the Federal Government for members of the uniformed services and federal employees. The TSP offers similar savings and tax benefits that private corporations offer under '401(k)' plans.\n",
@@ -3877,7 +3877,7 @@
     },
     {
       "id": "federal-social-security-retirement-benefits-for-parents",
-      "name": "Retirement benefits for parents",
+      "name": "Social Security: Retirement Benefits for Parents",
       "category": "federal-benefits",
       "description": "Replacement income for qualified retirees and their families.\n",
       "fullDescription": "Replacement income for qualified retirees and their families.\n",
@@ -3955,7 +3955,7 @@
     },
     {
       "id": "federal-centers-for-medicare-savings-programs-msp",
-      "name": "Medicare Savings Programs (MSP)",
+      "name": "Medicare/Medicaid: Medicare Savings Programs (msp)",
       "category": "federal-benefits",
       "description": "Get help paying Medicare insurance, like deductibles, coinsurance, and copayments.\n",
       "fullDescription": "Get help paying Medicare insurance, like deductibles, coinsurance, and copayments.\n",
@@ -4017,7 +4017,7 @@
     },
     {
       "id": "federal-veterans-affairs-veteran-s-pension",
-      "name": "Veteran's pension",
+      "name": "VA: Veteran's Pension",
       "category": "federal-benefits",
       "description": "Monthly payments to wartime veterans with specific age, disability, income, or net worth criteria.\n",
       "fullDescription": "Monthly payments to wartime veterans with specific age, disability, income, or net worth criteria.\n",
@@ -4082,7 +4082,7 @@
     },
     {
       "id": "federal-social-security-supplemental-security-income-ssi-for-adults",
-      "name": "Supplemental Security Income (SSI) for adults",
+      "name": "Social Security: Supplemental Security Income (ssi) for Adults",
       "category": "federal-benefits",
       "description": "Financial assistance to meet basic needs for food, clothing, and shelter for people who are older or with disabilities. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to meet basic needs for food, clothing, and shelter for people who are older or with disabilities. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -4142,7 +4142,7 @@
     },
     {
       "id": "federal-social-security-retirement-benefits",
-      "name": "Retirement benefits",
+      "name": "Social Security: Retirement Benefits",
       "category": "federal-benefits",
       "description": "Replacement income for qualified retirees and their families.&nbsp;You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Replacement income for qualified retirees and their families.&nbsp;You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -4201,7 +4201,7 @@
     },
     {
       "id": "federal-department-of-coal-miner-worker-s-compensation",
-      "name": "Coal miner worker's compensation",
+      "name": "Dept of Labor: Coal Miner Worker's Compensation",
       "category": "federal-benefits",
       "description": "Compensation to coal miners who were totally disabled by black lung disease (pneumoconiosis) or surviving spouses of miners whose deaths are attributable to this disease.&nbsp;Also provides medical coverage for treatment of related lung diseases.\n",
       "fullDescription": "Compensation to coal miners who were totally disabled by black lung disease (pneumoconiosis) or surviving spouses of miners whose deaths are attributable to this disease.&nbsp;Also provides medical coverage for treatment of related lung diseases.\n",
@@ -4263,7 +4263,7 @@
     },
     {
       "id": "federal-department-of-coal-miner-worker-s-compensation-for-surviving-spo",
-      "name": "Coal miner worker's compensation for surviving spouse",
+      "name": "Dept of Labor: Coal Miner Worker's Compensation For Surviving Spouse",
       "category": "federal-benefits",
       "description": "Compensation to surviving spouses of coal miners totally disabled by or whose deaths are attributable to black lung disease (pneumoconiosis).\n",
       "fullDescription": "Compensation to surviving spouses of coal miners totally disabled by or whose deaths are attributable to black lung disease (pneumoconiosis).\n",
@@ -4324,7 +4324,7 @@
     },
     {
       "id": "federal-veterans-affairs-presidential-memorial-certificate",
-      "name": "Presidential Memorial Certificate",
+      "name": "VA: Presidential Memorial Certificate",
       "category": "federal-benefits",
       "description": "An engraved Presidential Memorial Certificate (PMC) signed by the current president honoring the military service of a veteran or reservist.\n",
       "fullDescription": "An engraved Presidential Memorial Certificate (PMC) signed by the current president honoring the military service of a veteran or reservist.\n",
@@ -4393,7 +4393,7 @@
     },
     {
       "id": "federal-veterans-affairs-veterans-burial-allowance",
-      "name": "Veterans burial allowance",
+      "name": "VA: Veterans Burial Allowance",
       "category": "federal-benefits",
       "description": "Assistance with burial, funeral, and transportation costs of a deceased veteran.\n",
       "fullDescription": "Assistance with burial, funeral, and transportation costs of a deceased veteran.\n",
@@ -4462,7 +4462,7 @@
     },
     {
       "id": "federal-veterans-affairs-survivors-pension-for-spouse",
-      "name": "Survivors pension for spouse",
+      "name": "VA: Survivors Pension for Spouses",
       "category": "federal-benefits",
       "description": "Monthly payments to surviving spouses of wartime veterans with certain income and net worth limits.\n",
       "fullDescription": "Monthly payments to surviving spouses of wartime veterans with certain income and net worth limits.\n",
@@ -4527,7 +4527,7 @@
     },
     {
       "id": "federal-veterans-affairs-survivors-pension-for-child-with-disabilities",
-      "name": "Survivors pension for child with disabilities",
+      "name": "VA: Survivors Pension for Children with Disabilities",
       "category": "federal-benefits",
       "description": "Monthly payments to qualified unmarried dependent children with disabilities of wartime veterans with certain income and net worth limits.\n",
       "fullDescription": "Monthly payments to qualified unmarried dependent children with disabilities of wartime veterans with certain income and net worth limits.\n",
@@ -4608,7 +4608,7 @@
     },
     {
       "id": "federal-veterans-affairs-veterans-medallions",
-      "name": "Veterans medallions",
+      "name": "VA: Veterans Medallions",
       "category": "federal-benefits",
       "description": "A headstone medallion, grave marker, and Presidential Memorial Certificate for eligible veterans buried in a private cemetery.\n",
       "fullDescription": "A headstone medallion, grave marker, and Presidential Memorial Certificate for eligible veterans buried in a private cemetery.\n",
@@ -4662,7 +4662,7 @@
     },
     {
       "id": "federal-veterans-affairs-veterans-headstone-and-grave-marker",
-      "name": "Veterans headstone and grave marker",
+      "name": "VA: Veterans Headstone And Grave Marker",
       "category": "federal-benefits",
       "description": "A headstone, grave or niche marker, or medallion to honor a veteran, service member, or eligible family member.\n",
       "fullDescription": "A headstone, grave or niche marker, or medallion to honor a veteran, service member, or eligible family member.\n",
@@ -4716,7 +4716,7 @@
     },
     {
       "id": "federal-veterans-affairs-life-insurance-for-survivors-of-veterans",
-      "name": "Life insurance for survivors of veterans",
+      "name": "VA: Life Insurance for Survivors Of Veterans",
       "category": "federal-benefits",
       "description": "Payment from a veteran's or service member's life insurance policy.\n",
       "fullDescription": "Payment from a veteran's or service member's life insurance policy.\n",
@@ -4784,7 +4784,7 @@
     },
     {
       "id": "federal-veterans-affairs-dependency-and-indemnity-compensation-dic",
-      "name": "Dependency and Indemnity Compensation (DIC)",
+      "name": "VA: Dependency And Indemnity Compensation (dic)",
       "category": "federal-benefits",
       "description": "Tax-free financial assistance to eligible dependents, spouses, or parents of service members and veterans.\n",
       "fullDescription": "Tax-free financial assistance to eligible dependents, spouses, or parents of service members and veterans.\n",
@@ -4853,7 +4853,7 @@
     },
     {
       "id": "federal-veterans-affairs-civilian-health-and-medical-program-of-the-va-cham",
-      "name": "Civilian Health and Medical Program of the VA (CHAMPVA)",
+      "name": "VA: Civilian Health And Medical Program Of The Va (champva)",
       "category": "federal-benefits",
       "description": "Health insurance for dependents and surviving spouses covering some health care services, supplies, and pharmacy benefits.\n",
       "fullDescription": "Health insurance for dependents and surviving spouses covering some health care services, supplies, and pharmacy benefits.\n",
@@ -4918,7 +4918,7 @@
     },
     {
       "id": "federal-department-of-burial-benefits",
-      "name": "Burial benefits",
+      "name": "DOD: Burial Benefits",
       "category": "federal-benefits",
       "description": "Burial and transport assistance for the deceased, and travel support for the spouse, children, and immediate family members of the service member.\n",
       "fullDescription": "Burial and transport assistance for the deceased, and travel support for the spouse, children, and immediate family members of the service member.\n",
@@ -4972,7 +4972,7 @@
     },
     {
       "id": "federal-social-security-lump-sum-death-benefit",
-      "name": "Lump-sum death benefit",
+      "name": "Social Security: Lump-sum Death Benefit",
       "category": "federal-benefits",
       "description": "Financial assistance of $255 to surviving spouses of a deceased person who qualified for Social Security benefits.\n",
       "fullDescription": "Financial assistance of $255 to surviving spouses of a deceased person who qualified for Social Security benefits.\n",
@@ -5032,7 +5032,7 @@
     },
     {
       "id": "federal-veterans-affairs-additional-disability-benefits-for-veterans",
-      "name": "Additional disability benefits for veterans",
+      "name": "VA: Additional Disability Benefits For Veterans",
       "category": "federal-benefits",
       "description": "Grants for people with a disability related to their military service to support with adaptive-equipment, special vehicles, clothing, dental assistance, and more.\n",
       "fullDescription": "Grants for people with a disability related to their military service to support with adaptive-equipment, special vehicles, clothing, dental assistance, and more.\n",
@@ -5095,7 +5095,7 @@
     },
     {
       "id": "federal-department-of-financial-assistance-and-social-services-fass-buri",
-      "name": "Financial Assistance and Social Services (FASS) - Burial assistance",
+      "name": "BIA: Financial Assistance And Social Services (fass) - Burial Assistance",
       "category": "federal-benefits",
       "description": "Burial assistance for deceased American Indians who do not have resources for funeral expenses or with certain income and net worth limits.\n",
       "fullDescription": "Burial assistance for deceased American Indians who do not have resources for funeral expenses or with certain income and net worth limits.\n",
@@ -5141,7 +5141,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-parents-caring-for-a-child",
-      "name": "Survivors benefits for parents caring for a child",
+      "name": "Social Security: Survivors Benefits for Parents Caring For A Child",
       "category": "federal-benefits",
       "description": "Social Security survivors benefits to the person providing care for the child of a deceased worker.\n",
       "fullDescription": "Social Security survivors benefits to the person providing care for the child of a deceased worker.\n",
@@ -5220,7 +5220,7 @@
     },
     {
       "id": "federal-department-of-annuity-for-military-surviving-spouses",
-      "name": "Annuity for military surviving spouses",
+      "name": "DOD: Annuity For Military Surviving Spouses",
       "category": "federal-benefits",
       "description": "Financial support for surviving spouses of members of the uniformed services.\n",
       "fullDescription": "Financial support for surviving spouses of members of the uniformed services.\n",
@@ -5284,7 +5284,7 @@
     },
     {
       "id": "federal-veterans-affairs-education-benefits-gi-bill-for-survivors",
-      "name": "Education benefits (GI Bill) for survivors",
+      "name": "VA: Education Benefits (gi Bill) for Survivors",
       "category": "federal-benefits",
       "description": "VA education benefits or job training for dependents and survivors of a veteran. You must have a high school or GED diploma to be eligible.\n",
       "fullDescription": "VA education benefits or job training for dependents and survivors of a veteran. You must have a high school or GED diploma to be eligible.\n",
@@ -5353,7 +5353,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-child-with-disabilities",
-      "name": "Survivors benefits for child with disabilities",
+      "name": "Social Security: Survivors Benefits for Children with Disabilities",
       "category": "federal-benefits",
       "description": "Social Security survivors benefits to a child, stepchild, grandchild, or adopted child with disabilities of eligible workers. You only need one application to apply for all SSA benefits.\n",
       "fullDescription": "Social Security survivors benefits to a child, stepchild, grandchild, or adopted child with disabilities of eligible workers. You only need one application to apply for all SSA benefits.\n",
@@ -5429,7 +5429,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-spouse-with-disabilities",
-      "name": "Survivors benefits for spouse with disabilities",
+      "name": "Social Security: Survivors Benefits for Spouses with Disabilities",
       "category": "federal-benefits",
       "description": "Benefits for surviving spouses and certain divorced spouses with disabilities. Eligible survivors must have a disability that prevents them from working for more than a year. You only need one application to apply for all SSA benefits.\n",
       "fullDescription": "Benefits for surviving spouses and certain divorced spouses with disabilities. Eligible survivors must have a disability that prevents them from working for more than a year. You only need one application to apply for all SSA benefits.\n",
@@ -5505,7 +5505,7 @@
     },
     {
       "id": "federal-department-of-public-safety-officers-educational-assistance-prog",
-      "name": "Public safety officers' Educational Assistance Program",
+      "name": "DOJ: Public Safety Officers' Educational Assistance Program",
       "category": "federal-benefits",
       "description": "Financial assistance for higher education to spouses and children of police, fire, and emergency public safety officers killed in the line of duty.\n",
       "fullDescription": "Financial assistance for higher education to spouses and children of police, fire, and emergency public safety officers killed in the line of duty.\n",
@@ -5555,7 +5555,7 @@
     },
     {
       "id": "federal-department-of-public-safety-officers-death-benefits",
-      "name": "Public safety officers' death benefits",
+      "name": "DOJ: Public Safety Officers' Death Benefits",
       "category": "federal-benefits",
       "description": "A one-time benefit for survivors of law enforcement officers, firefighters, and other first responders whose deaths were related to an injury sustained during the line of duty.\n",
       "fullDescription": "A one-time benefit for survivors of law enforcement officers, firefighters, and other first responders whose deaths were related to an injury sustained during the line of duty.\n",
@@ -5604,7 +5604,7 @@
     },
     {
       "id": "federal-veterans-affairs-burial-flag",
-      "name": "Burial flag",
+      "name": "VA: Burial Flag",
       "category": "federal-benefits",
       "description": "A United States flag for the coffin or urn in honor of the military service member.\n",
       "fullDescription": "A United States flag for the coffin or urn in honor of the military service member.\n",
@@ -5657,7 +5657,7 @@
     },
     {
       "id": "federal-veterans-affairs-home-loan-program-for-survivors",
-      "name": "Home loan program for survivors",
+      "name": "VA: Home Loan Program for Survivors",
       "category": "federal-benefits",
       "description": "A VA-backed home loan to surviving spouses of veterans.\n",
       "fullDescription": "A VA-backed home loan to surviving spouses of veterans.\n",
@@ -5723,7 +5723,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-child",
-      "name": "Survivors benefits for child",
+      "name": "Social Security: Survivors Benefits for Children",
       "category": "federal-benefits",
       "description": "Offers Social Security survivors benefits to a child, stepchild, grandchild, or adopted child of eligible workers.\n",
       "fullDescription": "Offers Social Security survivors benefits to a child, stepchild, grandchild, or adopted child of eligible workers.\n",
@@ -5784,7 +5784,7 @@
     },
     {
       "id": "federal-department-of-survivor-benefit-plan",
-      "name": "Survivor benefit plan",
+      "name": "DOD: Survivor Benefit Plan",
       "category": "federal-benefits",
       "description": "Offers up to 55% of a service member's retired pay for survivors of active duty service members and some retired and reserve members.\n",
       "fullDescription": "Offers up to 55% of a service member's retired pay for survivors of active duty service members and some retired and reserve members.\n",
@@ -5848,7 +5848,7 @@
     },
     {
       "id": "federal-veterans-affairs-burial-in-va-national-cemetery",
-      "name": "Burial in VA national cemetery",
+      "name": "VA: Burial In Va National Cemetery",
       "category": "federal-benefits",
       "description": "Burial in VA national cemeteries for eligible veterans, service members, and some family members.\n",
       "fullDescription": "Burial in VA national cemeteries for eligible veterans, service members, and some family members.\n",
@@ -5914,7 +5914,7 @@
     },
     {
       "id": "federal-internal-revenue-tax-advantaged-retirement-plans-information",
-      "name": "Tax-advantaged retirement plans information",
+      "name": "IRS: Tax-advantaged Retirement Plans Information",
       "category": "federal-benefits",
       "description": "Learn about tax-advantaged retirement plans and how to manage retirement savings during changes in your life.\n",
       "fullDescription": "Learn about tax-advantaged retirement plans and how to manage retirement savings during changes in your life.\n",
@@ -5957,7 +5957,7 @@
     },
     {
       "id": "federal-internal-revenue-tax-relief-programs-for-people-with-disabilities",
-      "name": "Tax relief programs for people with disabilities",
+      "name": "IRS: Tax Relief Programs For People with Disabilities",
       "category": "federal-benefits",
       "description": "Programs that help people with disabilities save money with tax-favored accounts and maintain health, independence, and quality of life\n",
       "fullDescription": "Programs that help people with disabilities save money with tax-favored accounts and maintain health, independence, and quality of life\n",
@@ -6001,7 +6001,7 @@
     },
     {
       "id": "federal-social-security-social-security-disability-insurance-for-child",
-      "name": "Social Security disability insurance for child",
+      "name": "Social Security: Social Security Disability Insurance for Children",
       "category": "federal-benefits",
       "description": "Financial assistance to minor children whose parents receive disability benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to minor children whose parents receive disability benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -6063,7 +6063,7 @@
     },
     {
       "id": "federal-social-security-social-security-disability-insurance-for-parents",
-      "name": "Social Security disability insurance for parents",
+      "name": "Social Security: Social Security Disability Insurance for Parents",
       "category": "federal-benefits",
       "description": "Financial assistance to people with disabilities and their family members. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to people with disabilities and their family members. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -6141,7 +6141,7 @@
     },
     {
       "id": "federal-social-security-social-security-disability-insurance-for-spouse",
-      "name": "Social Security disability insurance for spouse",
+      "name": "Social Security: Social Security Disability Insurance for Spouses",
       "category": "federal-benefits",
       "description": "Financial assistance to people with disabilities and their family. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "Financial assistance to people with disabilities and their family. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -6199,7 +6199,7 @@
     },
     {
       "id": "federal-social-security-retirement-benefits-for-spouse",
-      "name": "Retirement benefits for spouse",
+      "name": "Social Security: Retirement Benefits for Spouses",
       "category": "federal-benefits",
       "description": "A replacement income for spouses of qualified retirees. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "A replacement income for spouses of qualified retirees. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -6258,7 +6258,7 @@
     },
     {
       "id": "federal-social-security-retirement-benefits-for-child-with-disabilities",
-      "name": "Retirement benefits for child with disabilities",
+      "name": "Social Security: Retirement Benefits for Children with Disabilities",
       "category": "federal-benefits",
       "description": "A replacement income for adult children with disabilities of qualified retirees and families receiving retirement benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
       "fullDescription": "A replacement income for adult children with disabilities of qualified retirees and families receiving retirement benefits. You only need one application to apply for all disability benefits offered by SSA.\n",
@@ -6318,7 +6318,7 @@
     },
     {
       "id": "federal-department-of-public-safety-officers-disability-benefits",
-      "name": "Public safety officers' disability benefits",
+      "name": "DOJ: Public Safety Officers' Disability Benefits",
       "category": "federal-benefits",
       "description": "A one-time benefit to public safety officers who were permanently and totally disabled as a result of an injury while in the line of duty.\n",
       "fullDescription": "A one-time benefit to public safety officers who were permanently and totally disabled as a result of an injury while in the line of duty.\n",
@@ -6363,7 +6363,7 @@
     },
     {
       "id": "federal-centers-for-medicare-with-retirement",
-      "name": "Medicare with retirement",
+      "name": "Medicare/Medicaid: Medicare With Retirement",
       "category": "federal-benefits",
       "description": "A health insurance program for Americans aged 65 and older, and for people with disabilities.\n",
       "fullDescription": "A health insurance program for Americans aged 65 and older, and for people with disabilities.\n",
@@ -6423,7 +6423,7 @@
     },
     {
       "id": "federal-department-of-concurrent-retirement-and-disability-payments-crdp",
-      "name": "Concurrent Retirement and Disability Payments (CRDP)",
+      "name": "DOD: Concurrent Retirement And Disability Payments (crdp)",
       "category": "federal-benefits",
       "description": "Offsets military retired pay due for VA disability compensation. Eligibility is automatic. No application is needed.\n",
       "fullDescription": "Offsets military retired pay due for VA disability compensation. Eligibility is automatic. No application is needed.\n",
@@ -6507,7 +6507,7 @@
     },
     {
       "id": "federal-department-of-death-gratuity",
-      "name": "Death gratuity",
+      "name": "DOD: Death Gratuity",
       "category": "federal-benefits",
       "description": "Tax free payment of $100,000 to eligible survivors of members of the Armed Forces who died while on active duty or while serving in certain reserve statuses.\n",
       "fullDescription": "Tax free payment of $100,000 to eligible survivors of members of the Armed Forces who died while on active duty or while serving in certain reserve statuses.\n",
@@ -6560,7 +6560,7 @@
     },
     {
       "id": "federal-veterans-affairs-disability-compensation",
-      "name": "Disability compensation",
+      "name": "VA: Disability Compensation",
       "category": "federal-benefits",
       "description": "A monthly tax-free payment to veterans who got sick or injured while serving in the military or whose service made an existing condition worse.\n",
       "fullDescription": "A monthly tax-free payment to veterans who got sick or injured while serving in the military or whose service made an existing condition worse.\n",
@@ -6609,7 +6609,7 @@
     },
     {
       "id": "federal-social-security-extra-help-with-medicare-prescription-drug-plan-pa",
-      "name": "Extra help with Medicare prescription drug plan (Part D) costs",
+      "name": "Social Security: Extra Help With Medicare Prescription Drug Plan (part D) Costs",
       "category": "federal-benefits",
       "description": "Helps with the cost of prescription drugs, like deductibles and copays.&nbsp;\n",
       "fullDescription": "Helps with the cost of prescription drugs, like deductibles and copays.&nbsp;\n",
@@ -6671,7 +6671,7 @@
     },
     {
       "id": "federal-department-of-housing-improvement-program",
-      "name": "Housing improvement program",
+      "name": "BIA: Housing Improvement Program",
       "category": "federal-benefits",
       "description": "Helps with home repair, renovation, replacement, and new housing for American Indian and Alaska Native individuals and families with no resources for standard housing.\n",
       "fullDescription": "Helps with home repair, renovation, replacement, and new housing for American Indian and Alaska Native individuals and families with no resources for standard housing.\n",
@@ -6703,7 +6703,7 @@
     },
     {
       "id": "federal-veterans-affairs-survivors-pension-for-child",
-      "name": "Survivors pension for child",
+      "name": "VA: Survivors Pension for Children",
       "category": "federal-benefits",
       "description": "Monthly payments to qualified unmarried dependent children of deceased wartime veterans.\n",
       "fullDescription": "Monthly payments to qualified unmarried dependent children of deceased wartime veterans.\n",
@@ -6769,7 +6769,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-parents",
-      "name": "Survivors benefits for parents",
+      "name": "Social Security: Survivors Benefits for Parents",
       "category": "federal-benefits",
       "description": "Social Security survivors benefits to parents of eligible workers.\n",
       "fullDescription": "Social Security survivors benefits to parents of eligible workers.\n",
@@ -6832,7 +6832,7 @@
     },
     {
       "id": "federal-social-security-survivors-benefits-for-spouse",
-      "name": "Survivors benefits for spouse",
+      "name": "Social Security: Survivors Benefits for Spouses",
       "category": "federal-benefits",
       "description": "Social Security survivors benefits to surviving spouses and certain divorced spouses of eligible workers.\n",
       "fullDescription": "Social Security survivors benefits to surviving spouses and certain divorced spouses of eligible workers.\n",
@@ -6892,7 +6892,7 @@
     },
     {
       "id": "federal-library-of-braille-and-audio-materials-service",
-      "name": "Braille and audio materials service",
+      "name": "Library of Congress: Braille And Audio Materials Service",
       "category": "federal-benefits",
       "description": "Braille and audio materials and services at no cost for people who are blind or have a visual, physical, perceptual, or reading disability.\n",
       "fullDescription": "Braille and audio materials and services at no cost for people who are blind or have a visual, physical, perceptual, or reading disability.\n",
@@ -6936,7 +6936,7 @@
     },
     {
       "id": "federal-department-of-housing-choice-voucher-section-8",
-      "name": "Housing choice voucher (Section 8)",
+      "name": "HUD: Housing Choice Voucher (section 8)",
       "category": "federal-benefits",
       "description": "Learn if you are eligible for a Section 8 housing choice voucher to pay rent for private housing. Housing choice vouchers are for families with low incomes, seniors, and people with disabilities.Find your public housing agency to learn if you are eligible and apply.\n",
       "fullDescription": "Learn if you are eligible for a Section 8 housing choice voucher to pay rent for private housing. Housing choice vouchers are for families with low incomes, seniors, and people with disabilities.Find your public housing agency to learn if you are eligible and apply.\n",
@@ -11392,10 +11392,10 @@
       "id": "ca-sp-albany-smr",
       "name": "Albany SMR",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Albany SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Albany SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11419,10 +11419,10 @@
       "id": "ca-sp-bethany-reservoir-sra",
       "name": "Bethany Reservoir SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Bethany Reservoir State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Bethany Reservoir State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11446,10 +11446,10 @@
       "id": "ca-sp-emeryville-crescent-smr",
       "name": "Emeryville Crescent SMR",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Emeryville Crescent SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Emeryville Crescent SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11473,10 +11473,10 @@
       "id": "ca-sp-lake-del-valle-sra",
       "name": "Lake Del Valle SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Lake Del Valle State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Lake Del Valle State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11500,10 +11500,10 @@
       "id": "ca-sp-mclaughlin-eastshore-sp-ss",
       "name": "McLaughlin Eastshore SP SS",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "McLaughlin Eastshore State Park SS is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "McLaughlin Eastshore State Park SS is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11527,10 +11527,10 @@
       "id": "ca-sp-robert-w-crown-memorial-sb",
       "name": "Robert W Crown Memorial SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Robert W Crown Memorial State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Robert W Crown Memorial State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11554,10 +11554,10 @@
       "id": "ca-sp-franks-tract-sra",
       "name": "Franks Tract SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Franks Tract State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Franks Tract State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11581,10 +11581,10 @@
       "id": "ca-sp-marsh-creek-state-park",
       "name": "Marsh Creek State Park",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Marsh Creek State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Marsh Creek State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11608,10 +11608,10 @@
       "id": "ca-sp-mount-diablo-sp",
       "name": "Mount Diablo SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Mount Diablo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Mount Diablo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11635,10 +11635,10 @@
       "id": "ca-sp-angel-island-sp",
       "name": "Angel Island SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Angel Island State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Angel Island State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11662,10 +11662,10 @@
       "id": "ca-sp-china-camp-sp",
       "name": "China Camp SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "China Camp State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "China Camp State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11689,10 +11689,10 @@
       "id": "ca-sp-marconi-conference-center-shp",
       "name": "Marconi Conference Center SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Marconi Conference Center State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Marconi Conference Center State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11716,10 +11716,10 @@
       "id": "ca-sp-mount-tamalpais-sp",
       "name": "Mount Tamalpais SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Mount Tamalpais State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Mount Tamalpais State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11743,10 +11743,10 @@
       "id": "ca-sp-olompali-shp",
       "name": "Olompali SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Olompali State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Olompali State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11770,10 +11770,10 @@
       "id": "ca-sp-samuel-p-taylor-sp",
       "name": "Samuel P Taylor SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Samuel P Taylor State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Samuel P Taylor State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11797,10 +11797,10 @@
       "id": "ca-sp-tomales-bay-sp",
       "name": "Tomales Bay SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Tomales Bay State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Tomales Bay State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11824,10 +11824,10 @@
       "id": "ca-sp-bale-grist-mill-shp",
       "name": "Bale Grist Mill SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Bale Grist Mill State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Bale Grist Mill State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11851,10 +11851,10 @@
       "id": "ca-sp-bothe-napa-valley-sp",
       "name": "Bothe Napa Valley SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Bothe Napa Valley State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Bothe Napa Valley State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11878,10 +11878,10 @@
       "id": "ca-sp-robert-louis-stevenson-sp",
       "name": "Robert Louis Stevenson SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Robert Louis Stevenson State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Robert Louis Stevenson State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11905,10 +11905,10 @@
       "id": "ca-sp-candlestick-point-sra",
       "name": "Candlestick Point SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Candlestick Point State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Candlestick Point State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11932,10 +11932,10 @@
       "id": "ca-sp-ano-nuevo-sp",
       "name": "Ano Nuevo SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Ano Nuevo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Ano Nuevo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11959,10 +11959,10 @@
       "id": "ca-sp-bean-hollow-sb",
       "name": "Bean Hollow SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Bean Hollow State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Bean Hollow State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -11986,10 +11986,10 @@
       "id": "ca-sp-burleigh-h-murray-ranch-prop",
       "name": "Burleigh H Murray Ranch Prop",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Burleigh H Murray Ranch Prop is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Burleigh H Murray Ranch Prop is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12013,10 +12013,10 @@
       "id": "ca-sp-butano-sp",
       "name": "Butano SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Butano State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Butano State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12040,10 +12040,10 @@
       "id": "ca-sp-gray-whale-cove-sb",
       "name": "Gray Whale Cove SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Gray Whale Cove State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Gray Whale Cove State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12067,10 +12067,10 @@
       "id": "ca-sp-half-moon-bay-sb",
       "name": "Half Moon Bay SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Half Moon Bay State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Half Moon Bay State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12094,10 +12094,10 @@
       "id": "ca-sp-montara-sb",
       "name": "Montara SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Montara State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Montara State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12121,10 +12121,10 @@
       "id": "ca-sp-pacifica-sb",
       "name": "Pacifica SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Pacifica State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Pacifica State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12148,10 +12148,10 @@
       "id": "ca-sp-pescadero-sb",
       "name": "Pescadero SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Pescadero State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Pescadero State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12175,10 +12175,10 @@
       "id": "ca-sp-pigeon-point-light-station-shp",
       "name": "Pigeon Point Light Station SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Pigeon Point Light Station State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Pigeon Point Light Station State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12202,10 +12202,10 @@
       "id": "ca-sp-point-montara-light-station",
       "name": "Point Montara Light Station",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Point Montara Light Station is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Point Montara Light Station is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12229,10 +12229,10 @@
       "id": "ca-sp-pomponio-sb",
       "name": "Pomponio SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Pomponio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Pomponio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12256,10 +12256,10 @@
       "id": "ca-sp-portola-redwoods-sp",
       "name": "Portola Redwoods SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Portola Redwoods State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Portola Redwoods State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12283,10 +12283,10 @@
       "id": "ca-sp-san-bruno-mountain-sp",
       "name": "San Bruno Mountain SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "San Bruno Mountain State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "San Bruno Mountain State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12310,10 +12310,10 @@
       "id": "ca-sp-san-gregorio-sb",
       "name": "San Gregorio SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "San Gregorio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "San Gregorio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12337,10 +12337,10 @@
       "id": "ca-sp-thornton-sb",
       "name": "Thornton SB",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Thornton State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Thornton State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12364,10 +12364,10 @@
       "id": "ca-sp-henry-w-coe-sp",
       "name": "Henry W Coe SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Henry W Coe State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Henry W Coe State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12391,10 +12391,10 @@
       "id": "ca-sp-martial-cottle-park-sra",
       "name": "Martial Cottle Park SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Martial Cottle Park State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Martial Cottle Park State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12418,10 +12418,10 @@
       "id": "ca-sp-benicia-capitol-shp",
       "name": "Benicia Capitol SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Benicia Capitol State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Benicia Capitol State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12445,10 +12445,10 @@
       "id": "ca-sp-benicia-sra",
       "name": "Benicia SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Benicia State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Benicia State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12472,10 +12472,10 @@
       "id": "ca-sp-armstrong-redwoods-snr",
       "name": "Armstrong Redwoods SNR",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Armstrong Redwoods State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Armstrong Redwoods State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12499,10 +12499,10 @@
       "id": "ca-sp-austin-creek-sra",
       "name": "Austin Creek SRA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Austin Creek State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Austin Creek State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12526,10 +12526,10 @@
       "id": "ca-sp-fort-ross-shp",
       "name": "Fort Ross SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Fort Ross State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Fort Ross State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12553,10 +12553,10 @@
       "id": "ca-sp-jack-london-shp",
       "name": "Jack London SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Jack London State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Jack London State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12580,10 +12580,10 @@
       "id": "ca-sp-kruse-rhododendron-snr",
       "name": "Kruse Rhododendron SNR",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Kruse Rhododendron State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Kruse Rhododendron State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12607,10 +12607,10 @@
       "id": "ca-sp-petaluma-adobe-shp",
       "name": "Petaluma Adobe SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Petaluma Adobe State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Petaluma Adobe State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12634,10 +12634,10 @@
       "id": "ca-sp-salt-point-sp",
       "name": "Salt Point SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Salt Point State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Salt Point State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12661,10 +12661,10 @@
       "id": "ca-sp-sonoma-coast-sp",
       "name": "Sonoma Coast SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Sonoma Coast State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Sonoma Coast State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12688,10 +12688,10 @@
       "id": "ca-sp-sonoma-shp",
       "name": "Sonoma SHP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Sonoma State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Sonoma State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12715,10 +12715,10 @@
       "id": "ca-sp-sugarloaf-ridge-sp",
       "name": "Sugarloaf Ridge SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Sugarloaf Ridge State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Sugarloaf Ridge State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12742,10 +12742,10 @@
       "id": "ca-sp-trione-annadel-sp",
       "name": "Trione Annadel SP",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Trione Annadel State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "fullDescription": "Trione Annadel State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.",
+      "whatTheyOffer": "- Day use access for hiking, picnicking, and nature viewing\n- Camping facilities (reservations at ReserveCalifornia.com)\n- Ranger-led programs and interpretive activities\n- Scenic trails and wildlife viewing opportunities",
+      "howToGetIt": "Most California State Parks require a day use or camping fee:\n- Day use: $8-$15 per vehicle (varies by park)\n- Camping: $25-$65 per night (varies by campsite type)\n\n**Save with park passes:**\n- **California Adventure Pass**: Free day use for 4th graders\n- **Disabled Discount Pass**: 50% off day use and camping\n- **Distinguished Veteran Pass**: Free day use for eligible veterans\n- **Golden Bear Pass**: Free day use for income-eligible Californians",
       "groups": [
         "everyone"
       ],
@@ -12769,10 +12769,10 @@
       "id": "nps-alca",
       "name": "Alcatraz Island",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Alcatraz Island, home to the infamous former federal penitentiary. Take a ferry to explore the cellhouse, gardens, and learn about the island's rich history from Civil War fort to Native American occupation.",
+      "fullDescription": "Alcatraz Island, home to the infamous former federal penitentiary. Take a ferry to explore the cellhouse, gardens, and learn about the island's rich history from Civil War fort to Native American occupation.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12796,10 +12796,10 @@
       "id": "nps-euon",
       "name": "Eugene O'Neill National Historic Site",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Eugene O'Neill National Historic Site preserves Tao House, where the Nobel Prize-winning playwright wrote his most celebrated works including Long Day's Journey Into Night and The Iceman Cometh.",
+      "fullDescription": "Eugene O'Neill National Historic Site preserves Tao House, where the Nobel Prize-winning playwright wrote his most celebrated works including Long Day's Journey Into Night and The Iceman Cometh.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12823,10 +12823,10 @@
       "id": "nps-fopo",
       "name": "Fort Point National Historic Site",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Fort Point National Historic Site, a pre-Civil War military fort located beneath the Golden Gate Bridge. Explore the brick fortress and learn about the fort's role in San Francisco's defense.",
+      "fullDescription": "Fort Point National Historic Site, a pre-Civil War military fort located beneath the Golden Gate Bridge. Explore the brick fortress and learn about the fort's role in San Francisco's defense.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12850,10 +12850,10 @@
       "id": "nps-goga",
       "name": "Golden Gate National Recreation Area",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Golden Gate National Recreation Area spans over 80,000 acres of coastal parkland including beaches, historic military sites, and iconic views of the Golden Gate Bridge and San Francisco Bay.",
+      "fullDescription": "Golden Gate National Recreation Area spans over 80,000 acres of coastal parkland including beaches, historic military sites, and iconic views of the Golden Gate Bridge and San Francisco Bay.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12877,10 +12877,10 @@
       "id": "nps-jomu",
       "name": "John Muir National Historic Site",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "John Muir National Historic Site preserves the home of famed naturalist and conservationist John Muir, \"Father of the National Parks.\" Tour his Victorian home and the orchards he tended.",
+      "fullDescription": "John Muir National Historic Site preserves the home of famed naturalist and conservationist John Muir, \"Father of the National Parks.\" Tour his Victorian home and the orchards he tended.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12904,10 +12904,10 @@
       "id": "nps-muwo",
       "name": "Muir Woods National Monument",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Muir Woods National Monument protects old-growth coast redwood trees, some over 1,000 years old. Walk among these ancient giants in one of the last remaining old-growth redwood forests.",
+      "fullDescription": "Muir Woods National Monument protects old-growth coast redwood trees, some over 1,000 years old. Walk among these ancient giants in one of the last remaining old-growth redwood forests.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12931,10 +12931,10 @@
       "id": "nps-pore",
       "name": "Point Reyes National Seashore",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Point Reyes National Seashore features dramatic coastal cliffs, pristine beaches, and diverse wildlife including tule elk. Explore the historic lighthouse and Point Reyes Station.",
+      "fullDescription": "Point Reyes National Seashore features dramatic coastal cliffs, pristine beaches, and diverse wildlife including tule elk. Explore the historic lighthouse and Point Reyes Station.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12958,10 +12958,10 @@
       "id": "nps-poch",
       "name": "Port Chicago Naval Magazine National Memorial",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Port Chicago Naval Magazine National Memorial commemorates the 1944 explosion that killed 320 men and the subsequent mutiny trial of African American sailors who refused unsafe working conditions.",
+      "fullDescription": "Port Chicago Naval Magazine National Memorial commemorates the 1944 explosion that killed 320 men and the subsequent mutiny trial of African American sailors who refused unsafe working conditions.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -12985,10 +12985,10 @@
       "id": "nps-prsf",
       "name": "Presidio of San Francisco",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Presidio of San Francisco, a former military post turned national park, offers trails, historic architecture, art installations, and stunning views of the Golden Gate Bridge and bay.",
+      "fullDescription": "Presidio of San Francisco, a former military post turned national park, offers trails, historic architecture, art installations, and stunning views of the Golden Gate Bridge and bay.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -13012,10 +13012,10 @@
       "id": "nps-rori",
       "name": "Rosie the Riveter WWII Home Front National Historical Park",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "Rosie the Riveter/WWII Home Front National Historical Park commemorates the contributions of American civilians on the World War II home front, especially women who worked in wartime industries.",
+      "fullDescription": "Rosie the Riveter/WWII Home Front National Historical Park commemorates the contributions of American civilians on the World War II home front, especially women who worked in wartime industries.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -13039,10 +13039,10 @@
       "id": "nps-safr",
       "name": "San Francisco Maritime National Historical Park",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
+      "description": "San Francisco Maritime National Historical Park preserves a fleet of historic vessels and the maritime heritage of the Pacific Coast. Visit Hyde Street Pier to board historic ships.",
+      "fullDescription": "San Francisco Maritime National Historical Park preserves a fleet of historic vessels and the maritime heritage of the Pacific Coast. Visit Hyde Street Pier to board historic ships.",
+      "whatTheyOffer": "- Free or low-cost access to trails, beaches, and historic sites\n- Ranger-led walks, talks, and educational programs\n- Visitor centers with exhibits and park information\n- Junior Ranger programs for children",
+      "howToGetIt": "Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:\n- Standard entrance fee: $15-$35 per vehicle (where applicable)\n- Alcatraz ferry tickets sold separately\n\n**Save with park passes:**\n- **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas\n- **Every Kid Outdoors Pass**: Free for 4th graders and their families\n- **Access Pass**: Free lifetime pass for visitors with permanent disabilities\n- **Senior Pass**: $80 lifetime or $20/year for ages 62+",
       "groups": [
         "everyone"
       ],
@@ -13063,983 +13063,11 @@
       "lastUpdated": "2026-01-05"
     },
     {
-      "id": "smc-wifi-brisbane-community-pool",
-      "name": "Brisbane Community Pool",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Brisbane",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2 Solano St, Brisbane, CA 94005",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-colma-community-center",
-      "name": "Colma Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Colma",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "1520 Hillside Boulevard, Colma, CA 94014",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-bayshore-community-center",
-      "name": "Bayshore Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "450 Martin Street, Daly City, CA 94014",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-broadmoor-community-center",
-      "name": "Broadmoor Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "501 87th Street, Daly City, CA 94015",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-daly-city-community-services-center",
-      "name": "Daly City Community Services Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "350 90th Street, Daly City, CA 94015",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-doelger-senior-center",
-      "name": "Doelger Senior Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "101 Lake Merced Blvd, Daly City, CA 94015",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-health-daly-city-youth-clinic",
-      "name": "Health - Daly City Youth Clinic",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2778 Junipero Serra Blvd, Daly City, CA 94015",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-lincoln-community-center",
-      "name": "Lincoln Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "901 Brunswick Street, Daly City, CA 94104",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-pacelli-event-center",
-      "name": "Pacelli Event Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "145 Lake Merced Blvd, Daly City, CA 94015",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-war-memorial-community-center",
-      "name": "War Memorial Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Daly City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "6655 Mission St, Daly City, CA 94014",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-david-e-lewis-reentry-center",
-      "name": "David E. Lewis Reentry Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "East Palo Alto",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2277 University Avenue, East Palo Alto, CA 94303",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-wic-epa",
-      "name": "WIC - EPA",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "East Palo Alto",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2160 Euclid Ave, East Palo Alto, CA 94303",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-coastside-hope",
-      "name": "Coastside Hope",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "El Granada",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "99 Avenue Alhambra, El Granada, CA 94018",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-health-coastside-clinic",
-      "name": "Health - Coastside Clinic",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Half Moon Bay",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "225 Cabrillo Hwy S, Half Moon Bay, CA 94019",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-cuesta-la-honda-recreation-center",
-      "name": "Cuesta La Honda Recreation Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "La Honda",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "120 Scenic Drive, La Honda, CA 94020",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-puente-de-la-costa-sur-la-honda",
-      "name": "Puente de la Costa Sur, La Honda",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "La Honda",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "8865 La Honda Road, La Honda, CA 94020",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-memorial-park",
-      "name": "Memorial Park",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Loma Mar",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "9500 Pescadero Creek Rd, Loma Mar, CA 94021",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-fitzgerald-marine-reserve",
-      "name": "Fitzgerald Marine Reserve",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Moss Beach",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "200 Nevada Avenue, Moss Beach, CA 94038",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-pillar-ridge-community-center",
-      "name": "Pillar Ridge Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Moss Beach",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "164 Culebra Street, Moss Beach, CA 94038",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-san-pedro-valley-park",
-      "name": "San Pedro Valley Park",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Pacifica",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "600 Oddstadd Blvd, Pacifica, CA 94044",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-puente-de-la-costa-sur-pescadero",
-      "name": "Puente de la Costa Sur, Pescadero",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Pescadero",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "620 North Avenue, Pescadero, CA 94060",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-portola-community-center",
-      "name": "Portola Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Portola Valley",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "765 Portola Valley Rd, Portola Valley, CA 94028",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-fair-oaks-community-center",
-      "name": "Fair Oaks Community Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2600 Middlefield Road, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-health-sequoia-teen-wellness-center",
-      "name": "Health - Sequoia Teen Wellness Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "200 James Ave, Redwood City, CA 94062",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-motorpool",
-      "name": "MotorPool",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "501 Winslow St, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-schc-fair-oaks-clinic",
-      "name": "SCHC - Fair Oaks Clinic",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2710 Middlefield Rd, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-siena-youth-center",
-      "name": "Siena Youth Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2625 Marlborough Avenue, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-st-francis-center",
-      "name": "St Francis Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "151 Buckingham Ave, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-star-vista-daybreak-shelter",
-      "name": "Star Vista/Daybreak Shelter",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "639 Douglas Avenue, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-wic-rwc",
-      "name": "WIC - RWC",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "Redwood City",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "2342 El Camino Real, Redwood City, CA 94063",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-san-carlos-airport",
-      "name": "San Carlos Airport",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "San Carlos",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "620 Airport Way, San Carlos, CA 94070",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-coyote-point-marina",
-      "name": "Coyote Point Marina",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "San Mateo",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "1201 E Poplar Ave, San Mateo, CA 94401",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-smmc-clinics",
-      "name": "SMMC - Clinics",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "San Mateo",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "222 W. 39th Avenue San Mateo, San Mateo, CA 94403",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-wic-san-mateo",
-      "name": "WIC - San Mateo",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "San Mateo",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "477 9th Ave, San Mateo, CA 94402",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-health-ssf-clinic",
-      "name": "Health - SSF Clinic",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "South San Francisco",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "306 S Spruce Ave, South San Francisco, CA 94080",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
-      "id": "smc-wifi-ymca-community-resource-center",
-      "name": "YMCA Community Resource Center",
-      "category": "recreation",
-      "description": "",
-      "fullDescription": null,
-      "whatTheyOffer": null,
-      "howToGetIt": null,
-      "groups": [
-        "everyone"
-      ],
-      "areas": [
-        "San Mateo County"
-      ],
-      "city": "South San Francisco",
-      "website": "https://www.smcgov.org/smc-public-wifi-project",
-      "cost": null,
-      "phone": null,
-      "email": null,
-      "address": "1486 Huntington Ave, South San Francisco, CA 94080",
-      "requirements": null,
-      "howToApply": null,
-      "keywords": [],
-      "lifeEvents": [],
-      "agency": null,
-      "lastUpdated": "2026-01-05"
-    },
-    {
       "id": "brisbane-brisbane-community-pool",
       "name": "Brisbane Community Pool",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public swimming pool offering recreational swimming, lap lanes, and swim programs for residents of all ages.",
+      "fullDescription": "Public swimming pool offering recreational swimming, lap lanes, and swim programs for residents of all ages.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14065,8 +13093,8 @@
       "id": "colma-colma-community-center",
       "name": "Colma Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14092,8 +13120,8 @@
       "id": "daly-city-bayshore-community-center",
       "name": "Bayshore Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14119,8 +13147,8 @@
       "id": "daly-city-broadmoor-community-center",
       "name": "Broadmoor Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14146,8 +13174,8 @@
       "id": "daly-city-daly-city-community-services-center",
       "name": "Daly City Community Services Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14173,8 +13201,8 @@
       "id": "daly-city-doelger-senior-center",
       "name": "Doelger Senior Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Resource center providing programs, social activities, and services specifically designed for older adults.",
+      "fullDescription": "Resource center providing programs, social activities, and services specifically designed for older adults.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14200,8 +13228,8 @@
       "id": "daly-city-health-daly-city-youth-clinic",
       "name": "Health - Daly City Youth Clinic",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Health clinic providing medical services focused on adolescent health and wellness.",
+      "fullDescription": "Health clinic providing medical services focused on adolescent health and wellness.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14227,8 +13255,8 @@
       "id": "daly-city-lincoln-community-center",
       "name": "Lincoln Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14254,8 +13282,8 @@
       "id": "daly-city-pacelli-event-center",
       "name": "Pacelli Event Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Venue available for community events, meetings, and recreational activities.",
+      "fullDescription": "Venue available for community events, meetings, and recreational activities.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14281,8 +13309,8 @@
       "id": "daly-city-war-memorial-community-center",
       "name": "War Memorial Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14308,8 +13336,8 @@
       "id": "east-palo-alto-david-e-lewis-reentry-center",
       "name": "David E. Lewis Reentry Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Support center providing resources and services for individuals transitioning back into the community.",
+      "fullDescription": "Support center providing resources and services for individuals transitioning back into the community.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14336,8 +13364,8 @@
       "id": "east-palo-alto-wic-epa",
       "name": "WIC - EPA",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
+      "fullDescription": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14365,8 +13393,8 @@
       "id": "el-granada-coastside-hope",
       "name": "Coastside Hope",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14393,8 +13421,8 @@
       "id": "half-moon-bay-health-coastside-clinic",
       "name": "Health - Coastside Clinic",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Community health clinic offering medical services and wellness programs.",
+      "fullDescription": "Community health clinic offering medical services and wellness programs.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14420,8 +13448,8 @@
       "id": "la-honda-cuesta-la-honda-recreation-center",
       "name": "Cuesta La Honda Recreation Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Recreational facility offering sports, fitness classes, and community programs.",
+      "fullDescription": "Recreational facility offering sports, fitness classes, and community programs.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14447,8 +13475,8 @@
       "id": "la-honda-puente-de-la-costa-sur-la-honda",
       "name": "Puente de la Costa Sur, La Honda",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14474,8 +13502,8 @@
       "id": "loma-mar-memorial-park",
       "name": "Memorial Park",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public park offering trails, picnic areas, and outdoor recreation opportunities.",
+      "fullDescription": "Public park offering trails, picnic areas, and outdoor recreation opportunities.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14501,8 +13529,8 @@
       "id": "moss-beach-fitzgerald-marine-reserve",
       "name": "Fitzgerald Marine Reserve",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Protected coastal area featuring tide pools, wildlife viewing, and educational programs.",
+      "fullDescription": "Protected coastal area featuring tide pools, wildlife viewing, and educational programs.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14528,8 +13556,8 @@
       "id": "moss-beach-pillar-ridge-community-center",
       "name": "Pillar Ridge Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14555,8 +13583,8 @@
       "id": "pacifica-san-pedro-valley-park",
       "name": "San Pedro Valley Park",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public park offering trails, picnic areas, and outdoor recreation opportunities.",
+      "fullDescription": "Public park offering trails, picnic areas, and outdoor recreation opportunities.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14582,8 +13610,8 @@
       "id": "pescadero-puente-de-la-costa-sur-pescadero",
       "name": "Puente de la Costa Sur, Pescadero",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14609,8 +13637,8 @@
       "id": "portola-valley-portola-community-center",
       "name": "Portola Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14636,8 +13664,8 @@
       "id": "redwood-city-fair-oaks-community-center",
       "name": "Fair Oaks Community Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
+      "fullDescription": "Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14663,8 +13691,8 @@
       "id": "redwood-city-health-sequoia-teen-wellness-center",
       "name": "Health - Sequoia Teen Wellness Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Community health clinic offering medical services and wellness programs.",
+      "fullDescription": "Community health clinic offering medical services and wellness programs.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14691,8 +13719,8 @@
       "id": "redwood-city-motorpool",
       "name": "MotorPool",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14718,8 +13746,8 @@
       "id": "redwood-city-schc-fair-oaks-clinic",
       "name": "SCHC - Fair Oaks Clinic",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14745,8 +13773,8 @@
       "id": "redwood-city-siena-youth-center",
       "name": "Siena Youth Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14773,8 +13801,8 @@
       "id": "redwood-city-st-francis-center",
       "name": "St Francis Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14800,8 +13828,8 @@
       "id": "redwood-city-star-vista-daybreak-shelter",
       "name": "Star Vista/Daybreak Shelter",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14829,8 +13857,8 @@
       "id": "redwood-city-wic-rwc",
       "name": "WIC - RWC",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
+      "fullDescription": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14858,8 +13886,8 @@
       "id": "san-carlos-san-carlos-airport",
       "name": "San Carlos Airport",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "General aviation airport serving private and business aircraft.",
+      "fullDescription": "General aviation airport serving private and business aircraft.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14885,8 +13913,8 @@
       "id": "san-mateo-coyote-point-marina",
       "name": "Coyote Point Marina",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Recreational marina with boat slips, launch facilities, and waterfront amenities.",
+      "fullDescription": "Recreational marina with boat slips, launch facilities, and waterfront amenities.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14912,8 +13940,8 @@
       "id": "san-mateo-smmc-clinics",
       "name": "SMMC - Clinics",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
+      "fullDescription": "Public facility with free WiFi access provided through San Mateo County's public WiFi network.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14939,8 +13967,8 @@
       "id": "san-mateo-wic-san-mateo",
       "name": "WIC - San Mateo",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
+      "fullDescription": "Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14968,8 +13996,8 @@
       "id": "south-san-francisco-health-ssf-clinic",
       "name": "Health - SSF Clinic",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "Community health clinic offering medical services and wellness programs.",
+      "fullDescription": "Community health clinic offering medical services and wellness programs.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [
@@ -14995,8 +14023,8 @@
       "id": "south-san-francisco-ymca-community-resource-center",
       "name": "YMCA Community Resource Center",
       "category": "recreation",
-      "description": "",
-      "fullDescription": null,
+      "description": "YMCA facility offering fitness programs, youth activities, and community services.",
+      "fullDescription": "YMCA facility offering fitness programs, youth activities, and community services.",
       "whatTheyOffer": null,
       "howToGetIt": null,
       "groups": [

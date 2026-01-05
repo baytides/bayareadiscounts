@@ -3,7 +3,7 @@
   category: Pet Resources
   area: Nationwide
   groups:
-  - everyone
+    - everyone
   description: The Banfield Foundation is a nonprofit that helps pets and the people who love them by providing resources, grants, and support to pet owners facing financial hardship.
   what_they_offer: |
     - Comprehensive directory of financial assistance programs
@@ -16,20 +16,18 @@
     2. Use the resource directory to find assistance in your area
     3. Filter by type of help needed (food, vet care, housing, etc.)
     4. Contact listed organizations directly for assistance
-  benefit: Comprehensive directory of financial assistance programs, pet food banks,
-    low-cost vet services, and emergency resources
+  benefit: Comprehensive directory of financial assistance programs, pet food banks, low-cost vet services, and emergency resources
   timeframe: Ongoing
   link: https://www.banfieldfoundation.org/Banfield-Foundation-Resources-for-pet-owners
   link_text: Browse Resources
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: bebhs-spay-bay
   name: Berkeley-East Bay Humane Society - Spay the Bay
   category: Pet Resources
   area: Alameda County
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: Berkeley-East Bay Humane Society's Spay the Bay program provides affordable spay/neuter services to help reduce pet overpopulation in the East Bay.
   what_they_offer: |
     - Low-cost spay and neuter surgeries
@@ -43,20 +41,20 @@
     3. Schedule an appointment online or by phone
     4. Bring your pet to the scheduled appointment
     5. Pay the reduced fee at time of service
-  phone: '510-845-7735'
+  phone: 510-845-7735
   address: 2700 Ninth Street, Berkeley, CA 94710
   benefit: Low-cost spay/neuter and vaccinations
   timeframe: Ongoing
   link: https://berkeleyhumane.org/spay-the-bay/
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.8571686,-122.291021
 - id: hssv-pet-pantry
   name: HSSV Pet Pantry
   category: Pet Resources
   area: Santa Clara County
   groups:
-  - income-eligible
+    - income-eligible
   description: The Humane Society Silicon Valley's Pet Pantry program helps families keep their pets by providing free pet food during times of financial hardship.
   what_they_offer: |
     - Free dog and cat food
@@ -70,21 +68,20 @@
     3. Bring ID showing Santa Clara County address
     4. Receive up to 30 days of food per visit
     5. Return monthly as needed
-  phone: '408-262-2133'
+  phone: 408-262-2133
   address: 901 Ames Avenue, Milpitas, CA 95035
-  benefit: Free pet food for Santa Clara County residents experiencing financial hardship;
-    pick up every 30 days
+  benefit: Free pet food for Santa Clara County residents experiencing financial hardship; pick up every 30 days
   timeframe: Every 30 days
   link: https://www.hssv.org/pet-pantry/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.4217456,-121.887582
 - id: humane-world
   name: Humane World
   category: Pet Resources
   area: Nationwide
   groups:
-  - everyone
+    - everyone
   description: Humane World provides a comprehensive directory of resources for pet owners who are struggling to afford their pet's care, helping keep families and pets together.
   what_they_offer: |
     - Directory of pet financial assistance programs
@@ -97,19 +94,17 @@
     2. Navigate to the financial assistance section
     3. Browse resources by location or type of help needed
     4. Contact listed organizations directly
-  benefit: Comprehensive directory of pet financial assistance programs and payment
-    plans
+  benefit: Comprehensive directory of pet financial assistance programs and payment plans
   timeframe: Ongoing
   link: https://www.humaneworld.org/en/resources/having-trouble-affording-your-pet#finance
   link_text: Browse Resources
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: joybound-vet-care
   name: Joybound People & Pets - Community Veterinary Care
   category: Pet Resources
   area: Contra Costa County
   groups:
-  - income-eligible
+    - income-eligible
   description: Joybound People & Pets (formerly Tony La Russa's ARF) provides low-cost veterinary care to help Contra Costa County residents keep their pets healthy.
   what_they_offer: |
     - Low-cost medical exams and treatments
@@ -123,20 +118,20 @@
     3. Provide proof of income if applying for reduced rates
     4. Schedule appointment for your pet
     5. Pay reduced fee at time of service
-  phone: '925-256-1273'
+  phone: 925-256-1273
   address: 2890 Mitchell Drive, Walnut Creek, CA 94598
   benefit: Low-cost medical care for dogs and cats for eligible residents
   timeframe: Ongoing
   link: https://joybound.org/services/get-help/
   link_text: Contact
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.9330006,-122.0206915
 - id: joybound-pet-food
   name: Joybound People & Pets - Free Pet Food
   category: Pet Resources
   area: Contra Costa County
   groups:
-  - income-eligible
+    - income-eligible
   description: Joybound's pet food assistance program helps Contra Costa County families keep their pets by providing free food during financial hardship.
   what_they_offer: |
     - Free dog food
@@ -149,20 +144,20 @@
     2. Contact Joybound to request assistance
     3. Provide basic information about your pets
     4. Arrange pickup or delivery of food
-  phone: '925-256-1273'
+  phone: 925-256-1273
   address: 2890 Mitchell Drive, Walnut Creek, CA 94598
   benefit: Free pet food for residents who need assistance
   timeframe: Ongoing
   link: https://joybound.org/services/get-help/
   link_text: Contact
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.9330006,-122.0206915
 - id: joybound-vaccinations
   name: Joybound People & Pets - Free Vaccination Clinics
   category: Pet Resources
   area: Contra Costa County
   groups:
-  - everyone
+    - everyone
   description: Joybound holds free vaccination clinics throughout Contra Costa County to help ensure all pets have access to essential preventive care.
   what_they_offer: |
     - Free rabies vaccinations
@@ -175,19 +170,18 @@
     2. Bring your pet to the clinic during scheduled hours
     3. No appointment or proof of income required
     4. Wait in line for service (first come, first served)
-  phone: '925-256-1273'
+  phone: 925-256-1273
   benefit: Free pet vaccination clinics at locations across Contra Costa County
   timeframe: Monthly
   link: https://joybound.org/services/get-help/
   link_text: Find Clinic
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: joybound-pet-safety-net
   name: Joybound People & Pets - Pet Safety Net
   category: Pet Resources
   area: Contra Costa County
   groups:
-  - income-eligible
+    - income-eligible
   description: Joybound's Pet Safety Net provides emergency resources to help families keep their pets during times of crisis or financial hardship.
   what_they_offer: |
     - Emergency pet food assistance
@@ -200,22 +194,21 @@
     2. Contact Joybound to explain your situation
     3. Staff will assess needs and available resources
     4. Receive assistance based on availability and need
-  phone: '925-256-1273'
+  phone: 925-256-1273
   address: 2890 Mitchell Drive, Walnut Creek, CA 94598
-  benefit: Emergency resources to prevent pet surrender including food, vet care assistance,
-    and supplies
+  benefit: Emergency resources to prevent pet surrender including food, vet care assistance, and supplies
   timeframe: As needed
   link: https://joybound.org/services/get-help/
   link_text: Get Help
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.9330006,-122.0206915
 - id: joybound-spay-neuter
   name: Joybound People & Pets - Spay/Neuter Clinic
   category: Pet Resources
   area: Contra Costa County
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: Joybound offers low-cost spay and neuter services to help reduce pet overpopulation and keep pets healthy.
   what_they_offer: |
     - Low-cost spay surgeries
@@ -229,21 +222,21 @@
     3. Follow pre-surgery instructions
     4. Bring pet to scheduled appointment
     5. Pay reduced fee at time of service
-  phone: '925-256-1273'
+  phone: 925-256-1273
   address: 2890 Mitchell Drive, Walnut Creek, CA 94598
   benefit: Low-cost spay/neuter services
   timeframe: Ongoing
   link: https://joybound.org/services/get-help/
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.9330006,-122.0206915
 - id: marin-humane-pet-care
   name: Marin Humane Society - Pet Care Assistance
   category: Pet Resources
   area: Marin County
   groups:
-  - income-eligible
-  - seniors
+    - income-eligible
+    - seniors
   description: Marin Humane Society provides pet care assistance to help vulnerable Marin County residents keep and care for their pets.
   what_they_offer: |
     - Pet Meals on Wheels (food delivery for homebound seniors)
@@ -257,21 +250,20 @@
     3. Explain your situation and needs
     4. Provide documentation as required (age, income, medical status)
     5. Receive assistance based on program eligibility
-  phone: '415-883-4621'
+  phone: 415-883-4621
   address: 171 Bel Marin Keys Blvd, Novato, CA 94949
-  benefit: Pet care assistance for low-income seniors, people living with HIV/AIDS,
-    and hospice recipients; Pet Meals on Wheels
+  benefit: Pet care assistance for low-income seniors, people living with HIV/AIDS, and hospice recipients; Pet Meals on Wheels
   timeframe: Ongoing
   link: https://www.marinhumanesociety.org
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=38.0682551,-122.5367087
 - id: muttville-cuddle-club
   name: Muttville Senior Dog Rescue - Cuddle Club
   category: Pet Resources
   area: San Francisco
   groups:
-  - seniors
+    - seniors
   description: Muttville's Cuddle Club brings the joy of dogs to seniors 62+ through free events where they can spend time with gentle senior dogs—no adoption required.
   what_they_offer: |
     - Free cuddle time with senior dogs
@@ -285,20 +277,20 @@
     3. Register for an event if required
     4. Attend and enjoy time with the dogs
     5. No cost or obligation
-  phone: '415-272-4172'
+  phone: 415-272-4172
   address: 255 Alabama Street, San Francisco, CA 94103
   benefit: Free cuddle time events with senior dogs for adults 62+ (no adoption required)
   timeframe: Ongoing
   link: https://muttville.org/seniors_for_seniors#cuddle
   link_text: Find Event
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.765762,-122.4120821
 - id: muttville-seniors-for-seniors
   name: Muttville Senior Dog Rescue - Seniors for Seniors
   category: Pet Resources
   area: San Francisco
   groups:
-  - seniors
+    - seniors
   description: Muttville's Seniors for Seniors program offers free adoptions of senior dogs (7+ years) to seniors 62 and older, helping both seniors and dogs find companionship.
   what_they_offer: |
     - Free adoption of senior dogs (7 years and older)
@@ -312,21 +304,21 @@
     3. Complete an adoption application
     4. Meet with dogs at Muttville or adoption events
     5. Take home your new companion at no cost
-  phone: '415-272-4172'
+  phone: 415-272-4172
   address: 255 Alabama Street, San Francisco, CA 94103
   benefit: Free adoption of senior dogs (7+ years) for seniors 62+
   timeframe: Ongoing
   link: https://muttville.org/seniors_for_seniors
   link_text: Adopt
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.765762,-122.4120821
 - id: phs-mobile-spay-neuter
   name: Peninsula Humane Society - Mobile Spay/Neuter Van
   category: Pet Resources
   area: San Mateo County
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: Peninsula Humane Society's mobile spay/neuter van travels throughout San Mateo County providing accessible, low-cost sterilization services.
   what_they_offer: |
     - Free or low-cost spay/neuter surgeries
@@ -339,19 +331,18 @@
     2. Call to schedule an appointment
     3. Provide proof of income for free services (if applicable)
     4. Bring pet to scheduled location on appointment day
-  phone: '650-340-7022'
+  phone: 650-340-7022
   benefit: Free spay/neuter
   timeframe: By appointment
   link: https://phs-spca.org/spayneuter/mobile/
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: phs-vaccine-clinics
   name: Peninsula Humane Society SPCA Low-Cost Vaccine Clinics
   category: Pet Resources
   area: San Mateo County
   groups:
-  - everyone
+    - everyone
   description: Peninsula Humane Society & SPCA offers regular low-cost vaccine clinics providing essential preventive care for dogs and cats.
   what_they_offer: |
     - Low-cost vaccinations (rabies, DHPP, FVRCP)
@@ -365,20 +356,20 @@
     3. Bring pet and payment (cash or card)
     4. Complete brief intake form
     5. Wait for services
-  phone: '650-340-7022'
+  phone: 650-340-7022
   address: 12 Airport Blvd, San Mateo, CA 94401
   benefit: Low-cost vaccinations, microchipping, nail trims
   timeframe: Monthly
   link: https://phs-spca.org/spayneuter/
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.5859249,-122.328231
 - id: pet-help-finder
   name: Pet Help Finder
   category: Pet Resources
   area: Nationwide
   groups:
-  - everyone
+    - everyone
   description: Pet Help Finder is a searchable database that helps pet owners locate low-cost veterinary services and financial assistance programs by zip code.
   what_they_offer: |
     - Searchable database of low-cost vet clinics
@@ -392,20 +383,18 @@
     3. Select the type of help you need
     4. Browse results for your area
     5. Contact providers directly for services
-  benefit: Database of low-cost vet services, financial assistance, and pet resources
-    by location
+  benefit: Database of low-cost vet services, financial assistance, and pet resources by location
   timeframe: Ongoing
   link: https://www.pethelpfinder.org/
   link_text: Search
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: pets-in-need
   name: Pets in Need - Low-Cost Vet Services
   category: Pet Resources
   area: San Mateo County
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: Pets in Need operates a community veterinary clinic in Redwood City providing affordable care to help families keep their pets healthy.
   what_they_offer: |
     - Low-cost wellness exams
@@ -419,21 +408,20 @@
     2. Schedule your pet's appointment
     3. Bring proof of income for discounted rates (if applicable)
     4. Pay reduced fees at time of service
-  phone: '650-367-1405'
+  phone: 650-367-1405
   address: 871 Fifth Avenue, Redwood City, CA 94063
   benefit: Low-cost vet care, spay/neuter, vaccinations, microchipping, and more
   timeframe: Ongoing
   link: https://www.petsinneed.org/communityclinic
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: pets-of-homeless
   name: Pets of the Homeless
   category: Pet Resources
   area: Nationwide
   groups:
-  - unhoused
-  - income-eligible
+    - unhoused
+    - income-eligible
   description: Pets of the Homeless is a nonprofit providing free veterinary care and pet food to pets of people experiencing homelessness.
   what_they_offer: |
     - Free veterinary care through participating providers
@@ -451,15 +439,14 @@
   timeframe: Ongoing
   link: https://petsofthehomeless.org/get-help/find-locations/
   link_text: Find Location
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: sf-spca-community-clinic
   name: San Francisco SPCA - Community Clinic
   category: Pet Resources
   area: San Francisco
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: The SF SPCA's Community Clinic provides affordable preventative care to help all San Francisco pets stay healthy.
   what_they_offer: |
     - Affordable wellness exams
@@ -472,15 +459,14 @@
     2. Income verification not required but discounts available
     3. Bring your pet to the clinic at scheduled time
     4. Pay affordable fees at time of service
-  phone: '415-554-3000'
+  phone: 415-554-3000
   address: 201 Alabama Street, San Francisco, CA 94103
-  benefit: Affordable preventative care, including vaccines, parasite protection,
-    and treatment for minor conditions
+  benefit: Affordable preventative care, including vaccines, parasite protection, and treatment for minor conditions
   timeframe: Ongoing
   link: https://www.sfspca.org/veterinary-care/community-clinic/
   link_text: Schedule
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7672325,-122.4124314
 - id: sf-spca-spay-neuter
   name: San Francisco SPCA - Spay/Neuter
   category: Pet Resources
@@ -500,20 +486,20 @@
     3. Schedule an appointment
     4. Bring proof of SF residency
     5. Pay based on your tier at time of service
-  phone: '415-554-3000'
+  phone: 415-554-3000
   address: 201 Alabama Street, San Francisco, CA 94103
   benefit: Affordable spay/neuter services with tiered fees for eligible SF residents
   timeframe: Ongoing
   link: https://www.sfspca.org
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7672325,-122.4124314
 - id: sf-aid-for-animals
   name: SF Aid for Animals (SFAFA)
   category: Pet Resources
   area: Bay Area-wide
   groups:
-  - income-eligible
+    - income-eligible
   description: SF Aid for Animals provides financial assistance for urgent veterinary care to low-income Bay Area residents, helping them avoid having to surrender or euthanize pets due to cost.
   what_they_offer: |
     - Financial grants for urgent veterinary care
@@ -527,20 +513,18 @@
     3. Pet must be treated at a participating veterinary hospital
     4. Apply through the SFAFA website
     5. Hospital will work with SFAFA on payment
-  phone: '415-621-8987'
-  benefit: Financial support for urgent vet services for Bay Area residents with participating
-    veterinary hospitals
+  phone: 415-621-8987
+  benefit: Financial support for urgent vet services for Bay Area residents with participating veterinary hospitals
   timeframe: Ongoing
   link: https://www.sfafa.org/gethelp
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: the-pet-fund
   name: The Pet Fund
   category: Pet Resources
   area: Statewide
   groups:
-  - income-eligible
+    - income-eligible
   description: The Pet Fund provides financial assistance for non-basic, non-emergency veterinary care to pet owners who cannot afford treatment.
   what_they_offer: |
     - Financial assistance for non-emergency vet care
@@ -555,19 +539,17 @@
     4. Provide veterinary estimate for needed care
     5. Wait for approval (waitlist common)
     6. If approved, funds sent to veterinarian
-  benefit: Financial assistance for non-basic, non-emergency veterinary care (has
-    waitlist)
+  benefit: Financial assistance for non-basic, non-emergency veterinary care (has waitlist)
   timeframe: Ongoing
   link: https://www.thepetfund.com/for-pet-owners/
   link_text: Apply
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: vet-billing
   name: Vet Billing - Payment Plans
   category: Pet Resources
   area: Nationwide
   groups:
-  - everyone
+    - everyone
   description: Vet Billing maintains a directory of veterinary practices that offer payment plans or financing options, helping pet owners manage veterinary costs over time.
   what_they_offer: |
     - Directory of vets offering payment plans
@@ -584,14 +566,13 @@
   timeframe: Ongoing
   link: https://vetbilling.com/find-vet/
   link_text: Search
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: vetco-clinics
   name: VETCO Clinics
   category: Pet Resources
   area: Bay Area-wide
   groups:
-  - everyone
+    - everyone
   description: VETCO operates walk-in vaccination clinics inside Petco stores, providing convenient and affordable preventive care for dogs and cats.
   what_they_offer: |
     - Affordable vaccinations
@@ -610,14 +591,13 @@
   timeframe: Weekly
   link: https://www.vetcoclinics.com
   link_text: Find Location
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: vip-petcare
   name: VIP Petcare
   category: Pet Resources
   area: Northern California
   groups:
-  - everyone
+    - everyone
   description: VIP Petcare provides walk-in wellness clinics at pet stores throughout Northern California, offering affordable preventive care without the need for an appointment.
   what_they_offer: |
     - Walk-in vaccination clinics
@@ -632,9 +612,8 @@
     3. Walk in during clinic hours (no appointment needed)
     4. Bring your pet and wait for service
     5. Pay at time of service
-  benefit: Walk-in weekend clinics offering vaccinations, microchipping, testing,
-    flea/tick control (no exam fee)
+  benefit: Walk-in weekend clinics offering vaccinations, microchipping, testing, flea/tick control (no exam fee)
   timeframe: Weekly
   link: https://www.vippetcare.com
   link_text: Find Clinic
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"

@@ -15,7 +15,7 @@ const API_DIR = path.join(__dirname, '../public/api');
 const OUTPUT_FILE = path.join(API_DIR, 'programs.geojson');
 
 // Files that are not program data
-const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml'];
+const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml', 'search-config.yml'];
 
 // Category colors for map markers (matches both file names and category field values)
 const CATEGORY_COLORS = {
@@ -39,8 +39,9 @@ const CATEGORY_COLORS = {
   'Pet Resources': '#EC4899',
   'recreation': '#14B8A6',     // teal
   'Recreation': '#14B8A6',
-  'Museums': '#14B8A6',        // same as recreation
+  'Museums': '#9333EA',        // purple for museums
   'Parks': '#22C55E',          // green for parks
+  'Parks & Open Space': '#22C55E', // green for parks
   'technology': '#0EA5E9',     // sky
   'Technology': '#0EA5E9',
   'transportation': '#F97316', // orange

@@ -3,7 +3,7 @@
   category: Library Resources
   area: Berkeley
   groups:
-  - everyone
+    - everyone
   description: The Berkeley Public Library operates the only tool lending library in Northern California, allowing library cardholders to borrow tools for free.
   what_they_offer: |
     - Power tools (drills, saws, sanders)
@@ -18,21 +18,20 @@
     3. Browse available tools in person
     4. Check out tools with your library card
     5. Return within the borrowing period (typically 3-7 days)
-  phone: '510-981-6101'
+  phone: 510-981-6101
   address: 1901 Russell Street, Berkeley, CA 94703
-  benefit: Borrow tools (power tools, lawn care equipment, etc.) free with library
-    card
+  benefit: Borrow tools (power tools, lawn care equipment, etc.) free with library card
   timeframe: Ongoing
   link: https://www.berkeleypubliclibrary.org/locations/tool-lending-library
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.856374,-122.2709969
 - id: lib-002
   name: California State Parks Library Pass
   category: Library Resources
   area: California
   groups:
-  - everyone
+    - everyone
   description: California State Library's Parks Pass program allows library patrons to check out day-use passes for free entry to over 200 state parks.
   what_they_offer: |
     - Free vehicle day-use entry to 200+ state parks
@@ -46,20 +45,17 @@
     3. Reserve or check out a parks pass
     4. Bring the pass and your library card to the park
     5. Return pass by the due date
-  benefit: Free vehicle day-use entry to 200+ participating state parks (1 vehicle
-    up to 9 people or 1 motorcycle). Not valid for camping, museums within parks,
-    or special events.
+  benefit: Free vehicle day-use entry to 200+ participating state parks (1 vehicle up to 9 people or 1 motorcycle). Not valid for camping, museums within parks, or special events.
   timeframe: Ongoing (funded through 2026)
   link: https://www.library.ca.gov/services/to-libraries/parks-pass/
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lib-003
   name: Calm Meditation App
   category: Library Resources
   area: San Mateo County
   groups:
-  - everyone
+    - everyone
   description: San Mateo County Library provides free access to the Calm app, offering guided meditations, sleep stories, and stress management tools.
   what_they_offer: |
     - Full access to Calm premium features
@@ -74,19 +70,17 @@
     3. Follow instructions to create or link Calm account
     4. Access Calm via web browser or mobile app
     5. Enjoy unlimited access while program continues
-  benefit: Free Calm access for qualifying library patrons with guided meditations,
-    courses, stories, music, and stress management tools via web and mobile app
+  benefit: Free Calm access for qualifying library patrons with guided meditations, courses, stories, music, and stress management tools via web and mobile app
   timeframe: Ongoing
   link: https://smcl.org/get-calm
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lib-004
   name: Discover & Go Museum Passes
   category: Library Resources
   area: California
   groups:
-  - everyone
+    - everyone
   description: Discover & Go connects library cardholders with free and discounted admission to California museums, zoos, aquariums, and cultural institutions.
   what_they_offer: |
     - Free or reduced admission to many cultural institutions
@@ -105,14 +99,13 @@
   timeframe: Pass release cycles vary
   link: https://discoverandgo.org
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lib-005
   name: Hoopla Digital
   category: Library Resources
   area: Bay Area-wide
   groups:
-  - everyone
+    - everyone
   description: Hoopla is a digital media service that allows library cardholders to borrow movies, TV shows, music, ebooks, audiobooks, and comics for free.
   what_they_offer: |
     - Streaming movies and TV shows
@@ -131,14 +124,13 @@
   timeframe: Ongoing
   link: https://www.hoopladigital.com
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lib-006
   name: Kanopy
   category: Library Resources
   area: Bay Area-wide
   groups:
-  - everyone
+    - everyone
   description: Kanopy is a free video streaming service for library cardholders offering thoughtful entertainment including films, documentaries, and educational content.
   what_they_offer: |
     - Thousands of films and documentaries
@@ -157,15 +149,14 @@
   timeframe: Ongoing
   link: https://www.kanopy.com/signup/find/publiclibrary
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: lib-007
   name: New York Times Digital Access
   category: Library Resources
   area: Statewide
   groups:
-  - income-eligible
-  - everyone
+    - income-eligible
+    - everyone
   description: California State Library provides free digital access to The New York Times for all Californians through participating public libraries.
   what_they_offer: |
     - Full access to NYTimes.com
@@ -179,19 +170,17 @@
     3. Create a free NYT account or log in
     4. Enjoy 72 hours of full access
     5. Return to library site to renew when pass expires
-  benefit: Complimentary 72-hour digital access to The New York Times online (articles,
-    cooking, games, archives)
+  benefit: Complimentary 72-hour digital access to The New York Times online (articles, cooking, games, archives)
   timeframe: 72-hour passes, renewable
   link: https://www.library.ca.gov/services/to-libraries/nyt/
   link_text: Visit Program
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: sfpl-elibrary
   name: SFPL eLibrary
   category: Library Resources
   area: San Francisco
   groups:
-  - everyone
+    - everyone
   description: San Francisco Public Library's eLibrary provides free digital access to ebooks, audiobooks, databases, learning courses, and streaming content.
   what_they_offer: |
     - Ebooks and audiobooks (Libby, OverDrive)
@@ -206,21 +195,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on computer or mobile devices
-  phone: '415-557-4400'
-  benefit: Free access to ebooks, audiobooks, magazines, newspapers, movies, music,
-    learning courses, research databases, and more with SF library card
+  phone: 415-557-4400
+  benefit: Free access to ebooks, audiobooks, magazines, newspapers, movies, music, learning courses, research databases, and more with SF library card
   how_to_use: Sign in with your San Francisco Public Library card
   timeframe: Ongoing
   link: https://sfpl.org/research-learn/elibrary
   link_text: Browse eLibrary
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: sfpl-digital-collections
   name: SF Digital Collections
   category: Library Resources
   area: San Francisco
   groups:
-  - everyone
+    - everyone
   description: San Francisco's digital collections provide free access to digitized historical photos, documents, manuscripts, and audiovisual materials from the city's archives.
   what_they_offer: |
     - Historical photographs of San Francisco
@@ -234,19 +221,17 @@
     2. Browse or search collections
     3. View and download materials for free
     4. No library card required for access
-  benefit: Free access to archival photographs, manuscripts, documents, maps, ephemera,
-    and audiovisual materials from digitized and born-digital collections
+  benefit: Free access to archival photographs, manuscripts, documents, maps, ephemera, and audiovisual materials from digitized and born-digital collections
   timeframe: Ongoing
   link: https://digitalsf.org/
   link_text: Explore Collections
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: open-library
   name: Open Library
   category: Library Resources
   area: Nationwide
   groups:
-  - everyone
+    - everyone
   description: Open Library is a project of the Internet Archive that provides free access to millions of books, with the goal of creating one web page for every book ever published.
   what_they_offer: |
     - Millions of free ebooks
@@ -261,20 +246,18 @@
     3. Browse or search for books
     4. Read online or borrow ebooks
     5. Return borrowed books to allow others to read
-  benefit: Free access to millions of books including ebooks to borrow, with goal
-    to provide one web page for every book ever published
+  benefit: Free access to millions of books including ebooks to borrow, with goal to provide one web page for every book ever published
   how_to_use: Create free account or sign in with Internet Archive, Google, or library card
   timeframe: Ongoing
   link: https://openlibrary.org/
   link_text: Browse Library
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: libby-app
   name: Libby by OverDrive
   category: Library Resources
   area: Bay Area-wide
   groups:
-  - everyone
+    - everyone
   description: Libby is the free reading app from OverDrive that connects library cardholders to their library's collection of ebooks, audiobooks, and magazines.
   what_they_offer: |
     - Ebooks from your library's collection
@@ -289,20 +272,18 @@
     3. Sign in with your library card number
     4. Browse and borrow from your library's collection
     5. Books automatically return—no late fees
-  benefit: Free ebooks, audiobooks, and magazines from your local library delivered
-    to your phone or tablet
+  benefit: Free ebooks, audiobooks, and magazines from your local library delivered to your phone or tablet
   how_to_use: Download the Libby app and sign in with your library card
   timeframe: Ongoing
   link: https://www.overdrive.com/apps/libby
   link_text: Get Libby
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: california-digital-newspaper-collection
   name: California Digital Newspaper Collection
   category: Library Resources
   area: California
   groups:
-  - everyone
+    - everyone
   description: The California Digital Newspaper Collection provides free access to digitized California newspapers from 1846 to the present for historical research.
   what_they_offer: |
     - Digitized California newspapers from 1846-present
@@ -320,14 +301,13 @@
   timeframe: Ongoing
   link: https://cdnc.ucr.edu/cgi-bin/cdnc
   link_text: Search Newspapers
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: career-online-high-school
   name: Career Online High School
   category: Library Resources
   area: California
   groups:
-  - everyone
+    - everyone
   description: Career Online High School is a free program through participating California libraries that allows adults to earn an accredited high school diploma and career certificate.
   what_they_offer: |
     - Accredited high school diploma
@@ -343,20 +323,18 @@
     4. Apply to the program
     5. If accepted, complete coursework online
     6. Graduate with diploma and career certificate
-  benefit: Free accredited high school diploma, career certificate, and career portfolio
-    including resume and cover letter with extensive career development support
+  benefit: Free accredited high school diploma, career certificate, and career portfolio including resume and cover letter with extensive career development support
   how_to_use: Must have a library card in good standing with an affiliated California library
   timeframe: Ongoing
   link: https://ca.careeronlinehs.org/
   link_text: Learn More
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: online-archive-of-california
   name: Online Archive of California
   category: Library Resources
   area: California
   groups:
-  - everyone
+    - everyone
   description: The Online Archive of California provides free access to finding aids and primary source collections from over 200 California libraries, archives, and museums.
   what_they_offer: |
     - Finding aids to archival collections
@@ -371,19 +349,17 @@
     3. Find detailed descriptions of archival materials
     4. Identify materials of interest
     5. Contact holding institution for access to originals
-  benefit: Free access to detailed descriptions of primary resource collections from
-    over 200 libraries, archives, historical societies, and museums throughout California
+  benefit: Free access to detailed descriptions of primary resource collections from over 200 libraries, archives, historical societies, and museums throughout California
   timeframe: Ongoing
   link: https://oac.cdlib.org/
   link_text: Browse Collections
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: alameda-county-library-digital
   name: Alameda County Library Digital Resources
   category: Library Resources
   area: Alameda County
   groups:
-  - everyone
+    - everyone
   description: Alameda County Library provides free digital resources including ebooks, audiobooks, databases, and online learning for cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -398,21 +374,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '510-745-1500'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Alameda County library card
+  phone: 510-745-1500
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Alameda County library card
   how_to_use: Sign in with your Alameda County Library card
   timeframe: Ongoing
   link: https://aclibrary.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: oakland-library-digital
   name: Oakland Public Library Digital Resources
   category: Library Resources
   area: Alameda County
   groups:
-  - everyone
+    - everyone
   description: Oakland Public Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for Oakland cardholders.
   what_they_offer: |
     - Ebooks and audiobooks
@@ -427,21 +401,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '510-238-3134'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Oakland library card
+  phone: 510-238-3134
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Oakland library card
   how_to_use: Sign in with your Oakland Public Library card
   timeframe: Ongoing
   link: https://oaklandlibrary.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: san-mateo-county-library-digital
   name: San Mateo County Library Digital Resources
   category: Library Resources
   area: San Mateo County
   groups:
-  - everyone
+    - everyone
   description: San Mateo County Library offers free digital resources including ebooks, audiobooks, streaming content, and online learning for all cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -456,21 +428,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '650-312-5258'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with San Mateo County library card
+  phone: 650-312-5258
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with San Mateo County library card
   how_to_use: Sign in with your San Mateo County Library card
   timeframe: Ongoing
   link: https://smcl.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: peninsula-library-digital
   name: Peninsula Library System E-Services
   category: Library Resources
   area: San Mateo County
   groups:
-  - everyone
+    - everyone
   description: Peninsula Library System provides e-services and digital resources for cardholders from member libraries throughout San Mateo County.
   what_they_offer: |
     - Shared digital collections
@@ -484,20 +454,19 @@
     3. Browse available resources
     4. Sign in with your library card
     5. Access content online
-  phone: '650-349-5538'
+  phone: 650-349-5538
   benefit: Free digital resources and e-services for Peninsula Library System cardholders
   how_to_use: Sign in with your Peninsula Library System card
   timeframe: Ongoing
   link: https://plsinfo.org/e-services/
   link_text: Browse E-Services
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: contra-costa-library-digital
   name: Contra Costa County Library Digital Resources
   category: Library Resources
   area: Contra Costa County
   groups:
-  - everyone
+    - everyone
   description: Contra Costa County Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -512,21 +481,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '925-646-6434'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Contra Costa County library card
+  phone: 925-646-6434
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Contra Costa County library card
   how_to_use: Sign in with your Contra Costa County Library card
   timeframe: Ongoing
   link: https://ccclib.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: sfpl-services
   name: San Francisco Public Library Services
   category: Library Resources
   area: San Francisco
   groups:
-  - everyone
+    - everyone
   description: San Francisco Public Library offers a wide range of free services and programs beyond just books, including digital resources, programs, and community offerings.
   what_they_offer: |
     - Digital resources (eBooks, streaming, databases)
@@ -541,21 +508,19 @@
     3. Explore available services
     4. Many services available online or in-person
     5. Some programs require registration
-  phone: '415-557-4400'
-  benefit: Free library services including digital resources, programs, and community
-    offerings with SF library card
+  phone: 415-557-4400
+  benefit: Free library services including digital resources, programs, and community offerings with SF library card
   how_to_use: Sign in with your San Francisco Public Library card
   timeframe: Ongoing
   link: https://sfpl.org/services
   link_text: Browse Services
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: santa-clara-county-library-digital
   name: Santa Clara County Library Digital Resources
   category: Library Resources
   area: Santa Clara County
   groups:
-  - everyone
+    - everyone
   description: Santa Clara County Library District offers free digital resources including ebooks, audiobooks, streaming content, and online learning for cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -570,21 +535,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '408-293-2326'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Santa Clara County library card
+  phone: 408-293-2326
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Santa Clara County library card
   how_to_use: Sign in with your Santa Clara County Library card
   timeframe: Ongoing
   link: https://sccld.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: marin-county-library-digital
   name: Marin County Free Library Digital Resources
   category: Library Resources
   area: Marin County
   groups:
-  - everyone
+    - everyone
   description: Marin County Free Library provides free digital resources including ebooks, audiobooks, streaming media, and learning platforms for cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -599,21 +562,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '415-473-3222'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Marin County library card
+  phone: 415-473-3222
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Marin County library card
   how_to_use: Sign in with your Marin County Free Library card
   timeframe: Ongoing
   link: https://marinlibrary.org/resource/
   link_text: Browse Resources
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: sonoma-county-library-digital
   name: Sonoma County Library eLibrary
   category: Library Resources
   area: Sonoma County
   groups:
-  - everyone
+    - everyone
   description: Sonoma County Library provides free eLibrary resources including ebooks, audiobooks, streaming content, and online learning for all cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -628,21 +589,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '707-545-0831'
-  benefit: Free digital resources including ebooks, audiobooks, databases, and online
-    learning with Sonoma County library card
+  phone: 707-545-0831
+  benefit: Free digital resources including ebooks, audiobooks, databases, and online learning with Sonoma County library card
   how_to_use: Sign in with your Sonoma County Library card
   timeframe: Ongoing
   link: https://sonomalibrary.org/elibrary/a-z
   link_text: Browse eLibrary
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: solano-county-library-digital
   name: Solano County Library 24/7 Digital Library
   category: Library Resources
   area: Solano County
   groups:
-  - everyone
+    - everyone
   description: Solano County Library provides 24/7 digital library resources including ebooks, audiobooks, streaming media, and online learning for cardholders.
   what_they_offer: |
     - Ebooks and audiobooks via Libby
@@ -657,21 +616,19 @@
     3. Browse available digital resources
     4. Sign in with your library card
     5. Access content anytime, on any device
-  phone: '707-784-1500'
-  benefit: Free 24/7 digital resources including ebooks, audiobooks, databases, and
-    online learning with Solano County library card
+  phone: 707-784-1500
+  benefit: Free 24/7 digital resources including ebooks, audiobooks, databases, and online learning with Solano County library card
   how_to_use: Sign in with your Solano County Library card
   timeframe: Ongoing
   link: https://solanolibrary.com/247-digital-library/
   link_text: Browse Digital Library
-  verified_date: '2025-12-24'
-
+  verified_date: "2025-12-24"
 - id: napa-county-library-databases
   name: Napa County Library Databases
   category: Library Resources
   area: Napa County
   groups:
-  - everyone
+    - everyone
   description: Napa County Library provides free access to research databases and digital resources for all cardholders.
   what_they_offer: |
     - Research databases
@@ -686,11 +643,10 @@
     3. Browse available resources
     4. Sign in with your library card
     5. Access content on any device
-  phone: '707-253-4235'
-  benefit: Free access to research databases and digital resources with Napa County
-    library card
+  phone: 707-253-4235
+  benefit: Free access to research databases and digital resources with Napa County library card
   how_to_use: Sign in with your Napa County Library card
   timeframe: Ongoing
   link: https://www.napacounty.gov/919/Databases
   link_text: Browse Databases
-  verified_date: '2025-12-24'
+  verified_date: "2025-12-24"

@@ -3,7 +3,7 @@
   category: Equipment
   area: Bay Area-wide
   groups:
-  - nonprofits
+    - nonprofits
   description: A Greener Source is a nonprofit that diverts office furniture from landfills by donating it to other nonprofits, helping organizations furnish their spaces sustainably and at no cost.
   what_they_offer: |
     - Free office desks and workstations
@@ -18,22 +18,20 @@
     3. Browse available furniture inventory online
     4. Request items through the website
     5. Schedule pickup or arrange delivery (fees may apply for delivery)
-  phone: '650-588-8950'
+  phone: 650-588-8950
   address: 30799 Wiegman Rd, Hayward, CA 94544
-  benefit: Zero-cost office furniture donations including desks, chairs, filing cabinets,
-    and other office furnishings; request furniture through website; schedule pickup
-    or delivery
+  benefit: Zero-cost office furniture donations including desks, chairs, filing cabinets, and other office furnishings; request furniture through website; schedule pickup or delivery
   timeframe: Ongoing
   link: https://www.agreenersource.com/non-profits/
   link_text: Register
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.6164565,-122.0618595
 - id: alameda-county-property-salvage
   name: Alameda County Property & Salvage Donations
   category: Equipment
   area: Alameda County
   groups:
-  - nonprofits
+    - nonprofits
   description: Alameda County's General Services Agency donates surplus county property to eligible nonprofit organizations, providing free equipment and supplies that would otherwise be disposed of.
   what_they_offer: |
     - Surplus office furniture (desks, chairs, tables)
@@ -47,21 +45,19 @@
     3. Complete donation request paperwork
     4. Browse available surplus items
     5. Arrange pickup of approved items
-  phone: '510-272-3800'
-  benefit: Donated surplus county property including office furniture, equipment,
-    and supplies provided to eligible nonprofit organizations as in-kind donations
+  phone: 510-272-3800
+  benefit: Donated surplus county property including office furniture, equipment, and supplies provided to eligible nonprofit organizations as in-kind donations
   timeframe: Ongoing
   link: https://gsa.acgov.org/local-services/property-salvage/donations/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: building-resources
   name: Building Resources
   category: Equipment
   area: San Francisco
   groups:
-  - nonprofits
-  - everyone
+    - nonprofits
+    - everyone
   description: Building Resources is a nonprofit reuse center in San Francisco that sells salvaged and donated building materials at affordable prices, with special programs for nonprofits.
   what_they_offer: |
     - Salvaged lumber and wood products
@@ -76,22 +72,20 @@
     3. Pay reduced prices (typically 50-90% off retail)
     4. Nonprofits may qualify for additional discounts or donations
     5. Transport materials yourself or arrange delivery
-  phone: '415-285-7814'
+  phone: 415-285-7814
   address: 701 Amador Street, San Francisco, CA 94124
-  benefit: Salvaged and reusable building materials including construction supplies,
-    fixtures, and landscaping materials available at reduced cost; some materials
-    available for nonprofit projects
+  benefit: Salvaged and reusable building materials including construction supplies, fixtures, and landscaping materials available at reduced cost; some materials available for nonprofit projects
   timeframe: Ongoing
   link: https://buildingresources.org/
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7456694,-122.3852748
 - id: california-federal-surplus-program
   name: California Federal Surplus Property Program
   category: Equipment
   area: Statewide
   groups:
-  - nonprofits
+    - nonprofits
   description: The California State Agency for Surplus Property administers federal surplus property, making it available to eligible nonprofits at a fraction of original cost.
   what_they_offer: |
     - Federal surplus furniture and office equipment
@@ -107,22 +101,20 @@
     4. Once approved, browse available federal surplus
     5. Request items and pay nominal service charges
     6. Arrange pickup or delivery
-  phone: '916-928-2500'
+  phone: 916-928-2500
   address: 1625 Exposition Blvd, Sacramento, CA 95815
-  benefit: Access to donated federal surplus property including furniture, equipment,
-    vehicles, and technology through the State of California for eligible nonprofit
-    organizations
+  benefit: Access to donated federal surplus property including furniture, equipment, vehicles, and technology through the State of California for eligible nonprofit organizations
   timeframe: Ongoing
   link: https://www.dgs.ca.gov/OFAM/Services/Page-Content/Office-of-Fleet-and-Asset-Management-Services-List-Folder/Apply-or-Renew-as-Federal-Donee-of-Surplus-Property
   link_text: Apply as Donee
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=38.5953023,-121.4315147
 - id: city-of-san-jose-surplus
   name: City of San José Surplus Property Donation Program
   category: Equipment
   area: Santa Clara County
   groups:
-  - nonprofits
+    - nonprofits
   description: The City of San José donates surplus property valued at $1,500 or less to eligible nonprofit organizations, helping local groups access needed equipment and supplies.
   what_they_offer: |
     - Surplus office furniture
@@ -136,20 +128,18 @@
     3. Submit donation request
     4. Browse available items when notified
     5. Arrange pickup of approved donations
-  phone: '408-535-7400'
-  benefit: Surplus property (valued at $1,500 or less) available to eligible nonprofits,
-    including equipment, furnishings, and other items
+  phone: 408-535-7400
+  benefit: Surplus property (valued at $1,500 or less) available to eligible nonprofits, including equipment, furnishings, and other items
   timeframe: Ongoing - subject to availability
   link: https://www.sanjoseca.gov/your-government/departments-offices/public-works/surplus-property
   link_text: Learn More
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: santa-clara-county-surplus-donations
   name: Santa Clara County Surplus Property Donation Program
   category: Equipment
   area: Santa Clara County
   groups:
-  - nonprofits
+    - nonprofits
   description: Santa Clara County donates surplus property to eligible nonprofit organizations, providing free office furniture, equipment, and supplies.
   what_they_offer: |
     - Surplus office furniture
@@ -163,19 +153,17 @@
     3. Provide proof of nonprofit status
     4. Wait for approval and notification of available items
     5. Arrange pickup within specified timeframe
-  benefit: Donated surplus county property including office furniture, equipment,
-    and supplies available to eligible nonprofit organizations upon request and approval
+  benefit: Donated surplus county property including office furniture, equipment, and supplies available to eligible nonprofit organizations upon request and approval
   timeframe: Ongoing
   link: https://prc.santaclaracounty.gov/surplus-property-program/request-donations-county-surplus-property
   link_text: Request Donation
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: santa-clara-county-library-surplus
   name: Santa Clara County Library District Surplus Property Donations
   category: Equipment
   area: Santa Clara County
   groups:
-  - nonprofits
+    - nonprofits
   description: The Santa Clara County Library District donates surplus library property to nonprofit organizations located within the county.
   what_they_offer: |
     - Library shelving and display units
@@ -189,19 +177,17 @@
     3. Describe your organization and intended use
     4. Wait for notification of available surplus
     5. Arrange pickup of approved items
-  benefit: Donated surplus library property including furniture, shelving, and equipment
-    for eligible nonprofit organizations located within Santa Clara County
+  benefit: Donated surplus library property including furniture, shelving, and equipment for eligible nonprofit organizations located within Santa Clara County
   timeframe: Ongoing
   link: https://sccld.org/surplus-property-donation-program/
   link_text: Program Details
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: sf-virtual-warehouse
   name: San Francisco Virtual Warehouse
   category: Equipment
   area: Bay Area-wide
   groups:
-  - nonprofits
+    - nonprofits
   description: The San Francisco Virtual Warehouse is a city program that provides free surplus office furniture, supplies, and equipment to nonprofits and public schools.
   what_they_offer: |
     - Office furniture (desks, chairs, tables)
@@ -216,21 +202,19 @@
     3. Create an account to access the virtual warehouse
     4. Browse and request available items online
     5. Schedule pickup at designated location
-  phone: '415-355-3700'
-  benefit: Free surplus office furniture, supplies, and equipment from the City and
-    County of San Francisco for nonprofits and public schools
+  phone: 415-355-3700
+  benefit: Free surplus office furniture, supplies, and equipment from the City and County of San Francisco for nonprofits and public schools
   timeframe: Ongoing
   link: https://www.sfenvironment.org/virtual-warehouse-instructions-non-profits-and-schools
   link_text: Enrollment Instructions
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
 - id: scrap-sf
   name: SCRAP (Scroungers' Center for Re-usable Art Parts)
   category: Equipment
   area: San Francisco
   groups:
-  - nonprofits
-  - teachers
+    - nonprofits
+    - teachers
   description: SCRAP is a creative reuse nonprofit that collects donated art and craft supplies and makes them available to teachers, artists, and nonprofits at very low cost.
   what_they_offer: |
     - Fabric and textiles
@@ -245,21 +229,20 @@
     3. Pay by the bag or by weight (very affordable)
     4. Teachers and nonprofits may qualify for additional discounts
     5. Membership programs available for frequent users
-  phone: '415-647-1746'
+  phone: 415-647-1746
   address: 801 Toland Street, San Francisco, CA 94124
-  benefit: Low-cost and donated arts, crafts, and educational materials including
-    fabric, paper goods, sewing supplies, and classroom resources
+  benefit: Low-cost and donated arts, crafts, and educational materials including fabric, paper goods, sewing supplies, and classroom resources
   timeframe: Ongoing
   link: https://www.scrap-sf.org/
   link_text: Visit SCRAP
-  verified_date: '2025-12-16'
-
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7413758,-122.3997848
 - id: smc-surplus-property
   name: San Mateo County Surplus Property Program
   category: Equipment
   area: San Mateo County
   groups:
-  - nonprofits
+    - nonprofits
   description: San Mateo County provides free surplus office furniture, supplies, and equipment to San Mateo County-based nonprofits and public schools.
   what_they_offer: |
     - Office furniture (desks, chairs, tables)
@@ -273,9 +256,8 @@
     3. Complete registration once invited
     4. Browse available items
     5. Request items and schedule pickup
-  benefit: Free surplus office furniture, supplies, and equipment for San Mateo County-based
-    nonprofits and public schools
+  benefit: Free surplus office furniture, supplies, and equipment for San Mateo County-based nonprofits and public schools
   timeframe: Ongoing
   link: https://docs.google.com/forms/d/e/1FAIpQLSfwPk-gLzC8SRHZPOj2jCHP9RxJ4ca8zAOoA5FLCl7W2ZJ0Pw/viewform
   link_text: Request an Invitation
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"

@@ -16,7 +16,7 @@
   timeframe: Ongoing
   link: https://www.nps.gov/planyourvisit/passes.htm#america-the-beautiful-passes
   link_text: Get Pass
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: ca-state-parks-adventure-pass
   name: California State Parks Adventure Pass
   category: Recreation
@@ -32,7 +32,7 @@
   timeframe: Ongoing (funded through 2026)
   link: https://www.reservecalifornia.com/
   link_text: Apply
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: ca-state-parks-disabled-discount
   name: California State Parks Disabled Discount Pass
   category: Recreation
@@ -49,7 +49,7 @@
   timeframe: Lifetime
   link: https://www.parks.ca.gov/?page_id=30959
   link_text: Apply
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: ca-state-parks-distinguished-veteran
   name: California State Parks Distinguished Veteran Pass
   category: Recreation
@@ -66,7 +66,7 @@
   timeframe: Lifetime
   link: https://www.parks.ca.gov/?page_id=30958
   link_text: Apply
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: golden-bear-pass
   name: Golden Bear Pass
   category: Recreation
@@ -84,7 +84,7 @@
   timeframe: Annual (calendar year)
   link: https://www.parks.ca.gov/?page_id=30960
   link_text: Apply
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: senior-golden-bear-pass
   name: Senior Golden Bear Pass
   category: Recreation
@@ -100,7 +100,7 @@
   timeframe: Annual (calendar year)
   link: https://www.parks.ca.gov/?page_id=30961
   link_text: Purchase
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: museums-for-all
   name: Museums for All
   category: Museums
@@ -118,7 +118,7 @@
   timeframe: Ongoing
   link: https://museums4all.org
   link_text: Find Museum
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: aquarium-of-bay
   name: Aquarium of the Bay
   category: Museums
@@ -142,9 +142,9 @@
   timeframe: Ongoing
   link: https://www.aquariumofthebay.org
   link_text: Get Tickets
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.80032,-122.4104
-  imls_id: '8409500010'
+  imls_id: "8409500010"
 - id: asian-art-museum
   name: Asian Art Museum
   category: Museums
@@ -172,7 +172,8 @@
   timeframe: Ongoing
   link: https://about.asianart.org/plan-your-visit/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7802982,-122.4159878
 - id: bay-area-discovery-museum
   name: Bay Area Discovery Museum
   category: Museums
@@ -199,9 +200,9 @@
   timeframe: Ongoing
   link: https://bayareadiscoverymuseum.org/visit/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.32674,-121.88873
-  imls_id: '8409500325'
+  imls_id: "8409500325"
 - id: cal-academy
   name: California Academy of Sciences
   category: Museums
@@ -223,9 +224,9 @@
   timeframe: Ongoing
   link: https://www.calacademy.org/visit
   link_text: Reserve Tickets
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.77025,-122.46932
-  imls_id: '8409500302'
+  imls_id: "8409500302"
 - id: chabot-space-center
   name: Chabot Space & Science Center
   category: Museums
@@ -247,9 +248,9 @@
   timeframe: Ongoing
   link: https://chabotspace.org/visit/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.81972,-122.1841
-  imls_id: '8409400828'
+  imls_id: "8409400828"
 - id: cartoon-art-museum
   name: Cartoon Art Museum
   category: Museums
@@ -278,7 +279,8 @@
   timeframe: Ongoing
   link: https://www.cartoonart.org/visit
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.8063768,-122.4217874
 - id: childrens-creativity-museum
   name: Children's Creativity Museum
   category: Museums
@@ -300,9 +302,9 @@
   timeframe: Ongoing
   link: https://creativity.org/hours-admission/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.80679,-122.27276
-  imls_id: '8400602413'
+  imls_id: "8400602413"
 - id: childrens-discovery-museum-sj
   name: Children's Discovery Museum
   category: Museums
@@ -322,7 +324,8 @@
   timeframe: Ongoing
   link: https://www.cdm.org/hours-pricing/#museums-for-all
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.3267053,-121.8917556
 - id: childrens-fairyland
   name: Children's Fairyland
   category: Museums
@@ -344,7 +347,8 @@
   timeframe: Ongoing
   link: https://fairyland.org/visit/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.8088234,-122.2602497
 - id: exploratorium
   name: Exploratorium
   category: Museums
@@ -367,9 +371,9 @@
   timeframe: Ongoing
   link: https://www.exploratorium.edu/visit/reduced-rates
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.79553,-122.40032
-  imls_id: '8400602241'
+  imls_id: "8400602241"
 - id: fine-arts-museums-sf
   name: Fine Arts Museums of San Francisco
   category: Museums
@@ -398,7 +402,7 @@
   timeframe: Ongoing
   link: https://www.famsf.org/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: golden-gate-park-gardens
   name: Gardens of Golden Gate Park
   category: Museums
@@ -420,7 +424,7 @@
   timeframe: Ongoing; scheduled free days/hours
   link: https://gggp.org
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: lawrence-hall-science
   name: Lawrence Hall of Science
   category: Museums
@@ -444,9 +448,9 @@
   timeframe: Ongoing
   link: https://lawrencehallofscience.org
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.86701,-122.26051
-  imls_id: '8409500603'
+  imls_id: "8409500603"
 - id: moad-museum
   name: Museum of the African Diaspora (MoAD)
   category: Museums
@@ -473,9 +477,9 @@
   timeframe: Ongoing
   link: https://www.moadsf.org/tickets
   link_text: Get Tickets
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.7869,-122.40104
-  imls_id: '8400600284'
+  imls_id: "8400600284"
 - id: museum-craft-design
   name: Museum of Craft and Design
   category: Museums
@@ -505,7 +509,7 @@
   timeframe: Ongoing
   link: https://sfmcd.org/visit/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: oakland-museum
   name: Oakland Museum of California
   category: Museums
@@ -527,9 +531,9 @@
   timeframe: Ongoing
   link: https://museumca.org/visit
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
   map_link: https://www.google.com/maps?q=37.79829,-122.26453
-  imls_id: '8400600176'
+  imls_id: "8400600176"
 - id: oakland-zoo
   name: Oakland Zoo – Bay to Zoo
   category: Museums
@@ -551,7 +555,8 @@
   timeframe: Ongoing
   link: https://www.oaklandzoo.org/tickets
   link_text: Get Tickets
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.7531488,-122.139591
 - id: sfmoma
   name: San Francisco Museum of Modern Art (SFMOMA)
   category: Museums
@@ -578,7 +583,7 @@
   timeframe: Ongoing
   link: https://www.sfmoma.org/deals-discounts/
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: sj-museum-art
   name: San Jose Museum of Art
   category: Museums
@@ -601,7 +606,8 @@
   timeframe: Ongoing
   link: https://sjmusart.org/visit
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.3336702,-121.890042
 - id: the-tech-interactive
   name: The Tech Interactive
   category: Museums
@@ -622,7 +628,8 @@
   timeframe: Ongoing
   link: https://www.thetech.org/visit
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
+  map_link: https://www.google.com/maps?q=37.331404,-121.8901566
 - id: walt-disney-family-museum
   name: Walt Disney Family Museum
   category: Museums
@@ -650,7 +657,7 @@
   timeframe: Ongoing
   link: https://www.waltdisney.org/visit/admission
   link_text: Plan Visit
-  verified_date: '2025-12-16'
+  verified_date: "2025-12-16"
 - id: ca-sp-albany-smr
   name: Albany SMR
   category: Parks & Open Space
@@ -662,7 +669,23 @@
   link: http://www.parks.ca.gov/?page_id=22880
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.88940496050942,-122.3170132127729
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Albany SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-bethany-reservoir-sra
   name: Bethany Reservoir SRA
   category: Parks & Open Space
@@ -674,7 +697,23 @@
   link: http://www.parks.ca.gov/?page_id=562
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.78289700235521,-121.6172060950359
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Bethany Reservoir State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-emeryville-crescent-smr
   name: Emeryville Crescent SMR
   category: Parks & Open Space
@@ -686,7 +725,23 @@
   link: http://www.parks.ca.gov/?page_id=22881
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.83683544715083,-122.3134730061372
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Emeryville Crescent SMR is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-lake-del-valle-sra
   name: Lake Del Valle SRA
   category: Parks & Open Space
@@ -698,7 +753,23 @@
   link: http://www.parks.ca.gov/?page_id=537
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.58420498000815,-121.6890130826805
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Lake Del Valle State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-mclaughlin-eastshore-sp-ss
   name: McLaughlin Eastshore SP SS
   category: Parks & Open Space
@@ -710,7 +781,23 @@
   link: http://www.parks.ca.gov/?page_id=520
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.86423286765766,-122.3109626272448
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: McLaughlin Eastshore State Park SS is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-robert-w-crown-memorial-sb
   name: Robert W Crown Memorial SB
   category: Parks & Open Space
@@ -722,7 +809,23 @@
   link: http://www.parks.ca.gov/?page_id=526
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.76617795332411,-122.2716871924683
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Robert W Crown Memorial State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-franks-tract-sra
   name: Franks Tract SRA
   category: Parks & Open Space
@@ -734,7 +837,23 @@
   link: http://www.parks.ca.gov/?page_id=490
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.04218743384816,-121.6322692667055
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Franks Tract State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-marsh-creek-state-park
   name: Marsh Creek State Park
   category: Parks & Open Space
@@ -746,7 +865,23 @@
   link: http://www.parks.ca.gov/?page_id=525
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.89174041547541,-121.7207170230673
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Marsh Creek State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-mount-diablo-sp
   name: Mount Diablo SP
   category: Parks & Open Space
@@ -758,7 +893,23 @@
   link: http://www.parks.ca.gov/?page_id=517
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.85203098602892,-121.9254891500108
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Mount Diablo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-angel-island-sp
   name: Angel Island SP
   category: Parks & Open Space
@@ -770,7 +921,23 @@
   link: http://www.parks.ca.gov/?page_id=468
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.87286113242551,-122.4561638717421
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Angel Island State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-china-camp-sp
   name: China Camp SP
   category: Parks & Open Space
@@ -782,7 +949,23 @@
   link: http://www.parks.ca.gov/?page_id=466
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.00171495884563,-122.4626132481711
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: China Camp State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-marconi-conference-center-shp
   name: Marconi Conference Center SHP
   category: Parks & Open Space
@@ -794,7 +977,23 @@
   link: http://www.parks.ca.gov/?page_id=467
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.1436029389256,-122.8766323266951
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Marconi Conference Center State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-mount-tamalpais-sp
   name: Mount Tamalpais SP
   category: Parks & Open Space
@@ -806,7 +1005,23 @@
   link: http://www.parks.ca.gov/?page_id=471
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.92737194392879,-122.5799742566243
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Mount Tamalpais State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-olompali-shp
   name: Olompali SHP
   category: Parks & Open Space
@@ -818,7 +1033,23 @@
   link: http://www.parks.ca.gov/?page_id=465
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.1513189627345,-122.5703992819958
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Olompali State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-samuel-p-taylor-sp
   name: Samuel P Taylor SP
   category: Parks & Open Space
@@ -830,7 +1061,23 @@
   link: http://www.parks.ca.gov/?page_id=469
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.01959494091057,-122.7295612901378
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Samuel P Taylor State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-tomales-bay-sp
   name: Tomales Bay SP
   category: Parks & Open Space
@@ -842,7 +1089,23 @@
   link: http://www.parks.ca.gov/?page_id=470
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.12230626618275,-122.8968308982478
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Tomales Bay State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-bale-grist-mill-shp
   name: Bale Grist Mill SHP
   category: Parks & Open Space
@@ -854,7 +1117,23 @@
   link: http://www.parks.ca.gov/?page_id=482
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.54000499865661,-122.5110133195477
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Bale Grist Mill State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-bothe-napa-valley-sp
   name: Bothe Napa Valley SP
   category: Parks & Open Space
@@ -866,7 +1145,23 @@
   link: http://www.parks.ca.gov/?page_id=477
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.55322303919026,-122.5257172549352
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Bothe Napa Valley State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-robert-louis-stevenson-sp
   name: Robert Louis Stevenson SP
   category: Parks & Open Space
@@ -878,7 +1173,23 @@
   link: http://www.parks.ca.gov/?page_id=472
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.65768000193324,-122.5951613472942
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Robert Louis Stevenson State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-candlestick-point-sra
   name: Candlestick Point SRA
   category: Parks & Open Space
@@ -890,7 +1201,23 @@
   link: http://www.parks.ca.gov/?page_id=519
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.7126749404489,-122.3813432016093
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Candlestick Point State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-ano-nuevo-sp
   name: Ano Nuevo SP
   category: Parks & Open Space
@@ -902,7 +1229,23 @@
   link: http://www.parks.ca.gov/?page_id=523
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.12403889758433,-122.3084691250016
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Ano Nuevo State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-bean-hollow-sb
   name: Bean Hollow SB
   category: Parks & Open Space
@@ -914,7 +1257,23 @@
   link: http://www.parks.ca.gov/?page_id=527
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.22574989846692,-122.4088521515531
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Bean Hollow State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-burleigh-h-murray-ranch-prop
   name: Burleigh H Murray Ranch Prop
   category: Parks & Open Space
@@ -926,7 +1285,23 @@
   link: http://www.parks.ca.gov/?page_id=535
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.44490491712637,-122.4030131749699
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Burleigh H Murray Ranch Prop is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-butano-sp
   name: Butano SP
   category: Parks & Open Space
@@ -938,7 +1313,23 @@
   link: http://www.parks.ca.gov/?page_id=536
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.20168490186801,-122.3400331384099
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Butano State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-gray-whale-cove-sb
   name: Gray Whale Cove SB
   category: Parks & Open Space
@@ -950,7 +1341,23 @@
   link: http://www.parks.ca.gov/?page_id=528
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.56424342071782,-122.5129724634356
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Gray Whale Cove State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-half-moon-bay-sb
   name: Half Moon Bay SB
   category: Parks & Open Space
@@ -962,7 +1369,23 @@
   link: http://www.parks.ca.gov/?page_id=531
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.46650491594417,-122.4450131838334
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Half Moon Bay State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-montara-sb
   name: Montara SB
   category: Parks & Open Space
@@ -974,7 +1397,23 @@
   link: http://www.parks.ca.gov/?page_id=532
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.54549125412203,-122.5143703920364
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Montara State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-pacifica-sb
   name: Pacifica SB
   category: Parks & Open Space
@@ -986,7 +1425,23 @@
   link: http://www.parks.ca.gov/?page_id=524
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.59727851582696,-122.5027852258556
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Pacifica State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-pescadero-sb
   name: Pescadero SB
   category: Parks & Open Space
@@ -998,7 +1453,23 @@
   link: http://www.parks.ca.gov/?page_id=522
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.27395490174883,-122.409177156633
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Pescadero State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-pigeon-point-light-station-shp
   name: Pigeon Point Light Station SHP
   category: Parks & Open Space
@@ -1010,7 +1481,23 @@
   link: http://www.parks.ca.gov/?page_id=533
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.18259595793476,-122.3935710503921
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Pigeon Point Light Station State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-point-montara-light-station
   name: Point Montara Light Station
   category: Parks & Open Space
@@ -1022,7 +1509,23 @@
   link: http://www.norcalhostels.org/montara/
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.53616069948441,-122.5193189441369
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Point Montara Light Station is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-pomponio-sb
   name: Pomponio SB
   category: Parks & Open Space
@@ -1034,7 +1537,23 @@
   link: http://www.parks.ca.gov/?page_id=521
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.29981890473393,-122.4052291588757
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Pomponio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-portola-redwoods-sp
   name: Portola Redwoods SP
   category: Parks & Open Space
@@ -1046,7 +1565,23 @@
   link: http://www.parks.ca.gov/?page_id=539
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.26237291554725,-122.2123671259378
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Portola Redwoods State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-san-bruno-mountain-sp
   name: San Bruno Mountain SP
   category: Parks & Open Space
@@ -1058,7 +1593,23 @@
   link: http://www.parks.ca.gov/?page_id=518
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.69649004640326,-122.4347381296461
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: San Bruno Mountain State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-san-gregorio-sb
   name: San Gregorio SB
   category: Parks & Open Space
@@ -1070,7 +1621,23 @@
   link: http://www.parks.ca.gov/?page_id=529
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.32315790701678,-122.4012701603493
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: San Gregorio State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-thornton-sb
   name: Thornton SB
   category: Parks & Open Space
@@ -1082,7 +1649,23 @@
   link: http://www.parks.ca.gov/?page_id=530
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.69776794764287,-122.4970538791215
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Thornton State Beach is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-henry-w-coe-sp
   name: Henry W Coe SP
   category: Parks & Open Space
@@ -1094,7 +1677,23 @@
   link: http://www.parks.ca.gov/?page_id=561
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.18800495571056,-121.5480130171201
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Henry W Coe State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-martial-cottle-park-sra
   name: Martial Cottle Park SRA
   category: Parks & Open Space
@@ -1106,7 +1705,23 @@
   link: http://www.parks.ca.gov/?page_id=23450
   link_text: Visit Website
   map_link: https://maps.google.com/?q=37.25956366350673,-121.8371215089993
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Martial Cottle Park State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-benicia-capitol-shp
   name: Benicia Capitol SHP
   category: Parks & Open Space
@@ -1118,7 +1733,23 @@
   link: http://www.parks.ca.gov/?page_id=475
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.0501244253629,-122.158862867541
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Benicia Capitol State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-benicia-sra
   name: Benicia SRA
   category: Parks & Open Space
@@ -1130,7 +1761,23 @@
   link: http://www.parks.ca.gov/?page_id=476
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.07809498427198,-122.1932732171815
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Benicia State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-armstrong-redwoods-snr
   name: Armstrong Redwoods SNR
   category: Parks & Open Space
@@ -1142,7 +1789,23 @@
   link: http://www.parks.ca.gov/?page_id=450
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.53200496050503,-123.0030133925781
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Armstrong Redwoods State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-austin-creek-sra
   name: Austin Creek SRA
   category: Parks & Open Space
@@ -1154,7 +1817,23 @@
   link: http://www.parks.ca.gov/?page_id=452
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.5656049615644,-123.0110133977313
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Austin Creek State Recreation Area is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-fort-ross-shp
   name: Fort Ross SHP
   category: Parks & Open Space
@@ -1166,7 +1845,23 @@
   link: http://www.parks.ca.gov/?page_id=449
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.51760494045567,-123.2470134262329
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Fort Ross State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-jack-london-shp
   name: Jack London SHP
   category: Parks & Open Space
@@ -1178,7 +1873,23 @@
   link: http://www.parks.ca.gov/?page_id=478
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.35670498105038,-122.544013302514
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Jack London State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-kruse-rhododendron-snr
   name: Kruse Rhododendron SNR
   category: Parks & Open Space
@@ -1190,7 +1901,23 @@
   link: http://www.parks.ca.gov/?page_id=448
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.59410493876351,-123.3450134505078
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Kruse Rhododendron State Natural Reserve is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-petaluma-adobe-shp
   name: Petaluma Adobe SHP
   category: Parks & Open Space
@@ -1202,7 +1929,23 @@
   link: http://www.parks.ca.gov/?page_id=474
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.25449031951841,-122.5826451420001
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Petaluma Adobe State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-salt-point-sp
   name: Salt Point SP
   category: Parks & Open Space
@@ -1214,7 +1957,23 @@
   link: http://www.parks.ca.gov/?page_id=453
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.56710593730674,-123.332710445075
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Salt Point State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-sonoma-coast-sp
   name: Sonoma Coast SP
   category: Parks & Open Space
@@ -1226,7 +1985,23 @@
   link: http://www.parks.ca.gov/?page_id=451
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.43090494412414,-123.1090133950566
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Sonoma Coast State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-sonoma-shp
   name: Sonoma SHP
   category: Parks & Open Space
@@ -1238,7 +2013,23 @@
   link: http://www.parks.ca.gov/?page_id=479
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.29429753035416,-122.4609826891494
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Sonoma State Historic Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-sugarloaf-ridge-sp
   name: Sugarloaf Ridge SP
   category: Parks & Open Space
@@ -1250,7 +2041,23 @@
   link: http://www.parks.ca.gov/?page_id=481
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.43786799040365,-122.5143303083101
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Sugarloaf Ridge State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: ca-sp-trione-annadel-sp
   name: Trione Annadel SP
   category: Parks & Open Space
@@ -1262,7 +2069,23 @@
   link: http://www.parks.ca.gov/?page_id=480
   link_text: Visit Website
   map_link: https://maps.google.com/?q=38.4519279820972,-122.6334753277984
-  verified_date: '2026-01-02'
+  verified_date: "2026-01-02"
+  description: Trione Annadel State Park is part of California's state park system, offering outdoor recreation, natural beauty, and opportunities to connect with California's landscapes and heritage.
+  what_they_offer: |-
+    - Day use access for hiking, picnicking, and nature viewing
+    - Camping facilities (reservations at ReserveCalifornia.com)
+    - Ranger-led programs and interpretive activities
+    - Scenic trails and wildlife viewing opportunities
+  how_to_get_it: |-
+    Most California State Parks require a day use or camping fee:
+    - Day use: $8-$15 per vehicle (varies by park)
+    - Camping: $25-$65 per night (varies by campsite type)
+
+    **Save with park passes:**
+    - **California Adventure Pass**: Free day use for 4th graders
+    - **Disabled Discount Pass**: 50% off day use and camping
+    - **Distinguished Veteran Pass**: Free day use for eligible veterans
+    - **Golden Bear Pass**: Free day use for income-eligible Californians
 - id: nps-alca
   name: Alcatraz Island
   category: Parks & Open Space
@@ -1276,7 +2099,23 @@
   map_link: https://maps.google.com/?q=37.82676234,-122.4230206
   fee_info: Ferry ticket required ($47.95+ adults)
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Alcatraz Island, home to the infamous former federal penitentiary. Take a ferry to explore the cellhouse, gardens, and learn about the island's rich history from Civil War fort to Native American occupation.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-euon
   name: Eugene O'Neill National Historic Site
   category: Parks & Open Space
@@ -1290,7 +2129,23 @@
   map_link: https://maps.google.com/?q=37.82604456,-122.0271566
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Eugene O'Neill National Historic Site preserves Tao House, where the Nobel Prize-winning playwright wrote his most celebrated works including Long Day's Journey Into Night and The Iceman Cometh.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-fopo
   name: Fort Point National Historic Site
   category: Parks & Open Space
@@ -1304,7 +2159,23 @@
   map_link: https://maps.google.com/?q=37.80837439,-122.473747
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Fort Point National Historic Site, a pre-Civil War military fort located beneath the Golden Gate Bridge. Explore the brick fortress and learn about the fort's role in San Francisco's defense.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-goga
   name: Golden Gate National Recreation Area
   category: Parks & Open Space
@@ -1318,7 +2189,23 @@
   map_link: https://maps.google.com/?q=37.85982543,-122.6007386
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Golden Gate National Recreation Area spans over 80,000 acres of coastal parkland including beaches, historic military sites, and iconic views of the Golden Gate Bridge and San Francisco Bay.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-jomu
   name: John Muir National Historic Site
   category: Parks & Open Space
@@ -1332,7 +2219,23 @@
   map_link: https://maps.google.com/?q=37.9828422,-122.1326097
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: John Muir National Historic Site preserves the home of famed naturalist and conservationist John Muir, "Father of the National Parks." Tour his Victorian home and the orchards he tended.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-muwo
   name: Muir Woods National Monument
   category: Parks & Open Space
@@ -1346,7 +2249,23 @@
   map_link: https://maps.google.com/?q=37.89658027,-122.5808047
   fee_info: $15 per person
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Muir Woods National Monument protects old-growth coast redwood trees, some over 1,000 years old. Walk among these ancient giants in one of the last remaining old-growth redwood forests.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-pore
   name: Point Reyes National Seashore
   category: Parks & Open Space
@@ -1360,7 +2279,23 @@
   map_link: https://maps.google.com/?q=38.05511241,-122.8797804
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Point Reyes National Seashore features dramatic coastal cliffs, pristine beaches, and diverse wildlife including tule elk. Explore the historic lighthouse and Point Reyes Station.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-poch
   name: Port Chicago Naval Magazine National Memorial
   category: Parks & Open Space
@@ -1374,7 +2309,23 @@
   map_link: https://maps.google.com/?q=38.05685472,-122.0301603
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Port Chicago Naval Magazine National Memorial commemorates the 1944 explosion that killed 320 men and the subsequent mutiny trial of African American sailors who refused unsafe working conditions.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-prsf
   name: Presidio of San Francisco
   category: Parks & Open Space
@@ -1388,7 +2339,23 @@
   map_link: https://maps.google.com/?q=37.797,-122.4671
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Presidio of San Francisco, a former military post turned national park, offers trails, historic architecture, art installations, and stunning views of the Golden Gate Bridge and bay.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-rori
   name: Rosie the Riveter WWII Home Front National Historical Park
   category: Parks & Open Space
@@ -1402,7 +2369,23 @@
   map_link: https://maps.google.com/?q=37.90999027,-122.360156
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Rosie the Riveter/WWII Home Front National Historical Park commemorates the contributions of American civilians on the World War II home front, especially women who worked in wartime industries.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: nps-safr
   name: San Francisco Maritime National Historical Park
   category: Parks & Open Space
@@ -1416,512 +2399,23 @@
   map_link: https://maps.google.com/?q=37.81005871,-122.4244415
   fee_info: Free admission
   verified_by: National Park Service
-  verified_date: '2026-01-03'
-- id: smc-wifi-brisbane-community-pool
-  name: Brisbane Community Pool
-  category: Recreation
-  area: San Mateo County
-  city: Brisbane
-  groups:
-    - everyone
-  address: 2 Solano St, Brisbane, CA 94005
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-colma-community-center
-  name: Colma Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Colma
-  groups:
-    - everyone
-  address: 1520 Hillside Boulevard, Colma, CA 94014
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-bayshore-community-center
-  name: Bayshore Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 450 Martin Street, Daly City, CA 94014
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-broadmoor-community-center
-  name: Broadmoor Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 501 87th Street, Daly City, CA 94015
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-daly-city-community-services-center
-  name: Daly City Community Services Center
-  category: Technology
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 350 90th Street, Daly City, CA 94015
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-doelger-senior-center
-  name: Doelger Senior Center
-  category: Recreation
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 101 Lake Merced Blvd, Daly City, CA 94015
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-health-daly-city-youth-clinic
-  name: Health - Daly City Youth Clinic
-  category: Health
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 2778 Junipero Serra Blvd, Daly City, CA 94015
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-lincoln-community-center
-  name: Lincoln Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 901 Brunswick Street, Daly City, CA 94104
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-pacelli-event-center
-  name: Pacelli Event Center
-  category: Technology
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 145 Lake Merced Blvd, Daly City, CA 94015
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-war-memorial-community-center
-  name: War Memorial Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Daly City
-  groups:
-    - everyone
-  address: 6655 Mission St, Daly City, CA 94014
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-david-e-lewis-reentry-center
-  name: David E. Lewis Reentry Center
-  category: Technology
-  area: San Mateo County
-  city: East Palo Alto
-  groups:
-    - everyone
-  address: 2277 University Avenue, East Palo Alto, CA 94303
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-wic-epa
-  name: WIC - EPA
-  category: Health
-  area: San Mateo County
-  city: East Palo Alto
-  groups:
-    - everyone
-  address: 2160 Euclid Ave, East Palo Alto, CA 94303
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-coastside-hope
-  name: Coastside Hope
-  category: Technology
-  area: San Mateo County
-  city: El Granada
-  groups:
-    - everyone
-  address: 99 Avenue Alhambra, El Granada, CA 94018
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-health-coastside-clinic
-  name: Health - Coastside Clinic
-  category: Health
-  area: San Mateo County
-  city: Half Moon Bay
-  groups:
-    - everyone
-  address: 225 Cabrillo Hwy S, Half Moon Bay, CA 94019
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-cuesta-la-honda-recreation-center
-  name: Cuesta La Honda Recreation Center
-  category: Recreation
-  area: San Mateo County
-  city: La Honda
-  groups:
-    - everyone
-  address: 120 Scenic Drive, La Honda, CA 94020
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-puente-de-la-costa-sur-la-honda
-  name: Puente de la Costa Sur, La Honda
-  category: Technology
-  area: San Mateo County
-  city: La Honda
-  groups:
-    - everyone
-  address: 8865 La Honda Road, La Honda, CA 94020
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-memorial-park
-  name: Memorial Park
-  category: Recreation
-  area: San Mateo County
-  city: Loma Mar
-  groups:
-    - everyone
-  address: 9500 Pescadero Creek Rd, Loma Mar, CA 94021
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-fitzgerald-marine-reserve
-  name: Fitzgerald Marine Reserve
-  category: Technology
-  area: San Mateo County
-  city: Moss Beach
-  groups:
-    - everyone
-  address: 200 Nevada Avenue, Moss Beach, CA 94038
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-pillar-ridge-community-center
-  name: Pillar Ridge Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Moss Beach
-  groups:
-    - everyone
-  address: 164 Culebra Street, Moss Beach, CA 94038
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-san-pedro-valley-park
-  name: San Pedro Valley Park
-  category: Recreation
-  area: San Mateo County
-  city: Pacifica
-  groups:
-    - everyone
-  address: 600 Oddstadd Blvd, Pacifica, CA 94044
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-puente-de-la-costa-sur-pescadero
-  name: Puente de la Costa Sur, Pescadero
-  category: Technology
-  area: San Mateo County
-  city: Pescadero
-  groups:
-    - everyone
-  address: 620 North Avenue, Pescadero, CA 94060
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-portola-community-center
-  name: Portola Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Portola Valley
-  groups:
-    - everyone
-  address: 765 Portola Valley Rd, Portola Valley, CA 94028
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-fair-oaks-community-center
-  name: Fair Oaks Community Center
-  category: Recreation
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 2600 Middlefield Road, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-health-sequoia-teen-wellness-center
-  name: Health - Sequoia Teen Wellness Center
-  category: Health
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 200 James Ave, Redwood City, CA 94062
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-motorpool
-  name: MotorPool
-  category: Recreation
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 501 Winslow St, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-schc-fair-oaks-clinic
-  name: SCHC - Fair Oaks Clinic
-  category: Health
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 2710 Middlefield Rd, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-siena-youth-center
-  name: Siena Youth Center
-  category: Recreation
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 2625 Marlborough Avenue, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-st-francis-center
-  name: St Francis Center
-  category: Technology
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 151 Buckingham Ave, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-star-vista-daybreak-shelter
-  name: Star Vista/Daybreak Shelter
-  category: Technology
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 639 Douglas Avenue, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-wic-rwc
-  name: WIC - RWC
-  category: Health
-  area: San Mateo County
-  city: Redwood City
-  groups:
-    - everyone
-  address: 2342 El Camino Real, Redwood City, CA 94063
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-san-carlos-airport
-  name: San Carlos Airport
-  category: Technology
-  area: San Mateo County
-  city: San Carlos
-  groups:
-    - everyone
-  address: 620 Airport Way, San Carlos, CA 94070
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-coyote-point-marina
-  name: Coyote Point Marina
-  category: Recreation
-  area: San Mateo County
-  city: San Mateo
-  groups:
-    - everyone
-  address: 1201 E Poplar Ave, San Mateo, CA 94401
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-smmc-clinics
-  name: SMMC - Clinics
-  category: Health
-  area: San Mateo County
-  city: San Mateo
-  groups:
-    - everyone
-  address: 222 W. 39th Avenue San Mateo, San Mateo, CA 94403
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-wic-san-mateo
-  name: WIC - San Mateo
-  category: Health
-  area: San Mateo County
-  city: San Mateo
-  groups:
-    - everyone
-  address: 477 9th Ave, San Mateo, CA 94402
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-health-ssf-clinic
-  name: Health - SSF Clinic
-  category: Health
-  area: San Mateo County
-  city: South San Francisco
-  groups:
-    - everyone
-  address: 306 S Spruce Ave, South San Francisco, CA 94080
-  amenities:
-    - Free WiFi
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
-- id: smc-wifi-ymca-community-resource-center
-  name: YMCA Community Resource Center
-  category: Technology
-  area: San Mateo County
-  city: South San Francisco
-  groups:
-    - everyone
-  address: 1486 Huntington Ave, South San Francisco, CA 94080
-  amenities:
-    - name: 🛜 Free WiFi
-      link: https://www.smcgov.org/smc-public-wifi-project
-  link: https://www.smcgov.org/smc-public-wifi-project
-  link_text: Learn More
-  verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: San Francisco Maritime National Historical Park preserves a fleet of historic vessels and the maritime heritage of the Pacific Coast. Visit Hyde Street Pier to board historic ships.
+  what_they_offer: |-
+    - Free or low-cost access to trails, beaches, and historic sites
+    - Ranger-led walks, talks, and educational programs
+    - Visitor centers with exhibits and park information
+    - Junior Ranger programs for children
+  how_to_get_it: |-
+    Most National Park Service sites in the Bay Area offer free admission. Some sites have entrance fees:
+    - Standard entrance fee: $15-$35 per vehicle (where applicable)
+    - Alcatraz ferry tickets sold separately
+
+    **Save with park passes:**
+    - **America the Beautiful Pass**: $80/year for unlimited access to 2,000+ federal recreation areas
+    - **Every Kid Outdoors Pass**: Free for 4th graders and their families
+    - **Access Pass**: Free lifetime pass for visitors with permanent disabilities
+    - **Senior Pass**: $80 lifetime or $20/year for ages 62+
 - id: brisbane-brisbane-community-pool
   name: Brisbane Community Pool
   sync_source: smc-wifi
@@ -1936,7 +2430,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6851947,-122.4059267
+  description: Public swimming pool offering recreational swimming, lap lanes, and swim programs for residents of all ages.
 - id: colma-colma-community-center
   name: Colma Community Center
   sync_source: smc-wifi
@@ -1951,7 +2447,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6818856,-122.4560704
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: daly-city-bayshore-community-center
   name: Bayshore Community Center
   sync_source: smc-wifi
@@ -1966,7 +2464,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.7022201,-122.4196574
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: daly-city-broadmoor-community-center
   name: Broadmoor Community Center
   sync_source: smc-wifi
@@ -1981,7 +2481,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6938484,-122.4864797
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: daly-city-daly-city-community-services-center
   name: Daly City Community Services Center
   sync_source: smc-wifi
@@ -1996,7 +2498,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6911884,-122.473362
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: daly-city-doelger-senior-center
   name: Doelger Senior Center
   sync_source: smc-wifi
@@ -2011,7 +2515,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.7044364,-122.4857777
+  description: Resource center providing programs, social activities, and services specifically designed for older adults.
 - id: daly-city-health-daly-city-youth-clinic
   name: Health - Daly City Youth Clinic
   sync_source: smc-wifi
@@ -2026,7 +2532,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6906253,-122.4711283
+  description: Health clinic providing medical services focused on adolescent health and wellness.
 - id: daly-city-lincoln-community-center
   name: Lincoln Community Center
   sync_source: smc-wifi
@@ -2041,7 +2549,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.707466,-122.452115
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: daly-city-pacelli-event-center
   name: Pacelli Event Center
   sync_source: smc-wifi
@@ -2056,7 +2566,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.7031628,-122.485715
+  description: Venue available for community events, meetings, and recreational activities.
 - id: daly-city-war-memorial-community-center
   name: War Memorial Community Center
   sync_source: smc-wifi
@@ -2071,7 +2583,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.7024484,-122.4632763
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: east-palo-alto-david-e-lewis-reentry-center
   name: David E. Lewis Reentry Center
   sync_source: smc-wifi
@@ -2087,7 +2601,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4678219,-122.1415815
+  description: Support center providing resources and services for individuals transitioning back into the community.
 - id: east-palo-alto-wic-epa
   name: WIC - EPA
   sync_source: smc-wifi
@@ -2104,7 +2620,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4651494,-122.143454
+  description: Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.
 - id: el-granada-coastside-hope
   name: Coastside Hope
   sync_source: smc-wifi
@@ -2120,7 +2638,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.5058988,-122.4816254
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: half-moon-bay-health-coastside-clinic
   name: Health - Coastside Clinic
   sync_source: smc-wifi
@@ -2135,7 +2655,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.465896,-122.4334399
+  description: Community health clinic offering medical services and wellness programs.
 - id: la-honda-cuesta-la-honda-recreation-center
   name: Cuesta La Honda Recreation Center
   sync_source: smc-wifi
@@ -2150,7 +2672,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.3191123,-122.2682761
+  description: Recreational facility offering sports, fitness classes, and community programs.
 - id: la-honda-puente-de-la-costa-sur-la-honda
   name: Puente de la Costa Sur, La Honda
   sync_source: smc-wifi
@@ -2165,7 +2689,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.3201355,-122.2747076
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: loma-mar-memorial-park
   name: Memorial Park
   sync_source: smc-wifi
@@ -2180,7 +2706,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.2775403,-122.2934134
+  description: Public park offering trails, picnic areas, and outdoor recreation opportunities.
 - id: moss-beach-fitzgerald-marine-reserve
   name: Fitzgerald Marine Reserve
   sync_source: smc-wifi
@@ -2195,7 +2723,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.524155,-122.516552
+  description: Protected coastal area featuring tide pools, wildlife viewing, and educational programs.
 - id: moss-beach-pillar-ridge-community-center
   name: Pillar Ridge Community Center
   sync_source: smc-wifi
@@ -2210,7 +2740,8 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: pacifica-san-pedro-valley-park
   name: San Pedro Valley Park
   sync_source: smc-wifi
@@ -2225,7 +2756,8 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Public park offering trails, picnic areas, and outdoor recreation opportunities.
 - id: pescadero-puente-de-la-costa-sur-pescadero
   name: Puente de la Costa Sur, Pescadero
   sync_source: smc-wifi
@@ -2240,7 +2772,8 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: portola-valley-portola-community-center
   name: Portola Community Center
   sync_source: smc-wifi
@@ -2255,7 +2788,8 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: redwood-city-fair-oaks-community-center
   name: Fair Oaks Community Center
   sync_source: smc-wifi
@@ -2270,7 +2804,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.477871,-122.213323
+  description: Multi-purpose community facility offering meeting rooms, recreational programs, and public services for local residents.
 - id: redwood-city-health-sequoia-teen-wellness-center
   name: Health - Sequoia Teen Wellness Center
   sync_source: smc-wifi
@@ -2286,7 +2822,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.483,-122.2352813
+  description: Community health clinic offering medical services and wellness programs.
 - id: redwood-city-motorpool
   name: MotorPool
   sync_source: smc-wifi
@@ -2301,7 +2839,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4890185,-122.2311606
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: redwood-city-schc-fair-oaks-clinic
   name: SCHC - Fair Oaks Clinic
   sync_source: smc-wifi
@@ -2316,7 +2856,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.479721,-122.216232
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: redwood-city-siena-youth-center
   name: Siena Youth Center
   sync_source: smc-wifi
@@ -2332,7 +2874,8 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: redwood-city-st-francis-center
   name: St Francis Center
   sync_source: smc-wifi
@@ -2347,7 +2890,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4735714,-122.2143155
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: redwood-city-star-vista-daybreak-shelter
   name: Star Vista/Daybreak Shelter
   sync_source: smc-wifi
@@ -2364,7 +2909,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4809234,-122.2108924
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: redwood-city-wic-rwc
   name: WIC - RWC
   sync_source: smc-wifi
@@ -2381,7 +2928,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.4752005,-122.2197996
+  description: Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.
 - id: san-carlos-san-carlos-airport
   name: San Carlos Airport
   sync_source: smc-wifi
@@ -2396,7 +2945,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.514865,-122.2516496
+  description: General aviation airport serving private and business aircraft.
 - id: san-mateo-coyote-point-marina
   name: Coyote Point Marina
   sync_source: smc-wifi
@@ -2411,7 +2962,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.580653,-122.324034
+  description: Recreational marina with boat slips, launch facilities, and waterfront amenities.
 - id: san-mateo-smmc-clinics
   name: SMMC - Clinics
   sync_source: smc-wifi
@@ -2426,7 +2979,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.5309039,-122.3002086
+  description: Public facility with free WiFi access provided through San Mateo County's public WiFi network.
 - id: san-mateo-wic-san-mateo
   name: WIC - San Mateo
   sync_source: smc-wifi
@@ -2443,7 +2998,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.5622691,-122.3174136
+  description: Women, Infants, and Children (WIC) nutrition program office providing food assistance and health education.
 - id: south-san-francisco-health-ssf-clinic
   name: Health - SSF Clinic
   sync_source: smc-wifi
@@ -2458,7 +3015,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6459105,-122.4218167
+  description: Community health clinic offering medical services and wellness programs.
 - id: south-san-francisco-ymca-community-resource-center
   name: YMCA Community Resource Center
   sync_source: smc-wifi
@@ -2473,7 +3032,9 @@
     - name: 🛜 Free WiFi
       link: https://www.smcgov.org/smc-public-wifi-project
   verified_by: San Mateo County
-  verified_date: '2026-01-03'
+  verified_date: "2026-01-03"
+  map_link: https://www.google.com/maps?q=37.6446852,-122.4220483
+  description: YMCA facility offering fitness programs, youth activities, and community services.
 - id: imls-aircraft-carrier-hornet-foundation
   name: Aircraft Carrier Hornet Foundation
   category: Museums
@@ -2482,11 +3043,11 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602451'
+  imls_id: "8400602451"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 707 W Hornet Ave
   link: https://uss-hornet.org/
-  map_link: https://www.google.com/maps/search/?api=1&query=707%20W%20Hornet%20Ave%2C%20Alameda%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7727402,-122.3028775
   phone: (510) 521-8448
 - id: imls-alexander-f-morrison-planetarium
   name: Alexander F. Morrison Planetarium
@@ -2496,10 +3057,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500243'
+  imls_id: "8409500243"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 55 Music Concourse Drive
-  map_link: https://www.google.com/maps/search/?api=1&query=55%20Music%20Concourse%20Drive%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7698266,-122.4660927
   phone: (415) 750-7127
 - id: imls-american-bookbinders-museum
   name: American Bookbinders Museum
@@ -2509,10 +3070,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601022'
+  imls_id: "8400601022"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 856 Folsom St
-  map_link: https://www.google.com/maps/search/?api=1&query=856%20Folsom%20St%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7810891,-122.4024901
   phone: (415) 824-9754
 - id: imls-anderson-art-collection
   name: Anderson Art Collection
@@ -2522,7 +3083,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600569'
+  imls_id: "8400600569"
   description: Art museum featuring collections and exhibitions.
   address: 2440 Sand Hill Rd
   map_link: https://www.google.com/maps/search/?api=1&query=2440%20Sand%20Hill%20Rd%2C%20Menlo%20Park%2C%20CA
@@ -2535,7 +3096,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601764'
+  imls_id: "8400601764"
   description: Museum with diverse collections and exhibits.
   address: 1337 4th St
   map_link: https://www.google.com/maps/search/?api=1&query=1337%204th%20St%2C%20San%20Rafael%2C%20CA
@@ -2548,9 +3109,9 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601693'
+  imls_id: "8400601693"
   description: Museum with diverse collections and exhibits.
-  address: '991 Tyler Street #114'
+  address: "991 Tyler Street #114"
   map_link: https://www.google.com/maps/search/?api=1&query=991%20Tyler%20Street%20%23114%2C%20Benicia%2C%20CA
   phone: (707) 747-0131
 - id: imls-bolinas-museum
@@ -2561,10 +3122,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601651'
+  imls_id: "8400601651"
   description: Museum with diverse collections and exhibits.
   address: 48 Wharf Rd
-  map_link: https://www.google.com/maps/search/?api=1&query=48%20Wharf%20Rd%2C%20Bolinas%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9100883,-122.6848127
   phone: (415) 868-0330
 - id: imls-c-e-smith-museum-of-anthropology
   name: C. E. Smith Museum of Anthropology
@@ -2574,10 +3135,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600546'
+  imls_id: "8400600546"
   description: Museum with diverse collections and exhibits.
   address: 25800 Carlos Bee Blvd
-  map_link: https://www.google.com/maps/search/?api=1&query=25800%20Carlos%20Bee%20Blvd%2C%20Hayward%2C%20CA
+  map_link: https://www.google.com/maps?q=37.6610808,-122.0719959
   phone: (510) 885-3104
 - id: imls-charles-m-schulz-museum-and-research-center
   name: Charles M Schulz Museum and Research Center
@@ -2587,11 +3148,11 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601783'
+  imls_id: "8400601783"
   description: Museum dedicated to the life and art of Peanuts creator Charles M. Schulz.
   address: 2301 Hardies Ln
   link: https://schulzmuseum.org/
-  map_link: https://www.google.com/maps/search/?api=1&query=2301%20Hardies%20Ln%2C%20Santa%20Rosa%2C%20CA
+  map_link: https://www.google.com/maps?q=38.4602345,-122.735717
   phone: (707) 579-4452
 - id: imls-children-s-museum-of-sonoma-county
   name: Children's Museum of Sonoma County
@@ -2601,7 +3162,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600771'
+  imls_id: "8400600771"
   description: Interactive museum designed for children and families with hands-on exhibits.
   address: Po Box 12323
   map_link: https://www.google.com/maps/search/?api=1&query=Po%20Box%2012323%2C%20Santa%20Rosa%2C%20CA
@@ -2614,10 +3175,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602492'
+  imls_id: "8400602492"
   description: Art museum featuring collections and exhibitions.
   address: 5200 Carneros Hwy
-  map_link: https://www.google.com/maps/search/?api=1&query=5200%20Carneros%20Hwy%2C%20Napa%2C%20CA
+  map_link: https://www.google.com/maps?q=38.256474,-122.350731
   phone: (707) 226-5991
 - id: imls-dutra-museum-foundation
   name: Dutra Museum Foundation
@@ -2627,7 +3188,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601034'
+  imls_id: "8400601034"
   description: Museum featuring natural history exhibits including geology, biology, and paleontology.
   address: 345 St Gertrude Avenue
   map_link: https://www.google.com/maps/search/?api=1&query=345%20St%20Gertrude%20Avenue%2C%20Rio%20Vista%2C%20CA
@@ -2640,10 +3201,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601079'
+  imls_id: "8400601079"
   description: Art museum featuring collections and exhibitions.
   address: 5710 Hollis St
-  map_link: https://www.google.com/maps/search/?api=1&query=5710%20Hollis%20St%2C%20Emeryville%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8386014,-122.2888147
   phone: (510) 601-0520
 - id: imls-falkirk-cultural-center
   name: Falkirk Cultural Center
@@ -2653,7 +3214,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600508'
+  imls_id: "8400600508"
   description: Museum with diverse collections and exhibits.
   address: 1408 Mission Avenue at E Street
   map_link: https://www.google.com/maps/search/?api=1&query=1408%20Mission%20Avenue%20at%20E%20Street%2C%20San%20Rafael%2C%20CA
@@ -2666,7 +3227,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601675'
+  imls_id: "8400601675"
   description: Art museum featuring collections and exhibitions.
   address: 11101 Calfiornia 1
   map_link: https://www.google.com/maps/search/?api=1&query=11101%20Calfiornia%201%2C%20Point%20Reyes%20Station%2C%20CA
@@ -2679,10 +3240,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409502150'
+  imls_id: "8409502150"
   description: Botanical garden or nature center featuring plants and natural habitats.
   address: 1540 Marchbanks Drive
-  map_link: https://www.google.com/maps/search/?api=1&query=1540%20Marchbanks%20Drive%2C%20Walnut%20Creek%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9185343,-122.0445866
 - id: imls-golden-state-model-railroad-museum
   name: Golden State Model Railroad Museum
   category: Museums
@@ -2691,10 +3252,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601673'
+  imls_id: "8400601673"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 900 Dornan Dr
-  map_link: https://www.google.com/maps/search/?api=1&query=900%20Dornan%20Dr%2C%20Richmond%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9152529,-122.3835547
   phone: (510) 234-4884
 - id: imls-happy-hollow-park-zoo
   name: Happy Hollow Park & Zoo
@@ -2704,10 +3265,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500502'
+  imls_id: "8409500502"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 1300 Senter Road
-  map_link: https://www.google.com/maps/search/?api=1&query=1300%20Senter%20Road%2C%20San%20Jose%2C%20CA
+  map_link: https://www.google.com/maps?q=37.3258672,-121.8629016
   phone: (408) 794-6403
 - id: imls-headlands-center-for-the-arts
   name: Headlands Center for the Arts
@@ -2717,10 +3278,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602361'
+  imls_id: "8400602361"
   description: Museum with diverse collections and exhibits.
   address: 944 Simmonds Rd
-  map_link: https://www.google.com/maps/search/?api=1&query=944%20Simmonds%20Rd%2C%20Sausalito%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8296267,-122.5221461
   phone: (415) 331-2787
 - id: imls-heritage-museum-of-san-francisco
   name: Heritage Museum of San Francisco
@@ -2730,10 +3291,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602255'
+  imls_id: "8400602255"
   description: Museum with diverse collections and exhibits.
   address: 608 Commercial Street
-  map_link: https://www.google.com/maps/search/?api=1&query=608%20Commercial%20Street%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.794275,-122.4036121
   phone: (415) 399-1124
 - id: imls-historic-ships-memorial-at-pacific-square
   name: Historic Ships Memorial at Pacific Square
@@ -2743,7 +3304,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602125'
+  imls_id: "8400602125"
   description: Museum with diverse collections and exhibits.
   address: 375 G Street
   map_link: https://www.google.com/maps/search/?api=1&query=375%20G%20Street%2C%20Vallejo%2C%20CA
@@ -2756,7 +3317,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601631'
+  imls_id: "8400601631"
   description: Art museum featuring collections and exhibitions.
   address: 1025 Market Street
   map_link: https://www.google.com/maps/search/?api=1&query=1025%20Market%20Street%2C%20San%20Francisco%2C%20CA
@@ -2769,7 +3330,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601885'
+  imls_id: "8400601885"
   description: Museum with diverse collections and exhibits.
   address: 101 Howard St Ste 480
   map_link: https://www.google.com/maps/search/?api=1&query=101%20Howard%20St%20Ste%20480%2C%20San%20Francisco%2C%20CA
@@ -2782,10 +3343,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600344'
+  imls_id: "8400600344"
   description: Botanical garden or nature center featuring plants and natural habitats.
   address: 2400 London Ranch Road
-  map_link: https://www.google.com/maps/search/?api=1&query=2400%20London%20Ranch%20Road%2C%20Glen%20Ellen%2C%20CA
+  map_link: https://www.google.com/maps?q=38.354318,-122.546779
   phone: (707) 938-5216
 - id: imls-kimbookai-children-s-edutainment-museum
   name: Kimbookai Children's Edutainment Museum
@@ -2795,10 +3356,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601857'
+  imls_id: "8400601857"
   description: Interactive museum designed for children and families with hands-on exhibits.
   address: 52 Zacate Pl Fremont
-  map_link: https://www.google.com/maps/search/?api=1&query=52%20Zacate%20Pl%20Fremont%2C%20Fremont%2C%20CA
+  map_link: https://www.google.com/maps?q=37.5642479,-121.9595021
 - id: imls-lamorinda-arts-alliance
   name: Lamorinda Arts Alliance
   category: Museums
@@ -2807,10 +3368,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601812'
+  imls_id: "8400601812"
   description: Art museum featuring collections and exhibitions.
   address: 3506a Mount Diablo Boulevard
-  map_link: https://www.google.com/maps/search/?api=1&query=3506a%20Mount%20Diablo%20Boulevard%2C%20Lafayette%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8977312,-122.0585435
   phone: (925) 376-5407
 - id: imls-lawson-galleries
   name: Lawson Galleries
@@ -2820,10 +3381,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602395'
+  imls_id: "8400602395"
   description: Art museum featuring collections and exhibitions.
   address: 315 Potrero Ave
-  map_link: https://www.google.com/maps/search/?api=1&query=315%20Potrero%20Ave%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7655321,-122.4072793
   phone: (415) 703-4400
 - id: imls-livermore-heritage-guild
   name: Livermore Heritage Guild
@@ -2833,10 +3394,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600933'
+  imls_id: "8400600933"
   description: Museum with diverse collections and exhibits.
   address: 2155 Third Street
-  map_link: https://www.google.com/maps/search/?api=1&query=2155%20Third%20Street%2C%20Livermore%2C%20CA
+  map_link: https://www.google.com/maps?q=37.6796552,-121.7685757
   phone: (925) 449-9927
 - id: imls-marin-womens-hall-of-fame
   name: Marin Womens Hall of Fame
@@ -2846,10 +3407,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601699'
+  imls_id: "8400601699"
   description: Museum with diverse collections and exhibits.
   address: 940 Powell Street
-  map_link: https://www.google.com/maps/search/?api=1&query=940%20Powell%20Street%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.793648,-122.4091282
   phone: (415) 397-6886
 - id: imls-maritime-museum-san-francisco
   name: Maritime Museum-San Francisco
@@ -2859,7 +3420,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600232'
+  imls_id: "8400600232"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 2 Marina Boulevard Building E
   map_link: https://www.google.com/maps/search/?api=1&query=2%20Marina%20Boulevard%20Building%20E%2C%20San%20Francisco%2C%20CA
@@ -2872,7 +3433,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602246'
+  imls_id: "8400602246"
   description: Botanical garden or nature center featuring plants and natural habitats.
   address: 1202 La Vista Ave
   map_link: https://www.google.com/maps/search/?api=1&query=1202%20La%20Vista%20Ave%2C%20Concord%2C%20CA
@@ -2885,7 +3446,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600920'
+  imls_id: "8400600920"
   description: Museum with diverse collections and exhibits.
   address: 2 Marina Boulevard Building D
   map_link: https://www.google.com/maps/search/?api=1&query=2%20Marina%20Boulevard%20Building%20D%2C%20San%20Francisco%2C%20CA
@@ -2898,7 +3459,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600306'
+  imls_id: "8400600306"
   description: Museum with diverse collections and exhibits.
   address: Pier 45 at the End of Taylor Street Fishermans Wharf
   map_link: https://www.google.com/maps/search/?api=1&query=Pier%2045%20at%20the%20End%20of%20Taylor%20Street%20Fishermans%20Wharf%2C%20San%20Francisco%2C%20CA
@@ -2911,10 +3472,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600280'
+  imls_id: "8400600280"
   description: Museum with diverse collections and exhibits.
   address: 2 Marina Blvd Building C
-  map_link: https://www.google.com/maps/search/?api=1&query=2%20Marina%20Blvd%20Building%20C%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8069681,-122.4314174
   phone: (415) 673-2200
 - id: imls-museum-of-performance-design
   name: Museum of Performance & Design
@@ -2924,10 +3485,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601568'
+  imls_id: "8400601568"
   description: Museum with diverse collections and exhibits.
   address: 893 Folsom Street
-  map_link: https://www.google.com/maps/search/?api=1&query=893%20Folsom%20Street%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7803911,-122.4030802
   phone: (415) 255-4800
 - id: imls-museum-of-russian-culture
   name: Museum of Russian Culture
@@ -2937,10 +3498,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602530'
+  imls_id: "8400602530"
   description: Art museum featuring collections and exhibitions.
   address: 2450 Sutter Street
-  map_link: https://www.google.com/maps/search/?api=1&query=2450%20Sutter%20Street%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7854732,-122.4409355
   phone: (415) 921-4082
 - id: imls-museum-of-the-san-ramon-valley
   name: Museum of the San Ramon Valley
@@ -2950,7 +3511,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601660'
+  imls_id: "8400601660"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 205 Railroad Ave
   map_link: https://www.google.com/maps/search/?api=1&query=205%20Railroad%20Ave%2C%20Danville%2C%20CA
@@ -2963,10 +3524,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601469'
+  imls_id: "8400601469"
   description: Museum with diverse collections and exhibits.
   address: 6449 Cavedale Rd
-  map_link: https://www.google.com/maps/search/?api=1&query=6449%20Cavedale%20Rd%2C%20Glen%20Ellen%2C%20CA
+  map_link: https://www.google.com/maps?q=38.3894166,-122.4750979
 - id: imls-napa-valley-museum
   name: Napa Valley Museum
   category: Museums
@@ -2975,7 +3536,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600886'
+  imls_id: "8400600886"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 55 Presidents Circle
   map_link: https://www.google.com/maps/search/?api=1&query=55%20Presidents%20Circle%2C%20Yountville%2C%20CA
@@ -2988,7 +3549,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409503768'
+  imls_id: "8409503768"
   description: Art museum featuring collections and exhibitions.
   address: Department of Art and Art History San Jose State University One Washington Square
   map_link: https://www.google.com/maps/search/?api=1&query=Department%20of%20Art%20and%20Art%20History%20San%20Jose%20State%20University%20One%20Washington%20Square%2C%20San%20Jose%2C%20CA
@@ -3001,10 +3562,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602293'
+  imls_id: "8400602293"
   description: Museum with diverse collections and exhibits.
   address: Pier 45 Fishermans Wharf
-  map_link: https://www.google.com/maps/search/?api=1&query=Pier%2045%20Fishermans%20Wharf%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8097743,-122.4173154
   phone: (415) 544-0100
 - id: imls-naturebridge
   name: Naturebridge
@@ -3014,7 +3575,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602966'
+  imls_id: "8400602966"
   description: Botanical garden or nature center featuring plants and natural habitats.
   address: 28 Geary Street Suite 650
   map_link: https://www.google.com/maps/search/?api=1&query=28%20Geary%20Street%20Suite%20650%2C%20San%20Francisco%2C%20CA
@@ -3027,11 +3588,11 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500138'
+  imls_id: "8409500138"
   description: Wildlife facility dedicated to animal conservation and education.
   address: 9777 Golf Links Road
   link: https://www.oaklandzoo.org/
-  map_link: https://www.google.com/maps/search/?api=1&query=9777%20Golf%20Links%20Road%2C%20Oakland%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7509305,-122.1478481
   phone: (510) 632-9525
 - id: imls-pacific-bus-museum
   name: Pacific Bus Museum
@@ -3041,10 +3602,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602801'
+  imls_id: "8400602801"
   description: Museum with diverse collections and exhibits.
   address: 37974 Shinn Street
-  map_link: https://www.google.com/maps/search/?api=1&query=37974%20Shinn%20Street%2C%20Fremont%2C%20CA
+  map_link: https://www.google.com/maps?q=37.5669046,-121.9844941
 - id: imls-peninsula-museum-of-art
   name: Peninsula Museum of Art
   category: Museums
@@ -3053,7 +3614,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600713'
+  imls_id: "8400600713"
   description: Art museum featuring collections and exhibitions.
   address: 1777 California Drive
   map_link: https://www.google.com/maps/search/?api=1&query=1777%20California%20Drive%2C%20Burlingame%2C%20CA
@@ -3065,7 +3626,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602488'
+  imls_id: "8400602488"
   description: Museum with diverse collections and exhibits.
   address: 447 Sutter Street; 5th Floor Social Hall
   map_link: https://www.google.com/maps/search/?api=1&query=447%20Sutter%20Street%3B%205th%20Floor%20Social%20Hall%2C%20San%20Francisco%2C%20CA
@@ -3078,10 +3639,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500763'
+  imls_id: "8409500763"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 10000 Skyline Blvd
-  map_link: https://www.google.com/maps/search/?api=1&query=10000%20Skyline%20Blvd%2C%20Oakland%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7254162,-122.503052
 - id: imls-playland-not-at-the-beach
   name: Playland-Not-At-The-Beach
   category: Museums
@@ -3090,10 +3651,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600672'
+  imls_id: "8400600672"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 10979 San Pablo Ave
-  map_link: https://www.google.com/maps/search/?api=1&query=10979%20San%20Pablo%20Ave%2C%20El%20Cerrito%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9169145,-122.3127829
   phone: (510) 592-3002
 - id: imls-portuguese-heritage-society-of-california
   name: Portuguese Heritage Society of California
@@ -3103,7 +3664,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601966'
+  imls_id: "8400601966"
   description: Museum with diverse collections and exhibits.
   address: 133 Willis Avenue Mineola
   map_link: https://www.google.com/maps/search/?api=1&query=133%20Willis%20Avenue%20Mineola%2C%20San%20Jose%2C%20CA
@@ -3116,7 +3677,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600680'
+  imls_id: "8400600680"
   description: Museum with diverse collections and exhibits.
   address: 1500 Fulton Rd
   map_link: https://www.google.com/maps/search/?api=1&query=1500%20Fulton%20Rd%2C%20Santa%20Rosa%2C%20CA
@@ -3128,7 +3689,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600199'
+  imls_id: "8400600199"
   description: Largest collection of Egyptian artifacts on exhibit in western North America.
   address: 1660 Park Ave
   link: https://www.egyptianmuseum.org/
@@ -3142,10 +3703,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500847'
+  imls_id: "8409500847"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 1342 Naglee Avenue
-  map_link: https://www.google.com/maps/search/?api=1&query=1342%20Naglee%20Avenue%2C%20San%20Jose%2C%20CA
+  map_link: https://www.google.com/maps?q=37.3337346,-121.9221987
 - id: imls-san-francisco-jewelry-museum
   name: San Francisco Jewelry Museum
   category: Museums
@@ -3154,9 +3715,9 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600105'
+  imls_id: "8400600105"
   description: Museum with diverse collections and exhibits.
-  address: '401 1st St #205'
+  address: "401 1st St #205"
   map_link: https://www.google.com/maps/search/?api=1&query=401%201st%20St%20%23205%2C%20Richmond%2C%20CA
   phone: (510) 237-8828
 - id: imls-san-francisco-zoological-gardens
@@ -3167,10 +3728,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500173'
+  imls_id: "8409500173"
   description: Wildlife facility dedicated to animal conservation and education.
   address: 1 Zoo Road
-  map_link: https://www.google.com/maps/search/?api=1&query=1%20Zoo%20Road%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.731184,-122.500579
   phone: (415) 753-7080
 - id: imls-sanchez-art-center
   name: Sanchez Art Center
@@ -3180,10 +3741,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602474'
+  imls_id: "8400602474"
   description: Art museum featuring collections and exhibitions.
   address: 1220-B Linda Mar Blvd
-  map_link: https://www.google.com/maps/search/?api=1&query=1220-B%20Linda%20Mar%20Blvd%2C%20Pacifica%2C%20CA
+  map_link: https://www.google.com/maps?q=37.5891523,-122.4941167
   phone: (650) 355-1894
 - id: imls-secession-gallery
   name: Secession Gallery
@@ -3193,10 +3754,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602187'
+  imls_id: "8400602187"
   description: Art museum featuring collections and exhibitions.
   address: 3361 Mission St
-  map_link: https://www.google.com/maps/search/?api=1&query=3361%20Mission%20St%2C%20San%20Francisco%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7428145,-122.4214076
   phone: (415) 279-3058
 - id: imls-sonoma-museum-of-visual-art
   name: Sonoma Museum of Visual Art
@@ -3206,10 +3767,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600100'
+  imls_id: "8400600100"
   description: Art museum featuring collections and exhibitions.
   address: 50 Mark West Springs Rd
-  map_link: https://www.google.com/maps/search/?api=1&query=50%20Mark%20West%20Springs%20Rd%2C%20Sonoma%2C%20CA
+  map_link: https://www.google.com/maps?q=38.4930374,-122.749307
   phone: (707) 939-7862
 - id: imls-sonoma-valley-museum-of-art
   name: Sonoma Valley Museum of Art
@@ -3219,7 +3780,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601770'
+  imls_id: "8400601770"
   description: Art museum featuring collections and exhibitions.
   address: 551 Broadwa
   map_link: https://www.google.com/maps/search/?api=1&query=551%20Broadwa%2C%20Sonoma%2C%20CA
@@ -3232,10 +3793,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409500927'
+  imls_id: "8409500927"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 1451 Middlefield
-  map_link: https://www.google.com/maps/search/?api=1&query=1451%20Middlefield%2C%20Palo%20Alto%2C%20CA
+  map_link: https://www.google.com/maps?q=37.4434284,-122.1444282
 - id: imls-sunnyvale-heritage-park-museum
   name: Sunnyvale Heritage Park Museum
   category: Museums
@@ -3244,10 +3805,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602299'
+  imls_id: "8400602299"
   description: Museum dedicated to preserving and presenting local and regional history.
   address: 570 East Remington Drive
-  map_link: https://www.google.com/maps/search/?api=1&query=570%20East%20Remington%20Drive%2C%20Sunnyvale%2C%20CA
+  map_link: https://www.google.com/maps?q=37.3564687,-122.0254814
   phone: (408) 749-0220
 - id: imls-treasure-island-museum-association
   name: Treasure Island Museum Association
@@ -3257,7 +3818,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400601570'
+  imls_id: "8400601570"
   description: Museum with diverse collections and exhibits.
   address: One Avenue of the Palms Rm 111
   map_link: https://www.google.com/maps/search/?api=1&query=One%20Avenue%20of%20the%20Palms%20Rm%20111%2C%20San%20Francisco%2C%20CA
@@ -3270,10 +3831,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8409501017'
+  imls_id: "8409501017"
   description: Science and technology museum with interactive exhibits and educational programs.
   address: 2100 Bridgeway
-  map_link: https://www.google.com/maps/search/?api=1&query=2100%20Bridgeway%2C%20Sausalito%2C%20CA
+  map_link: https://www.google.com/maps?q=37.8635594,-122.4948555
 - id: imls-uc-berkeley-art-museum
   name: UC Berkeley Art Museum
   category: Museums
@@ -3282,10 +3843,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600025'
+  imls_id: "8400600025"
   description: Art museum featuring collections and exhibitions.
   address: 2626 Bancroft Way
-  map_link: https://www.google.com/maps/search/?api=1&query=2626%20Bancroft%20Way%2C%20Berkeley%2C%20CA
+  map_link: https://www.google.com/maps?q=37.7711735,-122.2110224
   phone: (510) 642-0808
 - id: imls-valle-del-sur
   name: Valle Del Sur
@@ -3295,10 +3856,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400600952'
+  imls_id: "8400600952"
   description: Art museum featuring collections and exhibitions.
   address: 2500 Huston Ct
-  map_link: https://www.google.com/maps/search/?api=1&query=2500%20Huston%20Ct%2C%20Morgan%20Hill%2C%20CA
+  map_link: https://www.google.com/maps?q=38.5792981,-121.4352817
 - id: imls-valley-children-s-museum
   name: Valley Children's Museum
   category: Museums
@@ -3307,7 +3868,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400602484'
+  imls_id: "8400602484"
   description: Interactive museum designed for children and families with hands-on exhibits.
   address: 4201b Central Parkway
   map_link: https://www.google.com/maps/search/?api=1&query=4201b%20Central%20Parkway%2C%20Dublin%2C%20CA
@@ -3319,10 +3880,10 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400800051'
+  imls_id: "8400800051"
   description: Museum with diverse collections and exhibits.
   address: 1966 Sir Francis Drake Blvd
-  map_link: https://www.google.com/maps/search/?api=1&query=1966%20Sir%20Francis%20Drake%20Blvd%2C%20Fairfax%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9878802,-122.5897105
   phone: (415) 450-8000
 - id: imls-mountain-bike-hall-of-fame-and-museum
   name: Mountain Bike Hall of Fame and Museum
@@ -3332,7 +3893,7 @@
   groups:
     - everyone
   sync_source: imls-museums
-  imls_id: '8400800494'
+  imls_id: "8400800494"
   description: Museum with diverse collections and exhibits.
   address: 1966 Sir Francis Drake Blvd
-  map_link: https://www.google.com/maps/search/?api=1&query=1966%20Sir%20Francis%20Drake%20Blvd%2C%20Fairfax%2C%20CA
+  map_link: https://www.google.com/maps?q=37.9878802,-122.5897105

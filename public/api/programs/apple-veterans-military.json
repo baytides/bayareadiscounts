@@ -1,0 +1,27 @@
+{
+  "id": "apple-veterans-military",
+  "name": "Apple Veterans and Military Purchase Program",
+  "category": "community",
+  "description": "10% discount on Mac, iPad, and accessories for verified military and veterans",
+  "fullDescription": "Apple offers a 10% discount for current and veteran members of the US Military, National Guard, and Reserve. Discount also extends to immediate family members in the same household.",
+  "whatTheyOffer": "- 10% discount on Mac computers\n- 10% discount on iPad\n- 10% discount on accessories\n- Same warranty and service as regular purchases\n- Available to eligible family members in same household\n",
+  "howToGetIt": "1. Visit Apple's Veterans and Military store online\n2. Sign in with ID.me verification\n3. Verify military or veteran status\n4. Access exclusive 10% pricing\n5. Purchase with standard Apple checkout (Apple Card Monthly Installments not available)\n",
+  "groups": [
+    "veterans"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.apple.com/shop/browse/home/veterans_military",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-05"
+}
