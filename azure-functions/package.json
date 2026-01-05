@@ -7,6 +7,7 @@
     "test": "node test-local.js"
   },
   "dependencies": {
+    "@azure/communication-email": "^1.0.0",
     "js-yaml": "^4.1.0"
   }
 }
