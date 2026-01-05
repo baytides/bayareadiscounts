@@ -130,6 +130,8 @@ class DirectoryScreenState extends State<DirectoryScreen> {
         return 'Name (Z-A)';
       case SortOption.categoryAsc:
         return 'Category';
+      case SortOption.distanceAsc:
+        return 'Distance (Nearest)';
     }
   }
 

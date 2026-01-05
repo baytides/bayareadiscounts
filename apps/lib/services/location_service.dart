@@ -123,8 +123,10 @@ class LocationService extends ChangeNotifier {
 
       // Get position (stays on device!)
       _currentPosition = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.low, // Don't need precise location
-        timeLimit: const Duration(seconds: 10),
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.low, // Don't need precise location
+          timeLimit: Duration(seconds: 10),
+        ),
       );
 
       // Determine county (calculated on-device)
