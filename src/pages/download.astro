@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 // Fetch latest release from GitHub API at build time
 let latestRelease = null;
@@ -30,6 +31,7 @@ const downloadSize = fossApk?.size ? (fossApk.size / 1024 / 1024).toFixed(1) : n
   <section class="section">
     <div class="container-page">
       <div class="max-w-3xl mx-auto">
+        <Breadcrumb items={[{ label: 'Download', href: '/download' }]} />
         <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-6">
           Download Bay Navigator
         </h1>

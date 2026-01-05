@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import fs from 'fs';
 import path from 'path';
 
@@ -31,6 +32,7 @@ const displayCount = Math.floor(programCount / 50) * 50;
   <section class="section">
     <div class="container-page">
       <div class="max-w-4xl mx-auto">
+        <Breadcrumb items={[{ label: 'About' }]} />
         <!-- Hero Section -->
         <div class="text-center mb-12">
           <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">

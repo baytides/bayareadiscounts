@@ -5,9 +5,32 @@
 /* BayNavigator Global Styles */
 
 @layer base {
-  /* Focus styles for accessibility */
+  /*
+   * WCAG 2.2 AAA: Focus styles for accessibility
+   * 2.4.13 Focus Appearance - Enhanced focus indicators with:
+   * - Minimum 2px outline thickness
+   * - 3:1 contrast ratio between focused/unfocused states
+   * - Solid outline for maximum visibility
+   */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-primary-700;
+    /* Additional box-shadow for enhanced visibility (meets 2.4.13) */
+    box-shadow: 0 0 0 4px rgba(0, 90, 95, 0.3);
+  }
+
+  /*
+   * WCAG 2.2 AAA: 2.4.12 Focus Not Obscured (Enhanced)
+   * Ensures focused elements are not hidden by sticky header
+   * Header height is ~72px, adding 16px buffer = 88px
+   */
+  :target,
+  [tabindex]:focus,
+  a:focus,
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    scroll-margin-top: 100px;
   }
 
   /* Smooth scrolling with reduced motion respect */
@@ -126,11 +149,16 @@
     @apply bg-neutral-800 border-neutral-700;
   }
 
-  /* Button base */
+  /*
+   * WCAG 2.2 AAA: 2.5.5 Target Size (Enhanced)
+   * Minimum touch target of 44x44 CSS pixels
+   * Using min-height and padding to ensure compliance
+   */
   .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 rounded font-medium
+    @apply inline-flex items-center justify-center px-5 py-3 rounded font-medium
            transition-colors duration-150 focus:outline-none focus-visible:ring-2
            focus-visible:ring-offset-2 no-underline;
+    min-height: 44px; /* WCAG 2.2 AAA target size */
   }
 
   .btn-primary {
@@ -148,6 +176,16 @@
   .dark .btn-secondary {
     @apply bg-neutral-800 text-primary-200 border-primary-300 hover:bg-neutral-700;
     /* Dark mode uses lighter teal for visibility */
+  }
+
+  /*
+   * WCAG 2.2 AAA: Ensure all interactive elements meet target size
+   * This applies to icon buttons and other small targets
+   */
+  button:not(.btn),
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 
   /* Container */
@@ -217,5 +255,20 @@
   /* Content width for readability */
   .prose-width {
     @apply max-w-content;
+  }
+
+  /*
+   * WCAG 2.2 AAA: 3.1.4 Abbreviations
+   * Style abbreviations to indicate they have definitions
+   * Users can hover/focus to see full expansion
+   */
+  abbr[title] {
+    @apply border-b border-dotted border-current cursor-help;
+    text-decoration: none;
+  }
+
+  abbr[title]:hover,
+  abbr[title]:focus {
+    @apply border-solid;
   }
 }

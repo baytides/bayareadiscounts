@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <BaseLayout
@@ -9,6 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section">
     <div class="container-page">
       <div class="max-w-3xl mx-auto">
+        <Breadcrumb items={[{ label: 'Terms of Service', href: '/terms' }]} />
         <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-6">
           Terms of Service
         </h1>

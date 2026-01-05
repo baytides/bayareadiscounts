@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 // Calculate approximate stats
 const hostingProvider = 'Microsoft Azure';
@@ -34,6 +35,7 @@ const githubStats = {
   description="Learn about Bay Navigator's commitment to environmental sustainability and our green software practices."
 >
   <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <Breadcrumb items={[{ label: 'Sustainability', href: '/sustainability' }]} />
     <!-- Hero Section -->
     <div class="text-center mb-12">
       <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">

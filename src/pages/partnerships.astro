@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <BaseLayout title="Partnerships" description="Partner with Bay Navigator to share your program data and reach more people in need across the San Francisco Bay Area.">
   <!-- Header Section -->
   <section class="bg-gradient-to-b from-primary-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-12">
     <div class="container-page">
+      <Breadcrumb items={[{ label: 'Partnerships', href: '/partnerships' }]} />
       <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
         Partner With Us
       </h1>

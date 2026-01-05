@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
@@ -36,6 +37,7 @@ const stats = {
   description="Bay Navigator's commitment to digital accessibility, WCAG 2.2 compliance, and inclusive design for all users."
 >
   <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <Breadcrumb items={[{ label: 'Accessibility', href: '/accessibility' }]} />
     <!-- Hero Section -->
     <div class="text-center mb-12">
       <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-4">
