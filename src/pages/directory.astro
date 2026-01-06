@@ -26,7 +26,7 @@ if (fs.existsSync(suppressedPath)) {
 
 // Load all program YAML files dynamically
 const dataDir = path.join(process.cwd(), 'src/data');
-const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml', 'search-config.yml'];
+const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml', 'search-config.yml', 'site-config.yml'];
 const programFiles = fs.readdirSync(dataDir)
   .filter(f => f.endsWith('.yml') && !NON_PROGRAM_FILES.includes(f));
 

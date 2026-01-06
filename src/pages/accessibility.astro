@@ -11,7 +11,7 @@ const stylesFile = path.join(process.cwd(), 'src/styles/global.css');
 const layoutFile = path.join(process.cwd(), 'src/layouts/BaseLayout.astro');
 
 // Count programs with URLs (each has verified links)
-const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml', 'search-config.yml'];
+const NON_PROGRAM_FILES = ['cities.yml', 'groups.yml', 'zipcodes.yml', 'suppressed.yml', 'search-config.yml', 'site-config.yml'];
 const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.yml') && !NON_PROGRAM_FILES.includes(f));
 let totalPrograms = 0;
 for (const file of files) {
