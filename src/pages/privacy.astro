@@ -18,7 +18,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
             Privacy Policy
           </h1>
           <p class="text-neutral-600 dark:text-neutral-300">
-            Last updated: January 4, 2026
+            Last updated: January 6, 2026
           </p>
         </div>
 
@@ -233,22 +233,22 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 <li><strong>Offline mode:</strong> When you're offline, AI search is automatically disabled. All searches use local fuzzy matching instead—no failed requests, no errors.</li>
                 <li><strong>No storage:</strong> We do not store your search queries on our servers. Queries are processed and immediately discarded.</li>
                 <li><strong>No identifiers:</strong> Searches are not linked to any personal identifier, account, or session.</li>
-                <li><strong>Third-party processing:</strong> AI queries are processed by Azure OpenAI. Microsoft Azure processes data in accordance with their privacy policies.</li>
+                <li><strong>Third-party processing:</strong> AI queries are processed by Cloudflare Workers AI using Meta's Llama 3.1 model. Cloudflare processes data in accordance with their privacy policies.</li>
               </ul>
 
-              <h4 class="font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Azure OpenAI Data Handling</h4>
+              <h4 class="font-semibold text-neutral-900 dark:text-white mt-6 mb-3">Cloudflare Workers AI Data Handling</h4>
               <p class="text-neutral-600 dark:text-neutral-300 mb-4">
-                When you use the AI-powered search, your queries are processed by <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy" class="text-primary-700 dark:text-primary-300">Azure OpenAI</a>. Microsoft provides the following guarantees:
+                When you use the AI-powered search, your queries are processed by <a href="https://developers.cloudflare.com/workers-ai/privacy/" class="text-primary-700 dark:text-primary-300">Cloudflare Workers AI</a> using the Llama 3.1 8B model. Cloudflare provides the following guarantees:
               </p>
               <ul class="text-neutral-600 dark:text-neutral-300 space-y-2 mb-4 list-disc pl-5">
-                <li><strong>Not used for training:</strong> Your prompts and responses are never used to train, retrain, or improve OpenAI's foundation models.</li>
-                <li><strong>Not shared:</strong> Your data is not available to other customers, OpenAI, or other model providers.</li>
-                <li><strong>Model is stateless:</strong> No prompts or completions are stored in the AI model itself.</li>
-                <li><strong>Encrypted:</strong> All data is encrypted at rest using AES-256 encryption.</li>
-                <li><strong>Geographic residency:</strong> Data is stored within Microsoft's designated Azure geography (United States).</li>
+                <li><strong>Not used for training:</strong> Your prompts and responses are never used to train AI models.</li>
+                <li><strong>Not stored:</strong> Cloudflare does not log or store inference data beyond what's needed to process your request.</li>
+                <li><strong>Open source model:</strong> Llama 3.1 is an open-source model from Meta, running on Cloudflare's infrastructure.</li>
+                <li><strong>Privacy-first infrastructure:</strong> Cloudflare is committed to privacy and does not sell user data.</li>
+                <li><strong>Geographic distribution:</strong> Requests are processed at the nearest Cloudflare edge location for low latency.</li>
               </ul>
               <p class="text-neutral-600 dark:text-neutral-300">
-                For more details, see <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy" class="text-primary-700 dark:text-primary-300">Microsoft's Azure OpenAI Data Privacy documentation</a>.
+                For more details, see <a href="https://developers.cloudflare.com/workers-ai/privacy/" class="text-primary-700 dark:text-primary-300">Cloudflare Workers AI Privacy documentation</a>.
               </p>
             </div>
           </details>
