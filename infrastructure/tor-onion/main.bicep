@@ -119,17 +119,6 @@ packages:
   - ufw
 
 write_files:
-  - path: /etc/tor/torrc.d/hidden-service.conf
-    content: |
-      # Bay Navigator Hidden Service Configuration
-      HiddenServiceDir /var/lib/tor/baynavigator/
-      HiddenServicePort 80 127.0.0.1:8080
-
-      # Security hardening
-      SocksPort 0
-      ControlPort 0
-    permissions: '0644'
-
   - path: /etc/nginx/sites-available/tor-proxy
     content: |
       server {
@@ -201,6 +190,13 @@ runcmd:
   - mkdir -p /var/lib/tor/baynavigator
   - chown -R debian-tor:debian-tor /var/lib/tor/baynavigator
   - chmod 700 /var/lib/tor/baynavigator
+
+  # Add hidden service config directly to torrc (AppArmor blocks torrc.d includes)
+  - echo '' >> /etc/tor/torrc
+  - echo '# Bay Navigator Hidden Service Configuration' >> /etc/tor/torrc
+  - echo 'HiddenServiceDir /var/lib/tor/baynavigator/' >> /etc/tor/torrc
+  - echo 'HiddenServicePort 80 127.0.0.1:8080' >> /etc/tor/torrc
+  - echo 'SocksPort 0' >> /etc/tor/torrc
 
   # Configure firewall
   - ufw default deny incoming
