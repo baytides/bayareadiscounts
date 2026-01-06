@@ -12,6 +12,813 @@ const CA_LEGISLATURE_BASE = 'https://findyourrep.legislature.ca.gov';
 const CENSUS_GEOCODER_BASE = 'https://geocoding.geo.census.gov/geocoder/geographies/address';
 const ARCGIS_DISTRICTS_BASE = 'https://services5.arcgis.com/0CGHmi5SBMvfD65u/arcgis/rest/services/AD_SD_2021_DistrictOverlay/FeatureServer/2/query';
 
+// Bay Area City Council Data (2026)
+// Key is Census Place GEOID (state FIPS + place FIPS)
+// For district-based cities: arcgis endpoint returns council member for a location
+// For at-large cities: all members represent the entire city
+// Data sources: Cicero API (cicerodata.com), city websites, ArcGIS services
+const CITY_COUNCILS = {
+  // ========== ALAMEDA COUNTY ==========
+  '0600562': { // Alameda
+    name: 'Alameda',
+    type: 'at-large',
+    website: 'https://www.alamedaca.gov/GOVERNMENT/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0600674': { // Albany
+    name: 'Albany',
+    type: 'at-large',
+    website: 'https://www.albanyca.org/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0606000': { // Berkeley
+    name: 'Berkeley',
+    type: 'district',
+    website: 'https://berkeleyca.gov/your-government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0620018': { // Dublin
+    name: 'Dublin',
+    type: 'at-large',
+    website: 'https://dublin.ca.gov/148/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0622594': { // Emeryville
+    name: 'Emeryville',
+    type: 'at-large',
+    website: 'https://www.emeryville.org/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0626000': { // Fremont
+    name: 'Fremont',
+    type: 'district',
+    website: 'https://www.fremont.gov/government/mayor-city-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Raj Salwan', photoUrl: 'https://www.fremont.gov/home/showpublishedimage/482/638791182509370000', website: 'https://www.fremont.gov/government/mayor-city-council' },
+      1: { name: 'Teresa Keng' },
+      2: { name: 'Desrie Campbell' },
+      3: { name: 'Kathy Kimberlin', photoUrl: 'https://www.fremont.gov/home/showpublishedimage/9621/638767001732970000', website: 'https://www.fremont.gov/government/mayor-city-council' },
+      4: { name: 'Yang Shao' },
+      5: { name: 'Yajing Zhang' },
+      6: { name: 'Raymond Liu' }
+    }
+  },
+  '0633000': { // Hayward
+    name: 'Hayward',
+    type: 'at-large', // Transitioning to districts in Nov 2026
+    website: 'https://www.hayward-ca.gov/your-government/city-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Mark Salinas' },
+      1: { name: 'Angela Andrews', photoUrl: 'https://www.hayward-ca.gov/sites/default/files/pictures/MMC-Staff-Councilmember-Andrews-Angela-2025.png', website: 'https://www.hayward-ca.gov/your-government/city-council/council-member-angela-andrews' },
+      2: { name: 'Ray Bonilla Jr.', photoUrl: 'https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Bonilla-Ray-2025.png', website: 'https://www.hayward-ca.gov/your-government/city-council/council-member-ray-bonilla-jr' },
+      3: { name: 'Dan Goldstein', photoUrl: 'https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Goldstein-Dan-2025.png', website: 'https://www.hayward-ca.gov/your-government/city-council/dan-goldstein' },
+      4: { name: 'Julie Roche', photoUrl: 'https://www.hayward-ca.gov/sites/default/files/pictures/MCC-Staff-Councilmember-Roche-Julie-2025.png', website: 'https://www.hayward-ca.gov/your-government/city-council/council-member-julie-roche' },
+      5: { name: 'George Syrop' },
+      6: { name: 'Francisco Zermeño' }
+    }
+  },
+  '0640438': { // Livermore
+    name: 'Livermore',
+    type: 'at-large',
+    website: 'https://www.cityoflivermore.net/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0651182': { // Newark
+    name: 'Newark',
+    type: 'at-large',
+    website: 'https://www.newark.org/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0653000': { // Oakland
+    name: 'Oakland',
+    type: 'hybrid', // 7 districts + 1 at-large
+    website: 'https://www.oaklandca.gov/departments/city-council',
+    arcgis: {
+      url: 'https://services5.arcgis.com/ROBnTHSNjoZ2Wm1P/arcgis/rest/services/City_Council_District_Boundaries/FeatureServer/0',
+      districtField: 'DISTRICT_ID',
+      districtMapping: { 111: 1, 112: 2, 113: 3, 114: 4, 115: 5, 116: 6, 117: 7 }
+    },
+    members: {
+      'at-large': { name: 'Rowena Brown', photoUrl: 'https://www.oaklandca.gov/files/assets/city/v/2/city-administrator/images/leadership/rowena-brown.jpg?dimension=pageimage&w=480', website: 'https://www.oaklandca.gov/Government/City-Council-Leadership/Council-Members/Councilmember-At-Large' },
+      1: { name: 'Zac Unger' },
+      2: { name: 'Charlene Wang' },
+      3: { name: 'Carroll Fife', photoUrl: 'https://www.oaklandca.gov/files/assets/city/v/1/city-administrator/images/leadership/carroll-fife.jpg?dimension=pageimage&w=480', website: 'https://www.oaklandca.gov/Government/City-Council-Leadership/Council-Members/District-3' },
+      4: { name: 'Janani Ramachandran' },
+      5: { name: 'Noel Gallo' },
+      6: { name: 'Kevin Jenkins' },
+      7: { name: 'Ken Houston' }
+    }
+  },
+  '0656784': { // Piedmont
+    name: 'Piedmont',
+    type: 'at-large',
+    website: 'https://www.piedmont.ca.gov/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0657792': { // Pleasanton
+    name: 'Pleasanton',
+    type: 'at-large',
+    website: 'https://www.cityofpleasantonca.gov/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0668084': { // San Leandro
+    name: 'San Leandro',
+    type: 'district',
+    website: 'https://www.sanleandro.org/depts/cityclerk/council/default.asp',
+    arcgis: null,
+    members: {}
+  },
+  '0680812': { // Union City
+    name: 'Union City',
+    type: 'at-large',
+    website: 'https://www.unioncity.org/214/City-Council',
+    arcgis: null,
+    members: {}
+  },
+
+  // ========== CONTRA COSTA COUNTY ==========
+  '0602252': { // Antioch
+    name: 'Antioch',
+    type: 'district',
+    website: 'https://www.antiochca.gov/government/mayor-and-city-council/',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Ron Bernal', photoUrl: 'https://www.antiochca.gov/ImageRepository/Document?documentID=1944', website: 'https://www.antiochca.gov/directory.aspx?eid=78' }
+    }
+  },
+  '0608142': { // Brentwood
+    name: 'Brentwood',
+    type: 'at-large',
+    website: 'https://www.brentwoodca.gov/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0613882': { // Clayton
+    name: 'Clayton',
+    type: 'at-large',
+    website: 'https://www.claytonca.gov/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0616000': { // Concord
+    name: 'Concord',
+    type: 'district',
+    website: 'https://www.cityofconcord.org/235/City-Council',
+    arcgis: null,
+    members: {
+      2: { name: 'Carlyn Obringer', photoUrl: 'https://www.cityofconcord.org/ImageRepository/Document?documentID=2176', website: 'https://www.cityofconcord.org/238/Mayor-Carlyn-Obringer' }
+    }
+  },
+  '0617988': { // Danville (Town)
+    name: 'Danville',
+    type: 'at-large',
+    website: 'https://www.danville.ca.gov/town-council',
+    arcgis: null,
+    members: {}
+  },
+  '0621796': { // El Cerrito
+    name: 'El Cerrito',
+    type: 'at-large',
+    website: 'https://www.el-cerrito.org/175/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0633798': { // Hercules
+    name: 'Hercules',
+    type: 'at-large',
+    website: 'https://www.ci.hercules.ca.us/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0639122': { // Lafayette
+    name: 'Lafayette',
+    type: 'at-large',
+    website: 'https://www.lovelafayette.org/city-hall/city-government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0645484': { // Martinez
+    name: 'Martinez',
+    type: 'at-large',
+    website: 'https://www.cityofmartinez.org/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0649278': { // Moraga (Town)
+    name: 'Moraga',
+    type: 'at-large',
+    website: 'https://www.moraga.ca.us/town-council',
+    arcgis: null,
+    members: {}
+  },
+  '0653070': { // Oakley
+    name: 'Oakley',
+    type: 'at-large',
+    website: 'https://www.oakleyinfo.com/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0654232': { // Orinda
+    name: 'Orinda',
+    type: 'at-large',
+    website: 'https://www.cityoforinda.org/138/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0657288': { // Pinole
+    name: 'Pinole',
+    type: 'at-large',
+    website: 'https://www.ci.pinole.ca.us/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0657456': { // Pittsburg
+    name: 'Pittsburg',
+    type: 'at-large',
+    website: 'https://www.pittsburgca.gov/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0657764': { // Pleasant Hill
+    name: 'Pleasant Hill',
+    type: 'at-large',
+    website: 'https://www.pleasanthillca.org/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0660620': { // Richmond
+    name: 'Richmond',
+    type: 'district',
+    website: 'https://www.ci.richmond.ca.us/149/Biographies-Terms',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Eduardo Martinez', photoUrl: 'https://www.ci.richmond.ca.us/ImageRepository/Document?documentId=64486', website: 'https://ca-richmond3.civicplus.com/directory.aspx?EID=1072' },
+      1: { name: 'Jamelia Brown', photoUrl: 'https://www.ci.richmond.ca.us/ImageRepository/Document?documentId=72948', website: 'https://www.ci.richmond.ca.us/149/Biographies-Terms' }
+    }
+  },
+  '0668252': { // San Pablo
+    name: 'San Pablo',
+    type: 'at-large',
+    website: 'https://www.sanpabloca.gov/117/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0668294': { // San Ramon
+    name: 'San Ramon',
+    type: 'at-large',
+    website: 'https://www.sanramon.ca.gov/our_city/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0683346': { // Walnut Creek
+    name: 'Walnut Creek',
+    type: 'at-large',
+    website: 'https://www.walnutcreek.gov/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+
+  // ========== MARIN COUNTY ==========
+  '0604870': { // Belvedere
+    name: 'Belvedere',
+    type: 'at-large',
+    website: 'https://www.cityofbelvedere.org/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0616350': { // Corte Madera (Town)
+    name: 'Corte Madera',
+    type: 'at-large',
+    website: 'https://www.townofcortemadera.org/161/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0623392': { // Fairfax (Town)
+    name: 'Fairfax',
+    type: 'at-large',
+    website: 'https://www.townoffairfax.org/town-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0639864': { // Larkspur
+    name: 'Larkspur',
+    type: 'at-large',
+    website: 'https://www.cityoflarkspur.org/167/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0647710': { // Mill Valley
+    name: 'Mill Valley',
+    type: 'at-large',
+    website: 'https://www.cityofmillvalley.org/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0651714': { // Novato
+    name: 'Novato',
+    type: 'at-large',
+    website: 'https://www.novato.org/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0662546': { // Ross (Town)
+    name: 'Ross',
+    type: 'at-large',
+    website: 'https://www.townofross.org/towncouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0665014': { // San Anselmo (Town)
+    name: 'San Anselmo',
+    type: 'at-large',
+    website: 'https://www.townofsananselmo.org/89/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0668364': { // San Rafael
+    name: 'San Rafael',
+    type: 'at-large',
+    website: 'https://www.cityofsanrafael.org/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0670098': { // Sausalito
+    name: 'Sausalito',
+    type: 'at-large',
+    website: 'https://www.sausalito.gov/city-government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0678582': { // Tiburon (Town)
+    name: 'Tiburon',
+    type: 'at-large',
+    website: 'https://www.townoftiburon.org/172/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+
+  // ========== NAPA COUNTY ==========
+  '0600870': { // American Canyon
+    name: 'American Canyon',
+    type: 'at-large',
+    website: 'https://www.cityofamericancanyon.org/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0610345': { // Calistoga
+    name: 'Calistoga',
+    type: 'at-large',
+    website: 'https://www.calistogacity.net/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0650258': { // Napa
+    name: 'Napa',
+    type: 'at-large',
+    website: 'https://www.cityofnapa.org/106/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0669088': { // St. Helena
+    name: 'St. Helena',
+    type: 'at-large',
+    website: 'https://www.cityofsthelena.org/bc-cc',
+    arcgis: null,
+    members: {}
+  },
+  '0687042': { // Yountville (Town)
+    name: 'Yountville',
+    type: 'at-large',
+    website: 'https://www.yountville.com/government/town-council',
+    arcgis: null,
+    members: {}
+  },
+
+  // ========== SAN FRANCISCO ==========
+  // San Francisco (0667000) is a consolidated city-county
+  // Supervisors are handled via COUNTY_SUPERVISORS['06075']
+
+  // ========== SAN MATEO COUNTY ==========
+  '0602364': { // Atherton (Town)
+    name: 'Atherton',
+    type: 'at-large',
+    website: 'https://www.ci.atherton.ca.us/41/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0604982': { // Belmont
+    name: 'Belmont',
+    type: 'at-large',
+    website: 'https://www.belmont.gov/city-hall/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0608590': { // Brisbane
+    name: 'Brisbane',
+    type: 'at-large',
+    website: 'https://www.brisbaneca.org/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0609066': { // Burlingame
+    name: 'Burlingame',
+    type: 'at-large',
+    website: 'https://www.burlingame.org/city_council/',
+    arcgis: null,
+    members: {}
+  },
+  '0614274': { // Colma (Town)
+    name: 'Colma',
+    type: 'at-large',
+    website: 'https://www.colma.ca.gov/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0617918': { // Daly City
+    name: 'Daly City',
+    type: 'at-large',
+    website: 'https://www.dalycity.org/140/City-Council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Rod Daus-Magbual', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=8987', website: 'https://www.dalycity.org/711/Dr-Rod-Daus-Magbual' },
+      1: { name: 'Pamela DiGiovanni', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=1804', website: 'https://www.dalycity.org/708/Pamela-DiGiovanni' },
+      2: { name: 'Juslyn Manalo', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=1809', website: 'https://www.dalycity.org/713/Juslyn-C-Manalo' },
+      3: { name: 'Teresa Proaño', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=9573', website: 'https://www.dalycity.org/707/Teresa-G-Proao' }
+    }
+  },
+  '0620956': { // East Palo Alto
+    name: 'East Palo Alto',
+    type: 'at-large',
+    website: 'https://www.cityofepa.org/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0624638': { // Foster City
+    name: 'Foster City',
+    type: 'at-large',
+    website: 'https://www.fostercity.org/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0631708': { // Half Moon Bay
+    name: 'Half Moon Bay',
+    type: 'at-large',
+    website: 'https://www.hmbcity.com/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0633854': { // Hillsborough (Town)
+    name: 'Hillsborough',
+    type: 'at-large',
+    website: 'https://www.hillsborough.net/87/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0646870': { // Menlo Park
+    name: 'Menlo Park',
+    type: 'district',
+    website: 'https://menlopark.gov/City-Council',
+    arcgis: null,
+    members: {
+      4: { name: 'Betsy Nash', photoUrl: 'https://menlopark.gov/files/sharedassets/public/v/1/city-council/images/betsy-nash.jpg?dimension=pageimage&w=480', website: 'https://menlopark.gov/City-Council/Betsy-Nash' }
+    }
+  },
+  '0647486': { // Millbrae
+    name: 'Millbrae',
+    type: 'at-large',
+    website: 'https://www.ci.millbrae.ca.us/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0656000': { // Pacifica
+    name: 'Pacifica',
+    type: 'at-large',
+    website: 'https://www.cityofpacifica.org/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0657736': { // Portola Valley (Town)
+    name: 'Portola Valley',
+    type: 'at-large',
+    website: 'https://www.portolavalley.net/town-government/town-council',
+    arcgis: null,
+    members: {}
+  },
+  '0660102': { // Redwood City
+    name: 'Redwood City',
+    type: 'district',
+    website: 'https://www.redwoodcity.org/departments/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0665028': { // San Bruno
+    name: 'San Bruno',
+    type: 'at-large',
+    website: 'https://www.sanbruno.ca.gov/gov/city_council/default.htm',
+    arcgis: null,
+    members: {}
+  },
+  '0665070': { // San Carlos
+    name: 'San Carlos',
+    type: 'at-large',
+    website: 'https://www.cityofsancarlos.org/government/city_council/city_council_members',
+    arcgis: null,
+    members: {}
+  },
+  '0668252': { // San Mateo
+    name: 'San Mateo',
+    type: 'district',
+    website: 'https://www.cityofsanmateo.org/42/City-Council',
+    arcgis: null,
+    members: {
+      2: { name: 'Nicole Fernandez', photoUrl: 'https://www.cityofsanmateo.org/ImageRepository/Document?documentID=96289', website: 'https://www.cityofsanmateo.org/4160/Council-Member-Nicole-Fernandez' }
+    }
+  },
+  '0673262': { // South San Francisco
+    name: 'South San Francisco',
+    type: 'at-large',
+    website: 'https://www.ssf.net/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0684550': { // Woodside (Town)
+    name: 'Woodside',
+    type: 'at-large',
+    website: 'https://www.woodsidetown.org/town-council',
+    arcgis: null,
+    members: {}
+  },
+
+  // ========== SANTA CLARA COUNTY ==========
+  '0611194': { // Campbell
+    name: 'Campbell',
+    type: 'at-large',
+    website: 'https://www.campbellca.gov/138/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0617610': { // Cupertino
+    name: 'Cupertino',
+    type: 'at-large',
+    website: 'https://www.cupertino.org/our-city/departments/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0629504': { // Gilroy
+    name: 'Gilroy',
+    type: 'at-large',
+    website: 'https://www.cityofgilroy.org/252/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0643280': { // Los Altos
+    name: 'Los Altos',
+    type: 'at-large',
+    website: 'https://www.losaltosca.gov/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0643294': { // Los Altos Hills (Town)
+    name: 'Los Altos Hills',
+    type: 'at-large',
+    website: 'https://www.losaltoshills.ca.gov/111/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0644112': { // Los Gatos (Town)
+    name: 'Los Gatos',
+    type: 'at-large',
+    website: 'https://www.losgatosca.gov/87/Town-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0648198': { // Milpitas
+    name: 'Milpitas',
+    type: 'at-large',
+    website: 'https://www.milpitas.gov/government/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0649054': { // Monte Sereno
+    name: 'Monte Sereno',
+    type: 'at-large',
+    website: 'https://www.montesereno.org/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0649670': { // Morgan Hill
+    name: 'Morgan Hill',
+    type: 'at-large',
+    website: 'https://www.morgan-hill.ca.gov/1068/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0649278': { // Mountain View
+    name: 'Mountain View',
+    type: 'at-large',
+    website: 'https://www.mountainview.gov/council',
+    arcgis: null,
+    members: {}
+  },
+  '0655282': { // Palo Alto
+    name: 'Palo Alto',
+    type: 'at-large',
+    website: 'https://www.cityofpaloalto.org/Departments/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0668000': { // San Jose
+    name: 'San Jose',
+    type: 'district',
+    website: 'https://www.sanjoseca.gov/your-government/departments-offices/city-council',
+    arcgis: {
+      url: 'https://geo.sanjoseca.gov/server/rest/services/OPN/OPN_OpenDataService/MapServer/120',
+      districtField: 'DISTRICTINT',
+      nameField: 'COUNCILMEMBER',
+      phoneField: 'PHONE',
+      websiteField: 'DISTRICTURL'
+    },
+    members: {
+      mayor: { name: 'Matt Mahan', photoUrl: 'https://www.sanjoseca.gov/home/showpublishedimage/18704/638182739952470000', website: 'https://www.sjmayormatt.com/' },
+      1: { name: 'Rosemary Kamei' },
+      2: { name: 'Pamela Campos' },
+      3: { name: 'Anthony Tordillos' },
+      4: { name: 'David Cohen' },
+      5: { name: 'Peter Ortiz' },
+      6: { name: 'Michael Mulcahy' },
+      7: { name: 'Bien Doan' },
+      8: { name: 'Domingo Candelas' },
+      9: { name: 'Pam Foley' },
+      10: { name: 'George Casey' }
+    }
+  },
+  '0669000': { // Santa Clara
+    name: 'Santa Clara',
+    type: 'district',
+    website: 'https://www.santaclaraca.gov/our-city/government/mayor-and-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Lisa Gillmor', photoUrl: 'https://www.santaclaraca.gov/home/showpublishedimage/75017/638205346625770000', website: 'https://www.santaclaraca.gov/our-city/government/mayor-and-council/mayor-lisa-m-gillmor' },
+      2: { name: 'Raj Chahal', photoUrl: 'https://www.santaclaraca.gov/home/showpublishedimage/75019/638204323827570000', website: 'https://www.santaclaraca.gov/our-city/government/mayor-and-council/councilmembers/raj-chahal' }
+    }
+  },
+  '0670280': { // Saratoga
+    name: 'Saratoga',
+    type: 'at-large',
+    website: 'https://www.saratoga.ca.us/185/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0677000': { // Sunnyvale
+    name: 'Sunnyvale',
+    type: 'district',
+    website: 'https://www.sunnyvale.ca.gov/your-government/governance/city-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Larry Klein', photoUrl: 'https://www.sunnyvale.ca.gov/home/showpublishedimage/364/637819987988230000', website: 'https://www.sunnyvale.ca.gov/your-government/governance/city-council' },
+      2: { name: 'Alysa Cisneros', photoUrl: 'https://www.sunnyvale.ca.gov/home/showpublishedimage/358/637819987976870000', website: 'https://www.sunnyvale.ca.gov/your-government/governance/city-council' }
+    }
+  },
+
+  // ========== SOLANO COUNTY ==========
+  '0604982': { // Benicia
+    name: 'Benicia',
+    type: 'at-large',
+    website: 'https://www.ci.benicia.ca.us/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0619402': { // Dixon
+    name: 'Dixon',
+    type: 'at-large',
+    website: 'https://www.cityofdixon.us/citycouncil',
+    arcgis: null,
+    members: {}
+  },
+  '0623182': { // Fairfield
+    name: 'Fairfield',
+    type: 'district',
+    website: 'https://www.fairfield.ca.gov/government/city-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Catherine Moy', photoUrl: 'https://www.fairfield.ca.gov/home/showpublishedimage/10467/638790320819170000', website: 'https://www.fairfield.ca.gov/government/city-council/city-councilmembers/councilmember-catherine-moy' },
+      2: { name: 'Scott Tonnesen', photoUrl: 'https://www.fairfield.ca.gov/home/showpublishedimage/10469/638790320885830000', website: 'https://www.fairfield.ca.gov/government/city-council/city-councilmembers/councilmember-scott-tonnesen' }
+    }
+  },
+  '0661922': { // Rio Vista
+    name: 'Rio Vista',
+    type: 'at-large',
+    website: 'https://www.riovistacity.com/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0675630': { // Suisun City
+    name: 'Suisun City',
+    type: 'at-large',
+    website: 'https://www.suisun.com/city-government/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0681554': { // Vacaville
+    name: 'Vacaville',
+    type: 'district',
+    website: 'https://www.cityofvacaville.gov/government/city-council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'John Carli', photoUrl: 'https://www.cityofvacaville.gov/home/showpublishedimage/17216/638066063923070000', website: 'https://www.cityofvacaville.gov/government/city-council' },
+      3: { name: 'Michael Silva', photoUrl: 'https://www.cityofvacaville.gov/home/showpublishedimage/14918/637756826501370000', website: 'https://www.cityofvacaville.gov/government/city-council' }
+    }
+  },
+  '0681666': { // Vallejo
+    name: 'Vallejo',
+    type: 'district',
+    website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council',
+    arcgis: null,
+    members: {
+      mayor: { name: 'Andrea Sorce', photoUrl: 'https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_16925367/Image/City%20Hall/City%20Government/Mayor%20&%20City%20Council/Mayor%20Sorce%20web.jpg', website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council' },
+      4: { name: 'Charles Palmares', photoUrl: 'https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_16925367/Image/City%20Hall/City%20Government/Mayor%20&%20City%20Council/palmares-d4.jpg', website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council' }
+    }
+  },
+
+  // ========== SONOMA COUNTY ==========
+  '0614190': { // Cloverdale
+    name: 'Cloverdale',
+    type: 'at-large',
+    website: 'https://www.cloverdale.net/131/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0616462': { // Cotati
+    name: 'Cotati',
+    type: 'at-large',
+    website: 'https://www.cotaticity.org/government/city-council',
+    arcgis: null,
+    members: {}
+  },
+  '0632548': { // Healdsburg
+    name: 'Healdsburg',
+    type: 'at-large',
+    website: 'https://www.ci.healdsburg.ca.us/167/City-Council',
+    arcgis: null,
+    members: {}
+  },
+  '0656784': { // Petaluma
+    name: 'Petaluma',
+    type: 'at-large',
+    website: 'https://cityofpetaluma.org/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0662182': { // Rohnert Park
+    name: 'Rohnert Park',
+    type: 'at-large',
+    website: 'https://www.rpcity.org/government/city_council',
+    arcgis: null,
+    members: {}
+  },
+  '0670098': { // Santa Rosa
+    name: 'Santa Rosa',
+    type: 'district',
+    website: 'https://www.srcity.org/172/City-Council',
+    arcgis: null,
+    members: {
+      5: { name: 'Caroline Bañuelos', photoUrl: 'https://www.srcity.org/ImageRepository/Document?documentID=45051', website: 'https://www.srcity.org/directory.aspx?EID=378' }
+    }
+  },
+  '0670588': { // Sebastopol
+    name: 'Sebastopol',
+    type: 'at-large',
+    website: 'https://www.ci.sebastopol.ca.us/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0672646': { // Sonoma
+    name: 'Sonoma',
+    type: 'at-large',
+    website: 'https://www.sonomacity.org/city-council/',
+    arcgis: null,
+    members: {}
+  },
+  '0685922': { // Windsor (Town)
+    name: 'Windsor',
+    type: 'at-large',
+    website: 'https://www.townofwindsor.com/148/Town-Council',
+    arcgis: null,
+    members: {}
+  }
+};
+
 // Bay Area County Supervisor Data (2025)
 // FIPS codes: 06075=SF, 06081=San Mateo, 06085=Santa Clara, 06001=Alameda,
 //             06013=Contra Costa, 06041=Marin, 06097=Sonoma, 06055=Napa, 06095=Solano
@@ -210,6 +1017,23 @@ module.exports = async function (context, req) {
       }
 
       const result = await getCountySupervisor(countyFips, x, y, context);
+      context.res.body = JSON.stringify(result);
+      return;
+    }
+
+    // Handle city council lookup
+    if (type === 'city-council') {
+      const placeGeoid = req.query.place;
+      const x = parseFloat(req.query.x);
+      const y = parseFloat(req.query.y);
+
+      if (!placeGeoid) {
+        context.res.status = 400;
+        context.res.body = JSON.stringify({ error: 'place GEOID is required' });
+        return;
+      }
+
+      const result = await getCityCouncil(placeGeoid, x, y, context);
       context.res.body = JSON.stringify(result);
       return;
     }
@@ -479,6 +1303,11 @@ async function geocodeAddress(street, city, zip, context) {
     const countyFips = counties[0]?.GEOID || null;
     const countyName = counties[0]?.BASENAME || null;
 
+    // Get city/place info (Census Incorporated Places)
+    const places = geographies['Incorporated Places'] || [];
+    const placeGeoid = places[0]?.GEOID || null;
+    const placeName = places[0]?.BASENAME || null;
+
     if (!congressDistrict) {
       return { error: 'Could not determine congressional district for this address.' };
     }
@@ -522,7 +1351,9 @@ async function geocodeAddress(street, city, zip, context) {
       assemblyDistrict,
       senateDistrict,
       countyFips,
-      countyName
+      countyName,
+      placeGeoid,
+      placeName
     };
   } catch (error) {
     context.log.error('Geocoding error:', error);
@@ -610,5 +1441,188 @@ async function getCountySupervisor(countyFips, x, y, context) {
   } catch (error) {
     context.log.error('County supervisor lookup error:', error);
     return { error: error.message || 'Failed to lookup county supervisor' };
+  }
+}
+
+/**
+ * Get city council member(s) for a given city/place and coordinates
+ */
+async function getCityCouncil(placeGeoid, x, y, context) {
+  try {
+    const city = CITY_COUNCILS[placeGeoid];
+
+    if (!city) {
+      // City not in our database - return a generic response
+      return {
+        error: 'City council data not available',
+        placeGeoid,
+        note: 'This location may be in an unincorporated area or a city not yet in our database.'
+      };
+    }
+
+    // For at-large cities, return all members (they all represent the entire city)
+    if (city.type === 'at-large' || !city.arcgis) {
+      const allMembers = Object.entries(city.members).map(([seat, member]) => ({
+        seat: seat === 'mayor' ? 'Mayor' : (member.role || `Council Member`),
+        seatNumber: seat === 'mayor' ? null : (isNaN(parseInt(seat)) ? seat : parseInt(seat)),
+        name: member.name,
+        website: member.website || null,
+        phone: member.phone || null,
+        photoUrl: member.photoUrl || null
+      }));
+
+      return {
+        city: city.name,
+        type: city.type,
+        website: city.website,
+        placeGeoid,
+        members: allMembers,
+        note: city.type === 'at-large' ? 'All council members represent the entire city.' :
+              'District lookup not available. Showing all council members.'
+      };
+    }
+
+    // For district-based cities with ArcGIS, look up the specific district
+    if (!x || !y || isNaN(x) || isNaN(y)) {
+      // No coordinates - return all members
+      const allMembers = Object.entries(city.members).map(([seat, member]) => ({
+        seat: seat === 'mayor' ? 'Mayor' : `District ${seat}`,
+        seatNumber: seat === 'mayor' ? null : parseInt(seat),
+        name: member.name,
+        website: member.website || null,
+        photoUrl: member.photoUrl || null
+      }));
+
+      return {
+        city: city.name,
+        type: city.type,
+        website: city.website,
+        placeGeoid,
+        members: allMembers,
+        note: 'Coordinates not provided. Showing all council members.'
+      };
+    }
+
+    // Query the city's ArcGIS layer for the council district
+    const arcgisParams = new URLSearchParams({
+      geometry: JSON.stringify({
+        x: x,
+        y: y,
+        spatialReference: { wkid: 4326 }
+      }),
+      geometryType: 'esriGeometryPoint',
+      inSR: '4326',
+      spatialRel: 'esriSpatialRelIntersects',
+      returnGeometry: 'false',
+      outFields: '*',
+      f: 'json'
+    });
+
+    const arcgisUrl = `${city.arcgis.url}/query?${arcgisParams}`;
+    context.log('Fetching city council district:', arcgisUrl);
+
+    const arcgisResponse = await fetch(arcgisUrl);
+    if (!arcgisResponse.ok) {
+      throw new Error(`ArcGIS error: ${arcgisResponse.status}`);
+    }
+
+    const arcgisData = await arcgisResponse.json();
+    const features = arcgisData?.features;
+
+    if (!features || features.length === 0) {
+      // Address might be outside city limits
+      return {
+        error: 'Could not determine council district for this location',
+        city: city.name,
+        note: 'This address may be outside city limits or in an unincorporated area.'
+      };
+    }
+
+    const attrs = features[0].attributes;
+    let districtNum = attrs[city.arcgis.districtField];
+
+    // Handle special district mappings (e.g., Oakland uses DISTRICT_ID 111-117)
+    if (city.arcgis.districtMapping && city.arcgis.districtMapping[districtNum]) {
+      districtNum = city.arcgis.districtMapping[districtNum];
+    }
+
+    // Parse district number from string if needed
+    if (typeof districtNum === 'string') {
+      const match = districtNum.match(/(\d+)/);
+      if (match) {
+        districtNum = parseInt(match[1], 10);
+      }
+    }
+
+    // Get council member name - try live data from ArcGIS first
+    let councilMemberName = null;
+    let councilMemberPhone = null;
+    let councilMemberWebsite = null;
+
+    if (city.arcgis.nameField && attrs[city.arcgis.nameField]) {
+      councilMemberName = attrs[city.arcgis.nameField];
+    }
+    if (city.arcgis.phoneField && attrs[city.arcgis.phoneField]) {
+      councilMemberPhone = attrs[city.arcgis.phoneField];
+    }
+    if (city.arcgis.websiteField && attrs[city.arcgis.websiteField]) {
+      councilMemberWebsite = attrs[city.arcgis.websiteField];
+    }
+
+    // Fall back to our stored data if ArcGIS doesn't have the name
+    const storedMember = city.members[districtNum];
+    if (!councilMemberName && storedMember) {
+      councilMemberName = storedMember.name;
+    }
+    if (!councilMemberWebsite && storedMember?.website) {
+      councilMemberWebsite = storedMember.website;
+    }
+
+    // Build response with district member + mayor (if applicable)
+    const members = [];
+
+    // Add mayor if present
+    if (city.members.mayor) {
+      members.push({
+        seat: 'Mayor',
+        seatNumber: null,
+        name: city.members.mayor.name,
+        website: city.members.mayor.website || null,
+        photoUrl: city.members.mayor.photoUrl || null
+      });
+    }
+
+    // Add district council member
+    members.push({
+      seat: `District ${districtNum}`,
+      seatNumber: districtNum,
+      name: councilMemberName || 'Unknown',
+      website: councilMemberWebsite,
+      phone: councilMemberPhone,
+      photoUrl: storedMember?.photoUrl || null
+    });
+
+    // For hybrid cities (like Oakland), also include at-large members
+    if (city.type === 'hybrid' && city.members['at-large']) {
+      members.push({
+        seat: 'At-Large',
+        seatNumber: 'at-large',
+        name: city.members['at-large'].name,
+        website: city.members['at-large'].website || null,
+        photoUrl: city.members['at-large'].photoUrl || null
+      });
+    }
+
+    return {
+      city: city.name,
+      type: city.type,
+      website: city.website,
+      placeGeoid,
+      district: districtNum,
+      members
+    };
+  } catch (error) {
+    context.log.error('City council lookup error:', error);
+    return { error: error.message || 'Failed to lookup city council' };
   }
 }
