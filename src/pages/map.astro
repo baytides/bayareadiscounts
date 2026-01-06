@@ -26,6 +26,35 @@ const pmtilesUrl = import.meta.env.PUBLIC_PMTILES_URL || 'https://baytidesstorag
 
     <!-- Map Controls -->
     <div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
+      <!-- Location Search -->
+      <div class="relative">
+        <div class="flex items-center bg-white dark:bg-neutral-800 rounded-lg shadow-lg">
+          <svg class="w-4 h-4 ml-3 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input
+            type="text"
+            id="location-search"
+            placeholder="Search city or ZIP code..."
+            class="w-48 sm:w-64 px-3 py-2 bg-transparent text-sm text-neutral-700 dark:text-neutral-200 placeholder-neutral-400 focus:outline-none"
+            autocomplete="off"
+          />
+          <button
+            id="clear-search"
+            class="hidden px-2 py-2 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"
+            aria-label="Clear search"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <!-- Search Suggestions Dropdown -->
+        <div id="search-suggestions" class="hidden absolute top-full left-0 right-0 mt-1 bg-white dark:bg-neutral-800 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
       <!-- Legend Toggle -->
       <button
         id="legend-toggle"
@@ -122,12 +151,386 @@ const pmtilesUrl = import.meta.env.PUBLIC_PMTILES_URL || 'https://baytidesstorag
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
+
+  /* Search marker styling */
+  :global(.search-marker) {
+    cursor: pointer;
+  }
+
+  :global(.search-marker svg) {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: marker-bounce 0.5s ease-out;
+  }
+
+  @keyframes marker-bounce {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 </style>
 
 <script>
   import maplibregl from 'maplibre-gl';
   import 'maplibre-gl/dist/maplibre-gl.css';
   import * as pmtiles from 'pmtiles';
+
+  // Bay Area city coordinates (approximate centers)
+  // Generated from cities.yml with coordinates
+  const CITY_COORDINATES: Record<string, { lat: number; lng: number; county: string }> = {
+    // Alameda County
+    'Alameda': { lat: 37.7652, lng: -122.2416, county: 'Alameda' },
+    'Albany': { lat: 37.8869, lng: -122.2978, county: 'Alameda' },
+    'Berkeley': { lat: 37.8716, lng: -122.2727, county: 'Alameda' },
+    'Castro Valley': { lat: 37.6941, lng: -122.0864, county: 'Alameda' },
+    'Dublin': { lat: 37.7022, lng: -121.9358, county: 'Alameda' },
+    'Emeryville': { lat: 37.8313, lng: -122.2852, county: 'Alameda' },
+    'Fremont': { lat: 37.5485, lng: -121.9886, county: 'Alameda' },
+    'Hayward': { lat: 37.6688, lng: -122.0808, county: 'Alameda' },
+    'Livermore': { lat: 37.6819, lng: -121.7681, county: 'Alameda' },
+    'Newark': { lat: 37.5297, lng: -122.0402, county: 'Alameda' },
+    'Oakland': { lat: 37.8044, lng: -122.2712, county: 'Alameda' },
+    'Piedmont': { lat: 37.8246, lng: -122.2318, county: 'Alameda' },
+    'Pleasanton': { lat: 37.6604, lng: -121.8758, county: 'Alameda' },
+    'San Leandro': { lat: 37.7249, lng: -122.1561, county: 'Alameda' },
+    'San Lorenzo': { lat: 37.6808, lng: -122.1244, county: 'Alameda' },
+    'Sunol': { lat: 37.5977, lng: -121.8836, county: 'Alameda' },
+    'Union City': { lat: 37.5934, lng: -122.0439, county: 'Alameda' },
+    // Contra Costa County
+    'Alamo': { lat: 37.8501, lng: -122.0322, county: 'Contra Costa' },
+    'Antioch': { lat: 38.0049, lng: -121.8058, county: 'Contra Costa' },
+    'Brentwood': { lat: 37.9317, lng: -121.6961, county: 'Contra Costa' },
+    'Clayton': { lat: 37.9410, lng: -121.9355, county: 'Contra Costa' },
+    'Concord': { lat: 37.9780, lng: -122.0311, county: 'Contra Costa' },
+    'Danville': { lat: 37.8216, lng: -121.9999, county: 'Contra Costa' },
+    'El Cerrito': { lat: 37.9161, lng: -122.3103, county: 'Contra Costa' },
+    'El Sobrante': { lat: 37.9774, lng: -122.2947, county: 'Contra Costa' },
+    'Hercules': { lat: 38.0172, lng: -122.2886, county: 'Contra Costa' },
+    'Lafayette': { lat: 37.8858, lng: -122.1180, county: 'Contra Costa' },
+    'Martinez': { lat: 38.0194, lng: -122.1341, county: 'Contra Costa' },
+    'Moraga': { lat: 37.8349, lng: -122.1297, county: 'Contra Costa' },
+    'Oakley': { lat: 37.9974, lng: -121.7125, county: 'Contra Costa' },
+    'Orinda': { lat: 37.8771, lng: -122.1797, county: 'Contra Costa' },
+    'Pinole': { lat: 38.0044, lng: -122.2989, county: 'Contra Costa' },
+    'Pittsburg': { lat: 38.0280, lng: -121.8847, county: 'Contra Costa' },
+    'Pleasant Hill': { lat: 37.9480, lng: -122.0608, county: 'Contra Costa' },
+    'Richmond': { lat: 37.9358, lng: -122.3478, county: 'Contra Costa' },
+    'San Pablo': { lat: 37.9621, lng: -122.3458, county: 'Contra Costa' },
+    'San Ramon': { lat: 37.7799, lng: -121.9780, county: 'Contra Costa' },
+    'Walnut Creek': { lat: 37.9101, lng: -122.0652, county: 'Contra Costa' },
+    // Marin County
+    'Belvedere': { lat: 37.8724, lng: -122.4647, county: 'Marin' },
+    'Corte Madera': { lat: 37.9252, lng: -122.5272, county: 'Marin' },
+    'Fairfax': { lat: 37.9872, lng: -122.5889, county: 'Marin' },
+    'Larkspur': { lat: 37.9341, lng: -122.5350, county: 'Marin' },
+    'Mill Valley': { lat: 37.9060, lng: -122.5450, county: 'Marin' },
+    'Novato': { lat: 38.1074, lng: -122.5697, county: 'Marin' },
+    'Ross': { lat: 37.9624, lng: -122.5550, county: 'Marin' },
+    'San Anselmo': { lat: 37.9746, lng: -122.5614, county: 'Marin' },
+    'San Rafael': { lat: 37.9735, lng: -122.5311, county: 'Marin' },
+    'Sausalito': { lat: 37.8591, lng: -122.4853, county: 'Marin' },
+    'Tiburon': { lat: 37.8735, lng: -122.4567, county: 'Marin' },
+    // Napa County
+    'American Canyon': { lat: 38.1749, lng: -122.2608, county: 'Napa' },
+    'Calistoga': { lat: 38.5788, lng: -122.5797, county: 'Napa' },
+    'Napa': { lat: 38.2975, lng: -122.2869, county: 'Napa' },
+    'St. Helena': { lat: 38.5052, lng: -122.4703, county: 'Napa' },
+    'Yountville': { lat: 38.4016, lng: -122.3608, county: 'Napa' },
+    // San Francisco
+    'San Francisco': { lat: 37.7749, lng: -122.4194, county: 'San Francisco' },
+    // San Mateo County
+    'Atherton': { lat: 37.4613, lng: -122.1978, county: 'San Mateo' },
+    'Belmont': { lat: 37.5202, lng: -122.2758, county: 'San Mateo' },
+    'Brisbane': { lat: 37.6808, lng: -122.3999, county: 'San Mateo' },
+    'Burlingame': { lat: 37.5841, lng: -122.3661, county: 'San Mateo' },
+    'Colma': { lat: 37.6769, lng: -122.4597, county: 'San Mateo' },
+    'Daly City': { lat: 37.6879, lng: -122.4702, county: 'San Mateo' },
+    'East Palo Alto': { lat: 37.4688, lng: -122.1411, county: 'San Mateo' },
+    'Foster City': { lat: 37.5585, lng: -122.2711, county: 'San Mateo' },
+    'Half Moon Bay': { lat: 37.4636, lng: -122.4286, county: 'San Mateo' },
+    'Menlo Park': { lat: 37.4530, lng: -122.1817, county: 'San Mateo' },
+    'Millbrae': { lat: 37.5985, lng: -122.3872, county: 'San Mateo' },
+    'Pacifica': { lat: 37.6138, lng: -122.4869, county: 'San Mateo' },
+    'Portola Valley': { lat: 37.3841, lng: -122.2350, county: 'San Mateo' },
+    'Redwood City': { lat: 37.4852, lng: -122.2364, county: 'San Mateo' },
+    'San Bruno': { lat: 37.6305, lng: -122.4111, county: 'San Mateo' },
+    'San Carlos': { lat: 37.5072, lng: -122.2611, county: 'San Mateo' },
+    'San Mateo': { lat: 37.5630, lng: -122.3255, county: 'San Mateo' },
+    'South San Francisco': { lat: 37.6547, lng: -122.4077, county: 'San Mateo' },
+    // Santa Clara County
+    'Campbell': { lat: 37.2872, lng: -121.9500, county: 'Santa Clara' },
+    'Cupertino': { lat: 37.3230, lng: -122.0322, county: 'Santa Clara' },
+    'Gilroy': { lat: 37.0058, lng: -121.5683, county: 'Santa Clara' },
+    'Los Altos': { lat: 37.3852, lng: -122.1141, county: 'Santa Clara' },
+    'Los Gatos': { lat: 37.2266, lng: -121.9746, county: 'Santa Clara' },
+    'Milpitas': { lat: 37.4323, lng: -121.8996, county: 'Santa Clara' },
+    'Morgan Hill': { lat: 37.1305, lng: -121.6544, county: 'Santa Clara' },
+    'Mountain View': { lat: 37.3861, lng: -122.0839, county: 'Santa Clara' },
+    'Palo Alto': { lat: 37.4419, lng: -122.1430, county: 'Santa Clara' },
+    'San Jose': { lat: 37.3382, lng: -121.8863, county: 'Santa Clara' },
+    'Santa Clara': { lat: 37.3541, lng: -121.9552, county: 'Santa Clara' },
+    'Saratoga': { lat: 37.2638, lng: -122.0230, county: 'Santa Clara' },
+    'Sunnyvale': { lat: 37.3688, lng: -122.0363, county: 'Santa Clara' },
+    // Solano County
+    'Benicia': { lat: 38.0494, lng: -122.1586, county: 'Solano' },
+    'Dixon': { lat: 38.4455, lng: -121.8233, county: 'Solano' },
+    'Fairfield': { lat: 38.2494, lng: -122.0400, county: 'Solano' },
+    'Rio Vista': { lat: 38.1555, lng: -121.6925, county: 'Solano' },
+    'Suisun City': { lat: 38.2383, lng: -122.0011, county: 'Solano' },
+    'Vacaville': { lat: 38.3566, lng: -121.9877, county: 'Solano' },
+    'Vallejo': { lat: 38.1041, lng: -122.2566, county: 'Solano' },
+    // Sonoma County
+    'Cloverdale': { lat: 38.8055, lng: -123.0172, county: 'Sonoma' },
+    'Cotati': { lat: 38.3277, lng: -122.7072, county: 'Sonoma' },
+    'Healdsburg': { lat: 38.6105, lng: -122.8694, county: 'Sonoma' },
+    'Petaluma': { lat: 38.2324, lng: -122.6367, county: 'Sonoma' },
+    'Rohnert Park': { lat: 38.3396, lng: -122.7011, county: 'Sonoma' },
+    'Santa Rosa': { lat: 38.4404, lng: -122.7141, county: 'Sonoma' },
+    'Sebastopol': { lat: 38.4021, lng: -122.8239, county: 'Sonoma' },
+    'Sonoma': { lat: 38.2919, lng: -122.4580, county: 'Sonoma' },
+    'Windsor': { lat: 38.5469, lng: -122.8164, county: 'Sonoma' },
+  };
+
+  // ZIP code to city and coordinates mapping
+  // Using representative coordinates for each ZIP
+  const ZIP_COORDINATES: Record<string, { city: string; lat: number; lng: number }> = {
+    // Alameda County
+    '94501': { city: 'Alameda', lat: 37.7652, lng: -122.2416 },
+    '94502': { city: 'Alameda', lat: 37.7374, lng: -122.2400 },
+    '94536': { city: 'Fremont', lat: 37.5547, lng: -121.9759 },
+    '94538': { city: 'Fremont', lat: 37.5134, lng: -121.9401 },
+    '94539': { city: 'Fremont', lat: 37.5102, lng: -121.9175 },
+    '94541': { city: 'Hayward', lat: 37.6697, lng: -122.0870 },
+    '94544': { city: 'Hayward', lat: 37.6336, lng: -122.0564 },
+    '94545': { city: 'Hayward', lat: 37.6317, lng: -122.1064 },
+    '94546': { city: 'Castro Valley', lat: 37.6941, lng: -122.0864 },
+    '94550': { city: 'Livermore', lat: 37.6819, lng: -121.7681 },
+    '94551': { city: 'Livermore', lat: 37.7021, lng: -121.7222 },
+    '94555': { city: 'Fremont', lat: 37.5506, lng: -122.0556 },
+    '94560': { city: 'Newark', lat: 37.5297, lng: -122.0402 },
+    '94566': { city: 'Pleasanton', lat: 37.6604, lng: -121.8758 },
+    '94568': { city: 'Dublin', lat: 37.7022, lng: -121.9358 },
+    '94577': { city: 'San Leandro', lat: 37.7249, lng: -122.1561 },
+    '94578': { city: 'San Leandro', lat: 37.7058, lng: -122.1283 },
+    '94579': { city: 'San Leandro', lat: 37.6917, lng: -122.1278 },
+    '94587': { city: 'Union City', lat: 37.5934, lng: -122.0439 },
+    '94588': { city: 'Pleasanton', lat: 37.6858, lng: -121.8494 },
+    '94601': { city: 'Oakland', lat: 37.7758, lng: -122.2175 },
+    '94602': { city: 'Oakland', lat: 37.8024, lng: -122.2106 },
+    '94603': { city: 'Oakland', lat: 37.7391, lng: -122.1706 },
+    '94605': { city: 'Oakland', lat: 37.7608, lng: -122.1650 },
+    '94606': { city: 'Oakland', lat: 37.7933, lng: -122.2442 },
+    '94607': { city: 'Oakland', lat: 37.8063, lng: -122.2969 },
+    '94608': { city: 'Emeryville', lat: 37.8313, lng: -122.2852 },
+    '94609': { city: 'Oakland', lat: 37.8366, lng: -122.2619 },
+    '94610': { city: 'Oakland', lat: 37.8124, lng: -122.2389 },
+    '94611': { city: 'Oakland', lat: 37.8308, lng: -122.2072 },
+    '94612': { city: 'Oakland', lat: 37.8110, lng: -122.2708 },
+    '94618': { city: 'Oakland', lat: 37.8441, lng: -122.2514 },
+    '94619': { city: 'Oakland', lat: 37.7824, lng: -122.1817 },
+    '94621': { city: 'Oakland', lat: 37.7558, lng: -122.1939 },
+    '94702': { city: 'Berkeley', lat: 37.8655, lng: -122.2886 },
+    '94703': { city: 'Berkeley', lat: 37.8624, lng: -122.2769 },
+    '94704': { city: 'Berkeley', lat: 37.8716, lng: -122.2594 },
+    '94705': { city: 'Berkeley', lat: 37.8633, lng: -122.2411 },
+    '94706': { city: 'Albany', lat: 37.8869, lng: -122.2978 },
+    '94707': { city: 'Berkeley', lat: 37.8930, lng: -122.2783 },
+    '94708': { city: 'Berkeley', lat: 37.8991, lng: -122.2653 },
+    '94709': { city: 'Berkeley', lat: 37.8788, lng: -122.2661 },
+    '94710': { city: 'Berkeley', lat: 37.8621, lng: -122.3019 },
+    // Contra Costa
+    '94506': { city: 'Danville', lat: 37.8216, lng: -121.9999 },
+    '94507': { city: 'Alamo', lat: 37.8501, lng: -122.0322 },
+    '94509': { city: 'Antioch', lat: 38.0049, lng: -121.8058 },
+    '94513': { city: 'Brentwood', lat: 37.9317, lng: -121.6961 },
+    '94517': { city: 'Clayton', lat: 37.9410, lng: -121.9355 },
+    '94518': { city: 'Concord', lat: 37.9780, lng: -122.0311 },
+    '94519': { city: 'Concord', lat: 37.9900, lng: -122.0050 },
+    '94520': { city: 'Concord', lat: 37.9680, lng: -122.0200 },
+    '94521': { city: 'Concord', lat: 37.9600, lng: -121.9700 },
+    '94523': { city: 'Pleasant Hill', lat: 37.9480, lng: -122.0608 },
+    '94526': { city: 'Danville', lat: 37.7900, lng: -121.9700 },
+    '94530': { city: 'El Cerrito', lat: 37.9161, lng: -122.3103 },
+    '94531': { city: 'Antioch', lat: 37.9700, lng: -121.7600 },
+    '94547': { city: 'Hercules', lat: 38.0172, lng: -122.2886 },
+    '94549': { city: 'Lafayette', lat: 37.8858, lng: -122.1180 },
+    '94553': { city: 'Martinez', lat: 38.0194, lng: -122.1341 },
+    '94556': { city: 'Moraga', lat: 37.8349, lng: -122.1297 },
+    '94561': { city: 'Oakley', lat: 37.9974, lng: -121.7125 },
+    '94563': { city: 'Orinda', lat: 37.8771, lng: -122.1797 },
+    '94564': { city: 'Pinole', lat: 38.0044, lng: -122.2989 },
+    '94565': { city: 'Pittsburg', lat: 38.0280, lng: -121.8847 },
+    '94582': { city: 'San Ramon', lat: 37.7799, lng: -121.9780 },
+    '94583': { city: 'San Ramon', lat: 37.7600, lng: -121.9600 },
+    '94595': { city: 'Walnut Creek', lat: 37.9101, lng: -122.0652 },
+    '94596': { city: 'Walnut Creek', lat: 37.9000, lng: -122.0600 },
+    '94597': { city: 'Walnut Creek', lat: 37.9200, lng: -122.0500 },
+    '94598': { city: 'Walnut Creek', lat: 37.9200, lng: -122.0300 },
+    '94801': { city: 'Richmond', lat: 37.9358, lng: -122.3478 },
+    '94803': { city: 'El Sobrante', lat: 37.9774, lng: -122.2947 },
+    '94804': { city: 'Richmond', lat: 37.9200, lng: -122.3600 },
+    '94805': { city: 'Richmond', lat: 37.9300, lng: -122.3300 },
+    '94806': { city: 'San Pablo', lat: 37.9621, lng: -122.3458 },
+    // San Francisco
+    '94102': { city: 'San Francisco', lat: 37.7813, lng: -122.4167 },
+    '94103': { city: 'San Francisco', lat: 37.7725, lng: -122.4108 },
+    '94104': { city: 'San Francisco', lat: 37.7916, lng: -122.4019 },
+    '94105': { city: 'San Francisco', lat: 37.7894, lng: -122.3927 },
+    '94107': { city: 'San Francisco', lat: 37.7649, lng: -122.3956 },
+    '94108': { city: 'San Francisco', lat: 37.7919, lng: -122.4078 },
+    '94109': { city: 'San Francisco', lat: 37.7941, lng: -122.4217 },
+    '94110': { city: 'San Francisco', lat: 37.7489, lng: -122.4153 },
+    '94111': { city: 'San Francisco', lat: 37.7983, lng: -122.4003 },
+    '94112': { city: 'San Francisco', lat: 37.7199, lng: -122.4424 },
+    '94114': { city: 'San Francisco', lat: 37.7586, lng: -122.4350 },
+    '94115': { city: 'San Francisco', lat: 37.7866, lng: -122.4378 },
+    '94116': { city: 'San Francisco', lat: 37.7435, lng: -122.4859 },
+    '94117': { city: 'San Francisco', lat: 37.7702, lng: -122.4439 },
+    '94118': { city: 'San Francisco', lat: 37.7822, lng: -122.4608 },
+    '94121': { city: 'San Francisco', lat: 37.7785, lng: -122.4922 },
+    '94122': { city: 'San Francisco', lat: 37.7589, lng: -122.4844 },
+    '94123': { city: 'San Francisco', lat: 37.8002, lng: -122.4378 },
+    '94124': { city: 'San Francisco', lat: 37.7316, lng: -122.3872 },
+    '94127': { city: 'San Francisco', lat: 37.7350, lng: -122.4575 },
+    '94129': { city: 'San Francisco', lat: 37.8008, lng: -122.4658 },
+    '94130': { city: 'San Francisco', lat: 37.8233, lng: -122.3706 },
+    '94131': { city: 'San Francisco', lat: 37.7419, lng: -122.4378 },
+    '94132': { city: 'San Francisco', lat: 37.7208, lng: -122.4783 },
+    '94133': { city: 'San Francisco', lat: 37.8002, lng: -122.4094 },
+    '94134': { city: 'San Francisco', lat: 37.7191, lng: -122.4119 },
+    '94158': { city: 'San Francisco', lat: 37.7691, lng: -122.3867 },
+    // San Mateo County
+    '94002': { city: 'Belmont', lat: 37.5202, lng: -122.2758 },
+    '94005': { city: 'Brisbane', lat: 37.6808, lng: -122.3999 },
+    '94010': { city: 'Burlingame', lat: 37.5841, lng: -122.3661 },
+    '94014': { city: 'Daly City', lat: 37.6879, lng: -122.4702 },
+    '94015': { city: 'Daly City', lat: 37.6800, lng: -122.4800 },
+    '94019': { city: 'Half Moon Bay', lat: 37.4636, lng: -122.4286 },
+    '94025': { city: 'Menlo Park', lat: 37.4530, lng: -122.1817 },
+    '94027': { city: 'Atherton', lat: 37.4613, lng: -122.1978 },
+    '94028': { city: 'Portola Valley', lat: 37.3841, lng: -122.2350 },
+    '94030': { city: 'Millbrae', lat: 37.5985, lng: -122.3872 },
+    '94044': { city: 'Pacifica', lat: 37.6138, lng: -122.4869 },
+    '94061': { city: 'Redwood City', lat: 37.4852, lng: -122.2364 },
+    '94062': { city: 'Redwood City', lat: 37.4700, lng: -122.2500 },
+    '94063': { city: 'Redwood City', lat: 37.4900, lng: -122.2100 },
+    '94065': { city: 'Redwood City', lat: 37.5300, lng: -122.2500 },
+    '94066': { city: 'San Bruno', lat: 37.6305, lng: -122.4111 },
+    '94070': { city: 'San Carlos', lat: 37.5072, lng: -122.2611 },
+    '94080': { city: 'South San Francisco', lat: 37.6547, lng: -122.4077 },
+    '94303': { city: 'East Palo Alto', lat: 37.4688, lng: -122.1411 },
+    '94401': { city: 'San Mateo', lat: 37.5630, lng: -122.3255 },
+    '94402': { city: 'San Mateo', lat: 37.5500, lng: -122.3100 },
+    '94403': { city: 'San Mateo', lat: 37.5400, lng: -122.3000 },
+    '94404': { city: 'Foster City', lat: 37.5585, lng: -122.2711 },
+    // Santa Clara County
+    '94022': { city: 'Los Altos', lat: 37.3852, lng: -122.1141 },
+    '94024': { city: 'Los Altos', lat: 37.3700, lng: -122.1000 },
+    '94040': { city: 'Mountain View', lat: 37.3861, lng: -122.0839 },
+    '94041': { city: 'Mountain View', lat: 37.3900, lng: -122.0700 },
+    '94043': { city: 'Mountain View', lat: 37.4100, lng: -122.0800 },
+    '94085': { city: 'Sunnyvale', lat: 37.3688, lng: -122.0363 },
+    '94086': { city: 'Sunnyvale', lat: 37.3700, lng: -122.0300 },
+    '94087': { city: 'Sunnyvale', lat: 37.3500, lng: -122.0400 },
+    '94089': { city: 'Sunnyvale', lat: 37.4100, lng: -122.0100 },
+    '94301': { city: 'Palo Alto', lat: 37.4419, lng: -122.1430 },
+    '94304': { city: 'Palo Alto', lat: 37.3900, lng: -122.1500 },
+    '94306': { city: 'Palo Alto', lat: 37.4200, lng: -122.1300 },
+    '95008': { city: 'Campbell', lat: 37.2872, lng: -121.9500 },
+    '95014': { city: 'Cupertino', lat: 37.3230, lng: -122.0322 },
+    '95020': { city: 'Gilroy', lat: 37.0058, lng: -121.5683 },
+    '95030': { city: 'Los Gatos', lat: 37.2266, lng: -121.9746 },
+    '95032': { city: 'Los Gatos', lat: 37.2400, lng: -121.9600 },
+    '95035': { city: 'Milpitas', lat: 37.4323, lng: -121.8996 },
+    '95037': { city: 'Morgan Hill', lat: 37.1305, lng: -121.6544 },
+    '95050': { city: 'Santa Clara', lat: 37.3541, lng: -121.9552 },
+    '95051': { city: 'Santa Clara', lat: 37.3500, lng: -121.9800 },
+    '95054': { city: 'Santa Clara', lat: 37.3900, lng: -121.9700 },
+    '95070': { city: 'Saratoga', lat: 37.2638, lng: -122.0230 },
+    '95110': { city: 'San Jose', lat: 37.3400, lng: -121.8900 },
+    '95111': { city: 'San Jose', lat: 37.2900, lng: -121.8200 },
+    '95112': { city: 'San Jose', lat: 37.3600, lng: -121.8900 },
+    '95113': { city: 'San Jose', lat: 37.3350, lng: -121.8900 },
+    '95116': { city: 'San Jose', lat: 37.3500, lng: -121.8500 },
+    '95117': { city: 'San Jose', lat: 37.3100, lng: -121.9600 },
+    '95118': { city: 'San Jose', lat: 37.2500, lng: -121.8900 },
+    '95119': { city: 'San Jose', lat: 37.2300, lng: -121.7800 },
+    '95120': { city: 'San Jose', lat: 37.2100, lng: -121.8500 },
+    '95121': { city: 'San Jose', lat: 37.3100, lng: -121.8100 },
+    '95122': { city: 'San Jose', lat: 37.3300, lng: -121.8300 },
+    '95123': { city: 'San Jose', lat: 37.2500, lng: -121.8300 },
+    '95124': { city: 'San Jose', lat: 37.2600, lng: -121.9200 },
+    '95125': { city: 'San Jose', lat: 37.2900, lng: -121.8900 },
+    '95126': { city: 'San Jose', lat: 37.3200, lng: -121.9100 },
+    '95127': { city: 'San Jose', lat: 37.3700, lng: -121.8100 },
+    '95128': { city: 'San Jose', lat: 37.3100, lng: -121.9400 },
+    '95129': { city: 'San Jose', lat: 37.3000, lng: -122.0100 },
+    '95130': { city: 'San Jose', lat: 37.2900, lng: -121.9800 },
+    '95131': { city: 'San Jose', lat: 37.3900, lng: -121.9000 },
+    '95132': { city: 'San Jose', lat: 37.4100, lng: -121.8600 },
+    '95133': { city: 'San Jose', lat: 37.3700, lng: -121.8700 },
+    '95134': { city: 'San Jose', lat: 37.4300, lng: -121.9400 },
+    '95135': { city: 'San Jose', lat: 37.3000, lng: -121.7600 },
+    '95136': { city: 'San Jose', lat: 37.2700, lng: -121.8500 },
+    '95138': { city: 'San Jose', lat: 37.2400, lng: -121.7500 },
+    '95148': { city: 'San Jose', lat: 37.3400, lng: -121.7800 },
+    // Marin County
+    '94901': { city: 'San Rafael', lat: 37.9735, lng: -122.5311 },
+    '94903': { city: 'San Rafael', lat: 37.9900, lng: -122.5200 },
+    '94904': { city: 'Greenbrae', lat: 37.9500, lng: -122.5300 },
+    '94920': { city: 'Tiburon', lat: 37.8735, lng: -122.4567 },
+    '94925': { city: 'Corte Madera', lat: 37.9252, lng: -122.5272 },
+    '94930': { city: 'Fairfax', lat: 37.9872, lng: -122.5889 },
+    '94939': { city: 'Larkspur', lat: 37.9341, lng: -122.5350 },
+    '94941': { city: 'Mill Valley', lat: 37.9060, lng: -122.5450 },
+    '94945': { city: 'Novato', lat: 38.1074, lng: -122.5697 },
+    '94947': { city: 'Novato', lat: 38.1300, lng: -122.5500 },
+    '94949': { city: 'Novato', lat: 38.0800, lng: -122.5300 },
+    '94960': { city: 'San Anselmo', lat: 37.9746, lng: -122.5614 },
+    '94965': { city: 'Sausalito', lat: 37.8591, lng: -122.4853 },
+    // Napa County
+    '94503': { city: 'American Canyon', lat: 38.1749, lng: -122.2608 },
+    '94515': { city: 'Calistoga', lat: 38.5788, lng: -122.5797 },
+    '94558': { city: 'Napa', lat: 38.2975, lng: -122.2869 },
+    '94559': { city: 'Napa', lat: 38.2700, lng: -122.3000 },
+    '94574': { city: 'St. Helena', lat: 38.5052, lng: -122.4703 },
+    '94599': { city: 'Yountville', lat: 38.4016, lng: -122.3608 },
+    // Solano County
+    '94510': { city: 'Benicia', lat: 38.0494, lng: -122.1586 },
+    '94533': { city: 'Fairfield', lat: 38.2494, lng: -122.0400 },
+    '94534': { city: 'Fairfield', lat: 38.2700, lng: -122.0600 },
+    '94571': { city: 'Rio Vista', lat: 38.1555, lng: -121.6925 },
+    '94585': { city: 'Suisun City', lat: 38.2383, lng: -122.0011 },
+    '94589': { city: 'Vallejo', lat: 38.1041, lng: -122.2566 },
+    '94590': { city: 'Vallejo', lat: 38.1100, lng: -122.2400 },
+    '94591': { city: 'Vallejo', lat: 38.1200, lng: -122.2200 },
+    '95620': { city: 'Dixon', lat: 38.4455, lng: -121.8233 },
+    '95687': { city: 'Vacaville', lat: 38.3566, lng: -121.9877 },
+    '95688': { city: 'Vacaville', lat: 38.3700, lng: -122.0000 },
+    // Sonoma County
+    '94928': { city: 'Rohnert Park', lat: 38.3396, lng: -122.7011 },
+    '94931': { city: 'Cotati', lat: 38.3277, lng: -122.7072 },
+    '94952': { city: 'Petaluma', lat: 38.2324, lng: -122.6367 },
+    '94954': { city: 'Petaluma', lat: 38.2500, lng: -122.6200 },
+    '95401': { city: 'Santa Rosa', lat: 38.4404, lng: -122.7141 },
+    '95403': { city: 'Santa Rosa', lat: 38.4700, lng: -122.7300 },
+    '95404': { city: 'Santa Rosa', lat: 38.4500, lng: -122.6800 },
+    '95405': { city: 'Santa Rosa', lat: 38.4300, lng: -122.6700 },
+    '95407': { city: 'Santa Rosa', lat: 38.4000, lng: -122.7500 },
+    '95409': { city: 'Santa Rosa', lat: 38.4600, lng: -122.6400 },
+    '95425': { city: 'Cloverdale', lat: 38.8055, lng: -123.0172 },
+    '95448': { city: 'Healdsburg', lat: 38.6105, lng: -122.8694 },
+    '95472': { city: 'Sebastopol', lat: 38.4021, lng: -122.8239 },
+    '95476': { city: 'Sonoma', lat: 38.2919, lng: -122.4580 },
+    '95492': { city: 'Windsor', lat: 38.5469, lng: -122.8164 },
+  };
 
   // Category colors matching the GeoJSON
   const CATEGORY_COLORS: Record<string, string> = {
@@ -431,6 +834,224 @@ const pmtilesUrl = import.meta.env.PUBLIC_PMTILES_URL || 'https://baytidesstorag
     // Legend toggle
     legendToggle?.addEventListener('click', () => {
       legendPanel?.classList.toggle('hidden');
+    });
+
+    // Location search functionality
+    const searchInput = document.getElementById('location-search') as HTMLInputElement;
+    const clearSearch = document.getElementById('clear-search');
+    const suggestionsEl = document.getElementById('search-suggestions');
+
+    interface SearchResult {
+      type: 'city' | 'zip';
+      name: string;
+      displayName: string;
+      lat: number;
+      lng: number;
+      county?: string;
+    }
+
+    // Search for matching cities and ZIP codes
+    function searchLocations(query: string): SearchResult[] {
+      const results: SearchResult[] = [];
+      const q = query.toLowerCase().trim();
+
+      if (!q) return results;
+
+      // Check if query looks like a ZIP code (all digits)
+      const isZipQuery = /^\d+$/.test(q);
+
+      if (isZipQuery) {
+        // Search ZIP codes
+        Object.entries(ZIP_COORDINATES).forEach(([zip, data]) => {
+          if (zip.startsWith(q)) {
+            results.push({
+              type: 'zip',
+              name: zip,
+              displayName: `${zip} (${data.city})`,
+              lat: data.lat,
+              lng: data.lng
+            });
+          }
+        });
+      } else {
+        // Search cities
+        Object.entries(CITY_COORDINATES).forEach(([city, data]) => {
+          if (city.toLowerCase().includes(q)) {
+            results.push({
+              type: 'city',
+              name: city,
+              displayName: `${city}, ${data.county} County`,
+              lat: data.lat,
+              lng: data.lng,
+              county: data.county
+            });
+          }
+        });
+      }
+
+      // Sort by relevance (exact match first, then alphabetically)
+      return results.sort((a, b) => {
+        const aExact = a.name.toLowerCase() === q;
+        const bExact = b.name.toLowerCase() === q;
+        if (aExact && !bExact) return -1;
+        if (!aExact && bExact) return 1;
+        return a.name.localeCompare(b.name);
+      }).slice(0, 8); // Limit to 8 results
+    }
+
+    // Render search suggestions
+    function renderSuggestions(results: SearchResult[]) {
+      if (!suggestionsEl) return;
+
+      if (results.length === 0) {
+        suggestionsEl.classList.add('hidden');
+        return;
+      }
+
+      suggestionsEl.innerHTML = results.map((result, index) => `
+        <button
+          type="button"
+          class="w-full px-4 py-3 text-left text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700 flex items-center gap-3 ${index === 0 ? 'rounded-t-lg' : ''} ${index === results.length - 1 ? 'rounded-b-lg' : ''}"
+          data-lat="${result.lat}"
+          data-lng="${result.lng}"
+          data-name="${result.name}"
+        >
+          <svg class="w-4 h-4 text-neutral-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ${result.type === 'city'
+              ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>'
+              : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>'
+            }
+          </svg>
+          <span class="text-neutral-700 dark:text-neutral-200">${result.displayName}</span>
+        </button>
+      `).join('');
+
+      suggestionsEl.classList.remove('hidden');
+
+      // Add click handlers to suggestion buttons
+      suggestionsEl.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lat = parseFloat(btn.getAttribute('data-lat') || '0');
+          const lng = parseFloat(btn.getAttribute('data-lng') || '0');
+          const name = btn.getAttribute('data-name') || '';
+
+          flyToLocation(lat, lng, name);
+        });
+      });
+    }
+
+    // Fly to location and optionally add a marker
+    let searchMarker: maplibregl.Marker | null = null;
+
+    function flyToLocation(lat: number, lng: number, name: string) {
+      // Remove existing search marker
+      if (searchMarker) {
+        searchMarker.remove();
+      }
+
+      // Fly to location
+      map.flyTo({
+        center: [lng, lat],
+        zoom: 13,
+        duration: 1500,
+        essential: true
+      });
+
+      // Add a marker for the searched location
+      const markerEl = document.createElement('div');
+      markerEl.className = 'search-marker';
+      markerEl.innerHTML = `
+        <svg class="w-8 h-8 text-primary-600 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+      `;
+
+      searchMarker = new maplibregl.Marker({ element: markerEl, anchor: 'bottom' })
+        .setLngLat([lng, lat])
+        .addTo(map);
+
+      // Update input and hide suggestions
+      if (searchInput) {
+        searchInput.value = name;
+      }
+      if (suggestionsEl) {
+        suggestionsEl.classList.add('hidden');
+      }
+      if (clearSearch) {
+        clearSearch.classList.remove('hidden');
+      }
+    }
+
+    // Handle search input
+    let searchDebounce: ReturnType<typeof setTimeout> | null = null;
+
+    searchInput?.addEventListener('input', (e) => {
+      const query = (e.target as HTMLInputElement).value;
+
+      // Show/hide clear button
+      if (clearSearch) {
+        if (query) {
+          clearSearch.classList.remove('hidden');
+        } else {
+          clearSearch.classList.add('hidden');
+        }
+      }
+
+      // Debounce search
+      if (searchDebounce) clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => {
+        const results = searchLocations(query);
+        renderSuggestions(results);
+      }, 150);
+    });
+
+    // Handle keyboard navigation
+    searchInput?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        suggestionsEl?.classList.add('hidden');
+        searchInput.blur();
+      } else if (e.key === 'Enter') {
+        const query = searchInput.value.trim();
+        const results = searchLocations(query);
+        if (results.length > 0) {
+          flyToLocation(results[0].lat, results[0].lng, results[0].name);
+        }
+      }
+    });
+
+    // Clear search
+    clearSearch?.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      if (suggestionsEl) {
+        suggestionsEl.classList.add('hidden');
+      }
+      if (clearSearch) {
+        clearSearch.classList.add('hidden');
+      }
+      if (searchMarker) {
+        searchMarker.remove();
+        searchMarker = null;
+      }
+    });
+
+    // Close suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('#location-search') && !target.closest('#search-suggestions')) {
+        suggestionsEl?.classList.add('hidden');
+      }
+    });
+
+    // Show suggestions when focusing on search input with existing value
+    searchInput?.addEventListener('focus', () => {
+      const query = searchInput.value;
+      if (query) {
+        const results = searchLocations(query);
+        renderSuggestions(results);
+      }
     });
 
     // Listen for theme changes

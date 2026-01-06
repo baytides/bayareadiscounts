@@ -599,3 +599,256 @@
   link: https://www.clippercard.com/ClipperWeb/discounts.html
   link_text: Visit website
   verified_date: "2025-12-16"
+- id: bay-area-park-ride
+  name: Bay Area Park & Ride Lots
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: Free parking lots located near major transit hubs and freeway on-ramps throughout the Bay Area, allowing commuters to park and continue their trip via transit, carpool, or vanpool.
+  what_they_offer: |
+    - Free parking at designated lots
+    - Locations near BART, Caltrain, and bus stations
+    - Convenient for carpool and vanpool meetups
+    - Reduces single-occupancy vehicle trips
+    - Open to all commuters
+  how_to_get_it: |
+    1. Visit 511.org to find Park & Ride lots near you
+    2. No registration required for most lots
+    3. Drive to lot and park in designated spaces
+    4. Continue commute via transit, carpool, or vanpool
+    5. Some lots may have time limits or overnight restrictions
+  benefit: Free parking near transit hubs for carpoolers and transit riders
+  how_to_use: Find lots at 511.org/carpool/park-n-ride
+  timeframe: Ongoing
+  link: https://511.org/carpool/park-n-ride
+  link_text: Find Lots
+  verified_date: "2026-01-05"
+- id: express-lanes-start
+  name: I-880/I-80 Express Lanes START Program
+  category: Transportation
+  area: Alameda County
+  groups:
+    - income-eligible
+  description: The START (Savings for Tolling and Reduced Traffic) program provides a 50% discount on express lane tolls for income-eligible drivers on I-880 and I-80 express lanes in Alameda County.
+  what_they_offer: |
+    - 50% discount on express lane tolls
+    - Available on I-880 Express Lanes
+    - Available on I-80 Express Lanes
+    - Helps lower-income commuters access faster travel times
+    - Works with FasTrak Flex toll tag
+  how_to_get_it: |
+    1. Must have household income at or below 200% of federal poverty level
+    2. Apply online at expresslanesstart.org
+    3. Provide proof of income and residency
+    4. Receive FasTrak Flex toll tag if approved
+    5. Discount automatically applied when using express lanes
+  benefit: 50% discount on I-880/I-80 express lane tolls for income-eligible drivers
+  how_to_use: Apply at expresslanesstart.org with income verification
+  timeframe: Ongoing
+  link: https://www.expresslanesstart.org/s/
+  link_text: Apply Now
+  verified_date: "2026-01-05"
+- id: smc-101-express-lanes-go-card
+  name: San Mateo 101 Express Lanes Go Card
+  category: Transportation
+  area: San Mateo County
+  groups:
+    - income-eligible
+  description: The San Mateo 101 Express Lanes equity program provides discounted tolls for low-income drivers using the US-101 express lanes in San Mateo County.
+  what_they_offer: |
+    - Significant toll discounts for eligible drivers
+    - Valid on US-101 Express Lanes in San Mateo County
+    - Helps lower-income commuters access express lanes
+    - Works with FasTrak toll tag
+  how_to_get_it: |
+    1. Must meet income eligibility requirements
+    2. Apply online at 101expresslanes.org
+    3. Provide proof of income
+    4. Receive toll discount on eligible trips
+  benefit: Discounted tolls on US-101 Express Lanes for income-eligible drivers
+  how_to_use: Apply at 101expresslanes.org/program/equity-program
+  timeframe: Ongoing
+  link: https://101expresslanes.org/program/equity-program
+  link_text: Apply Now
+  verified_date: "2026-01-05"
+- id: bay-area-casual-carpool
+  name: Bay Area Casual Carpool
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: Casual carpooling (also called "slugging") is an informal ridesharing system where drivers pick up passengers at designated locations to meet carpool requirements for bridge tolls and HOV lanes.
+  what_they_offer: |
+    - Free rides for passengers to San Francisco
+    - Reduced bridge tolls for drivers (carpool rate)
+    - HOV lane access for drivers
+    - No formal registration required
+    - Multiple pickup locations throughout East Bay
+  how_to_get_it: |
+    1. Find a casual carpool pickup location near you
+    2. Line up at designated spots during commute hours
+    3. Drivers pull up and passengers get in
+    4. Ride is free for passengers
+    5. Drivers benefit from carpool toll rates and HOV access
+  benefit: Free rides for passengers; reduced tolls and HOV access for drivers
+  how_to_use: Line up at designated casual carpool locations
+  timeframe: Weekday commute hours
+  link: https://511.org/carpool/casual
+  link_text: Find Locations
+  verified_date: "2026-01-05"
+- id: bay-area-vanpool
+  name: Bay Area Vanpool Program
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: 511.org helps commuters form and join vanpools, where groups of 5-15 people share a van for their daily commute, splitting costs and reducing traffic.
+  what_they_offer: |
+    - Help finding or forming a vanpool
+    - Vanpool matching service
+    - Subsidies available through some employers
+    - Reduced commute costs compared to driving alone
+    - HOV lane access
+    - Some vanpools subsidized by MTC
+  how_to_get_it: |
+    1. Visit 511.org/vanpool to search for existing vanpools
+    2. Enter your home and work locations
+    3. Join an existing vanpool or start a new one
+    4. Split monthly costs with vanpool members
+    5. Many employers offer vanpool subsidies
+  benefit: Shared commute costs, HOV access, and reduced stress
+  how_to_use: Search for vanpools or start one at 511.org/vanpool
+  timeframe: Ongoing
+  link: https://511.org/vanpool
+  link_text: Find Vanpool
+  verified_date: "2026-01-05"
+- id: bay-area-biking-maps
+  name: Bay Area Biking Maps & Trails
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: 511.org provides comprehensive biking resources including interactive maps, trail information, and route planning tools for cyclists throughout the Bay Area.
+  what_they_offer: |
+    - Interactive bike route maps
+    - Trail information and conditions
+    - Bike-friendly route planning
+    - Information on bike lanes and paths
+    - Safety tips and resources
+    - Bike share program information
+  how_to_get_it: |
+    1. Visit 511.org/biking/maps-n-trails
+    2. Use interactive map to find bike routes
+    3. Filter by trail type, difficulty, or location
+    4. Plan your route using the bike trip planner
+    5. Download maps for offline use
+  benefit: Free bike route maps, trail info, and trip planning tools
+  how_to_use: Visit 511.org/biking for maps and resources
+  timeframe: Ongoing
+  link: https://511.org/biking/maps-n-trails
+  link_text: View Maps
+  verified_date: "2026-01-05"
+- id: guaranteed-ride-home
+  name: Guaranteed Ride Home
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: County-based programs that provide free or reimbursed emergency rides home for commuters who use alternative transportation (transit, carpool, vanpool, biking, or walking) to get to work.
+  what_they_offer: |
+    - Free or reimbursed rides home during emergencies
+    - Covers illness, family emergencies, unscheduled overtime
+    - Available via taxi, Uber/Lyft, or rental car
+    - Typically 2-4 free rides per year
+    - Separate programs in each Bay Area county
+  how_to_get_it: |
+    1. Must commute using alternative transportation (not driving alone)
+    2. Register with your county's program (free)
+    3. When emergency arises, use taxi or rideshare
+    4. Submit receipt for reimbursement
+    5. Contact your county program for specific requirements
+  benefit: Free emergency rides home for commuters using transit, carpool, bike, or walk
+  how_to_use: Register with your county's program at 511.org
+  timeframe: Ongoing
+  link: https://511.org/carpool/guaranteed-ride-home
+  link_text: Register Now
+  verified_date: "2026-01-05"
+- id: commute-rewards
+  name: Bay Area Commute Rewards
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: County-level incentive programs that reward Bay Area commuters for using alternatives to driving alone, including transit, carpooling, biking, and walking.
+  what_they_offer: |
+    - Cash rewards or prizes for sustainable commuting
+    - Tracking tools for commute trips
+    - Challenges and competitions
+    - Different programs by county
+    - Rewards vary by county program
+  how_to_get_it: |
+    1. Visit 511.org/carpool/rewards
+    2. Find your county's commute rewards program
+    3. Register through your county's website
+    4. Log your alternative commute trips
+    5. Earn rewards based on program rules
+  benefit: Rewards and incentives for using sustainable commute options
+  how_to_use: Register with your county's commute rewards program
+  timeframe: Ongoing
+  link: https://511.org/carpool/rewards
+  link_text: Find Program
+  verified_date: "2026-01-05"
+- id: safe-routes-to-school
+  name: Bay Area Safe Routes to School
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - youth
+    - families
+  description: Regional initiative helping students travel safely to and from school through walking, biking, and transit, with programs in all nine Bay Area counties.
+  what_they_offer: |
+    - Engineering improvements to school routes
+    - Crossing guard programs
+    - Free or subsidized transit passes (varies by county)
+    - Walking and biking safety education
+    - Incentive programs and contests
+    - Community education campaigns
+  how_to_get_it: |
+    1. Contact your county's Safe Routes to School program
+    2. Programs available through participating schools
+    3. Some counties offer free transit passes for youth
+    4. Schools can request safety assessments
+    5. Visit sparetheairyouth.org for county contacts
+  benefit: Safe walking/biking routes and free transit passes for students
+  how_to_use: Contact your school or county program
+  timeframe: School year
+  link: https://sparetheairyouth.org/about/safe-routes-to-school
+  link_text: Find Program
+  verified_date: "2026-01-05"
+- id: bay-area-cycling-organizations
+  name: Bay Area Bicycle Coalitions
+  category: Transportation
+  area: Bay Area-wide
+  groups:
+    - everyone
+  description: Regional bicycle advocacy organizations providing resources, community support, and advocacy for cyclists throughout the Bay Area.
+  what_they_offer: |
+    - Bicycle route information and maps
+    - Riding clubs and group rides
+    - Bike repair resources and workshops
+    - Safety education and classes
+    - Advocacy for bike infrastructure
+    - Community events and programs
+  how_to_get_it: |
+    1. Visit 511.org/biking/cycling-organizations
+    2. Find your local bicycle coalition
+    3. Join as a member (many have free options)
+    4. Access resources, maps, and community
+    5. Participate in group rides and events
+  benefit: Free bike resources, community rides, and cycling advocacy
+  how_to_use: Join your local bicycle coalition
+  timeframe: Ongoing
+  link: https://511.org/biking/cycling-organizations
+  link_text: Find Coalition
+  verified_date: "2026-01-05"
