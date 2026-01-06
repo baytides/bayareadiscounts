@@ -7,10 +7,25 @@ import path from 'path';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
-const { title, description = 'Free and low-cost resources across the San Francisco Bay Area' } = Astro.props;
+const {
+  title,
+  description = 'Free and low-cost resources across the San Francisco Bay Area',
+  image = '/og-image.png',
+  type = 'website',
+  publishedTime,
+  modifiedTime
+} = Astro.props;
+
 const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator`;
+const siteUrl = 'https://baynavigator.org';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(image, siteUrl).href;
 
 // Load site config for Tor address
 let onionAddress = '';
@@ -22,6 +37,52 @@ try {
 } catch (e) {
   // Config file not found or invalid
 }
+
+// Structured data for organization
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bay Tides",
+  "alternateName": "Bay Navigator",
+  "url": siteUrl,
+  "logo": `${siteUrl}/assets/images/logo/logo.webp`,
+  "description": "Bay Tides is a 501(c)(3) nonprofit working to protect the San Francisco Bay. Bay Navigator connects Bay Area residents with free and low-cost programs.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Redwood City",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "San Francisco Bay Area"
+  },
+  "sameAs": [
+    "https://github.com/baytides/baynavigator",
+    "https://baytides.org"
+  ]
+};
+
+// Structured data for website
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bay Navigator",
+  "url": siteUrl,
+  "description": description,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bay Tides"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/directory?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -31,17 +92,48 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0097a7" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-96.webp" />
     <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.webp" />
     <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bay Navigator - Free and low-cost resources for Bay Area residents" />
     <meta property="og:site_name" content="Bay Navigator" />
+    <meta property="og:locale" content="en_US" />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Bay Navigator - Free and low-cost resources for Bay Area residents" />
+
+    <!-- Additional SEO -->
+    <meta name="author" content="Bay Tides" />
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="San Francisco Bay Area" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
     <title>{fullTitle}</title>
 

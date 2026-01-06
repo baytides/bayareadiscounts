@@ -1,0 +1,17 @@
+# Bay Navigator robots.txt
+# https://baynavigator.org
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://baynavigator.org/sitemap-index.xml
+
+# Crawl-delay for polite crawling (optional, not all bots respect this)
+Crawl-delay: 1
+
+# Block access to API endpoints that shouldn't be indexed
+Disallow: /api/
+
+# Block access to data files
+Disallow: /data/*.json
