@@ -515,3 +515,58 @@
   link: https://ibank.ca.gov/small-business-finance-center/
   link_text: Learn More
   verified_date: "2025-12-25"
+- id: calfile
+  name: CalFile – Free State Tax Filing
+  category: Finance
+  area: Statewide
+  groups:
+    - everyone
+  description: CalFile is California's free online tax filing service from the Franchise Tax Board, allowing eligible residents to file their state income tax returns at no cost directly with the state.
+  what_they_offer: |
+    - Free California state tax return filing
+    - File current year plus two prior years
+    - Direct deposit refunds
+    - Instant confirmation of filing
+    - Secure, official FTB system
+    - Available in English and Spanish
+  how_to_get_it: |
+    1. Create a MyFTB account at ftb.ca.gov
+    2. Wait for CalFile to open (typically mid-January)
+    3. Gather W-2s, 1099s, and other tax documents
+    4. Log in and complete your return online
+    5. Review and submit electronically
+    6. Receive refund via direct deposit or check
+  benefit: File California state taxes free online; direct deposit refunds; file current and prior year returns
+  how_to_use: Create MyFTB account and file at ftb.ca.gov
+  timeframe: January 20 – April 15 annually
+  link: https://www.ftb.ca.gov/file/ways-to-file/online/calfile/
+  link_text: File Free
+  verified_date: "2026-01-05"
+- id: caleitc
+  name: CalEITC – California Earned Income Tax Credit
+  category: Finance
+  area: Statewide
+  groups:
+    - income-eligible
+    - families
+  description: The California Earned Income Tax Credit (CalEITC) provides cash back to low-income working Californians. Combined with the federal EITC, families can receive thousands of dollars in tax refunds even if they owe no taxes.
+  what_they_offer: |
+    - Cash back tax credit up to $3,529 (varies by income/family size)
+    - Refundable credit – get money even if you owe no taxes
+    - Young Child Tax Credit adds up to $1,117 for children under 6
+    - Can be combined with federal EITC for larger refund
+    - Available to ITIN filers (undocumented workers)
+    - No minimum age requirement (federal EITC requires age 25+)
+  how_to_get_it: |
+    1. Earned income must be under ~$30,950 (varies by family size)
+    2. File California state tax return (Form 540)
+    3. Complete Schedule CalEITC
+    4. Claim Young Child Tax Credit if you have children under 6
+    5. Use free tax prep services (VITA) for help filing
+    6. File by April 15 to receive refund
+  benefit: Cash back up to $3,529 for working individuals; plus $1,117 Young Child Tax Credit; available to ITIN filers
+  how_to_use: Claim on state tax return (Form 540, Schedule CalEITC)
+  timeframe: File by April 15 annually
+  link: https://www.ftb.ca.gov/about-ftb/newsroom/caleitc/
+  link_text: Check Eligibility
+  verified_date: "2026-01-05"
