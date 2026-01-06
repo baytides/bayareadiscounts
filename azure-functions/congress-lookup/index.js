@@ -24,35 +24,54 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.alamedaca.gov/GOVERNMENT/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Trish Herrera Spencer, Tony Daysog elected
+      mayor: { name: 'Marilyn Ezzy Ashcraft' }
+    }
   },
   '0600674': { // Albany
     name: 'Albany',
     type: 'at-large',
     website: 'https://www.albanyca.org/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: RCV election
+      mayor: { name: 'Aaron Tiedemann' }
+    }
   },
   '0606000': { // Berkeley
     name: 'Berkeley',
     type: 'district',
     website: 'https://berkeleyca.gov/your-government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024 winners
+      mayor: { name: 'Adena Ishii' },
+      2: { name: 'Terry Taplin' },
+      3: { name: 'Deborah Matthews' },
+      5: { name: 'Nilang Gor' },
+      6: { name: 'Brent Blackaby' }
+    }
   },
   '0620018': { // Dublin
     name: 'Dublin',
     type: 'at-large',
     website: 'https://dublin.ca.gov/148/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Kashef Qaadri (Mayor), Jon Gunderson, Melissa Hernandez elected
+      mayor: { name: 'Kashef Qaadri' }
+    }
   },
   '0622594': { // Emeryville
     name: 'Emeryville',
     type: 'at-large',
     website: 'https://www.emeryville.org/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Matthew Solomon, Sukhdeep Kaur, Sam Gould elected
+      mayor: { name: 'John Bauters' }
+    }
   },
   '0626000': { // Fremont
     name: 'Fremont',
@@ -89,14 +108,20 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.cityoflivermore.net/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: John Marchand (Mayor), Brittni Kiick, Evan Branning elected
+      mayor: { name: 'John Marchand' }
+    }
   },
   '0651182': { // Newark
     name: 'Newark',
     type: 'at-large',
     website: 'https://www.newark.org/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Michael Hannon (Mayor), Luis Freitas, Mike Bucci elected
+      mayor: { name: 'Michael Hannon' }
+    }
   },
   '0653000': { // Oakland
     name: 'Oakland',
@@ -123,28 +148,43 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.piedmont.ca.gov/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Conna McCarthy, Rosalind Robertson elected
+      mayor: { name: 'Jennifer Cavenaugh' }
+    }
   },
   '0657792': { // Pleasanton
     name: 'Pleasanton',
     type: 'at-large',
     website: 'https://www.cityofpleasantonca.gov/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Karla Brown (Mayor), Valerie Arkin, Jack Balch elected
+      mayor: { name: 'Karla Brown' }
+    }
   },
   '0668084': { // San Leandro
     name: 'San Leandro',
     type: 'district',
     website: 'https://www.sanleandro.org/depts/cityclerk/council/default.asp',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Juan Gonzalez (D1), Victor Aguilar (D3), Corina Lopez (D5) elected
+      mayor: { name: 'Juan Gonzalez' },
+      1: { name: 'Juan Gonzalez' },
+      3: { name: 'Victor Aguilar' },
+      5: { name: 'Corina Lopez' }
+    }
   },
   '0680812': { // Union City
     name: 'Union City',
     type: 'at-large',
     website: 'https://www.unioncity.org/214/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Gary Singh (Mayor), Scott Sakakihara elected
+      mayor: { name: 'Gary Singh' }
+    }
   },
 
   // ========== CONTRA COSTA COUNTY ==========
@@ -154,22 +194,35 @@ const CITY_COUNCILS = {
     website: 'https://www.antiochca.gov/government/mayor-and-city-council/',
     arcgis: null,
     members: {
-      mayor: { name: 'Ron Bernal', photoUrl: 'https://www.antiochca.gov/ImageRepository/Document?documentID=1944', website: 'https://www.antiochca.gov/directory.aspx?eid=78' }
+      // Nov 2024: Ron Bernal (Mayor), Louie Rocha (D2), Don Freitas (D3)
+      mayor: { name: 'Ron Bernal', photoUrl: 'https://www.antiochca.gov/ImageRepository/Document?documentID=1944', website: 'https://www.antiochca.gov/directory.aspx?eid=78' },
+      2: { name: 'Louie Rocha' },
+      3: { name: 'Don Freitas' }
     }
   },
   '0608142': { // Brentwood
     name: 'Brentwood',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.brentwoodca.gov/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Susannah Meyer (Mayor), Faye Maloney (D1), Jovita Mendoza (D3)
+      mayor: { name: 'Susannah Meyer' },
+      1: { name: 'Faye Maloney' },
+      3: { name: 'Jovita Mendoza' }
+    }
   },
   '0613882': { // Clayton
     name: 'Clayton',
     type: 'at-large',
     website: 'https://www.claytonca.gov/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Richard Enea, Holly Tillman, Jim Diaz elected
+      1: { name: 'Richard Enea' },
+      2: { name: 'Holly Tillman' },
+      3: { name: 'Jim Diaz' }
+    }
   },
   '0616000': { // Concord
     name: 'Concord',
@@ -177,7 +230,9 @@ const CITY_COUNCILS = {
     website: 'https://www.cityofconcord.org/235/City-Council',
     arcgis: null,
     members: {
-      2: { name: 'Carlyn Obringer', photoUrl: 'https://www.cityofconcord.org/ImageRepository/Document?documentID=2176', website: 'https://www.cityofconcord.org/238/Mayor-Carlyn-Obringer' }
+      // Nov 2024: Carlyn Obringer (D2), Pablo Benavente (D4)
+      2: { name: 'Carlyn Obringer', photoUrl: 'https://www.cityofconcord.org/ImageRepository/Document?documentID=2176', website: 'https://www.cityofconcord.org/238/Mayor-Carlyn-Obringer' },
+      4: { name: 'Pablo Benavente' }
     }
   },
   '0617988': { // Danville (Town)
@@ -185,35 +240,59 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.danville.ca.gov/town-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Newell Arnerich, Renee Morgan, Mark Belotz elected
+      1: { name: 'Newell Arnerich' },
+      2: { name: 'Renee Morgan' },
+      3: { name: 'Mark Belotz' }
+    }
   },
   '0621796': { // El Cerrito
     name: 'El Cerrito',
     type: 'at-large',
     website: 'https://www.el-cerrito.org/175/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Lisa Motoyama, Rebecca Saltzman, William Ktsanes elected
+      1: { name: 'Lisa Motoyama' },
+      2: { name: 'Rebecca Saltzman' },
+      3: { name: 'William Ktsanes' }
+    }
   },
   '0633798': { // Hercules
     name: 'Hercules',
     type: 'at-large',
     website: 'https://www.ci.hercules.ca.us/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Alex Walker-Griffin, Dilli Bhattarai, Tiffany Grimsley elected
+      1: { name: 'Alex Walker-Griffin' },
+      2: { name: 'Dilli Bhattarai' },
+      3: { name: 'Tiffany Grimsley' }
+    }
   },
   '0639122': { // Lafayette
     name: 'Lafayette',
     type: 'at-large',
     website: 'https://www.lovelafayette.org/city-hall/city-government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: John McCormick, Gina Dawson, Carl Anduri (full), Jim Cervantes (short)
+      1: { name: 'John McCormick' },
+      2: { name: 'Gina Dawson' },
+      3: { name: 'Carl Anduri' },
+      4: { name: 'Jim Cervantes' }
+    }
   },
   '0645484': { // Martinez
     name: 'Martinez',
     type: 'at-large',
     website: 'https://www.cityofmartinez.org/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Greg Young elected
+      1: { name: 'Greg Young' }
+    }
   },
   '0649278': { // Moraga (Town)
     name: 'Moraga',
@@ -224,38 +303,57 @@ const CITY_COUNCILS = {
   },
   '0653070': { // Oakley
     name: 'Oakley',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.oakleyinfo.com/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: George Fuller (D5)
+      5: { name: 'George Fuller' }
+    }
   },
   '0654232': { // Orinda
     name: 'Orinda',
     type: 'at-large',
     website: 'https://www.cityoforinda.org/138/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Darlene Gee, Cara Hoxie elected
+      1: { name: 'Darlene Gee' },
+      2: { name: 'Cara Hoxie' }
+    }
   },
   '0657288': { // Pinole
     name: 'Pinole',
     type: 'at-large',
     website: 'https://www.ci.pinole.ca.us/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Devin Murphy, Maureen Toms elected
+      1: { name: 'Devin Murphy' },
+      2: { name: 'Maureen Toms' }
+    }
   },
   '0657456': { // Pittsburg
     name: 'Pittsburg',
     type: 'at-large',
     website: 'https://www.pittsburgca.gov/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Juan Banales, Jelani Killings elected
+      1: { name: 'Juan Banales' },
+      2: { name: 'Jelani Killings' }
+    }
   },
   '0657764': { // Pleasant Hill
     name: 'Pleasant Hill',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.pleasanthillca.org/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Bella La (D1), Amanda Szakats (D5)
+      1: { name: 'Bella La' },
+      5: { name: 'Amanda Szakats' }
+    }
   },
   '0660620': { // Richmond
     name: 'Richmond',
@@ -263,8 +361,11 @@ const CITY_COUNCILS = {
     website: 'https://www.ci.richmond.ca.us/149/Biographies-Terms',
     arcgis: null,
     members: {
+      // Nov 2024: Jamelia Brown (D1), Sue Wilson (D5), Claudia Jimenez (D6)
       mayor: { name: 'Eduardo Martinez', photoUrl: 'https://www.ci.richmond.ca.us/ImageRepository/Document?documentId=64486', website: 'https://ca-richmond3.civicplus.com/directory.aspx?EID=1072' },
-      1: { name: 'Jamelia Brown', photoUrl: 'https://www.ci.richmond.ca.us/ImageRepository/Document?documentId=72948', website: 'https://www.ci.richmond.ca.us/149/Biographies-Terms' }
+      1: { name: 'Jamelia Brown', photoUrl: 'https://www.ci.richmond.ca.us/ImageRepository/Document?documentId=72948', website: 'https://www.ci.richmond.ca.us/149/Biographies-Terms' },
+      5: { name: 'Sue Wilson' },
+      6: { name: 'Claudia Jimenez' }
     }
   },
   '0668252': { // San Pablo
@@ -276,17 +377,25 @@ const CITY_COUNCILS = {
   },
   '0668294': { // San Ramon
     name: 'San Ramon',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.sanramon.ca.gov/our_city/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Robert Jweinat (D1)
+      1: { name: 'Robert Jweinat' }
+    }
   },
   '0683346': { // Walnut Creek
     name: 'Walnut Creek',
     type: 'at-large',
     website: 'https://www.walnutcreek.gov/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Cindy Darling, Kevin Wilk, Craig Devinney elected
+      1: { name: 'Cindy Darling' },
+      2: { name: 'Kevin Wilk' },
+      3: { name: 'Craig Devinney' }
+    }
   },
 
   // ========== MARIN COUNTY ==========
@@ -358,7 +467,12 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.sausalito.gov/city-government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Ian Sobieski, Steven Woodside, Melissa Blaustein elected
+      1: { name: 'Ian Sobieski' },
+      2: { name: 'Steven Woodside' },
+      3: { name: 'Melissa Blaustein' }
+    }
   },
   '0678582': { // Tiburon (Town)
     name: 'Tiburon',
@@ -374,35 +488,57 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.cityofamericancanyon.org/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Pierre Washington (Mayor), Melissa Lamattina, Brando R. Cruz elected
+      mayor: { name: 'Pierre Washington' },
+      1: { name: 'Melissa Lamattina' },
+      2: { name: 'Brando R. Cruz' }
+    }
   },
   '0610345': { // Calistoga
     name: 'Calistoga',
     type: 'at-large',
     website: 'https://www.calistogacity.net/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Donald Williams (Mayor), Irais Lopez-Ortega, Lisa Gift re-elected
+      mayor: { name: 'Donald Williams' },
+      1: { name: 'Irais Lopez-Ortega' },
+      2: { name: 'Lisa Gift' }
+    }
   },
   '0650258': { // Napa
     name: 'Napa',
     type: 'at-large',
     website: 'https://www.cityofnapa.org/106/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Scott Sedgley (Mayor) re-elected
+      mayor: { name: 'Scott Sedgley' }
+    }
   },
   '0669088': { // St. Helena
     name: 'St. Helena',
     type: 'at-large',
     website: 'https://www.cityofsthelena.org/bc-cc',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Paul Dohring (Mayor), Aaron Barak, Michelle Deasy elected
+      mayor: { name: 'Paul Dohring' },
+      1: { name: 'Aaron Barak' },
+      2: { name: 'Michelle Deasy' }
+    }
   },
   '0687042': { // Yountville (Town)
     name: 'Yountville',
     type: 'at-large',
     website: 'https://www.yountville.com/government/town-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Eric Knight, Pam Reeves re-elected
+      1: { name: 'Eric Knight' },
+      2: { name: 'Pam Reeves' }
+    }
   },
 
   // ========== SAN FRANCISCO ==========
@@ -419,31 +555,50 @@ const CITY_COUNCILS = {
   },
   '0604982': { // Belmont
     name: 'Belmont',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.belmont.gov/city-hall/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Cathy M. Jordan (D2), Tom McCune (D4)
+      2: { name: 'Cathy M. Jordan' },
+      4: { name: 'Tom McCune' }
+    }
   },
   '0608590': { // Brisbane
     name: 'Brisbane',
     type: 'at-large',
     website: 'https://www.brisbaneca.org/citycouncil',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Cliff Lentz, Frank Kern, Coleen Mackin elected
+      1: { name: 'Cliff Lentz' },
+      2: { name: 'Frank Kern' },
+      3: { name: 'Coleen Mackin' }
+    }
   },
   '0609066': { // Burlingame
     name: 'Burlingame',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.burlingame.org/city_council/',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Andrea Pappajohn (D1 short), Desiree Thayer (D2), Donna Colson (D4)
+      1: { name: 'Andrea Pappajohn' },
+      2: { name: 'Desiree Thayer' },
+      4: { name: 'Donna Colson' }
+    }
   },
   '0614274': { // Colma (Town)
     name: 'Colma',
     type: 'at-large',
     website: 'https://www.colma.ca.gov/city-council/',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Ken Gonzalez, Carrie Slaughter, Thomas Walsh elected
+      1: { name: 'Ken Gonzalez' },
+      2: { name: 'Carrie Slaughter' },
+      3: { name: 'Thomas Walsh' }
+    }
   },
   '0617918': { // Daly City
     name: 'Daly City',
@@ -451,10 +606,12 @@ const CITY_COUNCILS = {
     website: 'https://www.dalycity.org/140/City-Council',
     arcgis: null,
     members: {
+      // Nov 2024: Juslyn Cabrera Manalo, Glenn R. Sylvester (full), Teresa Proaño (short)
       mayor: { name: 'Rod Daus-Magbual', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=8987', website: 'https://www.dalycity.org/711/Dr-Rod-Daus-Magbual' },
       1: { name: 'Pamela DiGiovanni', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=1804', website: 'https://www.dalycity.org/708/Pamela-DiGiovanni' },
       2: { name: 'Juslyn Manalo', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=1809', website: 'https://www.dalycity.org/713/Juslyn-C-Manalo' },
-      3: { name: 'Teresa Proaño', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=9573', website: 'https://www.dalycity.org/707/Teresa-G-Proao' }
+      3: { name: 'Teresa Proaño', photoUrl: 'https://www.dalycity.org/ImageRepository/Document?documentID=9573', website: 'https://www.dalycity.org/707/Teresa-G-Proao' },
+      4: { name: 'Glenn R. Sylvester' }
     }
   },
   '0620956': { // East Palo Alto
@@ -462,28 +619,47 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.cityofepa.org/citycouncil',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Carlos Romero, Mark Dinan, Webster Lincoln elected
+      1: { name: 'Carlos Romero' },
+      2: { name: 'Mark Dinan' },
+      3: { name: 'Webster Lincoln' }
+    }
   },
   '0624638': { // Foster City
     name: 'Foster City',
     type: 'at-large',
     website: 'https://www.fostercity.org/citycouncil',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Suzy Niederhofer, Patrick J. Sullivan, Phoebe Shin Venkat elected
+      1: { name: 'Suzy Niederhofer' },
+      2: { name: 'Patrick J. Sullivan' },
+      3: { name: 'Phoebe Shin Venkat' }
+    }
   },
   '0631708': { // Half Moon Bay
     name: 'Half Moon Bay',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.hmbcity.com/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Patric Bo Jonsson (D2), Paul Nagengast (D3)
+      2: { name: 'Patric Bo Jonsson' },
+      3: { name: 'Paul Nagengast' }
+    }
   },
   '0633854': { // Hillsborough (Town)
     name: 'Hillsborough',
     type: 'at-large',
     website: 'https://www.hillsborough.net/87/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Christine Krolik, Sophie Cole, Laurie Davies Adams elected
+      1: { name: 'Christine Krolik' },
+      2: { name: 'Sophie Cole' },
+      3: { name: 'Laurie Davies Adams' }
+    }
   },
   '0646870': { // Menlo Park
     name: 'Menlo Park',
@@ -491,50 +667,81 @@ const CITY_COUNCILS = {
     website: 'https://menlopark.gov/City-Council',
     arcgis: null,
     members: {
-      4: { name: 'Betsy Nash', photoUrl: 'https://menlopark.gov/files/sharedassets/public/v/1/city-council/images/betsy-nash.jpg?dimension=pageimage&w=480', website: 'https://menlopark.gov/City-Council/Betsy-Nash' }
+      // Nov 2024: Jeff Schmidt (D3), Jennifer Wise (D5)
+      3: { name: 'Jeff Schmidt' },
+      4: { name: 'Betsy Nash', photoUrl: 'https://menlopark.gov/files/sharedassets/public/v/1/city-council/images/betsy-nash.jpg?dimension=pageimage&w=480', website: 'https://menlopark.gov/City-Council/Betsy-Nash' },
+      5: { name: 'Jennifer Wise' }
     }
   },
   '0647486': { // Millbrae
     name: 'Millbrae',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.ci.millbrae.ca.us/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Stephen Rainaldi (D1), Reuben D. Holober (D3), Anders Fung (D5)
+      1: { name: 'Stephen Rainaldi' },
+      3: { name: 'Reuben D. Holober' },
+      5: { name: 'Anders Fung' }
+    }
   },
   '0656000': { // Pacifica
     name: 'Pacifica',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.cityofpacifica.org/government/city_council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Mayra Espinosa (D1), Greg Wright (D4)
+      1: { name: 'Mayra Espinosa' },
+      4: { name: 'Greg Wright' }
+    }
   },
   '0657736': { // Portola Valley (Town)
     name: 'Portola Valley',
     type: 'at-large',
     website: 'https://www.portolavalley.net/town-government/town-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Rebecca Flynn, Helen Wolter elected
+      1: { name: 'Rebecca Flynn' },
+      2: { name: 'Helen Wolter' }
+    }
   },
   '0660102': { // Redwood City
     name: 'Redwood City',
     type: 'district',
     website: 'https://www.redwoodcity.org/departments/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Jeff Gee (D1), Isabella Chu (D3), Elmer Martínez Saballos (D4), Marcella Padilla (D7)
+      1: { name: 'Jeff Gee' },
+      3: { name: 'Isabella Chu' },
+      4: { name: 'Elmer Martínez Saballos' },
+      7: { name: 'Marcella Padilla' }
+    }
   },
   '0665028': { // San Bruno
     name: 'San Bruno',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.sanbruno.ca.gov/gov/city_council/default.htm',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Rico E. Medina (Mayor), Tom Hamilton (D2), Michael Salazar (D3)
+      mayor: { name: 'Rico E. Medina' },
+      2: { name: 'Tom Hamilton' },
+      3: { name: 'Michael Salazar' }
+    }
   },
   '0665070': { // San Carlos
     name: 'San Carlos',
     type: 'at-large',
     website: 'https://www.cityofsancarlos.org/government/city_council/city_council_members',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: John Dugan, Neil Layton elected
+      1: { name: 'John Dugan' },
+      2: { name: 'Neil Layton' }
+    }
   },
   '0668252': { // San Mateo
     name: 'San Mateo',
@@ -542,19 +749,25 @@ const CITY_COUNCILS = {
     website: 'https://www.cityofsanmateo.org/42/City-Council',
     arcgis: null,
     members: {
-      2: { name: 'Nicole Fernandez', photoUrl: 'https://www.cityofsanmateo.org/ImageRepository/Document?documentID=96289', website: 'https://www.cityofsanmateo.org/4160/Council-Member-Nicole-Fernandez' }
+      // Nov 2024: Nicole Fernandez (D2), Danielle Cwirko-Godycki (D4)
+      2: { name: 'Nicole Fernandez', photoUrl: 'https://www.cityofsanmateo.org/ImageRepository/Document?documentID=96289', website: 'https://www.cityofsanmateo.org/4160/Council-Member-Nicole-Fernandez' },
+      4: { name: 'Danielle Cwirko-Godycki' }
     }
   },
   '0673262': { // South San Francisco
     name: 'South San Francisco',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.ssf.net/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Mark Nagales (D2), James Hsu Coleman (D4)
+      2: { name: 'Mark Nagales' },
+      4: { name: 'James Hsu Coleman' }
+    }
   },
   '0684550': { // Woodside (Town)
     name: 'Woodside',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.woodsidetown.org/town-council',
     arcgis: null,
     members: {}
@@ -573,7 +786,14 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.cupertino.org/our-city/departments/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Cupertino council from official website
+      mayor: { name: 'Kitty Moore' },
+      1: { name: 'Liang-Fang Chao' },
+      2: { name: 'Sheila Mohan' },
+      3: { name: 'J.R. Fruen' },
+      4: { name: 'R Ray Wang' }
+    }
   },
   '0629504': { // Gilroy
     name: 'Gilroy',
@@ -746,8 +966,12 @@ const CITY_COUNCILS = {
     website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council',
     arcgis: null,
     members: {
+      // Nov 2024: Andrea Sorce (Mayor), Alexander Matias (D1), Tonia Lediju (D3), Helen-Marie Gordon (D6)
       mayor: { name: 'Andrea Sorce', photoUrl: 'https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_16925367/Image/City%20Hall/City%20Government/Mayor%20&%20City%20Council/Mayor%20Sorce%20web.jpg', website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council' },
-      4: { name: 'Charles Palmares', photoUrl: 'https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_16925367/Image/City%20Hall/City%20Government/Mayor%20&%20City%20Council/palmares-d4.jpg', website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council' }
+      1: { name: 'Alexander Matias' },
+      3: { name: 'Tonia Lediju' },
+      4: { name: 'Charles Palmares', photoUrl: 'https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_16925367/Image/City%20Hall/City%20Government/Mayor%20&%20City%20Council/palmares-d4.jpg', website: 'https://www.ci.vallejo.ca.us/our_city/city_government/mayor_city_council' },
+      6: { name: 'Helen-Marie Gordon' }
     }
   },
 
@@ -757,28 +981,46 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.cloverdale.net/131/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Todd Lands elected
+      1: { name: 'Todd Lands' }
+    }
   },
   '0616462': { // Cotati
     name: 'Cotati',
     type: 'at-large',
     website: 'https://www.cotaticity.org/government/city-council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Susan Harvey, Laura Sparks, Ben Ford elected
+      1: { name: 'Susan Harvey' },
+      2: { name: 'Laura Sparks' },
+      3: { name: 'Ben Ford' }
+    }
   },
   '0632548': { // Healdsburg
     name: 'Healdsburg',
     type: 'at-large',
     website: 'https://www.ci.healdsburg.ca.us/167/City-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Ariel Kelley, Ron Edwards, David Hagele elected
+      1: { name: 'Ariel Kelley' },
+      2: { name: 'Ron Edwards' },
+      3: { name: 'David Hagele' }
+    }
   },
   '0656784': { // Petaluma
     name: 'Petaluma',
-    type: 'at-large',
+    type: 'district',
     website: 'https://cityofpetaluma.org/city-council/',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Frank Quint (D4), Alexander DeCarli (D5), Brian Barnacle (D6)
+      4: { name: 'Frank Quint' },
+      5: { name: 'Alexander DeCarli' },
+      6: { name: 'Brian Barnacle' }
+    }
   },
   '0662182': { // Rohnert Park
     name: 'Rohnert Park',
@@ -793,7 +1035,11 @@ const CITY_COUNCILS = {
     website: 'https://www.srcity.org/172/City-Council',
     arcgis: null,
     members: {
-      5: { name: 'Caroline Bañuelos', photoUrl: 'https://www.srcity.org/ImageRepository/Document?documentID=45051', website: 'https://www.srcity.org/directory.aspx?EID=378' }
+      // Nov 2024: Eddie Alvarez (D1), Dianna MacDonald (D3), Caroline Bañuelos (D5), Natalie Rogers (D7)
+      1: { name: 'Eddie Alvarez' },
+      3: { name: 'Dianna MacDonald' },
+      5: { name: 'Caroline Bañuelos', photoUrl: 'https://www.srcity.org/ImageRepository/Document?documentID=45051', website: 'https://www.srcity.org/directory.aspx?EID=378' },
+      7: { name: 'Natalie Rogers' }
     }
   },
   '0670588': { // Sebastopol
@@ -801,21 +1047,32 @@ const CITY_COUNCILS = {
     type: 'at-large',
     website: 'https://www.ci.sebastopol.ca.us/city-council/',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Neysa Hinton elected
+      1: { name: 'Neysa Hinton' }
+    }
   },
   '0672646': { // Sonoma
     name: 'Sonoma',
     type: 'at-large',
     website: 'https://www.sonomacity.org/city-council/',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Sandra M. Lowe elected
+      1: { name: 'Sandra M. Lowe' }
+    }
   },
   '0685922': { // Windsor (Town)
     name: 'Windsor',
-    type: 'at-large',
+    type: 'district',
     website: 'https://www.townofwindsor.com/148/Town-Council',
     arcgis: null,
-    members: {}
+    members: {
+      // Nov 2024: Rosa Reynoza (Mayor), Sam Salmon (D2), J.B. Leep (D3)
+      mayor: { name: 'Rosa Reynoza' },
+      2: { name: 'Sam Salmon' },
+      3: { name: 'J.B. Leep' }
+    }
   }
 };
 
