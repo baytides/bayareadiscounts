@@ -447,8 +447,9 @@ function getPartyAbbrev(partyName) {
  */
 async function geocodeAddress(street, city, zip, context) {
   try {
-    // Step 1: Census Geocoder for address coordinates and congressional district
-    const censusUrl = `${CENSUS_GEOCODER_BASE}?street=${encodeURIComponent(street)}&city=${encodeURIComponent(city)}&state=CA&zip=${zip}&benchmark=Public_AR_Current&vintage=Current_Current&layers=54&format=json`;
+    // Step 1: Census Geocoder for address coordinates, congressional district, and county
+    // layers=54 = Congressional Districts, layers=84 = Counties
+    const censusUrl = `${CENSUS_GEOCODER_BASE}?street=${encodeURIComponent(street)}&city=${encodeURIComponent(city)}&state=CA&zip=${zip}&benchmark=Public_AR_Current&vintage=Current_Current&layers=54,84&format=json`;
     context.log('Fetching Census Geocoder:', censusUrl);
 
     const censusResponse = await fetch(censusUrl);
@@ -472,9 +473,10 @@ async function geocodeAddress(street, city, zip, context) {
     const congressionalDistricts = geographies['119th Congressional Districts'] || [];
     const congressDistrict = congressionalDistricts[0]?.BASENAME || null;
 
-    // Get county FIPS from address components
-    const countyFips = match.addressComponents?.county ||
-                       geographies['Counties']?.[0]?.GEOID || null;
+    // Get county FIPS (state + county = e.g., "06075" for San Francisco)
+    const counties = geographies['Counties'] || [];
+    const countyFips = counties[0]?.GEOID || null;
+    const countyName = counties[0]?.BASENAME || null;
 
     if (!congressDistrict) {
       return { error: 'Could not determine congressional district for this address.' };
@@ -518,7 +520,8 @@ async function geocodeAddress(street, city, zip, context) {
       congressDistrict,
       assemblyDistrict,
       senateDistrict,
-      countyFips
+      countyFips,
+      countyName
     };
   } catch (error) {
     context.log.error('Geocoding error:', error);
