@@ -49,13 +49,14 @@ const COUNTY_SUPERVISORS = {
   '06085': { // Santa Clara
     name: 'Santa Clara County',
     arcgis: 'https://services1.arcgis.com/4QPaqCJqF1UIaPbN/arcgis/rest/services/Santa_Clara_County_Supervisorial_Districts/FeatureServer/0',
-    districtField: 'DISTRICT',
+    districtField: 'district',
+    nameField: 'supervisor',
     supervisors: {
       1: { name: 'Sylvia Arenas', website: 'https://supervisorarenas.org/' },
       2: { name: 'Cindy Chavez', website: 'https://www.sccgov.org/sites/d2/' },
       3: { name: 'Otto Lee', website: 'https://www.sccgov.org/sites/d3/' },
       4: { name: 'Susan Ellenberg', website: 'https://www.sccgov.org/sites/d4/' },
-      5: { name: 'Joe Simitian', website: 'https://supervisorsimitian.org/' }
+      5: { name: 'Margaret Abe-Koga', website: 'https://www.sccgov.org/sites/d5/' }
     }
   },
   '06001': { // Alameda
@@ -595,11 +596,14 @@ async function getCountySupervisor(countyFips, x, y, context) {
       };
     }
 
+    // Use live name from ArcGIS if available, otherwise fall back to our data
+    const liveName = county.nameField ? attrs[county.nameField] : null;
+
     return {
       county: county.name,
       countyFips,
       district: districtNum,
-      name: supervisor.name,
+      name: liveName || supervisor.name,
       website: supervisor.website,
       phone: supervisor.phone || null
     };
