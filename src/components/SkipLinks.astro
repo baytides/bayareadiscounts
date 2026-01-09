@@ -23,7 +23,7 @@ const defaultLinks: SkipLink[] = [
 const { links = defaultLinks } = Astro.props;
 ---
 
-<nav class="skip-links-container" aria-label="Skip links">
+<div class="skip-links-container" role="navigation" aria-label="Skip links">
   {
     links.map((link) => (
       <a href={link.href} class="skip-link">
@@ -31,7 +31,7 @@ const { links = defaultLinks } = Astro.props;
       </a>
     ))
   }
-</nav>
+</div>
 
 <style>
   .skip-links-container {
