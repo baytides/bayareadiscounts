@@ -209,7 +209,7 @@ const websiteSchema = {
       <div class="container-page flex items-center justify-between gap-2">
         <div class="flex items-center gap-2">
           <svg
-            class="w-4 h-4 text-primary-700 dark:text-primary-300"
+            class="w-4 h-4 text-primary-700 dark:text-primary-300 hidden sm:block"
             fill="currentColor"
             viewBox="0 0 20 20"
             aria-hidden="true"
@@ -219,7 +219,11 @@ const websiteSchema = {
             ></path>
           </svg>
           <span class="text-neutral-700 dark:text-neutral-300">
-            <strong class="font-semibold">Bay Navigator</strong> is a community-maintained resource by
+            <span class="hidden sm:inline"
+              ><strong class="font-semibold">Bay Navigator</strong> is a community-maintained resource
+              by</span
+            >
+            <span class="sm:hidden"><strong class="font-semibold">Bay Navigator</strong> by</span>
             <a href="https://baytides.org" class="font-medium">Bay Tides</a>
           </span>
         </div>
@@ -227,13 +231,14 @@ const websiteSchema = {
           onionAddress && (
             <a
               href={`http://${onionAddress}`}
-              class="hidden sm:flex items-center gap-1.5 text-xs text-purple-900 dark:text-purple-300 hover:underline font-medium"
+              class="flex items-center gap-1 sm:gap-1.5 text-xs text-purple-900 dark:text-purple-300 hover:underline font-medium flex-shrink-0"
               title="Access Bay Navigator via Tor for enhanced privacy"
             >
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
               </svg>
-              .onion
+              <span class="hidden sm:inline">.onion</span>
+              <span class="sm:hidden">Tor</span>
             </a>
           )
         }
