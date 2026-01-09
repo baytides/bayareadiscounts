@@ -1,0 +1,8 @@
+node_modules
+dist
+.astro
+public/api
+apps
+*.min.js
+*.min.css
+package-lock.json

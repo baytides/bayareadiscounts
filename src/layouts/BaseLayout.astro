@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import OfflineBanner from '../components/OfflineBanner.astro';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
@@ -19,7 +20,7 @@ const {
   image = '/og-image.png',
   type = 'website',
   publishedTime,
-  modifiedTime
+  modifiedTime,
 } = Astro.props;
 
 const fullTitle = title === 'Home' ? 'Bay Navigator' : `${title} | Bay Navigator`;
@@ -40,52 +41,50 @@ try {
 
 // Structured data for organization
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Bay Tides",
-  "alternateName": "Bay Navigator",
-  "url": siteUrl,
-  "logo": `${siteUrl}/assets/images/logo/logo.webp`,
-  "description": "Bay Tides is a 501(c)(3) nonprofit working to protect the San Francisco Bay. Bay Navigator connects Bay Area residents with free and low-cost programs.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Redwood City",
-    "addressRegion": "CA",
-    "addressCountry": "US"
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Bay Tides',
+  alternateName: 'Bay Navigator',
+  url: siteUrl,
+  logo: `${siteUrl}/assets/images/logo/logo.webp`,
+  description:
+    'Bay Tides is a 501(c)(3) nonprofit working to protect the San Francisco Bay. Bay Navigator connects Bay Area residents with free and low-cost programs.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Redwood City',
+    addressRegion: 'CA',
+    addressCountry: 'US',
   },
-  "areaServed": {
-    "@type": "Place",
-    "name": "San Francisco Bay Area"
+  areaServed: {
+    '@type': 'Place',
+    name: 'San Francisco Bay Area',
   },
-  "sameAs": [
-    "https://github.com/baytides/baynavigator",
-    "https://baytides.org"
-  ]
+  sameAs: ['https://github.com/baytides/baynavigator', 'https://baytides.org'],
 };
 
 // Structured data for website
 const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Bay Navigator",
-  "url": siteUrl,
-  "description": description,
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bay Tides"
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Bay Navigator',
+  url: siteUrl,
+  description: description,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Bay Tides',
   },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${siteUrl}/directory?q={search_term_string}`
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteUrl}/directory?q={search_term_string}`,
     },
-    "query-input": "required name=search_term_string"
-  }
+    'query-input': 'required name=search_term_string',
+  },
 };
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
@@ -93,14 +92,22 @@ const websiteSchema = {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0097a7" />
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+    />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-96.webp" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicons/favicon-96.webp"
+    />
     <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.webp" />
     <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
 
@@ -112,7 +119,10 @@ const websiteSchema = {
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Bay Navigator - Free and low-cost resources for Bay Area residents" />
+    <meta
+      property="og:image:alt"
+      content="Bay Navigator - Free and low-cost resources for Bay Area residents"
+    />
     <meta property="og:site_name" content="Bay Navigator" />
     <meta property="og:locale" content="en_US" />
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
@@ -124,7 +134,10 @@ const websiteSchema = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <meta name="twitter:image:alt" content="Bay Navigator - Free and low-cost resources for Bay Area residents" />
+    <meta
+      name="twitter:image:alt"
+      content="Bay Navigator - Free and low-cost resources for Bay Area residents"
+    />
 
     <!-- Additional SEO -->
     <meta name="author" content="Bay Tides" />
@@ -139,27 +152,46 @@ const websiteSchema = {
 
     <!-- Dark mode script (runs before render to prevent flash) -->
     <script is:inline>
-      if (localStorage.getItem('theme') === 'dark' ||
-          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
         document.documentElement.classList.add('dark');
       }
     </script>
 
     <!-- Text settings script (runs before render to prevent flash) -->
     <script is:inline>
-      (function() {
+      (function () {
         var saved = localStorage.getItem('textSettings');
         if (saved) {
           try {
             var settings = JSON.parse(saved);
             var root = document.documentElement;
-            if (settings.textSize) root.style.setProperty('--text-size-scale', (parseInt(settings.textSize) / 100).toString());
+            if (settings.textSize)
+              root.style.setProperty(
+                '--text-size-scale',
+                (parseInt(settings.textSize) / 100).toString()
+              );
             var lineHeightMap = { '1': '1.6', '2': '2', '3': '2.5' };
             var letterSpacingMap = { '1': '0em', '2': '0.05em', '3': '0.1em' };
             var wordSpacingMap = { '1': '0em', '2': '0.1em', '3': '0.2em' };
-            if (settings.lineHeight) root.style.setProperty('--text-line-height', lineHeightMap[settings.lineHeight] || '1.6');
-            if (settings.letterSpacing) root.style.setProperty('--text-letter-spacing', letterSpacingMap[settings.letterSpacing] || '0em');
-            if (settings.wordSpacing) root.style.setProperty('--text-word-spacing', wordSpacingMap[settings.wordSpacing] || '0em');
+            if (settings.lineHeight)
+              root.style.setProperty(
+                '--text-line-height',
+                lineHeightMap[settings.lineHeight] || '1.6'
+              );
+            if (settings.letterSpacing)
+              root.style.setProperty(
+                '--text-letter-spacing',
+                letterSpacingMap[settings.letterSpacing] || '0em'
+              );
+            if (settings.wordSpacing)
+              root.style.setProperty(
+                '--text-word-spacing',
+                wordSpacingMap[settings.wordSpacing] || '0em'
+              );
             if (settings.simpleLanguage) root.classList.add('simple-language');
           } catch (e) {}
         }
@@ -174,45 +206,83 @@ const websiteSchema = {
     <div class="official-banner">
       <div class="container-page flex items-center justify-between gap-2">
         <div class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-primary-700 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-3a1 1 0 100-2 1 1 0 000 2z"/>
+          <svg
+            class="w-4 h-4 text-primary-700 dark:text-primary-300"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-3a1 1 0 100-2 1 1 0 000 2z"
+            ></path>
           </svg>
           <span class="text-neutral-700 dark:text-neutral-300">
-            <strong class="font-semibold">Bay Navigator</strong> is a community-maintained resource by <a href="https://baytides.org" class="font-medium">Bay Tides</a>
+            <strong class="font-semibold">Bay Navigator</strong> is a community-maintained resource by
+            <a href="https://baytides.org" class="font-medium">Bay Tides</a>
           </span>
         </div>
-        {onionAddress && (
-          <a
-            href={`http://${onionAddress}`}
-            class="hidden sm:flex items-center gap-1.5 text-xs text-purple-900 dark:text-purple-300 hover:underline font-medium"
-            title="Access Bay Navigator via Tor for enhanced privacy"
-          >
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-            </svg>
-            .onion
-          </a>
-        )}
+        {
+          onionAddress && (
+            <a
+              href={`http://${onionAddress}`}
+              class="hidden sm:flex items-center gap-1.5 text-xs text-purple-900 dark:text-purple-300 hover:underline font-medium"
+              title="Access Bay Navigator via Tor for enhanced privacy"
+            >
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+              </svg>
+              .onion
+            </a>
+          )
+        }
       </div>
     </div>
 
     <!-- Header -->
-    <header class="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-700 sticky top-0 z-40">
+    <header
+      class="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-700 sticky top-0 z-40"
+    >
       <div class="container-page py-4">
         <nav class="flex items-center justify-between" aria-label="Main navigation">
           <!-- Logo -->
           <a href="/" class="flex items-center gap-3 no-underline hover:no-underline">
-            <img src="/assets/images/logo/logo.webp" alt="Bay Navigator" class="w-10 h-10 rounded-lg" width="40" height="40" />
+            <img
+              src="/assets/images/logo/logo.webp"
+              alt="Bay Navigator"
+              class="w-10 h-10 rounded-lg"
+              width="40"
+              height="40"
+            />
             <span class="text-xl font-bold text-neutral-900 dark:text-white">Bay Navigator</span>
           </a>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center gap-6">
-            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Home</a>
-            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Directory</a>
-            <a href="/map" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Map</a>
-            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">Eligibility</a>
-            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium">About</a>
+            <a
+              href="/"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium"
+              >Home</a
+            >
+            <a
+              href="/directory"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium"
+              >Directory</a
+            >
+            <a
+              href="/map"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium"
+              >Map</a
+            >
+            <a
+              href="/eligibility"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium"
+              >Eligibility</a
+            >
+            <a
+              href="/about"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium"
+              >About</a
+            >
 
             <!-- Text Settings -->
             <div class="relative">
@@ -226,8 +296,18 @@ const websiteSchema = {
                 data-tooltip="Adjust font size, line spacing, and more for easier reading"
                 data-tooltip-position="bottom"
               >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"></path>
                 </svg>
               </button>
 
@@ -239,7 +319,10 @@ const websiteSchema = {
                 aria-labelledby="text-settings-title"
               >
                 <div class="flex items-center justify-between mb-4">
-                  <h3 id="text-settings-title" class="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h3
+                    id="text-settings-title"
+                    class="text-lg font-semibold text-neutral-900 dark:text-white"
+                  >
                     Text Settings
                   </h3>
                   <button
@@ -257,9 +340,14 @@ const websiteSchema = {
 
                 <!-- Font Size -->
                 <div class="mb-4">
-                  <label for="text-size-slider" class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+                  <label
+                    for="text-size-slider"
+                    class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
+                  >
                     <span>Font Size</span>
-                    <span id="text-size-value" class="text-neutral-600 dark:text-neutral-300">100%</span>
+                    <span id="text-size-value" class="text-neutral-600 dark:text-neutral-300"
+                      >100%</span
+                    >
                   </label>
                   <input
                     type="range"
@@ -276,9 +364,14 @@ const websiteSchema = {
 
                 <!-- Line Height -->
                 <div class="mb-4">
-                  <label for="line-height-slider" class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+                  <label
+                    for="line-height-slider"
+                    class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
+                  >
                     <span>Line Spacing</span>
-                    <span id="line-height-value" class="text-neutral-600 dark:text-neutral-300">Normal</span>
+                    <span id="line-height-value" class="text-neutral-600 dark:text-neutral-300"
+                      >Normal</span
+                    >
                   </label>
                   <input
                     type="range"
@@ -290,14 +383,21 @@ const websiteSchema = {
                     class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary-700"
                     aria-describedby="line-height-desc"
                   />
-                  <div id="line-height-desc" class="sr-only">Adjust line spacing: Normal, Wide, or Extra Wide</div>
+                  <div id="line-height-desc" class="sr-only">
+                    Adjust line spacing: Normal, Wide, or Extra Wide
+                  </div>
                 </div>
 
                 <!-- Letter Spacing -->
                 <div class="mb-4">
-                  <label for="letter-spacing-slider" class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+                  <label
+                    for="letter-spacing-slider"
+                    class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
+                  >
                     <span>Letter Spacing</span>
-                    <span id="letter-spacing-value" class="text-neutral-600 dark:text-neutral-300">Normal</span>
+                    <span id="letter-spacing-value" class="text-neutral-600 dark:text-neutral-300"
+                      >Normal</span
+                    >
                   </label>
                   <input
                     type="range"
@@ -309,14 +409,21 @@ const websiteSchema = {
                     class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary-700"
                     aria-describedby="letter-spacing-desc"
                   />
-                  <div id="letter-spacing-desc" class="sr-only">Adjust letter spacing: Normal, Wide, or Extra Wide</div>
+                  <div id="letter-spacing-desc" class="sr-only">
+                    Adjust letter spacing: Normal, Wide, or Extra Wide
+                  </div>
                 </div>
 
                 <!-- Word Spacing -->
                 <div class="mb-4">
-                  <label for="word-spacing-slider" class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+                  <label
+                    for="word-spacing-slider"
+                    class="flex items-center justify-between text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
+                  >
                     <span>Word Spacing</span>
-                    <span id="word-spacing-value" class="text-neutral-600 dark:text-neutral-300">Normal</span>
+                    <span id="word-spacing-value" class="text-neutral-600 dark:text-neutral-300"
+                      >Normal</span
+                    >
                   </label>
                   <input
                     type="range"
@@ -328,15 +435,22 @@ const websiteSchema = {
                     class="w-full h-2 bg-neutral-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-primary-700"
                     aria-describedby="word-spacing-desc"
                   />
-                  <div id="word-spacing-desc" class="sr-only">Adjust word spacing: Normal, Wide, or Extra Wide</div>
+                  <div id="word-spacing-desc" class="sr-only">
+                    Adjust word spacing: Normal, Wide, or Extra Wide
+                  </div>
                 </div>
 
                 <!-- Simple Language Toggle (WCAG 3.1.5) -->
                 <div class="mb-2 pt-4 border-t border-neutral-200 dark:border-neutral-700">
                   <div class="flex items-center justify-between">
-                    <label for="simple-language-toggle" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                    <label
+                      for="simple-language-toggle"
+                      class="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+                    >
                       Simple Language
-                      <span class="block text-xs text-neutral-600 dark:text-neutral-300 font-normal mt-0.5">
+                      <span
+                        class="block text-xs text-neutral-600 dark:text-neutral-300 font-normal mt-0.5"
+                      >
                         Easier words, shorter sentences
                       </span>
                     </label>
@@ -348,10 +462,15 @@ const websiteSchema = {
                       class="toggle-switch relative w-11 h-6 bg-neutral-300 dark:bg-neutral-600 rounded-full transition-colors"
                       aria-describedby="simple-language-desc"
                     >
-                      <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-transform"></span>
+                      <span
+                        class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-transform"
+                      ></span>
                     </button>
                   </div>
-                  <div id="simple-language-desc" class="sr-only">Toggle simple language mode for easier reading. When enabled, complex terms are replaced with simpler alternatives.</div>
+                  <div id="simple-language-desc" class="sr-only">
+                    Toggle simple language mode for easier reading. When enabled, complex terms are
+                    replaced with simpler alternatives.
+                  </div>
                 </div>
 
                 <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-4">
@@ -370,10 +489,13 @@ const websiteSchema = {
               data-tooltip-position="bottom"
             >
               <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"></path>
               </svg>
               <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
               </svg>
             </button>
           </div>
@@ -387,29 +509,59 @@ const websiteSchema = {
             aria-expanded="false"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </nav>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200 dark:border-neutral-700 pt-4">
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200 dark:border-neutral-700 pt-4"
+        >
           <div class="flex flex-col gap-3">
-            <a href="/" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Home</a>
-            <a href="/directory" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Directory</a>
-            <a href="/map" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Map</a>
-            <a href="/eligibility" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">Eligibility</a>
-            <a href="/about" class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2">About</a>
+            <a
+              href="/"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="/directory"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2"
+              >Directory</a
+            >
+            <a
+              href="/map"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2"
+              >Map</a
+            >
+            <a
+              href="/eligibility"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2"
+              >Eligibility</a
+            >
+            <a
+              href="/about"
+              class="text-neutral-700 dark:text-neutral-300 hover:text-primary-700 dark:hover:text-primary-300 no-underline font-medium py-2"
+              >About</a
+            >
             <button
               id="theme-toggle-mobile"
               type="button"
               class="flex items-center gap-2 text-neutral-700 dark:text-neutral-300 font-medium py-2"
             >
               <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z"
+                  clip-rule="evenodd"></path>
               </svg>
               <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
               </svg>
               <span class="dark:hidden">Dark mode</span>
               <span class="hidden dark:inline">Light mode</span>
@@ -431,11 +583,18 @@ const websiteSchema = {
           <!-- About -->
           <div class="md:col-span-2">
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/images/logo/logo.webp" alt="Bay Navigator" class="w-10 h-10 rounded-lg" width="40" height="40" />
+              <img
+                src="/assets/images/logo/logo.webp"
+                alt="Bay Navigator"
+                class="w-10 h-10 rounded-lg"
+                width="40"
+                height="40"
+              />
               <span class="text-xl font-bold text-white">Bay Navigator</span>
             </div>
             <p class="text-neutral-300 max-w-md">
-              A community resource by Bay Tides. Connecting Bay Area residents with free and low-cost programs for food, housing, healthcare, utilities, and more.
+              A community resource by Bay Tides. Connecting Bay Area residents with free and
+              low-cost programs for food, housing, healthcare, utilities, and more.
             </p>
           </div>
 
@@ -443,30 +602,125 @@ const websiteSchema = {
           <div>
             <h3 class="text-white font-semibold mb-4">Resources</h3>
             <ul class="space-y-2 list-none pl-0">
-              <li><a href="/directory" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                Directory
-              </a></li>
-              <li><a href="/eligibility" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
-                Eligibility Guides
-              </a></li>
-              <li><a href="/about" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                About
-              </a></li>
-              <li><a href="/download" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                Download App
-              </a></li>
-              <li><a href="/partnerships" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                Partnerships
-              </a></li>
-              <li><a href="/glossary" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-                Glossary
-              </a></li>
+              <li>
+                <a
+                  href="/directory"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    ></path></svg
+                  >
+                  Directory
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/eligibility"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                    ></path></svg
+                  >
+                  Eligibility Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+                  >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/download"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    ></path></svg
+                  >
+                  Download App
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/partnerships"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path></svg
+                  >
+                  Partnerships
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/glossary"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    ></path></svg
+                  >
+                  Glossary
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -474,41 +728,136 @@ const websiteSchema = {
           <div>
             <h3 class="text-white font-semibold mb-4">Legal & More</h3>
             <ul class="space-y-2 list-none pl-0">
-              <li><a href="/privacy" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                Privacy Policy
-              </a></li>
-              <li><a href="/terms" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                Terms of Service
-              </a></li>
-              <li><a href="/accessibility" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                Accessibility
-              </a></li>
-              <li><a href="/credits" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                Credits
-              </a></li>
-              <li><a href="/sustainability" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Sustainability
-              </a></li>
-              <li><a href="https://github.com/baytides/baynavigator" class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5" target="_blank" rel="noopener">
-                <svg class="w-3.5 h-3.5 text-primary-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a></li>
+              <li>
+                <a
+                  href="/privacy"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    ></path></svg
+                  >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/terms"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path></svg
+                  >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/accessibility"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    ></path></svg
+                  >
+                  Accessibility
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/credits"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-primary-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path></svg
+                  >
+                  Credits
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/sustainability"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >
+                  Sustainability
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/baytides/baynavigator"
+                  class="text-neutral-300 hover:text-white no-underline flex items-center gap-1.5"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg class="w-3.5 h-3.5 text-primary-400" fill="currentColor" viewBox="0 0 24 24"
+                    ><path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    ></path></svg
+                  >
+                  GitHub
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div
+          class="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
           <p class="text-neutral-300 text-sm">
             &copy; {new Date().getFullYear()} Bay Tides. Open source under MIT license.
           </p>
-          <p class="text-neutral-300 text-sm">
-            Made with 💚 in the San Francisco Bay Area
-          </p>
+          <p class="text-neutral-300 text-sm">Made with 💚 in the San Francisco Bay Area</p>
         </div>
       </div>
     </footer>
@@ -518,10 +867,11 @@ const websiteSchema = {
       // Theme toggle
       function setupThemeToggle() {
         const toggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
-        toggles.forEach(toggle => {
+        toggles.forEach((toggle) => {
           toggle.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme',
+            localStorage.setItem(
+              'theme',
               document.documentElement.classList.contains('dark') ? 'dark' : 'light'
             );
           });
@@ -574,26 +924,25 @@ const websiteSchema = {
         const main = document.querySelector('main');
         if (!main) return;
 
-        const walker = document.createTreeWalker(
-          main,
-          NodeFilter.SHOW_TEXT,
-          {
-            acceptNode: (node) => {
-              // Skip script, style, and already processed nodes
-              const parent = node.parentElement;
-              if (!parent) return NodeFilter.FILTER_REJECT;
-              const tagName = parent.tagName.toLowerCase();
-              if (['script', 'style', 'code', 'pre', 'abbr'].includes(tagName)) {
-                return NodeFilter.FILTER_REJECT;
-              }
-              // Skip if already has simple language class
-              if (parent.classList.contains('text-simple') || parent.classList.contains('text-normal')) {
-                return NodeFilter.FILTER_REJECT;
-              }
-              return NodeFilter.FILTER_ACCEPT;
+        const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, {
+          acceptNode: (node) => {
+            // Skip script, style, and already processed nodes
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            const tagName = parent.tagName.toLowerCase();
+            if (['script', 'style', 'code', 'pre', 'abbr'].includes(tagName)) {
+              return NodeFilter.FILTER_REJECT;
             }
-          }
-        );
+            // Skip if already has simple language class
+            if (
+              parent.classList.contains('text-simple') ||
+              parent.classList.contains('text-normal')
+            ) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        });
 
         const textNodes: Text[] = [];
         let node;
@@ -655,8 +1004,12 @@ const websiteSchema = {
         // Sliders
         const textSizeSlider = document.getElementById('text-size-slider') as HTMLInputElement;
         const lineHeightSlider = document.getElementById('line-height-slider') as HTMLInputElement;
-        const letterSpacingSlider = document.getElementById('letter-spacing-slider') as HTMLInputElement;
-        const wordSpacingSlider = document.getElementById('word-spacing-slider') as HTMLInputElement;
+        const letterSpacingSlider = document.getElementById(
+          'letter-spacing-slider'
+        ) as HTMLInputElement;
+        const wordSpacingSlider = document.getElementById(
+          'word-spacing-slider'
+        ) as HTMLInputElement;
 
         // Value displays
         const textSizeValue = document.getElementById('text-size-value');
@@ -668,19 +1021,19 @@ const websiteSchema = {
         const lineHeightMap: Record<string, { label: string; value: string }> = {
           '1': { label: 'Normal', value: '1.6' },
           '2': { label: 'Wide', value: '2' },
-          '3': { label: 'Extra Wide', value: '2.5' }
+          '3': { label: 'Extra Wide', value: '2.5' },
         };
 
         const letterSpacingMap: Record<string, { label: string; value: string }> = {
           '1': { label: 'Normal', value: '0em' },
           '2': { label: 'Wide', value: '0.05em' },
-          '3': { label: 'Extra Wide', value: '0.1em' }
+          '3': { label: 'Extra Wide', value: '0.1em' },
         };
 
         const wordSpacingMap: Record<string, { label: string; value: string }> = {
           '1': { label: 'Normal', value: '0em' },
           '2': { label: 'Wide', value: '0.1em' },
-          '3': { label: 'Extra Wide', value: '0.2em' }
+          '3': { label: 'Extra Wide', value: '0.2em' },
         };
 
         // Apply settings to CSS variables
@@ -716,7 +1069,7 @@ const websiteSchema = {
             lineHeight: lineHeightSlider?.value || '1',
             letterSpacing: letterSpacingSlider?.value || '1',
             wordSpacing: wordSpacingSlider?.value || '1',
-            simpleLanguage: isSimpleLanguage
+            simpleLanguage: isSimpleLanguage,
           };
           localStorage.setItem('textSettings', JSON.stringify(settings));
         }
@@ -747,9 +1100,12 @@ const websiteSchema = {
             try {
               const settings = JSON.parse(saved);
               if (textSizeSlider && settings.textSize) textSizeSlider.value = settings.textSize;
-              if (lineHeightSlider && settings.lineHeight) lineHeightSlider.value = settings.lineHeight;
-              if (letterSpacingSlider && settings.letterSpacing) letterSpacingSlider.value = settings.letterSpacing;
-              if (wordSpacingSlider && settings.wordSpacing) wordSpacingSlider.value = settings.wordSpacing;
+              if (lineHeightSlider && settings.lineHeight)
+                lineHeightSlider.value = settings.lineHeight;
+              if (letterSpacingSlider && settings.letterSpacing)
+                letterSpacingSlider.value = settings.letterSpacing;
+              if (wordSpacingSlider && settings.wordSpacing)
+                wordSpacingSlider.value = settings.wordSpacing;
               // Simple language is already applied via the inline script, just update UI
               updateSimpleLanguageToggle();
             } catch (e) {
@@ -784,12 +1140,14 @@ const websiteSchema = {
         });
 
         // Slider event listeners
-        [textSizeSlider, lineHeightSlider, letterSpacingSlider, wordSpacingSlider].forEach(slider => {
-          slider?.addEventListener('input', () => {
-            applySettings();
-            saveSettings();
-          });
-        });
+        [textSizeSlider, lineHeightSlider, letterSpacingSlider, wordSpacingSlider].forEach(
+          (slider) => {
+            slider?.addEventListener('input', () => {
+              applySettings();
+              saveSettings();
+            });
+          }
+        );
 
         // Simple language toggle
         simpleLanguageToggle?.addEventListener('click', async () => {
@@ -830,7 +1188,7 @@ const websiteSchema = {
 
     <!-- Core Web Vitals Monitoring (privacy-first, no external services) -->
     <script is:inline>
-      (function() {
+      (function () {
         // Only run in production and modern browsers
         if (location.hostname === 'localhost' || !('PerformanceObserver' in window)) return;
 
@@ -886,9 +1244,21 @@ const websiteSchema = {
           const isDev = location.search.includes('debug=vitals');
           if (isDev) {
             console.log('Core Web Vitals:', vitals);
-            console.log('LCP:', vitals.lcp + 'ms', vitals.lcp <= 2500 ? '(Good)' : vitals.lcp <= 4000 ? '(Needs Improvement)' : '(Poor)');
-            console.log('FID:', vitals.fid + 'ms', vitals.fid <= 100 ? '(Good)' : vitals.fid <= 300 ? '(Needs Improvement)' : '(Poor)');
-            console.log('CLS:', vitals.cls, vitals.cls <= 0.1 ? '(Good)' : vitals.cls <= 0.25 ? '(Needs Improvement)' : '(Poor)');
+            console.log(
+              'LCP:',
+              vitals.lcp + 'ms',
+              vitals.lcp <= 2500 ? '(Good)' : vitals.lcp <= 4000 ? '(Needs Improvement)' : '(Poor)'
+            );
+            console.log(
+              'FID:',
+              vitals.fid + 'ms',
+              vitals.fid <= 100 ? '(Good)' : vitals.fid <= 300 ? '(Needs Improvement)' : '(Poor)'
+            );
+            console.log(
+              'CLS:',
+              vitals.cls,
+              vitals.cls <= 0.1 ? '(Good)' : vitals.cls <= 0.25 ? '(Needs Improvement)' : '(Poor)'
+            );
           }
 
           // Store locally for aggregation (no external reporting - privacy first)
@@ -897,7 +1267,7 @@ const websiteSchema = {
             stored.push({
               url: location.pathname,
               timestamp: Date.now(),
-              ...vitals
+              ...vitals,
             });
             // Keep only last 20 entries
             if (stored.length > 20) stored.shift();
@@ -906,7 +1276,7 @@ const websiteSchema = {
         }
 
         // Report on page hide
-        document.addEventListener('visibilitychange', function() {
+        document.addEventListener('visibilitychange', function () {
           if (document.visibilityState === 'hidden') {
             reportVitals();
           }
@@ -917,12 +1287,16 @@ const websiteSchema = {
       })();
     </script>
 
+    <!-- Offline Detection Banner -->
+    <OfflineBanner />
+
     <!-- Service Worker Registration -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {
               console.log('SW registered:', registration.scope);
 
               // Check for updates
@@ -939,7 +1313,7 @@ const websiteSchema = {
                 });
               });
             })
-            .catch(error => {
+            .catch((error) => {
               console.log('SW registration failed:', error);
             });
         });

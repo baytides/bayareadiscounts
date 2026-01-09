@@ -12,7 +12,7 @@ interface Props {
 const {
   placeholder = 'Search programs...',
   size = 'default',
-  apiEndpoint = 'https://baytides-link-checker.azurewebsites.net/api/assistant'
+  apiEndpoint = 'https://baytides-link-checker.azurewebsites.net/api/assistant',
 } = Astro.props;
 
 // Load search configuration at build time
@@ -25,9 +25,7 @@ try {
   console.warn('Could not load search-config.yml:', e);
 }
 
-const sizeClasses = size === 'large'
-  ? 'py-4 pl-12 pr-12 text-lg'
-  : 'py-3 pl-10 pr-10';
+const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 pr-10';
 ---
 
 <div class="search-container">
@@ -46,25 +44,39 @@ const sizeClasses = size === 'large'
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-      />
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
     </svg>
 
     <!-- AI indicator (shows when AI is processing) -->
-    <div id="ai-indicator" class={`hidden absolute top-1/2 -translate-y-1/2 ${size === 'large' ? 'right-4' : 'right-3'}`}>
-      <span class="inline-flex items-center gap-1 text-xs text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 px-2 py-0.5 rounded-full">
+    <div
+      id="ai-indicator"
+      class={`hidden absolute top-1/2 -translate-y-1/2 ${size === 'large' ? 'right-4' : 'right-3'}`}
+    >
+      <span
+        class="inline-flex items-center gap-1 text-xs text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/50 px-2 py-0.5 rounded-full"
+      >
         <svg class="w-3 h-3 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+          ></path>
         </svg>
         <span id="ai-status-text">AI</span>
       </span>
     </div>
 
     <!-- Loading spinner -->
-    <div id="search-loading" class={`hidden absolute top-1/2 -translate-y-1/2 ${size === 'large' ? 'right-4' : 'right-3'}`}>
+    <div
+      id="search-loading"
+      class={`hidden absolute top-1/2 -translate-y-1/2 ${size === 'large' ? 'right-4' : 'right-3'}`}
+    >
       <svg class="w-5 h-5 animate-spin text-primary-600" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
       </svg>
     </div>
 
@@ -83,8 +95,8 @@ const sizeClasses = size === 'large'
       class="text-xs text-neutral-600 dark:text-neutral-300"
       data-tooltip="Smart Search uses AI to understand your question and find relevant programs. Turn it off for simple keyword matching."
       data-tooltip-position="left"
-      tabindex="0"
-    >Smart search</span>
+      tabindex="0">Smart search</span
+    >
     <button
       type="button"
       id="ai-toggle"
@@ -102,7 +114,10 @@ const sizeClasses = size === 'large'
   </div>
 
   <!-- Search hints -->
-  <div id="search-hints" class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-3 z-50">
+  <div
+    id="search-hints"
+    class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 p-3 z-50"
+  >
     <p class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">Try searching for:</p>
     <div class="flex flex-wrap gap-2 mb-3">
       <button type="button" class="search-hint-btn" data-type="keyword">food assistance</button>
@@ -112,26 +127,36 @@ const sizeClasses = size === 'large'
     </div>
     <p class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">Or ask a question:</p>
     <div class="flex flex-wrap gap-2">
-      <button type="button" class="search-hint-btn ai-hint" data-type="ai">I'm a senior who needs help with bills</button>
-      <button type="button" class="search-hint-btn ai-hint" data-type="ai">Low-income family looking for food</button>
+      <button type="button" class="search-hint-btn ai-hint" data-type="ai"
+        >I'm a senior who needs help with bills</button
+      >
+      <button type="button" class="search-hint-btn ai-hint" data-type="ai"
+        >Low-income family looking for food</button
+      >
     </div>
   </div>
 </div>
 
 <!-- Store API endpoint and search config in data attributes -->
-<div id="search-config"
+<div
+  id="search-config"
   data-api-endpoint={apiEndpoint}
   data-synonyms={JSON.stringify(searchConfig.synonyms || {})}
   data-best-bets={JSON.stringify(searchConfig.best_bets || {})}
   data-suggestions={JSON.stringify(searchConfig.suggestions || [])}
   data-query-rewrites={JSON.stringify(searchConfig.query_rewrites || {})}
-  class="hidden">
+  class="hidden"
+>
 </div>
 
 <!-- Type-ahead dropdown -->
 <div id="typeahead-dropdown" class="typeahead-dropdown hidden">
   <ul id="typeahead-list" role="listbox" aria-label="Search suggestions"></ul>
 </div>
+
+<!-- Screen reader announcements (aria-live regions) -->
+<div class="sr-only" aria-live="polite" aria-atomic="true" id="search-announcer"></div>
+<div class="sr-only" aria-live="assertive" aria-atomic="true" id="search-urgent-announcer"></div>
 
 <script>
   import Fuse from 'fuse.js';
@@ -144,7 +169,9 @@ const sizeClasses = size === 'large'
   const SYNONYMS: Record<string, string[]> = JSON.parse(configEl?.dataset?.synonyms || '{}');
   const BEST_BETS: Record<string, string[]> = JSON.parse(configEl?.dataset?.bestBets || '{}');
   const SUGGESTIONS: string[] = JSON.parse(configEl?.dataset?.suggestions || '[]');
-  const QUERY_REWRITES: Record<string, string> = JSON.parse(configEl?.dataset?.queryRewrites || '{}');
+  const QUERY_REWRITES: Record<string, string> = JSON.parse(
+    configEl?.dataset?.queryRewrites || '{}'
+  );
 
   // Type-ahead elements
   const typeaheadDropdown = document.getElementById('typeahead-dropdown');
@@ -159,7 +186,7 @@ const sizeClasses = size === 'large'
     // Check each term and multi-word phrases for synonyms
     for (const term of terms) {
       if (SYNONYMS[term]) {
-        SYNONYMS[term].forEach(syn => expanded.add(syn));
+        SYNONYMS[term].forEach((syn) => expanded.add(syn));
       }
     }
 
@@ -167,7 +194,7 @@ const sizeClasses = size === 'large'
     const queryLower = query.toLowerCase();
     for (const [phrase, synonyms] of Object.entries(SYNONYMS)) {
       if (queryLower.includes(phrase)) {
-        synonyms.forEach(syn => expanded.add(syn));
+        synonyms.forEach((syn) => expanded.add(syn));
       }
     }
 
@@ -221,16 +248,16 @@ const sizeClasses = size === 'large'
     }
 
     const queryLower = query.toLowerCase();
-    const matches = SUGGESTIONS.filter(s =>
-      s.toLowerCase().includes(queryLower)
-    ).slice(0, 6);
+    const matches = SUGGESTIONS.filter((s) => s.toLowerCase().includes(queryLower)).slice(0, 6);
 
     if (matches.length === 0) {
       hideTypeahead();
       return;
     }
 
-    typeaheadList.innerHTML = matches.map((suggestion, i) => `
+    typeaheadList.innerHTML = matches
+      .map(
+        (suggestion, i) => `
       <li role="option"
           class="typeahead-item ${i === selectedSuggestionIndex ? 'selected' : ''}"
           data-suggestion="${suggestion}">
@@ -239,12 +266,14 @@ const sizeClasses = size === 'large'
         </svg>
         <span>${highlightMatch(suggestion, query)}</span>
       </li>
-    `).join('');
+    `
+      )
+      .join('');
 
     typeaheadDropdown.classList.remove('hidden');
 
     // Add click handlers
-    typeaheadList.querySelectorAll('.typeahead-item').forEach(item => {
+    typeaheadList.querySelectorAll('.typeahead-item').forEach((item) => {
       item.addEventListener('click', () => {
         const suggestion = (item as HTMLElement).dataset.suggestion;
         if (suggestion && searchInput) {
@@ -314,9 +343,7 @@ const sizeClasses = size === 'large'
     ? document.querySelectorAll('.home-program-card [data-category]')
     : document.querySelectorAll('[data-category]');
 
-  const cardWrappers = isHomepage
-    ? document.querySelectorAll('.home-program-card')
-    : null;
+  const cardWrappers = isHomepage ? document.querySelectorAll('.home-program-card') : null;
 
   const programs = Array.from(cards).map((card, index) => {
     const nameEl = card.querySelector('h3');
@@ -336,7 +363,7 @@ const sizeClasses = size === 'large'
       category: card.getAttribute('data-category') || '',
       groups: card.getAttribute('data-groups')?.split(',') || [],
       area: areaEl?.textContent?.trim() || '',
-      text: card.textContent?.trim() || ''
+      text: card.textContent?.trim() || '',
     };
   });
 
@@ -346,7 +373,7 @@ const sizeClasses = size === 'large'
       { name: 'name', weight: 0.4 },
       { name: 'description', weight: 0.3 },
       { name: 'category', weight: 0.2 },
-      { name: 'area', weight: 0.1 }
+      { name: 'area', weight: 0.1 },
     ],
     threshold: 0.4,
     distance: 100,
@@ -354,7 +381,7 @@ const sizeClasses = size === 'large'
     includeScore: true,
     includeMatches: true,
     ignoreLocation: true,
-    useExtendedSearch: true
+    useExtendedSearch: true,
   });
 
   const searchInput = document.getElementById('search-input');
@@ -364,6 +391,22 @@ const sizeClasses = size === 'large'
   const searchLoading = document.getElementById('search-loading');
   const aiToggle = document.getElementById('ai-toggle');
   const hintButtons = document.querySelectorAll('.search-hint-btn');
+
+  // Aria-live announcers for screen readers
+  const searchAnnouncer = document.getElementById('search-announcer');
+  const urgentAnnouncer = document.getElementById('search-urgent-announcer');
+
+  // Announce search results to screen readers
+  function announceToScreenReader(message: string, urgent = false) {
+    const announcer = urgent ? urgentAnnouncer : searchAnnouncer;
+    if (announcer) {
+      // Clear and re-set to ensure announcement
+      announcer.textContent = '';
+      setTimeout(() => {
+        announcer.textContent = message;
+      }, 100);
+    }
+  }
 
   let activeCategory = 'all';
   let debounceTimer;
@@ -464,44 +507,163 @@ const sizeClasses = size === 'large'
     // Demographic terms that should trigger AI even as single words
     // These map to specific group filters that fuzzy search might miss
     // Comprehensive list based on groups.yml categories
-    const demographicTerms = new RegExp('^(' + [
-      // Income-eligible synonyms
-      'low.?income', 'ebt', 'snap', 'calfresh', 'calworks', 'medi.?cal', 'medicaid', 'ssi', 'ssdi', 'welfare', 'poor', 'poverty',
-      // Seniors synonyms
-      'senior', 'seniors', 'elderly', 'older.?adult', 'retiree', 'retired', 'aging',
-      // Youth synonyms
-      'youth', 'young', 'teen', 'teenager', 'child', 'children', 'kid', 'kids', 'minor', 'adolescent',
-      // College students synonyms
-      'student', 'students', 'college', 'university', 'grad.?student', 'undergraduate', 'graduate',
-      // Veterans synonyms
-      'veteran', 'veterans', 'military', 'army', 'navy', 'marines', 'air.?force', 'coast.?guard', 'active.?duty', 'reservist',
-      // Families synonyms
-      'family', 'families', 'parent', 'parents', 'mother', 'father', 'mom', 'dad', 'single.?parent',
-      // Disability synonyms
-      'disabled', 'disability', 'disabilities', 'handicapped', 'blind', 'deaf', 'wheelchair', 'ada',
-      // LGBTQ+ synonyms
-      'lgbtq?', 'lgbt', 'gay', 'lesbian', 'bisexual', 'transgender', 'queer', 'trans', 'nonbinary', 'non.?binary', 'pansexual', 'asexual', 'intersex', 'pride',
-      // First responders synonyms
-      'first.?responder', 'firefighter', 'police', 'officer', 'cop', 'emt', 'paramedic',
-      // Teachers synonyms
-      'teacher', 'teachers', 'educator', 'professor', 'instructor',
-      // Job seekers synonyms
-      'unemployed', 'job.?seeker', 'jobless', 'laid.?off',
-      // Immigrants synonyms
-      'immigrant', 'immigrants', 'refugee', 'refugees', 'undocumented', 'daca', 'dreamer', 'asylum', 'migrant',
-      // Unhoused synonyms
-      'homeless', 'unhoused', 'houseless', 'unsheltered', 'shelter',
-      // Pregnant/Women synonyms
-      'pregnant', 'pregnancy', 'expecting', 'expectant', 'prenatal', 'maternal', 'woman', 'women', 'female',
-      // Caregivers synonyms
-      'caregiver', 'caregivers',
-      // Foster youth synonyms
-      'foster', 'foster.?youth', 'foster.?care', 'aged.?out',
-      // Formerly incarcerated synonyms
-      'incarcerated', 'formerly.?incarcerated', 'reentry', 'ex.?offender', 'parolee', 'probation',
-      // Nonprofits
-      'nonprofit', 'non.?profit', 'ngo', 'charity'
-    ].join('|') + ')$', 'i');
+    const demographicTerms = new RegExp(
+      '^(' +
+        [
+          // Income-eligible synonyms
+          'low.?income',
+          'ebt',
+          'snap',
+          'calfresh',
+          'calworks',
+          'medi.?cal',
+          'medicaid',
+          'ssi',
+          'ssdi',
+          'welfare',
+          'poor',
+          'poverty',
+          // Seniors synonyms
+          'senior',
+          'seniors',
+          'elderly',
+          'older.?adult',
+          'retiree',
+          'retired',
+          'aging',
+          // Youth synonyms
+          'youth',
+          'young',
+          'teen',
+          'teenager',
+          'child',
+          'children',
+          'kid',
+          'kids',
+          'minor',
+          'adolescent',
+          // College students synonyms
+          'student',
+          'students',
+          'college',
+          'university',
+          'grad.?student',
+          'undergraduate',
+          'graduate',
+          // Veterans synonyms
+          'veteran',
+          'veterans',
+          'military',
+          'army',
+          'navy',
+          'marines',
+          'air.?force',
+          'coast.?guard',
+          'active.?duty',
+          'reservist',
+          // Families synonyms
+          'family',
+          'families',
+          'parent',
+          'parents',
+          'mother',
+          'father',
+          'mom',
+          'dad',
+          'single.?parent',
+          // Disability synonyms
+          'disabled',
+          'disability',
+          'disabilities',
+          'handicapped',
+          'blind',
+          'deaf',
+          'wheelchair',
+          'ada',
+          // LGBTQ+ synonyms
+          'lgbtq?',
+          'lgbt',
+          'gay',
+          'lesbian',
+          'bisexual',
+          'transgender',
+          'queer',
+          'trans',
+          'nonbinary',
+          'non.?binary',
+          'pansexual',
+          'asexual',
+          'intersex',
+          'pride',
+          // First responders synonyms
+          'first.?responder',
+          'firefighter',
+          'police',
+          'officer',
+          'cop',
+          'emt',
+          'paramedic',
+          // Teachers synonyms
+          'teacher',
+          'teachers',
+          'educator',
+          'professor',
+          'instructor',
+          // Job seekers synonyms
+          'unemployed',
+          'job.?seeker',
+          'jobless',
+          'laid.?off',
+          // Immigrants synonyms
+          'immigrant',
+          'immigrants',
+          'refugee',
+          'refugees',
+          'undocumented',
+          'daca',
+          'dreamer',
+          'asylum',
+          'migrant',
+          // Unhoused synonyms
+          'homeless',
+          'unhoused',
+          'houseless',
+          'unsheltered',
+          'shelter',
+          // Pregnant/Women synonyms
+          'pregnant',
+          'pregnancy',
+          'expecting',
+          'expectant',
+          'prenatal',
+          'maternal',
+          'woman',
+          'women',
+          'female',
+          // Caregivers synonyms
+          'caregiver',
+          'caregivers',
+          // Foster youth synonyms
+          'foster',
+          'foster.?youth',
+          'foster.?care',
+          'aged.?out',
+          // Formerly incarcerated synonyms
+          'incarcerated',
+          'formerly.?incarcerated',
+          'reentry',
+          'ex.?offender',
+          'parolee',
+          'probation',
+          // Nonprofits
+          'nonprofit',
+          'non.?profit',
+          'ngo',
+          'charity',
+        ].join('|') +
+        ')$',
+      'i'
+    );
 
     if (demographicTerms.test(trimmed)) {
       return true; // Single demographic terms should use AI
@@ -509,9 +671,9 @@ const sizeClasses = size === 'large'
 
     // Simple patterns that don't need AI
     const simplePatterns = [
-      /^\d{5}$/,                          // ZIP code
-      /^[a-zA-Z]{1,20}$/,                 // Single word (generic)
-      /^[a-zA-Z]+\s+[a-zA-Z]+$/,          // Two words
+      /^\d{5}$/, // ZIP code
+      /^[a-zA-Z]{1,20}$/, // Single word (generic)
+      /^[a-zA-Z]+\s+[a-zA-Z]+$/, // Two words
       /^(food|health|housing|utilities|transportation|education|legal|finance|technology|recreation|community)$/i, // Category names
     ];
 
@@ -521,19 +683,21 @@ const sizeClasses = size === 'large'
 
     // Complex query indicators
     const complexIndicators = [
-      trimmed.length > 30,                              // Long queries
-      /\b(i'm|i am|my|me|we|our)\b/i.test(trimmed),    // First person
+      trimmed.length > 30, // Long queries
+      /\b(i'm|i am|my|me|we|our)\b/i.test(trimmed), // First person
       /\b(need|looking for|help with|want|qualify)\b/i.test(trimmed), // Intent words
       // Demographics - expanded to include more identity terms
-      /\b(senior|elderly|disabled|veteran|family|child|low.?income|immigrant|refugee|homeless|unhoused)\b/i.test(trimmed),
+      /\b(senior|elderly|disabled|veteran|family|child|low.?income|immigrant|refugee|homeless|unhoused)\b/i.test(
+        trimmed
+      ),
       /\b(lgbtq?|gay|lesbian|bisexual|transgender|queer|nonbinary|trans)\b/i.test(trimmed), // LGBTQ+ terms
       /\b(woman|women|female|mother|pregnant|expecting)\b/i.test(trimmed), // Women-specific
       /\b(student|college|university|graduate|undergraduate)\b/i.test(trimmed), // Students
       /\b(teacher|educator|nurse|first.?responder|firefighter|police|emt)\b/i.test(trimmed), // Professions
       /\b(foster|formerly.?incarcerated|reentry|caregiver)\b/i.test(trimmed), // Special circumstances
       /\b(years?\s+old|\d{2}\s+year)\b/i.test(trimmed), // Age mentions
-      /\b(living\s+in|from|near)\b/i.test(trimmed),    // Location context
-      trimmed.split(/\s+/).length >= 5,                 // 5+ words
+      /\b(living\s+in|from|near)\b/i.test(trimmed), // Location context
+      trimmed.split(/\s+/).length >= 5, // 5+ words
     ];
 
     const complexCount = complexIndicators.filter(Boolean).length;
@@ -582,8 +746,8 @@ const sizeClasses = size === 'large'
         body: JSON.stringify({
           message: `Find programs matching this request. Return ONLY the program names that match, nothing else. Request: ${query}`,
           history: [],
-          mode: 'filter' // Tell the API we just want filtering, not conversation
-        })
+          mode: 'filter', // Tell the API we just want filtering, not conversation
+        }),
       });
 
       if (!response.ok) throw new Error('AI search failed');
@@ -592,13 +756,13 @@ const sizeClasses = size === 'large'
 
       // Extract program IDs/names from AI response
       const matchedPrograms = data.programs || [];
-      const matchedIds = new Set(matchedPrograms.map((p) =>
-        (p.id || p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-')
-      ));
+      const matchedIds = new Set(
+        matchedPrograms.map((p) => (p.id || p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-'))
+      );
 
       // Also extract any program names mentioned in the message
       const messageText = data.message || '';
-      programs.forEach(p => {
+      programs.forEach((p) => {
         if (messageText.toLowerCase().includes(p.name.toLowerCase())) {
           matchedIds.add(p.id);
         }
@@ -611,7 +775,7 @@ const sizeClasses = size === 'large'
         // Homepage: show results section and filter cards
         homeResultsSection?.classList.remove('hidden');
 
-        programs.forEach(p => {
+        programs.forEach((p) => {
           const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
           if (p.wrapper) {
             if (matchesAI) {
@@ -634,7 +798,7 @@ const sizeClasses = size === 'large'
         }
       } else {
         // Directory page
-        programs.forEach(p => {
+        programs.forEach((p) => {
           const matchesAI = matchedIds.size === 0 || matchedIds.has(p.id);
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
           const shouldShow = matchesAI && matchesCategory;
@@ -647,6 +811,9 @@ const sizeClasses = size === 'large'
       // If AI returned programs, show them; otherwise fall back to fuzzy search
       if (matchedIds.size > 0 && visibleCount > 0) {
         showAIIndicator(`AI found ${visibleCount}`);
+        announceToScreenReader(
+          `AI search found ${visibleCount} program${visibleCount !== 1 ? 's' : ''} for "${query}"`
+        );
         if (!isHomepage) {
           updateResultsCount(visibleCount, query, true);
         }
@@ -655,7 +822,6 @@ const sizeClasses = size === 'large'
         hideAIIndicator();
         performFuzzySearch(query);
       }
-
     } catch (error) {
       console.error('AI search error:', error);
       // Fall back to fuzzy search on error
@@ -673,7 +839,7 @@ const sizeClasses = size === 'large'
       if (!query) {
         // No query - hide results section
         homeResultsSection?.classList.add('hidden');
-        programs.forEach(p => {
+        programs.forEach((p) => {
           if (p.wrapper) p.wrapper.classList.add('hidden');
         });
         noResultsEl?.classList.add('hidden');
@@ -692,7 +858,7 @@ const sizeClasses = size === 'large'
       const allResults = new Map();
       for (const term of expandedTerms) {
         const results = fuse.search(term);
-        results.forEach(r => {
+        results.forEach((r) => {
           const existing = allResults.get(r.item.index);
           if (!existing || r.score < existing.score) {
             allResults.set(r.item.index, r);
@@ -705,7 +871,7 @@ const sizeClasses = size === 'large'
       const bestBetPrograms: typeof programs = [];
       const regularPrograms: typeof programs = [];
 
-      programs.forEach(p => {
+      programs.forEach((p) => {
         const matchesSearch = matchedIndices.has(p.index);
         const isBestBet = bestBetIds.has(p.id);
 
@@ -739,18 +905,22 @@ const sizeClasses = size === 'large'
       }
       if (visibleCount === 0) {
         noResultsEl?.classList.remove('hidden');
+        announceToScreenReader(`No programs found for "${query}". Try different search terms.`);
       } else {
         noResultsEl?.classList.add('hidden');
+        announceToScreenReader(
+          `Found ${visibleCount} program${visibleCount !== 1 ? 's' : ''} for "${query}"`
+        );
       }
     } else {
       // Directory page: original behavior with enhancements
       if (!query) {
         // No search query - show all (respect category filter)
-        programs.forEach(p => {
+        programs.forEach((p) => {
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
           // Also respect location filter if active
           const locationHidden = p.element.hasAttribute('data-location-hidden');
-          p.element.style.display = (matchesCategory && !locationHidden) ? '' : 'none';
+          p.element.style.display = matchesCategory && !locationHidden ? '' : 'none';
           p.element.classList.remove('best-bet');
         });
         hideAIIndicator();
@@ -764,7 +934,7 @@ const sizeClasses = size === 'large'
         const allResults = new Map();
         for (const term of expandedTerms) {
           const results = fuse.search(term);
-          results.forEach(r => {
+          results.forEach((r) => {
             const existing = allResults.get(r.item.index);
             if (!existing || r.score < existing.score) {
               allResults.set(r.item.index, r);
@@ -773,7 +943,7 @@ const sizeClasses = size === 'large'
         }
         const matchedIndices = new Set(allResults.keys());
 
-        programs.forEach(p => {
+        programs.forEach((p) => {
           const matchesSearch = matchedIndices.has(p.index);
           const isBestBet = bestBetIds.has(p.id);
           const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
@@ -792,8 +962,21 @@ const sizeClasses = size === 'large'
       }
 
       // Update count
-      const visibleCount = document.querySelectorAll('[data-category]:not([style*="display: none"])').length;
+      const visibleCount = document.querySelectorAll(
+        '[data-category]:not([style*="display: none"])'
+      ).length;
       updateResultsCount(visibleCount, query, false);
+
+      // Announce results to screen readers
+      if (query) {
+        if (visibleCount === 0) {
+          announceToScreenReader(`No programs found for "${query}". Try different search terms.`);
+        } else {
+          announceToScreenReader(
+            `Found ${visibleCount} program${visibleCount !== 1 ? 's' : ''} for "${query}"`
+          );
+        }
+      }
     }
   }
 
@@ -816,12 +999,31 @@ const sizeClasses = size === 'large'
     // Since our search shows program cards + banner (additive), we're generous
     // with showing the banner - it has a close button if not needed
     const academicProfessionalContext = [
-      'statistics', 'stats', 'data about', 'research on', 'study on',
-      'legislation', 'policy', 'policies',
-      'donate to', 'donation to', 'volunteer at', 'volunteering at',
-      'definition of', 'define ', 'meaning of',
-      'history of', 'causes of', 'write about', 'essay on', 'paper on',
-      'jobs in', 'career in', 'work in', 'degree in', 'major in'
+      'statistics',
+      'stats',
+      'data about',
+      'research on',
+      'study on',
+      'legislation',
+      'policy',
+      'policies',
+      'donate to',
+      'donation to',
+      'volunteer at',
+      'volunteering at',
+      'definition of',
+      'define ',
+      'meaning of',
+      'history of',
+      'causes of',
+      'write about',
+      'essay on',
+      'paper on',
+      'jobs in',
+      'career in',
+      'work in',
+      'degree in',
+      'major in',
     ];
 
     // Only skip banner for clearly academic/professional queries
@@ -840,99 +1042,249 @@ const sizeClasses = size === 'large'
     // These indicate someone is in immediate physical danger right now
     const emergencyKeywords = [
       // Urgent help requests
-      'need immediate help', 'urgent help', 'emergency help',
-      'call 911', 'call the police', 'call an ambulance',
-      'life threatening', 'life-threatening', 'in danger',
-      'help me now', 'need help now', 'please help',
+      'need immediate help',
+      'urgent help',
+      'emergency help',
+      'call 911',
+      'call the police',
+      'call an ambulance',
+      'life threatening',
+      'life-threatening',
+      'in danger',
+      'help me now',
+      'need help now',
+      'please help',
       // Active violence
-      'being attacked', 'attacking me', 'someone is attacking',
-      'being stabbed', 'stabbing me', 'knife attack', 'with a knife',
-      'being shot', 'shooting at', 'has a gun', 'with a gun',
-      'being beaten', 'beating me', 'hitting me', 'hurting me',
-      'someone is hurting', 'abusing me', 'being abused',
+      'being attacked',
+      'attacking me',
+      'someone is attacking',
+      'being stabbed',
+      'stabbing me',
+      'knife attack',
+      'with a knife',
+      'being shot',
+      'shooting at',
+      'has a gun',
+      'with a gun',
+      'being beaten',
+      'beating me',
+      'hitting me',
+      'hurting me',
+      'someone is hurting',
+      'abusing me',
+      'being abused',
       // Domestic violence / abuse
-      'domestic violence', 'partner is hitting', 'spouse is hitting',
-      'husband is hitting', 'wife is hitting', 'boyfriend is hitting',
-      'being raped', 'sexual assault', 'being assaulted',
+      'domestic violence',
+      'partner is hitting',
+      'spouse is hitting',
+      'husband is hitting',
+      'wife is hitting',
+      'boyfriend is hitting',
+      'being raped',
+      'sexual assault',
+      'being assaulted',
       // Child/elder emergencies
-      'child is hurt', 'baby not breathing', 'child not breathing',
-      'child abuse', 'elder abuse', 'abusing my child', 'hurting my child',
+      'child is hurt',
+      'baby not breathing',
+      'child not breathing',
+      'child abuse',
+      'elder abuse',
+      'abusing my child',
+      'hurting my child',
       // Life-threatening medical
-      'cant breathe', "can't breathe", 'not breathing', 'stopped breathing',
-      'choking', 'having a heart attack', 'having a stroke', 'having a seizure',
-      'severe bleeding', 'wont stop bleeding', "won't stop bleeding",
-      'unconscious', 'passed out', 'not waking up', 'unresponsive',
-      'allergic reaction', 'anaphylaxis', 'swelling up',
-      'overdosing', 'took too many pills', 'drug overdose',
+      'cant breathe',
+      "can't breathe",
+      'not breathing',
+      'stopped breathing',
+      'choking',
+      'having a heart attack',
+      'having a stroke',
+      'having a seizure',
+      'severe bleeding',
+      'wont stop bleeding',
+      "won't stop bleeding",
+      'unconscious',
+      'passed out',
+      'not waking up',
+      'unresponsive',
+      'allergic reaction',
+      'anaphylaxis',
+      'swelling up',
+      'overdosing',
+      'took too many pills',
+      'drug overdose',
       // Active emergencies
-      'house on fire', 'building on fire', 'theres a fire', "there's a fire",
-      'apartment on fire', 'smoke everywhere', 'car accident', 'bad accident',
-      'someone is drowning', 'fell in water', 'trapped',
-      'being kidnapped', 'being held hostage', 'taken hostage',
-      'someone broke in', 'intruder', 'break in', 'burglar', 'robber',
-      'being robbed', 'mugged', 'being mugged',
+      'house on fire',
+      'building on fire',
+      'theres a fire',
+      "there's a fire",
+      'apartment on fire',
+      'smoke everywhere',
+      'car accident',
+      'bad accident',
+      'someone is drowning',
+      'fell in water',
+      'trapped',
+      'being kidnapped',
+      'being held hostage',
+      'taken hostage',
+      'someone broke in',
+      'intruder',
+      'break in',
+      'burglar',
+      'robber',
+      'being robbed',
+      'mugged',
+      'being mugged',
       // Imminent threats
-      'threatening to kill', 'going to kill', 'wants to kill',
-      'has a weapon', 'threatening me', 'stalking me', 'following me',
+      'threatening to kill',
+      'going to kill',
+      'wants to kill',
+      'has a weapon',
+      'threatening me',
+      'stalking me',
+      'following me',
       // Bystander/witness scenarios
-      'i think i see', 'i see someone', 'someone is being',
-      'witness domestic', 'witnessing abuse', 'witnessing violence',
-      'neighbor is being', 'hear screaming', 'hearing screams',
-      'sounds like fighting', 'sounds like abuse',
-      'suspicious person', 'someone suspicious',
-      'man with a gun', 'woman with a gun', 'person with a gun',
-      'man with a knife', 'woman with a knife', 'person with a knife',
-      'saw someone get', 'just saw someone',
-      'think someone is hurt', 'someone might be hurt',
-      'child left alone', 'child in car', 'baby in car',
-      'report abuse', 'report violence', 'how to report'
+      'i think i see',
+      'i see someone',
+      'someone is being',
+      'witness domestic',
+      'witnessing abuse',
+      'witnessing violence',
+      'neighbor is being',
+      'hear screaming',
+      'hearing screams',
+      'sounds like fighting',
+      'sounds like abuse',
+      'suspicious person',
+      'someone suspicious',
+      'man with a gun',
+      'woman with a gun',
+      'person with a gun',
+      'man with a knife',
+      'woman with a knife',
+      'person with a knife',
+      'saw someone get',
+      'just saw someone',
+      'think someone is hurt',
+      'someone might be hurt',
+      'child left alone',
+      'child in car',
+      'baby in car',
+      'report abuse',
+      'report violence',
+      'how to report',
     ];
 
     // Mental health crisis keywords (988)
     // 988 Suicide & Crisis Lifeline - for emotional distress, not just suicidal thoughts
     const mentalHealthKeywords = [
       // Suicidal ideation
-      'suicide', 'suicidal', 'kill myself', 'end my life', 'want to die',
-      'dont want to live', "don't want to live", 'no reason to live',
-      'better off dead', 'wish i was dead', 'wish i were dead',
-      'thinking about suicide', 'considering suicide', 'planning suicide',
-      'suicidal thoughts', 'thoughts of suicide', 'ending it all',
-      'take my own life', 'taking my own life',
+      'suicide',
+      'suicidal',
+      'kill myself',
+      'end my life',
+      'want to die',
+      'dont want to live',
+      "don't want to live",
+      'no reason to live',
+      'better off dead',
+      'wish i was dead',
+      'wish i were dead',
+      'thinking about suicide',
+      'considering suicide',
+      'planning suicide',
+      'suicidal thoughts',
+      'thoughts of suicide',
+      'ending it all',
+      'take my own life',
+      'taking my own life',
       // Self-harm
-      'self harm', 'self-harm', 'cutting myself', 'hurt myself',
-      'harming myself', 'hurting myself', 'want to cut', 'started cutting',
-      'burning myself', 'hitting myself',
+      'self harm',
+      'self-harm',
+      'cutting myself',
+      'hurt myself',
+      'harming myself',
+      'hurting myself',
+      'want to cut',
+      'started cutting',
+      'burning myself',
+      'hitting myself',
       // Depression / hopelessness
-      'severely depressed', 'deep depression', 'hopeless', 'no hope',
-      'feel empty', 'feeling empty', 'worthless', 'feel worthless',
-      'nobody cares', 'no one cares', 'nobody loves me', 'no one loves me',
-      'world without me', 'everyone hates me',
+      'severely depressed',
+      'deep depression',
+      'hopeless',
+      'no hope',
+      'feel empty',
+      'feeling empty',
+      'worthless',
+      'feel worthless',
+      'nobody cares',
+      'no one cares',
+      'nobody loves me',
+      'no one loves me',
+      'world without me',
+      'everyone hates me',
       // Crisis / breakdown
-      'mental health crisis', 'mental breakdown', 'breaking down',
-      'emotional crisis', 'in crisis', 'having a crisis',
-      'cant go on', "can't go on", 'give up', 'giving up',
-      'cant take it', "can't take it", 'cant handle', "can't handle",
-      'falling apart', 'losing my mind', 'going crazy',
+      'mental health crisis',
+      'mental breakdown',
+      'breaking down',
+      'emotional crisis',
+      'in crisis',
+      'having a crisis',
+      'cant go on',
+      "can't go on",
+      'give up',
+      'giving up',
+      'cant take it',
+      "can't take it",
+      'cant handle',
+      "can't handle",
+      'falling apart',
+      'losing my mind',
+      'going crazy',
       // Overdose intent
-      'overdose myself', 'take all my pills', 'take too many pills',
-      'swallow all my', 'drink myself to death',
+      'overdose myself',
+      'take all my pills',
+      'take too many pills',
+      'swallow all my',
+      'drink myself to death',
       // Anxiety / panic
-      'panic attack', 'having a panic attack', 'severe anxiety',
-      'cant stop crying', "can't stop crying", 'crying for hours',
+      'panic attack',
+      'having a panic attack',
+      'severe anxiety',
+      'cant stop crying',
+      "can't stop crying",
+      'crying for hours',
       // Bystander concerns for others
-      'friend is suicidal', 'worried about friend', 'think my friend',
-      'someone i know', 'family member suicidal', 'child is suicidal',
-      'teen is suicidal', 'worried someone will', 'talking about suicide',
-      'said they want to die', 'threatening suicide',
+      'friend is suicidal',
+      'worried about friend',
+      'think my friend',
+      'someone i know',
+      'family member suicidal',
+      'child is suicidal',
+      'teen is suicidal',
+      'worried someone will',
+      'talking about suicide',
+      'said they want to die',
+      'threatening suicide',
       // Grief / trauma
-      'lost someone to suicide', 'someone died by suicide',
-      'survivor of suicide', 'grief overwhelmed',
+      'lost someone to suicide',
+      'someone died by suicide',
+      'survivor of suicide',
+      'grief overwhelmed',
       // Veterans specific (988 press 1)
-      'veteran crisis', 'veteran suicide', 'military suicide',
-      'ptsd crisis', 'combat trauma',
+      'veteran crisis',
+      'veteran suicide',
+      'military suicide',
+      'ptsd crisis',
+      'combat trauma',
       // LGBTQ+ specific (988 available)
-      'lgbtq crisis', 'coming out crisis', 'rejected by family',
-      'gender identity crisis', 'trans crisis'
+      'lgbtq crisis',
+      'coming out crisis',
+      'rejected by family',
+      'gender identity crisis',
+      'trans crisis',
     ];
 
     for (const keyword of emergencyKeywords) {
@@ -962,7 +1314,9 @@ const sizeClasses = size === 'large'
     banner.className = `crisis-banner ${isEmergency ? 'emergency' : 'mental-health'}`;
     banner.innerHTML = `
       <div class="crisis-banner-content">
-        ${isEmergency ? `
+        ${
+          isEmergency
+            ? `
           <div class="crisis-banner-box">
             <div class="crisis-banner-icon">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -980,7 +1334,8 @@ const sizeClasses = size === 'large'
             </svg>
             Call 911
           </a>
-        ` : `
+        `
+            : `
           <div class="crisis-banner-box">
             <div class="crisis-banner-icon">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1003,7 +1358,8 @@ const sizeClasses = size === 'large'
               Chat Online
             </a>
           </div>
-        `}
+        `
+        }
         <button class="crisis-banner-close" aria-label="Dismiss">&times;</button>
       </div>
     `;
@@ -1017,6 +1373,12 @@ const sizeClasses = size === 'large'
       const searchInput = document.getElementById('search-input');
       searchInput?.parentElement?.appendChild(banner);
     }
+
+    // Announce crisis resources to screen readers (urgent)
+    const urgentMessage = isEmergency
+      ? 'If you are in danger, call 911 for emergency services.'
+      : 'Crisis support is available. Call or text 988 for the Suicide and Crisis Lifeline, available 24/7.';
+    announceToScreenReader(urgentMessage, true);
 
     // Close handler
     const closeBtn = banner.querySelector('.crisis-banner-close');
@@ -1095,13 +1457,16 @@ const sizeClasses = size === 'large'
 
   // Hide type-ahead when clicking outside
   document.addEventListener('click', (e) => {
-    if (!searchInput?.contains(e.target as Node) && !typeaheadDropdown?.contains(e.target as Node)) {
+    if (
+      !searchInput?.contains(e.target as Node) &&
+      !typeaheadDropdown?.contains(e.target as Node)
+    ) {
       hideTypeahead();
     }
   });
 
   // Handle hint button clicks
-  hintButtons.forEach(btn => {
+  hintButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       searchInput.value = btn.textContent || '';
       searchHints?.classList.add('hidden');
@@ -1188,10 +1553,22 @@ const sizeClasses = size === 'large'
   }
 
   @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-4px); }
-    10% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-4px); }
+    0% {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
   }
 
   /* Crisis Banner Styles */
@@ -1290,8 +1667,14 @@ const sizeClasses = size === 'large'
   }
 
   @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Type-ahead Dropdown Styles */
