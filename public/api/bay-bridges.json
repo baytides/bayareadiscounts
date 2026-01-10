@@ -1,0 +1,186 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "2026-01-10",
+    "source": "OpenStreetMap / Manual curation",
+    "description": "Major Bay Area bridge geometries for map display",
+    "count": 7
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Golden Gate Bridge",
+        "type": "suspension",
+        "length_ft": 8981,
+        "opened": 1937,
+        "lanes": 6,
+        "toll": true,
+        "color": "#C41E3A"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.4786, 37.8083],
+          [-122.4755, 37.8143],
+          [-122.4725, 37.8199],
+          [-122.4696, 37.8252],
+          [-122.4668, 37.8305],
+          [-122.4642, 37.8353],
+          [-122.4619, 37.8399]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Francisco–Oakland Bay Bridge",
+        "type": "suspension/cantilever",
+        "length_ft": 23556,
+        "opened": 1936,
+        "lanes": 10,
+        "toll": true,
+        "color": "#4A90A4"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.3773, 37.7883],
+          [-122.3680, 37.7903],
+          [-122.3590, 37.7920],
+          [-122.3500, 37.7935],
+          [-122.3400, 37.7955],
+          [-122.3300, 37.7975],
+          [-122.3200, 37.7995],
+          [-122.3100, 37.8015],
+          [-122.3000, 37.8035],
+          [-122.2900, 37.8055],
+          [-122.2800, 37.8075],
+          [-122.2700, 37.8095]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Mateo–Hayward Bridge",
+        "type": "orthotropic box girder",
+        "length_ft": 36960,
+        "opened": 1967,
+        "lanes": 6,
+        "toll": true,
+        "color": "#6B8E23"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.2530, 37.5850],
+          [-122.2400, 37.5820],
+          [-122.2250, 37.5785],
+          [-122.2100, 37.5750],
+          [-122.1950, 37.5715],
+          [-122.1800, 37.5680],
+          [-122.1650, 37.5645],
+          [-122.1500, 37.5610],
+          [-122.1350, 37.5575],
+          [-122.1200, 37.5540]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dumbarton Bridge",
+        "type": "concrete box girder",
+        "length_ft": 8600,
+        "opened": 1984,
+        "lanes": 6,
+        "toll": true,
+        "color": "#8B4513"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.1260, 37.5050],
+          [-122.1150, 37.5035],
+          [-122.1040, 37.5020],
+          [-122.0930, 37.5005],
+          [-122.0820, 37.4990],
+          [-122.0710, 37.4975],
+          [-122.0600, 37.4960]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Richmond–San Rafael Bridge",
+        "type": "cantilever",
+        "length_ft": 21468,
+        "opened": 1956,
+        "lanes": 5,
+        "toll": true,
+        "color": "#4682B4"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.4300, 37.9360],
+          [-122.4150, 37.9380],
+          [-122.4000, 37.9400],
+          [-122.3850, 37.9420],
+          [-122.3700, 37.9435],
+          [-122.3550, 37.9450],
+          [-122.3400, 37.9460],
+          [-122.3250, 37.9465],
+          [-122.3100, 37.9470]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Carquinez Bridge",
+        "type": "suspension/truss",
+        "length_ft": 3350,
+        "opened": 1958,
+        "lanes": 8,
+        "toll": true,
+        "color": "#708090"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.2270, 38.0610],
+          [-122.2230, 38.0595],
+          [-122.2190, 38.0580],
+          [-122.2150, 38.0565],
+          [-122.2110, 38.0550]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Benicia–Martinez Bridge",
+        "type": "box girder",
+        "length_ft": 7900,
+        "opened": 1962,
+        "lanes": 8,
+        "toll": true,
+        "color": "#5F9EA0"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.1280, 38.0420],
+          [-122.1220, 38.0450],
+          [-122.1160, 38.0480],
+          [-122.1100, 38.0510],
+          [-122.1040, 38.0540],
+          [-122.0980, 38.0570]
+        ]
+      }
+    }
+  ]
+}

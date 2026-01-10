@@ -2392,6 +2392,118 @@ const pmtilesUrl =
         });
 
         // ========================================
+        // BAY AREA BRIDGES (always visible landmark layer)
+        // ========================================
+        async function loadBridges() {
+          try {
+            const response = await fetch('/api/bay-bridges.json');
+            const bridgeData = await response.json();
+
+            map.addSource('bay-bridges', {
+              type: 'geojson',
+              data: bridgeData,
+            });
+
+            // Bridge casing (dark outline for depth)
+            map.addLayer(
+              {
+                id: 'bridges-casing-overlay',
+                type: 'line',
+                source: 'bay-bridges',
+                paint: {
+                  'line-color': '#1f2937',
+                  'line-width': ['interpolate', ['linear'], ['zoom'], 8, 4, 12, 12, 16, 20],
+                  'line-opacity': 0.6,
+                },
+                layout: {
+                  'line-cap': 'round',
+                  'line-join': 'round',
+                },
+              },
+              'clusters'
+            );
+
+            // Bridge main color (uses each bridge's color property)
+            map.addLayer(
+              {
+                id: 'bridges-overlay',
+                type: 'line',
+                source: 'bay-bridges',
+                paint: {
+                  'line-color': ['get', 'color'],
+                  'line-width': ['interpolate', ['linear'], ['zoom'], 8, 2, 12, 8, 16, 14],
+                },
+                layout: {
+                  'line-cap': 'round',
+                  'line-join': 'round',
+                },
+              },
+              'clusters'
+            );
+
+            // Bridge labels
+            map.addLayer({
+              id: 'bridge-labels',
+              type: 'symbol',
+              source: 'bay-bridges',
+              minzoom: 10,
+              layout: {
+                'symbol-placement': 'line-center',
+                'text-field': ['get', 'name'],
+                'text-size': ['interpolate', ['linear'], ['zoom'], 10, 10, 14, 13],
+                'text-font': ['Noto Sans Bold'],
+                'text-anchor': 'center',
+                'text-allow-overlap': false,
+              },
+              paint: {
+                'text-color': '#1f2937',
+                'text-halo-color': '#ffffff',
+                'text-halo-width': 2,
+              },
+            });
+
+            // Click on bridge for info popup
+            map.on('click', 'bridges-overlay', (e: any) => {
+              if (!e.features?.length) return;
+              const props = e.features[0].properties;
+              const coords = e.lngLat;
+
+              new maplibregl.Popup({ closeButton: true, maxWidth: '260px' })
+                .setLngLat(coords)
+                .setHTML(
+                  `
+                  <div class="p-3">
+                    <h3 class="font-bold text-base mb-1" style="color: ${props.color}">${props.name}</h3>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300 space-y-1">
+                      <p><strong>Type:</strong> ${props.type}</p>
+                      <p><strong>Length:</strong> ${(props.length_ft / 5280).toFixed(1)} miles (${props.length_ft.toLocaleString()} ft)</p>
+                      <p><strong>Opened:</strong> ${props.opened}</p>
+                      <p><strong>Lanes:</strong> ${props.lanes}</p>
+                      ${props.toll ? '<p class="text-amber-600 dark:text-amber-400"><strong>Toll bridge</strong></p>' : ''}
+                    </div>
+                  </div>
+                `
+                )
+                .addTo(map);
+            });
+
+            map.on('mouseenter', 'bridges-overlay', () => {
+              map.getCanvas().style.cursor = 'pointer';
+            });
+            map.on('mouseleave', 'bridges-overlay', () => {
+              map.getCanvas().style.cursor = '';
+            });
+
+            console.log(`Loaded ${bridgeData.features.length} Bay Area bridges`);
+          } catch (error) {
+            console.error('Failed to load bridges:', error);
+          }
+        }
+
+        // Load bridges immediately (they're a key landmark)
+        loadBridges();
+
+        // ========================================
         // LAYERS PANEL (Transit + Traffic combined)
         // ========================================
         const layersToggle = document.getElementById('layers-toggle');
@@ -3444,8 +3556,10 @@ const pmtilesUrl =
     // Check if query looks like a street address (has number at start or contains street terms)
     function looksLikeAddress(query: string): boolean {
       const q = query.trim().toLowerCase();
-      // Starts with a number (like "123 Main St")
+      // Starts with a number (like "123 Main St" or "1 Market")
       if (/^\d+\s/.test(q)) return true;
+      // Contains a number followed by letters (like "100 california st")
+      if (/\d+\s+[a-z]/i.test(q)) return true;
       // Contains common street terms
       const streetTerms = [
         'street',
@@ -3469,6 +3583,14 @@ const pmtilesUrl =
         'cir',
         'highway',
         'hwy',
+        'parkway',
+        'pkwy',
+        'terrace',
+        'ter',
+        'trail',
+        'trl',
+        'square',
+        'sq',
       ];
       return streetTerms.some(
         (term) => q.includes(` ${term}`) || q.includes(` ${term},`) || q.endsWith(` ${term}`)
@@ -3480,22 +3602,24 @@ const pmtilesUrl =
       const results: SearchResult[] = [];
 
       try {
-        // Add "Bay Area, CA" to help narrow results
-        const searchQuery =
-          query.includes('CA') || query.includes('California') ? query : `${query}, Bay Area, CA`;
+        // Add California to query if no state specified, but don't add "Bay Area" (confuses geocoder)
+        let searchQuery = query;
+        if (!query.match(/\b(CA|California)\b/i)) {
+          searchQuery = `${query}, California`;
+        }
 
         const url = new URL('https://nominatim.openstreetmap.org/search');
         url.searchParams.set('format', 'json');
         url.searchParams.set('q', searchQuery);
         url.searchParams.set('countrycodes', 'us');
-        url.searchParams.set('limit', '5');
+        url.searchParams.set('limit', '8');
         url.searchParams.set('addressdetails', '1');
-        // Restrict to Bay Area bounding box
+        // Use viewbox to bias (prefer) results in Bay Area, but don't strictly limit
         url.searchParams.set(
           'viewbox',
           `${BAY_AREA_BOUNDS.minLon},${BAY_AREA_BOUNDS.minLat},${BAY_AREA_BOUNDS.maxLon},${BAY_AREA_BOUNDS.maxLat}`
         );
-        url.searchParams.set('bounded', '1');
+        // Don't set bounded=1 - let Nominatim search more broadly, we filter client-side
 
         const response = await fetch(url.toString(), {
           headers: {
@@ -3542,10 +3666,20 @@ const pmtilesUrl =
       // First, get local results (cities and ZIP codes)
       const localResults = searchLocationsLocal(q);
 
-      // If query looks like an address and local results are sparse, try geocoding
-      if (looksLikeAddress(q) || (localResults.length === 0 && q.length >= 5)) {
+      // Always try geocoding for queries that look like addresses
+      // Also geocode if query is 4+ chars and not a perfect city match
+      const isExactCityMatch = localResults.some(
+        (r) => r.type === 'city' && r.name.toLowerCase() === q.toLowerCase()
+      );
+
+      if (looksLikeAddress(q)) {
+        // Definitely an address - prioritize geocoding results
         const addressResults = await geocodeAddress(q);
-        // Combine results: local first, then addresses
+        return [...addressResults, ...localResults.slice(0, 2)].slice(0, 8);
+      } else if (!isExactCityMatch && q.length >= 4) {
+        // Could be an address or place - try geocoding as supplement
+        const addressResults = await geocodeAddress(q);
+        // Combine: local first (if good matches), then addresses
         return [...localResults.slice(0, 3), ...addressResults].slice(0, 8);
       }
 
