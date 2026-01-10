@@ -1,0 +1,28 @@
+{
+  "id": "cora-san-mateo",
+  "name": "CORA (Community Overcoming Relationship Abuse)",
+  "category": "community",
+  "description": "Emergency shelter, counseling, legal advocacy in San Mateo County",
+  "fullDescription": "CORA serves San Mateo County with comprehensive support services including a 24-hour hotline, emergency shelter, counseling, legal services, and community education programs.",
+  "whatTheyOffer": "- 24-hour crisis hotline\n- Emergency shelter\n- Individual and group counseling\n- Legal advocacy and restraining order help\n- Children's counseling\n- Transitional housing\n- Support in multiple languages\n- Community education\n",
+  "howToGetIt": "1. Call hotline: 800-300-1080\n2. Speak with trained advocate\n3. Create safety plan together\n4. Access shelter if needed\n5. Connect with counseling\n6. Receive legal support\n",
+  "groups": [
+    "survivors",
+    "families"
+  ],
+  "areas": [
+    "San Mateo County"
+  ],
+  "city": null,
+  "website": "https://www.corasupport.org/",
+  "cost": null,
+  "phone": "800-300-1080",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

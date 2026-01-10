@@ -1,0 +1,28 @@
+{
+  "id": "ywca-silicon-valley",
+  "name": "YWCA Silicon Valley",
+  "category": "community",
+  "description": "Emergency shelter, counseling, and family support in Silicon Valley",
+  "fullDescription": "YWCA Silicon Valley provides support services including emergency shelter, transitional housing, counseling, and advocacy for individuals and families in Santa Clara County.",
+  "whatTheyOffer": "- Emergency shelter\n- Transitional housing\n- Counseling services\n- Legal advocacy\n- Support groups\n- Children's programs\n- Economic empowerment\n- Community education\n",
+  "howToGetIt": "1. Call San Jose: 408-295-4011\n2. Or Sunnyvale: 408-749-0793\n3. Speak with intake coordinator\n4. Complete assessment\n5. Access shelter and services\n6. Receive ongoing support\n",
+  "groups": [
+    "survivors",
+    "families"
+  ],
+  "areas": [
+    "Santa Clara County"
+  ],
+  "city": null,
+  "website": "https://www.ywca-sv.org/",
+  "cost": null,
+  "phone": "408-295-4011",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "building-futures-alameda",
+  "name": "Building Futures",
+  "category": "community",
+  "description": "Emergency shelter, free counseling, court support, and housing assistance",
+  "fullDescription": "Building Futures provides shelter, support services, and pathways to stability for individuals and families in Alameda County facing homelessness or unsafe home situations.",
+  "whatTheyOffer": "- 24-hour crisis line\n- Emergency shelter at Sister Me Home\n- Free counseling sessions\n- Court accompaniment\n- Children's programs\n- Housing navigation\n- Support groups\n- Services in English and Spanish\n",
+  "howToGetIt": "1. Call crisis line: 1-866-292-9688\n2. Speak with advocate\n3. Complete intake assessment\n4. Access emergency shelter\n5. Receive ongoing case management\n6. Work toward permanent housing\n",
+  "groups": [
+    "survivors",
+    "families",
+    "unhoused"
+  ],
+  "areas": [
+    "Alameda County"
+  ],
+  "city": null,
+  "website": "https://bfwc.org/",
+  "cost": null,
+  "phone": "1-866-292-9688",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

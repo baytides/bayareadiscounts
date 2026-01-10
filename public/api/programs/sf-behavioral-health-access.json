@@ -1,0 +1,27 @@
+{
+  "id": "sf-behavioral-health-access",
+  "name": "SF Behavioral Health Access Line",
+  "category": "health",
+  "description": "San Francisco's 24-hour behavioral health access line provides crisis support and helps connect residents to mental health and substance use services.",
+  "fullDescription": "San Francisco's 24-hour behavioral health access line provides crisis support and helps connect residents to mental health and substance use services.",
+  "whatTheyOffer": "- 24/7 phone crisis support\n- Mental health service referrals\n- Substance use treatment referrals\n- Help scheduling counseling appointments within 48 hours\n- Information about SF behavioral health services\n",
+  "howToGetIt": "Call 415-255-3737 or toll-free 888-246-3333 anytime. Available to San Francisco residents.",
+  "groups": [
+    "everyone"
+  ],
+  "areas": [
+    "San Francisco County"
+  ],
+  "city": null,
+  "website": "https://www.sf.gov/information--crisis-counseling-hotlines",
+  "cost": null,
+  "phone": "415-255-3737",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

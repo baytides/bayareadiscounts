@@ -1,0 +1,27 @@
+{
+  "id": "solano-crisis-line",
+  "name": "Solano County Crisis Line",
+  "category": "health",
+  "description": "Solano County's 24-hour crisis line provides immediate mental health support and crisis intervention for county residents.",
+  "fullDescription": "Solano County's 24-hour crisis line provides immediate mental health support and crisis intervention for county residents.",
+  "whatTheyOffer": "- 24/7 crisis phone support\n- Mental health crisis intervention\n- Suicide prevention\n- Referrals to county services\n- Connection to mobile crisis teams\n",
+  "howToGetIt": "Call 707-428-1131 anytime for crisis support. Free and confidential for Solano County residents.",
+  "groups": [
+    "everyone"
+  ],
+  "areas": [
+    "Solano County"
+  ],
+  "city": null,
+  "website": "https://www.solanocounty.com/",
+  "cost": null,
+  "phone": "707-428-1131",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "napa-crisis-hotline",
+  "name": "Napa County Mental Health Crisis Line",
+  "category": "health",
+  "description": "Napa County's 24-hour mental health crisis hotline provides immediate support for adults and youth experiencing mental health emergencies.",
+  "fullDescription": "Napa County's 24-hour mental health crisis hotline provides immediate support for adults and youth experiencing mental health emergencies.",
+  "whatTheyOffer": "- 24/7 adult crisis support\n- Youth crisis line (1-800-843-5200)\n- Mental health crisis intervention\n- Referrals to county services\n- Mobile crisis response\n",
+  "howToGetIt": "Adults call 707-253-4711. Youth call 1-800-843-5200. Both lines available 24/7.",
+  "groups": [
+    "everyone"
+  ],
+  "areas": [
+    "Napa County"
+  ],
+  "city": null,
+  "website": "https://www.countyofnapa.org/",
+  "cost": null,
+  "phone": "707-253-4711",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

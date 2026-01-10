@@ -1,0 +1,28 @@
+{
+  "id": "la-casa-madres",
+  "name": "La Casa de las Madres",
+  "category": "community",
+  "description": "Emergency shelter, counseling, legal advocacy, and family support services",
+  "fullDescription": "La Casa de las Madres provides comprehensive support services for individuals and families seeking safety, offering a 24/7 crisis line, emergency shelter, counseling, legal advocacy, and children's programs throughout San Francisco.",
+  "whatTheyOffer": "- 24/7 crisis line support\n- Emergency shelter services\n- Individual and group counseling\n- Legal advocacy and court accompaniment\n- Children and youth programs\n- Transitional housing assistance\n- Economic empowerment programs\n- Support in English and Spanish\n",
+  "howToGetIt": "1. Call 24-hour crisis line: 877-503-1850\n2. Teen crisis line: 877-923-0700\n3. Text line: 415-200-3575\n4. Speak with trained advocate\n5. Receive safety planning support\n6. Access shelter and services as needed\n",
+  "groups": [
+    "survivors",
+    "families"
+  ],
+  "areas": [
+    "San Francisco"
+  ],
+  "city": null,
+  "website": "https://www.lacasa.org/",
+  "cost": null,
+  "phone": "877-503-1850",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

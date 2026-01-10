@@ -12,14 +12,14 @@
       "name": "Seniors (65+)",
       "description": "For adults age 65 and older",
       "icon": "👵",
-      "programCount": 58
+      "programCount": 59
     },
     {
       "id": "youth",
       "name": "Youth",
       "description": "For children and young adults",
       "icon": "🧒",
-      "programCount": 43
+      "programCount": 44
     },
     {
       "id": "college-students",
@@ -40,7 +40,7 @@
       "name": "Families",
       "description": "For families with children",
       "icon": "👨‍👩‍👧",
-      "programCount": 83
+      "programCount": 91
     },
     {
       "id": "disability",
@@ -82,14 +82,14 @@
       "name": "Immigrants/Refugees",
       "description": "For new arrivals, undocumented, DACA",
       "icon": "🌍",
-      "programCount": 9
+      "programCount": 12
     },
     {
       "id": "unhoused",
       "name": "Unhoused",
       "description": "For people experiencing homelessness",
       "icon": "🏠",
-      "programCount": 8
+      "programCount": 9
     },
     {
       "id": "pregnant",
@@ -131,7 +131,7 @@
       "name": "Everyone",
       "description": "Available to all residents",
       "icon": "🌎",
-      "programCount": 485
+      "programCount": 457
     }
   ]
 }

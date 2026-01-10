@@ -1,0 +1,28 @@
+{
+  "id": "safe-place-oakland",
+  "name": "A Safe Place",
+  "category": "community",
+  "description": "Emergency shelter, legal advocacy, counseling, and family support in the East Bay",
+  "fullDescription": "A Safe Place provides comprehensive support services including emergency shelter, legal advocacy, counseling, and community education for individuals and families in the East Bay seeking safety.",
+  "whatTheyOffer": "- 24-hour crisis hotline\n- Emergency shelter\n- Legal advocacy and court support\n- Individual and group counseling\n- Children's services\n- Transitional housing\n- Community outreach and education\n- Support in multiple languages\n",
+  "howToGetIt": "1. Call 24-hour hotline: 510-536-7233\n2. Speak with trained advocate\n3. Receive safety planning\n4. Access shelter if needed\n5. Connect with ongoing services\n6. All services free and confidential\n",
+  "groups": [
+    "survivors",
+    "families"
+  ],
+  "areas": [
+    "Alameda County"
+  ],
+  "city": null,
+  "website": "https://www.asafeplace.org/",
+  "cost": null,
+  "phone": "510-536-7233",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

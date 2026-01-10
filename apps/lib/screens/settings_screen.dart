@@ -16,6 +16,7 @@ import '../services/safety_service.dart';
 import '../widgets/safety_widgets.dart';
 import '../config/theme.dart';
 import 'profiles_screen.dart';
+import 'transit_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -229,6 +230,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ProfilesScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+
+            // Services Section (Transit, etc.)
+            _buildSection(
+              context,
+              title: 'Services',
+              children: [
+                _buildButton(
+                  context,
+                  icon: '🚇',
+                  label: 'Transit Alerts',
+                  onTap: () {
+                    HapticFeedback.lightImpact();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TransitScreen(),
                       ),
                     );
                   },

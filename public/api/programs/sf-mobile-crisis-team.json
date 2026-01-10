@@ -1,0 +1,27 @@
+{
+  "id": "sf-mobile-crisis-team",
+  "name": "SF Mobile Crisis Team",
+  "category": "health",
+  "description": "San Francisco's Mobile Crisis Team provides on-site mental health crisis intervention as an alternative to police response, sending trained clinicians to help people experiencing psychiatric emergencies.",
+  "fullDescription": "San Francisco's Mobile Crisis Team provides on-site mental health crisis intervention as an alternative to police response, sending trained clinicians to help people experiencing psychiatric emergencies.",
+  "whatTheyOffer": "- On-site crisis intervention\n- Mental health assessment\n- De-escalation support\n- Connection to appropriate services\n- Alternative to law enforcement response\n",
+  "howToGetIt": "Call 415-970-4000 to request a mobile crisis team response. Available for mental health emergencies in San Francisco.",
+  "groups": [
+    "everyone"
+  ],
+  "areas": [
+    "San Francisco County"
+  ],
+  "city": null,
+  "website": "https://www.sf.gov/information--crisis-counseling-hotlines",
+  "cost": null,
+  "phone": "415-970-4000",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}

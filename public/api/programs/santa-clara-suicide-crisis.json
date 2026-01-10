@@ -1,0 +1,27 @@
+{
+  "id": "santa-clara-suicide-crisis",
+  "name": "Santa Clara County Crisis Line",
+  "category": "health",
+  "description": "Santa Clara County's 24/7 suicide and crisis hotline provides immediate support and connects callers to behavioral health services throughout the county.",
+  "fullDescription": "Santa Clara County's 24/7 suicide and crisis hotline provides immediate support and connects callers to behavioral health services throughout the county.",
+  "whatTheyOffer": "- 24/7 suicide and crisis support\n- Mental health crisis intervention\n- Referrals to county behavioral health services\n- Support in multiple languages\n- Connection to mobile crisis teams\n",
+  "howToGetIt": "Call 855-278-4204 anytime for crisis support. For general behavioral health services, call 800-704-0900.",
+  "groups": [
+    "everyone"
+  ],
+  "areas": [
+    "Santa Clara County"
+  ],
+  "city": null,
+  "website": "https://www.sccgov.org/sites/bhd/Pages/home.aspx",
+  "cost": null,
+  "phone": "855-278-4204",
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": [],
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-10"
+}
