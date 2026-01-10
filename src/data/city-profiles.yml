@@ -1,0 +1,908 @@
+# City Profiles for "For You" Feature
+# Data sources for city-specific news feeds, meeting calendars, weather, and local resources
+#
+# Data Types:
+# - news_feed: RSS feed URLs for city government news/announcements
+# - legistar_url: Legistar calendar URL for city council/commission meetings
+# - agencies: Key city department links
+# - local_news: Hyperlinks to local news outlets (user clicks out - no data pulled)
+# - weather: Weather.gov API coordinates and zone info for current conditions/alerts
+#
+# CivicPlus RSS Pattern: /RSSFeed.aspx?ModID=1&CID=All-newsflash.xml (news)
+# Legistar Pattern: https://[city].legistar.com/Calendar.aspx
+#
+# Weather.gov API:
+#   Base URL: https://api.weather.gov
+#   Points: /points/{lat},{lon} - Returns grid info and forecast URLs
+#   Forecast: /gridpoints/{office}/{gridX},{gridY}/forecast
+#   Alerts: /alerts/active?zone={zone} or /alerts/active?point={lat},{lon}
+#   User-Agent header required: (BayNavigator, contact@baynavigator.org)
+
+city_profiles:
+  # =============================================================================
+  # TIER 1: PILOT CITIES (Best data infrastructure)
+  # =============================================================================
+
+  san_francisco:
+    name: San Francisco
+    county: San Francisco
+    type: city-county
+    homepage: https://sf.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.7749
+      longitude: -122.4194
+      nws_office: MTR
+      grid_x: 85
+      grid_y: 105
+      forecast_zone: CAZ006
+      county_zone: CAC075
+
+    # News Sources
+    news_feed: null # SF.gov uses API, no traditional RSS
+    news_page: https://sf.gov/news/all
+
+    # Meeting Calendar (Legistar)
+    legistar_url: https://sfgov.legistar.com/Calendar.aspx
+    legistar_bodies:
+      - Board of Supervisors
+      - Budget and Finance Committee
+      - Land Use and Transportation Committee
+      - Rules Committee
+      - Public Safety and Neighborhood Services Committee
+
+    # Open Data
+    open_data_url: https://data.sfgov.org
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: 311 Customer Service
+        url: https://sf.gov/departments/311-customer-service-center
+        description: Report issues, get information
+      - name: Department of Public Health
+        url: https://sf.gov/departments/department-public-health
+      - name: SF Municipal Transportation Agency
+        url: https://www.sfmta.com
+      - name: SF Public Library
+        url: https://sfpl.org
+      - name: Department of Building Inspection
+        url: https://sf.gov/departments/department-building-inspection
+      - name: Recreation & Parks
+        url: https://sfrecpark.org
+      - name: Police Department
+        url: https://www.sanfranciscopolice.org
+      - name: Fire Department
+        url: https://sf.gov/departments/fire-department
+
+    # Local News Links (hyperlinks only)
+    local_news:
+      - name: SF Chronicle
+        url: https://www.sfchronicle.com
+      - name: SF Examiner
+        url: https://www.sfexaminer.com
+      - name: SF Standard
+        url: https://sfstandard.com
+      - name: Mission Local
+        url: https://missionlocal.org
+      - name: Patch SF
+        url: https://patch.com/california/san-francisco
+
+  san_jose:
+    name: San Jose
+    county: Santa Clara
+    type: city
+    homepage: https://www.sanjoseca.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.3382
+      longitude: -121.8863
+      nws_office: MTR
+      grid_x: 99
+      grid_y: 82
+      forecast_zone: CAZ513
+      county_zone: CAC085
+
+    # News Sources
+    news_feed: null # Uses GovDelivery subscription
+    news_page: https://www.sanjoseca.gov/news-stories/news
+
+    # Meeting Calendar (Legistar)
+    legistar_url: https://sanjose.legistar.com/Calendar.aspx
+    legistar_bodies:
+      - City Council
+      - Planning Commission
+      - Transportation and Environment Committee
+      - Neighborhood Services and Education Committee
+      - Community & Economic Development Committee
+      - Housing and Community Development Commission
+
+    # Open Data
+    open_data_url: https://data.sanjoseca.gov
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager's Office
+        url: https://www.sanjoseca.gov/your-government/departments/city-manager
+      - name: Police Department
+        url: https://www.sjpd.org
+      - name: Fire Department
+        url: https://www.sanjoseca.gov/your-government/departments/fire
+      - name: Parks, Recreation & Neighborhood Services
+        url: https://www.sanjoseca.gov/your-government/departments/parks-recreation-neighborhood-services
+      - name: Library
+        url: https://www.sjpl.org
+      - name: Department of Transportation
+        url: https://www.sanjoseca.gov/your-government/departments/transportation
+      - name: Environmental Services
+        url: https://www.sanjoseca.gov/your-government/departments/environmental-services
+
+    # Local News Links
+    local_news:
+      - name: Mercury News
+        url: https://www.mercurynews.com
+      - name: San Jose Spotlight
+        url: https://sanjosespotlight.com
+      - name: Patch San Jose
+        url: https://patch.com/california/sanjose
+
+  oakland:
+    name: Oakland
+    county: Alameda
+    type: city
+    homepage: https://www.oaklandca.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.8044
+      longitude: -122.2712
+      nws_office: MTR
+      grid_x: 90
+      grid_y: 105
+      forecast_zone: CAZ508
+      county_zone: CAC001
+
+    # News Sources
+    news_feed: null # Uses OpenCities platform
+    news_page: https://www.oaklandca.gov/news
+
+    # Meeting Calendar (Legistar)
+    legistar_url: https://oakland.legistar.com/Calendar.aspx
+    legistar_bodies:
+      - City Council
+      - Rules & Legislation Committee
+      - Public Safety Committee
+      - Finance & Management Committee
+      - Community & Economic Development Committee
+      - Public Works And Transportation Committee
+
+    # Open Data
+    open_data_url: https://data.oaklandca.gov
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Administrator
+        url: https://www.oaklandca.gov/departments/city-administrator
+      - name: Oakland Police Department
+        url: https://www.oaklandca.gov/departments/police
+      - name: Oakland Fire Department
+        url: https://www.oaklandca.gov/departments/fire-department
+      - name: Oakland Public Library
+        url: https://oaklandlibrary.org
+      - name: Parks & Recreation
+        url: https://www.oaklandca.gov/departments/parks-recreation-youth-development
+      - name: Public Works
+        url: https://www.oaklandca.gov/departments/public-works
+
+    # Local News Links
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+      - name: Oaklandside
+        url: https://oaklandside.org
+      - name: Patch Oakland
+        url: https://patch.com/california/oakland
+
+  # =============================================================================
+  # TIER 2: CIVICPLUS CITIES (Excellent RSS infrastructure)
+  # =============================================================================
+
+  san_mateo:
+    name: San Mateo
+    county: San Mateo
+    type: city
+    homepage: https://www.cityofsanmateo.org
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.5630
+      longitude: -122.3255
+      nws_office: MTR
+      grid_x: 86
+      grid_y: 95
+      forecast_zone: CAZ508
+      county_zone: CAC081
+
+    # News Sources (CivicPlus RSS)
+    news_feed: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+    news_feeds:
+      all_news: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+      latest_news: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=1&CID=Latest-News-Announcements-1
+      library_news: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=1&CID=Library-18
+    alerts_feed: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=63&CID=All-0
+    calendar_feed: https://www.cityofsanmateo.org/RSSFeed.aspx?ModID=58&CID=All-calendar.xml
+
+    # Meeting Calendar (County Legistar)
+    legistar_url: https://sanmateocounty.legistar.com/Calendar.aspx
+
+    # Open Data (County level)
+    open_data_url: https://data.smcgov.org
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager's Office
+        url: https://www.cityofsanmateo.org/178/City-Managers-Office
+      - name: Police Department
+        url: https://www.cityofsanmateo.org/112/Police
+      - name: Fire Department
+        url: https://www.cityofsanmateo.org/80/Fire
+      - name: Library
+        url: https://www.cityofsanmateo.org/91/Library
+      - name: Parks & Recreation
+        url: https://www.cityofsanmateo.org/100/Parks-Recreation
+      - name: Public Works
+        url: https://www.cityofsanmateo.org/113/Public-Works
+
+    # Local News Links
+    local_news:
+      - name: San Mateo Daily Journal
+        url: https://www.smdailyjournal.com
+      - name: Patch San Mateo
+        url: https://patch.com/california/sanmateo
+
+  daly_city:
+    name: Daly City
+    county: San Mateo
+    type: city
+    homepage: https://www.dalycity.org
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.6879
+      longitude: -122.4702
+      nws_office: MTR
+      grid_x: 83
+      grid_y: 101
+      forecast_zone: CAZ006
+      county_zone: CAC081
+
+    # News Sources (CivicPlus RSS)
+    news_feed: https://www.dalycity.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+    news_feeds:
+      all_news: https://www.dalycity.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+      police: https://www.dalycity.org/RSSFeed.aspx?ModID=1&CID=2024-Police-38
+      library: https://www.dalycity.org/RSSFeed.aspx?ModID=1&CID=2024-Library-39
+      recreation: https://www.dalycity.org/RSSFeed.aspx?ModID=1&CID=2024-Recreation-41
+    alerts_feed: https://www.dalycity.org/RSSFeed.aspx?ModID=63&CID=All-0
+
+    # Open Data (County level)
+    open_data_url: https://data.smcgov.org
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.dalycity.org/126/City-Manager
+      - name: Police Department
+        url: https://www.dalycity.org/132/Police
+      - name: Fire Department
+        url: https://www.dalycity.org/127/Fire
+      - name: Library
+        url: https://www.dalycity.org/129/Library
+      - name: Recreation
+        url: https://www.dalycity.org/134/Recreation
+
+    # Local News Links
+    local_news:
+      - name: Patch Daly City
+        url: https://patch.com/california/dalycity
+
+  richmond:
+    name: Richmond
+    county: Contra Costa
+    type: city
+    homepage: https://www.ci.richmond.ca.us
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.9358
+      longitude: -122.3477
+      nws_office: MTR
+      grid_x: 87
+      grid_y: 111
+      forecast_zone: CAZ508
+      county_zone: CAC013
+
+    # News Sources (CivicPlus RSS)
+    news_feed: https://www.ci.richmond.ca.us/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+    alerts_feed: https://www.ci.richmond.ca.us/RSSFeed.aspx?ModID=63&CID=All-0
+    calendar_feed: https://www.ci.richmond.ca.us/RSSFeed.aspx?ModID=58&CID=All-calendar.xml
+
+    # Open Data
+    open_data_url: https://transparentrichmond.org
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.ci.richmond.ca.us/132/City-Manager
+      - name: Police Department
+        url: https://www.ci.richmond.ca.us/117/Police
+      - name: Fire Department
+        url: https://www.ci.richmond.ca.us/98/Fire
+      - name: Library
+        url: https://www.ci.richmond.ca.us/115/Library
+      - name: Recreation
+        url: https://www.ci.richmond.ca.us/118/Recreation
+
+    # Local News Links
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+      - name: Richmond Confidential
+        url: https://richmondconfidential.org
+
+  concord:
+    name: Concord
+    county: Contra Costa
+    type: city
+    homepage: https://cityofconcord.org
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.9780
+      longitude: -122.0311
+      nws_office: MTR
+      grid_x: 94
+      grid_y: 112
+      forecast_zone: CAZ508
+      county_zone: CAC013
+
+    # News Sources (CivicPlus RSS)
+    news_feed: https://cityofconcord.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+    news_feeds:
+      all_news: https://cityofconcord.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml
+      press_releases: https://cityofconcord.org/RSSFeed.aspx?ModID=1&CID=Press-Releases-11
+      council_agendas: https://cityofconcord.org/RSSFeed.aspx?ModID=1&CID=City-Council-Meeting-Agendas-12
+    alerts_feed: https://cityofconcord.org/RSSFeed.aspx?ModID=63&CID=All-0
+    calendar_feed: https://cityofconcord.org/RSSFeed.aspx?ModID=58&CID=All-calendar.xml
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://cityofconcord.org/166/City-Manager
+      - name: Police Department
+        url: https://cityofconcord.org/135/Police
+      - name: Fire Department
+        url: https://cityofconcord.org/124/Fire
+      - name: Library
+        url: https://ccclib.org
+      - name: Parks & Recreation
+        url: https://cityofconcord.org/133/Parks-Recreation
+
+    # Local News Links
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+      - name: Patch Concord
+        url: https://patch.com/california/concord-ca
+
+  # =============================================================================
+  # TIER 3: LEGISTAR CITIES (Good meeting calendar integration)
+  # =============================================================================
+
+  sunnyvale:
+    name: Sunnyvale
+    county: Santa Clara
+    type: city
+    homepage: https://www.sunnyvale.ca.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.3688
+      longitude: -122.0363
+      nws_office: MTR
+      grid_x: 94
+      grid_y: 85
+      forecast_zone: CAZ513
+      county_zone: CAC085
+
+    # News Sources
+    news_feed: null # Uses GovDelivery
+    news_page: https://www.sunnyvale.ca.gov/news-center-and-events-calendar/news-center
+
+    # Meeting Calendar (Legistar)
+    legistar_url: https://sunnyvaleca.legistar.com/Calendar.aspx
+    legistar_bodies:
+      - City Council
+      - Planning Commission
+      - Parks and Recreation Commission
+      - Housing and Human Services Commission
+      - Sustainability Commission
+
+    # Open Data
+    open_data_url: https://sunnyvale-geohub-cityofsunnyvale.hub.arcgis.com
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.sunnyvale.ca.gov/your-government/departments/city-manager
+      - name: Department of Public Safety
+        url: https://www.sunnyvale.ca.gov/your-government/departments/public-safety
+      - name: Library
+        url: https://www.sunnyvale.ca.gov/your-government/departments/library-recreation-services
+      - name: Parks & Recreation
+        url: https://www.sunnyvale.ca.gov/your-government/departments/library-recreation-services
+      - name: Public Works
+        url: https://www.sunnyvale.ca.gov/your-government/departments/public-works
+
+    # Local News Links
+    local_news:
+      - name: Mercury News
+        url: https://www.mercurynews.com
+      - name: Patch Sunnyvale
+        url: https://patch.com/california/sunnyvale
+
+  mountain_view:
+    name: Mountain View
+    county: Santa Clara
+    type: city
+    homepage: https://www.mountainview.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.3861
+      longitude: -122.0839
+      nws_office: MTR
+      grid_x: 93
+      grid_y: 86
+      forecast_zone: CAZ508
+      county_zone: CAC085
+
+    # News Sources
+    news_page: https://www.mountainview.gov/whats-happening/city-newsroom
+
+    # Meeting Calendar (Legistar + Granicus)
+    legistar_url: https://mountainview.legistar.com/Calendar.aspx
+    granicus_video: https://mountainview.granicus.com/ViewPublisher.php?view_id=3
+
+    # Open Data
+    open_data_url: https://data-mountainview.opendata.arcgis.com
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.mountainview.gov/our-city/departments/city-managers-office
+      - name: Police Department
+        url: https://www.mountainview.gov/our-city/departments/police
+      - name: Fire Department
+        url: https://www.mountainview.gov/our-city/departments/fire
+      - name: Library
+        url: https://www.mountainview.gov/our-city/departments/library
+      - name: Parks & Recreation
+        url: https://www.mountainview.gov/our-city/departments/community-services
+
+    # Local News Links
+    local_news:
+      - name: Mountain View Voice
+        url: https://www.mv-voice.com
+      - name: Patch Mountain View
+        url: https://patch.com/california/mountainview
+
+  palo_alto:
+    name: Palo Alto
+    county: Santa Clara
+    type: city
+    homepage: https://www.paloalto.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.4419
+      longitude: -122.1430
+      nws_office: MTR
+      grid_x: 91
+      grid_y: 89
+      forecast_zone: CAZ508
+      county_zone: CAC085
+
+    # News Sources
+    news_page: https://www.paloalto.gov/Departments/City-Manager/Latest-News
+
+    # Open Data
+    open_data_url: https://data.paloalto.gov
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.paloalto.gov/Departments/City-Manager
+      - name: Police Department
+        url: https://www.paloalto.gov/Departments/Police
+      - name: Fire Department
+        url: https://www.paloalto.gov/Departments/Fire
+      - name: Library
+        url: https://www.paloalto.gov/Departments/Library
+      - name: Parks & Recreation
+        url: https://www.paloalto.gov/Departments/Community-Services
+
+    # Local News Links
+    local_news:
+      - name: Palo Alto Weekly
+        url: https://www.paloaltoonline.com
+      - name: Patch Palo Alto
+        url: https://patch.com/california/paloalto
+
+  berkeley:
+    name: Berkeley
+    county: Alameda
+    type: city
+    homepage: https://berkeleyca.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.8716
+      longitude: -122.2727
+      nws_office: MTR
+      grid_x: 90
+      grid_y: 108
+      forecast_zone: CAZ508
+      county_zone: CAC001
+
+    # News Sources
+    news_page: https://berkeleyca.gov/community-recreation/news
+
+    # Meeting Calendar (Granicus)
+    granicus_url: https://berkeley.granicus.com/ViewPublisher.php?view_id=5
+
+    # Open Data
+    open_data_url: https://data.cityofberkeley.info
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://berkeleyca.gov/your-government/city-council/city-manager
+      - name: Police Department
+        url: https://berkeleyca.gov/safety-health/police
+      - name: Fire Department
+        url: https://berkeleyca.gov/safety-health/fire
+      - name: Library
+        url: https://www.berkeleypubliclibrary.org
+      - name: Parks & Recreation
+        url: https://berkeleyca.gov/community-recreation/parks-recreation
+
+    # Local News Links
+    local_news:
+      - name: Berkeleyside
+        url: https://www.berkeleyside.org
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+
+  hayward:
+    name: Hayward
+    county: Alameda
+    type: city
+    homepage: https://www.hayward-ca.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.6688
+      longitude: -122.0808
+      nws_office: MTR
+      grid_x: 93
+      grid_y: 99
+      forecast_zone: CAZ508
+      county_zone: CAC001
+
+    # News Sources
+    news_page: https://www.hayward-ca.gov/discover/news
+
+    # Meeting Calendar (Legistar)
+    legistar_url: https://hayward.legistar.com/Calendar.aspx
+
+    # Open Data
+    open_data_url: https://opendata.hayward-ca.gov
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.hayward-ca.gov/your-government/city-manager
+      - name: Police Department
+        url: https://www.hayward-ca.gov/police-department
+      - name: Fire Department
+        url: https://www.hayward-ca.gov/fire-department
+      - name: Library
+        url: https://www.hayward-ca.gov/library
+
+    # Local News Links
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+      - name: Patch Hayward
+        url: https://patch.com/california/hayward
+
+  fremont:
+    name: Fremont
+    county: Alameda
+    type: city
+    homepage: https://www.fremont.gov
+
+    # Weather.gov API (NWS Monterey - MTR)
+    weather:
+      latitude: 37.5485
+      longitude: -121.9886
+      nws_office: MTR
+      grid_x: 95
+      grid_y: 94
+      forecast_zone: CAZ508
+      county_zone: CAC001
+
+    # News Sources
+    news_page: https://www.fremont.gov/about/news-media/fremont-news
+
+    # Open Data
+    open_data_url: https://fremont-ca-open-data-cofgis.hub.arcgis.com
+    open_data_api: true
+
+    # Key City Agencies
+    agencies:
+      - name: City Manager
+        url: https://www.fremont.gov/government/city-manager-s-office
+      - name: Police Department
+        url: https://www.fremontpolice.gov
+      - name: Fire Department
+        url: https://www.fremont.gov/government/departments/fire
+      - name: Library
+        url: https://www.aclibrary.org/branches/fremont-main
+
+    # Local News Links
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+      - name: Patch Fremont
+        url: https://patch.com/california/fremont
+
+# =============================================================================
+# COUNTY PROFILES
+# =============================================================================
+
+county_profiles:
+  san_mateo_county:
+    name: San Mateo County
+    homepage: https://www.smcgov.org
+    open_data_url: https://data.smcgov.org
+    legistar_url: https://sanmateocounty.legistar.com/Calendar.aspx
+
+    agencies:
+      - name: Board of Supervisors
+        url: https://www.smcgov.org/boardofsupervisors
+      - name: Health
+        url: https://www.smchealth.org
+      - name: Human Services Agency
+        url: https://www.smchsa.org
+      - name: Sheriff's Office
+        url: https://www.smcsheriff.com
+
+    local_news:
+      - name: San Mateo Daily Journal
+        url: https://www.smdailyjournal.com
+
+  alameda_county:
+    name: Alameda County
+    homepage: https://www.acgov.org
+    open_data_url: https://data.acgov.org
+
+    agencies:
+      - name: Board of Supervisors
+        url: https://bos.acgov.org
+      - name: Health Care Services Agency
+        url: https://www.acgov.org/health
+      - name: Social Services Agency
+        url: https://www.alamedasocialservices.org
+      - name: Sheriff's Office
+        url: https://www.alamedacountysheriff.org
+
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+
+  santa_clara_county:
+    name: Santa Clara County
+    homepage: https://www.sccgov.org
+    open_data_url: https://data.sccgov.org
+
+    agencies:
+      - name: Board of Supervisors
+        url: https://www.sccgov.org/sites/bos
+      - name: Public Health Department
+        url: https://publichealth.sccgov.org
+      - name: Social Services Agency
+        url: https://www.sccgov.org/sites/ssa
+      - name: Sheriff's Office
+        url: https://sheriff.santaclaracounty.gov
+
+    local_news:
+      - name: Mercury News
+        url: https://www.mercurynews.com
+
+  contra_costa_county:
+    name: Contra Costa County
+    homepage: https://www.contracosta.ca.gov
+    open_data_url: https://gis.cccounty.us/Downloads
+
+    agencies:
+      - name: Board of Supervisors
+        url: https://www.contracosta.ca.gov/30/Board-of-Supervisors
+      - name: Health Services
+        url: https://cchealth.org
+      - name: Employment & Human Services
+        url: https://ehsd.org
+      - name: Sheriff's Office
+        url: https://www.cocosheriff.org
+
+    local_news:
+      - name: East Bay Times
+        url: https://www.eastbaytimes.com
+
+  marin_county:
+    name: Marin County
+    homepage: https://www.marincounty.org
+    open_data_url: https://data.marincounty.gov
+
+    agencies:
+      - name: Board of Supervisors
+        url: https://www.marincounty.org/depts/bs
+      - name: Health & Human Services
+        url: https://www.marinhhs.org
+      - name: Sheriff's Office
+        url: https://www.marinsheriff.org
+
+    local_news:
+      - name: Marin Independent Journal
+        url: https://www.marinij.com
+
+# =============================================================================
+# LOCAL NEWS OUTLETS (Regional)
+# =============================================================================
+
+regional_news:
+  - name: SF Chronicle
+    url: https://www.sfchronicle.com
+    coverage: San Francisco, Bay Area
+
+  - name: Mercury News
+    url: https://www.mercurynews.com
+    coverage: San Jose, South Bay, Peninsula
+
+  - name: East Bay Times
+    url: https://www.eastbaytimes.com
+    coverage: Oakland, East Bay, Contra Costa
+
+  - name: Marin Independent Journal
+    url: https://www.marinij.com
+    coverage: Marin County
+
+  - name: Napa Valley Register
+    url: https://napavalleyregister.com
+    coverage: Napa County
+
+  - name: Press Democrat
+    url: https://www.pressdemocrat.com
+    coverage: Sonoma County
+
+  - name: Daily Republic
+    url: https://www.dailyrepublic.com
+    coverage: Solano County
+
+# Embarcadero Media (Peninsula hyperlocal)
+embarcadero_media:
+  - name: Palo Alto Weekly
+    url: https://www.paloaltoonline.com
+    coverage: Palo Alto
+
+  - name: Mountain View Voice
+    url: https://www.mv-voice.com
+    coverage: Mountain View
+
+  - name: The Almanac
+    url: https://www.almanacnews.com
+    coverage: Menlo Park, Atherton, Portola Valley, Woodside
+
+# Patch Network
+patch_bay_area:
+  base_url: https://patch.com/california
+  note: Individual city pages at patch.com/california/[cityname]
+  cities:
+    - san-francisco
+    - oakland
+    - sanjose
+    - berkeley
+    - fremont
+    - hayward
+    - sunnyvale
+    - mountainview
+    - paloalto
+    - sanmateo
+    - dalycity
+    - concord
+    - walnutcreek
+    - richmond
+
+# =============================================================================
+# WEATHER.GOV API REFERENCE
+# =============================================================================
+#
+# Base URL: https://api.weather.gov
+# Documentation: https://www.weather.gov/documentation/services-web-api
+#
+# Required Header:
+#   User-Agent: (BayNavigator, contact@baynavigator.org)
+#
+# Endpoints:
+#
+# 1. Get Grid Info (use city coordinates):
+#    GET /points/{lat},{lon}
+#    Example: https://api.weather.gov/points/37.7749,-122.4194
+#    Returns: NWS office, grid coordinates, links to forecast endpoints
+#
+# 2. Get Current Forecast:
+#    GET /gridpoints/{office}/{gridX},{gridY}/forecast
+#    Example: https://api.weather.gov/gridpoints/MTR/85,105/forecast
+#    Returns: 12-hour forecast periods with temperature, conditions, wind
+#
+# 3. Get Hourly Forecast:
+#    GET /gridpoints/{office}/{gridX},{gridY}/forecast/hourly
+#    Example: https://api.weather.gov/gridpoints/MTR/85,105/forecast/hourly
+#    Returns: Hour-by-hour forecast data
+#
+# 4. Get Active Alerts (by zone):
+#    GET /alerts/active?zone={forecast_zone}
+#    Example: https://api.weather.gov/alerts/active?zone=CAZ006
+#    Returns: Active weather alerts for the zone
+#
+# 5. Get Active Alerts (by point):
+#    GET /alerts/active?point={lat},{lon}
+#    Example: https://api.weather.gov/alerts/active?point=37.7749,-122.4194
+#    Returns: Active weather alerts for the location
+#
+# 6. Get Active Alerts (statewide):
+#    GET /alerts/active?area=CA
+#    Returns: All active weather alerts for California
+#
+# Bay Area NWS Office:
+#   MTR = Monterey (serves SF Bay Area, Central Coast)
+#
+# Common Bay Area Forecast Zones:
+#   CAZ006 = San Francisco
+#   CAZ508 = San Francisco Bay Shoreline (Oakland, Berkeley, Peninsula)
+#   CAZ513 = Santa Clara Valley (San Jose, Sunnyvale)
+#
+# Response includes:
+#   - temperature, temperatureUnit
+#   - windSpeed, windDirection
+#   - shortForecast (e.g., "Sunny", "Partly Cloudy")
+#   - detailedForecast
+#   - probabilityOfPrecipitation
+#   - icon (URL to weather icon)
+#
+# Rate Limits:
+#   - No explicit rate limit, but be respectful
+#   - Cache responses appropriately (forecasts update hourly)
+#   - Alerts should be checked every 5-15 minutes

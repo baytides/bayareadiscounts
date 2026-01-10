@@ -31,6 +31,8 @@ const NON_PROGRAM_FILES = [
   'search-config.yml',
   'county-supervisors.yml',
   'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
 ];
 
 // Rate limit: 1 request per second (Nominatim policy)

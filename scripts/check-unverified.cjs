@@ -12,6 +12,8 @@ const NON_PROGRAM_FILES = [
   'search-config.yml',
   'county-supervisors.yml',
   'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
 ];
 
 const files = fs

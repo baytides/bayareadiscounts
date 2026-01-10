@@ -1,0 +1,661 @@
+# Bay Area Jurisdictions
+# Complete list of cities, towns, and counties in the 9-county Bay Area
+# Used for "For You" feed city selection and local news/agency features
+
+jurisdictions:
+  # San Francisco
+  - name: San Francisco
+    type: city-county
+    county: San Francisco
+    homepage: https://sf.gov
+    open_data_url: https://data.sfgov.org
+    has_api: true
+
+  # Alameda County
+  - name: Alameda County
+    type: county
+    county: Alameda
+    homepage: https://www.acgov.org
+    open_data_url: https://data.acgov.org
+    has_api: true
+
+  - name: Alameda
+    type: city
+    county: Alameda
+    homepage: https://www.alamedaca.gov
+
+  - name: Albany
+    type: city
+    county: Alameda
+    homepage: https://www.albanyca.gov
+
+  - name: Berkeley
+    type: city
+    county: Alameda
+    homepage: https://berkeleyca.gov
+    open_data_url: https://data.cityofberkeley.info
+    has_api: true
+
+  - name: Dublin
+    type: city
+    county: Alameda
+    homepage: https://dublin.ca.gov
+
+  - name: Emeryville
+    type: city
+    county: Alameda
+    homepage: https://www.emeryville.org
+
+  - name: Fremont
+    type: city
+    county: Alameda
+    homepage: https://www.fremont.gov
+    open_data_url: https://fremont-ca-open-data-cofgis.hub.arcgis.com
+    has_api: true
+
+  - name: Hayward
+    type: city
+    county: Alameda
+    homepage: https://www.hayward-ca.gov
+    open_data_url: https://opendata.hayward-ca.gov
+    has_api: true
+
+  - name: Livermore
+    type: city
+    county: Alameda
+    homepage: https://www.livermoreca.gov
+    open_data_url: https://gisdata-livermore.opendata.arcgis.com
+    has_api: true
+
+  - name: Newark
+    type: city
+    county: Alameda
+    homepage: https://www.newarkca.gov
+
+  - name: Oakland
+    type: city
+    county: Alameda
+    homepage: https://www.oaklandca.gov
+    open_data_url: https://data.oaklandca.gov
+    has_api: true
+
+  - name: Piedmont
+    type: city
+    county: Alameda
+    homepage: https://piedmont.ca.gov
+
+  - name: Pleasanton
+    type: city
+    county: Alameda
+    homepage: https://www.cityofpleasantonca.gov
+
+  - name: San Leandro
+    type: city
+    county: Alameda
+    homepage: https://www.sanleandro.org
+    open_data_url: https://www.geosl.org
+    has_api: true
+
+  - name: Union City
+    type: city
+    county: Alameda
+    homepage: https://www.unioncityca.gov
+
+  # Contra Costa County
+  - name: Contra Costa County
+    type: county
+    county: Contra Costa
+    homepage: https://www.contracosta.ca.gov
+    open_data_url: https://gis.cccounty.us/Downloads
+    has_api: false
+
+  - name: Antioch
+    type: city
+    county: Contra Costa
+    homepage: https://www.antiochca.gov
+
+  - name: Brentwood
+    type: city
+    county: Contra Costa
+    homepage: https://www.brentwoodca.gov
+
+  - name: Clayton
+    type: city
+    county: Contra Costa
+    homepage: https://claytonca.gov
+
+  - name: Concord
+    type: city
+    county: Contra Costa
+    homepage: https://cityofconcord.org
+    open_data_url: https://www.cityofconcord.org/184/GIS-Data
+    has_api: false
+
+  - name: Danville
+    type: town
+    county: Contra Costa
+    homepage: https://www.danville.ca.gov
+
+  - name: El Cerrito
+    type: city
+    county: Contra Costa
+    homepage: https://www.el-cerrito.org
+
+  - name: Hercules
+    type: city
+    county: Contra Costa
+    homepage: https://www.ci.hercules.ca.us
+
+  - name: Lafayette
+    type: city
+    county: Contra Costa
+    homepage: https://www.lovelafayette.org
+
+  - name: Martinez
+    type: city
+    county: Contra Costa
+    homepage: https://www.cityofmartinez.org
+
+  - name: Moraga
+    type: town
+    county: Contra Costa
+    homepage: https://www.moraga.ca.us
+
+  - name: Oakley
+    type: city
+    county: Contra Costa
+    homepage: https://www.ci.oakley.ca.us
+
+  - name: Orinda
+    type: city
+    county: Contra Costa
+    homepage: https://cityoforinda.org
+
+  - name: Pinole
+    type: city
+    county: Contra Costa
+    homepage: https://www.ci.pinole.ca.us
+
+  - name: Pittsburg
+    type: city
+    county: Contra Costa
+    homepage: https://www.pittsburgca.gov
+
+  - name: Pleasant Hill
+    type: city
+    county: Contra Costa
+    homepage: https://www.pleasanthillca.org
+
+  - name: Richmond
+    type: city
+    county: Contra Costa
+    homepage: https://www.ci.richmond.ca.us
+    open_data_url: https://transparentrichmond.org
+    has_api: true
+
+  - name: San Pablo
+    type: city
+    county: Contra Costa
+    homepage: https://www.sanpabloca.gov
+
+  - name: San Ramon
+    type: city
+    county: Contra Costa
+    homepage: https://www.sanramon.ca.gov
+
+  - name: Walnut Creek
+    type: city
+    county: Contra Costa
+    homepage: https://www.walnutcreekca.gov
+
+  # Marin County
+  - name: Marin County
+    type: county
+    county: Marin
+    homepage: https://www.marincounty.org
+    open_data_url: https://data.marincounty.gov
+    has_api: true
+
+  - name: Belvedere
+    type: city
+    county: Marin
+    homepage: https://www.cityofbelvedere.org
+
+  - name: Corte Madera
+    type: town
+    county: Marin
+    homepage: https://www.townofcortemadera.org
+
+  - name: Fairfax
+    type: town
+    county: Marin
+    homepage: https://www.townoffairfaxca.gov
+
+  - name: Larkspur
+    type: city
+    county: Marin
+    homepage: https://www.cityoflarkspur.org
+
+  - name: Mill Valley
+    type: city
+    county: Marin
+    homepage: https://www.cityofmillvalley.gov
+
+  - name: Novato
+    type: city
+    county: Marin
+    homepage: https://www.novato.org
+
+  - name: Ross
+    type: town
+    county: Marin
+    homepage: https://www.townofrossca.gov
+
+  - name: San Anselmo
+    type: town
+    county: Marin
+    homepage: https://www.sananselmo.gov
+
+  - name: San Rafael
+    type: city
+    county: Marin
+    homepage: https://www.cityofsanrafael.org
+
+  - name: Sausalito
+    type: city
+    county: Marin
+    homepage: https://www.sausalito.gov
+
+  - name: Tiburon
+    type: town
+    county: Marin
+    homepage: https://www.townoftiburon.org
+
+  # Napa County
+  - name: Napa County
+    type: county
+    county: Napa
+    homepage: https://www.napacounty.gov
+    open_data_url: https://gisdata.countyofnapa.org
+    has_api: true
+
+  - name: American Canyon
+    type: city
+    county: Napa
+    homepage: https://www.americancanyon.gov
+
+  - name: Calistoga
+    type: city
+    county: Napa
+    homepage: https://ci.calistoga.ca.us
+
+  - name: Napa
+    type: city
+    county: Napa
+    homepage: https://www.cityofnapa.org
+
+  - name: St. Helena
+    type: city
+    county: Napa
+    homepage: https://www.cityofsthelena.org
+
+  - name: Yountville
+    type: town
+    county: Napa
+    homepage: https://www.townofyountville.com
+
+  # San Mateo County
+  - name: San Mateo County
+    type: county
+    county: San Mateo
+    homepage: https://www.smcgov.org
+    open_data_url: https://data.smcgov.org
+    has_api: true
+
+  - name: Atherton
+    type: town
+    county: San Mateo
+    homepage: https://www.athertonca.gov
+
+  - name: Belmont
+    type: city
+    county: San Mateo
+    homepage: https://www.belmont.gov
+
+  - name: Brisbane
+    type: city
+    county: San Mateo
+    homepage: https://www.brisbaneca.org
+
+  - name: Burlingame
+    type: city
+    county: San Mateo
+    homepage: https://www.burlingame.org
+
+  - name: Colma
+    type: town
+    county: San Mateo
+    homepage: https://www.colma.ca.gov
+
+  - name: Daly City
+    type: city
+    county: San Mateo
+    homepage: https://www.dalycity.org
+
+  - name: East Palo Alto
+    type: city
+    county: San Mateo
+    homepage: https://www.cityofepa.org
+
+  - name: Foster City
+    type: city
+    county: San Mateo
+    homepage: https://www.fostercity.org
+
+  - name: Half Moon Bay
+    type: city
+    county: San Mateo
+    homepage: https://www.halfmoonbay.gov
+
+  - name: Hillsborough
+    type: town
+    county: San Mateo
+    homepage: https://www.hillsborough.net
+
+  - name: Menlo Park
+    type: city
+    county: San Mateo
+    homepage: https://www.menlopark.org
+
+  - name: Millbrae
+    type: city
+    county: San Mateo
+    homepage: https://www.ci.millbrae.ca.us
+
+  - name: Pacifica
+    type: city
+    county: San Mateo
+    homepage: https://www.cityofpacifica.org
+
+  - name: Portola Valley
+    type: town
+    county: San Mateo
+    homepage: https://www.portolavalley.net
+
+  - name: Redwood City
+    type: city
+    county: San Mateo
+    homepage: https://www.redwoodcity.org
+    open_data_url: https://redwood-city-gis-public-portal-rwc.hub.arcgis.com
+    has_api: true
+
+  - name: San Bruno
+    type: city
+    county: San Mateo
+    homepage: https://www.sanbruno.ca.gov
+
+  - name: San Carlos
+    type: city
+    county: San Mateo
+    homepage: https://www.cityofsancarlos.org
+
+  - name: San Mateo
+    type: city
+    county: San Mateo
+    homepage: https://www.cityofsanmateo.org
+
+  - name: South San Francisco
+    type: city
+    county: San Mateo
+    homepage: https://www.ssf.net
+
+  - name: Woodside
+    type: town
+    county: San Mateo
+    homepage: https://www.woodsideca.gov
+
+  # Santa Clara County
+  - name: Santa Clara County
+    type: county
+    county: Santa Clara
+    homepage: https://www.sccgov.org
+    open_data_url: https://data.sccgov.org
+    has_api: true
+
+  - name: Campbell
+    type: city
+    county: Santa Clara
+    homepage: https://www.campbellca.gov
+
+  - name: Cupertino
+    type: city
+    county: Santa Clara
+    homepage: https://www.cupertino.org
+
+  - name: Gilroy
+    type: city
+    county: Santa Clara
+    homepage: https://www.cityofgilroy.org
+
+  - name: Los Altos
+    type: city
+    county: Santa Clara
+    homepage: https://www.losaltosca.gov
+
+  - name: Los Altos Hills
+    type: town
+    county: Santa Clara
+    homepage: https://www.losaltoshills.ca.gov
+
+  - name: Los Gatos
+    type: town
+    county: Santa Clara
+    homepage: https://www.losgatosca.gov
+
+  - name: Milpitas
+    type: city
+    county: Santa Clara
+    homepage: https://www.milpitas.gov
+
+  - name: Monte Sereno
+    type: city
+    county: Santa Clara
+    homepage: https://www.cityofmontesereno.org
+
+  - name: Morgan Hill
+    type: city
+    county: Santa Clara
+    homepage: https://www.morgan-hill.ca.gov
+
+  - name: Mountain View
+    type: city
+    county: Santa Clara
+    homepage: https://www.mountainview.gov
+    open_data_url: https://data-mountainview.opendata.arcgis.com
+    has_api: true
+
+  - name: Palo Alto
+    type: city
+    county: Santa Clara
+    homepage: https://www.paloalto.gov
+    open_data_url: https://data.paloalto.gov
+    has_api: true
+
+  - name: San Jose
+    type: city
+    county: Santa Clara
+    homepage: https://www.sanjoseca.gov
+    open_data_url: https://data.sanjoseca.gov
+    has_api: true
+
+  - name: Santa Clara
+    type: city
+    county: Santa Clara
+    homepage: https://www.santaclaraca.gov
+    open_data_url: https://map.santaclaraca.gov
+    has_api: true
+
+  - name: Saratoga
+    type: city
+    county: Santa Clara
+    homepage: https://www.saratoga.ca.us
+
+  - name: Sunnyvale
+    type: city
+    county: Santa Clara
+    homepage: https://www.sunnyvale.ca.gov
+    open_data_url: https://sunnyvale-geohub-cityofsunnyvale.hub.arcgis.com
+    has_api: true
+
+  # Solano County
+  - name: Solano County
+    type: county
+    county: Solano
+    homepage: https://www.solanocounty.gov
+    open_data_url: https://regis.solanocounty.com
+    has_api: false
+
+  - name: Benicia
+    type: city
+    county: Solano
+    homepage: https://www.ci.benicia.ca.us
+
+  - name: Dixon
+    type: city
+    county: Solano
+    homepage: https://www.cityofdixonca.gov
+
+  - name: Fairfield
+    type: city
+    county: Solano
+    homepage: https://www.fairfield.ca.gov
+
+  - name: Rio Vista
+    type: city
+    county: Solano
+    homepage: https://www.riovistacity.com
+
+  - name: Suisun City
+    type: city
+    county: Solano
+    homepage: https://www.suisun.com
+
+  - name: Vacaville
+    type: city
+    county: Solano
+    homepage: https://www.cityofvacaville.gov
+
+  - name: Vallejo
+    type: city
+    county: Solano
+    homepage: https://www.cityofvallejo.net
+    open_data_url: https://vallejo-open-data-covit.hub.arcgis.com
+    has_api: true
+
+  # Sonoma County
+  - name: Sonoma County
+    type: county
+    county: Sonoma
+    homepage: https://www.sonomacounty.gov
+    open_data_url: https://data.sonomacounty.ca.gov
+    has_api: true
+
+  - name: Cloverdale
+    type: city
+    county: Sonoma
+    homepage: https://www.cloverdale.net
+
+  - name: Cotati
+    type: city
+    county: Sonoma
+    homepage: https://www.cotaticity.gov
+
+  - name: Healdsburg
+    type: city
+    county: Sonoma
+    homepage: https://healdsburg.gov
+
+  - name: Petaluma
+    type: city
+    county: Sonoma
+    homepage: https://cityofpetaluma.org
+    open_data_url: https://open-data-petaluma.hub.arcgis.com
+    has_api: true
+
+  - name: Rohnert Park
+    type: city
+    county: Sonoma
+    homepage: https://www.rpcity.org
+
+  - name: Santa Rosa
+    type: city
+    county: Sonoma
+    homepage: https://srcity.org
+    open_data_url: https://data-santarosa.opendata.arcgis.com
+    has_api: true
+
+  - name: Sebastopol
+    type: city
+    county: Sonoma
+    homepage: https://www.cityofsebastopol.gov
+
+  - name: Sonoma
+    type: city
+    county: Sonoma
+    homepage: https://www.sonomacity.org
+
+  - name: Windsor
+    type: town
+    county: Sonoma
+    homepage: https://www.townofwindsor.com
+
+# Local News Outlets (hyperlinks only - no data pulling)
+# These are curated links to local news sources for each area
+local_news:
+  # Regional / Multi-county
+  - name: SF Chronicle
+    url: https://www.sfchronicle.com
+    coverage: regional
+
+  - name: Mercury News
+    url: https://www.mercurynews.com
+    coverage: regional
+
+  - name: East Bay Times
+    url: https://www.eastbaytimes.com
+    coverage: regional
+
+  - name: Marin Independent Journal
+    url: https://www.marinij.com
+    coverage: Marin
+
+  - name: Napa Valley Register
+    url: https://napavalleyregister.com
+    coverage: Napa
+
+  - name: Press Democrat
+    url: https://www.pressdemocrat.com
+    coverage: Sonoma
+
+  - name: Daily Republic
+    url: https://www.dailyrepublic.com
+    coverage: Solano
+
+  # Embarcadero Media (Peninsula/South Bay hyperlocal)
+  - name: Palo Alto Weekly
+    url: https://www.paloaltoonline.com
+    coverage: Palo Alto
+
+  - name: Mountain View Voice
+    url: https://www.mv-voice.com
+    coverage: Mountain View
+
+  - name: The Almanac
+    url: https://www.almanacnews.com
+    coverage: Menlo Park, Atherton, Portola Valley, Woodside
+
+  # Patch (hyperlocal news network)
+  - name: Patch
+    url: https://patch.com/california
+    coverage: Various Bay Area cities
+    note: Individual city pages available at patch.com/california/[cityname]

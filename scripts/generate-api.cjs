@@ -173,6 +173,8 @@ const NON_PROGRAM_FILES = [
   'transit-agencies.yml',
   'county-supervisors.yml',
   'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
 ];
 const categoryFiles = fs
   .readdirSync(DATA_DIR)

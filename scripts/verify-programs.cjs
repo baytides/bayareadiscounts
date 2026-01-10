@@ -96,6 +96,10 @@ const NON_PROGRAM_FILES = [
   'suppressed.yml',
   'search-config.yml',
   'county-supervisors.yml',
+  'transit-agencies.yml',
+  'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
 ];
 
 // Rate limiting

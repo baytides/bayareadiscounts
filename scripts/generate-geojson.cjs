@@ -23,6 +23,8 @@ const NON_PROGRAM_FILES = [
   'search-config.yml',
   'county-supervisors.yml',
   'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
 ];
 
 // Category colors for map markers (matches both file names and category field values)

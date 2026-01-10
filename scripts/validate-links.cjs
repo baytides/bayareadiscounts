@@ -20,6 +20,8 @@ const RETRY_COUNT = 2;
 const NON_PROGRAM_FILES = [
   'search-config.yml',
   'site-config.yml',
+  'bay-area-jurisdictions.yml',
+  'city-profiles.yml',
   'county-supervisors.yml',
   'cities.yml',
   'groups.yml',
