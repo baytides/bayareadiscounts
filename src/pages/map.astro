@@ -3597,59 +3597,41 @@ const pmtilesUrl =
       );
     }
 
-    // Geocode address using Nominatim API
+    // Geocode address using Azure Maps API (via Azure Function proxy)
     async function geocodeAddress(query: string): Promise<SearchResult[]> {
       const results: SearchResult[] = [];
 
       try {
-        // Add California to query if no state specified, but don't add "Bay Area" (confuses geocoder)
-        let searchQuery = query;
-        if (!query.match(/\b(CA|California)\b/i)) {
-          searchQuery = `${query}, California`;
+        // Call our Azure Function geocoding endpoint
+        const url = new URL('https://baytides-integrity.azurewebsites.net/api/geocode');
+        url.searchParams.set('q', query);
+
+        const response = await fetch(url.toString());
+
+        if (!response.ok) {
+          console.error('Geocoding response not OK:', response.status);
+          return results;
         }
-
-        const url = new URL('https://nominatim.openstreetmap.org/search');
-        url.searchParams.set('format', 'json');
-        url.searchParams.set('q', searchQuery);
-        url.searchParams.set('countrycodes', 'us');
-        url.searchParams.set('limit', '8');
-        url.searchParams.set('addressdetails', '1');
-        // Use viewbox to bias (prefer) results in Bay Area, but don't strictly limit
-        url.searchParams.set(
-          'viewbox',
-          `${BAY_AREA_BOUNDS.minLon},${BAY_AREA_BOUNDS.minLat},${BAY_AREA_BOUNDS.maxLon},${BAY_AREA_BOUNDS.maxLat}`
-        );
-        // Don't set bounded=1 - let Nominatim search more broadly, we filter client-side
-
-        const response = await fetch(url.toString(), {
-          headers: {
-            'User-Agent': 'BayNavigator/1.0 (https://baynavigator.org)',
-          },
-        });
-
-        if (!response.ok) return results;
 
         const data = await response.json();
 
-        for (const item of data) {
-          const lat = parseFloat(item.lat);
-          const lon = parseFloat(item.lon);
+        // Transform Azure Maps results to our format
+        for (const item of data.results || []) {
+          // Build a nice display name
+          const parts = [];
+          if (item.streetAddress) parts.push(item.streetAddress);
+          if (item.city) parts.push(item.city);
+          if (item.state) parts.push(item.state);
+          if (item.postalCode) parts.push(item.postalCode);
+          const displayName = parts.join(', ') || item.name;
 
-          // Validate within Bay Area bounds
-          if (
-            lat >= BAY_AREA_BOUNDS.minLat &&
-            lat <= BAY_AREA_BOUNDS.maxLat &&
-            lon >= BAY_AREA_BOUNDS.minLon &&
-            lon <= BAY_AREA_BOUNDS.maxLon
-          ) {
-            results.push({
-              type: 'address',
-              name: item.display_name.split(',')[0], // First part of address
-              displayName: item.display_name,
-              lat: lat,
-              lng: lon,
-            });
-          }
+          results.push({
+            type: 'address',
+            name: item.streetAddress || item.name?.split(',')[0] || item.name,
+            displayName: displayName,
+            lat: item.lat,
+            lng: item.lng,
+          });
         }
       } catch (error) {
         console.error('Geocoding error:', error);
