@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import OfflineBanner from '../components/OfflineBanner.astro';
 import PWAInstallBanner from '../components/PWAInstallBanner.astro';
+import SafetyExit from '../components/SafetyExit.astro';
 import SkipLinks from '../components/SkipLinks.astro';
 import Toast from '../components/Toast.astro';
 import yaml from 'js-yaml';
@@ -1351,6 +1352,9 @@ const websiteSchema = {
         window.addEventListener('pagehide', reportVitals);
       })();
     </script>
+
+    <!-- Quick Exit Button for Safety -->
+    <SafetyExit />
 
     <!-- Offline Detection Banner -->
     <OfflineBanner />

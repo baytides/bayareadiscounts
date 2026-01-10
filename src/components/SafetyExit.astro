@@ -1,0 +1,182 @@
+---
+/**
+ * SafetyExit Component
+ *
+ * Provides a quick exit mechanism for users who need to leave the site immediately.
+ * - Floating button appears after scrolling or on sensitive pages
+ * - Escape key triggers immediate exit
+ * - Redirects to a safe, innocuous website
+ * - Clears this page from browser history
+ *
+ * Privacy note: This feature is designed for users in unsafe situations
+ * who may need to quickly hide their browsing activity.
+ */
+
+interface Props {
+  /** Always show the exit button, not just on scroll */
+  alwaysVisible?: boolean;
+}
+
+const { alwaysVisible = false } = Astro.props;
+
+// Safe exit destinations - innocuous websites
+const safeDestinations = [
+  'https://www.google.com/search?q=weather',
+  'https://weather.gov',
+  'https://www.allrecipes.com',
+  'https://apnews.com',
+];
+---
+
+<!-- Quick Exit Button -->
+<div
+  id="safety-exit-container"
+  class:list={[
+    'fixed bottom-20 right-4 z-50 transition-opacity duration-300',
+    alwaysVisible ? 'opacity-100' : 'opacity-0 pointer-events-none',
+  ]}
+  data-always-visible={alwaysVisible}
+>
+  <button
+    id="safety-exit-btn"
+    type="button"
+    class="group flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-200 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
+    aria-label="Quick exit - Leave this site immediately (Press Escape)"
+    title="Quick exit (Esc)"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+      ></path>
+    </svg>
+    <span class="text-sm font-medium">Exit</span>
+    <span class="hidden sm:inline text-xs text-neutral-400 group-hover:text-neutral-300 ml-1"
+      >(Esc)</span
+    >
+  </button>
+</div>
+
+<!-- Exit confirmation overlay (hidden by default) -->
+<div id="safety-exit-overlay" class="fixed inset-0 z-[100] bg-white hidden" aria-hidden="true">
+  <div class="flex items-center justify-center h-full">
+    <p class="text-neutral-500 text-lg">Redirecting...</p>
+  </div>
+</div>
+
+<script define:vars={{ safeDestinations }}>
+  // Quick exit functionality
+  (function () {
+    const container = document.getElementById('safety-exit-container');
+    const exitBtn = document.getElementById('safety-exit-btn');
+    const overlay = document.getElementById('safety-exit-overlay');
+    const alwaysVisible = container?.dataset.alwaysVisible === 'true';
+
+    // Random safe destination
+    function getRandomDestination() {
+      return safeDestinations[Math.floor(Math.random() * safeDestinations.length)];
+    }
+
+    // Perform quick exit
+    function quickExit() {
+      // Show white overlay immediately to hide content
+      if (overlay) {
+        overlay.classList.remove('hidden');
+      }
+
+      // Get safe destination
+      const destination = getRandomDestination();
+
+      // Try to clear this page from history
+      // Replace current history entry with the safe site
+      try {
+        // Clear any stored state
+        sessionStorage.clear();
+
+        // Replace history to hide browsing
+        window.history.replaceState(null, '', destination);
+      } catch (e) {
+        // History manipulation may be blocked
+      }
+
+      // Navigate to safe site
+      window.location.replace(destination);
+    }
+
+    // Button click handler
+    exitBtn?.addEventListener('click', quickExit);
+
+    // Escape key handler
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        // Don't trigger if user is in an input field
+        const activeElement = document.activeElement;
+        if (
+          activeElement?.tagName === 'INPUT' ||
+          activeElement?.tagName === 'TEXTAREA' ||
+          activeElement?.tagName === 'SELECT'
+        ) {
+          return;
+        }
+
+        // Don't trigger if a modal/dialog is open
+        const openModals = document.querySelectorAll('[role="dialog"]:not(.hidden)');
+        if (openModals.length > 0) {
+          return;
+        }
+
+        quickExit();
+      }
+    });
+
+    // Show button after scrolling (unless always visible)
+    if (!alwaysVisible) {
+      let lastScrollTop = 0;
+      let isVisible = false;
+
+      function checkScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Show button after scrolling down 200px
+        if (scrollTop > 200 && !isVisible) {
+          container?.classList.remove('opacity-0', 'pointer-events-none');
+          container?.classList.add('opacity-100');
+          isVisible = true;
+        } else if (scrollTop <= 200 && isVisible) {
+          container?.classList.add('opacity-0', 'pointer-events-none');
+          container?.classList.remove('opacity-100');
+          isVisible = false;
+        }
+
+        lastScrollTop = scrollTop;
+      }
+
+      // Throttled scroll handler
+      let ticking = false;
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              checkScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+    }
+
+    // Keyboard shortcut hint for screen readers
+    exitBtn?.setAttribute('aria-describedby', 'safety-exit-desc');
+  })();
+</script>
+
+<!-- Screen reader description -->
+<div id="safety-exit-desc" class="sr-only">
+  Press the Escape key at any time to quickly leave this website and go to a safe page. This will
+  also try to clear this page from your browser history.
+</div>

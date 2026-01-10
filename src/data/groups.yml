@@ -87,6 +87,11 @@ groups:
     icon: '🔓'
     description: Reentry support services
 
+  - id: survivors
+    name: Survivors
+    icon: '💜'
+    description: Support services for survivors
+
   - id: nonprofits
     name: Nonprofits
     icon: '🤝'

@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-01-09",
+  "description": "Emergency and crisis resources for offline access",
+  "note": "This file is cached for offline use. Always verify numbers before calling.",
+  "national_hotlines": [
+    {
+      "id": "988",
+      "name": "Suicide & Crisis Lifeline",
+      "phone": "988",
+      "description": "Free, confidential support 24/7 for people in distress",
+      "text": "Text 988",
+      "chat": "https://988lifeline.org/chat/",
+      "languages": ["English", "Spanish"],
+      "available": "24/7"
+    },
+    {
+      "id": "ndvh",
+      "name": "National Safety Hotline",
+      "phone": "1-800-799-7233",
+      "description": "Support for individuals and families experiencing unsafe situations at home",
+      "text": "Text START to 88788",
+      "chat": "https://www.thehotline.org/",
+      "languages": ["200+ languages"],
+      "available": "24/7"
+    },
+    {
+      "id": "crisis-text",
+      "name": "Crisis Text Line",
+      "phone": null,
+      "description": "Free, 24/7 crisis support via text message",
+      "text": "Text HOME to 741741",
+      "chat": null,
+      "languages": ["English", "Spanish"],
+      "available": "24/7"
+    },
+    {
+      "id": "trevor",
+      "name": "Trevor Project",
+      "phone": "1-866-488-7386",
+      "description": "Crisis intervention and suicide prevention for LGBTQ+ youth",
+      "text": "Text START to 678-678",
+      "chat": "https://www.thetrevorproject.org/get-help/",
+      "languages": ["English"],
+      "available": "24/7"
+    },
+    {
+      "id": "trans-lifeline",
+      "name": "Trans Lifeline",
+      "phone": "1-877-565-8860",
+      "description": "Peer support hotline run by and for trans people",
+      "text": null,
+      "chat": null,
+      "languages": ["English", "Spanish (1-877-688-4776)"],
+      "available": "24/7"
+    },
+    {
+      "id": "samhsa",
+      "name": "SAMHSA National Helpline",
+      "phone": "1-800-662-4357",
+      "description": "Free, confidential treatment referral and information service",
+      "text": null,
+      "chat": null,
+      "languages": ["English", "Spanish"],
+      "available": "24/7"
+    },
+    {
+      "id": "love-is-respect",
+      "name": "Love Is Respect",
+      "phone": "1-866-331-9474",
+      "description": "Support for young people ages 13-26 in relationships",
+      "text": "Text LOVEIS to 22522",
+      "chat": "https://www.loveisrespect.org/",
+      "languages": ["English", "Spanish"],
+      "available": "24/7"
+    },
+    {
+      "id": "childhelp",
+      "name": "Childhelp National Child Abuse Hotline",
+      "phone": "1-800-422-4453",
+      "description": "Crisis intervention for child abuse, available to children and adults",
+      "text": null,
+      "chat": null,
+      "languages": ["170+ languages"],
+      "available": "24/7"
+    },
+    {
+      "id": "rainn",
+      "name": "RAINN",
+      "phone": "1-800-656-4673",
+      "description": "Support for survivors of sexual violence",
+      "text": null,
+      "chat": "https://hotline.rainn.org/online",
+      "languages": ["English", "Spanish"],
+      "available": "24/7"
+    }
+  ],
+  "bay_area_crisis": [
+    {
+      "id": "la-casa",
+      "name": "La Casa de las Madres",
+      "area": "San Francisco",
+      "phone": "877-503-1850",
+      "description": "Emergency shelter and support services",
+      "teen_line": "877-923-0700",
+      "text": "415-200-3575",
+      "available": "24/7"
+    },
+    {
+      "id": "safe-place",
+      "name": "A Safe Place",
+      "area": "Alameda County",
+      "phone": "510-536-7233",
+      "description": "Emergency shelter, legal advocacy, counseling",
+      "available": "24/7"
+    },
+    {
+      "id": "stand",
+      "name": "STAND! For Families",
+      "area": "Contra Costa County",
+      "phone": "888-215-5555",
+      "description": "Emergency shelter, counseling, legal services",
+      "text": "925-956-8037",
+      "available": "24/7"
+    },
+    {
+      "id": "cora",
+      "name": "CORA",
+      "area": "San Mateo County",
+      "phone": "800-300-1080",
+      "description": "Emergency shelter, counseling, legal advocacy",
+      "available": "24/7"
+    },
+    {
+      "id": "next-door",
+      "name": "Next Door Solutions",
+      "area": "Santa Clara County",
+      "phone": "408-279-2962",
+      "description": "Emergency shelter, counseling, legal help",
+      "available": "24/7"
+    },
+    {
+      "id": "asian-womens-shelter",
+      "name": "Asian Women's Shelter",
+      "area": "Bay Area",
+      "phone": "877-751-0880",
+      "description": "Multilingual support in 40+ Asian languages",
+      "available": "24/7"
+    },
+    {
+      "id": "narika",
+      "name": "Narika",
+      "area": "Bay Area (South Asian)",
+      "phone": "800-215-7308",
+      "description": "Culturally specific support in South Asian languages",
+      "available": "Business hours"
+    },
+    {
+      "id": "maitri",
+      "name": "Maitri",
+      "area": "Santa Clara County (South Asian)",
+      "phone": "888-862-4874",
+      "description": "Culturally specific support in South Asian languages",
+      "available": "24/7"
+    },
+    {
+      "id": "building-futures",
+      "name": "Building Futures",
+      "area": "Alameda County",
+      "phone": "1-866-292-9688",
+      "description": "Emergency shelter, counseling, housing",
+      "available": "24/7"
+    },
+    {
+      "id": "woman-inc",
+      "name": "W.O.M.A.N., Inc.",
+      "area": "San Francisco",
+      "phone": "415-864-4722",
+      "description": "Crisis support, counseling, legal advocacy",
+      "latinx_line": "415-969-6811",
+      "available": "24/7"
+    },
+    {
+      "id": "family-justice-alameda",
+      "name": "Family Justice Center",
+      "area": "Alameda County",
+      "phone": "510-267-8800",
+      "description": "One-stop center with legal, counseling, advocacy",
+      "address": "470 27th Street, Oakland, CA 94612",
+      "available": "Mon-Fri 8:30am-5pm"
+    }
+  ],
+  "safety_tips": [
+    {
+      "tip": "Use *67 before dialing to hide your caller ID",
+      "category": "phone"
+    },
+    {
+      "tip": "Text HOME to 741741 if you can't make a phone call safely",
+      "category": "communication"
+    },
+    {
+      "tip": "Use a friend's phone or library computer if your device is monitored",
+      "category": "privacy"
+    },
+    {
+      "tip": "Clear your browser history after visiting sensitive websites",
+      "category": "privacy"
+    },
+    {
+      "tip": "Check location sharing settings on your phone and family apps",
+      "category": "privacy"
+    },
+    {
+      "tip": "Many hotlines offer online chat if phone calls aren't safe",
+      "category": "communication"
+    },
+    {
+      "tip": "Libraries offer free WiFi and phone charging",
+      "category": "resources"
+    },
+    {
+      "tip": "Ask about interpretation services if you prefer another language",
+      "category": "accessibility"
+    }
+  ],
+  "quick_exit_urls": [
+    "https://www.google.com/search?q=weather",
+    "https://weather.gov",
+    "https://www.allrecipes.com",
+    "https://apnews.com"
+  ]
+}

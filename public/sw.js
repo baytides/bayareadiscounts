@@ -40,6 +40,7 @@ const API_ENDPOINTS = [
   '/api/groups.json',
   '/api/areas.json',
   '/api/metadata.json',
+  '/api/emergency.json', // Crisis resources for offline access
 ];
 
 // Cache size limits

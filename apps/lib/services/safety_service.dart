@@ -146,6 +146,7 @@ class SafetyService {
 
   // Sensitive eligibility groups
   static const List<String> sensitiveEligibilities = [
+    'survivors',
     'lgbtq',
     'youth',
     'immigrants',
@@ -375,38 +376,173 @@ class SafetyService {
   }
 
   /// Get safety tips for a sensitive program
-  List<SafetyTip> getSafetyTips(String? category) {
-    final tips = <SafetyTip>[
+  /// Provides category-specific guidance for different vulnerable communities
+  List<SafetyTip> getSafetyTips(String? category, {List<String>? eligibility}) {
+    final tips = <SafetyTip>[];
+    final lowerCategory = category?.toLowerCase() ?? '';
+    final lowerEligibility = eligibility?.map((e) => e.toLowerCase()).toList() ?? [];
+
+    // Universal tips for all sensitive programs
+    tips.addAll([
       const SafetyTip(
         icon: Icons.security,
         title: 'Check your surroundings',
         description: 'Make sure you\'re in a private, safe location before making calls.',
       ),
       const SafetyTip(
-        icon: Icons.phone_android,
-        title: 'Consider using a different phone',
-        description: 'If your phone is monitored, use a friend\'s phone or a public phone.',
-      ),
-      const SafetyTip(
         icon: Icons.history,
         title: 'Clear your history',
         description: 'Use Incognito Mode or clear your browser/app history after visiting.',
       ),
-    ];
+    ]);
 
-    // Add category-specific tips
-    if (category?.toLowerCase() == 'domestic-violence' ||
-        category?.toLowerCase() == 'crisis') {
-      tips.add(const SafetyTip(
-        icon: Icons.dialpad,
-        title: 'Use *67 to hide your number',
-        description: 'Dial *67 before the number to block your caller ID.',
-      ));
-      tips.add(const SafetyTip(
-        icon: Icons.schedule,
-        title: 'Plan your call',
-        description: 'Choose a time when you know you\'ll have privacy.',
-      ));
+    // Domestic violence / survivors - most comprehensive tips
+    if (lowerCategory == 'domestic-violence' ||
+        lowerCategory == 'crisis' ||
+        lowerEligibility.contains('survivors')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.dialpad,
+          title: 'Use *67 to hide your number',
+          description: 'Dial *67 before the number to block your caller ID from appearing.',
+        ),
+        const SafetyTip(
+          icon: Icons.phone_android,
+          title: 'Consider using a different phone',
+          description: 'If your phone is monitored, use a friend\'s phone, library, or public phone.',
+        ),
+        const SafetyTip(
+          icon: Icons.schedule,
+          title: 'Plan your call time',
+          description: 'Choose a time when you know you\'ll have privacy and won\'t be interrupted.',
+        ),
+        const SafetyTip(
+          icon: Icons.location_off,
+          title: 'Check location sharing',
+          description: 'Review if your location is being shared via Find My, Google Maps, or family apps.',
+        ),
+        const SafetyTip(
+          icon: Icons.devices,
+          title: 'Be aware of shared devices',
+          description: 'Browsing history, iCloud, and Google accounts may sync across devices.',
+        ),
+      ]);
+    }
+
+    // LGBTQ+ specific tips
+    if (lowerCategory == 'lgbtq' || lowerEligibility.contains('lgbtq')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.phone_forwarded,
+          title: 'Use a private number',
+          description: 'Consider Google Voice, TextNow, or another app for a separate phone number.',
+        ),
+        const SafetyTip(
+          icon: Icons.share,
+          title: 'Check shared accounts',
+          description: 'Family plans and shared accounts may show call/text logs to others.',
+        ),
+        const SafetyTip(
+          icon: Icons.apps,
+          title: 'Use app disguise',
+          description: 'This app can be disguised as a calculator or notes app in Settings.',
+        ),
+      ]);
+    }
+
+    // Youth / Teen specific tips
+    if (lowerCategory == 'teen-health' || lowerEligibility.contains('youth')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.textsms,
+          title: 'Text option available',
+          description: 'Many hotlines offer text support if you can\'t talk safely.',
+        ),
+        const SafetyTip(
+          icon: Icons.school,
+          title: 'Talk to a trusted adult',
+          description: 'School counselors, coaches, or relatives may be able to help.',
+        ),
+        const SafetyTip(
+          icon: Icons.family_restroom,
+          title: 'Parental controls',
+          description: 'Be aware if your device has monitoring or screen time apps installed.',
+        ),
+      ]);
+    }
+
+    // Mental health specific tips
+    if (lowerCategory == 'mental-health' || lowerCategory == 'substance-abuse') {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.textsms,
+          title: 'Text support available',
+          description: 'Text HOME to 741741 (Crisis Text Line) if you can\'t make a call.',
+        ),
+        const SafetyTip(
+          icon: Icons.chat,
+          title: 'Chat options',
+          description: 'Many services offer online chat that may be less visible than phone calls.',
+        ),
+        const SafetyTip(
+          icon: Icons.volunteer_activism,
+          title: 'Warm handoffs available',
+          description: 'Ask about being transferred directly to local services while on the line.',
+        ),
+      ]);
+    }
+
+    // Immigrant specific tips
+    if (lowerEligibility.contains('immigrants')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.gavel,
+          title: 'Know your rights',
+          description: 'You have rights regardless of immigration status. Ask about confidentiality.',
+        ),
+        const SafetyTip(
+          icon: Icons.language,
+          title: 'Language support',
+          description: 'Many services offer interpretation in multiple languages.',
+        ),
+        const SafetyTip(
+          icon: Icons.verified_user,
+          title: 'Ask about privacy policies',
+          description: 'Confirm that services won\'t share your information with immigration authorities.',
+        ),
+      ]);
+    }
+
+    // Unhoused / Housing emergency
+    if (lowerCategory == 'housing-emergency' || lowerEligibility.contains('unhoused')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.wifi,
+          title: 'Free WiFi locations',
+          description: 'Libraries, community centers, and some fast food restaurants offer free WiFi.',
+        ),
+        const SafetyTip(
+          icon: Icons.phone,
+          title: 'Charge your phone',
+          description: 'Libraries and some shelters have charging stations available.',
+        ),
+      ]);
+    }
+
+    // Reentry / Formerly incarcerated
+    if (lowerEligibility.contains('reentry')) {
+      tips.addAll([
+        const SafetyTip(
+          icon: Icons.work,
+          title: 'Background-friendly employers',
+          description: 'Many programs listed work specifically with people with records.',
+        ),
+        const SafetyTip(
+          icon: Icons.description,
+          title: 'Record expungement',
+          description: 'Ask about services that help with clearing or sealing records.',
+        ),
+      ]);
     }
 
     return tips;
