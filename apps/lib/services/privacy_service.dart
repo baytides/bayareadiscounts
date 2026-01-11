@@ -12,12 +12,12 @@ import 'package:url_launcher/url_launcher.dart';
 /// - Privacy-first network configuration
 /// - VoIP app selection for private calling
 class PrivacyService {
-  static const String _useOnionKey = 'bay_area_discounts:use_onion';
-  static const String _proxyEnabledKey = 'bay_area_discounts:proxy_enabled';
-  static const String _proxyHostKey = 'bay_area_discounts:proxy_host';
-  static const String _proxyPortKey = 'bay_area_discounts:proxy_port';
-  static const String _proxyTypeKey = 'bay_area_discounts:proxy_type';
-  static const String _preferredCallingAppKey = 'bay_area_discounts:preferred_calling_app';
+  static const String _useOnionKey = 'baynavigator:use_onion';
+  static const String _proxyEnabledKey = 'baynavigator:proxy_enabled';
+  static const String _proxyHostKey = 'baynavigator:proxy_host';
+  static const String _proxyPortKey = 'baynavigator:proxy_port';
+  static const String _proxyTypeKey = 'baynavigator:proxy_type';
+  static const String _preferredCallingAppKey = 'baynavigator:preferred_calling_app';
 
   /// Standard clearnet API endpoint
   static const String clearnetBaseUrl = 'https://baynavigator.org';

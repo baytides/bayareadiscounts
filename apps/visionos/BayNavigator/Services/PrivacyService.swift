@@ -22,11 +22,11 @@ actor PrivacyService {
 
     // MARK: - Cache Keys
 
-    private let useOnionKey = "bay_area_discounts:use_onion"
-    private let proxyEnabledKey = "bay_area_discounts:proxy_enabled"
-    private let proxyHostKey = "bay_area_discounts:proxy_host"
-    private let proxyPortKey = "bay_area_discounts:proxy_port"
-    private let proxyTypeKey = "bay_area_discounts:proxy_type"
+    private let useOnionKey = "baynavigator:use_onion"
+    private let proxyEnabledKey = "baynavigator:proxy_enabled"
+    private let proxyHostKey = "baynavigator:proxy_host"
+    private let proxyPortKey = "baynavigator:proxy_port"
+    private let proxyTypeKey = "baynavigator:proxy_type"
 
     private init() {}
 

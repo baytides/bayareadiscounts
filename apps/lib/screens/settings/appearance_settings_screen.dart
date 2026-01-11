@@ -58,7 +58,13 @@ class AppearanceSettingsScreen extends StatelessWidget {
                     children: [
                       for (final locale in AppLocale.values)
                         RadioListTile<AppLocale>(
-                          title: Text(locale.nativeName),
+                          title: Row(
+                            children: [
+                              Text(locale.flag, style: const TextStyle(fontSize: 20)),
+                              const SizedBox(width: 8),
+                              Text(locale.nativeName),
+                            ],
+                          ),
                           subtitle: locale.name != locale.nativeName
                               ? Text(locale.name)
                               : null,

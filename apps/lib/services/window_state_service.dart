@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// Service for persisting window state (size, position) on desktop
 class WindowStateService {
-  static const String _windowStateKey = 'bay_area_discounts:window_state';
+  static const String _windowStateKey = 'baynavigator:window_state';
 
   /// Check if we're on a desktop platform
   static bool get isDesktop {

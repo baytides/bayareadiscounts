@@ -167,6 +167,38 @@ struct SettingsView: View {
                     Text("Warm Mode applies a sepia tint to reduce eye strain. This is an in-app alternative since visionOS doesn't include Night Shift.")
                 }
 
+                // Language Section
+                Section {
+                    ForEach(AppLocale.allCases) { locale in
+                        Button {
+                            settings.currentLocale = locale
+                        } label: {
+                            HStack {
+                                Text(locale.flag)
+                                    .font(.title2)
+                                Text(locale.nativeName)
+                                    .foregroundStyle(.primary)
+                                if locale.name != locale.nativeName {
+                                    Text("(\(locale.name))")
+                                        .foregroundStyle(.secondary)
+                                        .font(.caption)
+                                }
+                                Spacer()
+                                if settings.currentLocale == locale {
+                                    Image(systemName: "checkmark")
+                                        .foregroundStyle(.tint)
+                                }
+                            }
+                        }
+                        .accessibilityLabel("\(locale.nativeName), \(locale.name)")
+                        .accessibilityHint(settings.currentLocale == locale ? "Currently selected" : "Double tap to select")
+                    }
+                } header: {
+                    Text("Language")
+                } footer: {
+                    Text("Select your preferred language. Translations are provided by Azure AI Translator.")
+                }
+
                 // Advanced Privacy Section
                 Section {
                     // Privacy status indicator

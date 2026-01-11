@@ -7,17 +7,18 @@ actor CacheService {
     private let cacheDuration: TimeInterval = 24 * 60 * 60 // 24 hours
 
     enum CacheKey: String {
-        case programs = "bay_area_discounts:programs"
-        case categories = "bay_area_discounts:categories"
-        case groups = "bay_area_discounts:groups"
-        case areas = "bay_area_discounts:areas"
-        case metadata = "bay_area_discounts:metadata"
-        case favorites = "bay_area_discounts:favorites"
-        case themeMode = "bay_area_discounts:theme_mode"
-        case warmMode = "bay_area_discounts:warm_mode"
-        case userGroups = "bay_area_discounts:user_groups"
-        case userCounty = "bay_area_discounts:user_county"
-        case onboardingComplete = "bay_area_discounts:onboarding_complete"
+        case programs = "baynavigator:programs"
+        case categories = "baynavigator:categories"
+        case groups = "baynavigator:groups"
+        case areas = "baynavigator:areas"
+        case metadata = "baynavigator:metadata"
+        case favorites = "baynavigator:favorites"
+        case themeMode = "baynavigator:theme_mode"
+        case warmMode = "baynavigator:warm_mode"
+        case locale = "baynavigator:locale"
+        case userGroups = "baynavigator:user_groups"
+        case userCounty = "baynavigator:user_county"
+        case onboardingComplete = "baynavigator:onboarding_complete"
     }
 
     private struct CachedData<T: Codable>: Codable {
@@ -111,6 +112,16 @@ actor CacheService {
 
     func setWarmMode(_ enabled: Bool) {
         defaults.set(enabled, forKey: CacheKey.warmMode.rawValue)
+    }
+
+    // MARK: - Locale
+
+    func getLocale() -> String? {
+        defaults.string(forKey: CacheKey.locale.rawValue)
+    }
+
+    func setLocale(_ code: String) {
+        defaults.set(code, forKey: CacheKey.locale.rawValue)
     }
 
     // MARK: - User Preferences (Onboarding)

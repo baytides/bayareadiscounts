@@ -4,33 +4,56 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 /// Supported locales in Bay Navigator
-/// Matches the web i18n configuration
+/// Matches the web i18n configuration (10 languages)
 enum AppLocale {
-  en('en', 'English', 'English'),
-  es('es', 'Spanish', 'Español'),
-  zhHans('zh-Hans', 'Chinese (Simplified)', '简体中文'),
-  vi('vi', 'Vietnamese', 'Tiếng Việt'),
-  tl('tl', 'Tagalog', 'Tagalog'),
-  ko('ko', 'Korean', '한국어');
+  en('en', 'English', 'English', '🇺🇸', false),
+  es('es', 'Spanish', 'Español', '🇪🇸', false),
+  zhHans('zh-Hans', 'Chinese (Simplified)', '简体中文', '🇨🇳', false),
+  zhHant('zh-Hant', 'Chinese (Traditional)', '繁體中文', '🇹🇼', false),
+  vi('vi', 'Vietnamese', 'Tiếng Việt', '🇻🇳', false),
+  fil('fil', 'Filipino', 'Filipino', '🇵🇭', false),
+  ko('ko', 'Korean', '한국어', '🇰🇷', false),
+  ru('ru', 'Russian', 'Русский', '🇷🇺', false),
+  fr('fr', 'French', 'Français', '🇫🇷', false),
+  ar('ar', 'Arabic', 'العربية', '🇸🇦', true);
 
   final String code;
   final String name;
   final String nativeName;
+  final String flag;
+  final bool isRtl;
 
-  const AppLocale(this.code, this.name, this.nativeName);
+  const AppLocale(this.code, this.name, this.nativeName, this.flag, this.isRtl);
 
   /// Get Flutter Locale from AppLocale
   Locale get flutterLocale {
     if (code == 'zh-Hans') {
       return const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans');
     }
+    if (code == 'zh-Hant') {
+      return const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant');
+    }
     return Locale(code);
   }
 
   /// Get AppLocale from language code
   static AppLocale fromCode(String code) {
+    // Handle browser language code mappings
+    final normalizedCode = code.toLowerCase();
+
+    // Map common browser codes to our locale codes
+    if (normalizedCode == 'zh-cn' || normalizedCode == 'zh-sg') {
+      return AppLocale.zhHans;
+    }
+    if (normalizedCode == 'zh-tw' || normalizedCode == 'zh-hk' || normalizedCode == 'zh-mo') {
+      return AppLocale.zhHant;
+    }
+    if (normalizedCode == 'tl') {
+      return AppLocale.fil; // Tagalog -> Filipino
+    }
+
     return AppLocale.values.firstWhere(
-      (locale) => locale.code == code,
+      (locale) => locale.code == code || locale.code.split('-')[0] == normalizedCode,
       orElse: () => AppLocale.en,
     );
   }
@@ -39,7 +62,7 @@ enum AppLocale {
 /// Localization service for Bay Navigator
 /// Fetches translations from the web API and caches them locally
 class LocalizationService {
-  static const String _baseUrl = 'https://baynavigator.org/i18n';
+  static const String _baseUrl = 'https://baynavigator.org/i18n/json';
   static const String _localeKey = 'baynavigator_locale';
   static const String _translationsCachePrefix = 'baynavigator_i18n_';
   static const Duration _cacheDuration = Duration(days: 7);
@@ -127,7 +150,7 @@ class LocalizationService {
   Future<void> _fetchTranslations(String localeCode) async {
     try {
       final response = await _client.get(
-        Uri.parse('$_baseUrl/$localeCode.json'),
+        Uri.parse('$_baseUrl/$localeCode-ui.json'),
       );
 
       if (response.statusCode == 200) {

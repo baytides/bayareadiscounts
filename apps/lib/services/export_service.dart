@@ -47,7 +47,7 @@ class ExportService {
     try {
       final directory = await getApplicationDocumentsDirectory();
       final timestamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
-      final file = File('${directory.path}/bay_area_discounts_$timestamp.csv');
+      final file = File('${directory.path}/baynavigator_$timestamp.csv');
       await file.writeAsString(csv);
 
       // On desktop, use share_plus to save/share
@@ -254,7 +254,7 @@ class ExportService {
       final html = generatePrintableHtml(programs);
       final directory = await getApplicationDocumentsDirectory();
       final timestamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
-      final file = File('${directory.path}/bay_area_discounts_print_$timestamp.html');
+      final file = File('${directory.path}/baynavigator_print_$timestamp.html');
       await file.writeAsString(html);
 
       // Open in default browser for printing

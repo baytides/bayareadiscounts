@@ -46,7 +46,7 @@ Future<void> main() async {
 
   // Check if crash reporting is enabled
   final prefs = await SharedPreferences.getInstance();
-  final crashReportingEnabled = prefs.getBool('bay_area_discounts:crash_reporting') ?? true;
+  final crashReportingEnabled = prefs.getBool('baynavigator:crash_reporting') ?? true;
 
   if (_sentryDsn.isNotEmpty && crashReportingEnabled) {
     await SentryFlutter.init(

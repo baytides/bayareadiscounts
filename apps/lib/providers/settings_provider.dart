@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../services/privacy_service.dart';
 
 class SettingsProvider extends ChangeNotifier {
-  static const String _crashReportingKey = 'bay_area_discounts:crash_reporting';
+  static const String _crashReportingKey = 'baynavigator:crash_reporting';
 
   final PrivacyService _privacyService = PrivacyService();
 

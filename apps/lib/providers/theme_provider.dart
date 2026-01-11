@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 enum AppThemeMode { light, dark, system }
 
 class ThemeProvider extends ChangeNotifier {
-  static const String _themeKey = 'bay_area_discounts:theme_mode';
+  static const String _themeKey = 'baynavigator:theme_mode';
 
   AppThemeMode _mode = AppThemeMode.system;
   bool _initialized = false;

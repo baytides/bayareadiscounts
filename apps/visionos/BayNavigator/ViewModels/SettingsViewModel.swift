@@ -28,6 +28,15 @@ final class SettingsViewModel {
         }
     }
 
+    /// Current locale for the app
+    var currentLocale: AppLocale = .en {
+        didSet {
+            Task {
+                await LocalizationService.shared.setLocale(currentLocale)
+            }
+        }
+    }
+
     // MARK: - Privacy Settings
 
     /// Enable Tor/Onion routing for enhanced privacy
@@ -82,6 +91,13 @@ final class SettingsViewModel {
             let warmMode = await cache.getWarmMode()
             await MainActor.run {
                 self.warmModeEnabled = warmMode
+            }
+
+            // Load locale setting
+            await LocalizationService.shared.initialize()
+            let savedLocale = await LocalizationService.shared.currentLocale
+            await MainActor.run {
+                self.currentLocale = savedLocale
             }
 
             // Load privacy settings

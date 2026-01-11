@@ -11,17 +11,17 @@ class ApiService {
   static const Duration _cacheDuration = Duration(hours: 24);
   // ignore: unused_field - reserved for stale-while-revalidate pattern
   static const Duration _staleCacheDuration = Duration(days: 7);
-  static const String _lastSyncKey = 'bay_area_discounts:last_sync';
-  static const String _offlineModeKey = 'bay_area_discounts:offline_mode';
+  static const String _lastSyncKey = 'baynavigator:last_sync';
+  static const String _offlineModeKey = 'baynavigator:offline_mode';
 
-  static const String _programsCacheKey = 'bay_area_discounts:programs';
-  static const String _categoriesCacheKey = 'bay_area_discounts:categories';
-  static const String _groupsCacheKey = 'bay_area_discounts:groups';
-  static const String _areasCacheKey = 'bay_area_discounts:areas';
-  static const String _metadataCacheKey = 'bay_area_discounts:metadata';
-  static const String _favoritesCacheKey = 'bay_area_discounts:favorites';
-  static const String _recentSearchesCacheKey = 'bay_area_discounts:recent_searches';
-  static const String _filterPresetsCacheKey = 'bay_area_discounts:filter_presets';
+  static const String _programsCacheKey = 'baynavigator:programs';
+  static const String _categoriesCacheKey = 'baynavigator:categories';
+  static const String _groupsCacheKey = 'baynavigator:groups';
+  static const String _areasCacheKey = 'baynavigator:areas';
+  static const String _metadataCacheKey = 'baynavigator:metadata';
+  static const String _favoritesCacheKey = 'baynavigator:favorites';
+  static const String _recentSearchesCacheKey = 'baynavigator:recent_searches';
+  static const String _filterPresetsCacheKey = 'baynavigator:filter_presets';
 
   static const int _maxRecentSearches = 5;
   static const int _maxPresets = 10;
@@ -471,7 +471,7 @@ class ApiService {
   // ============================================
 
   static const String _aiEndpoint = 'https://baytides-link-checker.azurewebsites.net/api/assistant';
-  static const String _conversationHistoryCacheKey = 'bay_area_discounts:conversation_history';
+  static const String _conversationHistoryCacheKey = 'baynavigator:conversation_history';
 
   /// Perform an AI-powered search using the Smart Assistant
   /// Returns both the AI message and matching programs
@@ -627,8 +627,8 @@ class ApiService {
   // USER PROFILES
   // ============================================
 
-  static const String _profilesCacheKey = 'bay_area_discounts:profiles';
-  static const String _activeProfileCacheKey = 'bay_area_discounts:active_profile';
+  static const String _profilesCacheKey = 'baynavigator:profiles';
+  static const String _activeProfileCacheKey = 'baynavigator:active_profile';
   static const int _maxProfiles = 6;
   static const int _maxSavedPerProfile = 50;
 
@@ -798,7 +798,7 @@ class ApiService {
   Future<int> getCacheSize() async {
     try {
       final prefs = await _preferences;
-      final keys = prefs.getKeys().where((k) => k.startsWith('bay_area_discounts:'));
+      final keys = prefs.getKeys().where((k) => k.startsWith('baynavigator:'));
       int totalSize = 0;
       for (final key in keys) {
         final value = prefs.getString(key);

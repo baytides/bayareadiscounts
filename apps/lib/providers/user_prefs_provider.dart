@@ -45,8 +45,8 @@ class UserPrefs {
 
 /// Provider for managing user preferences and onboarding state
 class UserPrefsProvider extends ChangeNotifier {
-  static const String _prefsKey = 'bay_area_discounts:user_prefs';
-  static const String _onboardingKey = 'bay_area_discounts:onboarding_complete';
+  static const String _prefsKey = 'baynavigator:user_prefs';
+  static const String _onboardingKey = 'baynavigator:onboarding_complete';
 
   UserPrefs _prefs = const UserPrefs(groups: [], timestamp: 0);
   bool _onboardingComplete = false;
