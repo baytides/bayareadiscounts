@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "Votre guide des économies et avantages locaux",
+    "search": "Rechercher",
+    "searchPlaceholder": "Recherche dans les programmes...",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "close": "Fermer",
+    "learnMore": "Pour en savoir plus",
+    "viewAll": "Voir tout",
+    "back": "Précédent",
+    "next": "Prochain",
+    "previous": "Précédent",
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "apply": "Postulez",
+    "clear": "Clair",
+    "filter": "Filtre",
+    "sort": "Trier",
+    "share": "Partager",
+    "print": "Imprimé",
+    "download": "Télécharger"
+  },
+  "nav": {
+    "home": "Accueil",
+    "directory": "Annuaire",
+    "map": "Carte",
+    "eligibility": "Éligibilité",
+    "about": "À propos",
+    "favorites": "Favoris",
+    "settings": "Paramètres",
+    "accessibility": "AcceSSIbility",
+    "privacy": "PriVAcy",
+    "terms": "Conditions"
+  },
+  "search": {
+    "smartSearch": "Recherche intelligente",
+    "smartSearchTooltip": "Smart Search utilise l’IA pour comprendre votre question et trouver des programmes releVAnt. Désactivez-le pour une simple correspondance de mots-clés.",
+    "noResults": "Aucun programme trouvé correspondant à votre recherche.",
+    "browseAll": "Parcourir tous les programmes",
+    "trySearching": "Essayez de chercher :",
+    "orAskQuestion": "Ou posez une question :",
+    "resultsCount": "{count}programme{s}trouvé",
+    "aiPowered": "Alimenté par l’IA"
+  },
+  "fallback": {
+    "cantFind": "Vous ne trouvez pas ce dont vous avez besoin ? Essayez ces ressources :",
+    "call211": "Appelez2-1-1",
+    "call211Desc": "Recommandations gratuites vers des services locaux 24h/24 et 7j/7",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "Aide juridique gratuite :1-800-551-5554",
+    "calfresh": "GetCalFresh.org",
+    "calfreshDesc": "Postulez en ligne pour la position alimentaire aSSI.",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "Postulez aux prestations CA (CalFresh,Medi-Cal)"
+  },
+  "categories": {
+    "all": "Tous",
+    "food": "Nourriture",
+    "health": "Santé",
+    "housing": "Logement",
+    "utilities": "Services publics",
+    "transportation": "Transport",
+    "education": "Éducation",
+    "legal": "Juridique",
+    "finance": "Finance",
+    "technology": "Technologie",
+    "recreation": "Loisirs",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "Terminales",
+    "veterans": "Anciens combattants",
+    "families": "Familles",
+    "youth": "Jeunesse",
+    "disabled": "Personnes en situation de handicap",
+    "lowIncome": "À faible revenu",
+    "students": "Étudiants",
+    "immigrants": "Immigrants",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "Éligibilité",
+    "howToApply": "Comment postuler",
+    "whatTheyOffer": "Ce qu’ils proposent",
+    "website": "Site internet",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "hours": "Horaires",
+    "verified": "Vérifié",
+    "lastUpdated": "Dernière mise à jour",
+    "directions": "Obtenez les indications",
+    "addToFavorites": "Ajouter aux favoris",
+    "removeFromFavorites": "Retirer des favoris"
+  },
+  "safety": {
+    "quickExit": "Sortie rapide",
+    "quickExitTooltip": "Appuyez sur ESC ou cliquez pour quitter rapidement ce site",
+    "needHelp": "Besoin d’aide immédiate ?",
+    "call911": "Appelez911",
+    "call988": "Appel/SMS988",
+    "chatOnline": "Chat en ligne",
+    "youreNotAlone": "Tu n’es pas seul.",
+    "crisisSupport": "Un support gratuit et confidentiel 24h/24 et 7j/7. Presse des vétérans 1, presse espagnole 2."
+  },
+  "accessibility": {
+    "skipToContent": "Passer au contenu principal",
+    "skipToNav": "Passer à la navigation",
+    "textSize": "Taille du texte",
+    "contrast": "Contraste",
+    "colorblindMode": "Mode daltonien",
+    "reducedMotion": "Mouvement réduit"
+  },
+  "offline": {
+    "youreOffline": "Tu es hors ligne",
+    "offlineMessage": "Certaines fonctionnalités peuvent être limitées. Connectez-vous à Internet pour une fonctionnalité complète.",
+    "smartSearchDisabled": "Connectez-vous à Internet pour utiliser une recherche intelligente."
+  },
+  "print": {
+    "scanQR": "Consultez cette page en ligne ou partagez-la avec d’autres"
+  },
+  "footer": {
+    "madeWith": "Fabriqué avec",
+    "forBayArea": "pour la région de la Baie",
+    "dataFrom": "Données de511.org,CaltransetAzure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

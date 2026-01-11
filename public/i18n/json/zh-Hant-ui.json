@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "你的在地節省與福利指南",
+    "search": "搜尋",
+    "searchPlaceholder": "搜尋程式......",
+    "loading": "載入中......",
+    "error": "錯誤",
+    "close": "結束",
+    "learnMore": "了解更多",
+    "viewAll": "全部查看",
+    "back": "返回",
+    "next": "下一篇",
+    "previous": "先前",
+    "save": "存檔",
+    "cancel": "取消",
+    "apply": "申請",
+    "clear": "清場",
+    "filter": "濾波器",
+    "sort": "排序",
+    "share": "分享",
+    "print": "印刷品",
+    "download": "下載"
+  },
+  "nav": {
+    "home": "首頁",
+    "directory": "督政府",
+    "map": "地圖",
+    "eligibility": "資格",
+    "about": "關於",
+    "favorites": "最愛",
+    "settings": "場景設定",
+    "accessibility": "AcceSSI能力",
+    "privacy": "PriVAcy",
+    "terms": "條款"
+  },
+  "search": {
+    "smartSearch": "智慧搜尋",
+    "smartSearchTooltip": "智慧搜尋利用 AI 理解你的問題並找到相關的程式。為了簡單的關鍵字匹配，請關閉它。",
+    "noResults": "找不到符合你搜尋的程式。",
+    "browseAll": "瀏覽所有節目",
+    "trySearching": "試著搜尋：",
+    "orAskQuestion": "或者提出一個問題：",
+    "resultsCount": "{count}程式{s}發現",
+    "aiPowered": "AI 驅動"
+  },
+  "fallback": {
+    "cantFind": "找不到你需要的東西？試試這些資源：",
+    "call211": "請致電2-1-1",
+    "call211Desc": "免費24小時轉介當地服務",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "免費法律協助：1-800-551-5554",
+    "calfresh": "GetCalFresh.org",
+    "calfreshDesc": "線上申請餐飲SSI立場",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "申請加州福利（CalFresh、Medi-Cal）"
+  },
+  "categories": {
+    "all": "全部",
+    "food": "食物",
+    "health": "健康",
+    "housing": "住宿",
+    "utilities": "公用事業",
+    "transportation": "交通",
+    "education": "教育背景",
+    "legal": "法律",
+    "finance": "財務",
+    "technology": "科技",
+    "recreation": "休閒",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "成年組",
+    "veterans": "老將",
+    "families": "家族",
+    "youth": "青年時期",
+    "disabled": "身心障礙者",
+    "lowIncome": "低收入",
+    "students": "學生",
+    "immigrants": "移民",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "資格",
+    "howToApply": "申請方式",
+    "whatTheyOffer": "他們提供的是什麼",
+    "website": "網站",
+    "phone": "電話",
+    "address": "地址",
+    "hours": "營業時間",
+    "verified": "已驗證",
+    "lastUpdated": "最後更新",
+    "directions": "取得路線指引",
+    "addToFavorites": "加入收藏",
+    "removeFromFavorites": "從收藏中移除"
+  },
+  "safety": {
+    "quickExit": "快速退出",
+    "quickExitTooltip": "請按下ESC或點擊以快速離開本網站",
+    "needHelp": "需要立即協助嗎？",
+    "call911": "請致電911",
+    "call988": "電話/簡訊988",
+    "chatOnline": "線上聊天",
+    "youreNotAlone": "你並不孤單。",
+    "crisisSupport": "免費且保密的24小時支援。退伍軍人按1，西班牙按2。"
+  },
+  "accessibility": {
+    "skipToContent": "跳至主要內容",
+    "skipToNav": "跳至導覽",
+    "textSize": "文字大小",
+    "contrast": "對比",
+    "colorblindMode": "色盲模式",
+    "reducedMotion": "減速運動"
+  },
+  "offline": {
+    "youreOffline": "你離線了",
+    "offlineMessage": "部分功能可能有限。連接網路以獲得完整功能。",
+    "smartSearchDisabled": "連接網路即可使用智慧搜尋。"
+  },
+  "print": {
+    "scanQR": "掃描以在線瀏覽此頁面或與他人分享"
+  },
+  "footer": {
+    "madeWith": "用",
+    "forBayArea": "灣區",
+    "dataFrom": "資料來源為511.org、Caltrans及Azure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

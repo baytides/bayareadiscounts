@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "Tu guía para ahorros y beneficios locales",
+    "search": "Búsqueda",
+    "searchPlaceholder": "Programas de búsqueda...",
+    "loading": "Cargando...",
+    "error": "Error",
+    "close": "Cierre",
+    "learnMore": "Aprende más",
+    "viewAll": "Ver todo",
+    "back": "Atrás",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "apply": "Solicita",
+    "clear": "¡Libre",
+    "filter": "Filtro",
+    "sort": "Ordenar",
+    "share": "Compartir",
+    "print": "Impresión",
+    "download": "Descargar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "directory": "Directorio",
+    "map": "Mapa",
+    "eligibility": "Elegibilidad",
+    "about": "Acerca de",
+    "favorites": "Favoritos",
+    "settings": "Configuración",
+    "accessibility": "AcceSSIbility",
+    "privacy": "PriVAcy",
+    "terms": "Términos"
+  },
+  "search": {
+    "smartSearch": "Búsqueda inteligente",
+    "smartSearchTooltip": "Smart Search utiliza IA para entender tu pregunta y encontrar programas releVAnt. Desactivarlo para una simple coincidencia de palabras clave.",
+    "noResults": "No se han encontrado programas que coincidan con tu búsqueda.",
+    "browseAll": "Explorar todos los programas",
+    "trySearching": "Prueba a buscar:",
+    "orAskQuestion": "O haz una pregunta:",
+    "resultsCount": "{count}programa{s}encontrado",
+    "aiPowered": "Impulsado por IA"
+  },
+  "fallback": {
+    "cantFind": "¿No encuentras lo que necesitas? Prueba estos recursos:",
+    "call211": "Llama a2-1-1",
+    "call211Desc": "Derivaciones gratuitas a servicios locales las 24 horas del día, los 7 días de la semana",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "Ayuda legal gratuita:1-800-551-5554",
+    "calfresh": "GetCalFresh.org",
+    "calfreshDesc": "Solicita la postura de alimentos en línea",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "Solicita las prestaciones de CA (CalFresh,Medi-Cal)"
+  },
+  "categories": {
+    "all": "Todo",
+    "food": "Víveres",
+    "health": "Salud",
+    "housing": "Vivienda",
+    "utilities": "Servicios públicos",
+    "transportation": "Transporte",
+    "education": "Educación",
+    "legal": "Legal",
+    "finance": "Finanzas",
+    "technology": "Tecnología",
+    "recreation": "Recreación",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "Seniors",
+    "veterans": "Veteranos",
+    "families": "Familias",
+    "youth": "Juventud",
+    "disabled": "Personas con discapacidad",
+    "lowIncome": "Bajos ingresos",
+    "students": "Estudiantes",
+    "immigrants": "Inmigrantes",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "Elegibilidad",
+    "howToApply": "Cómo solicitar",
+    "whatTheyOffer": "Lo que ofrecen",
+    "website": "Sitio web",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "hours": "Horarios",
+    "verified": "Verificado",
+    "lastUpdated": "Última actualización",
+    "directions": "Obtén indicaciones",
+    "addToFavorites": "Agregar a Favoritos",
+    "removeFromFavorites": "Eliminar de favoritos"
+  },
+  "safety": {
+    "quickExit": "Salida rápida",
+    "quickExitTooltip": "Pulsa ESC o haz clic para salir rápidamente de este sitio",
+    "needHelp": "¿Necesitas ayuda inmediata?",
+    "call911": "Llama a911",
+    "call988": "Llamada/Mensaje988",
+    "chatOnline": "Chatear en línea",
+    "youreNotAlone": "No estás solo.",
+    "crisisSupport": "Soporte gratuito y confidencial las 24 horas del día, los 7 días de la semana. Prensa de veteranos 1, prensa española 2."
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "skipToNav": "Saltar a la navegación",
+    "textSize": "Tamaño del texto",
+    "contrast": "Contraste",
+    "colorblindMode": "Modo daltónico",
+    "reducedMotion": "Movimiento reducido"
+  },
+  "offline": {
+    "youreOffline": "Estás desconectado",
+    "offlineMessage": "Algunas funciones pueden estar limitadas. Conéctate a internet para funcionar al completo.",
+    "smartSearchDisabled": "Conéctate a internet para usar la búsqueda inteligente."
+  },
+  "print": {
+    "scanQR": "Escanea para ver esta página en línea o compartirla con otros"
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "forBayArea": "para el Área de la Bahía",
+    "dataFrom": "Datos de511.org,CaltransyAzure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "Ang Iyong Gabay sa Mga Lokal na Pagtitipid at Benepisyo",
+    "search": "Paghahanap",
+    "searchPlaceholder": "Mga programa sa paghahanap ...",
+    "loading": "Naglo-load...",
+    "error": "Error",
+    "close": "Isara",
+    "learnMore": "Email Address *",
+    "viewAll": "Tingnan ang lahat",
+    "back": "Bumalik",
+    "next": "Susunod",
+    "previous": "Nakaraan",
+    "save": "I-save",
+    "cancel": "Kanselahin",
+    "apply": "Mag-aplay",
+    "clear": "I-clear",
+    "filter": "I-filter",
+    "sort": "Ayusin",
+    "share": "Ibahagi",
+    "print": "I-print",
+    "download": "I-download"
+  },
+  "nav": {
+    "home": "Tahanan",
+    "directory": "Direktoryo",
+    "map": "Mapa",
+    "eligibility": "Pagiging karapat-dapat",
+    "about": "Tungkol sa",
+    "favorites": "Mga Paborito",
+    "settings": "Mga Setting",
+    "accessibility": "AcceSSIbility",
+    "privacy": "PriVAcy",
+    "terms": "Mga Tuntunin"
+  },
+  "search": {
+    "smartSearch": "Email Address *",
+    "smartSearchTooltip": "Gumagamit ang Smart Search ng AI upang maunawaan ang iyong tanong at makahanap ng mga programang releVAnt. I-off ito para sa simpleng pagtutugma ng keyword.",
+    "noResults": "Walang natagpuang mga programa na tumutugma sa iyong paghahanap.",
+    "browseAll": "Mag-browse sa Lahat ng Mga Programa",
+    "trySearching": "Subukang maghanap para sa:",
+    "orAskQuestion": "O magtanong:",
+    "resultsCount": "{count}program{s}natagpuan",
+    "aiPowered": "Pinapatakbo ng AI"
+  },
+  "fallback": {
+    "cantFind": "Hindi mo ba mahanap ang kailangan mo? Subukan ang mga mapagkukunang ito:",
+    "call211": "Tumawag sa2-1-1",
+    "call211Desc": "Libreng referral sa mga lokal na serbisyo 24/7",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "Libreng legal na tulong:1-800-551-5554",
+    "calfresh": "GetCalFresh.org",
+    "calfreshDesc": "Mag-apply para sa pagkain aSSIpaninindigan online",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "Mag-aplay para sa mga benepisyo ng CA (CalFresh,Medi-Cal)"
+  },
+  "categories": {
+    "all": "Lahat",
+    "food": "Pagkain",
+    "health": "Kalusugan",
+    "housing": "Email Address *",
+    "utilities": "Mga Utility",
+    "transportation": "Transportasyon",
+    "education": "Edukasyon",
+    "legal": "Legal",
+    "finance": "Pananalapi",
+    "technology": "Teknolohiya",
+    "recreation": "Libangan",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "Mga nakatatanda",
+    "veterans": "Mga Beterano",
+    "families": "Mga Pamilya",
+    "youth": "Kabataan",
+    "disabled": "Mga taong may kapansanan",
+    "lowIncome": "Mababang Kita",
+    "students": "Mga mag-aaral",
+    "immigrants": "Mga Imigrante",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "Pagiging karapat-dapat",
+    "howToApply": "Paano Mag-aplay",
+    "whatTheyOffer": "Ano ang Inaalok Nila",
+    "website": "Website",
+    "phone": "Telepono",
+    "address": "Email Address",
+    "hours": "Mga Oras",
+    "verified": "Na-verify",
+    "lastUpdated": "Huling na-update",
+    "directions": "Email Address *",
+    "addToFavorites": "Email Address *",
+    "removeFromFavorites": "Alisin mula sa mga paborito"
+  },
+  "safety": {
+    "quickExit": "Mabilis na Paglabas",
+    "quickExitTooltip": "Pindutin ang ESC o i-click upang mabilis na umalis sa site na ito",
+    "needHelp": "Kailangan mo ba ng agarang tulong?",
+    "call911": "Tumawag sa911",
+    "call988": "Tawag/Text988",
+    "chatOnline": "Makipag-chat Online",
+    "youreNotAlone": "Hindi ka nag-iisa.",
+    "crisisSupport": "Libre, kumpidensyal na 24/7 na suporta. Veterans press 1, Spanish press 2."
+  },
+  "accessibility": {
+    "skipToContent": "Email Address *",
+    "skipToNav": "Email Address *",
+    "textSize": "Laki ng Teksto",
+    "contrast": "Paghahambing",
+    "colorblindMode": "Colorblind Mode",
+    "reducedMotion": "Nabawasan ang Paggalaw"
+  },
+  "offline": {
+    "youreOffline": "Offline ka na",
+    "offlineMessage": "Ang ilang mga tampok ay maaaring limitado. Kumonekta sa internet para sa ganap na pag-andar.",
+    "smartSearchDisabled": "Kumonekta sa internet upang magamit ang matalinong paghahanap."
+  },
+  "print": {
+    "scanQR": "I-scan upang tingnan ang pahinang ito online o ibahagi sa iba"
+  },
+  "footer": {
+    "madeWith": "Ginawa gamit ang",
+    "forBayArea": "para sa Bay Area",
+    "dataFrom": "Datos mula sa511.org,CaltransatAzure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

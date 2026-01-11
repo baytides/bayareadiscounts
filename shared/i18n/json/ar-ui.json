@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "دليلك للادخار والمزايا المحلية",
+    "search": "البحث",
+    "searchPlaceholder": "برامج البحث...",
+    "loading": "جار التحميل...",
+    "error": "خطأ",
+    "close": "إغلاق",
+    "learnMore": "التعرف على المزيد",
+    "viewAll": "عرض الجميع",
+    "back": "العودة",
+    "next": "التالي",
+    "previous": "السابق",
+    "save": "حفظ",
+    "cancel": "إلغاء الأمر",
+    "apply": "قدم",
+    "clear": "واضح",
+    "filter": "الفلتر",
+    "sort": "الترتيب",
+    "share": "شارك",
+    "print": "الطباعة",
+    "download": "تحميل"
+  },
+  "nav": {
+    "home": "المنزل",
+    "directory": "الدليل",
+    "map": "الخريطة",
+    "eligibility": "الأهلية",
+    "about": "حول",
+    "favorites": "المفضلات",
+    "settings": "الإعدادات",
+    "accessibility": "AcceSSIالصفقة",
+    "privacy": "PriVAcy",
+    "terms": "المصطلحات"
+  },
+  "search": {
+    "smartSearch": "البحث الذكي",
+    "smartSearchTooltip": "يستخدم البحث الذكي الذكاء الاصطناعي لفهم سؤالك والعثور على برامج rele[[DNT35]nt. قم بإيقافه لمطابقة الكلمات المفتاحية البسيطة.",
+    "noResults": "لم يتم العثور على برامج تطابق بحثك.",
+    "browseAll": "تصفح جميع البرامج",
+    "trySearching": "حاول البحث عن:",
+    "orAskQuestion": "أو اطرح سؤالا:",
+    "resultsCount": "{count}برنامج{s}تم العثور عليه",
+    "aiPowered": "مدعوم الذكاء الاصطناعي"
+  },
+  "fallback": {
+    "cantFind": "لا تستطيع إيجاد ما تحتاجه؟ جرب هذه الموارد:",
+    "call211": "اتصل ب2-1-1",
+    "call211Desc": "إحالات مجانية للخدمات المحلية على مدار الساعة طوال أيام الأسبوع",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "مساعدة قانونية مجانية:1-800-551-5554",
+    "calfresh": "احصل علىCalFresh.org",
+    "calfreshDesc": "قدم طلبا للحصول على موقف طعام عبر الإنترنت",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "التقديم على مزايا كاليفورنيا (CalFresh،Medi-Cal)"
+  },
+  "categories": {
+    "all": "الجميع",
+    "food": "الطعام",
+    "health": "الصحة",
+    "housing": "الإسكان",
+    "utilities": "المرافق",
+    "transportation": "النقل",
+    "education": "التعليم",
+    "legal": "القانون",
+    "finance": "المالية",
+    "technology": "التقنية",
+    "recreation": "الترفيه",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "الخريجون",
+    "veterans": "المحاربون القدامى",
+    "families": "العائلات",
+    "youth": "الشباب",
+    "disabled": "الأشخاص ذوو الإعاقة",
+    "lowIncome": "الدخل المنخفض",
+    "students": "الطلاب",
+    "immigrants": "المهاجرون",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "الأهلية",
+    "howToApply": "كيفية التقديم",
+    "whatTheyOffer": "ما يقدمونه",
+    "website": "الموقع الإلكتروني",
+    "phone": "الهاتف",
+    "address": "العنوان",
+    "hours": "ساعات العمل",
+    "verified": "تم التأكيد",
+    "lastUpdated": "آخر تحديث",
+    "directions": "احصل على الاتجاهات",
+    "addToFavorites": "إضافة إلى المفضلة",
+    "removeFromFavorites": "إزالة من المفضلات"
+  },
+  "safety": {
+    "quickExit": "الخروج السريع",
+    "quickExitTooltip": "اضغط ESC أو انقر لمغادرة هذا الموقع بسرعة",
+    "needHelp": "هل تحتاج مساعدة فورية؟",
+    "call911": "اتصل ب911",
+    "call988": "الاتصال/الرسالة النصية988",
+    "chatOnline": "دردشة أونلاين",
+    "youreNotAlone": "أنت لست وحدك.",
+    "crisisSupport": "دعم مجاني وسري على مدار الساعة طوال أيام الأسبوع. المخضرمون 1، الإسبانية 2."
+  },
+  "accessibility": {
+    "skipToContent": "تخطي إلى المحتوى الرئيسي",
+    "skipToNav": "تخطي إلى التنقل",
+    "textSize": "حجم النص",
+    "contrast": "التباين",
+    "colorblindMode": "وضع عمى الألوان",
+    "reducedMotion": "الحركة المخفضة"
+  },
+  "offline": {
+    "youreOffline": "أنت غير متصل",
+    "offlineMessage": "قد تكون بعض الميزات محدودة. اتصل بالإنترنت للحصول على كامل وظائفك.",
+    "smartSearchDisabled": "اتصل بالإنترنت لاستخدام البحث الذكي."
+  },
+  "print": {
+    "scanQR": "قم بمسح هذه الصفحة عبر الإنترنت أو شاركها مع الآخرين"
+  },
+  "footer": {
+    "madeWith": "صنع ب",
+    "forBayArea": "لمنطقة الخليج",
+    "dataFrom": "البيانات من511.org،CaltransوAzure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

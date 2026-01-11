@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "Hướng dẫn của bạn về tiết kiệm và phúc lợi địa phương",
+    "search": "Tìm kiếm",
+    "searchPlaceholder": "Tìm kiếm chương trình...",
+    "loading": "Đang tải...",
+    "error": "lỗi",
+    "close": "Đóng",
+    "learnMore": "Tìm hiểu thêm",
+    "viewAll": "Xem tất cả",
+    "back": "Quay lại",
+    "next": "Kế tiếp",
+    "previous": "Trước",
+    "save": "Lưu",
+    "cancel": "Hủy bỏ",
+    "apply": "Đăng ký",
+    "clear": "Xóa",
+    "filter": "Bộ lọc",
+    "sort": "Sắp xếp",
+    "share": "Chia sẻ",
+    "print": "In ấn",
+    "download": "Tải về"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "directory": "Thư mục",
+    "map": "Bản đồ",
+    "eligibility": "Điều Kiện Cần Có",
+    "about": "Giới thiệu",
+    "favorites": "Yêu thích",
+    "settings": "Cài đặt",
+    "accessibility": "Khả năng truy cậpSSI",
+    "privacy": "PriVAcy",
+    "terms": "Điều khoản"
+  },
+  "search": {
+    "smartSearch": "Tìm kiếm thông minh",
+    "smartSearchTooltip": "Tìm kiếm thông minh sử dụng AI để hiểu câu hỏi của bạn và tìm các chương trình liên quan. Tắt tính năng này để khớp từ khóa đơn giản.",
+    "noResults": "Không tìm thấy chương trình nào phù hợp với tìm kiếm của bạn.",
+    "browseAll": "Duyệt qua tất cả các chương trình",
+    "trySearching": "Thử tìm kiếm:",
+    "orAskQuestion": "Hoặc đặt một câu hỏi:",
+    "resultsCount": "Tìm thấy chương trình{count}{s}",
+    "aiPowered": "Hỗ trợ AI"
+  },
+  "fallback": {
+    "cantFind": "Không thể tìm thấy những gì bạn cần? Hãy thử các tài nguyên sau:",
+    "call211": "Gọi2-1-1",
+    "call211Desc": "Giới thiệu miễn phí đến các dịch vụ địa phương 24/7",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "Trợ giúp pháp lý miễn phí:1-800-551-5554",
+    "calfresh": "NhậnCalFresh.org",
+    "calfreshDesc": "Đăng ký thực phẩm aSSItrực tuyến",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "Nộp đơn xin trợ cấp CA (CalFresh,Medi-Cal)"
+  },
+  "categories": {
+    "all": "Tất cả",
+    "food": "Món ăn",
+    "health": "Sức khỏe",
+    "housing": "Nhà ở",
+    "utilities": "Tiện ích",
+    "transportation": "Giao thông vận tải",
+    "education": "Giáo dục",
+    "legal": "Pháp lý",
+    "finance": "Tài chính",
+    "technology": "Công nghệ",
+    "recreation": "Giải trí",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "Người cao tuổi",
+    "veterans": "Cựu chiến binh",
+    "families": "Gia đình",
+    "youth": "Tuổi trẻ",
+    "disabled": "Người khuyết tật",
+    "lowIncome": "Thu nhập thấp",
+    "students": "Sinh viên",
+    "immigrants": "Người nhập cư",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "Điều Kiện Cần Có",
+    "howToApply": "Làm thế nào để đăng ký",
+    "whatTheyOffer": "Những gì họ cung cấp",
+    "website": "Trang mạng",
+    "phone": "Điện thoại",
+    "address": "Địa chỉ",
+    "hours": "Giờ",
+    "verified": "Đã xác minh",
+    "lastUpdated": "Cập nhật mới nhất",
+    "directions": "Nhận chỉ đường",
+    "addToFavorites": "Thêm vào mục yêu thích",
+    "removeFromFavorites": "Xóa khỏi mục yêu thích"
+  },
+  "safety": {
+    "quickExit": "Thoát nhanh",
+    "quickExitTooltip": "Nhấn ESC hoặc nhấp để nhanh chóng rời khỏi trang web này",
+    "needHelp": "Cần trợ giúp ngay lập tức?",
+    "call911": "Gọi911",
+    "call988": "Gọi/Nhắn tin988",
+    "chatOnline": "Trò chuyện trực tuyến",
+    "youreNotAlone": "Bạn không đơn độc.",
+    "crisisSupport": "Hỗ trợ miễn phí, bảo mật 24/7. Báo chí Cựu chiến binh 1, báo chí Tây Ban Nha 2."
+  },
+  "accessibility": {
+    "skipToContent": "Chuyển đến nội dung chính",
+    "skipToNav": "Chuyển đến điều hướng",
+    "textSize": "Kích thước văn bản",
+    "contrast": "Tương phản",
+    "colorblindMode": "Chế độ mù màu",
+    "reducedMotion": "Giảm chuyển động"
+  },
+  "offline": {
+    "youreOffline": "Bạn đang ngoại tuyến",
+    "offlineMessage": "Một số tính năng có thể bị hạn chế. Kết nối với internet để có đầy đủ chức năng.",
+    "smartSearchDisabled": "Kết nối với internet để sử dụng tìm kiếm thông minh."
+  },
+  "print": {
+    "scanQR": "Quét để xem trang này trực tuyến hoặc chia sẻ với người khác"
+  },
+  "footer": {
+    "madeWith": "Được làm với",
+    "forBayArea": "cho Vùng Vịnh",
+    "dataFrom": "Dữ liệu lấy từ511.org,Caltrans&Azure Maps",
+    "copyright": "Bay Navigator"
+  }
+}

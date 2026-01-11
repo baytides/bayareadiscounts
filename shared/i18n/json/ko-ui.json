@@ -1,0 +1,129 @@
+{
+  "common": {
+    "siteName": "Bay Navigator",
+    "siteTagline": "지역 절약 및 혜택 가이드",
+    "search": "검색",
+    "searchPlaceholder": "검색 프로그램...",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "close": "닫습니다",
+    "learnMore": "더 알아보세요",
+    "viewAll": "모두 보기",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전",
+    "save": "저장",
+    "cancel": "취소",
+    "apply": "지원",
+    "clear": "비켜",
+    "filter": "필터",
+    "sort": "정렬",
+    "share": "공유",
+    "print": "인쇄",
+    "download": "다운로드"
+  },
+  "nav": {
+    "home": "홈",
+    "directory": "디렉토리",
+    "map": "지도",
+    "eligibility": "자격 요건",
+    "about": "소개",
+    "favorites": "좋아하는 선수들",
+    "settings": "설정",
+    "accessibility": "능력SSI능력",
+    "privacy": "프리VAcy",
+    "terms": "용어"
+  },
+  "search": {
+    "smartSearch": "스마트 검색",
+    "smartSearchTooltip": "스마트 검색은 AI를 사용해 질문을 이해하고 관련 프로그램을 찾아줍니다. 간단한 키워드 매칭을 위해 꺼두세요.",
+    "noResults": "검색하신 내용에 맞는 프로그램은 찾지 못했습니다.",
+    "browseAll": "모든 프로그램 둘러보기",
+    "trySearching": "다음 항목을 검색해 보세요:",
+    "orAskQuestion": "또는 질문을 해보세요:",
+    "resultsCount": "{count}프로그램{s}발견",
+    "aiPowered": "AI 기반"
+  },
+  "fallback": {
+    "cantFind": "필요한 걸 못 찾겠어? 다음 자료들을 시도해 보세요:",
+    "call211": "전화2-1-1",
+    "call211Desc": "지역 서비스에 대한 무료 24시간 상담",
+    "legalAid": "Bay Area Legal Aid",
+    "legalAidDesc": "무료 법률 도움: [[전화0]]",
+    "calfresh": "GetCalFresh.org",
+    "calfreshDesc": "온라인으로 식품 신청 하세요SSI자세",
+    "benefitsCal": "BenefitsCal",
+    "benefitsCalDesc": "CA 혜택 신청하세요 (CalFresh,Medi-Cal)"
+  },
+  "categories": {
+    "all": "모두",
+    "food": "음식",
+    "health": "건강",
+    "housing": "주거",
+    "utilities": "유틸리티",
+    "transportation": "교통",
+    "education": "교육",
+    "legal": "법적",
+    "finance": "재정",
+    "technology": "기술",
+    "recreation": "레크리에이션",
+    "community": "ComMunity"
+  },
+  "groups": {
+    "seniors": "시니어",
+    "veterans": "베테랑",
+    "families": "가족",
+    "youth": "청년 시절",
+    "disabled": "장애인",
+    "lowIncome": "저소득층",
+    "students": "학생들",
+    "immigrants": "이민자",
+    "lgbtq": "LGBTQ+"
+  },
+  "program": {
+    "eligibility": "자격 요건",
+    "howToApply": "지원 방법",
+    "whatTheyOffer": "그들이 제공하는 것들",
+    "website": "웹사이트",
+    "phone": "전화",
+    "address": "주소",
+    "hours": "운영 시간",
+    "verified": "검증됨",
+    "lastUpdated": "마지막 업데이트",
+    "directions": "길 안내 받기",
+    "addToFavorites": "즐겨찾기에 추가",
+    "removeFromFavorites": "즐겨찾기에서 삭제하세요"
+  },
+  "safety": {
+    "quickExit": "빠른 퇴장",
+    "quickExitTooltip": "ESC를 누르거나 클릭하여 이 사이트를 빠르게 종료하세요",
+    "needHelp": "즉각적인 도움이 필요하신가요?",
+    "call911": "[[DNT11]에 전화하세요",
+    "call988": "전화/문자988",
+    "chatOnline": "온라인 채팅",
+    "youreNotAlone": "너 혼자가 아니야.",
+    "crisisSupport": "무료, 비밀 보장 24시간 지원. 베테랑 1번, 스페인 측 2번."
+  },
+  "accessibility": {
+    "skipToContent": "주요 내용으로 건너뛰기",
+    "skipToNav": "탐색으로 건너뛰기",
+    "textSize": "텍스트 크기",
+    "contrast": "대조",
+    "colorblindMode": "색맹 모드",
+    "reducedMotion": "저축 운동"
+  },
+  "offline": {
+    "youreOffline": "당신은 오프라인입니다",
+    "offlineMessage": "일부 기능은 제한될 수 있습니다. 완전한 기능을 위해 인터넷에 연결하세요.",
+    "smartSearchDisabled": "스마트 검색을 사용하려면 인터넷에 연결하세요."
+  },
+  "print": {
+    "scanQR": "이 페이지를 온라인으로 보거나 다른 사람과 공유하려면 스캔하세요"
+  },
+  "footer": {
+    "madeWith": "만들어진 재료로",
+    "forBayArea": "베이 에어리어를 위해",
+    "dataFrom": "511.org,Caltrans및Azure Maps",
+    "copyright": "Bay Navigator"
+  }
+}
