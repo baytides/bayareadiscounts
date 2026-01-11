@@ -144,15 +144,48 @@ async function fetchStops(operatorId) {
 }
 
 /**
+ * Clean up station name by removing redundant suffixes
+ * @param {string} name - Original station name
+ * @param {string} operatorName - Operator name (for context)
+ * @returns {string} Cleaned station name
+ */
+function cleanStationName(name, operatorName) {
+  if (!name) return name;
+
+  // Remove direction suffixes that make labels verbose
+  let cleaned = name
+    // Remove parenthetical platform/transfer info
+    .replace(/\s*\([^)]*(?:Platform|Transfer|Boarding)[^)]*\)/gi, '')
+    // Remove direction suffixes
+    .replace(/\s+(Northbound|Southbound|Eastbound|Westbound|NB|SB|EB|WB)$/i, '')
+    .replace(/\s+Station\s+(Northbound|Southbound|Eastbound|Westbound)$/i, '')
+    // Remove operator name + Station suffix
+    .replace(/\s+Caltrain\s+Station$/i, '') // "Menlo Park Caltrain Station" -> "Menlo Park"
+    .replace(/\s+BART\s+Station$/i, '') // "Embarcadero BART Station" -> "Embarcadero"
+    .replace(/\s+Station$/i, '') // Generic "Station" suffix
+    // Remove trailing "- Gate X" for ferry terminals
+    .replace(/\s*-\s*Gate\s+\w+$/i, '')
+    .trim();
+
+  // Special handling: if the name is just the operator name, keep it as-is
+  if (cleaned.toLowerCase() === operatorName?.toLowerCase()) {
+    return cleaned;
+  }
+
+  return cleaned;
+}
+
+/**
  * Deduplicate stops by parent station
  * Many stops have multiple platforms - we want unique stations
  */
-function deduplicateStops(stops) {
+function deduplicateStops(stops, operatorName = '') {
   const stationMap = new Map();
 
   stops.forEach((stop) => {
     const parentId = stop.Extensions?.ParentStation || stop.id;
-    const name = stop.Name;
+    const rawName = stop.Name;
+    const name = cleanStationName(rawName, operatorName);
 
     // Use parent station ID to group platforms
     if (!stationMap.has(parentId)) {
@@ -187,11 +220,11 @@ function haversineDistance(lat1, lng1, lat2, lng2) {
 
 /**
  * Consolidate nearby rail/ferry stations from different operators
- * Bus stops are NOT consolidated due to their density
+ * Also identifies bus operators that serve rail/ferry stations
  * Returns consolidated features and a map of consolidated station info
  */
-function consolidateStations(features, threshold = 200) {
-  // Only consolidate rail and ferry - bus stops are too dense
+function consolidateStations(features, railThreshold = 200, busThreshold = 100) {
+  // Separate rail/ferry from bus
   const railFerryFeatures = features.filter(
     (f) => f.properties.type === 'rail' || f.properties.type === 'ferry'
   );
@@ -199,10 +232,10 @@ function consolidateStations(features, threshold = 200) {
 
   // Group nearby rail/ferry stations
   const consolidated = [];
-  const used = new Set();
+  const usedRailFerry = new Set();
 
   for (let i = 0; i < railFerryFeatures.length; i++) {
-    if (used.has(i)) continue;
+    if (usedRailFerry.has(i)) continue;
 
     const feature = railFerryFeatures[i];
     const [lng, lat] = feature.geometry.coordinates;
@@ -215,9 +248,9 @@ function consolidateStations(features, threshold = 200) {
       },
     ];
 
-    // Find nearby stations from other operators
+    // Find nearby rail/ferry stations from other operators
     for (let j = i + 1; j < railFerryFeatures.length; j++) {
-      if (used.has(j)) continue;
+      if (usedRailFerry.has(j)) continue;
 
       const other = railFerryFeatures[j];
       const [otherLng, otherLat] = other.geometry.coordinates;
@@ -226,8 +259,8 @@ function consolidateStations(features, threshold = 200) {
       // Same operator stations should not be consolidated
       if (other.properties.operatorId === feature.properties.operatorId) continue;
 
-      if (distance <= threshold) {
-        used.add(j);
+      if (distance <= railThreshold) {
+        usedRailFerry.add(j);
         operators.push({
           id: other.properties.operatorId,
           name: other.properties.operator,
@@ -237,7 +270,29 @@ function consolidateStations(features, threshold = 200) {
       }
     }
 
-    used.add(i);
+    // Find bus operators that serve this rail/ferry station
+    // Use a tighter threshold since bus stops are very close to stations
+    const busOperatorsAtStation = new Set();
+    for (const busStop of busFeatures) {
+      const [busLng, busLat] = busStop.geometry.coordinates;
+      const distance = haversineDistance(lat, lng, busLat, busLng);
+
+      if (distance <= busThreshold) {
+        const busOpId = busStop.properties.operatorId;
+        // Only add each bus operator once
+        if (!busOperatorsAtStation.has(busOpId)) {
+          busOperatorsAtStation.add(busOpId);
+          operators.push({
+            id: busOpId,
+            name: busStop.properties.operator,
+            color: busStop.properties.color,
+            type: 'bus',
+          });
+        }
+      }
+    }
+
+    usedRailFerry.add(i);
 
     if (operators.length > 1) {
       // Consolidated station - multiple operators
@@ -246,11 +301,21 @@ function consolidateStations(features, threshold = 200) {
       // Use the first rail operator's color, or first operator's color
       const primaryOperator = operators.find((o) => o.type === 'rail') || operators[0];
 
+      // Create "Transit Center" name for multi-operator stations
+      const baseName = feature.properties.name;
+      // Remove any existing "Station" suffix before adding "Transit Center"
+      const cleanBaseName = baseName.replace(/\s+Station$/i, '').trim();
+      const transitCenterName = `${cleanBaseName} Transit Center`;
+
+      // Create services description (e.g., "BART, Caltrain, SamTrans")
+      const services = operators.map((o) => o.name).join(', ');
+
       consolidated.push({
         type: 'Feature',
         properties: {
           id: `consolidated-${feature.properties.id}`,
-          name: feature.properties.name,
+          name: transitCenterName,
+          services: services, // Human-readable list of transit services
           operator: operatorNames,
           operatorId: operatorIds,
           operators: operators,
@@ -290,8 +355,8 @@ async function syncTransitData() {
       continue;
     }
 
-    // Deduplicate stops
-    const uniqueStations = deduplicateStops(stops);
+    // Deduplicate stops and clean names
+    const uniqueStations = deduplicateStops(stops, operator.name);
     console.log(`  Deduplicated to ${uniqueStations.length} unique stations`);
 
     // Convert to GeoJSON features

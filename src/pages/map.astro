@@ -1952,6 +1952,7 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
 
       // Transit layer state
       let transitData: any = null;
+      let transitRoutesData: any = null;
       let transitLayersAdded = false;
       let activeOperators = new Set<string>();
 
@@ -2620,6 +2621,19 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
           }
         }
 
+        // Load transit route lines from API
+        async function loadTransitRoutes() {
+          if (transitRoutesData) return transitRoutesData;
+          try {
+            const response = await fetch('/api/transit-routes.json');
+            transitRoutesData = await response.json();
+            return transitRoutesData;
+          } catch (error) {
+            console.error('Failed to load transit routes:', error);
+            return null;
+          }
+        }
+
         // Create operator checkbox UI
         function createOperatorCheckbox(operator: any) {
           const label = document.createElement('label');
@@ -2683,8 +2697,58 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
         }
 
         // Add/update transit layers on map
-        function addTransitLayers() {
+        async function addTransitLayers() {
           if (!transitData || transitLayersAdded) return;
+
+          // Load route lines data
+          const routesData = await loadTransitRoutes();
+
+          // Add source for transit route lines (if available)
+          if (routesData) {
+            map.addSource('transit-routes', {
+              type: 'geojson',
+              data: routesData as any,
+            });
+
+            // Transit route lines layer - rendered below stops
+            map.addLayer({
+              id: 'transit-routes',
+              type: 'line',
+              source: 'transit-routes',
+              paint: {
+                'line-color': ['get', 'color'],
+                'line-width': ['interpolate', ['linear'], ['zoom'], 8, 2, 12, 4, 16, 6],
+                'line-opacity': 0.85,
+              },
+              layout: {
+                'line-cap': 'round',
+                'line-join': 'round',
+                visibility: 'none',
+              },
+              filter: ['==', ['get', 'operatorId'], ''], // Start with nothing visible
+            });
+
+            // Route line casing (outline) for better visibility
+            map.addLayer(
+              {
+                id: 'transit-routes-casing',
+                type: 'line',
+                source: 'transit-routes',
+                paint: {
+                  'line-color': '#ffffff',
+                  'line-width': ['interpolate', ['linear'], ['zoom'], 8, 4, 12, 7, 16, 10],
+                  'line-opacity': 0.5,
+                },
+                layout: {
+                  'line-cap': 'round',
+                  'line-join': 'round',
+                  visibility: 'none',
+                },
+                filter: ['==', ['get', 'operatorId'], ''], // Start with nothing visible
+              },
+              'transit-routes' // Insert below the main route line
+            );
+          }
 
           // Add source with all transit stops
           map.addSource('transit-stops', {
@@ -2740,6 +2804,7 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
               number,
               number,
             ];
+            const [lng, lat] = coords;
 
             // Build popup content
             const operatorLinks: Record<string, string> = {
@@ -2762,6 +2827,31 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
               CE: `https://acerail.com`,
               AM: `https://www.capitolcorridor.org`,
             };
+
+            // Service alerts links (511.org transit page)
+            const alertsLinks: Record<string, string> = {
+              BA: 'https://511.org/transit/bart',
+              CT: 'https://511.org/transit/caltrain',
+              SF: 'https://511.org/transit/sf-muni',
+              AC: 'https://511.org/transit/ac-transit',
+              SC: 'https://511.org/transit/vta',
+              SM: 'https://511.org/transit/samtrans',
+              GG: 'https://511.org/transit/golden-gate-transit',
+              SA: 'https://511.org/transit/smart',
+              GF: 'https://511.org/transit/golden-gate-ferry',
+              SB: 'https://511.org/transit/sf-bay-ferry',
+              CC: 'https://511.org/transit/county-connection',
+              WH: 'https://511.org/transit/wheels',
+              MA: 'https://511.org/transit/marin-transit',
+              '3D': 'https://511.org/transit/tri-delta-transit',
+              WC: 'https://511.org/transit/westcat',
+              UC: 'https://511.org/transit/union-city-transit',
+              CE: 'https://511.org/transit/ace',
+              AM: 'https://511.org/transit/capitol-corridor',
+            };
+
+            // OpenStreetMap link for directions
+            const osmLink = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=17/${lat}/${lng}`;
 
             // Check if this is a consolidated station
             let operatorsHtml = '';
@@ -2795,19 +2885,55 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
               `;
             }
 
-            const primaryLink = operatorLinks[props.operatorId?.split(',')[0]] || '#';
+            const primaryOpId = props.operatorId?.split(',')[0] || '';
+            const primaryLink = operatorLinks[primaryOpId] || '#';
+            const alertsLink = alertsLinks[primaryOpId] || 'https://511.org/transit';
 
-            new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
+            // Build action links
+            const actionsHtml = `
+              <div class="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-600 flex flex-wrap gap-2">
+                <a href="${osmLink}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 text-xs text-primary-700 dark:text-primary-300 hover:underline">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  Directions
+                </a>
+                <a href="${alertsLink}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 text-xs text-amber-700 dark:text-amber-300 hover:underline">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                  Service Alerts
+                </a>
+                <a href="${primaryLink}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 text-xs text-neutral-600 dark:text-neutral-300 hover:underline">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  Agency Info
+                </a>
+              </div>
+            `;
+
+            // Build description based on station type
+            const descriptionHtml = props.isConsolidated
+              ? `<p class="text-xs text-neutral-600 dark:text-neutral-300">Services: ${props.services || props.operator}</p>`
+              : `<p class="text-xs text-neutral-600 dark:text-neutral-300">${props.operator} · ${props.type}</p>`;
+
+            new maplibregl.Popup({ offset: 10, maxWidth: '300px' })
               .setLngLat(coords)
               .setHTML(
                 `
                 <div class="p-2">
                   <div class="flex items-center gap-2 mb-1">
-                    <span class="w-3 h-3 rounded-full" style="background-color: ${props.color}"></span>
+                    <span class="w-3 h-3 rounded-full flex-shrink-0" style="background-color: ${props.color}"></span>
                     <span class="font-semibold text-sm">${props.name}</span>
                   </div>
-                  <p class="text-xs text-neutral-600 dark:text-neutral-300">${props.isConsolidated ? 'Multi-operator station' : `${props.operator} · ${props.type}`}</p>
-                  ${props.isConsolidated ? operatorsHtml : `<a href="${primaryLink}" target="_blank" rel="noopener" class="text-xs text-primary-600 hover:underline">Agency info →</a>`}
+                  ${descriptionHtml}
+                  ${props.isConsolidated ? operatorsHtml : ''}
+                  ${actionsHtml}
                 </div>
               `
               )
@@ -2825,33 +2951,52 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
         }
 
         // Update layer visibility based on selected operators
-        function updateTransitLayers() {
+        async function updateTransitLayers() {
           if (!transitLayersAdded) {
-            addTransitLayers();
+            await addTransitLayers();
           }
 
           const hasActive = activeOperators.size > 0;
+          const hasRoutes = map.getSource('transit-routes');
 
           if (hasActive) {
             // Build filter for active operators
             // Handle both single operator IDs and comma-separated consolidated IDs
             const operatorArray = Array.from(activeOperators);
-            const filter = [
+            const stopsFilter = [
               'any',
               ['in', ['get', 'operatorId'], ['literal', operatorArray]],
               // For consolidated stations, check if any active operator is in the comma-separated list
               ...operatorArray.map((opId) => ['in', opId, ['string', ['get', 'operatorId']]]),
             ];
-            map.setFilter('transit-stops', filter as any);
-            map.setFilter('transit-labels', filter as any);
+
+            // Route filter - simpler since routes don't have consolidated IDs
+            const routesFilter = ['in', ['get', 'operatorId'], ['literal', operatorArray]];
+
+            map.setFilter('transit-stops', stopsFilter as any);
+            map.setFilter('transit-labels', stopsFilter as any);
             map.setLayoutProperty('transit-stops', 'visibility', 'visible');
             map.setLayoutProperty('transit-labels', 'visibility', 'visible');
+
+            // Show route lines if source exists
+            if (hasRoutes) {
+              map.setFilter('transit-routes', routesFilter as any);
+              map.setFilter('transit-routes-casing', routesFilter as any);
+              map.setLayoutProperty('transit-routes', 'visibility', 'visible');
+              map.setLayoutProperty('transit-routes-casing', 'visibility', 'visible');
+            }
 
             // Update count badge (combined with traffic)
             updateLayersCount();
           } else {
             map.setLayoutProperty('transit-stops', 'visibility', 'none');
             map.setLayoutProperty('transit-labels', 'visibility', 'none');
+
+            // Hide route lines if source exists
+            if (hasRoutes) {
+              map.setLayoutProperty('transit-routes', 'visibility', 'none');
+              map.setLayoutProperty('transit-routes-casing', 'visibility', 'none');
+            }
 
             // Update count badge (combined with traffic)
             updateLayersCount();

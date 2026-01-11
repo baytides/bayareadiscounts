@@ -1,5 +1,5 @@
 # Bay Area Transit Agencies
-# Generated from 511.org API on 2026-01-10
+# Generated from 511.org API on 2026-01-11
 # Do not edit manually - run scripts/sync-511-transit.cjs to update
 
 agencies:
@@ -27,7 +27,7 @@ agencies:
     name: 'VTA'
     type: 'bus'
     color: '#0065b8'
-    stations: 3134
+    stations: 3129
   - id: 'SM'
     name: 'SamTrans'
     type: 'bus'
