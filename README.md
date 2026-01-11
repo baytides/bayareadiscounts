@@ -336,6 +336,24 @@ This project is maintained by volunteers who believe in making community resourc
 
 ---
 
+## Contributors
+
+Thanks to these wonderful people who have contributed to Bay Navigator:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+To add a contributor, comment on an issue or PR with:
+`@all-contributors please add @username for code, content, doc, etc.`
+
+See the [Emoji Key](https://allcontributors.org/docs/en/emoji-key) for contribution types.
+
+---
+
 ## 📝 License
 
 This project uses a dual-license model to ensure proper attribution while maximizing reuse:

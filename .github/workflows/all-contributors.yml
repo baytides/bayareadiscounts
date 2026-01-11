@@ -1,0 +1,24 @@
+name: All Contributors
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  add-contributor:
+    if: |
+      github.event.issue.pull_request == null &&
+      contains(github.event.comment.body, '@all-contributors')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: All Contributors Bot
+        uses: all-contributors/all-contributors-bot@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
