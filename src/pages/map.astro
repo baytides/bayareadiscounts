@@ -3302,6 +3302,43 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
 
         // Traffic flow checkbox handler (separate since it uses Azure Maps tiles)
         trafficFlowCheckbox?.addEventListener('change', updateTrafficFlowLayer);
+
+        // Legend panel toggle (combined filters & layers panel)
+        // Must be inside map.on('load') to access transit/traffic functions
+        const legendClose = document.getElementById('legend-close');
+
+        function openLegendPanel() {
+          legendPanel?.classList.remove('hidden');
+          legendToggle?.classList.add('hidden');
+          legendToggle?.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeLegendPanel() {
+          legendPanel?.classList.add('hidden');
+          legendToggle?.classList.remove('hidden');
+          legendToggle?.setAttribute('aria-expanded', 'false');
+        }
+
+        legendToggle?.addEventListener('click', async () => {
+          openLegendPanel();
+
+          // Initialize transit on first open
+          if (!transitData) {
+            await initTransitPanel();
+            addTransitLayers();
+          }
+          // Initialize traffic on first open
+          if (!trafficLayersAdded) {
+            await addTrafficLayers();
+            // Sync layer visibility with checkbox states
+            updateTrafficLayers();
+            updateTrafficFlowLayer();
+          }
+        });
+
+        legendClose?.addEventListener('click', () => {
+          closeLegendPanel();
+        });
       } catch (error) {
         console.error('Error loading programs:', error);
         if (loadingEl) {
@@ -3313,42 +3350,6 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
           `;
         }
       }
-    });
-
-    // Legend panel toggle (combined filters & layers panel)
-    const legendClose = document.getElementById('legend-close');
-
-    function openLegendPanel() {
-      legendPanel?.classList.remove('hidden');
-      legendToggle?.classList.add('hidden');
-      legendToggle?.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeLegendPanel() {
-      legendPanel?.classList.add('hidden');
-      legendToggle?.classList.remove('hidden');
-      legendToggle?.setAttribute('aria-expanded', 'false');
-    }
-
-    legendToggle?.addEventListener('click', async () => {
-      openLegendPanel();
-
-      // Initialize transit on first open
-      if (!transitData) {
-        await initTransitPanel();
-        addTransitLayers();
-      }
-      // Initialize traffic on first open
-      if (!trafficLayersAdded) {
-        await addTrafficLayers();
-        // Sync layer visibility with checkbox states
-        updateTrafficLayers();
-        updateTrafficFlowLayer();
-      }
-    });
-
-    legendClose?.addEventListener('click', () => {
-      closeLegendPanel();
     });
 
     // Fullscreen toggle
