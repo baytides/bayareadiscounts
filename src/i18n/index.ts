@@ -116,11 +116,7 @@ function getNestedValue(obj: TranslationData, path: string): string | undefined 
  * @param locale - Optional locale override
  * @returns Translated string or the key if not found
  */
-export function t(
-  key: string,
-  params?: Record<string, string | number>,
-  locale?: Locale
-): string {
+export function t(key: string, params?: Record<string, string | number>, locale?: Locale): string {
   const currentLocale = locale || getLocale();
   const translation = getNestedValue(translations[currentLocale], key);
 
