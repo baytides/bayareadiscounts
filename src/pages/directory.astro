@@ -72,20 +72,30 @@ interface Program {
 }
 
 /**
- * Generate a privacy-respecting map link from an address and optional city.
- * Uses DuckDuckGo Maps (based on Apple Maps) instead of Google Maps.
+ * Generate a privacy-respecting map link.
+ * Uses OpenStreetMap directions when coordinates are available,
+ * otherwise falls back to OSM search by address.
  */
-function generateMapLink(address?: string, city?: string): string | undefined {
+function generateMapLink(
+  address?: string,
+  city?: string,
+  latitude?: number,
+  longitude?: number
+): string | undefined {
+  // If we have coordinates, use direct OSM directions link
+  if (latitude && longitude) {
+    return `https://www.openstreetmap.org/directions?to=${latitude},${longitude}`;
+  }
+
+  // Fall back to address search if no coordinates
   if (!address) return undefined;
 
-  // Combine address with city for better geocoding accuracy
+  // Combine address with city for better search accuracy
   const fullAddress = city ? `${address}, ${city}, CA` : address;
-
-  // Encode the address for URL
   const encoded = encodeURIComponent(fullAddress);
 
-  // Return DuckDuckGo Maps link
-  return `https://duckduckgo.com/?q=${encoded}&iaxm=maps`;
+  // Return OpenStreetMap search link
+  return `https://www.openstreetmap.org/search?query=${encoded}`;
 }
 
 let allPrograms: Program[] = [];
@@ -222,7 +232,12 @@ allPrograms.sort((a, b) => a.name.localeCompare(b.name));
               verifiedDate={program.verified_date}
               city={program.city}
               address={program.address}
-              mapLink={generateMapLink(program.address, program.city)}
+              mapLink={generateMapLink(
+                program.address,
+                program.city,
+                program.latitude,
+                program.longitude
+              )}
               amenities={program.amenities}
               feeInfo={program.fee_info}
             />
