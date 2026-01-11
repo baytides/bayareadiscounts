@@ -127,13 +127,18 @@ const categories = Object.keys(glossaryData);
           ></path>
         </svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+      <h1
+        class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4"
+        data-i18n="glossary.title"
+      >
         Glossary of Terms
       </h1>
       <p class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-4">
-        Definitions of {totalTerms} common abbreviations and terms used in government benefit programs.
+        <span data-i18n="glossary.subtitle"
+          >Definitions of {totalTerms} common abbreviations and terms used in government benefit programs.</span
+        >
       </p>
-      <p class="text-sm text-neutral-600 dark:text-neutral-300">
+      <p class="text-sm text-neutral-600 dark:text-neutral-300" data-i18n="glossary.wcagNote">
         WCAG 2.2 AAA: 3.1.4 Abbreviations - Providing mechanisms for identifying expanded forms of
         abbreviations.
       </p>
@@ -159,6 +164,7 @@ const categories = Object.keys(glossaryData);
           type="search"
           id="glossary-search"
           placeholder="Search terms or definitions..."
+          data-i18n-placeholder="glossary.searchPlaceholder"
           class="w-full pl-10 pr-4 py-3 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
         />
       </div>
@@ -166,7 +172,9 @@ const categories = Object.keys(glossaryData);
         id="search-results-count"
         class="mt-2 text-sm text-neutral-600 dark:text-neutral-300 hidden"
       >
-        Showing <span id="visible-count">0</span> of {totalTerms} terms
+        <span data-i18n="glossary.showingResults"
+          >Showing <span id="visible-count">0</span> of {totalTerms} terms</span
+        >
       </p>
     </div>
 
@@ -175,7 +183,10 @@ const categories = Object.keys(glossaryData);
       aria-label="Category navigation"
       class="mb-8 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg p-4"
     >
-      <h2 class="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">
+      <h2
+        class="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3"
+        data-i18n="glossary.jumpToCategory"
+      >
         Jump to Category:
       </h2>
       <div class="flex flex-wrap gap-2">
@@ -243,8 +254,14 @@ const categories = Object.keys(glossaryData);
           d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         ></path>
       </svg>
-      <p class="text-neutral-600 dark:text-neutral-300">No terms found matching your search.</p>
-      <button id="clear-search" class="mt-4 text-primary-700 dark:text-primary-300 hover:underline">
+      <p class="text-neutral-600 dark:text-neutral-300" data-i18n="glossary.noResults">
+        No terms found matching your search.
+      </p>
+      <button
+        id="clear-search"
+        class="mt-4 text-primary-700 dark:text-primary-300 hover:underline"
+        data-i18n="glossary.clearSearch"
+      >
         Clear search
       </button>
     </div>
@@ -262,13 +279,18 @@ const categories = Object.keys(glossaryData);
             stroke-width="2"
             d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
-        Back to top
+        <span data-i18n="glossary.backToTop">Back to top</span>
       </a>
     </div>
 
     <!-- Related Links -->
     <section class="mt-12 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-6">
-      <h2 class="text-lg font-semibold text-neutral-900 dark:text-white mb-4">Related Resources</h2>
+      <h2
+        class="text-lg font-semibold text-neutral-900 dark:text-white mb-4"
+        data-i18n="glossary.relatedResources"
+      >
+        Related Resources
+      </h2>
       <ul class="space-y-2 text-sm">
         <li>
           <a
@@ -282,7 +304,7 @@ const categories = Object.keys(glossaryData);
                 stroke-width="2"
                 d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
             </svg>
-            Browse All Programs
+            <span data-i18n="glossary.browseAllPrograms">Browse All Programs</span>
           </a>
         </li>
         <li>
@@ -303,7 +325,7 @@ const categories = Object.keys(glossaryData);
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
               ></path>
             </svg>
-            Accessibility Statement
+            <span data-i18n="glossary.accessibilityStatement">Accessibility Statement</span>
           </a>
         </li>
         <li>
@@ -321,7 +343,7 @@ const categories = Object.keys(glossaryData);
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               ></path>
             </svg>
-            USA.gov Benefits Finder
+            <span data-i18n="glossary.usagovBenefitsFinder">USA.gov Benefits Finder</span>
           </a>
         </li>
       </ul>

@@ -11,10 +11,13 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     <div class="container-page">
       <div class="max-w-4xl mx-auto">
         <Breadcrumb items={[{ label: 'Credits', href: '/credits' }]} />
-        <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+        <h1
+          class="text-4xl font-bold text-neutral-900 dark:text-white mb-4"
+          data-i18n="credits.title"
+        >
           Credits & Acknowledgments
         </h1>
-        <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+        <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-8" data-i18n="credits.subtitle">
           Bay Navigator is built with open-source software and privacy-respecting services. We're
           grateful to these projects and their contributors.
         </p>
@@ -37,7 +40,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               ></path>
             </svg>
-            Sponsors
+            <span data-i18n="credits.sponsors">Sponsors</span>
           </h2>
           <div class="grid md:grid-cols-2 gap-6">
             <a
@@ -53,11 +56,15 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                   <rect x="1" y="12" width="10" height="10" fill="#00A4EF"></rect>
                   <rect x="12" y="12" width="10" height="10" fill="#FFB900"></rect>
                 </svg>
-                <span class="text-lg font-semibold text-neutral-900 dark:text-white"
-                  >Microsoft for Nonprofits</span
+                <span
+                  class="text-lg font-semibold text-neutral-900 dark:text-white"
+                  data-i18n="credits.microsoftForNonprofits">Microsoft for Nonprofits</span
                 >
               </div>
-              <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              <p
+                class="text-sm text-neutral-600 dark:text-neutral-300"
+                data-i18n="credits.microsoftDesc"
+              >
                 Azure cloud credits and GitHub Team sponsorship enabling our infrastructure.
               </p>
             </a>
@@ -79,11 +86,15 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                     d="M25.688 14.803l-.32.01c-.075 0-.14.056-.17.13l-.45 1.566c-.197.675-.122 1.294.206 1.754.3.422.807.666 1.416.694l2.457.15c.075 0 .14.038.178.094s.047.14.028.206c-.038.113-.15.197-.272.206l-2.56.15c-1.388.066-2.88 1.182-3.404 2.55l-.188.478c-.038.094.028.188.13.188h8.797a.23.23 0 0 0 .225-.169A6.41 6.41 0 0 0 32 21.106a6.32 6.32 0 0 0-6.312-6.302"
                     fill="#faae40"></path>
                 </svg>
-                <span class="text-lg font-semibold text-neutral-900 dark:text-white"
-                  >Cloudflare Project Galileo</span
+                <span
+                  class="text-lg font-semibold text-neutral-900 dark:text-white"
+                  data-i18n="credits.cloudflareGalileo">Cloudflare Project Galileo</span
                 >
               </div>
-              <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              <p
+                class="text-sm text-neutral-600 dark:text-neutral-300"
+                data-i18n="credits.cloudflareDesc"
+              >
                 Business-tier CDN, DDoS protection, and security services.
               </p>
             </a>
@@ -108,7 +119,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
               ></path>
             </svg>
-            Infrastructure & Services
+            <span data-i18n="credits.infrastructureServices">Infrastructure & Services</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -241,7 +252,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 stroke-width="2"
                 d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
             </svg>
-            Web Technologies
+            <span data-i18n="credits.webTechnologies">Web Technologies</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -323,7 +334,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
               ></path>
             </svg>
-            Mobile Technologies
+            <span data-i18n="credits.mobileTechnologies">Mobile Technologies</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -425,7 +436,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
               ></path>
             </svg>
-            Data Sources
+            <span data-i18n="credits.dataSources">Data Sources</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -652,9 +663,12 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
               ></path>
             </svg>
-            Accessibility
+            <span data-i18n="credits.accessibility">Accessibility</span>
           </h2>
-          <p class="text-neutral-600 dark:text-neutral-300 mb-6">
+          <p
+            class="text-neutral-600 dark:text-neutral-300 mb-6"
+            data-i18n="credits.accessibilityIntro"
+          >
             We're committed to WCAG 2.2 AAA compliance and follow emerging WCAG 3.0 draft
             guidelines. These resources guide our accessibility work.
           </p>
@@ -750,7 +764,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
               ></path>
             </svg>
-            Security & DevOps
+            <span data-i18n="credits.securityDevops">Security & DevOps</span>
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
@@ -796,10 +810,16 @@ import Breadcrumb from '../components/Breadcrumb.astro';
         <section
           class="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800"
         >
-          <h2 class="text-xl font-bold text-neutral-900 dark:text-white mb-4">
+          <h2
+            class="text-xl font-bold text-neutral-900 dark:text-white mb-4"
+            data-i18n="credits.openSourceCommitment"
+          >
             Open Source Commitment
           </h2>
-          <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+          <p
+            class="text-neutral-600 dark:text-neutral-300 mb-4"
+            data-i18n="credits.openSourceCommitmentDesc"
+          >
             Bay Navigator is open source under the MIT license. We believe in giving back to the
             communities that make our work possible.
           </p>
@@ -814,7 +834,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
               ></path>
             </svg>
-            View on GitHub
+            <span data-i18n="credits.viewOnGithub">View on GitHub</span>
           </a>
         </section>
 
@@ -827,7 +847,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
                 stroke-width="2"
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
             </svg>
-            Back to Programs
+            <span data-i18n="credits.backToPrograms">Back to Programs</span>
           </a>
         </div>
       </div>

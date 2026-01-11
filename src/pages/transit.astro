@@ -163,12 +163,17 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
           ></path>
         </svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+      <h1
+        class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4"
+        data-i18n="transit.title"
+      >
         Bay Area Transit
       </h1>
       <p class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-        Live service alerts and information for all {agencies.length} Bay Area transit agencies. Check
-        current service status before you travel.
+        <span data-i18n="transit.subtitle"
+          >Live service alerts and information for all {agencies.length} Bay Area transit agencies. Check
+          current service status before you travel.</span
+        >
       </p>
     </div>
 
@@ -176,10 +181,16 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
     <section class="mb-10">
       <div class="flex items-center gap-3 mb-4">
         <div id="alerts-indicator" class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
-        <h2 class="text-xl font-semibold text-neutral-900 dark:text-white">Live Service Alerts</h2>
+        <h2
+          class="text-xl font-semibold text-neutral-900 dark:text-white"
+          data-i18n="transit.liveAlerts"
+        >
+          Live Service Alerts
+        </h2>
         <span
           id="alerts-status"
           class="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 px-2 py-0.5 rounded-full"
+          data-i18n="transit.loading"
         >
           Loading...
         </span>
@@ -226,7 +237,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
             d="M8 7h8m-8 4h8m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"
           ></path>
         </svg>
-        Rail Services
+        <span data-i18n="transit.railServices">Rail Services</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
@@ -322,7 +333,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
             d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
           ></path>
         </svg>
-        Ferry Services
+        <span data-i18n="transit.ferryServices">Ferry Services</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
@@ -418,7 +429,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
             d="M8 7h8m-4-3v3m-4 0h8a2 2 0 012 2v6a2 2 0 01-2 2h-1l-1 2H10l-1-2H8a2 2 0 01-2-2V9a2 2 0 012-2z"
           ></path>
         </svg>
-        Bus Services
+        <span data-i18n="transit.busServices">Bus Services</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {
@@ -497,10 +508,14 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
     <section
       class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-6 text-white text-center"
     >
-      <h2 class="text-xl font-semibold mb-2">Explore Transit on the Map</h2>
+      <h2 class="text-xl font-semibold mb-2" data-i18n="transit.exploreMapTitle">
+        Explore Transit on the Map
+      </h2>
       <p class="text-primary-100 mb-4">
-        View all {agencies.reduce((sum, a) => sum + a.stations, 0).toLocaleString()} transit stops across
-        the Bay Area on our interactive map.
+        <span data-i18n="transit.exploreMapDesc"
+          >View all {agencies.reduce((sum, a) => sum + a.stations, 0).toLocaleString()} transit stops
+          across the Bay Area on our interactive map.</span
+        >
       </p>
       <a
         href="/map"
@@ -514,7 +529,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
             d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
           ></path>
         </svg>
-        Open Transit Map
+        <span data-i18n="transit.openMap">Open Transit Map</span>
       </a>
     </section>
 
@@ -539,8 +554,16 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
           </svg>
         </div>
         <div>
-          <h3 class="font-semibold text-neutral-900 dark:text-white mb-1">One Card, All Transit</h3>
-          <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-3">
+          <h3
+            class="font-semibold text-neutral-900 dark:text-white mb-1"
+            data-i18n="transit.clipperTitle"
+          >
+            One Card, All Transit
+          </h3>
+          <p
+            class="text-sm text-neutral-600 dark:text-neutral-300 mb-3"
+            data-i18n="transit.clipperDesc"
+          >
             Use a single Clipper card to pay for rides on all Bay Area transit agencies. Get
             discounts with Clipper START for low-income riders.
           </p>
@@ -550,6 +573,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
               target="_blank"
               rel="noopener"
               class="text-sm text-primary-600 dark:text-primary-400 hover:underline"
+              data-i18n="transit.getClipper"
             >
               Get Clipper Card
             </a>
@@ -558,6 +582,7 @@ const agencyLinks: Record<string, { website: string; alerts: string; fares: stri
               target="_blank"
               rel="noopener"
               class="text-sm text-primary-600 dark:text-primary-400 hover:underline"
+              data-i18n="transit.clipperStart"
             >
               Clipper START (50% off)
             </a>

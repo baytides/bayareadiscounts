@@ -55,10 +55,16 @@ const githubStats = {
           ></path>
         </svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+      <h1
+        class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4"
+        data-i18n="sustainability.title"
+      >
         Environmental Sustainability
       </h1>
-      <p class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+      <p
+        class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto"
+        data-i18n="sustainability.subtitle"
+      >
         As an environmental nonprofit, Bay Tides is committed to practicing what we preach. Here's
         how Bay Navigator minimizes its digital carbon footprint.
       </p>
@@ -70,14 +76,22 @@ const githubStats = {
     >
       <div class="flex items-center gap-3 mb-4">
         <div id="dashboard-indicator" class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-        <h2 class="text-xl font-semibold text-neutral-900 dark:text-white">Carbon Dashboard</h2>
+        <h2
+          class="text-xl font-semibold text-neutral-900 dark:text-white"
+          data-i18n="sustainability.carbonDashboard"
+        >
+          Carbon Dashboard
+        </h2>
         <span
           id="dashboard-status"
           class="text-xs bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-100 px-2 py-0.5 rounded-full"
-          >Loading...</span
+          data-i18n="sustainability.loading">Loading...</span
         >
       </div>
-      <p class="text-neutral-600 dark:text-neutral-300 mb-4">
+      <p
+        class="text-neutral-600 dark:text-neutral-300 mb-4"
+        data-i18n="sustainability.dashboardIntro"
+      >
         Estimated usage data based on our Azure, Cloudflare, and GitHub infrastructure. According to
         their published reports, all providers aim to use 100% renewable energy.
       </p>
@@ -88,25 +102,45 @@ const githubStats = {
           <div id="stat-cdn-requests" class="text-2xl font-bold text-blue-600 dark:text-blue-400">
             —
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">CDN Requests</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.cdnRequests"
+          >
+            CDN Requests
+          </div>
         </div>
         <div class="bg-white/50 dark:bg-neutral-800/50 rounded-lg p-4">
           <div id="stat-ai-queries" class="text-2xl font-bold text-purple-600 dark:text-purple-400">
             —
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">Smart Search Queries</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.smartSearchQueries"
+          >
+            Smart Search Queries
+          </div>
         </div>
         <div class="bg-white/50 dark:bg-neutral-800/50 rounded-lg p-4">
           <div id="stat-ci-runs" class="text-2xl font-bold text-orange-600 dark:text-orange-400">
             —
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">CI/CD Runs</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.cicdRuns"
+          >
+            CI/CD Runs
+          </div>
         </div>
         <div class="bg-white/50 dark:bg-neutral-800/50 rounded-lg p-4">
           <div id="stat-renewable" class="text-2xl font-bold text-green-600 dark:text-green-400">
             100%
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">Renewable Energy</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.renewableEnergy"
+          >
+            Renewable Energy
+          </div>
         </div>
       </div>
 
@@ -116,36 +150,54 @@ const githubStats = {
           <div id="stat-gross" class="text-xl font-bold text-neutral-600 dark:text-neutral-300">
             —
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">Gross kg CO₂e</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.grossKgCo2"
+          >
+            Gross kg CO₂e
+          </div>
         </div>
         <div class="bg-white/50 dark:bg-neutral-800/50 rounded-lg p-3">
           <div id="stat-emissions" class="text-xl font-bold text-green-600 dark:text-green-400">
             0
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">Net kg CO₂e</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.netKgCo2"
+          >
+            Net kg CO₂e
+          </div>
         </div>
         <div class="bg-white/50 dark:bg-neutral-800/50 rounded-lg p-3">
           <div id="stat-rating" class="text-xl font-bold text-green-600 dark:text-green-400">
             A+
           </div>
-          <div class="text-xs text-neutral-600 dark:text-neutral-300">Green Rating</div>
+          <div
+            class="text-xs text-neutral-600 dark:text-neutral-300"
+            data-i18n="sustainability.greenRating"
+          >
+            Green Rating
+          </div>
         </div>
       </div>
 
       <!-- Emissions breakdown -->
       <div class="mt-4 pt-4 border-t border-green-200 dark:border-green-800">
-        <div class="text-xs text-neutral-600 dark:text-neutral-300 mb-2">
+        <div
+          class="text-xs text-neutral-600 dark:text-neutral-300 mb-2"
+          data-i18n="sustainability.emissionsBreakdown"
+        >
           Emissions breakdown (grams CO₂e, before renewable offset):
         </div>
         <div class="flex flex-wrap gap-2 text-xs">
           <span id="breakdown-cdn" class="bg-white/70 dark:bg-neutral-800/70 px-2 py-1 rounded"
-            >CDN: —</span
+            ><span data-i18n="sustainability.cdn">CDN</span>: —</span
           >
           <span id="breakdown-ai" class="bg-white/70 dark:bg-neutral-800/70 px-2 py-1 rounded"
-            >Smart Search: —</span
+            ><span data-i18n="sustainability.smartSearch">Smart Search</span>: —</span
           >
           <span id="breakdown-ci" class="bg-white/70 dark:bg-neutral-800/70 px-2 py-1 rounded"
-            >CI/CD: —</span
+            ><span data-i18n="sustainability.cicd">CI/CD</span>: —</span
           >
         </div>
       </div>
@@ -177,7 +229,10 @@ const githubStats = {
 
     <!-- Our Green Stack -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+      <h2
+        class="text-2xl font-bold text-neutral-900 dark:text-white mb-6"
+        data-i18n="sustainability.ourGreenStack"
+      >
         Our Green Technology Stack
       </h2>
 
@@ -419,7 +474,10 @@ const githubStats = {
 
     <!-- Green Software Practices -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+      <h2
+        class="text-2xl font-bold text-neutral-900 dark:text-white mb-6"
+        data-i18n="sustainability.greenSoftwarePractices"
+      >
         Our Green Software Practices
       </h2>
 
@@ -591,7 +649,10 @@ const githubStats = {
 
     <!-- Comparison Section -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+      <h2
+        class="text-2xl font-bold text-neutral-900 dark:text-white mb-6"
+        data-i18n="sustainability.environmentalImpact"
+      >
         Environmental Impact Comparison
       </h2>
 
@@ -646,7 +707,10 @@ const githubStats = {
 
     <!-- Certifications & Badges -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">
+      <h2
+        class="text-2xl font-bold text-neutral-900 dark:text-white mb-6"
+        data-i18n="sustainability.certificationsCommitments"
+      >
         Certifications & Commitments
       </h2>
 
@@ -741,10 +805,18 @@ const githubStats = {
 
     <!-- Resources -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Learn More</h2>
+      <h2
+        class="text-2xl font-bold text-neutral-900 dark:text-white mb-6"
+        data-i18n="sustainability.learnMore"
+      >
+        Learn More
+      </h2>
 
       <div class="bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-6">
-        <h3 class="font-semibold text-neutral-900 dark:text-white mb-4">
+        <h3
+          class="font-semibold text-neutral-900 dark:text-white mb-4"
+          data-i18n="sustainability.greenSoftwareResources"
+        >
           Green Software Resources
         </h3>
         <ul class="space-y-2 text-sm">
@@ -845,8 +917,10 @@ const githubStats = {
     <!-- Call to Action -->
     <section class="text-center">
       <div class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
-        <h2 class="text-2xl font-bold mb-3">Questions About Our Sustainability?</h2>
-        <p class="mb-6 opacity-90">
+        <h2 class="text-2xl font-bold mb-3" data-i18n="sustainability.questionsTitle">
+          Questions About Our Sustainability?
+        </h2>
+        <p class="mb-6 opacity-90" data-i18n="sustainability.questionsDesc">
           We're committed to transparency. If you have questions about our environmental practices
           or suggestions for improvement, we'd love to hear from you.
         </p>
@@ -862,7 +936,7 @@ const githubStats = {
               d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
             ></path>
           </svg>
-          Contact Us
+          <span data-i18n="sustainability.contactUs">Contact Us</span>
         </a>
       </div>
     </section>

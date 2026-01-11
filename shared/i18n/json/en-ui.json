@@ -21,7 +21,11 @@
     "sort": "Sort",
     "share": "Share",
     "print": "Print",
-    "download": "Download"
+    "download": "Download",
+    "github": "GitHub",
+    "emailUs": "Email Us",
+    "backToPrograms": "Back to Programs",
+    "viewOnGithub": "View on GitHub"
   },
   "nav": {
     "home": "Home",
@@ -435,7 +439,10 @@
     "questionsAboutTerms": "Questions About These Terms?",
     "happyToClarify": "We're happy to clarify anything. Reach out anytime.",
     "openAnIssue": "Open an Issue",
-    "viewSourceOnGithub": "View Source on GitHub"
+    "viewSourceOnGithub": "View Source on GitHub",
+    "readFullLegalText": "Read full legal text",
+    "questions": "Questions About These Terms?",
+    "questionsDesc": "We're happy to clarify anything. Reach out anytime."
   },
   "transit": {
     "title": "Bay Area Transit",
@@ -538,7 +545,22 @@
     "viewAllGuidelines": "View all partnership guidelines",
     "readyToPartner": "Ready to Partner?",
     "readyToPartnerDesc": "Fill out our partnership inquiry form and we'll get back to you to discuss how we can work together to help Bay Area residents.",
-    "startPartnershipInquiry": "Start Partnership Inquiry"
+    "startPartnershipInquiry": "Start Partnership Inquiry",
+    "startInquiry": "Start Partnership Inquiry",
+    "howToShare": "How to Share Your Data",
+    "howToShareDesc": "Choose the method that works best for your organization. All three options result in your programs being listed on Bay Navigator.",
+    "whatInfoNeeded": "What Information We Need",
+    "whatInfoNeededDesc": "For each program, we collect the following information to help users find and access services.",
+    "listingGuidelines": "Listing Guidelines & Policies",
+    "listingGuidelinesDesc": "Before submitting your program, please review our partnership guidelines to ensure your listing meets our standards.",
+    "contact": {
+      "title": "Partnership Inquiry",
+      "subtitle": "Fill out the form below and we'll get back to you to discuss how we can work together to help Bay Area residents."
+    },
+    "guidelines": {
+      "title": "Partnership Guidelines",
+      "subtitle": "Standards and policies for organizations listed on Bay Navigator. These guidelines ensure our platform remains a trusted, objective resource for Bay Area residents."
+    }
   },
   "partnershipsContact": {
     "title": "Partnership Inquiry",
