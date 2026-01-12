@@ -175,6 +175,7 @@ const NON_PROGRAM_FILES = [
   'site-config.yml',
   'bay-area-jurisdictions.yml',
   'city-profiles.yml',
+  'helplines.yml',
 ];
 const categoryFiles = fs
   .readdirSync(DATA_DIR)

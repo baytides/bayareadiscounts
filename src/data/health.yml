@@ -54,7 +54,8 @@
   timeframe: 24/7
   link: https://988lifeline.org
   link_text: Call or Text 988
-  verified_date: '2025-12-16'
+  verified_by: ThroughLine
+  verified_date: '2026-01-11'
 
 - id: crisis-text-line
   name: Crisis Text Line
@@ -75,7 +76,8 @@
   timeframe: 24/7
   link: https://www.crisistextline.org
   link_text: Text HOME to 741741
-  verified_date: '2025-12-16'
+  verified_by: ThroughLine
+  verified_date: '2026-01-11'
 
 - id: sf-suicide-prevention
   name: San Francisco Suicide Prevention

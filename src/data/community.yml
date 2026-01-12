@@ -2267,7 +2267,8 @@
   timeframe: Ongoing
   link: https://translifeline.org/
   link_text: Get Help
-  verified_date: '2025-12-30'
+  verified_by: ThroughLine
+  verified_date: '2026-01-11'
 - id: trevor-project
   name: The Trevor Project
   category: Community Services
@@ -2294,7 +2295,8 @@
   timeframe: Ongoing
   link: https://www.thetrevorproject.org/
   link_text: Get Help
-  verified_date: '2025-12-30'
+  verified_by: ThroughLine
+  verified_date: '2026-01-11'
 - id: lgbt-asylum-project
   name: The LGBT Asylum Project
   category: Community Services

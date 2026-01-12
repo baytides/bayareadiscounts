@@ -1,0 +1,373 @@
+# Crisis Helplines and Mental Health Support
+# Generated from ThroughLine API on 2026-01-12
+# Do not edit manually - run scripts/sync-throughline-helplines.cjs to update
+# Source: https://findahelpline.com
+# Note: These are national helplines available to Bay Area residents
+
+helplines:
+  - id: 'c8e47108-3f87-4311-ab8f-7a3adf01ba06'
+    name: '988 Suicide & Crisis Lifeline'
+    description: 'The 988 Suicide & Crisis Lifeline is a suicide prevention and crisis intervention service available to anyone in suicidal crisis or emotional distress of any kind in the United States and its terri...'
+    website: 'https://988lifeline.org'
+    phone: '988'
+    sms: '988'
+    chat: 'https://988lifeline.org/chat/'
+    languages: ['en', 'es']
+    specialties: ['Everyone', 'All topics']
+    categories:
+      [
+        'crisis',
+        'safety',
+        'mental-health',
+        'youth',
+        'family',
+        'substance-use',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'grief',
+        'health',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: '89509dd8-f146-4765-b8f1-54c235b5594b'
+    name: 'Crisis Text Line'
+    description: "Crisis Text Line is here to help you, whatever you're going through. We provide 24/7, free and confidential support and information by text message (text HOME to 741741), online chat and WhatsApp (..."
+    website: 'https://www.crisistextline.org/'
+    phone: ''
+    sms: '741741'
+    chat: 'https://connect.crisistextline.org/chat?utm_source=findahelpline'
+    languages: ['en', 'es']
+    specialties: ['Everyone', 'All topics']
+    categories:
+      [
+        'mental-health',
+        'crisis',
+        'safety',
+        'youth',
+        'family',
+        'substance-use',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'grief',
+        'health',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'b97a3d66-84c0-49d9-8f24-1206dab284c1'
+    name: 'TrevorLifeline'
+    description: 'TrevorLifeline offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We support LGBTQ+ young people in the U.S. and Mexico who may be experiencing emotional distr...'
+    website: 'https://www.thetrevorproject.org/'
+    phone: '(866) 488-7386'
+    sms: '678678'
+    chat: 'https://www.thetrevorproject.org/get-help/'
+    languages: ['en', 'es']
+    specialties: ['LGBTQ+', 'Youth']
+    categories: ['lgbtq', 'mental-health', 'relationships', 'crisis', 'family', 'youth']
+    availability: '24/7'
+    verified: true
+  - id: '0318ee03-74c0-4dbc-bba0-653df19436c9'
+    name: 'love is respect'
+    description: 'love is respect offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We are here for everyone who may be looking for support with dating abuse and who have quest...'
+    website: 'https://www.loveisrespect.org/'
+    phone: '(866) 331-9474'
+    sms: '22522'
+    chat: 'https://www.loveisrespect.org/get-help/#'
+    languages: ['en', 'es']
+    specialties: ['Everyone', 'LGBTQ+']
+    categories: ['safety', 'relationships', 'family']
+    availability: '24/7'
+    verified: true
+  - id: 'a2ceaf96-ade0-4d8d-a9f6-990ca6768824'
+    name: 'National Domestic Violence Hotline'
+    description: 'The National Domestic Violence Hotline (The Hotline) established in 1996, serves those impacted by relationship abuse in the U.S. 24/7 with free and confidential live services provided via phone, c...'
+    website: 'https://www.thehotline.org/'
+    phone: '(800) 799-7233'
+    sms: '88788'
+    chat: 'https://www.thehotline.org/'
+    languages: ['en']
+    specialties: ['Everyone', 'Deaf & HOH']
+    categories: ['safety']
+    availability: '24/7'
+    verified: true
+  - id: 'a4f5ccb3-a841-4d31-8035-9599779f9c11'
+    name: 'RAINN National Sexual Assault Hotline'
+    description: 'The National Sexual Assault Hotline is a confidential, free, 24/7 support service, available in English and Spanish operated by RAINN, the largest anti-sexual violence organization in the United St...'
+    website: 'https://www.rainn.org/'
+    phone: '(800) 656-4673'
+    sms: '64673'
+    chat: 'https://hotline.rainn.org/online'
+    languages: ['en', 'es']
+    specialties: ['Everyone']
+    categories: ['safety', 'mental-health']
+    availability: '24/7'
+    verified: true
+  - id: '2d8f39f3-64e8-463c-b1c6-d2cbad6722f3'
+    name: 'National Alliance on Mental Illness (NAMI) HelpLine'
+    description: 'Wherever you are, the NAMI HelpLine is here for you. We are a free, nationwide peer-support service for people with mental health conditions, their family members and caregivers, mental health prov...'
+    website: 'https://nami.org/help'
+    phone: '(800) 950-6264'
+    sms: '62640'
+    chat: ''
+    languages: ['en', 'es']
+    specialties: ['Everyone']
+    categories:
+      [
+        'mental-health',
+        'youth',
+        'family',
+        'lgbtq',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'substance-use',
+        'grief',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'b92d16ff-ff50-4371-9492-71372478c1bb'
+    name: "SAMHSA's National Helpline"
+    description: 'SAMHSA’s National Helpline is a confidential, free, 24-hour-a-day, 365-day-a-year, information service, in English and Spanish, for individuals and family members facing mental and/or substance use...'
+    website: 'https://www.samhsa.gov/find-help/national-helpline'
+    phone: '1-800-662-4357'
+    sms: '435748'
+    chat: ''
+    languages: ['en', 'es']
+    specialties: ['Everyone', 'Deaf & HOH', 'All topics']
+    categories:
+      [
+        'safety',
+        'mental-health',
+        'youth',
+        'family',
+        'substance-use',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'grief',
+        'health',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: '958774cc-8c1f-4862-b070-b7ed745414d7'
+    name: 'National Human Trafficking Hotline'
+    description: 'The National Human Trafficking Hotline is a national, toll-free hotline, available to answer calls, texts, and chats from anywhere in the country, 24 hours a day, 7 days a week, every day of the ye...'
+    website: 'https://humantraffickinghotline.org/'
+    phone: '(888) 373-7888'
+    sms: '233733'
+    chat: 'https://humantraffickinghotline.org/chat'
+    languages: ['en']
+    specialties: ['Everyone']
+    categories: ['safety', 'mental-health']
+    availability: '24/7'
+    verified: true
+  - id: '2773ca93-a8af-4892-9ac3-6b545689b9a5'
+    name: 'Trans Lifeline'
+    description: "Trans Lifeline's Hotline is a peer support phone service run by trans people for our trans and questioning peers. Call us if you need someone trans to talk to, even if you're not in a crisis or if ..."
+    website: 'https://www.translifeline.org/hotline'
+    phone: '(877) 565-8860'
+    sms: ''
+    chat: ''
+    languages: ['en', 'es']
+    specialties: ['LGBTQ+', 'Adults', 'Youth']
+    categories:
+      [
+        'lgbtq',
+        'safety',
+        'mental-health',
+        'youth',
+        'family',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'substance-use',
+        'health',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'a460e958-621e-4804-a82c-5edf6a03a129'
+    name: 'National Abortion Hotline'
+    description: 'The National Abortion Hotline (NAH), operated by the National Abortion Federation (NAF), is a confidential, toll-free helpline dedicated to supporting anyone seeking information or assistance regar...'
+    website: 'https://prochoice.org/patients/naf-hotline/'
+    phone: '(800) 772-9100'
+    sms: ''
+    chat: 'https://prochoice.org/patients/naf-hotline/'
+    languages: ['en', 'es']
+    specialties: ['Everyone']
+    categories: ['reproductive-health', 'family']
+    availability: '24/7'
+    verified: true
+  - id: 'c5e0c055-26f6-4734-872d-0eac1170ea50'
+    name: 'Veterans Crisis Line'
+    description: 'The Veterans Crisis Line is a toll-free, confidential resource that connects Veterans in crisis and their families and friends with qualified, caring U.S. Department of Veterans Affairs (VA) respon...'
+    website: 'https://www.veteranscrisisline.net/'
+    phone: ''
+    sms: '838255'
+    chat: 'https://www.veteranscrisisline.net/get-help-now/chat/'
+    languages: ['en']
+    specialties: ['Veterans']
+    categories: ['safety', 'mental-health', 'family', 'relationships', 'crisis', 'grief', 'health']
+    availability: '24/7'
+    verified: true
+  - id: 'ad5fa03c-52c3-47fc-98ed-38dd4cc5050d'
+    name: 'National Maternal Mental Health Hotline'
+    description: 'Pregnancy and a new baby can bring a range of emotions. Many new moms feel overwhelmed, sad, anxious, or exhausted at different times during their pregnancy or after the baby is born. Sometimes the...'
+    website: 'https://mchb.hrsa.gov/national-maternal-mental-health-hotline'
+    phone: '1-833-852-6262'
+    sms: '1-833-852-6262'
+    chat: ''
+    languages: ['en', 'es']
+    specialties: ['Deaf & HOH', 'Parents', 'Women']
+    categories:
+      ['reproductive-health', 'family', 'mental-health', 'substance-use', 'crisis', 'grief']
+    availability: '24/7'
+    verified: true
+  - id: '67db9ebc-23ff-4207-b0fd-59134cad0437'
+    name: 'National Problem Gambling Helpline'
+    description: 'National Problem Gambling Helpline offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We are here for everyone in the United States who may be looking for supp...'
+    website: 'https://www.ncpgambling.org/help-treatment/'
+    phone: '1-800-426-2537'
+    sms: '1-800-426-2537'
+    chat: 'https://www.ncpgambling.org/help-treatment/chat/'
+    languages: ['en']
+    specialties: ['Everyone']
+    categories: ['substance-use']
+    availability: '24/7'
+    verified: true
+  - id: 'de4973ac-6ebb-42ff-94a4-fe014368c872'
+    name: 'StrongHearts Native Helpline'
+    description: 'StrongHearts Native Helpline is a 24/7 confidential and anonymous culturally-appropriate domestic and sexual violence helpline for Native Americans. We exist to restore power to Native Americans im...'
+    website: 'https://strongheartshelpline.org/'
+    phone: '(844) 762-8483'
+    sms: '(844) 762-8483'
+    chat: 'https://strongheartshelpline.org/'
+    languages: ['en']
+    specialties: ['Cultural support']
+    categories:
+      [
+        'safety',
+        'youth',
+        'mental-health',
+        'family',
+        'lgbtq',
+        'relationships',
+        'crisis',
+        'substance-use',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: '3a76d277-fcaf-42bb-a834-0d7b90765533'
+    name: 'National Center for Missing & Exploited Children 24-Hour Hotline'
+    description: 'National Center for Missing & Exploited Children 24-Hour Hotline provides 24/7 free and confidential support by phone. We help the youth in the United States who may need emotional support with fam...'
+    website: 'https://www.missingkids.org'
+    phone: '(800) 843-5678'
+    sms: ''
+    chat: ''
+    languages: ['en']
+    specialties: ['Youth', 'Parents']
+    categories: ['family', 'safety']
+    availability: '24/7'
+    verified: true
+  - id: '82694841-e560-475b-a79a-7ac928e71227'
+    name: 'National Parent and Youth Helpline'
+    description: 'National Parent and Youth Helpline provides free and confidential emotional support and resources to diverse Parents, Caregivers, Children and Youth of all Ages by phone, text and live chat and con...'
+    website: 'http://www.nationalparentyouthhelpline.org/'
+    phone: '(855) 427-2736'
+    sms: '8554272736'
+    chat: 'http://www.nationalparentyouthhelpline.org/'
+    languages: ['en', 'es']
+    specialties: ['Everyone', 'All topics']
+    categories:
+      [
+        'family',
+        'safety',
+        'mental-health',
+        'youth',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'substance-use',
+        'grief',
+        'health',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'd3ae2b25-c6f1-4a42-953c-bee021334290'
+    name: 'National Grad Crisis Line'
+    description: 'National Grad Crisis Line is dedicated to providing 24/7, free, compassionate and confidential support over phone. We exist to help people in United States who may need emotional support with abuse...'
+    website: 'https://gradresources.org/'
+    phone: '(877) 472-3457'
+    sms: ''
+    chat: ''
+    languages: ['en']
+    specialties: ['Everyone', 'All topics']
+    categories:
+      [
+        'safety',
+        'mental-health',
+        'youth',
+        'family',
+        'substance-use',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'grief',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'a17b3756-baa7-41f9-9020-c185d6a395c0'
+    name: 'Disaster Distress Helpline'
+    description: 'The national Disaster Distress Helpline (call or text 1-800-985-5990 ; press 2 for Spanish) providers 24/7/365 crisis and emotional support for anyone in the United States/territories experiencing ...'
+    website: 'https://www.samhsa.gov/find-help/disaster-distress-helpline'
+    phone: '800-985-5990'
+    sms: '800-985-5990'
+    chat: ''
+    languages: ['en', 'es']
+    specialties: ['Everyone']
+    categories:
+      [
+        'mental-health',
+        'grief',
+        'family',
+        'relationships',
+        'education-employment',
+        'substance-use',
+        'crisis',
+      ]
+    availability: '24/7'
+    verified: true
+  - id: 'a98584c4-e659-458a-8e56-9640932dec19'
+    name: 'Safe Place® TXT 4 HELP'
+    description: 'TXT 4 HELP is a free, confidential, 24/7 text-based support service for youth nationwide. It offers assistance for challenges such as abuse, domestic violence, trafficking, anxiety, bullying, depre...'
+    website: 'https://www.nationalsafeplace.org/txt-4-help'
+    phone: ''
+    sms: '44357'
+    chat: ''
+    languages: ['en']
+    specialties: ['Youth', 'Children', 'All topics']
+    categories:
+      [
+        'safety',
+        'mental-health',
+        'youth',
+        'family',
+        'substance-use',
+        'lgbtq',
+        'reproductive-health',
+        'relationships',
+        'education-employment',
+        'crisis',
+        'grief',
+      ]
+    availability: '24/7'
+    verified: true

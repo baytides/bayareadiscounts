@@ -1,0 +1,901 @@
+{
+  "generated": "2026-01-12T01:25:18.918Z",
+  "source": "ThroughLine Care API",
+  "sourceUrl": "https://findahelpline.com",
+  "count": 20,
+  "helplines": [
+    {
+      "id": "c8e47108-3f87-4311-ab8f-7a3adf01ba06",
+      "name": "988 Suicide & Crisis Lifeline",
+      "description": "The 988 Suicide & Crisis Lifeline is a suicide prevention and crisis intervention service available to anyone in suicidal crisis or emotional distress of any kind in the United States and its territories via phone, text message (SMS), online chat and ASL Videophone. 988 Lifeline crisis counselors provide help-seekers with crisis counseling and referrals.  The 988 Lifeline consists of a network of more than 200 independently-operated, local crisis centers located across the United States and its territories.  Voice callers to the 988 Lifeline are routed to a crisis counselor at the nearest accredited network crisis center in the caller's area.  988 Lifeline chat and text conversations are routed to a center in their state or a subnetwork of crisis centers around the country accredited in providing online emotional support. Specialized services are available to Veterans (in partnership with VA and SAMHSA, calls route to Veterans Crisis Line), Spanish speakers, LGBTQ+ youth, and ASL speakers.",
+      "website": "https://988lifeline.org",
+      "phone": "988",
+      "sms": "988",
+      "chat": "https://988lifeline.org/chat/",
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone",
+        "All topics"
+      ],
+      "topics": [
+        "Suicidal thoughts",
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Dementia & Alzheimers",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gambling",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Supporting others",
+        "Grief & loss",
+        "Physical illness"
+      ],
+      "categories": [
+        "crisis",
+        "safety",
+        "mental-health",
+        "youth",
+        "family",
+        "substance-use",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "grief",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "89509dd8-f146-4765-b8f1-54c235b5594b",
+      "name": "Crisis Text Line",
+      "description": "Crisis Text Line is here to help you, whatever you're going through. We provide 24/7, free and confidential support and information by text message (text HOME to 741741), online chat and WhatsApp (+1-443-787-7678). We are available to talk with you about any kind of experience relating to mental health, including anxiety, depression, self-harm, stress, and thoughts of suicide. Our support is free. We are dedicated to preventing suicide. If you are contemplating suicide or want to kill yourself, we will listen without judgment and support you. When you contact us you will talk with one of our trained volunteers who are experienced in how to help people in your situation. They will listen to you, unpack your story and feelings, and work with you to help you through your challenges. Anyone can contact us, regardless of their age, gender, ethnicity or religious beliefs. We are ready to support you 24/7, whether it's the middle of the day or the middle of the night.",
+      "website": "https://www.crisistextline.org/",
+      "phone": null,
+      "sms": "741741",
+      "chat": "https://connect.crisistextline.org/chat?utm_source=findahelpline",
+      "whatsapp": "https://api.whatsapp.com/send/?phone=14437877678&",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone",
+        "All topics"
+      ],
+      "topics": [
+        "Anxiety",
+        "Depression",
+        "Self-harm",
+        "Stress",
+        "Suicidal thoughts",
+        "Abuse & domestic violence",
+        "Bullying",
+        "Dementia & Alzheimers",
+        "Eating & body image",
+        "Family",
+        "Gambling",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Sexual abuse",
+        "Substance use",
+        "Supporting others",
+        "Grief & loss",
+        "Physical illness"
+      ],
+      "categories": [
+        "mental-health",
+        "crisis",
+        "safety",
+        "youth",
+        "family",
+        "substance-use",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "grief",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "b97a3d66-84c0-49d9-8f24-1206dab284c1",
+      "name": "TrevorLifeline",
+      "description": "TrevorLifeline offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We support LGBTQ+ young people in the U.S. and Mexico who may be experiencing emotional distress related to gender & sexual identity, loneliness, relationships, suicide, supporting a friend or family member.\r\n\r\nAs part of our commitment to preventing suicide, we are available to help you if you are considering suicide or harming yourself, or if you are noticing warning signs in a friend or family member.\r\n\r\nWhen you reach out to us you will talk with one of our friendly and supportive volunteers who are experienced in how to help people in your situation. They will listen to you, unpack your story and feelings, and work with you to help you through your challenges. We are open 24 hours a day, every day of the week. We are always available to talk with you.",
+      "website": "https://www.thetrevorproject.org/",
+      "phone": "(866) 488-7386",
+      "sms": "678678",
+      "chat": "https://www.thetrevorproject.org/get-help/",
+      "whatsapp": "https://wa.me/525592253337",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "LGBTQ+",
+        "Youth"
+      ],
+      "topics": [
+        "Gender & sexual identity",
+        "Loneliness",
+        "Relationships",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Anxiety",
+        "Bullying",
+        "Depression",
+        "Eating & body image",
+        "Self-harm",
+        "Stress"
+      ],
+      "categories": [
+        "lgbtq",
+        "mental-health",
+        "relationships",
+        "crisis",
+        "family",
+        "youth"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "0318ee03-74c0-4dbc-bba0-653df19436c9",
+      "name": "love is respect",
+      "description": "love is respect offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We are here for everyone who may be looking for support with dating abuse  and who have questions or concerns about their romantic relationships. \n\nWhen you contact us you will talk with one of our trained volunteers who are experienced in how to help people in your situation. They will listen to you, unpack your story and feelings, and work with you to help you through your challenges. Anyone may call and get support. We help everyone, regardless of age, gender, religious views, or nationality. We recognize that difficult mental health or crisis experiences can happen at any time, so we are available 24 hours a day, every day of the week.",
+      "website": "https://www.loveisrespect.org/",
+      "phone": "(866) 331-9474",
+      "sms": "22522",
+      "chat": "https://www.loveisrespect.org/get-help/#",
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone",
+        "LGBTQ+"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Relationships",
+        "Supporting others",
+        "Sexual abuse"
+      ],
+      "categories": [
+        "safety",
+        "relationships",
+        "family"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "a2ceaf96-ade0-4d8d-a9f6-990ca6768824",
+      "name": "National Domestic Violence Hotline",
+      "description": "The National Domestic Violence Hotline (The Hotline) established in 1996, serves those impacted by relationship abuse in the U.S. 24/7 with free and confidential live services provided via phone, chat, and text. The Hotline envisions a world where all relationships are positive, healthy, and free from violence.\n\nWhen you reach out to us you will talk with one our friendly and supportive peers or volunteers who are experienced in how to help people in your situation. They will listen to you, unpack your story and feelings, and work with you to help you through your challenges. Anyone can contact us, regardless of their age, gender, ethnicity or religious beliefs. We are always open. You can contact us for free, 24 hours a day, 7 days a week, 365 days a year.",
+      "website": "https://www.thehotline.org/",
+      "phone": "(800) 799-7233",
+      "sms": "88788",
+      "chat": "https://www.thehotline.org/",
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Everyone",
+        "Deaf & HOH"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Sexual abuse"
+      ],
+      "categories": [
+        "safety"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "a4f5ccb3-a841-4d31-8035-9599779f9c11",
+      "name": "RAINN National Sexual Assault Hotline",
+      "description": "The National Sexual Assault Hotline is a confidential, free, 24/7 support service, available in English and Spanish operated by RAINN, the largest anti-sexual violence organization in the United States. Survivors can connect with trained support specialists who offer crisis intervention, emotional support, and guidance on local resources. The hotline provides a safe, anonymous space for survivors, their loved ones, and concerned individuals seeking help. Since its launch in 1994, it has assisted millions, working to empower survivors and educate the public on preventing sexual violence.\n\nLa Línea Nacional de Atención contra la Agresión Sexual es un servicio de apoyo confidencial, gratuito y disponible las 24 horas, los 7 días de la semana, en inglés y español, operado por RAINN, la organización contra la violencia sexual más grande de Estados Unidos. Las sobrevivientes pueden contactar con especialistas capacitados que ofrecen intervención en crisis, apoyo emocional y orientación sobre recursos locales. La línea ofrece un espacio seguro y anónimo para sobrevivientes, sus seres queridos y personas preocupadas que buscan ayuda. Desde su lanzamiento en 1994, ha ayudado a millones de personas, trabajando para empoderar a las sobrevivientes y educar al público sobre la prevención de la violencia sexual.",
+      "website": "https://www.rainn.org/",
+      "phone": "(800) 656-4673",
+      "sms": "64673",
+      "chat": "https://hotline.rainn.org/online",
+      "whatsapp": "https://wa.me/+12028349806",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Trauma & PTSD",
+        "Sexual abuse"
+      ],
+      "categories": [
+        "safety",
+        "mental-health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "2d8f39f3-64e8-463c-b1c6-d2cbad6722f3",
+      "name": "National Alliance on Mental Illness (NAMI) HelpLine",
+      "description": "Wherever you are, the NAMI HelpLine is here for you. We are a free, nationwide peer-support service for people with mental health conditions, their family members and caregivers, mental health providers, and the public. HelpLine staff and volunteers are experienced and well-trained. They use their own lived experiences with mental health conditions to listen, empathize, offer support, and provide practical next steps for you on your mental health journey.",
+      "website": "https://nami.org/help",
+      "phone": "(800) 950-6264",
+      "sms": "62640",
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Anxiety",
+        "Bullying",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss"
+      ],
+      "categories": [
+        "mental-health",
+        "youth",
+        "family",
+        "lgbtq",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "substance-use",
+        "grief"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "b92d16ff-ff50-4371-9492-71372478c1bb",
+      "name": "SAMHSA's National Helpline",
+      "description": "SAMHSA’s National Helpline is a confidential, free, 24-hour-a-day, 365-day-a-year, information service, in English and Spanish, for individuals and family members facing mental and/or substance use disorders. This service provides referrals to local treatment facilities, support groups, and community-based organizations. You can contact our helpline anytime over phone or text message (SMS).",
+      "website": "https://www.samhsa.gov/find-help/national-helpline",
+      "phone": "1-800-662-4357",
+      "sms": "435748",
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone",
+        "Deaf & HOH",
+        "All topics"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Dementia & Alzheimers",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gambling",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss",
+        "Physical illness"
+      ],
+      "categories": [
+        "safety",
+        "mental-health",
+        "youth",
+        "family",
+        "substance-use",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "grief",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "958774cc-8c1f-4862-b070-b7ed745414d7",
+      "name": "National Human Trafficking Hotline",
+      "description": "The National Human Trafficking Hotline is a national, toll-free hotline, available to answer calls, texts, and chats from anywhere in the country, 24 hours a day, 7 days a week, every day of the year. The Trafficking Hotline is operated by Polaris, a non-profit, non-governmental organization working exclusively on the issue of human trafficking. The Trafficking Hotline is not a government entity, law enforcement, or an immigration authority.",
+      "website": "https://humantraffickinghotline.org/",
+      "phone": "(888) 373-7888",
+      "sms": "233733",
+      "chat": "https://humantraffickinghotline.org/chat",
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Trauma & PTSD",
+        "Sexual abuse"
+      ],
+      "categories": [
+        "safety",
+        "mental-health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "2773ca93-a8af-4892-9ac3-6b545689b9a5",
+      "name": "Trans Lifeline",
+      "description": "Trans Lifeline's Hotline is a peer support phone service run by trans people for our trans and questioning peers. Call us if you need someone trans to talk to, even if you're not in a crisis or if you're not sure you're trans. When you reach out to us you will talk with one of our trained peers or volunteers who will listen to you with empathy and understanding, and work together with you to find a meaningful way foward. They are experienced in knowing how to help people who have challenges like what you are going through.\n\nLa línea directa de Trans Lifeline es un servicio telefónico de apoyo entre pares, dirigido por personas trans para nuestros pares trans y personas que se cuestionan su identidad. Llámanos si necesitas hablar con alguien trans, incluso si no estás en una crisis o si no estás seguro de serlo. Al contactarnos, hablarás con uno de nuestros pares o voluntarios capacitados que te escucharán con empatía y comprensión, y trabajarán contigo para encontrar una salida significativa. Tienen experiencia en ayudar a personas que enfrentan desafíos como los que estás atravesando.",
+      "website": "https://www.translifeline.org/hotline",
+      "phone": "(877) 565-8860",
+      "sms": null,
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "LGBTQ+",
+        "Adults",
+        "Youth"
+      ],
+      "topics": [
+        "Gender & sexual identity",
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Loneliness",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Physical illness"
+      ],
+      "categories": [
+        "lgbtq",
+        "safety",
+        "mental-health",
+        "youth",
+        "family",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "substance-use",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "a460e958-621e-4804-a82c-5edf6a03a129",
+      "name": "National Abortion Hotline",
+      "description": "The National Abortion Hotline (NAH), operated by the National Abortion Federation (NAF), is a confidential, toll-free helpline dedicated to supporting anyone seeking information or assistance regarding abortion care in the United States and Canada. Our compassionate, highly trained staff are equipped to provide expert guidance on all aspects of abortion care, including up-to-date information, clinic referrals, logistical support, and case management. We are committed to serving individuals of all backgrounds, offering services in English and Spanish, as well as access to a live, confidential translation service for most other languages to ensure everyone can receive the help they need.\n\nThe National Abortion Hotline offers financial assistance for abortion care and related travel costs to eligible patients, determined through a private screening process via our hotline, chat feature, or through NAF member facilities. We understand that accessing abortion care can involve complex challenges, so we collaborate closely with state and regional abortion funds to provide further support when needed, ensuring patients have access to comprehensive resources. Our team can also connect callers with intersecting resources, such as counseling, crisis intervention, and legal assistance, making the National Abortion Hotline a trusted, all-encompassing support system for those navigating the abortion process.",
+      "website": "https://prochoice.org/patients/naf-hotline/",
+      "phone": "(800) 772-9100",
+      "sms": null,
+      "chat": "https://prochoice.org/patients/naf-hotline/",
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Pregnancy & abortion",
+        "Supporting others"
+      ],
+      "categories": [
+        "reproductive-health",
+        "family"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "c5e0c055-26f6-4734-872d-0eac1170ea50",
+      "name": "Veterans Crisis Line",
+      "description": "The Veterans Crisis Line is a toll-free, confidential resource that connects Veterans in crisis and their families and friends with qualified, caring U.S. Department of Veterans Affairs (VA) responders.\r\n\r\nVeterans and their loved ones can Dial 988 then Press 1, chat online at VeteransCrisisLine.net/Chat, or send a text message to 838255 to receive free, confidential support 24 hours a day, 7 days a week, 365 days a year, even if they are not registered with VA or enrolled in VA health care. \r\n\r\nThe responders at the Veterans Crisis Line are specially trained and experienced in helping Veterans of all ages and circumstances— from Veterans coping with mental health issues that were never addressed to recent Veterans struggling with relationships or the transition back to civilian life. Veterans Crisis Line responders provide support when these and other issues—such as chronic pain, anxiety, depression, sleeplessness, anger, and even homelessness—reach a crisis point. Some of the responders are Veterans themselves and understand what Veterans and their families and friends have been through.",
+      "website": "https://www.veteranscrisisline.net/",
+      "phone": null,
+      "sms": "838255",
+      "chat": "https://www.veteranscrisisline.net/get-help-now/chat/",
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Veterans"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Depression",
+        "Family",
+        "Loneliness",
+        "Trauma & PTSD",
+        "Relationships",
+        "Self-harm",
+        "Stress",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss",
+        "Physical illness"
+      ],
+      "categories": [
+        "safety",
+        "mental-health",
+        "family",
+        "relationships",
+        "crisis",
+        "grief",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "ad5fa03c-52c3-47fc-98ed-38dd4cc5050d",
+      "name": "National Maternal Mental Health Hotline",
+      "description": "Pregnancy and a new baby can bring a range of emotions. Many new moms feel overwhelmed, sad, anxious, or exhausted at different times during their pregnancy or after the baby is born.\r\n\r\nSometimes these feelings go away on their own. But if these feelings last for more than two weeks, and make it hard to carry out daily tasks, like caring for themselves or their family, a mom may have perinatal depression or anxiety. These are common and treatable health conditions during or after pregnancy. And that's why a new mom, or those supporting them, should reach out right away for help.\r\n\r\nThe National Maternal Mental Health Hotline provides free and confidential emotional support and resources through local and telehealth providers and support groups through phone and text services to pregnant or postpartum persons and their loved ones. Funded by the Health Resources and Services Administration (HRSA), the National Maternal Mental Health Hotline is available across the United States 24 hours a day and seven (7) days a week. The National Maternal Mental Health Hotline staff are professional counselors who speak English and Spanish, providing additional interpreter services in 60 languages. \r\n\r\nThe National Maternal Mental Health Hotline can help. \r\nCall or text 1-833-TLC-MAMA (1-833-852-6262). \r\nTTY users can use a preferred relay service or dial 711 and 1-833-852-6262.",
+      "website": "https://mchb.hrsa.gov/national-maternal-mental-health-hotline",
+      "phone": "1-833-852-6262",
+      "sms": "1-833-852-6262",
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Deaf & HOH",
+        "Parents",
+        "Women"
+      ],
+      "topics": [
+        "Pregnancy & abortion",
+        "Family",
+        "Parenting",
+        "Anxiety",
+        "Depression",
+        "Loneliness",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss"
+      ],
+      "categories": [
+        "reproductive-health",
+        "family",
+        "mental-health",
+        "substance-use",
+        "crisis",
+        "grief"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "67db9ebc-23ff-4207-b0fd-59134cad0437",
+      "name": "National Problem Gambling Helpline",
+      "description": "National Problem Gambling Helpline offers 24/7, free and confidential support by phone, text message (SMS) and online chat. We are here for everyone in the United States who may be looking for support with gambling.\r\n\r\nWhen you reach out to us you will talk with one of our trained counselors who will listen to you with empathy and understanding, and work together with you to find a meaningful way forward. They are experienced in knowing how to help people who have challenges like what you are going through. Regardless of your age, gender, ethnicity or religious beliefs, we will listen in a supportive and non-judgmental capacity. We recognise that difficult mental health or crisis experiences can happen at any time, so we are available 24 hours a day, every day of the week.",
+      "website": "https://www.ncpgambling.org/help-treatment/",
+      "phone": "1-800-426-2537",
+      "sms": "1-800-426-2537",
+      "chat": "https://www.ncpgambling.org/help-treatment/chat/",
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Gambling"
+      ],
+      "categories": [
+        "substance-use"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "de4973ac-6ebb-42ff-94a4-fe014368c872",
+      "name": "StrongHearts Native Helpline",
+      "description": "StrongHearts Native Helpline is a 24/7 confidential and anonymous culturally-appropriate domestic and sexual violence helpline for Native Americans. We exist to restore power to Native Americans impacted by domestic and sexual violence by weaving together a braid of safety, sovereignty and support.",
+      "website": "https://strongheartshelpline.org/",
+      "phone": "(844) 762-8483",
+      "sms": "(844) 762-8483",
+      "chat": "https://strongheartshelpline.org/",
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Cultural support"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Bullying",
+        "Eating & body image",
+        "Family",
+        "Gender & sexual identity",
+        "Parenting",
+        "Trauma & PTSD",
+        "Relationships",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Supporting others"
+      ],
+      "categories": [
+        "safety",
+        "youth",
+        "mental-health",
+        "family",
+        "lgbtq",
+        "relationships",
+        "crisis",
+        "substance-use"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "3a76d277-fcaf-42bb-a834-0d7b90765533",
+      "name": "National Center for Missing & Exploited Children 24-Hour Hotline",
+      "description": "National Center for Missing & Exploited Children 24-Hour Hotline provides 24/7 free and confidential support by phone. We help the youth in the United States who may need emotional support with family and parenting. \r\n\r\nWhen you reach out to us, you will talk with one of our friendly and supportive counselors who will collaborate with you to find solutions while giving you an empathetic and compassionate ear. They have expertise and understanding in how to help people going through difficulties similar to what you are. Anyone can call and receive free support. We exist to help everyone regardless of age, gender, beliefs or ethnicity. We recognise that difficult mental health or crisis experiences can happen at any time, so we are available 24 hours a day, every day of the week.",
+      "website": "https://www.missingkids.org",
+      "phone": "(800) 843-5678",
+      "sms": null,
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Youth",
+        "Parents"
+      ],
+      "topics": [
+        "Family",
+        "Parenting",
+        "Sexual abuse"
+      ],
+      "categories": [
+        "family",
+        "safety"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "82694841-e560-475b-a79a-7ac928e71227",
+      "name": "National Parent and Youth Helpline",
+      "description": "National Parent and Youth Helpline provides free and confidential emotional support and resources to diverse Parents, Caregivers, Children and Youth of all Ages by phone, text and live chat and connect you to Weekly Parents Anonymous Groups. \r\n\r\nWhen you reach out, we are here providing evidence-based emotional support for any personal, family or life concern with trained and caring counselors and peers 24/7 without blame and shame. We believe Asking for Help is a Sign of Strength.  Parents Anonymous envisions a just society where ALL Parents, Children and Youth thrive in resilient families and communities.",
+      "website": "http://www.nationalparentyouthhelpline.org/",
+      "phone": "(855) 427-2736",
+      "sms": "8554272736",
+      "chat": "http://www.nationalparentyouthhelpline.org/",
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone",
+        "All topics"
+      ],
+      "topics": [
+        "Parenting",
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss",
+        "Physical illness",
+        "Dementia & Alzheimers",
+        "Gambling"
+      ],
+      "categories": [
+        "family",
+        "safety",
+        "mental-health",
+        "youth",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "substance-use",
+        "grief",
+        "health"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "d3ae2b25-c6f1-4a42-953c-bee021334290",
+      "name": "National Grad Crisis Line",
+      "description": "National Grad Crisis Line is dedicated to providing 24/7, free, compassionate and confidential support over phone. We exist to help people in United States who may need emotional support with abuse & domestic violence, anxiety, bullying, Dementia & Alzheimer's, depression, eating & body image, family issues, gambling, gender & sexual identity, grief & loss, loneliness, parenting, pregnancy & abortion, relationships, school or work issues, self-harm, sexual abuse, stress, substance use, suicide, supporting a friend or family member, trauma & PTSD.\r\n\r\nPeople call us for many different mental health, crisis and behavioral health reasons. Regardless of what you are experiencing, we can support you. Talking with us is free. We are dedicated to preventing suicide. If you're contemplating suicide or you're worried about warning signs in someone else, please reach out to us for help.\r\n\r\nWhen you reach out to us you will talk with one of our trained counselors who have experience in how to help people with similar experiences to your own. They will listen, express empathy and understanding, and assist you to find a way through your situation. We are ready to support you 24/7, whether it's the middle of the day or the middle of the night.",
+      "website": "https://gradresources.org/",
+      "phone": "(877) 472-3457",
+      "sms": null,
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Everyone",
+        "All topics"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Dementia & Alzheimers",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gambling",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss"
+      ],
+      "categories": [
+        "safety",
+        "mental-health",
+        "youth",
+        "family",
+        "substance-use",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "grief"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "a17b3756-baa7-41f9-9020-c185d6a395c0",
+      "name": "Disaster Distress Helpline",
+      "description": "The national Disaster Distress Helpline (call or text 1-800-985-5990 ; press 2 for Spanish) providers 24/7/365 crisis and emotional support for anyone in the United States/territories experiencing distress or other mental health concerns related to any natural or human-caused disaster, including before, during, and after such events, as well as during long term recovery.  \r\n\r\nDDH calls and texts are answered by trained counselors who will listen to what's on your mind, explore healthy coping, identify social supports, and offer referrals for follow-up care and support. The DDH is answered by an independently-operated crisis center, with funding from the U.S. Substance Abuse and Mental Health Services Administration.",
+      "website": "https://www.samhsa.gov/find-help/disaster-distress-helpline",
+      "phone": "800-985-5990",
+      "sms": "800-985-5990",
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "specialties": [
+        "Everyone"
+      ],
+      "topics": [
+        "Trauma & PTSD",
+        "Grief & loss",
+        "Anxiety",
+        "Depression",
+        "Family",
+        "Loneliness",
+        "Relationships",
+        "School & work",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others"
+      ],
+      "categories": [
+        "mental-health",
+        "grief",
+        "family",
+        "relationships",
+        "education-employment",
+        "substance-use",
+        "crisis"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    },
+    {
+      "id": "a98584c4-e659-458a-8e56-9640932dec19",
+      "name": "Safe Place® TXT 4 HELP",
+      "description": "TXT 4 HELP is a free, confidential, 24/7 text-based support service for youth nationwide. It offers assistance for challenges such as abuse, domestic violence, trafficking, anxiety, bullying, depression, family or relationship issues, gender and sexual identity concerns, grief, loneliness, homelessness, parenting, pregnancy, school or work stress, self-harm, mental health struggles—including trauma—and more.\r\n\r\nThe service provides support for a wide range of mental health challenges, including crises and concerns about self-harm or the well-being of others. Youth who reach out will connect with trained, compassionate counselors who listen with empathy, offer guidance, and help explore solutions tailored to their situation.\r\n\r\nAvailable 24 hours a day, seven days a week, 365 days a year, TXT 4 HELP ensures that support is always accessible, no matter the time or issue.",
+      "website": "https://www.nationalsafeplace.org/txt-4-help",
+      "phone": null,
+      "sms": "44357",
+      "chat": null,
+      "whatsapp": null,
+      "languages": [
+        "en"
+      ],
+      "specialties": [
+        "Youth",
+        "Children",
+        "All topics"
+      ],
+      "topics": [
+        "Abuse & domestic violence",
+        "Anxiety",
+        "Bullying",
+        "Dementia & Alzheimers",
+        "Depression",
+        "Eating & body image",
+        "Family",
+        "Gambling",
+        "Gender & sexual identity",
+        "Loneliness",
+        "Parenting",
+        "Pregnancy & abortion",
+        "Trauma & PTSD",
+        "Relationships",
+        "School & work",
+        "Self-harm",
+        "Sexual abuse",
+        "Stress",
+        "Substance use",
+        "Suicidal thoughts",
+        "Supporting others",
+        "Grief & loss"
+      ],
+      "categories": [
+        "safety",
+        "mental-health",
+        "youth",
+        "family",
+        "substance-use",
+        "lgbtq",
+        "reproductive-health",
+        "relationships",
+        "education-employment",
+        "crisis",
+        "grief"
+      ],
+      "availability": "24/7",
+      "source": "ThroughLine",
+      "sourceUrl": "https://findahelpline.com",
+      "verified": true
+    }
+  ]
+}

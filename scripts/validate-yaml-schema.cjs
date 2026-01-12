@@ -46,6 +46,8 @@ const NON_PROGRAM_FILES = [
   'groups.yml',
   'zipcodes.yml',
   'suppressed.yml',
+  'helplines.yml',
+  'transit-agencies.yml',
 ];
 
 // Validation functions
