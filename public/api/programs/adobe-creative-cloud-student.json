@@ -1,0 +1,28 @@
+{
+  "id": "adobe-creative-cloud-student",
+  "name": "Adobe Creative Cloud Student Discount",
+  "category": "community",
+  "description": "60% off Creative Cloud All Apps ($22.99/month) for students and teachers",
+  "fullDescription": "Adobe offers students and teachers 60% off Creative Cloud All Apps, including Photoshop, Illustrator, Premiere Pro, and 20+ creative apps for $22.99/month.",
+  "whatTheyOffer": "- All Creative Cloud apps for $22.99/month (60% off)\n- Includes Photoshop, Illustrator, Premiere Pro\n- Access to 20+ creative applications\n- 100GB cloud storage\n- Adobe Fonts included\n- First year pricing, then $29.99/month\n",
+  "howToGetIt": "1. Visit adobe.com/creativecloud/plans\n2. Select Students & Teachers plan\n3. Verify status with school-issued email or SheerID\n4. Students ages 13+ at accredited schools eligible\n5. Teachers and faculty at all levels eligible\n",
+  "groups": [
+    "college-students",
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.adobe.com/creativecloud/plans.html",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Adobe, Creative Cloud, student discount, teacher discount, Photoshop, Illustrator, Premiere Pro, 60% off",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

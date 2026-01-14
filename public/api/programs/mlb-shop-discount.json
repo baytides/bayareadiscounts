@@ -1,0 +1,28 @@
+{
+  "id": "mlb-shop-discount",
+  "name": "MLB Shop Military & First Responder Discount",
+  "category": "community",
+  "description": "15% off MLB merchandise for military and first responders",
+  "fullDescription": "MLB Shop offers 15% off for military members, veterans, first responders, and their families on official MLB merchandise and gear.",
+  "whatTheyOffer": "- 15% off eligible purchases\n- Available to military, veterans, and first responders\n- Extends to spouses and immediate family members\n- Official MLB jerseys, apparel, and merchandise\n- Cannot combine with other promo codes\n",
+  "howToGetIt": "1. Shop at MLBShop.com\n2. Add items to cart and proceed to checkout\n3. Click \"First Responder ID\" or \"Troop ID\" button at checkout\n4. Verify status through ID.me\n5. Discount applies automatically after verification\n",
+  "groups": [
+    "veterans",
+    "first-responders"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.mlbshop.com/military-fr-faq/x-248915+z-8038715-2782151551",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "MLB Shop, baseball, military discount, first responder, veteran, sports merchandise, jersey, ID.me, 15% off",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

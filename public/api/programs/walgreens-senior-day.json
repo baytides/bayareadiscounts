@@ -1,0 +1,27 @@
+{
+  "id": "walgreens-senior-day",
+  "name": "Walgreens Seniors Day",
+  "category": "retail",
+  "description": "20% off regularly priced items on first Tuesday of month for 55+",
+  "fullDescription": "Walgreens offers seniors aged 55+ a 20% discount on regularly priced items the first Tuesday of each month. Must be a myWalgreens member (free to join).",
+  "whatTheyOffer": "- 20% off regularly priced items\n- Available first Tuesday of each month\n- Excludes prescriptions, alcohol, tobacco, dairy, and select items\n- Must be myWalgreens member (free)\n- Ages 55 and older eligible\n",
+  "howToGetIt": "1. Join myWalgreens rewards program (free)\n2. Visit Walgreens on first Tuesday of month\n3. Show myWalgreens membership at checkout\n4. Discount applied in-store and online\n5. Ages 55 and older eligible\n",
+  "groups": [
+    "seniors"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.walgreens.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Walgreens, senior discount, 55+, first Tuesday, pharmacy, retail, 20% off, myWalgreens",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

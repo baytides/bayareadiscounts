@@ -1,0 +1,27 @@
+{
+  "id": "amazon-prime-student",
+  "name": "Amazon Prime Student",
+  "category": "community",
+  "description": "50% off Prime membership ($69/year vs $139/year)",
+  "fullDescription": "Amazon Prime Student (now Prime for Young Adults) offers 50% off Prime membership for college students and young adults ages 18-24, with a 6-month free trial.",
+  "whatTheyOffer": "- 6-month free trial\n- $7.49/month or $69/year (50% off regular Prime)\n- All Prime benefits: free shipping, Prime Video, Prime Music\n- 5% cash back on select categories (limited time)\n- Eligible for up to 4 years\n",
+  "howToGetIt": "1. Visit amazon.com/Amazon-Student\n2. Students: verify with .edu email or enrollment proof\n3. Ages 18-24 (non-students): verify age with ID\n4. Start 6-month free trial\n5. After trial or 4 years, converts to regular Prime pricing\n",
+  "groups": [
+    "college-students"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.amazon.com/Amazon-Student/b?node=668781011",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Amazon Prime, student discount, Prime Student, college, university, 50% off, free shipping, Prime Video, 18-24",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

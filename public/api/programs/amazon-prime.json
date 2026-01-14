@@ -1,0 +1,29 @@
+{
+  "id": "amazon-prime",
+  "name": "Amazon Prime",
+  "category": "community",
+  "description": "$6.99-$7.49/month Prime membership (50% off) for students, young adults, or EBT/Medicaid recipients",
+  "fullDescription": "Amazon offers discounted Prime memberships for students, young adults (18-24), and qualifying government assistance recipients, with rates starting at $6.99/month.",
+  "whatTheyOffer": "**Prime Student & Young Adult ($7.49/month):**\n- For college students or ages 18-24\n- 6-month free trial for new student members\n- Free 2-day shipping on eligible items\n- Prime Video, Prime Music, Prime Reading included\n\n**Prime Access ($6.99/month):**\n- For recipients of qualifying government assistance\n- EBT, Medicaid, and other programs qualify\n- Same full Prime benefits\n- Re-verify eligibility every 12 months\n",
+  "howToGetIt": "1. Visit amazon.com/amazonprime and choose your plan\n2. Prime Student: Verify with .edu email or enrollment documents\n3. Young Adult (18-24): Verify age through ID verification\n4. Prime Access: Verify EBT card or Medicaid status\n5. All discounted plans include full Prime benefits\n",
+  "groups": [
+    "college-students",
+    "youth",
+    "income-eligible"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.amazon.com/amazonprime",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Amazon, Prime Student, Prime Access, young adult, student discount, EBT, SNAP, Medicaid, free shipping, Prime Video, college, university, 50% off, streaming, 18-24",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

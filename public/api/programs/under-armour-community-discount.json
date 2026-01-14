@@ -1,0 +1,29 @@
+{
+  "id": "under-armour-community-discount",
+  "name": "Under Armour Military & First Responder Discount",
+  "category": "community",
+  "description": "20% off year-round for verified community members",
+  "fullDescription": "Under Armour offers 20% off for military, first responders, healthcare workers, and teachers on UA.com, the UA App, and at UA Brand Houses.",
+  "whatTheyOffer": "- 20% off at UA.com, UA App, and Brand Houses\n- 10% off at UA Factory House stores\n- Discount may increase during promotional periods\n- Cannot combine with other promo codes\n- Freedom Collection gear available\n",
+  "howToGetIt": "1. Shop on UA.com or UA App\n2. Verify status through ID.me at checkout\n3. Eligible: military, veterans, first responders, nurses, teachers\n4. In-store: show valid ID at Brand House or Factory House\n5. Discount applied automatically after verification\n",
+  "groups": [
+    "veterans",
+    "first-responders",
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.underarmour.com/en-us/t/troop-id-instructions.html",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Under Armour, military discount, first responder, teacher, nurse, 20% off, athletic wear, shoes, ID.me",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

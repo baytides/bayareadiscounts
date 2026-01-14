@@ -1,0 +1,27 @@
+{
+  "id": "michaels-teacher-discount",
+  "name": "Michaels Teacher Discount",
+  "category": "retail",
+  "description": "15% off every purchase for verified teachers",
+  "fullDescription": "Michaels offers teachers and educators 15% off every purchase in-store and online when enrolled in the free Michaels Rewards program.",
+  "whatTheyOffer": "- 15% off every in-store and online purchase\n- Applies to craft supplies, art materials, décor\n- Free Michaels Rewards membership\n- Stackable with coupons and sales\n- No minimum purchase required\n",
+  "howToGetIt": "1. Join free Michaels Rewards at michaels.com\n2. Register as an educator in rewards profile\n3. In-store: Show school ID at checkout\n4. Online: Discount applied automatically when signed in\n5. K-12 teachers and administrators eligible\n",
+  "groups": [
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.michaels.com/rewards",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Michaels, teacher discount, educator, 15% off, craft supplies, classroom, art supplies",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

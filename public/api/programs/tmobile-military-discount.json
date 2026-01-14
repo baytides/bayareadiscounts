@@ -1,0 +1,27 @@
+{
+  "id": "tmobile-military-discount",
+  "name": "T-Mobile Military Discount",
+  "category": "community",
+  "description": "~20% off monthly plans, Netflix included on Go5G plans",
+  "fullDescription": "T-Mobile offers special military pricing on wireless plans for active military, veterans, and their families, with Netflix included on select plans.",
+  "whatTheyOffer": "- Essentials Military: $90/month for 3 lines (nearly 20% savings)\n- Go5G Military plans with Netflix included\n- Available for all consumer plans\n- Gold Star families eligible\n- Veteran-owned businesses also qualify\n",
+  "howToGetIt": "1. Visit T-Mobile store or t-mobile.com/cell-phone-plans/military-discount-plans\n2. Choose Essentials Military or Go5G Military plan\n3. Verify military status\n4. Military member/veteran must be primary account holder\n5. Maintain valid military line on account\n",
+  "groups": [
+    "veterans"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.t-mobile.com/cell-phone-plans/military-discount-plans",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "T-Mobile, military discount, veteran, active duty, National Guard, Reserve, Gold Star, cell phone, wireless plan",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

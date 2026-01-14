@@ -1,0 +1,27 @@
+{
+  "id": "gamestop-military",
+  "name": "GameStop Military Discount",
+  "category": "retail",
+  "description": "10% off games, hardware, and collectibles for military",
+  "fullDescription": "GameStop offers active and former military personnel 10% off new and pre-owned video games, hardware, accessories, and collectibles year-round.",
+  "whatTheyOffer": "- 10% off video games (new and pre-owned)\n- 10% off gaming hardware and accessories\n- 10% off collectibles\n- Available in-store with valid ID\n- Year-round discount\n",
+  "howToGetIt": "1. Visit any GameStop store\n2. Present valid military ID at checkout\n3. Active duty, veterans, retirees, and dependents eligible\n4. Discount applied to eligible purchases\n5. Some exclusions may apply\n",
+  "groups": [
+    "veterans"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.gamestop.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "GameStop, military discount, veteran, 10% off, video games, gaming, consoles",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

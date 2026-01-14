@@ -1,0 +1,27 @@
+{
+  "id": "hulu-student",
+  "name": "Hulu Student Discount",
+  "category": "community",
+  "description": "Hulu streaming for $1.99/month (80% off) for college students",
+  "fullDescription": "Hulu offers college students the ad-supported plan for $1.99/month (normally $9.99), a savings of 80%. Available through SheerID verification.",
+  "whatTheyOffer": "- Hulu (ad-supported) for $1.99/month\n- 80% off regular price\n- Full streaming library access\n- Watch on multiple devices\n- Available for up to 4 years\n",
+  "howToGetIt": "1. Visit hulu.com/student\n2. Verify enrollment through SheerID\n3. Must be enrolled at US Title IV college\n4. New and returning subscribers eligible\n5. Re-verify student status annually\n",
+  "groups": [
+    "college-students"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.hulu.com/student",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Hulu, student discount, streaming, TV shows, movies, college, university",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

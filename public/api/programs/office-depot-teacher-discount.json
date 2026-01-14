@@ -1,0 +1,27 @@
+{
+  "id": "office-depot-teacher-discount",
+  "name": "Office Depot/OfficeMax Teacher Discount",
+  "category": "retail",
+  "description": "25% cash back on qualifying purchases for teachers",
+  "fullDescription": "Office Depot/OfficeMax offers teachers 25% cash back on qualifying in-store purchases with teacher ID through their rewards program.",
+  "whatTheyOffer": "- 25% cash back on qualifying in-store purchases\n- Free rewards membership required\n- Back-to-school teacher appreciation events\n- Up to 5% back through Office Depot Rewards\n- Special educator pricing on select items\n",
+  "howToGetIt": "1. Join free Office Depot Rewards program\n2. Register as educator in rewards profile\n3. Show teacher ID at checkout\n4. Cash back applied to rewards account\n5. K-12 teachers and administrators eligible\n",
+  "groups": [
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.officedepot.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Office Depot, OfficeMax, teacher discount, educator, 25% cash back, school supplies, classroom",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "staples-teacher-discount",
+  "name": "Staples Teacher Rewards",
+  "category": "retail",
+  "description": "20% off with teacher ID and app coupon",
+  "fullDescription": "Staples offers teachers 20% off in-store purchases with app coupon and teacher ID, plus special back-to-school savings and rewards.",
+  "whatTheyOffer": "- 20% off in-store with app coupon and teacher ID\n- Special teacher appreciation events\n- Back-to-school supply deals\n- Staples Rewards points on purchases\n- Free shipping on orders $30+\n",
+  "howToGetIt": "1. Download Staples app\n2. Find teacher discount coupon in app\n3. Present coupon and teacher ID at checkout\n4. K-12 teachers and administrators eligible\n5. Check app for current offers\n",
+  "groups": [
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.staples.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Staples, teacher discount, educator, 20% off, school supplies, office supplies, classroom",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

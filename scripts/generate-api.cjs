@@ -43,6 +43,7 @@ const CATEGORY_METADATA = {
   library_resources: { name: 'Library Resources', icon: '📖' },
   pet_resources: { name: 'Pet Resources', icon: '🐾' },
   recreation: { name: 'Recreation', icon: '⚽' },
+  retail: { name: 'Retail', icon: '🛍️' },
   technology: { name: 'Technology', icon: '💻' },
   transportation: { name: 'Transportation', icon: '🚌' },
   utilities: { name: 'Utilities', icon: '🏠' },

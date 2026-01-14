@@ -1,0 +1,28 @@
+{
+  "id": "nba-store-discount",
+  "name": "NBA Store Military & First Responder Discount",
+  "category": "community",
+  "description": "15% off NBA merchandise for military and first responders",
+  "fullDescription": "NBA Store offers 15% off for military members, veterans, first responders, and their families on official NBA merchandise and gear.",
+  "whatTheyOffer": "- 15% off eligible purchases\n- Available to military, veterans, and first responders\n- Extends to spouses and immediate family members\n- Official NBA jerseys, apparel, and merchandise\n- Cannot combine with other promo codes\n",
+  "howToGetIt": "1. Shop at store.nba.com\n2. Add items to cart and proceed to checkout\n3. Select \"Military and First Responder Discount\"\n4. Verify status through ID.me or SheerID\n5. Discount code applied after verification\n",
+  "groups": [
+    "veterans",
+    "first-responders"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://store.nba.com/military-offer/x-253882+z-91832123-1978184840",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "NBA Store, basketball, military discount, first responder, veteran, sports merchandise, jersey, ID.me, 15% off",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

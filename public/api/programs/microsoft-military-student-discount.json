@@ -1,0 +1,29 @@
+{
+  "id": "microsoft-military-student-discount",
+  "name": "Microsoft Store Military & Student Discounts",
+  "category": "community",
+  "description": "10% off select devices, free Office 365 for students",
+  "fullDescription": "Microsoft Store offers 10% off select products for active military, veterans, and students, plus free Office 365 for students with a school email.",
+  "whatTheyOffer": "- 10% off select Surface devices, laptops, and tablets\n- Free Office 365 for students with .edu email\n- Military Appreciation Edition Microsoft 365 (~30% off through exchanges)\n- Excludes Xbox consoles, games, and gift cards\n- Online only at Microsoft Store\n",
+  "howToGetIt": "1. Visit microsoft.com/en-us/store/b/military or /b/education\n2. Sign in and verify status\n3. Students: use school email for free Office 365\n4. Military: verify through store account\n5. Discounted prices shown automatically when signed in\n",
+  "groups": [
+    "veterans",
+    "college-students",
+    "teachers"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.microsoft.com/en-us/store/b/education",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Microsoft, military discount, student discount, veteran, Surface, laptop, Xbox, Office 365, 10% off",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

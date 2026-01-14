@@ -1,0 +1,30 @@
+{
+  "id": "nike-community-discounts",
+  "name": "Nike Community Discounts",
+  "category": "community",
+  "description": "10% off reusable discount for verified community members",
+  "fullDescription": "Nike offers 10% off for students, military members, first responders, medical professionals, and teachers on Nike.com and in the Nike App.",
+  "whatTheyOffer": "- 10% off most items on Nike.com and Nike App\n- Students can reuse discount every 30 days\n- Military/first responders can reuse every 7 days\n- Nike Members also get free shipping\n- Birthday month: additional 20% off (up to 10 items)\n",
+  "howToGetIt": "1. Visit nike.com/promo-code\n2. Verify status through SheerID\n3. Eligible: students, military, first responders, nurses, teachers\n4. Receive 10% off promo code after verification\n5. Reusable (frequency varies by group)\n",
+  "groups": [
+    "veterans",
+    "first-responders",
+    "teachers",
+    "college-students"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.nike.com/help/a/first-responder-discount",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Nike, military discount, student discount, teacher discount, first responder, nurse, 10% off, shoes, athletic, SheerID",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

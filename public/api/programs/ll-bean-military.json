@@ -1,0 +1,28 @@
+{
+  "id": "ll-bean-military",
+  "name": "L.L. Bean Military & First Responder Discount",
+  "category": "retail",
+  "description": "10% off outdoor gear and clothing for military and first responders",
+  "fullDescription": "L.L. Bean offers a 10% discount to military personnel, veterans, and first responders on most purchases through SheerID verification.",
+  "whatTheyOffer": "- 10% off most purchases\n- Applies to outdoor gear, clothing, footwear\n- Valid on llbean.com\n- Excludes some items (kayaks, canoes, gift cards)\n- Year-round discount\n",
+  "howToGetIt": "1. Visit llbean.com\n2. Add items to cart\n3. At checkout, verify through SheerID\n4. Eligible: active military, veterans, retirees, first responders\n5. 10% discount applied automatically\n",
+  "groups": [
+    "veterans",
+    "first-responders"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.llbean.com/llb/shop/516584",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "L.L. Bean, military discount, veteran, first responder, 10% off, outdoor gear, clothing",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

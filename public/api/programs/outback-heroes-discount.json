@@ -1,0 +1,28 @@
+{
+  "id": "outback-heroes-discount",
+  "name": "Outback Steakhouse Heroes Discount",
+  "category": "community",
+  "description": "10% off every day for heroes with valid ID",
+  "fullDescription": "Outback Steakhouse offers a 10% Heroes Discount every day for military, veterans, police, firefighters, first responders, nurses, doctors, and medical staff.",
+  "whatTheyOffer": "- 10% off entire check every day\n- Available for dine-in with valid ID\n- Includes military, veterans, police, firefighters\n- Also includes nurses, doctors, medical staff\n- Online orders verified through SheerID\n",
+  "howToGetIt": "1. Dine in at any Outback Steakhouse location\n2. Show valid military, medical, or service ID\n3. 10% discount applied to check (excludes alcohol)\n4. Maximum one discount per table\n5. For online orders, verify through SheerID at checkout\n",
+  "groups": [
+    "veterans",
+    "first-responders"
+  ],
+  "areas": [
+    "Bay Area"
+  ],
+  "city": null,
+  "website": "https://www.outback.com/offers/heroes-discount",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Outback Steakhouse, military discount, veteran, first responder, police, firefighter, nurse, doctor, 10% off, restaurant, dining",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

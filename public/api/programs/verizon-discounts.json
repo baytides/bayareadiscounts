@@ -1,0 +1,30 @@
+{
+  "id": "verizon-discounts",
+  "name": "Verizon Community Discounts",
+  "category": "community",
+  "description": "$10-25/month off unlimited plans plus 25% off accessories",
+  "fullDescription": "Verizon offers ongoing monthly discounts on unlimited wireless plans for military, veterans, first responders, teachers, and nurses. All programs provide $10-25/month off plus 25% off accessories.",
+  "whatTheyOffer": "- $10/month off (1 phone line)\n- $25/month off (2-3 phone lines)\n- $20/month off (4+ phone lines)\n- 25% off accessories (online only)\n- Available for new and existing customers\n- Eligible groups: military/veterans, first responders, teachers, nurses\n",
+  "howToGetIt": "1. Visit verizon.com/discounts to see all available programs\n2. Verify status through ID.me\n3. Military: active duty, veterans, retirees, National Guard, Reserve\n4. First responders: firefighters, EMTs/EMS, state/local police\n5. Teachers: K-12 and college/university educators\n6. Nurses: RNs, LPNs, nurse practitioners, respiratory therapists\n7. Discount continues as long as status is verified\n",
+  "groups": [
+    "veterans",
+    "first-responders",
+    "teachers",
+    "everyone"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.verizon.com/discounts/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Verizon, military discount, veteran, first responder, teacher, nurse, firefighter, police, EMT, cell phone, wireless plan, ID.me, healthcare worker",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

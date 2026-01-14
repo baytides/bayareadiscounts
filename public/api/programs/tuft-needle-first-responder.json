@@ -1,0 +1,27 @@
+{
+  "id": "tuft-needle-first-responder",
+  "name": "Tuft & Needle First Responder Discount",
+  "category": "retail",
+  "description": "15% off mattresses and bedding for first responders",
+  "fullDescription": "Tuft & Needle offers first responders 15% off mattresses, bedding, and sleep accessories year-round.",
+  "whatTheyOffer": "- 15% off mattresses\n- 15% off bedding and accessories\n- Applies to all Tuft & Needle products\n- Free shipping on mattresses\n- 100-night sleep trial included\n",
+  "howToGetIt": "1. Visit tuftandneedle.com\n2. Browse products and add to cart\n3. Verify first responder status at checkout\n4. Eligible: law enforcement, firefighters, EMTs, paramedics\n5. 15% discount applied automatically\n",
+  "groups": [
+    "first-responders"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.tuftandneedle.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Tuft & Needle, first responder, mattress, sleep, 15% off, firefighter, police, EMT",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

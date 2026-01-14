@@ -1,0 +1,27 @@
+{
+  "id": "youtube-premium-student",
+  "name": "YouTube Premium Student Plan",
+  "category": "community",
+  "description": "YouTube Premium and Music for $7.99/month for college students",
+  "fullDescription": "YouTube Premium offers college students a discounted rate of $7.99/month (normally $13.99), including YouTube Music Premium, ad-free viewing, and background play.",
+  "whatTheyOffer": "- YouTube Premium for $7.99/month (43% off)\n- YouTube Music Premium included\n- Ad-free videos on YouTube\n- Background play on mobile\n- Video downloads for offline viewing\n- Available for up to 4 years\n",
+  "howToGetIt": "1. Visit youtube.com/premium/student\n2. Sign in with Google account\n3. Verify student status through SheerID\n4. Must be at accredited higher education institution\n5. Re-verify enrollment annually\n",
+  "groups": [
+    "college-students"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.youtube.com/premium/student",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "YouTube Premium, student discount, ad-free, YouTube Music, background play, college, university",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

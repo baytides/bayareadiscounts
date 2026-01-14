@@ -1,0 +1,27 @@
+{
+  "id": "spotify-student",
+  "name": "Spotify Premium Student",
+  "category": "community",
+  "description": "Spotify Premium plus Hulu for $5.99/month (50% off) for students",
+  "fullDescription": "Spotify offers college students Premium for $5.99/month (normally $11.99), including Hulu with ads and Showtime. Available for up to 4 years while enrolled.",
+  "whatTheyOffer": "- Spotify Premium for $5.99/month (50% off)\n- Ad-free music streaming\n- Offline listening\n- Hulu (ad-supported) included\n- Available for up to 4 years\n- Re-verify enrollment annually\n",
+  "howToGetIt": "1. Visit spotify.com/us/student\n2. Verify enrollment through SheerID\n3. Must be at Title IV accredited US college/university\n4. Sign up or upgrade existing account\n5. Re-verify student status every 12 months\n",
+  "groups": [
+    "college-students"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.spotify.com/us/student/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Spotify, student discount, music streaming, Premium, Hulu, Showtime, college, university",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

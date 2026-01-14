@@ -21,10 +21,12 @@ const NON_PROGRAM_FILES = [
   'zipcodes.yml',
   'suppressed.yml',
   'search-config.yml',
+  'transit-agencies.yml',
   'county-supervisors.yml',
   'site-config.yml',
   'bay-area-jurisdictions.yml',
   'city-profiles.yml',
+  'helplines.yml',
 ];
 
 // Category colors for map markers (matches both file names and category field values)
@@ -49,6 +51,8 @@ const CATEGORY_COLORS = {
   'Pet Resources': '#EC4899',
   recreation: '#14B8A6', // teal
   Recreation: '#14B8A6',
+  retail: '#D946EF', // fuchsia
+  Retail: '#D946EF',
   Museums: '#9333EA', // purple for museums
   Parks: '#22C55E', // green for parks
   'Parks & Open Space': '#22C55E', // green for parks

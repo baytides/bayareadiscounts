@@ -1,0 +1,27 @@
+{
+  "id": "carhartt-first-responder",
+  "name": "Carhartt First Responder Discount",
+  "category": "retail",
+  "description": "15% off workwear for verified first responders",
+  "fullDescription": "Carhartt offers first responders a 15% discount on workwear and apparel with ID.me verification at checkout.",
+  "whatTheyOffer": "- 15% off all Carhartt products\n- Applies to workwear, jackets, pants, accessories\n- Online purchases at carhartt.com\n- Combinable with some promotions\n- Year-round discount\n",
+  "howToGetIt": "1. Visit carhartt.com\n2. Add items to cart\n3. At checkout, verify through ID.me\n4. Eligible: firefighters, EMTs, police, paramedics\n5. 15% discount applied automatically\n",
+  "groups": [
+    "first-responders"
+  ],
+  "areas": [
+    "Nationwide"
+  ],
+  "city": null,
+  "website": "https://www.carhartt.com/",
+  "cost": null,
+  "phone": null,
+  "email": null,
+  "address": null,
+  "requirements": null,
+  "howToApply": null,
+  "keywords": "Carhartt, first responder discount, workwear, 15% off, firefighter, police, EMT, ID.me",
+  "lifeEvents": [],
+  "agency": null,
+  "lastUpdated": "2026-01-14"
+}

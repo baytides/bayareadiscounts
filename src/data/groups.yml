@@ -189,6 +189,11 @@ categories:
     name: Recreation
     icon: '⚽'
 
+  # Retail & Shopping
+  - id: retail
+    name: Retail
+    icon: '🛍️'
+
   # Resources & Equipment
   - id: equipment
     name: Equipment
