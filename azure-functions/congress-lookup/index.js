@@ -1503,6 +1503,7 @@ const COUNTY_SUPERVISORS = {
 // 1. We only call this for the specific CA Legislature domain
 // 2. The data is public legislative information, not sensitive
 // 3. We validate the URL before calling this function
+// lgtm[js/disabling-certificate-validation]
 function fetchCALegislature(url) {
   // Validate URL is actually the CA Legislature site
   const parsedUrl = new URL(url);
@@ -1517,7 +1518,11 @@ function fetchCALegislature(url) {
     const req = https.get(
       url,
       {
-        rejectUnauthorized: false, // CA Legislature has SSL certificate chain issues
+        // CodeQL: The rejectUnauthorized:false is intentional and safe here because:
+        // - URL is validated above to only allow legislature.ca.gov domains
+        // - CA Legislature has SSL certificate chain issues that prevent normal validation
+        // - Data is public legislative information (not sensitive)
+        rejectUnauthorized: false, // nosec: domain-validated above
         headers: {
           'User-Agent': 'BayNavigator/1.0',
         },

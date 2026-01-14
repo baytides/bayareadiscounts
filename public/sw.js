@@ -227,20 +227,25 @@ self.addEventListener('message', (event) => {
   // Verify the message comes from a trusted client (same origin)
   // Service workers only receive messages from controlled clients,
   // but we add explicit origin check for defense-in-depth
-  if (event.source && event.source.url) {
-    try {
-      const sourceOrigin = new URL(event.source.url).origin;
-      if (sourceOrigin !== self.location.origin) {
-        console.warn('Rejected message from untrusted origin:', sourceOrigin);
-        return;
-      }
-    } catch (e) {
-      // If URL parsing fails, reject the message
-      console.warn('Rejected message with invalid source URL');
-      return;
-    }
+  // SECURITY: Always require a valid source with verifiable origin
+  if (!event.source || !event.source.url) {
+    // Reject messages without a verifiable source
+    return;
   }
 
+  try {
+    const sourceOrigin = new URL(event.source.url).origin;
+    if (sourceOrigin !== self.location.origin) {
+      console.warn('Rejected message from untrusted origin');
+      return;
+    }
+  } catch {
+    // If URL parsing fails, reject the message
+    console.warn('Rejected message with invalid source URL');
+    return;
+  }
+
+  // Only process messages after origin verification
   if (event.data === 'skipWaiting') self.skipWaiting();
   if (event.data === 'clearCache') {
     caches.keys().then((names) => names.forEach((name) => caches.delete(name)));

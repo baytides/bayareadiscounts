@@ -18,10 +18,17 @@ const zlib = require('zlib');
 
 /**
  * Sanitize string for safe logging (prevent log injection/forging)
+ * Removes all control characters including newlines, carriage returns, tabs,
+ * and any other characters that could be used for log injection attacks.
+ * @param {*} str - Input to sanitize (will be converted to string if needed)
+ * @returns {string} - Sanitized string safe for logging
  */
 function sanitizeForLog(str) {
-  if (typeof str !== 'string') return String(str);
-  return str.replace(/[\r\n\x00-\x1f]/g, ' ').substring(0, 500);
+  if (str === null || str === undefined) return '';
+  const safeStr = typeof str === 'string' ? str : String(str);
+  // Remove all control characters (0x00-0x1f) and DEL (0x7f)
+  // This prevents log injection via newlines, carriage returns, etc.
+  return safeStr.replace(/[\x00-\x1f\x7f]/g, '').substring(0, 500);
 }
 
 // 511 API configuration
