@@ -4541,14 +4541,6 @@
     "timeframe": "Đang diễn ra",
     "link_text": "Tìm hiểu thêm"
   },
-  "rtc-clipper-card": {
-    "name": "Thẻ RTC Clipper",
-    "description": "Thẻ Clipper Kết nối Phương tiện Công cộng Khu vực (RTC) cung cấp giá vé giảm giá cho người khuyết tật trên các hệ thống vận chuyển tham gia của Vùng Vịnh.",
-    "what_they_offer": "- Giảm giá vé trên hầu hết các cơ quan vận chuyển Vùng Vịnh\n- Thông thường giảm 50% trở lên giá vé người lớn thông thường\n-VAnắp trênBART,Muni,AC Transit,Caltrain, v.v.\n- Giảm giá tự động được áp dụng khi sử dụng thẻ RTC Clipper",
-    "how_to_get_it": "1. Hoàn thành đơn đăng ký RTC tại511.org2. Cung cấp bằng chứng khuyết tật (thẻMedicare, tài liệuSSI/SSDIhoặc chứng nhận y tế)\n3. Gửi đơn đăng ký trực tuyến hoặc qua đường bưu điện\n4. Sau khi được phê duyệt, nhận thẻ RTC Clipper qua đường bưu điện\n5. Nạp tiền mặtVAlue và đi xe với chiết khấu tự động",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Đăng ký"
-  },
   "samtrans": {
     "name": "SamTransThẻ Way2Go",
     "description": "SamTranslà dịch vụ xe buýt vận chuyển công cộng của Quận San Mateo. Chương trình Way2Go Pass cung cấp phương tiện công cộng miễn phí không giới hạn cho sinh viên đại học đủ điều kiện thông qua các trung tâm SparkPoint.",
@@ -5620,5 +5612,13 @@
     "how_to_get_it": "1. Phải là chủ sở hữu bất động sản của Thành phố Palo Alto\n2. Chọn tính năng nước mưa đủ điều kiện\n3. Đăng ký thông qua Thành phố Palo Alto\n4. Xin giấy phép xây dựng nếu được yêu cầu\n5. Cài đặt tính năng quản lý nước mưa\n6. Gửi tài liệu để được giảm giá",
     "timeframe": "Đang diễn ra",
     "link_text": "Đăng ký"
+  },
+  "clipper-access": {
+    "name": "Truy cập Clipper (RTC)",
+    "description": "Clipper Access (trước đây là RTC Clipper Card) cung cấp giá vé giảm giá cho người khuyết tật trên các hệ thống vận chuyển tham gia của Vùng Vịnh. Chương trình Kết nối Phương tiện Công cộng Khu vực giảm giá vé trên toàn bộ mạng lưới vận chuyển Vùng Vịnh.",
+    "what_they_offer": "- Giảm giá vé trên hầu hết các cơ quan vận chuyển Vùng Vịnh\n- Thông thường giảm 50% trở lên giá vé người lớn thông thường\n-VAnắp trênBART,Muni,AC Transit,Caltrain,VTA,SamTrans, v.v.\n- Giảm giá tự động được áp dụng khi sử dụng thẻ Clipper Access\n- Hoạt động trên tất cả các cơ quan vận chuyển chấp nhận Clipper",
+    "how_to_get_it": "1. Hoàn thành ứng dụng RTC / Clipper Access tại clippercard.com\n2. Cung cấp bằng chứng khuyết tật (thẻMedicare, tài liệuSSI/SSDIhoặc chứng nhận y tế)\n3. Gửi đơn đăng ký trực tuyến hoặc qua đường bưu điện\n4. Sau khi được phê duyệt, hãy nhận thẻ Clipper Access qua đường bưu điện\n5. Nạp tiền mặtVAlue và đi xe với chiết khấu tự động",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Đăng ký quyền truy cập Clipper"
   }
 }

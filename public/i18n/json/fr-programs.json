@@ -4541,14 +4541,6 @@
     "timeframe": "En cours",
     "link_text": "Pour en savoir plus"
   },
-  "rtc-clipper-card": {
-    "name": "Carte RTC Clipper",
-    "description": "La carte Clipper de la Regional Transit Connection (RTC) offre des tarifs réduits aux personnes en situation de handicap sur les réseaux de transport participants de la région de la baie.",
-    "what_they_offer": "- Tarifs réduits pour la plupart des agences de transport de la région de la Baie\n- Généralement 50 % ou plus de réduction sur les tarifs adultes réguliers\n-VAlit surBART,Muni,AC Transit,Caltrain, et plus encore\n- Réductions appliquées automatiquement lors de l’utilisation de la carte RTC Clipper",
-    "how_to_get_it": "1. Compléter la demande RTC sur511.org2. Fournir une preuve d’invalidité (carteMedicare, documentationSSI/SSDIou certification médicale)\n3. Soumettre la demande en ligne ou par courrier\n4. Une fois approuvée, recevez la carte RTC Clipper par courrier\n5. Chargez de l’argent liquideVAlue et roulez avec des réductions automatiques",
-    "timeframe": "En cours",
-    "link_text": "Postulez"
-  },
   "samtrans": {
     "name": "SamTransWay2Go Pass",
     "description": "SamTransest le service de bus en commun du comté de San Mateo. Le programme Way2Go Pass offre un transport gratuit illimité aux étudiants éligibles via les centres SparkPoint.",
@@ -5620,5 +5612,13 @@
     "how_to_get_it": "1. Doit être propriétaire foncier de la ville de Palo Alto\n2. Choisir une caractéristique d’eau pluviale éligible\n3. Postuler via la ville de Palo Alto\n4. Obtenir un permis de construire si nécessaire\n5. Installation d’une fonction de gestion des eaux pluviales\n6. Soumettre la documentation pour le remboursement",
     "timeframe": "En cours",
     "link_text": "Postulez"
+  },
+  "clipper-access": {
+    "name": "Accès Clipper (RTC)",
+    "description": "Clipper Access (anciennement RTC Clipper Card) propose des tarifs réduits pour les personnes en situation de handicap sur les réseaux de transport participants de la région de la Baie. Le programme Regional Transit Connection propose des tarifs réduits sur l’ensemble du réseau de transport de la région de la Baie.",
+    "what_they_offer": "- Tarifs réduits pour la plupart des agences de transport de la région de la Baie\n- Généralement 50 % ou plus de réduction sur les tarifs adultes réguliers\n-VAlit surBART,Muni,AC Transit,Caltrain,VTA,SamTrans, et plus encore\n- Réductions appliquées automatiquement lors de l’utilisation de la carte d’accès Clipper\n- Travaille sur toutes les agences de transport acceptant le Clipper",
+    "how_to_get_it": "1. Compléter la demande d’accès RTC/Clipper à clippercard.com\n2. Fournir une preuve d’invalidité (carteMedicare, documentationSSI/SSDIou certification médicale)\n3. Soumettre la demande en ligne ou par courrier\n4. Une fois approuvée, recevoir la carte d’accès Clipper par courrier\n5. Chargez de l’argent liquideVAlue et roulez avec des réductions automatiques",
+    "timeframe": "En cours",
+    "link_text": "Postuler pour Clipper Access"
   }
 }

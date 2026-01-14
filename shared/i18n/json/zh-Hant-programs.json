@@ -4541,14 +4541,6 @@
     "timeframe": "持續進行中",
     "link_text": "了解更多"
   },
-  "rtc-clipper-card": {
-    "name": "RTC Clipper 卡",
-    "description": "區域交通連接（RTC）快車卡為參與的灣區交通系統中身心障礙者提供優惠票價。",
-    "what_they_offer": "- 灣區大多數交通機構的票價優惠\n- 通常享有五折以上的成人票價\n-VA蓋子在BART、Muni、AC Transit、Caltrain等多處\n- 使用 RTC Clipper 卡時自動適用折扣",
-    "how_to_get_it": "1. 填寫 RTC 申請，地址為511.org2. 提供殘障證明（[DNT18]]]卡、SSI/SSDI文件或醫療證明）\n3. 請線上或郵寄提交申請\n4. 核准後，郵寄收到RTC快遞卡\n5. 裝現金VA，並享有自動折扣",
-    "timeframe": "持續進行中",
-    "link_text": "申請"
-  },
   "samtrans": {
     "name": "SamTransWay2Go 通行證",
     "description": "SamTrans是聖馬刁縣的公共交通公車服務。Way2Go 通行證計畫為符合資格的大學生提供免費無限次的 SparkPoint 交通服務。",
@@ -5620,5 +5612,13 @@
     "how_to_get_it": "1. 必須是帕洛阿爾托市的房產所有人\n2. 選擇符合資格的雨水設施\n3. 透過帕洛阿爾托市申請\n4. 如有需要，取得建築許可\n5. 安裝雨水管理功能\n6. 提交退稅文件",
     "timeframe": "持續進行中",
     "link_text": "申請"
+  },
+  "clipper-access": {
+    "name": "快船接入（RTC）",
+    "description": "Clipper Access（前稱RTC Clipper卡）為參與的灣區交通系統的身心障礙者提供折扣票價。區域交通連接計畫提供整個灣區交通網絡的優惠票價。",
+    "what_they_offer": "- 灣區大多數交通機構的票價優惠\n- 通常享有五折以上的成人票價\n-VA蓋子在BART、Muni、AC Transit、Caltrain、VTA、SamTrans等多處\n- 使用Clipper Access卡時自動適用折扣\n- 所有接受Clipper的交通機構工作",
+    "how_to_get_it": "1. 完成RTC/Clipper Access申請 clippercard.com\n2. 提供殘障證明（[DNT18]]]卡、SSI/SSDI文件或醫療證明）\n3. 請線上或郵寄提交申請\n4. 核准後，郵寄接收 Clipper Access 卡\n5. 裝現金VA，並享有自動折扣",
+    "timeframe": "持續進行中",
+    "link_text": "申請快帆機存取權"
   }
 }

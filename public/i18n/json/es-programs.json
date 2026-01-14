@@ -4541,14 +4541,6 @@
     "timeframe": "En curso",
     "link_text": "Aprende más"
   },
-  "rtc-clipper-card": {
-    "name": "Tarjeta RTC Clipper",
-    "description": "La tarjeta Clipper de Regional Transit Connection (RTC) ofrece tarifas con descuento para personas con discapacidad en los sistemas de transporte participantes del Área de la Bahía.",
-    "what_they_offer": "- Tarifas reducidas en la mayoría de las agencias de transporte del Área de la Bahía\n- Normalmente un 50% o más de descuento en las tarifas normales para adultos\n-VAlid enBART,Muni,AC Transit,Caltrainy más\n- Descuentos aplicados automáticamente al usar la tarjeta RTC Clipper",
-    "how_to_get_it": "1. Completar la solicitud RTC en511.org2. Proporcionar prueba de discapacidad (tarjetaMedicare, documentaciónSSI/SSDIo certificación médica)\n3. Enviar la solicitud en línea o por correo\n4. Una vez aprobada, recibir la tarjeta RTC Clipper por correo\n5. Carga dinero en efectivoVAlue y viaja con descuentos automáticos",
-    "timeframe": "En curso",
-    "link_text": "Solicita"
-  },
   "samtrans": {
     "name": "SamTransPase Way2Go",
     "description": "SamTranses el servicio de autobús de transporte público del condado de San Mateo. El programa Way2Go Pass ofrece transporte gratuito e ilimitado para estudiantes universitarios elegibles a través de los centros SparkPoint.",
@@ -5620,5 +5612,13 @@
     "how_to_get_it": "1. Debe ser propietario de una propiedad de la ciudad de Palo Alto\n2. Elige la característica de aguas pluviales que cumple los requisitos\n3. Solicitar a través de la ciudad de Palo Alto\n4. Obtener el permiso de construcción si es necesario\n5. Instalación de la función de gestión de aguas pluviales\n6. Presentar la documentación para el reembolso",
     "timeframe": "En curso",
     "link_text": "Solicita"
+  },
+  "clipper-access": {
+    "name": "Acceso por Clipper (RTC)",
+    "description": "Clipper Access (anteriormente RTC Clipper Card) ofrece tarifas con descuento para personas con discapacidad en los sistemas de transporte participantes del Área de la Bahía. El programa Regional Transit Connection ofrece tarifas reducidas en toda la red de transporte del Área de la Bahía.",
+    "what_they_offer": "- Tarifas reducidas en la mayoría de las agencias de transporte del Área de la Bahía\n- Normalmente un 50% o más de descuento en las tarifas normales para adultos\n- {DNT35]]tapa enBART,Muni,AC Transit,Caltrain,VTA,SamTransy más\n- Descuentos aplicados automáticamente al usar la tarjeta de acceso Clipper\n- Trabaja en todas las agencias de transporte que aceptan Clippers",
+    "how_to_get_it": "1. Completar la solicitud RTC/Clipper Access en clippercard.com\n2. Proporcionar prueba de discapacidad (tarjetaMedicare, documentaciónSSI/SSDIo certificación médica)\n3. Enviar la solicitud en línea o por correo\n4. Una vez aprobada, recibir la tarjeta de acceso Clipper por correo\n5. Carga dinero en efectivoVAlue y viaja con descuentos automáticos",
+    "timeframe": "En curso",
+    "link_text": "Solicita el acceso Clipper"
   }
 }
