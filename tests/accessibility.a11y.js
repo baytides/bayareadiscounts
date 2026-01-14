@@ -37,7 +37,7 @@ async function checkAccessibility(page, pageName) {
 test.describe('Accessibility - Home Page', () => {
   test('should have no critical accessibility violations', async ({ page }) => {
     await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Home');
 
@@ -148,7 +148,7 @@ test.describe('Accessibility - Directory Page', () => {
 
   test('directory page should have no critical violations', async ({ page }) => {
     await page.goto('/directory');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Directory');
 
@@ -178,7 +178,7 @@ test.describe('Accessibility - Dark Mode', () => {
 test.describe('Accessibility - About Page', () => {
   test('about page should have no critical violations', async ({ page }) => {
     await page.goto('/about');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'About');
 
@@ -191,7 +191,7 @@ test.describe('Accessibility - About Page', () => {
 test.describe('Accessibility - Eligibility Page', () => {
   test('eligibility page should have no critical violations', async ({ page }) => {
     await page.goto('/eligibility');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Eligibility');
 
@@ -204,7 +204,7 @@ test.describe('Accessibility - Eligibility Page', () => {
 test.describe('Accessibility - Partnerships Page', () => {
   test('partnerships page should have no critical violations', async ({ page }) => {
     await page.goto('/partnerships');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Partnerships');
 
@@ -217,7 +217,7 @@ test.describe('Accessibility - Partnerships Page', () => {
 test.describe('Accessibility - Glossary Page', () => {
   test('glossary page should have no critical violations', async ({ page }) => {
     await page.goto('/glossary');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Glossary');
 
@@ -228,7 +228,7 @@ test.describe('Accessibility - Glossary Page', () => {
 
   test('abbreviations should have title attributes', async ({ page }) => {
     await page.goto('/glossary');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Check that abbr elements have title attributes
     const abbrs = page.locator('abbr[title]');
@@ -242,7 +242,7 @@ test.describe('Accessibility - Glossary Page', () => {
 test.describe('Accessibility - Sustainability Page', () => {
   test('sustainability page should have no critical violations', async ({ page }) => {
     await page.goto('/sustainability');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Sustainability');
 
@@ -255,7 +255,7 @@ test.describe('Accessibility - Sustainability Page', () => {
 test.describe('Accessibility - Accessibility Statement Page', () => {
   test('accessibility page should have no critical violations', async ({ page }) => {
     await page.goto('/accessibility');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Accessibility Statement');
 
@@ -268,7 +268,7 @@ test.describe('Accessibility - Accessibility Statement Page', () => {
 test.describe('Accessibility - Download Page', () => {
   test('download page should have no critical violations', async ({ page }) => {
     await page.goto('/download');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Download');
 
@@ -281,7 +281,7 @@ test.describe('Accessibility - Download Page', () => {
 test.describe('Accessibility - Legal Pages', () => {
   test('privacy page should have no critical violations', async ({ page }) => {
     await page.goto('/privacy');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Privacy');
 
@@ -292,7 +292,7 @@ test.describe('Accessibility - Legal Pages', () => {
 
   test('terms page should have no critical violations', async ({ page }) => {
     await page.goto('/terms');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Terms');
 
@@ -303,7 +303,7 @@ test.describe('Accessibility - Legal Pages', () => {
 
   test('credits page should have no critical violations', async ({ page }) => {
     await page.goto('/credits');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     const { violations } = await checkAccessibility(page, 'Credits');
 
@@ -316,7 +316,7 @@ test.describe('Accessibility - Legal Pages', () => {
 test.describe('Accessibility - Focus Management', () => {
   test('focus should be visible on interactive elements', async ({ page }) => {
     await page.goto('/directory');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Tab to first interactive element
     await page.keyboard.press('Tab');
