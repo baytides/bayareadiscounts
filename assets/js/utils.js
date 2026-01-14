@@ -227,6 +227,116 @@
   }
 
   // ============================================================
+  // URL UTILITIES
+  // ============================================================
+
+  /**
+   * Add UTM parameters to external URLs for referral tracking
+   * @param {string} url - The URL to add UTM parameters to
+   * @param {Object} [options={}] - Options
+   * @param {string} [options.source='baynavigator'] - UTM source
+   * @param {string} [options.medium='referral'] - UTM medium
+   * @param {string} [options.campaign] - UTM campaign (defaults to current page)
+   * @returns {string} - URL with UTM parameters
+   */
+  function addUtmParams(url, options = {}) {
+    if (!url) return url;
+
+    try {
+      const urlObj = new URL(url);
+
+      // Skip if already has UTM params or is same origin
+      if (urlObj.searchParams.has('utm_source') || urlObj.origin === window.location.origin) {
+        return url;
+      }
+
+      // Skip certain domains that don't benefit from UTM tracking
+      const skipDomains = ['google.com', 'maps.google.com', 'tel:', 'mailto:'];
+      if (skipDomains.some((d) => url.includes(d))) {
+        return url;
+      }
+
+      const {
+        source = 'baynavigator',
+        medium = 'referral',
+        campaign = getCurrentPageName(),
+      } = options;
+
+      urlObj.searchParams.set('utm_source', source);
+      urlObj.searchParams.set('utm_medium', medium);
+      if (campaign) {
+        urlObj.searchParams.set('utm_campaign', campaign);
+      }
+
+      return urlObj.toString();
+    } catch (e) {
+      // Invalid URL, return as-is
+      return url;
+    }
+  }
+
+  /**
+   * Get current page name for UTM campaign parameter
+   * @returns {string} - Page name
+   */
+  function getCurrentPageName() {
+    const path = window.location.pathname.replace(/^\/|\/$/g, '');
+    if (!path || path === '') return 'home';
+    return path.split('/')[0] || 'home';
+  }
+
+  /**
+   * Initialize UTM tracking on all external links
+   * Call this on page load to automatically add UTM params to external links
+   */
+  function initUtmTracking() {
+    // Process existing links
+    document.querySelectorAll('a[href^="http"]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith(window.location.origin)) {
+        link.setAttribute('href', addUtmParams(href));
+      }
+    });
+
+    // Observer for dynamically added links
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            // Check if the node itself is a link
+            if (
+              node.tagName === 'A' &&
+              node.href &&
+              !node.href.startsWith(window.location.origin)
+            ) {
+              node.setAttribute('href', addUtmParams(node.href));
+            }
+            // Check for links within the added node
+            node.querySelectorAll?.('a[href^="http"]').forEach((link) => {
+              const href = link.getAttribute('href');
+              if (href && !href.startsWith(window.location.origin)) {
+                link.setAttribute('href', addUtmParams(href));
+              }
+            });
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  // Auto-initialize UTM tracking when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUtmTracking);
+  } else {
+    initUtmTracking();
+  }
+
+  // ============================================================
   // EXPORT
   // ============================================================
 
@@ -251,6 +361,11 @@
 
     // Notification utilities
     showToast,
+
+    // URL utilities
+    addUtmParams,
+    getCurrentPageName,
+    initUtmTracking,
   };
 
   // Dispatch event when ready
