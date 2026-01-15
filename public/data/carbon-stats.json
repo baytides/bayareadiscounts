@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-14T06:11:46.634Z",
+  "generated": "2026-01-15T06:11:27.729Z",
   "period": "last_30_days",
   "dataFreshness": {
     "cloudflare": "live",
@@ -14,34 +14,32 @@
     "carbonNeutral": true
   },
   "usage": {
-    "cdnRequests": 6386,
-    "cdnBytesTransferred": 161100999,
-    "cdnCacheHitRate": "45.9",
+    "cdnRequests": 7862,
+    "cdnBytesTransferred": 192868243,
+    "cdnCacheHitRate": "47.0",
     "aiQueries": 9,
-    "functionExecutions": 862,
+    "functionExecutions": 897,
     "ciRuns": 100,
     "ciMinutes": 200,
     "ciWorkflows": {
-      "Update Carbon Stats": 3,
-      "Carbon Footprint Tracking": 19,
-      "OSV-Scanner Scheduled": 5,
-      "CI": 14,
-      "CodeQL Security Analysis": 14,
-      "Deploy Website (Azure)": 4,
-      "Lighthouse CI": 14,
+      "Update Carbon Stats": 1,
       "Update PMTiles Map Data": 1,
-      "All Contributors": 10,
-      "OSV-Scanner PR": 10,
-      "Test": 3,
-      "npm_and_yarn in /. - Update #1206738761": 1,
-      "pub in /apps - Update #1206738766": 1,
-      "github_actions in /. - Update #1206738765": 1
+      "Carbon Footprint Tracking": 24,
+      "OSV-Scanner Scheduled": 12,
+      "CodeQL Security Analysis": 11,
+      "Deploy Website (Azure)": 11,
+      "Lighthouse CI": 11,
+      "CI": 12,
+      "Translate i18n Files": 3,
+      "Deploy Web App": 2,
+      "Test": 2,
+      "All Contributors": 10
     }
   },
   "emissionsBySource": {
     "cdn": {
-      "grams": "0.6",
-      "percent": "0.7"
+      "grams": "0.8",
+      "percent": "0.8"
     },
     "ai": {
       "grams": "13.5",
@@ -49,7 +47,7 @@
     },
     "ci": {
       "grams": "80.0",
-      "percent": "85.0"
+      "percent": "84.8"
     }
   },
   "providers": {
