@@ -275,7 +275,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                           decoration: BoxDecoration(
-                            color: Colors.amber.shade100,
+                            color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
@@ -283,7 +283,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             style: TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
-                              color: Colors.amber.shade800,
+                              color: Colors.grey.shade800,
                             ),
                           ),
                         ),

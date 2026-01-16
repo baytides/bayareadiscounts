@@ -180,8 +180,8 @@ struct SettingsView: View {
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 6)
                                     .padding(.vertical, 2)
-                                    .background(Color.orange.opacity(0.2))
-                                    .foregroundStyle(.orange)
+                                    .background(Color.gray.opacity(0.3))
+                                    .foregroundStyle(.secondary)
                                     .clipShape(Capsule())
                             }
                             Text(settings.aiSearchEnabled

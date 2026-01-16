@@ -163,35 +163,6 @@ const websiteSchema = {
 
     <title>{fullTitle}</title>
 
-    <!-- New Relic Browser Monitoring (privacy-focused config) -->
-    <script type="text/javascript">
-      window.NREUM || (NREUM = {});
-      NREUM.init = {
-        distributed_tracing: { enabled: true },
-        performance: { capture_measures: true },
-        privacy: { cookies_enabled: false },
-        ajax: { deny_list: ['bam.nr-data.net'] },
-        // Privacy settings
-        session_replay: { enabled: false },
-        session_trace: { enabled: false },
-      };
-      NREUM.loader_config = {
-        accountID: '7553177',
-        trustKey: '7553177',
-        agentID: '601614767',
-        licenseKey: 'NRJS-5ae1987e630094984ec',
-        applicationID: '601614767',
-      };
-      NREUM.info = {
-        beacon: 'bam.nr-data.net',
-        errorBeacon: 'bam.nr-data.net',
-        licenseKey: 'NRJS-5ae1987e630094984ec',
-        applicationID: '601614767',
-        sa: 1,
-      };
-    </script>
-    <script src="https://js-agent.newrelic.com/nr-loader-spa-1.308.0.min.js" async></script>
-
     <!-- Dark mode script (runs before render to prevent flash) -->
     <script is:inline>
       if (
