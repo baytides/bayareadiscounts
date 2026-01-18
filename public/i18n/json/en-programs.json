@@ -1231,6 +1231,126 @@
     "timeframe": "Ongoing",
     "link_text": "Apply"
   },
+  "cal-grant": {
+    "name": "Cal Grant",
+    "description": "Cal Grants are free money from the state of California to help eligible students pay for college tuition and fees at California colleges and universities.",
+    "what_they_offer": "- Cal Grant A: Covers tuition/fees at UC, CSU, or private colleges (up to $12,570)\n- Cal Grant B: Living allowance plus tuition for low-income students\n- Cal Grant C: Vocational/career technical training funding\n- Renewable for up to 4 years\n- No repayment required (not a loan)",
+    "how_to_get_it": "1. Complete FAFSA or California Dream Act Application by March 2 deadline\n2. Submit verified GPA to California Student Aid Commission\n3. Must be California resident for at least 1 year\n4. Must attend eligible California college\n5. Must meet income and asset requirements\n6. Must maintain satisfactory academic progress",
+    "timeframe": "Annual (apply by March 2)",
+    "link_text": "Apply Now"
+  },
+  "fafsa-help": {
+    "name": "Free FAFSA Help",
+    "description": "Free help completing the FAFSA (Free Application for Federal Student Aid) is available through California Cash for College workshops and other programs.",
+    "what_they_offer": "- Free in-person FAFSA completion workshops\n- Help with California Dream Act Application\n- One-on-one assistance with financial aid forms\n- Virtual and in-person options available\n- Bilingual assistance in many locations\n- Help understanding financial aid awards",
+    "how_to_get_it": "1. Find a Cash for College workshop near you\n2. Bring required documents (tax returns, Social Security numbers, etc.)\n3. Work with trained volunteers to complete FAFSA\n4. Get help understanding next steps\n5. Workshops held at schools, libraries, and community centers",
+    "timeframe": "October - March (FAFSA opens October 1)",
+    "link_text": "Find a Workshop"
+  },
+  "pell-grant": {
+    "name": "Federal Pell Grant",
+    "description": "The Federal Pell Grant provides free money for college to undergraduate students with financial need. Unlike loans, Pell Grants do not need to be repaid.",
+    "what_they_offer": "- Up to $7,395 per year (2024-2025)\n- Free money - no repayment required\n- Can be used for tuition, fees, books, and living expenses\n- Available at most colleges and universities\n- Can be combined with other financial aid",
+    "how_to_get_it": "1. Complete the FAFSA at studentaid.gov\n2. Must demonstrate financial need (based on EFC)\n3. Must be pursuing undergraduate degree\n4. Must be enrolled at least half-time\n5. Must be U.S. citizen or eligible noncitizen\n6. Amount depends on financial need, cost of attendance, and enrollment status",
+    "timeframe": "Annual (renew FAFSA each year)",
+    "link_text": "Learn More"
+  },
+  "head-start-bay-area": {
+    "name": "Head Start / Early Head Start",
+    "description": "Head Start provides free early childhood education, health, nutrition, and family support services to children from low-income families from birth to age 5.",
+    "what_they_offer": "- Free preschool education for children 3-5 years\n- Early Head Start for infants and toddlers (0-3)\n- Health and developmental screenings\n- Nutritious meals and snacks\n- Parent engagement and family support services\n- Disability services and inclusion support\n- Full-day and part-day options available",
+    "how_to_get_it": "1. Income must be at or below federal poverty guidelines\n2. Or child is in foster care, homeless, or receiving public assistance\n3. Contact local Head Start agency to apply\n4. Complete application and provide income documentation\n5. Children are prioritized based on need",
+    "timeframe": "School year (applications accepted year-round)",
+    "link_text": "Find a Program"
+  },
+  "ca-state-preschool": {
+    "name": "California State Preschool Program (CSPP)",
+    "description": "The California State Preschool Program provides free or low-cost preschool to income-eligible 3 and 4 year olds to prepare them for kindergarten.",
+    "what_they_offer": "- Free preschool for eligible children (ages 3-4)\n- Part-day and full-day programs available\n- Developmentally appropriate curriculum\n- Nutritious meals and snacks\n- Parent involvement opportunities\n- Transition support to kindergarten",
+    "how_to_get_it": "1. Must meet income eligibility (typically below 85% of State Median Income)\n2. Child must be 3 or 4 years old\n3. Programs available at school districts and community organizations\n4. Contact local school district or resource and referral agency\n5. Complete application and income verification",
+    "timeframe": "School year",
+    "link_text": "Find a Program"
+  },
+  "adult-school-sf": {
+    "name": "San Francisco City College Adult Education",
+    "description": "City College of San Francisco offers free adult education classes including GED preparation, ESL, citizenship, and career training.",
+    "what_they_offer": "- Free GED and high school diploma preparation\n- Free ESL (English as a Second Language) classes\n- U.S. Citizenship preparation\n- Basic skills and literacy\n- Career and technical education\n- Computer literacy classes\n- Multiple locations throughout San Francisco",
+    "how_to_get_it": "1. Visit CCSF website or adult education center\n2. Take placement test if required\n3. Register for classes\n4. Classes are free for California residents\n5. Flexible schedules including evening and weekend options",
+    "timeframe": "Ongoing (semester-based)",
+    "link_text": "Enroll Now"
+  },
+  "alameda-adult-school": {
+    "name": "Oakland Adult & Career Education",
+    "description": "Oakland Adult & Career Education provides free classes for adults including GED preparation, ESL, high school diploma, and career training.",
+    "what_they_offer": "- Free GED and high school diploma programs\n- ESL (English as a Second Language) at all levels\n- Career technical education\n- Digital literacy and computer classes\n- Citizenship preparation\n- Parent education classes",
+    "how_to_get_it": "1. Visit Oakland Adult & Career Education center\n2. Complete registration and assessment\n3. Enroll in appropriate classes\n4. Classes are free for eligible adults",
+    "timeframe": "Ongoing",
+    "link_text": "Register Now"
+  },
+  "smc-adult-education": {
+    "name": "San Mateo Adult & Community Education",
+    "description": "San Mateo Adult & Community Education offers free and low-cost classes for adults including ESL, GED preparation, citizenship, and career skills.",
+    "what_they_offer": "- ESL classes at all levels (free)\n- GED and high school equivalency preparation\n- U.S. Citizenship classes\n- Career technical education\n- Computer and digital literacy\n- Parent education",
+    "how_to_get_it": "1. Visit San Mateo Adult School\n2. Complete registration\n3. Take placement test for ESL if needed\n4. Enroll in classes",
+    "timeframe": "Ongoing (semester-based)",
+    "link_text": "Enroll Now"
+  },
+  "scusd-adult-education": {
+    "name": "San Jose Adult Education",
+    "description": "San Jose Unified School District Adult Education provides free classes for adults including ESL, GED, citizenship, and career training.",
+    "what_they_offer": "- Free ESL classes at all levels\n- GED and high school diploma preparation\n- Citizenship preparation\n- Career and technical education\n- Digital literacy classes\n- Parent education",
+    "how_to_get_it": "1. Visit San Jose Adult Education center\n2. Complete registration\n3. Take placement assessment\n4. Enroll in appropriate classes",
+    "timeframe": "Ongoing",
+    "link_text": "Register Now"
+  },
+  "khan-academy": {
+    "name": "Khan Academy",
+    "description": "Khan Academy provides free online education with video lessons and practice exercises covering math, science, humanities, SAT prep, and more.",
+    "what_they_offer": "- Free video lessons on thousands of topics\n- Practice exercises with instant feedback\n- Personalized learning dashboard\n- SAT, LSAT, and other test prep (official SAT partnership)\n- K-12 math, science, and humanities\n- AP course preparation\n- College-level courses",
+    "how_to_get_it": "1. Visit khanacademy.org\n2. Create a free account\n3. Start learning at your own pace\n4. Track progress on personalized dashboard\n5. Available on web and mobile apps",
+    "timeframe": "Always available",
+    "link_text": "Start Learning"
+  },
+  "free-library-tutoring": {
+    "name": "Free Library Tutoring Programs",
+    "description": "Bay Area public libraries offer free tutoring and homework help programs for students of all ages, including online tutoring services available with a library card.",
+    "what_they_offer": "- Free one-on-one tutoring (in-person and online)\n- Homework help in all subjects\n- Reading and literacy support\n- Math tutoring\n- SAT/ACT test prep resources\n- Online tutoring through Brainfuse or Tutor.com (varies by library)",
+    "how_to_get_it": "1. Get a free library card from your local library\n2. Check library website for tutoring programs\n3. Many libraries offer Brainfuse HelpNow or similar online tutoring\n4. In-person tutoring schedules vary by location\n5. Some programs require appointments",
+    "timeframe": "Ongoing (varies by library)",
+    "link_text": "Find Your Library"
+  },
+  "trio-upward-bound": {
+    "name": "TRIO Upward Bound",
+    "description": "TRIO Upward Bound helps high school students from low-income families and first-generation college students prepare for and succeed in higher education.",
+    "what_they_offer": "- Academic tutoring and instruction\n- College campus visits and exploration\n- SAT/ACT preparation\n- Financial aid and scholarship guidance\n- Summer programs on college campuses\n- Mentoring and personal counseling\n- Help with college applications",
+    "how_to_get_it": "1. Must be in high school (typically 9th-12th grade)\n2. Must be low-income or potential first-generation college student\n3. Programs located at colleges throughout Bay Area\n4. Contact local Upward Bound program to apply\n5. Application typically includes interview and assessment",
+    "timeframe": "During school year and summer",
+    "link_text": "Find a Program"
+  },
+  "eops": {
+    "name": "EOPS/CARE (Extended Opportunity Programs)",
+    "description": "EOPS provides academic and financial support to low-income community college students, while CARE offers additional support to single parents on public assistance.",
+    "what_they_offer": "- Priority registration\n- Book vouchers and supplies\n- Academic counseling\n- Transfer assistance\n- Grant aid (in addition to other financial aid)\n- CARE program: childcare assistance, meal vouchers, additional grants for single parents",
+    "how_to_get_it": "1. Must be enrolled at California Community College\n2. Must meet income eligibility requirements\n3. Must be educationally disadvantaged\n4. Must enroll in at least 12 units\n5. Apply through college EOPS office\n6. CARE: must be single parent receiving CalWORKs/TANF",
+    "timeframe": "Ongoing",
+    "link_text": "Find Your College"
+  },
+  "school-meals-program": {
+    "name": "Free & Reduced School Meals",
+    "description": "California schools provide free breakfast and lunch to students who qualify based on family income, and many districts now offer universal free meals to all students.",
+    "what_they_offer": "- Free or reduced-price breakfast and lunch\n- Many California districts now offer free meals to ALL students\n- Nutritious meals meeting federal nutrition standards\n- Available during school year\n- Some districts offer summer meal programs",
+    "how_to_get_it": "1. Complete free/reduced meal application through your school\n2. Household income must be at or below 185% of poverty for reduced price\n3. Household income at or below 130% for free meals\n4. Children in CalFresh, CalWORKs, or foster care automatically qualify\n5. Many California districts provide universal free meals regardless of income",
+    "timeframe": "School year",
+    "link_text": "Apply at Your School"
+  },
+  "summer-meals": {
+    "name": "Summer Meals for Kids",
+    "description": "Free summer meals are available for children and teens 18 and under at schools, parks, libraries, and community sites throughout the Bay Area when school is out.",
+    "what_they_offer": "- Free breakfast and/or lunch\n- No registration required at most sites\n- No income verification\n- Available at parks, libraries, schools, community centers\n- Open to all children 18 and under",
+    "how_to_get_it": "1. Text \"FOOD\" to 304-304 to find nearby sites\n2. Or call 2-1-1 for summer meal locations\n3. Visit the CA Summer Meal Finder website\n4. Just show up - no paperwork required\n5. Sites operate throughout summer months",
+    "timeframe": "Summer months (June-August)",
+    "link_text": "Find Sites"
+  },
   "a-greener-source": {
     "name": "A Greener Source",
     "description": "A Greener Source is a nonprofit that diverts office furniture from landfills by donating it to other nonprofits, helping organizations furnish their spaces sustainably and at no cost.",
@@ -2596,6 +2716,102 @@
     "description": "Project Sentinel is a nonprofit fair housing agency that works to eliminate housing discrimination and ensure equal housing opportunity for all Bay Area residents.",
     "what_they_offer": "- Free fair housing education and counseling\n- Investigation of housing discrimination complaints\n- Legal advocacy and representation in fair housing cases\n- Landlord-tenant mediation services\n- First-time homebuyer education\n- Foreclosure prevention counseling",
     "how_to_get_it": "1. Call or visit the Project Sentinel website\n2. Describe your housing situation or discrimination concern\n3. Staff will assess your case and explain your rights\n4. If discrimination is found, they can investigate and advocate on your behalf\n5. Services are free for all, regardless of income",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "bay-area-legal-aid": {
+    "name": "Bay Area Legal Aid (BayLegal)",
+    "description": "Bay Area Legal Aid is the largest civil legal aid provider in the Bay Area, offering free legal help to low-income individuals in housing, public benefits, healthcare, consumer, and family law matters.",
+    "what_they_offer": "- Housing law (eviction defense, habitability, Section 8)\n- Public benefits (CalFresh, Medi-Cal, CalWORKs appeals)\n- Healthcare access and insurance issues\n- Consumer rights and debt issues\n- Domestic violence restraining orders\n- Immigration assistance\n- Senior law services",
+    "how_to_get_it": "1. Call the intake line at 800-551-5554\n2. Or apply online at baylegal.org\n3. Must meet income eligibility (generally 200% FPL or below)\n4. Complete phone or online intake\n5. If eligible, receive legal advice, brief services, or representation",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "legal-aid-at-work": {
+    "name": "Legal Aid at Work",
+    "description": "Legal Aid at Work provides free legal services and resources to workers facing employment problems, including discrimination, wage theft, and wrongful termination.",
+    "what_they_offer": "- Free legal clinics for workers\n- Employment law advice and representation\n- Help with discrimination and harassment claims\n- Wage theft recovery assistance\n- Disability and pregnancy accommodation\n- Workers' rights education\n- Know Your Rights resources in multiple languages",
+    "how_to_get_it": "1. Call the Workers' Rights Clinic at 415-864-8208\n2. Or attend a free legal clinic (check website for schedule)\n3. Services available regardless of immigration status\n4. Complete intake to determine eligibility for representation\n5. Receive legal advice, referrals, or representation",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "centro-legal-de-la-raza": {
+    "name": "Centro Legal de la Raza",
+    "description": "Centro Legal de la Raza provides free bilingual legal services to low-income communities in the East Bay, specializing in immigration, housing, and workers' rights.",
+    "what_they_offer": "- Immigration legal services (family petitions, DACA, asylum, citizenship)\n- Tenant rights and eviction defense\n- Workers' rights and wage claims\n- Community education and outreach\n- Bilingual services (English/Spanish)\n- Know Your Rights workshops",
+    "how_to_get_it": "1. Call 510-437-1554 for intake\n2. Or visit during walk-in clinic hours\n3. Must meet income guidelines\n4. Complete intake and eligibility screening\n5. Receive legal advice or representation",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "asian-law-caucus": {
+    "name": "Asian Law Caucus",
+    "description": "Asian Law Caucus provides free legal services and advocacy for Asian and Pacific Islander communities, focusing on immigration, workers' rights, and housing.",
+    "what_they_offer": "- Immigration legal services (family, asylum, DACA, citizenship)\n- Workers' rights and employment discrimination\n- Housing and tenant rights\n- Civil rights advocacy\n- Language access services\n- Community education workshops",
+    "how_to_get_it": "1. Call the intake line at 415-896-1701\n2. Complete eligibility screening\n3. Services prioritized for API community members\n4. Must meet income guidelines for most services\n5. Receive legal advice or representation",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "la-raza-centro-legal": {
+    "name": "La Raza Centro Legal",
+    "description": "La Raza Centro Legal provides free legal services to Latino and immigrant communities in San Francisco, specializing in immigration, housing, and workers' rights.",
+    "what_they_offer": "- Immigration legal services (family petitions, DACA, asylum, citizenship)\n- Tenant rights and eviction defense\n- Workers' rights and wage claims\n- Community education\n- Bilingual services (English/Spanish)",
+    "how_to_get_it": "1. Call 415-575-3500 for intake\n2. Must meet income guidelines\n3. Complete intake screening\n4. Receive legal advice or representation",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "eviction-defense-collaborative": {
+    "name": "Eviction Defense Collaborative",
+    "description": "The Eviction Defense Collaborative provides free legal help to San Francisco tenants facing eviction, offering same-day assistance at the courthouse.",
+    "what_they_offer": "- Free legal consultations for tenants facing eviction\n- Same-day help at SF Superior Court\n- Help responding to unlawful detainer lawsuits\n- Negotiation with landlords\n- Full representation in some cases\n- Tenant rights education",
+    "how_to_get_it": "1. Visit the EDC office at SF Superior Court (Civic Center Courthouse)\n2. Or call for an appointment\n3. Bring your eviction notice and any court papers\n4. Available to all SF tenants regardless of income\n5. Walk-in clinic hours available",
+    "timeframe": "Ongoing",
+    "link_text": "Get Help"
+  },
+  "tenants-union-sf": {
+    "name": "San Francisco Tenants Union",
+    "description": "The San Francisco Tenants Union provides tenant counseling, education, and advocacy to help renters understand and exercise their rights under SF rent control laws.",
+    "what_they_offer": "- Tenant counseling and advice (free for members)\n- Help understanding rent control laws\n- Assistance with habitability complaints\n- Guidance on eviction defense\n- Tenant rights workshops\n- Advocacy for tenant-friendly policies",
+    "how_to_get_it": "1. Become a member ($50/year sliding scale)\n2. Attend drop-in counseling hours\n3. Call the counseling line for advice\n4. Attend free tenant rights workshops\n5. Get referrals to legal services if needed",
+    "timeframe": "Ongoing",
+    "link_text": "Join/Get Help"
+  },
+  "court-self-help-sf": {
+    "name": "SF Superior Court Self-Help Center",
+    "description": "The SF Superior Court Self-Help Center provides free legal information and assistance to people representing themselves in court matters.",
+    "what_they_offer": "- Free help with court forms and procedures\n- Assistance with family law matters (divorce, custody, support)\n- Help with restraining orders\n- Small claims court assistance\n- Eviction/unlawful detainer guidance\n- Referrals to legal aid organizations",
+    "how_to_get_it": "1. Visit the Self-Help Center at SF Civic Center Courthouse\n2. Or call for information\n3. No appointment needed for many services\n4. Bring your court papers and case information\n5. Staff cannot give legal advice but can help with forms and procedures",
+    "timeframe": "Ongoing",
+    "link_text": "Visit Center"
+  },
+  "court-self-help-alameda": {
+    "name": "Alameda County Court Self-Help Center",
+    "description": "The Alameda County Law Library Self-Help Center provides free assistance to people representing themselves in court matters.",
+    "what_they_offer": "- Free help with court forms and procedures\n- Family law assistance (divorce, custody, support)\n- Restraining order help\n- Small claims guidance\n- Landlord-tenant matters\n- Referrals to legal services",
+    "how_to_get_it": "1. Visit the Self-Help Center at Alameda County Law Library\n2. Or access online resources at acgov.org/law\n3. Bring your court papers\n4. Staff can help with forms but cannot give legal advice",
+    "timeframe": "Ongoing",
+    "link_text": "Visit Center"
+  },
+  "court-self-help-santa-clara": {
+    "name": "Santa Clara County Self-Help Center",
+    "description": "The Santa Clara County Self-Help Center provides free assistance to people representing themselves in court matters.",
+    "what_they_offer": "- Free help with court forms and procedures\n- Family law workshops (divorce, custody, support)\n- Restraining order assistance\n- Small claims court help\n- Eviction defense resources\n- Debt collection guidance",
+    "how_to_get_it": "1. Visit the Self-Help Center at the downtown San Jose courthouse\n2. Or access online resources and virtual workshops\n3. Check website for workshop schedules\n4. Bring your court papers and case information",
+    "timeframe": "Ongoing",
+    "link_text": "Visit Center"
+  },
+  "ilrc": {
+    "name": "Immigrant Legal Resource Center (ILRC)",
+    "description": "The Immigrant Legal Resource Center provides legal training, resources, and advocacy to advance immigrant rights, with free resources for immigrants and legal providers.",
+    "what_they_offer": "- Know Your Rights resources in multiple languages\n- Immigration legal guides and manuals\n- Training for legal service providers\n- Policy advocacy for immigrant rights\n- Red Cards for asserting rights\n- Community education resources",
+    "how_to_get_it": "1. Visit ilrc.org for free resources\n2. Download Know Your Rights materials\n3. Find a legal service provider through their directory\n4. Access immigration law guides and manuals\n5. Order Red Cards for community distribution",
+    "timeframe": "Ongoing",
+    "link_text": "Access Resources"
+  },
+  "catholic-charities-immigration": {
+    "name": "Catholic Charities Immigration Services",
+    "description": "Catholic Charities provides affordable immigration legal services throughout the Bay Area, including help with citizenship, green cards, asylum, and family petitions.",
+    "what_they_offer": "- Citizenship and naturalization applications\n- Green card applications and renewals\n- Family-based petitions\n- DACA applications and renewals\n- Asylum applications\n- Refugee resettlement services\n- Low-cost legal consultations",
+    "how_to_get_it": "1. Call your local Catholic Charities office\n2. Schedule a legal consultation\n3. Sliding scale fees based on income\n4. Bring all immigration documents to appointment\n5. Receive assistance with applications and representation",
     "timeframe": "Ongoing",
     "link_text": "Get Help"
   },
