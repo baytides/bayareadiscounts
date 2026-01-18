@@ -169,3 +169,454 @@
   link: https://satsuite.collegeboard.org/sat/registration/fee-waivers
   link_text: Apply
   verified_date: '2025-12-16'
+
+# === FINANCIAL AID PROGRAMS ===
+
+- id: cal-grant
+  name: Cal Grant
+  category: Education
+  area: Statewide
+  groups:
+    - income-eligible
+    - youth
+    - college-students
+  keywords: Cal Grant, financial aid, college, tuition, California, FAFSA, Dream Act, state grant, free money, Cal Grant A, Cal Grant B, Cal Grant C
+  description: Cal Grants are free money from the state of California to help eligible students pay for college tuition and fees at California colleges and universities.
+  what_they_offer: |
+    - Cal Grant A: Covers tuition/fees at UC, CSU, or private colleges (up to $12,570)
+    - Cal Grant B: Living allowance plus tuition for low-income students
+    - Cal Grant C: Vocational/career technical training funding
+    - Renewable for up to 4 years
+    - No repayment required (not a loan)
+  how_to_get_it: |
+    1. Complete FAFSA or California Dream Act Application by March 2 deadline
+    2. Submit verified GPA to California Student Aid Commission
+    3. Must be California resident for at least 1 year
+    4. Must attend eligible California college
+    5. Must meet income and asset requirements
+    6. Must maintain satisfactory academic progress
+  phone: '888-224-7268'
+  benefit: Free state grant money for college tuition - Cal Grant A covers up to $12,570 for tuition, Cal Grant B adds living allowance
+  timeframe: Annual (apply by March 2)
+  link: https://www.csac.ca.gov/cal-grants
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+- id: fafsa-help
+  name: Free FAFSA Help
+  category: Education
+  area: Statewide
+  groups:
+    - everyone
+    - college-students
+    - youth
+  keywords: FAFSA, financial aid, college, federal aid, Pell Grant, student loans, free help, application, form, CSAC, Cash for College
+  description: Free help completing the FAFSA (Free Application for Federal Student Aid) is available through California Cash for College workshops and other programs.
+  what_they_offer: |
+    - Free in-person FAFSA completion workshops
+    - Help with California Dream Act Application
+    - One-on-one assistance with financial aid forms
+    - Virtual and in-person options available
+    - Bilingual assistance in many locations
+    - Help understanding financial aid awards
+  how_to_get_it: |
+    1. Find a Cash for College workshop near you
+    2. Bring required documents (tax returns, Social Security numbers, etc.)
+    3. Work with trained volunteers to complete FAFSA
+    4. Get help understanding next steps
+    5. Workshops held at schools, libraries, and community centers
+  phone: '888-224-7268'
+  benefit: Free expert help completing FAFSA and Dream Act applications to maximize financial aid
+  timeframe: October - March (FAFSA opens October 1)
+  link: https://www.csac.ca.gov/cash-for-college
+  link_text: Find a Workshop
+  verified_date: '2026-01-18'
+
+- id: pell-grant
+  name: Federal Pell Grant
+  category: Education
+  area: Nationwide
+  groups:
+    - income-eligible
+    - college-students
+  keywords: Pell Grant, federal aid, financial aid, FAFSA, college, free money, undergraduate, low-income, student aid
+  description: The Federal Pell Grant provides free money for college to undergraduate students with financial need. Unlike loans, Pell Grants do not need to be repaid.
+  what_they_offer: |
+    - Up to $7,395 per year (2024-2025)
+    - Free money - no repayment required
+    - Can be used for tuition, fees, books, and living expenses
+    - Available at most colleges and universities
+    - Can be combined with other financial aid
+  how_to_get_it: |
+    1. Complete the FAFSA at studentaid.gov
+    2. Must demonstrate financial need (based on EFC)
+    3. Must be pursuing undergraduate degree
+    4. Must be enrolled at least half-time
+    5. Must be U.S. citizen or eligible noncitizen
+    6. Amount depends on financial need, cost of attendance, and enrollment status
+  phone: '800-433-3243'
+  benefit: Up to $7,395/year in free federal grant money for college (no repayment)
+  timeframe: Annual (renew FAFSA each year)
+  link: https://studentaid.gov/understand-aid/types/grants/pell
+  link_text: Learn More
+  verified_date: '2026-01-18'
+
+# === EARLY CHILDHOOD EDUCATION ===
+
+- id: head-start-bay-area
+  name: Head Start / Early Head Start
+  category: Education
+  area: Bay Area-wide
+  groups:
+    - income-eligible
+    - families
+    - youth
+  keywords: Head Start, Early Head Start, preschool, free preschool, early childhood, pre-K, low-income, child development, childcare, 3-5 years, infant, toddler
+  description: Head Start provides free early childhood education, health, nutrition, and family support services to children from low-income families from birth to age 5.
+  what_they_offer: |
+    - Free preschool education for children 3-5 years
+    - Early Head Start for infants and toddlers (0-3)
+    - Health and developmental screenings
+    - Nutritious meals and snacks
+    - Parent engagement and family support services
+    - Disability services and inclusion support
+    - Full-day and part-day options available
+  how_to_get_it: |
+    1. Income must be at or below federal poverty guidelines
+    2. Or child is in foster care, homeless, or receiving public assistance
+    3. Contact local Head Start agency to apply
+    4. Complete application and provide income documentation
+    5. Children are prioritized based on need
+  phone: '866-763-6481'
+  benefit: Free comprehensive early childhood education, health services, and meals for children birth to age 5
+  timeframe: School year (applications accepted year-round)
+  link: https://www.acf.hhs.gov/ohs/about/head-start
+  link_text: Find a Program
+  verified_date: '2026-01-18'
+
+- id: ca-state-preschool
+  name: California State Preschool Program (CSPP)
+  category: Education
+  area: Statewide
+  groups:
+    - income-eligible
+    - families
+  keywords: state preschool, CSPP, free preschool, California, pre-K, early childhood, low-income, 3-4 years, childcare, school readiness
+  description: The California State Preschool Program provides free or low-cost preschool to income-eligible 3 and 4 year olds to prepare them for kindergarten.
+  what_they_offer: |
+    - Free preschool for eligible children (ages 3-4)
+    - Part-day and full-day programs available
+    - Developmentally appropriate curriculum
+    - Nutritious meals and snacks
+    - Parent involvement opportunities
+    - Transition support to kindergarten
+  how_to_get_it: |
+    1. Must meet income eligibility (typically below 85% of State Median Income)
+    2. Child must be 3 or 4 years old
+    3. Programs available at school districts and community organizations
+    4. Contact local school district or resource and referral agency
+    5. Complete application and income verification
+  phone: '800-543-7793'
+  benefit: Free or low-cost preschool for 3-4 year olds to prepare for kindergarten
+  timeframe: School year
+  link: https://www.cde.ca.gov/sp/cd/op/cdprograms.asp
+  link_text: Find a Program
+  verified_date: '2026-01-18'
+
+# === ADULT EDUCATION ===
+
+- id: adult-school-sf
+  name: San Francisco City College Adult Education
+  category: Education
+  area: San Francisco
+  city: San Francisco
+  groups:
+    - everyone
+    - immigrants
+  keywords: adult school, San Francisco, CCSF, GED, ESL, English, citizenship, high school diploma, adult education, free classes, continuing education
+  description: City College of San Francisco offers free adult education classes including GED preparation, ESL, citizenship, and career training.
+  what_they_offer: |
+    - Free GED and high school diploma preparation
+    - Free ESL (English as a Second Language) classes
+    - U.S. Citizenship preparation
+    - Basic skills and literacy
+    - Career and technical education
+    - Computer literacy classes
+    - Multiple locations throughout San Francisco
+  how_to_get_it: |
+    1. Visit CCSF website or adult education center
+    2. Take placement test if required
+    3. Register for classes
+    4. Classes are free for California residents
+    5. Flexible schedules including evening and weekend options
+  phone: '415-239-3000'
+  benefit: Free adult education including GED, ESL, citizenship, and career training classes
+  timeframe: Ongoing (semester-based)
+  link: https://www.ccsf.edu/academics/schools/adult-education
+  link_text: Enroll Now
+  verified_date: '2026-01-18'
+
+- id: alameda-adult-school
+  name: Oakland Adult & Career Education
+  category: Education
+  area: Alameda County
+  city: Oakland
+  groups:
+    - everyone
+    - immigrants
+  keywords: adult school, Oakland, Alameda, GED, ESL, high school diploma, adult education, career training, free classes
+  description: Oakland Adult & Career Education provides free classes for adults including GED preparation, ESL, high school diploma, and career training.
+  what_they_offer: |
+    - Free GED and high school diploma programs
+    - ESL (English as a Second Language) at all levels
+    - Career technical education
+    - Digital literacy and computer classes
+    - Citizenship preparation
+    - Parent education classes
+  how_to_get_it: |
+    1. Visit Oakland Adult & Career Education center
+    2. Complete registration and assessment
+    3. Enroll in appropriate classes
+    4. Classes are free for eligible adults
+  phone: '510-879-8200'
+  benefit: Free adult education including GED, ESL, and career training in Oakland
+  timeframe: Ongoing
+  link: https://www.ousd.org/oace
+  link_text: Register Now
+  verified_date: '2026-01-18'
+
+- id: smc-adult-education
+  name: San Mateo Adult & Community Education
+  category: Education
+  area: San Mateo County
+  groups:
+    - everyone
+    - immigrants
+  keywords: adult school, San Mateo, GED, ESL, high school diploma, adult education, career training, free classes, Peninsula
+  description: San Mateo Adult & Community Education offers free and low-cost classes for adults including ESL, GED preparation, citizenship, and career skills.
+  what_they_offer: |
+    - ESL classes at all levels (free)
+    - GED and high school equivalency preparation
+    - U.S. Citizenship classes
+    - Career technical education
+    - Computer and digital literacy
+    - Parent education
+  how_to_get_it: |
+    1. Visit San Mateo Adult School
+    2. Complete registration
+    3. Take placement test for ESL if needed
+    4. Enroll in classes
+  phone: '650-558-2100'
+  benefit: Free ESL and adult education classes in San Mateo County
+  timeframe: Ongoing (semester-based)
+  link: https://smace.smccd.edu/
+  link_text: Enroll Now
+  verified_date: '2026-01-18'
+
+- id: scusd-adult-education
+  name: San Jose Adult Education
+  category: Education
+  area: Santa Clara County
+  city: San Jose
+  groups:
+    - everyone
+    - immigrants
+  keywords: adult school, San Jose, Santa Clara, GED, ESL, high school diploma, adult education, career training, free classes
+  description: San Jose Unified School District Adult Education provides free classes for adults including ESL, GED, citizenship, and career training.
+  what_they_offer: |
+    - Free ESL classes at all levels
+    - GED and high school diploma preparation
+    - Citizenship preparation
+    - Career and technical education
+    - Digital literacy classes
+    - Parent education
+  how_to_get_it: |
+    1. Visit San Jose Adult Education center
+    2. Complete registration
+    3. Take placement assessment
+    4. Enroll in appropriate classes
+  phone: '408-723-6400'
+  benefit: Free adult education including ESL, GED, and career training in San Jose
+  timeframe: Ongoing
+  link: https://sjadulted.org/
+  link_text: Register Now
+  verified_date: '2026-01-18'
+
+# === TUTORING AND ACADEMIC SUPPORT ===
+
+- id: khan-academy
+  name: Khan Academy
+  category: Education
+  area: Nationwide
+  groups:
+    - everyone
+    - youth
+    - college-students
+  keywords: Khan Academy, free tutoring, online learning, math, science, SAT prep, homework help, video lessons, practice exercises
+  description: Khan Academy provides free online education with video lessons and practice exercises covering math, science, humanities, SAT prep, and more.
+  what_they_offer: |
+    - Free video lessons on thousands of topics
+    - Practice exercises with instant feedback
+    - Personalized learning dashboard
+    - SAT, LSAT, and other test prep (official SAT partnership)
+    - K-12 math, science, and humanities
+    - AP course preparation
+    - College-level courses
+  how_to_get_it: |
+    1. Visit khanacademy.org
+    2. Create a free account
+    3. Start learning at your own pace
+    4. Track progress on personalized dashboard
+    5. Available on web and mobile apps
+  benefit: Free unlimited access to video lessons, practice exercises, and test prep for all subjects and grade levels
+  timeframe: Always available
+  link: https://www.khanacademy.org/
+  link_text: Start Learning
+  verified_date: '2026-01-18'
+
+- id: free-library-tutoring
+  name: Free Library Tutoring Programs
+  category: Education
+  area: Bay Area-wide
+  groups:
+    - youth
+    - everyone
+  keywords: tutoring, homework help, library, free, reading, math, academic support, after school, student
+  description: Bay Area public libraries offer free tutoring and homework help programs for students of all ages, including online tutoring services available with a library card.
+  what_they_offer: |
+    - Free one-on-one tutoring (in-person and online)
+    - Homework help in all subjects
+    - Reading and literacy support
+    - Math tutoring
+    - SAT/ACT test prep resources
+    - Online tutoring through Brainfuse or Tutor.com (varies by library)
+  how_to_get_it: |
+    1. Get a free library card from your local library
+    2. Check library website for tutoring programs
+    3. Many libraries offer Brainfuse HelpNow or similar online tutoring
+    4. In-person tutoring schedules vary by location
+    5. Some programs require appointments
+  benefit: Free tutoring and homework help through your local library, both in-person and online
+  timeframe: Ongoing (varies by library)
+  link: https://www.sfpl.org/
+  link_text: Find Your Library
+  verified_date: '2026-01-18'
+
+# === COLLEGE ACCESS PROGRAMS ===
+
+- id: trio-upward-bound
+  name: TRIO Upward Bound
+  category: Education
+  area: Bay Area-wide
+  groups:
+    - youth
+    - income-eligible
+  keywords: TRIO, Upward Bound, college prep, first-generation, low-income, high school, college access, tutoring, mentoring, SAT prep
+  description: TRIO Upward Bound helps high school students from low-income families and first-generation college students prepare for and succeed in higher education.
+  what_they_offer: |
+    - Academic tutoring and instruction
+    - College campus visits and exploration
+    - SAT/ACT preparation
+    - Financial aid and scholarship guidance
+    - Summer programs on college campuses
+    - Mentoring and personal counseling
+    - Help with college applications
+  how_to_get_it: |
+    1. Must be in high school (typically 9th-12th grade)
+    2. Must be low-income or potential first-generation college student
+    3. Programs located at colleges throughout Bay Area
+    4. Contact local Upward Bound program to apply
+    5. Application typically includes interview and assessment
+  phone: '800-433-3243'
+  benefit: Free college preparation including tutoring, campus visits, SAT prep, and application help for first-generation and low-income students
+  timeframe: During school year and summer
+  link: https://www2.ed.gov/programs/trioupbound/index.html
+  link_text: Find a Program
+  verified_date: '2026-01-18'
+
+- id: eops
+  name: EOPS/CARE (Extended Opportunity Programs)
+  category: Education
+  area: Statewide
+  groups:
+    - income-eligible
+    - college-students
+  keywords: EOPS, CARE, community college, low-income, academic support, financial aid, book vouchers, counseling, single parent
+  description: EOPS provides academic and financial support to low-income community college students, while CARE offers additional support to single parents on public assistance.
+  what_they_offer: |
+    - Priority registration
+    - Book vouchers and supplies
+    - Academic counseling
+    - Transfer assistance
+    - Grant aid (in addition to other financial aid)
+    - CARE program: childcare assistance, meal vouchers, additional grants for single parents
+  how_to_get_it: |
+    1. Must be enrolled at California Community College
+    2. Must meet income eligibility requirements
+    3. Must be educationally disadvantaged
+    4. Must enroll in at least 12 units
+    5. Apply through college EOPS office
+    6. CARE: must be single parent receiving CalWORKs/TANF
+  benefit: Book vouchers, priority registration, counseling, and additional grants for low-income community college students
+  timeframe: Ongoing
+  link: https://www.cccco.edu/Students/Support-Services/Special-populations/Extended-Opportunity-Programs-and-Services-EOPS
+  link_text: Find Your College
+  verified_date: '2026-01-18'
+
+# === SCHOOL MEALS ===
+
+- id: school-meals-program
+  name: Free & Reduced School Meals
+  category: Food
+  area: Statewide
+  groups:
+    - families
+    - youth
+    - income-eligible
+  keywords: free lunch, school meals, reduced lunch, breakfast, NSLP, school breakfast, children, low-income, food, hunger
+  description: California schools provide free breakfast and lunch to students who qualify based on family income, and many districts now offer universal free meals to all students.
+  what_they_offer: |
+    - Free or reduced-price breakfast and lunch
+    - Many California districts now offer free meals to ALL students
+    - Nutritious meals meeting federal nutrition standards
+    - Available during school year
+    - Some districts offer summer meal programs
+  how_to_get_it: |
+    1. Complete free/reduced meal application through your school
+    2. Household income must be at or below 185% of poverty for reduced price
+    3. Household income at or below 130% for free meals
+    4. Children in CalFresh, CalWORKs, or foster care automatically qualify
+    5. Many California districts provide universal free meals regardless of income
+  benefit: Free or reduced-price breakfast and lunch at school for qualifying students
+  timeframe: School year
+  link: https://www.cde.ca.gov/ls/nu/sn/
+  link_text: Apply at Your School
+  verified_date: '2026-01-18'
+
+- id: summer-meals
+  name: Summer Meals for Kids
+  category: Food
+  area: Bay Area-wide
+  groups:
+    - youth
+    - families
+  keywords: summer meals, free lunch, summer food, kids meals, summer feeding, SFSP, children, no school
+  description: Free summer meals are available for children and teens 18 and under at schools, parks, libraries, and community sites throughout the Bay Area when school is out.
+  what_they_offer: |
+    - Free breakfast and/or lunch
+    - No registration required at most sites
+    - No income verification
+    - Available at parks, libraries, schools, community centers
+    - Open to all children 18 and under
+  how_to_get_it: |
+    1. Text "FOOD" to 304-304 to find nearby sites
+    2. Or call 2-1-1 for summer meal locations
+    3. Visit the CA Summer Meal Finder website
+    4. Just show up - no paperwork required
+    5. Sites operate throughout summer months
+  phone: '211'
+  benefit: Free summer meals for all children 18 and under at community sites - no paperwork required
+  timeframe: Summer months (June-August)
+  link: https://www.cde.ca.gov/ds/sh/sn/summersites.asp
+  link_text: Find Sites
+  verified_date: '2026-01-18'

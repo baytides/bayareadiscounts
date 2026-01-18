@@ -3,47 +3,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const guides = [
   {
-    title: 'Public Assistance',
-    description: 'Medi-Cal, CalFresh (EBT/SNAP), CalWORKs',
-    href: '/eligibility/public-assistance',
-    icon: 'credit-card',
+    title: 'Healthcare',
+    description: 'Medi-Cal, Covered California, Medicare, mental health services',
+    href: '/eligibility/healthcare',
+    icon: 'heart',
+  },
+  {
+    title: 'Food Assistance',
+    description: 'CalFresh (food stamps), WIC, food banks, free meals',
+    href: '/eligibility/food-assistance',
+    icon: 'food',
+  },
+  {
+    title: 'Housing Assistance',
+    description: 'Section 8 vouchers, rental help, affordable housing, shelters',
+    href: '/eligibility/housing-assistance',
+    icon: 'home',
+  },
+  {
+    title: 'Cash Assistance',
+    description: 'CalWORKs, SSI/SSDI disability, General Assistance',
+    href: '/eligibility/cash-assistance',
+    icon: 'cash',
+  },
+  {
+    title: 'Utility Discounts',
+    description: 'CARE, FERA, LIHEAP for electricity, gas, water bills',
+    href: '/eligibility/utility-programs',
+    icon: 'bolt',
   },
   {
     title: 'Veterans & Military',
-    description: 'Active duty, veterans, National Guard, military families',
+    description: 'VA benefits, veteran healthcare, military family programs',
     href: '/eligibility/military-veterans',
     icon: 'shield',
   },
   {
-    title: 'Students',
-    description: 'College enrollment, student IDs, .edu verification',
-    href: '/eligibility/students',
-    icon: 'graduation',
-  },
-  {
-    title: 'Seniors',
-    description: 'Age thresholds (50-65+), Medicare, Social Security',
+    title: 'Seniors (60+)',
+    description: 'Medicare, Social Security, senior meals, aging services',
     href: '/eligibility/seniors',
     icon: 'user',
   },
   {
     title: 'People with Disabilities',
-    description: 'SSI/SSDI, Regional Center, ADA accommodations',
+    description: 'SSI/SSDI, Regional Center, IHSS, ADA accommodations',
     href: '/eligibility/disability',
     icon: 'accessibility',
   },
   {
-    title: 'Utility Discounts',
-    description: 'CARE, FERA, LIHEAP for electricity, gas, water',
-    href: '/eligibility/utility-programs',
-    icon: 'bolt',
+    title: 'Students',
+    description: 'Financial aid, FAFSA, Cal Grant, student discounts',
+    href: '/eligibility/students',
+    icon: 'graduation',
   },
 ];
 ---
 
 <BaseLayout
   title="Eligibility Guides"
-  description="Learn about eligibility requirements for discount programs and how to enroll in public assistance, verify military status, and more."
+  description="Learn about eligibility requirements for healthcare, food assistance, housing, cash aid, and other benefit programs in the Bay Area."
 >
   <section class="section">
     <div class="container-page">
@@ -53,20 +71,20 @@ const guides = [
           class="bg-primary-50 dark:bg-primary-900/20 border-l-4 border-primary-500 p-4 rounded-r-lg mb-8"
         >
           <p class="text-neutral-700 dark:text-neutral-300">
-            These guides help you understand if you qualify for discount programs. Pick a guide that
-            matches your situation to learn about eligibility requirements and how to apply.
+            These guides help you understand if you might qualify for assistance programs. Pick a
+            topic that matches your needs to learn about eligibility requirements and how to apply.
           </p>
         </div>
 
         <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-4">Eligibility Guides</h1>
         <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
-          These guides explain who qualifies for each category, how to verify your status, and where
-          to apply across the Bay Area.
+          Select a category to learn who qualifies, what's covered, and how to apply for programs in
+          the Bay Area.
         </p>
 
         <hr class="my-8 border-neutral-200 dark:border-neutral-700" />
 
-        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Choose a Guide</h2>
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Choose a Topic</h2>
 
         <div class="grid md:grid-cols-2 gap-4 mb-12">
           {
@@ -76,12 +94,54 @@ const guides = [
                 class="card flex items-center gap-4 no-underline hover:no-underline group"
               >
                 <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                  {guide.icon === 'credit-card' && (
+                  {guide.icon === 'heart' && (
                     <svg
                       class="w-6 h-6 text-primary-700 dark:text-primary-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 0 1 6.364 0L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 0 1 0-6.364z"
+                      />
+                    </svg>
+                  )}
+                  {guide.icon === 'food' && (
+                    <svg
+                      class="w-6 h-6 text-primary-700 dark:text-primary-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-width="2"
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                      />
+                      <path stroke-width="2" d="M12 6v6l4 2" />
+                    </svg>
+                  )}
+                  {guide.icon === 'home' && (
+                    <svg
+                      class="w-6 h-6 text-primary-700 dark:text-primary-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" stroke-width="2" />
+                    </svg>
+                  )}
+                  {guide.icon === 'cash' && (
+                    <svg
+                      class="w-6 h-6 text-primary-700 dark:text-primary-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2" />
                       <line x1="2" y1="10" x2="22" y2="10" stroke-width="2" />
@@ -93,6 +153,7 @@ const guides = [
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
@@ -103,6 +164,7 @@ const guides = [
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path stroke-width="2" d="M22 10v6M2 10l10-5 10 5-10 5z" />
                       <path stroke-width="2" d="M6 12v5c3 3 9 3 12 0v-5" />
@@ -114,6 +176,7 @@ const guides = [
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path stroke-width="2" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                       <circle cx="12" cy="7" r="4" stroke-width="2" />
@@ -125,11 +188,11 @@ const guides = [
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <circle cx="12" cy="12" r="10" stroke-width="2" />
-                      <path stroke-width="2" d="M8 14s1.5 2 4 2 4-2 4-2" />
-                      <line x1="9" y1="9" x2="9.01" y2="9" stroke-width="2" />
-                      <line x1="15" y1="9" x2="15.01" y2="9" stroke-width="2" />
+                      <circle cx="12" cy="8" r="2" stroke-width="2" />
+                      <path stroke-width="2" d="M12 10v4l-2 4m4-4l2 4" />
                     </svg>
                   )}
                   {guide.icon === 'bolt' && (
@@ -138,6 +201,7 @@ const guides = [
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke-width="2" />
                     </svg>
@@ -169,60 +233,67 @@ const guides = [
 
         <hr class="my-8 border-neutral-200 dark:border-neutral-700" />
 
-        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Quick Links</h2>
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Get Started</h2>
 
         <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <a href="/" class="card flex items-center gap-3 no-underline hover:no-underline">
+            <span class="text-2xl">🔍</span>
+            <div>
+              <div class="font-semibold text-neutral-900 dark:text-white">Browse All Programs</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Search our directory</div>
+            </div>
+          </a>
+
           <a
             href="https://benefitscal.com"
             target="_blank"
             rel="noopener noreferrer"
             class="card flex items-center gap-3 no-underline hover:no-underline"
           >
-            <span class="text-2xl">🌐</span>
+            <span class="text-2xl">📋</span>
             <div>
-              <div class="font-semibold text-neutral-900 dark:text-white">
-                Apply for benefits online
-              </div>
+              <div class="font-semibold text-neutral-900 dark:text-white">Apply Online</div>
               <div class="text-sm text-neutral-600 dark:text-neutral-300">BenefitsCal.com</div>
             </div>
           </a>
 
-          <a
-            href="tel:1-877-847-3663"
-            class="card flex items-center gap-3 no-underline hover:no-underline"
-          >
+          <a href="tel:211" class="card flex items-center gap-3 no-underline hover:no-underline">
             <span class="text-2xl">📞</span>
             <div>
-              <div class="font-semibold text-neutral-900 dark:text-white">Benefits hotline</div>
-              <div class="text-sm text-neutral-600 dark:text-neutral-300">1-877-847-3663</div>
-            </div>
-          </a>
-
-          <a
-            href="tel:1-800-827-1000"
-            class="card flex items-center gap-3 no-underline hover:no-underline"
-          >
-            <span class="text-2xl">🎖️</span>
-            <div>
-              <div class="font-semibold text-neutral-900 dark:text-white">VA hotline</div>
-              <div class="text-sm text-neutral-600 dark:text-neutral-300">1-800-827-1000</div>
+              <div class="font-semibold text-neutral-900 dark:text-white">Call 211</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Local resource help</div>
             </div>
           </a>
         </div>
 
-        <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-8">
-          <strong>Note:</strong> Requirements can change. Always verify with official program websites.
-        </p>
+        <!-- Legal Disclaimer -->
+        <div
+          class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 rounded-r-lg mb-8"
+        >
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Disclaimer:</strong> The information in these guides is for general reference only
+            and is not legal or professional advice. Eligibility requirements change periodically and
+            may vary by individual circumstances. The only way to confirm eligibility is to apply directly
+            to the relevant program. We encourage you to apply even if you're unsure — there's no penalty
+            for applying and being found ineligible.
+          </p>
+        </div>
 
         <hr class="my-8 border-neutral-200 dark:border-neutral-700" />
 
         <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 text-center">
           <p class="text-neutral-700 dark:text-neutral-300 mb-4">
-            Ready to find programs you qualify for?
+            Not sure where to start? Browse our full directory of programs.
           </p>
           <a href="/" class="btn-primary">
-            Browse All Programs
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Find Programs
+            <svg
+              class="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"

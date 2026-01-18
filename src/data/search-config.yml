@@ -17,15 +17,20 @@ synonyms:
   meals: [food, lunch, dinner, breakfast, eating]
   hungry: [food, meals, food bank, food stamps]
 
-  # Housing and rent
-  section 8: [housing voucher, rental assistance, hud, housing choice]
-  housing voucher: [section 8, rental assistance, rent help]
+  # Housing and rent (expanded)
+  section 8: [housing voucher, rental assistance, hud, housing choice, hcv]
+  housing voucher: [section 8, rental assistance, rent help, housing choice voucher]
   rent help: [rental assistance, section 8, housing voucher, eviction prevention]
-  rental assistance: [rent help, section 8, housing voucher]
-  homeless: [unhoused, housing, shelter, unsheltered]
-  unhoused: [homeless, housing, shelter]
-  shelter: [homeless, housing, emergency shelter]
-  eviction: [rent help, legal aid, tenant rights, rental assistance]
+  rental assistance: [rent help, section 8, housing voucher, emergency rental]
+  housing authority: [section 8, housing voucher, public housing, hud]
+  public housing: [housing authority, section 8, low-income housing]
+  affordable housing: [low-income housing, bmi, below market rate, dahlia]
+  homeless: [unhoused, housing, shelter, unsheltered, houseless]
+  unhoused: [homeless, housing, shelter, houseless]
+  shelter: [homeless, housing, emergency shelter, navigation center]
+  eviction: [rent help, legal aid, tenant rights, rental assistance, unlawful detainer]
+  first-time homebuyer: [down payment, mortgage, calhfa, homeownership]
+  down payment: [first-time homebuyer, mortgage assistance, homeownership]
 
   # Healthcare
   medi-cal: [medicaid, health insurance, healthcare, medical]
@@ -72,23 +77,47 @@ synonyms:
   after school: [afterschool, youth programs, tutoring]
   diapers: [baby, infant, wic, family]
 
-  # Employment
-  job: [employment, work, career, hiring]
-  unemployed: [job seeker, unemployment, laid off, jobless]
-  job training: [career, workforce, skills, employment]
-  resume: [job search, employment, career]
+  # Employment (expanded)
+  job: [employment, work, career, hiring, workforce]
+  jobs: [employment, work, career, hiring, workforce]
+  unemployed: [job seeker, unemployment, laid off, jobless, edd, ui]
+  unemployment: [unemployed, job seeker, laid off, edd, ui benefits]
+  job training: [career, workforce, skills, employment, vocational]
+  resume: [job search, employment, career, cv, cover letter, interview]
+  career: [job, employment, workforce, job training, vocational]
+  workforce: [job training, employment, career center, ajcc]
+  edd: [unemployment, unemployed, ui, job seeker, california employment]
+  vocational: [trade school, apprenticeship, certification, job training]
+  apprenticeship: [vocational, trade, job training, union]
+  interview: [job search, resume, career, employment]
 
-  # Legal
-  legal aid: [lawyer, attorney, legal help, legal services]
-  lawyer: [attorney, legal aid, legal help]
-  immigration: [immigrant, refugee, daca, asylum, visa, citizenship]
-  tenant rights: [renter, eviction, landlord, housing]
+  # Legal (expanded)
+  legal aid: [lawyer, attorney, legal help, legal services, free lawyer]
+  lawyer: [attorney, legal aid, legal help, legal services]
+  attorney: [lawyer, legal aid, legal help]
+  legal help: [legal aid, lawyer, attorney, free legal]
+  tenant rights: [renter, eviction, landlord, housing, tenant]
+  eviction help: [tenant rights, legal aid, rental assistance, eviction defense]
+  immigration lawyer: [immigration, legal aid, citizenship, visa, daca]
+  immigration: [immigrant, refugee, daca, asylum, visa, citizenship, naturalization]
 
-  # Education
-  college: [university, higher education, student, tuition]
-  tuition: [college, financial aid, scholarship, education]
-  ged: [high school equivalency, adult education, diploma]
-  esl: [english, language, immigrant, adult education]
+  # Education (expanded)
+  college: [university, higher education, student, tuition, community college]
+  university: [college, higher education, student, tuition]
+  tuition: [college, financial aid, scholarship, education, fafsa]
+  financial aid: [fafsa, cal grant, pell grant, scholarship, tuition]
+  fafsa: [financial aid, college, tuition, student aid]
+  cal grant: [financial aid, college, tuition, california student aid]
+  scholarship: [financial aid, tuition, college, student]
+  ged: [high school equivalency, adult education, diploma, hsed]
+  esl: [english, language, immigrant, adult education, english class]
+  adult education: [ged, esl, adult school, literacy, continuing education]
+  adult school: [adult education, ged, esl, high school diploma]
+  literacy: [reading, writing, adult education, esl]
+  tutoring: [homework help, academic support, after school, learning]
+  head start: [preschool, early childhood, pre-k, early learning]
+  preschool: [head start, pre-k, early childhood, childcare]
+  school meals: [free lunch, reduced lunch, summer meals, school breakfast]
 
   # Transportation
   bus pass: [transit, muni, bart, transportation, clipper]
@@ -132,6 +161,7 @@ best_bets:
     - rental-assistance-program
     - eviction-prevention
   eviction:
+    - bay-area-legal-aid
     - eviction-defense-collaborative
     - tenants-union
     - rental-assistance-program
@@ -194,12 +224,53 @@ best_bets:
     - in-home-supportive-services
     - regional-center
 
-  # Jobs
+  # Jobs/Employment
   job:
-    - america-works
-    - jobsnow
-    - one-stop-career-center
-    - workforce-development
+    - caljobs
+    - sf-jobsnow
+    - nova-workforce
+    - meda-workforce
+  employment:
+    - caljobs
+    - sf-jobsnow
+    - nova-workforce
+    - job-corps
+  career:
+    - caljobs
+    - nova-workforce
+    - career-online-high-school
+  unemployment:
+    - caljobs
+    - edd-unemployment-insurance
+    - nova-workforce
+
+  # Education
+  education:
+    - head-start-bay-area
+    - cal-grant
+    - career-online-high-school
+    - california-college-promise-grant
+  college:
+    - california-college-promise-grant
+    - cal-grant
+    - fafsa-help
+    - calvet-college-fee-waiver
+  ged:
+    - career-online-high-school
+    - adult-school-sf
+  financial aid:
+    - cal-grant
+    - fafsa-help
+    - california-college-promise-grant
+
+  # Legal
+  legal:
+    - bay-area-legal-aid
+    - legal-aid-at-work
+    - centro-legal-de-la-raza
+  lawyer:
+    - bay-area-legal-aid
+    - legal-aid-at-work
 
 # Type-ahead suggestions - common searches shown as user types
 # Organized by first letter/word for quick lookup
@@ -235,6 +306,32 @@ suggestions:
   - lgbtq resources
   - youth programs
   - college financial aid
+  # New employment suggestions
+  - unemployment benefits
+  - job search help
+  - resume help
+  - career counseling
+  - workforce development
+  - CalJOBS
+  - job corps
+  - apprenticeship programs
+  # New education suggestions
+  - GED classes
+  - adult school
+  - ESL classes
+  - head start preschool
+  - free preschool
+  - FAFSA help
+  - Cal Grant
+  - tutoring programs
+  - homework help
+  - school meals
+  # New legal suggestions
+  - tenant rights
+  - eviction help
+  - free lawyer
+  - legal aid
+  - immigration lawyer
 
 # Query rewrites - normalize common phrasings to structured searches
 # These help map natural language to effective searches
@@ -247,9 +344,27 @@ query_rewrites:
   'help paying bills': 'utility bill help'
   'need a doctor': 'healthcare clinic'
   'feeling depressed': 'mental health'
-  'need a job': 'job training'
-  'lost my job': 'unemployment'
+  'need a job': 'job training employment'
+  'lost my job': 'unemployment benefits'
   'need a lawyer': 'legal aid'
-  'being evicted': 'eviction prevention'
+  'being evicted': 'eviction help legal aid'
   'nowhere to live': 'emergency shelter housing'
   'need health insurance': 'covered california medi-cal'
+  # New employment rewrites
+  'looking for work': 'job search employment'
+  'find a job': 'job search caljobs'
+  'unemployed': 'unemployment benefits job training'
+  'need job training': 'workforce development job training'
+  'learn a trade': 'vocational training apprenticeship'
+  'get my ged': 'ged adult education'
+  # New education rewrites
+  'pay for college': 'financial aid fafsa cal grant'
+  'free preschool': 'head start preschool'
+  'learn english': 'esl adult education'
+  'help with homework': 'tutoring homework help'
+  'go back to school': 'adult education ged'
+  # New legal rewrites
+  'landlord problems': 'tenant rights legal aid'
+  'facing eviction': 'eviction help legal aid'
+  'immigration help': 'immigration legal aid'
+  'need immigration lawyer': 'immigration legal aid'

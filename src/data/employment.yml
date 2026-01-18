@@ -1,0 +1,531 @@
+# Employment and Workforce Development Programs
+# Bay Area job training, career services, and employment resources
+
+# === STATEWIDE PROGRAMS ===
+
+- id: caljobs
+  name: CalJOBS
+  category: Community Services
+  area: Statewide
+  groups:
+    - unemployed
+    - everyone
+  keywords: CalJOBS, job search, employment, resume builder, job training, EDD, California jobs, career, workforce, job board, job listings
+  description: CalJOBS is California's online employment center connecting job seekers with employers. Search jobs, build resumes, find training programs, and connect with local career centers.
+  what_they_offer: |
+    - Free job search with thousands of California job listings
+    - Resume builder and career profile tools
+    - Training program finder
+    - Labor market information and salary data
+    - Connection to local America's Job Centers
+    - Virtual job fairs and hiring events
+    - Skills assessment tools
+  how_to_get_it: |
+    1. Visit CalJOBS.ca.gov
+    2. Create a free account
+    3. Build your resume and job seeker profile
+    4. Search for jobs matching your skills
+    5. Apply directly through the system
+    6. Find local career center for in-person help
+  phone: '800-758-0398'
+  benefit: Free online job search, resume builder, training finder, and connection to local career services
+  timeframe: Ongoing
+  link: https://www.caljobs.ca.gov/
+  link_text: Search Jobs
+  verified_date: '2026-01-18'
+
+- id: edd-unemployment-insurance
+  name: EDD Unemployment Insurance (UI)
+  category: Finance
+  area: Statewide
+  groups:
+    - unemployed
+  keywords: EDD, unemployment, UI, unemployment insurance, jobless, laid off, unemployment benefits, California unemployment, weekly benefits, job loss
+  description: California's Unemployment Insurance program provides temporary financial assistance to workers who lost their jobs through no fault of their own while they search for new employment.
+  what_they_offer: |
+    - Weekly unemployment benefits (up to $450/week in 2024)
+    - Up to 26 weeks of regular benefits
+    - Extended benefits during high unemployment
+    - Pandemic Unemployment Assistance (when applicable)
+    - Connection to job training and career services
+  how_to_get_it: |
+    1. File a claim online at EDD website or by phone
+    2. Must have earned enough wages in base period
+    3. Must be unemployed through no fault of your own
+    4. Must be able and available to work
+    5. Must actively search for work
+    6. Certify for benefits every two weeks
+  phone: '800-300-5616'
+  benefit: Weekly unemployment benefits up to $450/week for up to 26 weeks while job searching
+  timeframe: Up to 26 weeks (may be extended)
+  link: https://edd.ca.gov/unemployment/
+  link_text: File a Claim
+  verified_date: '2026-01-18'
+
+- id: job-corps
+  name: Job Corps
+  category: Education
+  area: Statewide
+  groups:
+    - youth
+    - income-eligible
+  keywords: Job Corps, youth job training, free job training, vocational training, 16-24, career training, housing, education, certification, young adults
+  description: Job Corps is the nation's largest free residential education and job training program for young adults ages 16-24. Students live on campus while earning a high school diploma and learning job skills.
+  what_they_offer: |
+    - Free room and board while training
+    - High school diploma or GED completion
+    - Career training in high-demand industries
+    - Healthcare, construction, IT, culinary, and more
+    - Job placement assistance
+    - Driver's license assistance
+    - Monthly living allowance
+  how_to_get_it: |
+    1. Must be 16-24 years old
+    2. Must be low-income (specific guidelines apply)
+    3. Must be a U.S. citizen or legal resident
+    4. Contact Job Corps admissions or local outreach office
+    5. Complete application and interview
+    6. Pass background check and health screening
+  phone: '800-733-5627'
+  benefit: Free residential job training, education, room and board, and job placement for ages 16-24
+  timeframe: 8 months to 2 years
+  link: https://www.jobcorps.gov/
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+- id: ca-apprenticeship
+  name: California Apprenticeship Initiative
+  category: Education
+  area: Statewide
+  groups:
+    - everyone
+  keywords: apprenticeship, apprentice, learn a trade, earn while you learn, journeyman, union, skilled trades, vocational, certification, construction, electrician, plumber
+  description: California's apprenticeship programs let you earn while you learn skilled trades. Get paid while receiving on-the-job training and classroom instruction leading to journey-level certification.
+  what_they_offer: |
+    - Earn wages while training (typically starting at 40-50% of journey wage)
+    - On-the-job training with experienced workers
+    - Related classroom instruction
+    - Industry-recognized certification upon completion
+    - Career pathway to high-paying skilled trades
+    - Programs in construction, healthcare, IT, manufacturing, and more
+  how_to_get_it: |
+    1. Search for programs at dir.ca.gov/apprenticeship
+    2. Must be at least 18 (16 for some programs)
+    3. High school diploma or GED typically required
+    4. Apply directly to apprenticeship program or union
+    5. May need to pass aptitude test
+    6. Programs range from 1-5 years depending on trade
+  phone: '415-703-4920'
+  benefit: Earn wages while learning skilled trades with industry certification upon completion
+  timeframe: 1-5 years depending on trade
+  link: https://www.dir.ca.gov/das/das.html
+  link_text: Find Programs
+  verified_date: '2026-01-18'
+
+# === BAY AREA REGIONAL PROGRAMS ===
+
+- id: year-up
+  name: Year Up Bay Area
+  category: Education
+  area: Bay Area-wide
+  groups:
+    - youth
+    - income-eligible
+  keywords: Year Up, young adults, career training, tech jobs, internship, professional skills, 18-29, IT, software, help desk, corporate internship
+  description: Year Up provides young adults ages 18-29 with skills training, corporate internships, and support to launch careers in high-growth industries like tech, finance, and healthcare.
+  what_they_offer: |
+    - 6 months of professional skills training
+    - 6-month corporate internship with major companies
+    - Weekly stipend during program
+    - College credits (transferable)
+    - Career coaching and job placement support
+    - Alumni network and ongoing support
+    - Training in IT, software, financial operations, and more
+  how_to_get_it: |
+    1. Must be 18-29 years old
+    2. High school diploma or GED required
+    3. Must be authorized to work in U.S.
+    4. Must be available full-time for 12 months
+    5. Apply online at Year Up website
+    6. Complete admissions process (interview, assessments)
+  phone: '415-243-0303'
+  benefit: Free professional training, paid corporate internship, and career placement for ages 18-29
+  timeframe: 12 months (6 months training + 6 months internship)
+  link: https://www.yearup.org/locations/bay-area
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+# === SAN FRANCISCO ===
+
+- id: sf-oewd-workforce
+  name: SF Office of Economic and Workforce Development
+  category: Community Services
+  area: San Francisco
+  city: San Francisco
+  groups:
+    - unemployed
+    - everyone
+  keywords: OEWD, San Francisco, workforce, job training, career center, employment, job search, resume, One-Stop, AJCC
+  description: San Francisco's Office of Economic and Workforce Development connects residents with free job training, career counseling, and employment services through local workforce centers.
+  what_they_offer: |
+    - Free career counseling and job search assistance
+    - Resume and interview preparation
+    - Job training and skills workshops
+    - Connection to hiring employers
+    - Supportive services (transportation, childcare assistance)
+    - Specialized programs for target populations
+    - Access to CalJOBS and job listings
+  how_to_get_it: |
+    1. Visit a San Francisco workforce center
+    2. Complete intake assessment
+    3. Meet with career counselor
+    4. Access training and job search services
+    5. Get connected to employment opportunities
+  phone: '415-701-4848'
+  benefit: Free career counseling, job training, and employment services for SF residents
+  timeframe: Ongoing
+  link: https://sf.gov/departments/office-economic-and-workforce-development
+  link_text: Find Services
+  verified_date: '2026-01-18'
+
+- id: sf-youthworks
+  name: SF YouthWorks
+  category: Community Services
+  area: San Francisco
+  city: San Francisco
+  groups:
+    - youth
+  keywords: YouthWorks, San Francisco, youth employment, summer jobs, internship, young people, teen jobs, work experience, 16-24
+  description: YouthWorks provides San Francisco young people ages 16-24 with paid work experience, job training, and career exploration opportunities.
+  what_they_offer: |
+    - Paid work experience and internships
+    - Summer employment programs
+    - Year-round employment opportunities
+    - Job readiness training
+    - Career exploration and mentorship
+    - Supportive services
+  how_to_get_it: |
+    1. Must be 16-24 years old
+    2. Must be San Francisco resident
+    3. Apply through DCYF or partner organizations
+    4. Complete orientation and job readiness training
+    5. Get matched with employment opportunity
+  phone: '415-554-8990'
+  benefit: Paid work experience and internships for San Francisco youth ages 16-24
+  timeframe: Seasonal and year-round
+  link: https://sf.gov/information/youth-employment-programs
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+# === ALAMEDA COUNTY ===
+
+- id: alameda-workforce
+  name: Alameda County Workforce Development Board
+  category: Community Services
+  area: Alameda County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Alameda County, workforce, AJCC, America's Job Center, Oakland, job training, career services, employment, East Bay
+  description: Alameda County's America's Job Centers provide free career services including job search assistance, training, and employment support throughout the East Bay.
+  what_they_offer: |
+    - Free career counseling and assessment
+    - Job search workshops and resources
+    - Resume and interview preparation
+    - Occupational skills training
+    - On-the-job training opportunities
+    - Supportive services (transportation, childcare)
+    - Connection to local employers
+  how_to_get_it: |
+    1. Visit an America's Job Center in Alameda County
+    2. Locations in Oakland, Fremont, Hayward, and more
+    3. Complete registration and assessment
+    4. Work with career counselor on employment plan
+    5. Access training and job placement services
+  phone: '510-259-3800'
+  benefit: Free career services, job training, and employment support in Alameda County
+  timeframe: Ongoing
+  link: https://www.acwdb.org/
+  link_text: Find a Center
+  verified_date: '2026-01-18'
+
+- id: oakland-youthbuild
+  name: Oakland YouthBuild
+  category: Education
+  area: Alameda County
+  city: Oakland
+  groups:
+    - youth
+    - income-eligible
+  keywords: YouthBuild, Oakland, youth, construction, job training, GED, high school, affordable housing, community service, 16-24
+  description: Oakland YouthBuild helps young adults ages 16-24 earn their GED while learning construction skills by building affordable housing in their community.
+  what_they_offer: |
+    - GED preparation and high school diploma
+    - Construction skills training
+    - Industry certifications (OSHA, forklift, etc.)
+    - Leadership development
+    - Paid stipend during program
+    - Job placement assistance
+    - Supportive services
+  how_to_get_it: |
+    1. Must be 16-24 years old
+    2. Must be low-income
+    3. Must not have high school diploma (or working on GED)
+    4. Contact Oakland YouthBuild for application
+    5. Complete intake and interview
+    6. Begin program cycle (typically starts twice per year)
+  phone: '510-251-1800'
+  benefit: Earn GED while learning construction skills with paid stipend and job placement
+  timeframe: 6-12 months
+  link: https://www.youthbuild.org/
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+# === CONTRA COSTA COUNTY ===
+
+- id: contra-costa-workforce
+  name: Workforce Development Board of Contra Costa County
+  category: Community Services
+  area: Contra Costa County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Contra Costa, workforce, AJCC, America's Job Center, job training, career services, Richmond, Concord, Antioch
+  description: Contra Costa County's America's Job Centers offer free employment services including career counseling, job training, and placement assistance.
+  what_they_offer: |
+    - Career counseling and job search assistance
+    - Resume writing and interview skills workshops
+    - Occupational skills training
+    - Youth employment programs
+    - Veteran employment services
+    - Employer connections and job fairs
+    - Supportive services
+  how_to_get_it: |
+    1. Visit an America's Job Center
+    2. Locations in Richmond, Concord, and Antioch
+    3. Register and complete assessment
+    4. Work with career counselor
+    5. Access training and employment services
+  phone: '925-602-6800'
+  benefit: Free career counseling, job training, and employment services in Contra Costa County
+  timeframe: Ongoing
+  link: https://www.wdbccc.com/
+  link_text: Find Services
+  verified_date: '2026-01-18'
+
+# === SAN MATEO COUNTY ===
+
+- id: san-mateo-workforce
+  name: San Mateo County Workforce Development
+  category: Community Services
+  area: San Mateo County
+  groups:
+    - unemployed
+    - everyone
+  keywords: San Mateo, workforce, JobTrain, AJCC, America's Job Center, job training, career services, Peninsula
+  description: San Mateo County's workforce services connect residents with career training, job search support, and employment opportunities throughout the Peninsula.
+  what_they_offer: |
+    - Career assessment and counseling
+    - Job search assistance and workshops
+    - Skills training and certifications
+    - Youth employment programs
+    - Business services for employers
+    - Supportive services
+  how_to_get_it: |
+    1. Visit JobTrain or workforce partner location
+    2. Complete intake and assessment
+    3. Work with career counselor on employment plan
+    4. Access training and job placement services
+  phone: '650-363-4100'
+  benefit: Free career training, job search support, and employment services in San Mateo County
+  timeframe: Ongoing
+  link: https://hsa.smcgov.org/workforce-services
+  link_text: Get Started
+  verified_date: '2026-01-18'
+
+- id: jobtrain
+  name: JobTrain
+  category: Community Services
+  area: San Mateo County
+  city: Menlo Park
+  groups:
+    - income-eligible
+    - unemployed
+  keywords: JobTrain, Menlo Park, job training, career, healthcare, culinary, IT, construction, certificate, low-income
+  description: JobTrain provides free career training in high-demand fields including healthcare, culinary arts, technology, and construction for low-income Bay Area residents.
+  what_they_offer: |
+    - Free career training programs (8-16 weeks)
+    - Healthcare certifications (CNA, Medical Assistant, Phlebotomy)
+    - Culinary arts and food service training
+    - Construction and green energy training
+    - IT and digital skills training
+    - Job placement assistance (90%+ placement rate)
+    - Supportive services (childcare, transportation, emergency funds)
+  how_to_get_it: |
+    1. Must be low-income (specific guidelines apply)
+    2. Must be at least 18 years old
+    3. Attend information session
+    4. Complete application and interview
+    5. Start training program
+    6. Receive job placement support upon completion
+  phone: '650-330-6400'
+  benefit: Free career training with 90%+ job placement in healthcare, culinary, tech, and construction
+  timeframe: 8-16 weeks depending on program
+  link: https://www.jobtrainworks.org/
+  link_text: Apply Now
+  verified_date: '2026-01-18'
+
+# === SANTA CLARA COUNTY ===
+
+- id: santa-clara-workforce
+  name: work2future - Santa Clara County Workforce
+  category: Community Services
+  area: Santa Clara County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Santa Clara, workforce, work2future, AJCC, America's Job Center, San Jose, job training, career services, Silicon Valley
+  description: work2future operates Santa Clara County's America's Job Centers, providing free career services to Silicon Valley residents seeking employment or career advancement.
+  what_they_offer: |
+    - Career counseling and job search assistance
+    - Resume and interview workshops
+    - Occupational skills training
+    - Technology and digital skills programs
+    - Youth employment services
+    - Veteran employment programs
+    - Employer hiring events
+  how_to_get_it: |
+    1. Visit an America's Job Center in Santa Clara County
+    2. Locations in San Jose, Gilroy, and Sunnyvale
+    3. Register online or in person
+    4. Meet with career counselor
+    5. Access training and employment services
+  phone: '408-794-1100'
+  benefit: Free career counseling, training, and employment services in Santa Clara County
+  timeframe: Ongoing
+  link: https://www.work2future.org/
+  link_text: Find a Center
+  verified_date: '2026-01-18'
+
+# === MARIN COUNTY ===
+
+- id: marin-workforce
+  name: Marin Employment Connection
+  category: Community Services
+  area: Marin County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Marin County, workforce, employment connection, AJCC, job training, career services, San Rafael
+  description: Marin Employment Connection is Marin County's America's Job Center, providing comprehensive employment and training services to job seekers and employers.
+  what_they_offer: |
+    - Free career counseling and assessment
+    - Job search workshops and resources
+    - Resume and interview preparation
+    - Skills training and certifications
+    - Youth employment programs
+    - Veteran services
+    - Employer recruitment assistance
+  how_to_get_it: |
+    1. Visit Marin Employment Connection in San Rafael
+    2. Register and complete intake
+    3. Work with career counselor
+    4. Access training and job search services
+  phone: '415-473-3300'
+  benefit: Free career services and job training for Marin County residents
+  timeframe: Ongoing
+  link: https://www.marincounty.org/depts/hr/employment-connection
+  link_text: Get Started
+  verified_date: '2026-01-18'
+
+# === SONOMA COUNTY ===
+
+- id: sonoma-workforce
+  name: Sonoma County Job Link
+  category: Community Services
+  area: Sonoma County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Sonoma County, Job Link, workforce, AJCC, America's Job Center, Santa Rosa, job training, career services
+  description: Sonoma County Job Link is the America's Job Center serving Sonoma County, offering free employment services to job seekers and businesses.
+  what_they_offer: |
+    - Career counseling and assessment
+    - Job search assistance and workshops
+    - Resume and interview preparation
+    - Skills training programs
+    - Youth employment services
+    - Veteran services
+    - Connection to local employers
+  how_to_get_it: |
+    1. Visit Sonoma County Job Link in Santa Rosa
+    2. Register and complete assessment
+    3. Meet with career counselor
+    4. Access training and employment services
+  phone: '707-565-5550'
+  benefit: Free career counseling, training, and employment services for Sonoma County residents
+  timeframe: Ongoing
+  link: https://sonomawib.org/job-seekers/
+  link_text: Find Services
+  verified_date: '2026-01-18'
+
+# === SOLANO COUNTY ===
+
+- id: solano-workforce
+  name: Solano County Workforce Development
+  category: Community Services
+  area: Solano County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Solano County, workforce, AJCC, America's Job Center, Fairfield, Vallejo, Vacaville, job training, career services
+  description: Solano County's workforce development services connect residents with career training and employment opportunities at America's Job Centers throughout the county.
+  what_they_offer: |
+    - Career counseling and job search assistance
+    - Resume and interview workshops
+    - Occupational skills training
+    - Youth employment programs
+    - Veteran employment services
+    - Employer connections
+  how_to_get_it: |
+    1. Visit an America's Job Center in Solano County
+    2. Locations in Fairfield, Vallejo, and Vacaville
+    3. Register and complete assessment
+    4. Work with career counselor
+    5. Access training and employment services
+  phone: '707-863-3500'
+  benefit: Free career services and job training for Solano County residents
+  timeframe: Ongoing
+  link: https://www.solanowdb.org/
+  link_text: Find a Center
+  verified_date: '2026-01-18'
+
+# === NAPA COUNTY ===
+
+- id: napa-workforce
+  name: Napa County Workforce Investment Board
+  category: Community Services
+  area: Napa County
+  groups:
+    - unemployed
+    - everyone
+  keywords: Napa County, workforce, AJCC, America's Job Center, job training, career services, wine country
+  description: Napa County's America's Job Center provides employment and training services to help residents find jobs and advance their careers.
+  what_they_offer: |
+    - Career counseling and assessment
+    - Job search workshops and resources
+    - Resume and interview preparation
+    - Skills training programs
+    - Youth employment services
+    - Connection to local employers
+  how_to_get_it: |
+    1. Visit the Napa County America's Job Center
+    2. Register and complete intake
+    3. Meet with career counselor
+    4. Access training and job search services
+  phone: '707-253-4516'
+  benefit: Free career services and job training for Napa County residents
+  timeframe: Ongoing
+  link: https://www.napawib.org/
+  link_text: Get Started
+  verified_date: '2026-01-18'

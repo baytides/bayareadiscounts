@@ -230,7 +230,7 @@ test.describe('Utility & Bill Assistance Searches', () => {
   });
 });
 
-test.describe('Legal & Employment Searches', () => {
+test.describe('Legal Services Searches', () => {
   test('search "free legal help" returns legal aid', async ({ page }) => {
     const { count, names } = await searchAndGetResults(page, 'free legal help');
 
@@ -239,12 +239,140 @@ test.describe('Legal & Employment Searches', () => {
     expect(hasLegal).toBe(true);
   });
 
+  test('search "eviction help" returns tenant services', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'eviction help');
+
+    expect(count).toBeGreaterThan(0);
+    const hasEviction = hasResultContaining(names, 'eviction', 'tenant', 'legal', 'housing');
+    expect(hasEviction).toBe(true);
+  });
+
+  test('search "immigration lawyer" returns immigration services', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'immigration lawyer');
+
+    expect(count).toBeGreaterThan(0);
+    const hasImmigration = hasResultContaining(
+      names,
+      'immigration',
+      'legal',
+      'citizenship',
+      'immigrant'
+    );
+    expect(hasImmigration).toBe(true);
+  });
+});
+
+test.describe('Employment Searches', () => {
   test('search "job training" returns employment programs', async ({ page }) => {
     const { count, names } = await searchAndGetResults(page, 'job training');
 
     expect(count).toBeGreaterThan(0);
     const hasJob = hasResultContaining(names, 'job', 'employ', 'career', 'training', 'workforce');
     expect(hasJob).toBe(true);
+  });
+
+  test('search "CalJOBS" returns employment services', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'CalJOBS');
+
+    expect(count).toBeGreaterThan(0);
+    const hasCalJobs = hasResultContaining(names, 'caljobs', 'job', 'employment', 'career');
+    expect(hasCalJobs).toBe(true);
+  });
+
+  test('search "unemployment benefits" returns EDD programs', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'unemployment benefits');
+
+    expect(count).toBeGreaterThan(0);
+    const hasUnemployment = hasResultContaining(names, 'unemployment', 'edd', 'job', 'benefit');
+    expect(hasUnemployment).toBe(true);
+  });
+
+  test('search "resume help" returns career services', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'resume help');
+
+    expect(count).toBeGreaterThan(0);
+    const hasCareer = hasResultContaining(
+      names,
+      'resume',
+      'career',
+      'job',
+      'workforce',
+      'employment'
+    );
+    expect(hasCareer).toBe(true);
+  });
+});
+
+test.describe('Education Searches', () => {
+  test('search "GED classes" returns adult education', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'GED classes');
+
+    expect(count).toBeGreaterThan(0);
+    const hasGED = hasResultContaining(
+      names,
+      'ged',
+      'adult',
+      'education',
+      'diploma',
+      'high school'
+    );
+    expect(hasGED).toBe(true);
+  });
+
+  test('search "free preschool" returns Head Start', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'free preschool');
+
+    expect(count).toBeGreaterThan(0);
+    const hasPreschool = hasResultContaining(
+      names,
+      'head start',
+      'preschool',
+      'early',
+      'childhood'
+    );
+    expect(hasPreschool).toBe(true);
+  });
+
+  test('search "FAFSA help" returns financial aid services', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'FAFSA help');
+
+    expect(count).toBeGreaterThan(0);
+    const hasFAFSA = hasResultContaining(names, 'fafsa', 'financial aid', 'college', 'grant');
+    expect(hasFAFSA).toBe(true);
+  });
+
+  test('search "ESL classes" returns language programs', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'ESL classes');
+
+    expect(count).toBeGreaterThan(0);
+    const hasESL = hasResultContaining(names, 'esl', 'english', 'adult', 'education', 'language');
+    expect(hasESL).toBe(true);
+  });
+});
+
+test.describe('Housing Searches', () => {
+  test('search "Section 8" returns housing vouchers', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'Section 8');
+
+    expect(count).toBeGreaterThan(0);
+    const hasSection8 = hasResultContaining(names, 'section 8', 'housing', 'voucher', 'authority');
+    expect(hasSection8).toBe(true);
+  });
+
+  test('search "housing authority" returns local programs', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'housing authority');
+
+    expect(count).toBeGreaterThan(0);
+    const hasAuthority = hasResultContaining(names, 'housing authority', 'section 8', 'voucher');
+    expect(hasAuthority).toBe(true);
+  });
+
+  test('search "affordable housing" returns listings', async ({ page }) => {
+    const { count, names } = await searchAndGetResults(page, 'affordable housing');
+
+    expect(count).toBeGreaterThan(0);
+    const hasAffordable = hasResultContaining(names, 'affordable', 'housing', 'rental', 'dahlia');
+    expect(hasAffordable).toBe(true);
   });
 });
 
