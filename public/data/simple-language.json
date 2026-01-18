@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-11T02:44:05.197Z",
+  "generated": "2026-01-18T02:43:27.114Z",
   "description": "Simplified alternatives for complex words (WCAG 2.2 AAA 3.1.5)",
   "readingLevel": "8th grade or below",
   "totalWords": 13,
@@ -10,12 +10,12 @@
     "assistance": "help",
     "benefits": "help you can get",
     "enrollment": "signing up",
-    "enroll": "sign up",
+    "nutrition": "food and eating",
     "comprehensive": "complete",
     "accessibility": "easy to use for everyone",
+    "verification": "checking if true",
     "verify": "check",
-    "qualify": "be able to get",
     "infrastructure": "basic systems",
-    "compensation": "payment"
+    "confidential": "private"
   }
 }
