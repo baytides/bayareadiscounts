@@ -36,7 +36,7 @@ jobs:
           tar -xzf pmtiles.tar.gz
           chmod +x pmtiles
           sudo mv pmtiles /usr/local/bin/
-          pmtiles --version
+          pmtiles version
 
       - name: Find latest Protomaps build
         id: find-build
