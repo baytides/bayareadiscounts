@@ -724,9 +724,8 @@ Counties: SF, Alameda, Contra Costa, San Mateo, Santa Clara, Marin, Napa, Solano
     // Pattern for full URLs (https://...)
     const urlPattern = /(https?:\/\/[^\s<]+)/g;
 
-    // Pattern for domain-style references (e.g., baynavigator.org/path, GetCalFresh.org)
-    const domainPattern =
-      /\b((?:baynavigator\.org|getcalfresh\.org|benefitscal\.com|coveredca\.com)[^\s<,.)]*)/gi;
+    // Pattern for Bay Navigator domain references only
+    const domainPattern = /\b(baynavigator\.org[^\s<,.)]*)/gi;
 
     let result = escaped;
 
