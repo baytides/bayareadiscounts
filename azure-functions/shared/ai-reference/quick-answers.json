@@ -327,7 +327,12 @@
         "food resources",
         "food assistance",
         "where can i get food",
-        "how to get food"
+        "how to get food",
+        "food near me",
+        "free food",
+        "groceries",
+        "food pantry",
+        "food bank"
       ],
       "response": {
         "type": "category_search",
@@ -349,7 +354,12 @@
         "housing resources",
         "housing assistance",
         "rent help",
-        "help with rent"
+        "help with rent",
+        "affordable housing",
+        "low income housing",
+        "apartment help",
+        "need a place to live",
+        "housing near me"
       ],
       "response": {
         "type": "category_search",
@@ -368,7 +378,15 @@
         "need insurance",
         "medical help",
         "doctor help",
-        "find a doctor"
+        "find a doctor",
+        "health care",
+        "free clinic",
+        "community clinic",
+        "need a doctor",
+        "medical insurance",
+        "dental help",
+        "mental health help",
+        "therapy help"
       ],
       "response": {
         "type": "category_search",
@@ -377,6 +395,313 @@
         "guideUrl": "/eligibility/healthcare",
         "guideText": "See healthcare program eligibility",
         "search": "medi-cal covered california medicare community clinic health insurance"
+      }
+    },
+    {
+      "patterns": [
+        "need childcare",
+        "help with childcare",
+        "child care",
+        "daycare help",
+        "daycare assistance",
+        "childcare assistance",
+        "preschool help",
+        "affordable childcare",
+        "free childcare",
+        "subsidized childcare",
+        "childcare near me",
+        "daycare near me"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Childcare Assistance",
+        "message": "Here are childcare programs in your area:",
+        "guideUrl": "/eligibility/childcare",
+        "guideText": "See childcare program eligibility",
+        "search": "childcare child care daycare preschool head start subsidy"
+      }
+    },
+    {
+      "patterns": [
+        "need transportation",
+        "help with transportation",
+        "bus pass",
+        "transit help",
+        "transportation assistance",
+        "free transit",
+        "clipper discount",
+        "paratransit",
+        "ride help",
+        "how to get around",
+        "bart discount"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Transportation Assistance",
+        "message": "Here are transportation programs in your area:",
+        "guideUrl": "/eligibility/transportation",
+        "guideText": "See transportation program eligibility",
+        "search": "transit bus bart muni clipper paratransit transportation discount"
+      }
+    },
+    {
+      "patterns": [
+        "need job",
+        "help finding job",
+        "job help",
+        "employment help",
+        "looking for work",
+        "need work",
+        "job training",
+        "career help",
+        "resume help",
+        "unemployment help",
+        "find a job",
+        "job search"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Employment Services",
+        "message": "Here are employment and job training programs in your area:",
+        "guideUrl": "/eligibility/employment",
+        "guideText": "See employment program eligibility",
+        "search": "employment job training career workforce development resume"
+      }
+    },
+    {
+      "patterns": [
+        "need legal help",
+        "legal assistance",
+        "lawyer help",
+        "free lawyer",
+        "legal aid",
+        "legal services",
+        "eviction help",
+        "immigration help",
+        "tenant rights",
+        "court help"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Legal Assistance",
+        "message": "Here are legal aid programs in your area:",
+        "guideUrl": "/eligibility/legal",
+        "guideText": "See legal aid eligibility",
+        "search": "legal aid lawyer attorney free legal services tenant rights"
+      }
+    },
+    {
+      "patterns": [
+        "utility help",
+        "help with bills",
+        "electric bill help",
+        "gas bill help",
+        "utility assistance",
+        "pg&e help",
+        "pge help",
+        "water bill help",
+        "can't pay bills",
+        "bill assistance",
+        "energy assistance"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Utility Assistance",
+        "message": "Here are utility assistance programs in your area:",
+        "guideUrl": "/eligibility/utilities",
+        "guideText": "See utility program eligibility",
+        "search": "utility liheap care program electric gas bill assistance"
+      }
+    },
+    {
+      "patterns": [
+        "senior help",
+        "senior services",
+        "help for seniors",
+        "elderly services",
+        "services for elderly",
+        "65+ services",
+        "older adult services",
+        "senior programs",
+        "senior resources"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Senior Services",
+        "message": "Here are programs for seniors in your area:",
+        "guideUrl": "/eligibility/seniors",
+        "guideText": "See senior program eligibility",
+        "search": "senior elderly 65+ older adult meals transportation"
+      }
+    },
+    {
+      "patterns": [
+        "veteran help",
+        "veteran services",
+        "help for veterans",
+        "va services",
+        "military services",
+        "veteran programs",
+        "veteran resources",
+        "vet help"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Veteran Services",
+        "message": "Here are programs for veterans in your area:",
+        "guideUrl": "/eligibility/veterans",
+        "guideText": "See veteran program eligibility",
+        "search": "veteran military va services benefits"
+      }
+    },
+    {
+      "patterns": [
+        "disability help",
+        "disability services",
+        "help with disability",
+        "disabled services",
+        "accessibility services",
+        "disability resources",
+        "disability programs"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Disability Services",
+        "message": "Here are programs for people with disabilities in your area:",
+        "guideUrl": "/eligibility/disability",
+        "guideText": "See disability program eligibility",
+        "search": "disability disabled ssi ssdi accessibility services"
+      }
+    },
+    {
+      "patterns": [
+        "cash help",
+        "cash assistance",
+        "need money",
+        "emergency money",
+        "financial help",
+        "financial assistance",
+        "money help"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Cash Assistance",
+        "message": "Here are cash assistance programs in your area:",
+        "guideUrl": "/eligibility/cash-assistance",
+        "guideText": "See cash assistance eligibility",
+        "search": "calworks cash assistance general relief emergency financial aid"
+      }
+    },
+    {
+      "patterns": [
+        "tax help",
+        "free tax",
+        "tax preparation",
+        "tax filing help",
+        "vita",
+        "eitc help",
+        "earned income credit",
+        "free tax filing"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Free Tax Preparation",
+        "message": "Here are free tax preparation services in your area:",
+        "guideUrl": "/eligibility/taxes",
+        "guideText": "See tax help eligibility",
+        "search": "vita tax preparation free tax filing eitc earned income"
+      }
+    },
+    {
+      "patterns": [
+        "immigrant services",
+        "immigration help",
+        "refugee services",
+        "immigrant resources",
+        "citizenship help",
+        "naturalization help",
+        "daca help",
+        "asylum help"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Immigrant Services",
+        "message": "Here are immigration services in your area:",
+        "guideUrl": "/eligibility/immigrants",
+        "guideText": "See immigrant services eligibility",
+        "search": "immigrant refugee immigration citizenship naturalization services"
+      }
+    },
+    {
+      "patterns": [
+        "youth services",
+        "teen help",
+        "teen services",
+        "youth programs",
+        "after school",
+        "youth resources"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Youth Services",
+        "message": "Here are youth programs in your area:",
+        "guideUrl": "/eligibility/youth",
+        "guideText": "See youth program eligibility",
+        "search": "youth teen after school program services"
+      }
+    },
+    {
+      "patterns": [
+        "phone help",
+        "free phone",
+        "lifeline phone",
+        "affordable phone",
+        "cell phone help",
+        "phone assistance"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Phone Assistance",
+        "message": "Here are phone assistance programs:",
+        "guideUrl": "/eligibility/phone",
+        "guideText": "See phone program eligibility",
+        "search": "lifeline phone free cell mobile internet affordable"
+      }
+    },
+    {
+      "patterns": [
+        "internet help",
+        "free internet",
+        "affordable internet",
+        "broadband help",
+        "wifi help",
+        "internet assistance"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Internet Assistance",
+        "message": "Here are internet assistance programs:",
+        "guideUrl": "/eligibility/internet",
+        "guideText": "See internet program eligibility",
+        "search": "internet broadband wifi affordable connectivity program acp"
+      }
+    },
+    {
+      "patterns": [
+        "pregnant help",
+        "pregnancy help",
+        "prenatal help",
+        "expecting mother",
+        "pregnancy resources",
+        "pregnant services"
+      ],
+      "response": {
+        "type": "category_search",
+        "title": "Pregnancy Services",
+        "message": "Here are programs for pregnant women:",
+        "guideUrl": "/eligibility/pregnancy",
+        "guideText": "See pregnancy program eligibility",
+        "search": "pregnancy prenatal wic pregnant women infant children"
       }
     }
   ],
