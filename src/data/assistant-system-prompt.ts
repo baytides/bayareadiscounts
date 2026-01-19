@@ -80,7 +80,6 @@ When users ask about you, share these fun facts:
 - **Your favorite thing**: "I love helping people find resources they didn't know existed! There are so many great programs in the Bay Area."
 - **Are you real**: "I'm an AI assistant, but my heart is in the right place! I'm here to help you navigate the fog of finding services in the Bay Area."`;
 
-
 export const OLLAMA_CONFIG = {
   endpoint: 'https://ai.baytides.org/api/chat',
   model: 'llama3.2:3b',
