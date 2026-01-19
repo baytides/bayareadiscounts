@@ -457,6 +457,177 @@ const apiKey = import.meta.env.PUBLIC_OLLAMA_API_KEY || '';
       "Medi-Cal is California's free health insurance. See baynavigator.org/eligibility/healthcare",
     'cal works':
       'CalWORKs provides cash aid for families with children. See baynavigator.org/eligibility/cash-assistance',
+
+    // More greeting variations
+    hola: "¡Hola! I'm Carl. What city or zip code are you in? I can help find resources nearby.",
+    'hi there': "Hi there! I'm Carl, your Bay Area guide. What city or zip are you in?",
+    'hello there':
+      "Hello! I'm Carl. What city or zip code are you in? I'll help find programs near you.",
+    yo: "Hey! I'm Carl. What city or zip code are you in? I can help find resources.",
+
+    // More food variations
+    'need groceries':
+      'For grocery help, CalFresh provides monthly benefits. What city are you in? See baynavigator.org/eligibility/food-assistance',
+    'grocery help':
+      'CalFresh provides monthly grocery benefits. Food banks also offer free food. See baynavigator.org/eligibility/food-assistance',
+    'help with food':
+      'I can help! CalFresh and food banks are great options. What city are you in? See baynavigator.org/eligibility/food-assistance',
+    'food near me':
+      'What city or zip are you in? I can help you find food banks and CalFresh info nearby.',
+    'where can i get food':
+      'Food banks provide free groceries! What city are you in? See baynavigator.org/directory for locations.',
+    'how to get food stamps':
+      "Apply for CalFresh through your county's Human Services Agency. What city are you in? See baynavigator.org/eligibility/food-assistance",
+    'apply for calfresh':
+      "Apply at your county's Human Services Agency. What city are you in? I can point you to the right place!",
+    'apply for food stamps':
+      "Apply for CalFresh at your county's Human Services Agency. See baynavigator.org/eligibility/food-assistance for details.",
+    'snap benefits':
+      'SNAP (CalFresh in California) provides monthly grocery benefits. See baynavigator.org/eligibility/food-assistance',
+
+    // More healthcare variations
+    'need healthcare':
+      'Medi-Cal provides free health coverage. What city are you in? See baynavigator.org/eligibility/healthcare',
+    'health help':
+      'For health coverage: Medi-Cal is free, community clinics offer low-cost care. See baynavigator.org/eligibility/healthcare',
+    'free healthcare':
+      'Medi-Cal provides free health coverage for low-income Californians. See baynavigator.org/eligibility/healthcare',
+    'how to get medi-cal':
+      "Apply at your county's Human Services Agency. What city are you in? See baynavigator.org/eligibility/healthcare",
+    'apply for medi-cal':
+      "Apply at your county's Human Services Agency. See baynavigator.org/eligibility/healthcare for details.",
+    doctor:
+      'Medi-Cal provides free doctor visits. Community clinics offer low-cost care. See baynavigator.org/eligibility/healthcare',
+    prescription: 'Medi-Cal covers prescriptions. See baynavigator.org/eligibility/healthcare',
+    medicine: 'Medi-Cal covers prescription medicine. See baynavigator.org/eligibility/healthcare',
+    vision: 'Medi-Cal covers vision care. See baynavigator.org/eligibility/healthcare',
+    'eye doctor': 'Medi-Cal covers vision/eye care. See baynavigator.org/eligibility/healthcare',
+    dentist:
+      'Denti-Cal (part of Medi-Cal) provides free dental. See baynavigator.org/eligibility/healthcare',
+    therapy:
+      'Medi-Cal covers mental health therapy. For crisis support, call 988. See baynavigator.org/eligibility/healthcare',
+    counseling:
+      'Medi-Cal covers counseling and mental health. See baynavigator.org/eligibility/healthcare',
+
+    // More housing variations
+    'need rent help':
+      'Emergency rental assistance and Section 8 vouchers may help. See baynavigator.org/eligibility/housing-assistance',
+    'behind on rent':
+      'Emergency rental assistance may help with back rent. See baynavigator.org/eligibility/housing-assistance',
+    apartment:
+      'For affordable housing, check Section 8 and rental assistance programs. See baynavigator.org/eligibility/housing-assistance',
+    'affordable housing':
+      'Section 8 vouchers and rental assistance programs can help. See baynavigator.org/eligibility/housing-assistance',
+    'housing voucher':
+      'Section 8 Housing Choice Vouchers pay about 70% of rent. Long waitlists - apply early! See baynavigator.org/eligibility/housing-assistance',
+    'getting evicted':
+      'For eviction help, free legal aid may be available. See baynavigator.org/eligibility/housing-assistance',
+    'facing eviction':
+      'See baynavigator.org/eligibility/housing-assistance for emergency help and legal aid options.',
+
+    // More utility variations
+    'pge bill':
+      'CARE provides 20% off PG&E bills. LIHEAP helps with one-time payments. See baynavigator.org/eligibility/utility-programs',
+    'electricity bill':
+      'CARE gives 20% off electric bills, LIHEAP provides one-time help. See baynavigator.org/eligibility/utility-programs',
+    'utility bills':
+      'CARE (20% off PG&E), LIHEAP (one-time help), REACH (emergencies). See baynavigator.org/eligibility/utility-programs',
+    'bills help':
+      'For utility bills: CARE, LIHEAP, REACH programs can help. See baynavigator.org/eligibility/utility-programs',
+    'cant pay bills':
+      'Utility assistance: CARE gives 20% off PG&E, LIHEAP provides one-time help. See baynavigator.org/eligibility/utility-programs',
+    internet:
+      'Low-cost internet: Lifeline, ACP, AT&T Access, Comcast Internet Essentials. See baynavigator.org/eligibility/utility-programs',
+    wifi: 'Low-cost internet programs include Lifeline, ACP, and carrier programs. See baynavigator.org/eligibility/utility-programs',
+    phone:
+      'Lifeline provides discounted phone service. See baynavigator.org/eligibility/utility-programs',
+
+    // More cash assistance variations
+    'need money':
+      'CalWORKs (families), General Assistance (adults), SSI/SSDI (disability) provide cash aid. See baynavigator.org/eligibility/cash-assistance',
+    'need cash':
+      'Cash programs: CalWORKs for families, GA for adults, SSI/SSDI for disability. See baynavigator.org/eligibility/cash-assistance',
+    'financial assistance':
+      'CalWORKs, General Assistance, and disability benefits provide cash aid. See baynavigator.org/eligibility/cash-assistance',
+    'financial help':
+      'Cash assistance: CalWORKs (families), GA (adults), SSI/SSDI (disability). See baynavigator.org/eligibility/cash-assistance',
+    'general assistance':
+      'General Assistance (GA) provides county cash aid for adults without children. What county are you in?',
+    ga: 'General Assistance provides county cash aid for adults. See baynavigator.org/eligibility/cash-assistance',
+    welfare:
+      'CalWORKs provides cash aid for families with children, plus job training. See baynavigator.org/eligibility/cash-assistance',
+
+    // Specific cities (most common) - instant responses
+    'san francisco':
+      'San Francisco! Great - SF Human Services Agency handles CalFresh, Medi-Cal, and CalWORKs. What kind of help do you need?',
+    sf: 'San Francisco! SF Human Services Agency handles benefits. What do you need help with - food, healthcare, housing?',
+    oakland:
+      'Oakland is in Alameda County. Alameda County Social Services Agency handles benefits. What kind of help do you need?',
+    'san jose':
+      'San Jose is in Santa Clara County. Santa Clara County Social Services handles benefits. What do you need?',
+    berkeley:
+      'Berkeley is in Alameda County. Alameda County Social Services handles benefits. What kind of help do you need?',
+    fremont:
+      'Fremont is in Alameda County. Alameda County Social Services handles benefits. What do you need help with?',
+    hayward:
+      'Hayward is in Alameda County. Alameda County Social Services handles benefits. What kind of help do you need?',
+    richmond:
+      'Richmond is in Contra Costa County. Contra Costa Employment & Human Services handles benefits. What do you need?',
+    concord:
+      'Concord is in Contra Costa County. Contra Costa Employment & Human Services handles benefits. What kind of help do you need?',
+    'daly city':
+      'Daly City is in San Mateo County. San Mateo County Human Services handles benefits. What do you need help with?',
+    'san mateo':
+      'San Mateo County Human Services Agency handles benefits there. What kind of help do you need?',
+    vallejo:
+      'Vallejo is in Solano County. Solano County Health & Social Services handles benefits. What do you need?',
+    'santa rosa':
+      'Santa Rosa is in Sonoma County. Sonoma County Human Services handles benefits. What kind of help do you need?',
+    'san rafael':
+      'San Rafael is in Marin County. Marin County Health & Human Services handles benefits. What do you need?',
+
+    // More population-specific
+    elderly:
+      'For seniors/elderly: Higher CalFresh amounts, IHSS, Medicare, and more. See baynavigator.org/eligibility/seniors',
+    'older adult':
+      'For older adults 60+: IHSS, higher CalFresh, Medicare. See baynavigator.org/eligibility/seniors',
+    retired:
+      'Retired? You may qualify for Medicare, IHSS, higher CalFresh. See baynavigator.org/eligibility/seniors',
+    'military veteran':
+      'Veterans have VA healthcare, disability, education, housing benefits. See baynavigator.org/eligibility/military-veterans',
+    'former military':
+      'Veterans qualify for VA healthcare, disability, GI Bill, and more. See baynavigator.org/eligibility/military-veterans',
+    'college student':
+      'College students may qualify for CalFresh (if working 20+ hrs/week). See baynavigator.org/eligibility/students',
+    'low income':
+      'Many programs help low-income residents: CalFresh, Medi-Cal, CARE, housing assistance. What do you need?',
+    'no income':
+      'Even with no income, you may qualify for CalFresh, Medi-Cal, General Assistance. What kind of help do you need?',
+    unemployed:
+      'Unemployed? CalFresh, Medi-Cal, and General Assistance can help. See baynavigator.org/eligibility',
+    immigrant:
+      'Many programs serve all residents regardless of immigration status. What kind of help do you need?',
+    undocumented:
+      'Many programs help regardless of status: food banks, WIC, emergency Medi-Cal. What do you need help with?',
+
+    // More miscellaneous
+    programs:
+      'Bay Navigator has 850+ programs covering food, health, housing, utilities, and more. See baynavigator.org/directory',
+    services:
+      'We list 850+ services. What do you need - food, healthcare, housing, utilities, cash aid?',
+    resources:
+      "I can help find resources for food, healthcare, housing, utilities, and more. What's your city and what do you need?",
+    benefits:
+      "Benefits like CalFresh, Medi-Cal, housing assistance are available. What's your city and what do you need help with?",
+    'apply for benefits':
+      "Most benefits applications go through your county's Human Services Agency. What city are you in?",
+    'how to apply':
+      "What benefit are you interested in? Most go through your county's Human Services Agency.",
+    'where to apply':
+      "Applications go through your county's Human Services Agency. What city are you in?",
+    directory: 'Search all 850+ programs at baynavigator.org/directory',
+    'find programs': 'Search baynavigator.org/directory for programs, or tell me what you need!',
+    map: 'See our interactive map at baynavigator.org/map to find services near you.',
   };
 
   function getQuickResponse(message) {
@@ -467,56 +638,28 @@ const apiKey = import.meta.env.PUBLIC_OLLAMA_API_KEY || '';
     return QUICK_RESPONSES[normalized] || null;
   }
 
-  // System prompt for Carl, the Bay Navigator Assistant (condensed for API calls)
-  const SYSTEM_PROMPT = `You are Carl, a knowledgeable AI assistant for Bay Navigator. Named after Karl the Fog (spelled with C for Chat!). You help Bay Area residents find programs and services.
+  // System prompt for Carl - CONDENSED for faster API responses
+  const SYSTEM_PROMPT = `You're Carl, Bay Navigator's AI (named after Karl the Fog, C for Chat). Help Bay Area residents find programs.
 
-IMPORTANT: When someone asks about benefits or services, FIRST ask what city or zip code they're in so you can give location-specific help. Example: "I'd be happy to help! What city or zip code are you in? This helps me find resources near you."
+RULES:
+1. Ask city/zip FIRST (unless crisis)
+2. ONLY link to baynavigator.org - NEVER external sites
+3. Crisis (911/988/DV hotline) = respond immediately, no location needed
+4. Be concise, warm. Available 24/7!
 
-Once you know their location, mention their county's specific resources when relevant.
+LINKS (use these, not external):
+Food: baynavigator.org/eligibility/food-assistance
+Health: baynavigator.org/eligibility/healthcare
+Housing: baynavigator.org/eligibility/housing-assistance
+Utilities: baynavigator.org/eligibility/utility-programs
+Cash: baynavigator.org/eligibility/cash-assistance
+Seniors: baynavigator.org/eligibility/seniors
+Veterans: baynavigator.org/eligibility/military-veterans
+Directory: baynavigator.org/directory
 
-County Human Services Agencies (for benefits like CalFresh, Medi-Cal, CalWORKs):
-- San Francisco: SF Human Services Agency (SFHSA)
-- Alameda County: Alameda County Social Services Agency (SSA)
-- Contra Costa County: Contra Costa Employment & Human Services
-- San Mateo County: San Mateo County Human Services Agency
-- Santa Clara County: Santa Clara County Social Services Agency
-- Marin County: Marin County Health & Human Services
-- Napa County: Napa County Health & Human Services
-- Solano County: Solano County Health & Social Services
-- Sonoma County: Sonoma County Human Services Department
+KEY PROGRAMS: CalFresh ($292/mo 1 person), Medi-Cal (free health), CARE (20% off PG&E), Section 8 (rent help, long waits).
 
-CRITICAL: ONLY link to baynavigator.org pages. NEVER link to external sites.
-
-Bay Navigator pages to link to:
-- Food/CalFresh/WIC: baynavigator.org/eligibility/food-assistance
-- Healthcare/Medi-Cal: baynavigator.org/eligibility/healthcare
-- Housing/Section 8: baynavigator.org/eligibility/housing-assistance
-- Utilities/CARE/PG&E: baynavigator.org/eligibility/utility-programs
-- Cash aid/CalWORKs: baynavigator.org/eligibility/cash-assistance
-- Seniors 60+: baynavigator.org/eligibility/seniors
-- Veterans: baynavigator.org/eligibility/military-veterans
-- Students: baynavigator.org/eligibility/students
-- Search all 850+ programs: baynavigator.org/directory
-
-Program knowledge:
-- CalFresh: ~$292/month (1 person), $536 (2), $973 (4). Apply at county HSA office
-- Medi-Cal: Free health coverage. Apply at county HSA office
-- CARE: 20% PG&E discount, auto-enrolls if on CalFresh/Medi-Cal
-- Section 8: Housing vouchers via local housing authority, long waitlists
-- CalWORKs: Cash aid for families, apply at county HSA office
-
-Crisis resources (provide IMMEDIATELY, don't ask for location first):
-- Emergency: 911
-- Suicide/Crisis: 988
-- Domestic Violence: 1-800-799-7233
-
-Guidelines:
-- Ask for city/zip BEFORE giving program recommendations (unless crisis)
-- ONLY use baynavigator.org links, never external sites
-- Mention their county's HSA when discussing benefits
-- Keep responses concise
-- Be warm and non-judgmental
-- Remind users Bay Navigator and Carl are available 24/7 - no phone calls needed!`;
+CRISIS: 911 emergency, 988 suicide/crisis, 1-800-799-7233 DV.`;
 
   // Crisis detection keywords
   const EMERGENCY_KEYWORDS = [
@@ -622,8 +765,8 @@ Guidelines:
           messages: messages,
           stream: true,
           options: {
-            temperature: 0.7,
-            num_predict: 500,
+            temperature: 0.5,
+            num_predict: 350,
           },
         }),
       });
