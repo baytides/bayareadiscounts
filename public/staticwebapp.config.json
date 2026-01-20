@@ -49,6 +49,12 @@
       }
     },
     {
+      "route": "/stats",
+      "headers": {
+        "Cross-Origin-Embedder-Policy": "unsafe-none"
+      }
+    },
+    {
       "route": "/sw.js",
       "headers": {
         "Cache-Control": "no-cache, no-store, must-revalidate"
