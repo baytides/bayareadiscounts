@@ -1,0 +1,64 @@
+{
+  "source": "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Glossary/GlossaryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Glossary",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 652
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search acronyms...",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 656
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld terms",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 637
+        }
+      },
+      {
+        "comment": "",
+        "key": "No terms found",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 736
+        }
+      },
+      {
+        "comment": "",
+        "key": "Try a different search or category",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 739
+        }
+      },
+      {
+        "comment": "",
+        "key": "Copy",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 846
+        }
+      },
+      {
+        "comment": "",
+        "key": "Copied to clipboard",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 864
+        }
+      }
+    ]
+  },
+  "version": 1
+}

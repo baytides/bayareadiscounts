@@ -1,0 +1,80 @@
+{
+  "source": "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Common/WebViewScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Refresh",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 213
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open in Safari",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 223
+        }
+      },
+      {
+        "comment": "",
+        "key": "Share",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 233
+        }
+      },
+      {
+        "comment": "",
+        "key": "Go Back",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 253
+        }
+      },
+      {
+        "comment": "",
+        "key": "Go Forward",
+        "location": {
+          "startingColumn": 15,
+          "startingLine": 261
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stop Loading",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 271
+        }
+      },
+      {
+        "comment": "",
+        "key": "Unable to load page",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 283
+        }
+      },
+      {
+        "comment": "",
+        "key": "Try Again",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 296
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open in Safari",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 306
+        }
+      }
+    ]
+  },
+  "version": 1
+}

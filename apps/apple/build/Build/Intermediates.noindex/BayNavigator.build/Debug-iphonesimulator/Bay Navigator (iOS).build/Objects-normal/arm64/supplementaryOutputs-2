@@ -1,0 +1,23 @@
+{
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Components/ProgramCard.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramCard.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramCard.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramCard.dia",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramCard.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramCard.swiftdeps"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Detail/ProgramDetailView.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramDetailView.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramDetailView.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramDetailView.dia",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramDetailView.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/ProgramDetailView.swiftdeps"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Home/DirectoryView.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/DirectoryView.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/DirectoryView.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/DirectoryView.dia",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/DirectoryView.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigator.build/Debug-iphonesimulator/Bay Navigator (iOS).build/Objects-normal/arm64/DirectoryView.swiftdeps"
+  }
+}

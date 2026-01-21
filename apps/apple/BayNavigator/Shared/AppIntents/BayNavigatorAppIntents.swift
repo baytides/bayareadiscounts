@@ -1,0 +1,440 @@
+import AppIntents
+import SwiftUI
+
+// MARK: - App Shortcuts Provider
+
+struct BayNavigatorShortcuts: AppShortcutsProvider {
+    static var appShortcuts: [AppShortcut] {
+        AppShortcut(
+            intent: SearchProgramsIntent(),
+            phrases: [
+                "Search \(.applicationName)",
+                "Find services in \(.applicationName)",
+                "Look up programs in \(.applicationName)",
+                "Search for \(\.$query) in \(.applicationName)"
+            ],
+            shortTitle: "Search Programs",
+            systemImageName: "magnifyingglass"
+        )
+
+        AppShortcut(
+            intent: FindFoodAssistanceIntent(),
+            phrases: [
+                "Find food assistance",
+                "Food help near me",
+                "Get food benefits in \(.applicationName)",
+                "CalFresh in \(.applicationName)"
+            ],
+            shortTitle: "Food Assistance",
+            systemImageName: "fork.knife"
+        )
+
+        AppShortcut(
+            intent: FindHousingIntent(),
+            phrases: [
+                "Find housing assistance",
+                "Housing help near me",
+                "Rental assistance in \(.applicationName)",
+                "Emergency housing in \(.applicationName)"
+            ],
+            shortTitle: "Housing Help",
+            systemImageName: "house"
+        )
+
+        AppShortcut(
+            intent: FindHealthcareIntent(),
+            phrases: [
+                "Find healthcare assistance",
+                "Health services near me",
+                "Medi-Cal in \(.applicationName)",
+                "Free clinics in \(.applicationName)"
+            ],
+            shortTitle: "Healthcare",
+            systemImageName: "heart"
+        )
+
+        AppShortcut(
+            intent: ShowFavoritesIntent(),
+            phrases: [
+                "Show my saved programs",
+                "Open favorites in \(.applicationName)",
+                "My saved services"
+            ],
+            shortTitle: "My Favorites",
+            systemImageName: "heart.fill"
+        )
+
+        AppShortcut(
+            intent: GetProgramCountIntent(),
+            phrases: [
+                "How many programs are in \(.applicationName)?",
+                "Program count in \(.applicationName)"
+            ],
+            shortTitle: "Program Count",
+            systemImageName: "number"
+        )
+    }
+}
+
+// MARK: - Search Programs Intent
+
+struct SearchProgramsIntent: AppIntent {
+    static var title: LocalizedStringResource = "Search Programs"
+    static var description = IntentDescription("Search for social service programs in the Bay Area")
+    static var openAppWhenRun: Bool = true
+
+    @Parameter(title: "Search Query")
+    var query: String?
+
+    @Parameter(title: "Category")
+    var category: ProgramCategoryEntity?
+
+    @Parameter(title: "County")
+    var county: CountyEntity?
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        // Build deep link URL
+        var components = URLComponents(string: "baynavigator://search")!
+        var queryItems: [URLQueryItem] = []
+
+        if let query = query {
+            queryItems.append(URLQueryItem(name: "q", value: query))
+        }
+        if let category = category {
+            queryItems.append(URLQueryItem(name: "category", value: category.id))
+        }
+        if let county = county {
+            queryItems.append(URLQueryItem(name: "county", value: county.id))
+        }
+
+        if !queryItems.isEmpty {
+            components.queryItems = queryItems
+        }
+
+        return .result(opensIntent: OpenURLIntent(components.url!))
+    }
+}
+
+// MARK: - Category-Specific Intents
+
+struct FindFoodAssistanceIntent: AppIntent {
+    static var title: LocalizedStringResource = "Find Food Assistance"
+    static var description = IntentDescription("Find food assistance programs like CalFresh, food banks, and meal programs")
+    static var openAppWhenRun: Bool = true
+
+    @Parameter(title: "County")
+    var county: CountyEntity?
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        var urlString = "baynavigator://category/food"
+        if let county = county {
+            urlString += "?county=\(county.id)"
+        }
+        return .result(opensIntent: OpenURLIntent(URL(string: urlString)!))
+    }
+}
+
+struct FindHousingIntent: AppIntent {
+    static var title: LocalizedStringResource = "Find Housing Assistance"
+    static var description = IntentDescription("Find housing programs including rental assistance and emergency housing")
+    static var openAppWhenRun: Bool = true
+
+    @Parameter(title: "County")
+    var county: CountyEntity?
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        var urlString = "baynavigator://category/housing"
+        if let county = county {
+            urlString += "?county=\(county.id)"
+        }
+        return .result(opensIntent: OpenURLIntent(URL(string: urlString)!))
+    }
+}
+
+struct FindHealthcareIntent: AppIntent {
+    static var title: LocalizedStringResource = "Find Healthcare"
+    static var description = IntentDescription("Find healthcare programs including Medi-Cal and free clinics")
+    static var openAppWhenRun: Bool = true
+
+    @Parameter(title: "County")
+    var county: CountyEntity?
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        var urlString = "baynavigator://category/health"
+        if let county = county {
+            urlString += "?county=\(county.id)"
+        }
+        return .result(opensIntent: OpenURLIntent(URL(string: urlString)!))
+    }
+}
+
+struct FindEmploymentIntent: AppIntent {
+    static var title: LocalizedStringResource = "Find Employment Help"
+    static var description = IntentDescription("Find job training and employment assistance programs")
+    static var openAppWhenRun: Bool = true
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        return .result(opensIntent: OpenURLIntent(URL(string: "baynavigator://category/employment")!))
+    }
+}
+
+struct FindLegalHelpIntent: AppIntent {
+    static var title: LocalizedStringResource = "Find Legal Help"
+    static var description = IntentDescription("Find free legal assistance and immigration services")
+    static var openAppWhenRun: Bool = true
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        return .result(opensIntent: OpenURLIntent(URL(string: "baynavigator://category/legal")!))
+    }
+}
+
+// MARK: - Favorites Intent
+
+struct ShowFavoritesIntent: AppIntent {
+    static var title: LocalizedStringResource = "Show Favorites"
+    static var description = IntentDescription("Open your saved programs")
+    static var openAppWhenRun: Bool = true
+
+    func perform() async throws -> some IntentResult & OpensIntent {
+        return .result(opensIntent: OpenURLIntent(URL(string: "baynavigator://favorites")!))
+    }
+}
+
+// MARK: - Information Intents
+
+struct GetProgramCountIntent: AppIntent {
+    static var title: LocalizedStringResource = "Get Program Count"
+    static var description = IntentDescription("Get the total number of available programs")
+
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        let defaults = UserDefaults(suiteName: "group.org.baytides.navigator")
+        let count = defaults?.integer(forKey: "totalPrograms") ?? 0
+        let favorites = defaults?.integer(forKey: "favoriteCount") ?? 0
+
+        return .result(dialog: "Bay Navigator has \(count) programs available. You have \(favorites) saved to favorites.")
+    }
+}
+
+struct GetProgramDetailsIntent: AppIntent {
+    static var title: LocalizedStringResource = "Get Program Details"
+    static var description = IntentDescription("Get details about a specific program")
+
+    @Parameter(title: "Program")
+    var program: ProgramEntity
+
+    func perform() async throws -> some IntentResult & ProvidesDialog & ShowsSnippetView {
+        return .result(
+            dialog: "\(program.name) is a \(program.category) program.",
+            view: ProgramSnippetView(program: program)
+        )
+    }
+}
+
+// MARK: - Add to Favorites Intent
+
+struct AddToFavoritesIntent: AppIntent {
+    static var title: LocalizedStringResource = "Save Program"
+    static var description = IntentDescription("Add a program to your favorites")
+
+    @Parameter(title: "Program")
+    var program: ProgramEntity
+
+    func perform() async throws -> some IntentResult & ProvidesDialog {
+        // Save to shared UserDefaults
+        let defaults = UserDefaults(suiteName: "group.org.baytides.navigator")
+        var favorites = defaults?.stringArray(forKey: "favoriteIds") ?? []
+
+        if !favorites.contains(program.id) {
+            favorites.append(program.id)
+            defaults?.set(favorites, forKey: "favoriteIds")
+            defaults?.set(favorites.count, forKey: "favoriteCount")
+
+            return .result(dialog: "Added \(program.name) to your favorites.")
+        } else {
+            return .result(dialog: "\(program.name) is already in your favorites.")
+        }
+    }
+}
+
+// MARK: - Entities
+
+struct ProgramEntity: AppEntity {
+    var id: String
+    var name: String
+    var category: String
+    var description: String?
+
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Program"
+
+    var displayRepresentation: DisplayRepresentation {
+        DisplayRepresentation(title: "\(name)", subtitle: "\(category)")
+    }
+
+    static var defaultQuery = ProgramEntityQuery()
+}
+
+struct ProgramEntityQuery: EntityQuery {
+    func entities(for identifiers: [String]) async throws -> [ProgramEntity] {
+        // Load programs from shared storage
+        let defaults = UserDefaults(suiteName: "group.org.baytides.navigator")
+        guard let data = defaults?.data(forKey: "allPrograms"),
+              let programs = try? JSONDecoder().decode([ProgramEntityData].self, from: data) else {
+            return []
+        }
+
+        return programs
+            .filter { identifiers.contains($0.id) }
+            .map { ProgramEntity(id: $0.id, name: $0.name, category: $0.category, description: $0.description) }
+    }
+
+    func suggestedEntities() async throws -> [ProgramEntity] {
+        // Return recent/favorite programs as suggestions
+        let defaults = UserDefaults(suiteName: "group.org.baytides.navigator")
+        guard let data = defaults?.data(forKey: "favoritePrograms"),
+              let programs = try? JSONDecoder().decode([ProgramEntityData].self, from: data) else {
+            return []
+        }
+
+        return programs.prefix(10).map {
+            ProgramEntity(id: $0.id, name: $0.name, category: $0.category, description: $0.description)
+        }
+    }
+}
+
+struct ProgramEntityData: Codable {
+    let id: String
+    let name: String
+    let category: String
+    let description: String?
+}
+
+struct ProgramCategoryEntity: AppEntity {
+    var id: String
+    var name: String
+
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Category"
+
+    var displayRepresentation: DisplayRepresentation {
+        DisplayRepresentation(title: "\(name)")
+    }
+
+    static var defaultQuery = ProgramCategoryQuery()
+
+    static let all: [ProgramCategoryEntity] = [
+        ProgramCategoryEntity(id: "food", name: "Food Assistance"),
+        ProgramCategoryEntity(id: "housing", name: "Housing"),
+        ProgramCategoryEntity(id: "health", name: "Healthcare"),
+        ProgramCategoryEntity(id: "employment", name: "Employment"),
+        ProgramCategoryEntity(id: "education", name: "Education"),
+        ProgramCategoryEntity(id: "legal", name: "Legal Services"),
+        ProgramCategoryEntity(id: "financial", name: "Financial Assistance"),
+        ProgramCategoryEntity(id: "transportation", name: "Transportation")
+    ]
+}
+
+struct ProgramCategoryQuery: EntityQuery {
+    func entities(for identifiers: [String]) async throws -> [ProgramCategoryEntity] {
+        ProgramCategoryEntity.all.filter { identifiers.contains($0.id) }
+    }
+
+    func suggestedEntities() async throws -> [ProgramCategoryEntity] {
+        ProgramCategoryEntity.all
+    }
+}
+
+struct CountyEntity: AppEntity {
+    var id: String
+    var name: String
+
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "County"
+
+    var displayRepresentation: DisplayRepresentation {
+        DisplayRepresentation(title: "\(name)")
+    }
+
+    static var defaultQuery = CountyEntityQuery()
+
+    static let bayAreaCounties: [CountyEntity] = [
+        CountyEntity(id: "alameda", name: "Alameda County"),
+        CountyEntity(id: "contra-costa", name: "Contra Costa County"),
+        CountyEntity(id: "marin", name: "Marin County"),
+        CountyEntity(id: "napa", name: "Napa County"),
+        CountyEntity(id: "san-francisco", name: "San Francisco"),
+        CountyEntity(id: "san-mateo", name: "San Mateo County"),
+        CountyEntity(id: "santa-clara", name: "Santa Clara County"),
+        CountyEntity(id: "solano", name: "Solano County"),
+        CountyEntity(id: "sonoma", name: "Sonoma County")
+    ]
+}
+
+struct CountyEntityQuery: EntityQuery {
+    func entities(for identifiers: [String]) async throws -> [CountyEntity] {
+        CountyEntity.bayAreaCounties.filter { identifiers.contains($0.id) }
+    }
+
+    func suggestedEntities() async throws -> [CountyEntity] {
+        CountyEntity.bayAreaCounties
+    }
+}
+
+// MARK: - Snippet Views
+
+struct ProgramSnippetView: View {
+    let program: ProgramEntity
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Image(systemName: categoryIcon(for: program.category))
+                    .foregroundStyle(.tint)
+                Text(program.category)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Text(program.name)
+                .font(.headline)
+
+            if let description = program.description {
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(3)
+            }
+        }
+        .padding()
+    }
+
+    private func categoryIcon(for category: String) -> String {
+        switch category.lowercased() {
+        case "food", "food assistance": return "fork.knife"
+        case "housing": return "house.fill"
+        case "health", "healthcare": return "heart.fill"
+        case "employment": return "briefcase.fill"
+        case "education": return "book.fill"
+        case "legal", "legal services": return "scale.3d"
+        default: return "folder.fill"
+        }
+    }
+}
+
+// MARK: - Spotlight Integration
+
+import CoreSpotlight
+
+extension ProgramEntity {
+    func indexInSpotlight() {
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .content)
+        attributeSet.title = name
+        attributeSet.contentDescription = description ?? "A \(category) program in the Bay Area"
+        attributeSet.keywords = [category, "social services", "bay area", "assistance"]
+
+        let item = CSSearchableItem(
+            uniqueIdentifier: "program-\(id)",
+            domainIdentifier: "org.baytides.navigator.programs",
+            attributeSet: attributeSet
+        )
+
+        CSSearchableIndex.default().indexSearchableItems([item])
+    }
+}

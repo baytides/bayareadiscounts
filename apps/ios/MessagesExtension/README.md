@@ -10,7 +10,7 @@ This iMessage extension allows users to share saved programs directly within iMe
 2. Go to **File > New > Target**
 3. Select **iMessage Extension** under iOS
 4. Name it `MessagesExtension`
-5. Set the Bundle Identifier to `org.baytides.baynavigator.MessagesExtension`
+5. Set the Bundle Identifier to `org.baytides.navigator.MessagesExtension`
 6. Click **Finish**
 
 ### 2. Configure App Groups
@@ -20,12 +20,12 @@ Both the main app and the extension need to share the same App Group:
 1. Select the **Runner** target
 2. Go to **Signing & Capabilities**
 3. Click **+ Capability** and add **App Groups**
-4. Add `group.org.baytides.baynavigator`
+4. Add `group.org.baytides.navigator`
 
 5. Select the **MessagesExtension** target
 6. Go to **Signing & Capabilities**
 7. Click **+ Capability** and add **App Groups**
-8. Add the same group: `group.org.baytides.baynavigator`
+8. Add the same group: `group.org.baytides.navigator`
 
 ### 3. Add Source Files
 

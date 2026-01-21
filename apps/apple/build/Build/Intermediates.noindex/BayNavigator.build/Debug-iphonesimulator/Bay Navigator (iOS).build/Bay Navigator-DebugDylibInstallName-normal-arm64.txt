@@ -1,0 +1,1 @@
+@rpath/Bay Navigator.debug.dylib

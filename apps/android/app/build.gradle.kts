@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "org.baytides.baynavigator"
+    namespace = "org.baytides.navigator"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "org.baytides.baynavigator"
+        applicationId = "org.baytides.navigator"
         minSdk = 28 // Android 9+
         targetSdk = 35 // Android 15
         versionCode = flutter.versionCode

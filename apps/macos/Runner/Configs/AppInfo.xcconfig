@@ -8,7 +8,7 @@
 PRODUCT_NAME = Bay Navigator
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = org.baytides.baynavigator
+PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2026 Bay Tides. All rights reserved.

@@ -1,0 +1,1051 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		/* BayNavigatorCore Package */
+		CORE000001000001 /* BayNavigatorCore in Frameworks */ = {isa = PBXBuildFile; productRef = CORE000001000000 /* BayNavigatorCore */; };
+		CORE000002000001 /* BayNavigatorCore in Frameworks */ = {isa = PBXBuildFile; productRef = CORE000002000000 /* BayNavigatorCore */; };
+		CORE000003000001 /* BayNavigatorCore in Frameworks */ = {isa = PBXBuildFile; productRef = CORE000003000000 /* BayNavigatorCore */; };
+
+		/* Shared Sources */
+		SHARED001000001 /* BayNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED001000000 /* BayNavigatorApp.swift */; };
+		SHARED001000002 /* BayNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED001000000 /* BayNavigatorApp.swift */; };
+		SHARED001000003 /* BayNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED001000000 /* BayNavigatorApp.swift */; };
+		SHARED002000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED002000000 /* ContentView.swift */; };
+		SHARED002000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED002000000 /* ContentView.swift */; };
+		SHARED002000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED002000000 /* ContentView.swift */; };
+		SHARED003000001 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED003000000 /* ForYouView.swift */; };
+		SHARED003000002 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED003000000 /* ForYouView.swift */; };
+		SHARED003000003 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED003000000 /* ForYouView.swift */; };
+		SHARED004000001 /* DirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED004000000 /* DirectoryView.swift */; };
+		SHARED004000002 /* DirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED004000000 /* DirectoryView.swift */; };
+		SHARED004000003 /* DirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED004000000 /* DirectoryView.swift */; };
+		SHARED005000001 /* ProgramCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED005000000 /* ProgramCard.swift */; };
+		SHARED005000002 /* ProgramCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED005000000 /* ProgramCard.swift */; };
+		SHARED005000003 /* ProgramCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED005000000 /* ProgramCard.swift */; };
+		SHARED006000001 /* ProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED006000000 /* ProgramDetailView.swift */; };
+		SHARED006000002 /* ProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED006000000 /* ProgramDetailView.swift */; };
+		SHARED006000003 /* ProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED006000000 /* ProgramDetailView.swift */; };
+		SHARED007000001 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED007000000 /* FavoritesView.swift */; };
+		SHARED007000002 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED007000000 /* FavoritesView.swift */; };
+		SHARED007000003 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED007000000 /* FavoritesView.swift */; };
+		SHARED008000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED008000000 /* SettingsView.swift */; };
+		SHARED008000002 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED008000000 /* SettingsView.swift */; };
+		SHARED008000003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED008000000 /* SettingsView.swift */; };
+		SHARED009000001 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED009000000 /* FilterSheetView.swift */; };
+		SHARED009000002 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED009000000 /* FilterSheetView.swift */; };
+		SHARED009000003 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED009000000 /* FilterSheetView.swift */; };
+		SHARED010000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED010000000 /* OnboardingView.swift */; };
+		SHARED010000002 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED010000000 /* OnboardingView.swift */; };
+		SHARED010000003 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED010000000 /* OnboardingView.swift */; };
+		SHARED011000001 /* SmartAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED011000000 /* SmartAssistantView.swift */; };
+		SHARED011000002 /* SmartAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED011000000 /* SmartAssistantView.swift */; };
+		SHARED011000003 /* SmartAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED011000000 /* SmartAssistantView.swift */; };
+		SHARED012000001 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED012000000 /* SearchView.swift */; };
+		SHARED012000002 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED012000000 /* SearchView.swift */; };
+		SHARED012000003 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED012000000 /* SearchView.swift */; };
+
+		/* New Views - Map */
+		SHARED013000001 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED013000000 /* MapView.swift */; };
+		SHARED013000002 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED013000000 /* MapView.swift */; };
+		SHARED013000003 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED013000000 /* MapView.swift */; };
+
+		/* New Views - AskCarl */
+		SHARED014000001 /* AskCarlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED014000000 /* AskCarlView.swift */; };
+		SHARED014000002 /* AskCarlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED014000000 /* AskCarlView.swift */; };
+		SHARED014000003 /* AskCarlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED014000000 /* AskCarlView.swift */; };
+
+		/* New Views - Transit */
+		SHARED015000001 /* TransitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED015000000 /* TransitView.swift */; };
+		SHARED015000002 /* TransitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED015000000 /* TransitView.swift */; };
+		SHARED015000003 /* TransitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED015000000 /* TransitView.swift */; };
+
+		/* New Views - Glossary */
+		SHARED016000001 /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED016000000 /* GlossaryView.swift */; };
+		SHARED016000002 /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED016000000 /* GlossaryView.swift */; };
+		SHARED016000003 /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED016000000 /* GlossaryView.swift */; };
+
+		/* New Views - Guides */
+		SHARED017000001 /* EligibilityGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED017000000 /* EligibilityGuidesView.swift */; };
+		SHARED017000002 /* EligibilityGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED017000000 /* EligibilityGuidesView.swift */; };
+		SHARED017000003 /* EligibilityGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED017000000 /* EligibilityGuidesView.swift */; };
+		SHARED018000001 /* GuideViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED018000000 /* GuideViewerView.swift */; };
+		SHARED018000002 /* GuideViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED018000000 /* GuideViewerView.swift */; };
+		SHARED018000003 /* GuideViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED018000000 /* GuideViewerView.swift */; };
+
+		/* New Views - Profiles */
+		SHARED019000001 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED019000000 /* ProfilesView.swift */; };
+		SHARED019000002 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED019000000 /* ProfilesView.swift */; };
+		SHARED019000003 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED019000000 /* ProfilesView.swift */; };
+		SHARED020000001 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED020000000 /* EditProfileView.swift */; };
+		SHARED020000002 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED020000000 /* EditProfileView.swift */; };
+		SHARED020000003 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED020000000 /* EditProfileView.swift */; };
+
+		/* New Views - Safety */
+		SHARED021000001 /* SafetySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED021000000 /* SafetySettingsView.swift */; };
+		SHARED021000002 /* SafetySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED021000000 /* SafetySettingsView.swift */; };
+		SHARED021000003 /* SafetySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED021000000 /* SafetySettingsView.swift */; };
+		SHARED022000001 /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED022000000 /* PINEntryView.swift */; };
+		SHARED022000002 /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED022000000 /* PINEntryView.swift */; };
+		SHARED022000003 /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED022000000 /* PINEntryView.swift */; };
+		SHARED023000001 /* QuickExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED023000000 /* QuickExitView.swift */; };
+		SHARED023000002 /* QuickExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED023000000 /* QuickExitView.swift */; };
+		SHARED023000003 /* QuickExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED023000000 /* QuickExitView.swift */; };
+
+		/* New Views - More */
+		SHARED024000001 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED024000000 /* MoreView.swift */; };
+		SHARED024000002 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED024000000 /* MoreView.swift */; };
+		SHARED024000003 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED024000000 /* MoreView.swift */; };
+		SHARED025000001 /* NavigationCustomizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED025000000 /* NavigationCustomizationView.swift */; };
+		SHARED025000002 /* NavigationCustomizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED025000000 /* NavigationCustomizationView.swift */; };
+		SHARED025000003 /* NavigationCustomizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED025000000 /* NavigationCustomizationView.swift */; };
+
+		/* New Views - Common */
+		SHARED026000001 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED026000000 /* WebViewScreen.swift */; };
+		SHARED026000002 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED026000000 /* WebViewScreen.swift */; };
+		SHARED026000003 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = SHARED026000000 /* WebViewScreen.swift */; };
+
+		/* visionOS specific */
+		VISION001000001 /* ImmersiveWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VISION001000000 /* ImmersiveWelcomeView.swift */; };
+
+		/* Assets */
+		ASSETS001000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ASSETS001000000 /* Assets.xcassets */; };
+		ASSETS001000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ASSETS001000000 /* Assets.xcassets */; };
+		ASSETS001000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ASSETS001000000 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		/* Products */
+		PROD001000000 /* Bay Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		PROD002000000 /* Bay Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		PROD003000000 /* Bay Navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay Navigator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+
+		/* Shared Sources */
+		SHARED001000000 /* BayNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayNavigatorApp.swift; sourceTree = "<group>"; };
+		SHARED002000000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		SHARED003000000 /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
+		SHARED004000000 /* DirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryView.swift; sourceTree = "<group>"; };
+		SHARED005000000 /* ProgramCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCard.swift; sourceTree = "<group>"; };
+		SHARED006000000 /* ProgramDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailView.swift; sourceTree = "<group>"; };
+		SHARED007000000 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		SHARED008000000 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		SHARED009000000 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
+		SHARED010000000 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		SHARED011000000 /* SmartAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartAssistantView.swift; sourceTree = "<group>"; };
+		SHARED012000000 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+
+		/* New Views */
+		SHARED013000000 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		SHARED014000000 /* AskCarlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskCarlView.swift; sourceTree = "<group>"; };
+		SHARED015000000 /* TransitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitView.swift; sourceTree = "<group>"; };
+		SHARED016000000 /* GlossaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryView.swift; sourceTree = "<group>"; };
+		SHARED017000000 /* EligibilityGuidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EligibilityGuidesView.swift; sourceTree = "<group>"; };
+		SHARED018000000 /* GuideViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewerView.swift; sourceTree = "<group>"; };
+		SHARED019000000 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		SHARED020000000 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		SHARED021000000 /* SafetySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetySettingsView.swift; sourceTree = "<group>"; };
+		SHARED022000000 /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
+		SHARED023000000 /* QuickExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickExitView.swift; sourceTree = "<group>"; };
+		SHARED024000000 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		SHARED025000000 /* NavigationCustomizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCustomizationView.swift; sourceTree = "<group>"; };
+		SHARED026000000 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
+
+		/* visionOS specific */
+		VISION001000000 /* ImmersiveWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveWelcomeView.swift; sourceTree = "<group>"; };
+
+		/* Assets */
+		ASSETS001000000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+
+		/* Package Reference */
+		PKG001000000 /* BayNavigatorCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BayNavigatorCore; path = BayNavigatorCore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FWBP001000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CORE000001000001 /* BayNavigatorCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FWBP002000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CORE000002000001 /* BayNavigatorCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FWBP003000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CORE000003000001 /* BayNavigatorCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ROOT000000000 = {
+			isa = PBXGroup;
+			children = (
+				GRPBN00000000 /* BayNavigator */,
+				PKG001000000 /* BayNavigatorCore */,
+				GRPPROD000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GRPBN00000000 /* BayNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				GRPSHARED0000 /* Shared */,
+				GRPVISION0000 /* visionOS */,
+				ASSETS001000000 /* Assets.xcassets */,
+			);
+			path = BayNavigator;
+			sourceTree = "<group>";
+		};
+		GRPSHARED0000 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				GRPAPP0000000 /* App */,
+				GRPVIEWS00000 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		GRPAPP0000000 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED001000000 /* BayNavigatorApp.swift */,
+				SHARED002000000 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GRPVIEWS00000 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				GRPFORYOU0000 /* ForYou */,
+				GRPHOME000000 /* Home */,
+				GRPCOMPS00000 /* Components */,
+				GRPDETAIL0000 /* Detail */,
+				GRPFAVS000000 /* Favorites */,
+				GRPSETTINGS00 /* Settings */,
+				GRPFILTER0000 /* Filter */,
+				GRPONBOARD000 /* Onboarding */,
+				GRPASSIST0000 /* Assistant */,
+				GRPSEARCH0000 /* Search */,
+				GRPMAP0000000 /* Map */,
+				GRPASKCARL000 /* AskCarl */,
+				GRPTRANSIT000 /* Transit */,
+				GRPGLOSSARY00 /* Glossary */,
+				GRPGUIDES0000 /* Guides */,
+				GRPPROFILES00 /* Profiles */,
+				GRPSAFETY0000 /* Safety */,
+				GRPMORE000000 /* More */,
+				GRPCOMMON0000 /* Common */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GRPFORYOU0000 /* ForYou */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED003000000 /* ForYouView.swift */,
+			);
+			path = ForYou;
+			sourceTree = "<group>";
+		};
+		GRPHOME000000 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED004000000 /* DirectoryView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		GRPCOMPS00000 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED005000000 /* ProgramCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		GRPDETAIL0000 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED006000000 /* ProgramDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		GRPFAVS000000 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED007000000 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		GRPSETTINGS00 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED008000000 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		GRPFILTER0000 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED009000000 /* FilterSheetView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		GRPONBOARD000 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED010000000 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		GRPASSIST0000 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED011000000 /* SmartAssistantView.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		GRPSEARCH0000 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED012000000 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		GRPMAP0000000 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED013000000 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		GRPASKCARL000 /* AskCarl */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED014000000 /* AskCarlView.swift */,
+			);
+			path = AskCarl;
+			sourceTree = "<group>";
+		};
+		GRPTRANSIT000 /* Transit */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED015000000 /* TransitView.swift */,
+			);
+			path = Transit;
+			sourceTree = "<group>";
+		};
+		GRPGLOSSARY00 /* Glossary */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED016000000 /* GlossaryView.swift */,
+			);
+			path = Glossary;
+			sourceTree = "<group>";
+		};
+		GRPGUIDES0000 /* Guides */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED017000000 /* EligibilityGuidesView.swift */,
+				SHARED018000000 /* GuideViewerView.swift */,
+			);
+			path = Guides;
+			sourceTree = "<group>";
+		};
+		GRPPROFILES00 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED019000000 /* ProfilesView.swift */,
+				SHARED020000000 /* EditProfileView.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		GRPSAFETY0000 /* Safety */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED021000000 /* SafetySettingsView.swift */,
+				SHARED022000000 /* PINEntryView.swift */,
+				SHARED023000000 /* QuickExitView.swift */,
+			);
+			path = Safety;
+			sourceTree = "<group>";
+		};
+		GRPMORE000000 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED024000000 /* MoreView.swift */,
+				SHARED025000000 /* NavigationCustomizationView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		GRPCOMMON0000 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				SHARED026000000 /* WebViewScreen.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		GRPVISION0000 /* visionOS */ = {
+			isa = PBXGroup;
+			children = (
+				VISION001000000 /* ImmersiveWelcomeView.swift */,
+			);
+			path = visionOS;
+			sourceTree = "<group>";
+		};
+		GRPPROD000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				PROD001000000 /* Bay Navigator.app */,
+				PROD002000000 /* Bay Navigator.app */,
+				PROD003000000 /* Bay Navigator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TARGET01000000 /* Bay Navigator (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCLIOS0000000 /* Build configuration list for PBXNativeTarget "Bay Navigator (iOS)" */;
+			buildPhases = (
+				SRCBP001000000 /* Sources */,
+				FWBP001000000 /* Frameworks */,
+				RESBP001000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bay Navigator (iOS)";
+			packageProductDependencies = (
+				CORE000001000000 /* BayNavigatorCore */,
+			);
+			productName = "Bay Navigator";
+			productReference = PROD001000000 /* Bay Navigator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		TARGET02000000 /* Bay Navigator (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCLMACOS00000 /* Build configuration list for PBXNativeTarget "Bay Navigator (macOS)" */;
+			buildPhases = (
+				SRCBP002000000 /* Sources */,
+				FWBP002000000 /* Frameworks */,
+				RESBP002000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bay Navigator (macOS)";
+			packageProductDependencies = (
+				CORE000002000000 /* BayNavigatorCore */,
+			);
+			productName = "Bay Navigator";
+			productReference = PROD002000000 /* Bay Navigator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		TARGET03000000 /* Bay Navigator (visionOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCLVISION0000 /* Build configuration list for PBXNativeTarget "Bay Navigator (visionOS)" */;
+			buildPhases = (
+				SRCBP003000000 /* Sources */,
+				FWBP003000000 /* Frameworks */,
+				RESBP003000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bay Navigator (visionOS)";
+			packageProductDependencies = (
+				CORE000003000000 /* BayNavigatorCore */,
+			);
+			productName = "Bay Navigator";
+			productReference = PROD003000000 /* Bay Navigator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					TARGET01000000 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					TARGET02000000 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					TARGET03000000 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = BCLPROJ000000 /* Build configuration list for PBXProject "BayNavigator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+				zh-Hans,
+				zh-Hant,
+				vi,
+				tl,
+				ko,
+				ja,
+				ru,
+				ar,
+			);
+			mainGroup = ROOT000000000;
+			productRefGroup = GRPPROD000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TARGET01000000 /* Bay Navigator (iOS) */,
+				TARGET02000000 /* Bay Navigator (macOS) */,
+				TARGET03000000 /* Bay Navigator (visionOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RESBP001000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ASSETS001000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RESBP002000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ASSETS001000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RESBP003000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ASSETS001000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SRCBP001000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				SHARED001000001 /* BayNavigatorApp.swift in Sources */,
+				SHARED002000001 /* ContentView.swift in Sources */,
+				SHARED003000001 /* ForYouView.swift in Sources */,
+				SHARED004000001 /* DirectoryView.swift in Sources */,
+				SHARED005000001 /* ProgramCard.swift in Sources */,
+				SHARED006000001 /* ProgramDetailView.swift in Sources */,
+				SHARED007000001 /* FavoritesView.swift in Sources */,
+				SHARED008000001 /* SettingsView.swift in Sources */,
+				SHARED009000001 /* FilterSheetView.swift in Sources */,
+				SHARED010000001 /* OnboardingView.swift in Sources */,
+				SHARED011000001 /* SmartAssistantView.swift in Sources */,
+				SHARED012000001 /* SearchView.swift in Sources */,
+				SHARED013000001 /* MapView.swift in Sources */,
+				SHARED014000001 /* AskCarlView.swift in Sources */,
+				SHARED015000001 /* TransitView.swift in Sources */,
+				SHARED016000001 /* GlossaryView.swift in Sources */,
+				SHARED017000001 /* EligibilityGuidesView.swift in Sources */,
+				SHARED018000001 /* GuideViewerView.swift in Sources */,
+				SHARED019000001 /* ProfilesView.swift in Sources */,
+				SHARED020000001 /* EditProfileView.swift in Sources */,
+				SHARED021000001 /* SafetySettingsView.swift in Sources */,
+				SHARED022000001 /* PINEntryView.swift in Sources */,
+				SHARED023000001 /* QuickExitView.swift in Sources */,
+				SHARED024000001 /* MoreView.swift in Sources */,
+				SHARED025000001 /* NavigationCustomizationView.swift in Sources */,
+				SHARED026000001 /* WebViewScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SRCBP002000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				SHARED001000002 /* BayNavigatorApp.swift in Sources */,
+				SHARED002000002 /* ContentView.swift in Sources */,
+				SHARED003000002 /* ForYouView.swift in Sources */,
+				SHARED004000002 /* DirectoryView.swift in Sources */,
+				SHARED005000002 /* ProgramCard.swift in Sources */,
+				SHARED006000002 /* ProgramDetailView.swift in Sources */,
+				SHARED007000002 /* FavoritesView.swift in Sources */,
+				SHARED008000002 /* SettingsView.swift in Sources */,
+				SHARED009000002 /* FilterSheetView.swift in Sources */,
+				SHARED010000002 /* OnboardingView.swift in Sources */,
+				SHARED011000002 /* SmartAssistantView.swift in Sources */,
+				SHARED012000002 /* SearchView.swift in Sources */,
+				SHARED013000002 /* MapView.swift in Sources */,
+				SHARED014000002 /* AskCarlView.swift in Sources */,
+				SHARED015000002 /* TransitView.swift in Sources */,
+				SHARED016000002 /* GlossaryView.swift in Sources */,
+				SHARED017000002 /* EligibilityGuidesView.swift in Sources */,
+				SHARED018000002 /* GuideViewerView.swift in Sources */,
+				SHARED019000002 /* ProfilesView.swift in Sources */,
+				SHARED020000002 /* EditProfileView.swift in Sources */,
+				SHARED021000002 /* SafetySettingsView.swift in Sources */,
+				SHARED022000002 /* PINEntryView.swift in Sources */,
+				SHARED023000002 /* QuickExitView.swift in Sources */,
+				SHARED024000002 /* MoreView.swift in Sources */,
+				SHARED025000002 /* NavigationCustomizationView.swift in Sources */,
+				SHARED026000002 /* WebViewScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SRCBP003000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				SHARED001000003 /* BayNavigatorApp.swift in Sources */,
+				SHARED002000003 /* ContentView.swift in Sources */,
+				SHARED003000003 /* ForYouView.swift in Sources */,
+				SHARED004000003 /* DirectoryView.swift in Sources */,
+				SHARED005000003 /* ProgramCard.swift in Sources */,
+				SHARED006000003 /* ProgramDetailView.swift in Sources */,
+				SHARED007000003 /* FavoritesView.swift in Sources */,
+				SHARED008000003 /* SettingsView.swift in Sources */,
+				SHARED009000003 /* FilterSheetView.swift in Sources */,
+				SHARED010000003 /* OnboardingView.swift in Sources */,
+				SHARED011000003 /* SmartAssistantView.swift in Sources */,
+				SHARED012000003 /* SearchView.swift in Sources */,
+				SHARED013000003 /* MapView.swift in Sources */,
+				SHARED014000003 /* AskCarlView.swift in Sources */,
+				SHARED015000003 /* TransitView.swift in Sources */,
+				SHARED016000003 /* GlossaryView.swift in Sources */,
+				SHARED017000003 /* EligibilityGuidesView.swift in Sources */,
+				SHARED018000003 /* GuideViewerView.swift in Sources */,
+				SHARED019000003 /* ProfilesView.swift in Sources */,
+				SHARED020000003 /* EditProfileView.swift in Sources */,
+				SHARED021000003 /* SafetySettingsView.swift in Sources */,
+				SHARED022000003 /* PINEntryView.swift in Sources */,
+				SHARED023000003 /* QuickExitView.swift in Sources */,
+				SHARED024000003 /* MoreView.swift in Sources */,
+				SHARED025000003 /* NavigationCustomizationView.swift in Sources */,
+				SHARED026000003 /* WebViewScreen.swift in Sources */,
+				VISION001000001 /* ImmersiveWelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		/* Project Debug */
+		CFGPRJDEBUG00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		/* Project Release */
+		CFGPRJRELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		/* iOS Debug */
+		CFGIOSDEBUG00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		/* iOS Release */
+		CFGIOSRELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		/* macOS Debug */
+		CFGMACDEBUG00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BayNavigator/macOS/BayNavigator.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2025 Bay Tides. All rights reserved.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		/* macOS Release */
+		CFGMACRELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BayNavigator/macOS/BayNavigator.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2025 Bay Tides. All rights reserved.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		/* visionOS Debug */
+		CFGVISDEBUG00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		/* visionOS Release */
+		CFGVISRELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bay Navigator";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Bay Navigator uses your location to show relevant services in your area.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.baytides.navigator;
+				PRODUCT_NAME = "Bay Navigator";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 7;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCLPROJ000000 /* Build configuration list for PBXProject "BayNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFGPRJDEBUG00 /* Debug */,
+				CFGPRJRELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCLIOS0000000 /* Build configuration list for PBXNativeTarget "Bay Navigator (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFGIOSDEBUG00 /* Debug */,
+				CFGIOSRELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCLMACOS00000 /* Build configuration list for PBXNativeTarget "Bay Navigator (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFGMACDEBUG00 /* Debug */,
+				CFGMACRELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCLVISION0000 /* Build configuration list for PBXNativeTarget "Bay Navigator (visionOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFGVISDEBUG00 /* Debug */,
+				CFGVISRELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CORE000001000000 /* BayNavigatorCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BayNavigatorCore;
+		};
+		CORE000002000000 /* BayNavigatorCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BayNavigatorCore;
+		};
+		CORE000003000000 /* BayNavigatorCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BayNavigatorCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = PROJECT000000 /* Project object */;
+}

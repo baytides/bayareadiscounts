@@ -1,0 +1,24 @@
+{
+  "source": "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/App/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Loading...",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 115
+        }
+      },
+      {
+        "comment": "",
+        "key": "Incognito Mode - History not saved",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 169
+        }
+      }
+    ]
+  },
+  "version": 1
+}

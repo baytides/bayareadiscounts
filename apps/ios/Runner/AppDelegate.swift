@@ -12,7 +12,7 @@ import UIKit
     // Set up method channel for iMessage extension data sharing
     let controller = window?.rootViewController as! FlutterViewController
     let channel = FlutterMethodChannel(
-      name: "org.baytides.baynavigator/imessage",
+      name: "org.baytides.navigator/imessage",
       binaryMessenger: controller.binaryMessenger
     )
 
@@ -34,7 +34,7 @@ import UIKit
   }
 
   private func syncFavoritesToAppGroup(programs: [[String: Any]]) {
-    guard let sharedDefaults = UserDefaults(suiteName: "group.org.baytides.baynavigator") else {
+    guard let sharedDefaults = UserDefaults(suiteName: "group.org.baytides.navigator") else {
       print("Failed to access App Group UserDefaults")
       return
     }

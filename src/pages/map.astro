@@ -1550,6 +1550,10 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
       let transitLayersAdded = false;
       let activeOperators = new Set<string>();
 
+      // County boundaries state
+      let countyBoundariesLoaded = false;
+      let countyDataCache: any = null;
+
       // Get traffic checkbox references
       const trafficIncidentsCheckbox = document.getElementById(
         'traffic-incidents'
@@ -2084,14 +2088,15 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
         const showCountiesCheckbox = document.getElementById('show-counties') as HTMLInputElement;
 
         // Load county boundaries from API
-        let countyBoundariesLoaded = false;
-
         async function loadCountyBoundaries() {
           if (countyBoundariesLoaded) return;
 
           try {
             const response = await fetch('/api/county-boundaries.json');
             const countyData = await response.json();
+
+            // Cache the data for theme change restoration
+            countyDataCache = countyData;
 
             // Add county boundaries source
             map.addSource('county-boundaries', {
@@ -4059,7 +4064,324 @@ const azureMapsKey = import.meta.env.PUBLIC_AZURE_MAPS_KEY || '';
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
           const isDarkNow = document.documentElement.classList.contains('dark');
+
+          // Capture current state before style change
+          const wasTrafficFlowVisible = trafficFlowCheckbox?.checked;
+          const wasTrafficIncidentsVisible = trafficIncidentsCheckbox?.checked;
+          const wasTrafficClosuresVisible = trafficClosuresCheckbox?.checked;
+          const wasTrafficCamerasVisible = trafficCamerasCheckbox?.checked;
+          const wasTrafficVistasVisible = trafficVistasCheckbox?.checked;
+          const wasCountyVisible = showCountiesCheckbox?.checked;
+          const savedActiveOperators = new Set(activeOperators);
+
+          // Set the new style
           map.setStyle(isDarkNow ? DARK_STYLE : LIGHT_STYLE);
+
+          // After style loads, re-add all dynamic layers
+          map.once('style.load', async () => {
+            // Reset layer-added flags since the style cleared everything
+            trafficFlowLayerAdded = false;
+            trafficLayersAdded = false;
+            transitLayersAdded = false;
+            countyBoundariesLoaded = false;
+
+            // Re-add programs layer (always present)
+            if (programsGeoJSON) {
+              map.addSource('programs', {
+                type: 'geojson',
+                data: programsGeoJSON,
+                cluster: true,
+                clusterMaxZoom: 14,
+                clusterRadius: 50,
+              });
+
+              map.addLayer({
+                id: 'clusters',
+                type: 'circle',
+                source: 'programs',
+                filter: ['has', 'point_count'],
+                paint: {
+                  'circle-color': [
+                    'step',
+                    ['get', 'point_count'],
+                    '#3b82f6',
+                    10,
+                    '#8b5cf6',
+                    25,
+                    '#ef4444',
+                  ],
+                  'circle-radius': ['step', ['get', 'point_count'], 18, 10, 24, 25, 30],
+                  'circle-stroke-width': 2,
+                  'circle-stroke-color': '#ffffff',
+                },
+              });
+
+              map.addLayer({
+                id: 'cluster-count',
+                type: 'symbol',
+                source: 'programs',
+                filter: ['has', 'point_count'],
+                layout: {
+                  'text-field': ['get', 'point_count_abbreviated'],
+                  'text-font': ['Noto Sans Bold'],
+                  'text-size': 12,
+                },
+                paint: {
+                  'text-color': '#ffffff',
+                },
+              });
+
+              map.addLayer({
+                id: 'program-points',
+                type: 'circle',
+                source: 'programs',
+                filter: ['!', ['has', 'point_count']],
+                paint: {
+                  'circle-color': ['get', 'categoryColor'],
+                  'circle-radius': 8,
+                  'circle-stroke-width': 2,
+                  'circle-stroke-color': '#ffffff',
+                },
+              });
+
+              // Re-apply category filter if any
+              if (typeof updateMapFilter === 'function') {
+                updateMapFilter();
+              }
+            }
+
+            // Re-add traffic flow layer if it was visible
+            if (wasTrafficFlowVisible && AZURE_MAPS_KEY) {
+              addTrafficFlowLayer();
+            }
+
+            // Re-add traffic layers if any were loaded
+            if (trafficEventsData || laneClosuresData || camerasData || vistasData) {
+              // Add triangle marker images
+              if (!map.hasImage('triangle-red')) {
+                map.addImage('triangle-red', createTriangleImage('#EF4444', 24));
+              }
+              if (!map.hasImage('triangle-amber')) {
+                map.addImage('triangle-amber', createTriangleImage('#F59E0B', 20));
+              }
+              if (!map.hasImage('triangle-blue')) {
+                map.addImage('triangle-blue', createTriangleImage('#3B82F6', 18));
+              }
+              if (!map.hasImage('triangle-green')) {
+                map.addImage('triangle-green', createTriangleImage('#22C55E', 22));
+              }
+
+              if (trafficEventsData) {
+                map.addSource('traffic-incidents', { type: 'geojson', data: trafficEventsData });
+                map.addLayer({
+                  id: 'traffic-incidents',
+                  type: 'symbol',
+                  source: 'traffic-incidents',
+                  layout: {
+                    'icon-image': 'triangle-red',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true,
+                    visibility: wasTrafficIncidentsVisible ? 'visible' : 'none',
+                  },
+                });
+              }
+
+              if (laneClosuresData) {
+                map.addSource('lane-closures', { type: 'geojson', data: laneClosuresData });
+                map.addLayer({
+                  id: 'lane-closures',
+                  type: 'symbol',
+                  source: 'lane-closures',
+                  layout: {
+                    'icon-image': 'triangle-amber',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true,
+                    visibility: wasTrafficClosuresVisible ? 'visible' : 'none',
+                  },
+                });
+              }
+
+              if (camerasData) {
+                map.addSource('traffic-cameras', { type: 'geojson', data: camerasData });
+                map.addLayer({
+                  id: 'traffic-cameras',
+                  type: 'symbol',
+                  source: 'traffic-cameras',
+                  layout: {
+                    'icon-image': 'triangle-blue',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true,
+                    visibility: wasTrafficCamerasVisible ? 'visible' : 'none',
+                  },
+                });
+              }
+
+              if (vistasData) {
+                map.addSource('vista-points', { type: 'geojson', data: vistasData });
+                map.addLayer({
+                  id: 'vista-points',
+                  type: 'symbol',
+                  source: 'vista-points',
+                  layout: {
+                    'icon-image': 'triangle-green',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true,
+                    visibility: wasTrafficVistasVisible ? 'visible' : 'none',
+                  },
+                });
+              }
+
+              trafficLayersAdded = true;
+            }
+
+            // Re-add transit layers if they were loaded
+            if (transitData && transitRoutesData) {
+              map.addSource('transit-routes', {
+                type: 'geojson',
+                data: transitRoutesData,
+              });
+
+              map.addLayer(
+                {
+                  id: 'transit-routes',
+                  type: 'line',
+                  source: 'transit-routes',
+                  paint: {
+                    'line-color': ['get', 'color'],
+                    'line-width': 3,
+                    'line-opacity': 0.8,
+                  },
+                  layout: { visibility: 'none' },
+                },
+                'clusters'
+              );
+
+              map.addSource('transit-stops', {
+                type: 'geojson',
+                data: transitData,
+              });
+
+              map.addLayer(
+                {
+                  id: 'transit-stops',
+                  type: 'circle',
+                  source: 'transit-stops',
+                  paint: {
+                    'circle-color': ['get', 'color'],
+                    'circle-radius': 5,
+                    'circle-stroke-width': 1.5,
+                    'circle-stroke-color': '#ffffff',
+                  },
+                  filter: ['==', ['get', 'operator'], ''],
+                  layout: { visibility: 'none' },
+                },
+                'clusters'
+              );
+
+              map.addLayer({
+                id: 'transit-labels',
+                type: 'symbol',
+                source: 'transit-stops',
+                minzoom: 13,
+                layout: {
+                  'text-field': ['get', 'name'],
+                  'text-size': 10,
+                  'text-font': ['Noto Sans Regular'],
+                  'text-offset': [0, 1.2],
+                  'text-anchor': 'top',
+                  visibility: 'none',
+                },
+                paint: {
+                  'text-color': '#475569',
+                  'text-halo-color': '#ffffff',
+                  'text-halo-width': 1,
+                },
+                filter: ['==', ['get', 'operator'], ''],
+              });
+
+              transitLayersAdded = true;
+
+              // Restore active operators
+              activeOperators = savedActiveOperators;
+              if (activeOperators.size > 0) {
+                updateTransitLayers();
+              }
+            }
+
+            // Re-add county boundaries if they were visible
+            if (wasCountyVisible && countyDataCache) {
+              map.addSource('county-boundaries', {
+                type: 'geojson',
+                data: countyDataCache,
+              });
+
+              map.addLayer(
+                {
+                  id: 'county-fill',
+                  type: 'fill',
+                  source: 'county-boundaries',
+                  paint: {
+                    'fill-color': '#6366f1',
+                    'fill-opacity': 0.03,
+                  },
+                  layout: { visibility: 'visible' },
+                },
+                'clusters'
+              );
+
+              map.addLayer(
+                {
+                  id: 'county-lines',
+                  type: 'line',
+                  source: 'county-boundaries',
+                  paint: {
+                    'line-color': '#6366f1',
+                    'line-width': 2,
+                    'line-opacity': 0.5,
+                    'line-dasharray': [4, 2],
+                  },
+                  layout: { visibility: 'visible' },
+                },
+                'clusters'
+              );
+
+              const labelFeatures = countyDataCache.features.map((f: any) => ({
+                type: 'Feature',
+                properties: { name: f.properties.name },
+                geometry: {
+                  type: 'Point',
+                  coordinates: f.properties.labelCoordinates,
+                },
+              }));
+
+              map.addSource('county-labels', {
+                type: 'geojson',
+                data: { type: 'FeatureCollection', features: labelFeatures },
+              });
+
+              map.addLayer({
+                id: 'county-labels',
+                type: 'symbol',
+                source: 'county-labels',
+                layout: {
+                  'text-field': ['concat', ['get', 'name'], ' County'],
+                  'text-size': 13,
+                  'text-font': ['Noto Sans Bold'],
+                  'text-transform': 'uppercase',
+                  'text-letter-spacing': 0.1,
+                  visibility: 'visible',
+                },
+                paint: {
+                  'text-color': '#6366f1',
+                  'text-halo-color': '#ffffff',
+                  'text-halo-width': 2,
+                  'text-opacity': 0.8,
+                },
+              });
+
+              countyBoundariesLoaded = true;
+            }
+          });
         }
       });
     });

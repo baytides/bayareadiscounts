@@ -185,6 +185,43 @@ jobs:
           Compress-Archive -Path "build\windows\x64\runner\Release\*" -DestinationPath "Bay-Navigator-Windows.zip"
         shell: pwsh
 
+      - name: Self-sign Windows executables
+        run: |
+          # Create a self-signed certificate for Bay Tides
+          $cert = New-SelfSignedCertificate `
+            -Type CodeSigningCert `
+            -Subject "CN=Bay Tides, O=Bay Tides, L=San Francisco, S=California, C=US" `
+            -KeyUsage DigitalSignature `
+            -KeyAlgorithm RSA `
+            -KeyLength 4096 `
+            -CertStoreLocation "Cert:\CurrentUser\My" `
+            -NotAfter (Get-Date).AddYears(2)
+
+          Write-Host "Certificate thumbprint: $($cert.Thumbprint)"
+
+          # Sign the main executable
+          $exePath = "build\windows\x64\runner\Release\baynavigator.exe"
+          if (Test-Path $exePath) {
+            Set-AuthenticodeSignature -FilePath $exePath -Certificate $cert -TimestampServer "http://timestamp.digicert.com"
+            Write-Host "✓ Signed: $exePath"
+          }
+
+          # Sign the installer
+          $installerPath = "Bay-Navigator-Windows-Setup.exe"
+          if (Test-Path $installerPath) {
+            Set-AuthenticodeSignature -FilePath $installerPath -Certificate $cert -TimestampServer "http://timestamp.digicert.com"
+            Write-Host "✓ Signed: $installerPath"
+          }
+
+          # Export public certificate for users who want to trust it
+          $certPath = "Bay-Tides-CodeSigning.cer"
+          Export-Certificate -Cert $cert -FilePath $certPath
+          Write-Host "✓ Exported certificate: $certPath"
+
+          # Show signature info
+          Get-AuthenticodeSignature $installerPath | Format-List
+        shell: pwsh
+
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v6
         with:
@@ -192,6 +229,7 @@ jobs:
           path: |
             apps/Bay-Navigator-Windows-Setup.exe
             apps/Bay-Navigator-Windows.zip
+            apps/Bay-Tides-CodeSigning.cer
 
   build-linux:
     runs-on: ubuntu-latest
@@ -220,7 +258,7 @@ jobs:
           cd build/linux/x64/release/bundle
           tar -czvf ../../../../../Bay-Navigator-Linux.tar.gz *
 
-      - name: Create AppImage (optional)
+      - name: Create AppImage
         run: |
           # Download appimagetool
           wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
@@ -264,13 +302,58 @@ jobs:
           # Build AppImage
           ./appimagetool-x86_64.AppImage AppDir Bay-Navigator-Linux.AppImage || true
 
+      - name: Sign Linux artifacts with GPG (Bay Tides organization key)
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.BAYTIDES_GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.BAYTIDES_GPG_PASSPHRASE }}
+        run: |
+          # Skip if GPG key not configured
+          if [ -z "$GPG_PRIVATE_KEY" ]; then
+            echo "⚠️ Skipping signing: BAYTIDES_GPG_PRIVATE_KEY not configured"
+            exit 0
+          fi
+
+          # Import Bay Tides organization GPG key
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+
+          # Get the key ID
+          KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | head -1 | awk '{print $2}' | cut -d'/' -f2)
+          echo "Signing with Bay Tides key: $KEY_ID"
+
+          # Create detached signatures for tarball
+          if [ -n "$GPG_PASSPHRASE" ]; then
+            echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback \
+              --detach-sign --armor --local-user "$KEY_ID" Bay-Navigator-Linux.tar.gz
+          else
+            gpg --batch --yes --detach-sign --armor --local-user "$KEY_ID" Bay-Navigator-Linux.tar.gz
+          fi
+
+          # Create detached signature for AppImage if it exists
+          if [ -f "Bay-Navigator-Linux.AppImage" ]; then
+            if [ -n "$GPG_PASSPHRASE" ]; then
+              echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback \
+                --detach-sign --armor --local-user "$KEY_ID" Bay-Navigator-Linux.AppImage
+            else
+              gpg --batch --yes --detach-sign --armor --local-user "$KEY_ID" Bay-Navigator-Linux.AppImage
+            fi
+          fi
+
+          # Export public key for users to verify signatures
+          gpg --armor --export "$KEY_ID" > BAYTIDES-SIGNING-KEY.asc
+
+          echo "✓ Signed artifacts:"
+          ls -la *.asc
+
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v6
         with:
           name: linux-app
           path: |
             apps/Bay-Navigator-Linux.tar.gz
+            apps/Bay-Navigator-Linux.tar.gz.asc
             apps/Bay-Navigator-Linux.AppImage
+            apps/Bay-Navigator-Linux.AppImage.asc
+            apps/BAYTIDES-SIGNING-KEY.asc
           if-no-files-found: warn
 
   create-release:

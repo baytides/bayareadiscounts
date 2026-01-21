@@ -1,0 +1,64 @@
+{
+  "source": "/Users/steven/Github/baynavigator/apps/apple/BayNavigator/Shared/Views/Guides/EligibilityGuidesView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Eligibility Guides",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 204
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search guides...",
+        "location": {
+          "startingColumn": 52,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "These guides explain eligibility requirements, how to apply, and what documents you need.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 227
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld guides",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 248
+        }
+      },
+      {
+        "comment": "",
+        "key": "Layout",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 255
+        }
+      },
+      {
+        "comment": "",
+        "key": "No guides found",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 319
+        }
+      },
+      {
+        "comment": "",
+        "key": "Try a different search term",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 322
+        }
+      }
+    ]
+  },
+  "version": 1
+}

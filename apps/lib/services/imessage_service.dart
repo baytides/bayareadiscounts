@@ -5,7 +5,7 @@ import '../models/program.dart';
 
 /// Service for syncing saved programs to the iMessage extension via App Groups
 class IMessageService {
-  static const _channel = MethodChannel('org.baytides.baynavigator/imessage');
+  static const _channel = MethodChannel('org.baytides.navigator/imessage');
 
   /// Sync favorite programs to the iMessage extension
   /// Only works on iOS, no-op on other platforms

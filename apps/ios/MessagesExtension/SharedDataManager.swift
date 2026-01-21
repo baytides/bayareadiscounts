@@ -24,7 +24,7 @@ class SharedDataManager: ObservableObject {
     @Published var savedPrograms: [SharedProgram] = []
 
     // App Group identifier - must match the one in the main app
-    private let appGroupIdentifier = "group.org.baytides.baynavigator"
+    private let appGroupIdentifier = "group.org.baytides.navigator"
     private let savedProgramsKey = "savedPrograms"
 
     init() {
@@ -95,7 +95,7 @@ class SharedDataManager: ObservableObject {
 extension SharedDataManager {
     /// Call this from the main Flutter app to save programs for sharing
     static func savePrograms(_ programs: [SharedProgram]) {
-        guard let sharedDefaults = UserDefaults(suiteName: "group.org.baytides.baynavigator") else {
+        guard let sharedDefaults = UserDefaults(suiteName: "group.org.baytides.navigator") else {
             return
         }
 
