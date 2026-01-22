@@ -70,9 +70,6 @@ jobs:
 
       - name: Build iOS archive
         run: |
-          # Get the provisioning profile UUID
-          PROFILE_UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(/usr/bin/security cms -D -i ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision 2>/dev/null | head -1000))
-
           xcodebuild -project BayNavigator.xcodeproj \
             -scheme "Bay Navigator (iOS)" \
             -destination 'generic/platform=iOS' \
@@ -81,8 +78,8 @@ jobs:
             archive \
             CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM=C5U8Z5536K \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            PROVISIONING_PROFILE_SPECIFIER="Bay Navigator Distribution"
+            'CODE_SIGN_IDENTITY=Apple Distribution: Save the Shores, Inc. (C5U8Z5536K)' \
+            'PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]=Bay Navigator Distribution'
 
       - name: Export iOS IPA
         run: |
@@ -208,8 +205,8 @@ jobs:
             archive \
             CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM=C5U8Z5536K \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            PROVISIONING_PROFILE_SPECIFIER="Bay Navigator Distribution"
+            'CODE_SIGN_IDENTITY=Apple Distribution: Save the Shores, Inc. (C5U8Z5536K)' \
+            'PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]=Bay Navigator Distribution'
 
       - name: Export macOS app
         run: |
@@ -355,8 +352,8 @@ jobs:
             archive \
             CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM=C5U8Z5536K \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            PROVISIONING_PROFILE_SPECIFIER="Bay Navigator Distribution"
+            'CODE_SIGN_IDENTITY=Apple Distribution: Save the Shores, Inc. (C5U8Z5536K)' \
+            'PROVISIONING_PROFILE_SPECIFIER[sdk=xros*]=Bay Navigator Distribution'
 
       - name: Export visionOS IPA
         run: |
