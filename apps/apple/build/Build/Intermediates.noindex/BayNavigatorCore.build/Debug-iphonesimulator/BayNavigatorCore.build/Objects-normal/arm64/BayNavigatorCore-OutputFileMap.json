@@ -36,6 +36,16 @@
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/Color+Theme.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/Color+Theme~partial.swiftmodule"
   },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Models/CivicData.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicData~partial.swiftmodule"
+  },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Models/Program.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/Program.swiftconstvalues",
     "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/Program.d",
@@ -56,6 +66,16 @@
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/APIService.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/APIService~partial.swiftmodule"
   },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/AccessibilityService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/AccessibilityService~partial.swiftmodule"
+  },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/CacheService.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CacheService.swiftconstvalues",
     "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CacheService.d",
@@ -65,6 +85,66 @@
     "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CacheService.o",
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CacheService.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CacheService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/CivicService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/DesktopMenuService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DesktopMenuService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/DisguisedIconService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/DisguisedIconService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/ExportService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ExportService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/IMessageService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/IMessageService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/KeyboardShortcutsService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/KeyboardShortcutsService~partial.swiftmodule"
   },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/LocalizationService.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LocalizationService.swiftconstvalues",
@@ -116,6 +196,16 @@
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ProfileService.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ProfileService~partial.swiftmodule"
   },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/QuickAnswersService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/QuickAnswersService~partial.swiftmodule"
+  },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/SafetyService.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyService.swiftconstvalues",
     "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyService.d",
@@ -125,6 +215,16 @@
     "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyService.o",
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyService.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/SafetyTipsService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SafetyTipsService~partial.swiftmodule"
   },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/SmartAssistantService.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/SmartAssistantService.swiftconstvalues",
@@ -145,6 +245,26 @@
     "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/TransitService.o",
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/TransitService.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/TransitService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Services/WindowStateService.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WindowStateService~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/ViewModels/CivicViewModel.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/CivicViewModel~partial.swiftmodule"
   },
   "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/ViewModels/ProgramsViewModel.swift" : {
     "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/ProgramsViewModel.swiftconstvalues",
@@ -185,5 +305,35 @@
     "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/UserPrefsViewModel.o",
     "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/UserPrefsViewModel.swiftdeps",
     "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/UserPrefsViewModel~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Views/LottieView.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/LottieView~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/BayNavigatorCore/Sources/BayNavigatorCore/Views/WebContentView.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/WebContentView~partial.swiftmodule"
+  },
+  "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "const-values" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.swiftconstvalues",
+    "dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.d",
+    "diagnostics" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.dia",
+    "index-unit-output-path" : "/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "swift-dependencies" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor.swiftdeps",
+    "swiftmodule" : "/Users/steven/Github/baynavigator/apps/apple/build/Build/Intermediates.noindex/BayNavigatorCore.build/Debug-iphonesimulator/BayNavigatorCore.build/Objects-normal/arm64/resource_bundle_accessor~partial.swiftmodule"
   }
 }

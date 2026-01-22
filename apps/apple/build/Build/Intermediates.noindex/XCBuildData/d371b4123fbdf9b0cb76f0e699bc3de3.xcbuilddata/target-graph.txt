@@ -1,6 +1,0 @@
-Target dependency graph (3 targets)
-Target 'Bay Navigator (iOS)' in project 'BayNavigator'
-➜ Explicit dependency on target 'BayNavigatorCore' in project 'BayNavigatorCore'
-Target 'BayNavigatorCore' in project 'BayNavigatorCore'
-➜ Explicit dependency on target 'BayNavigatorCore' in project 'BayNavigatorCore'
-Target 'BayNavigatorCore' in project 'BayNavigatorCore' (no dependencies)

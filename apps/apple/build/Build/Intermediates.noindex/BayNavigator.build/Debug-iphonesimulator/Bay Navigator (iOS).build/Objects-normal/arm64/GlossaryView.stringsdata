@@ -6,24 +6,24 @@
         "comment": "",
         "key": "Glossary",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 652
+          "startingColumn": 26,
+          "startingLine": 661
         }
       },
       {
         "comment": "",
         "key": "Search acronyms...",
         "location": {
-          "startingColumn": 52,
-          "startingLine": 656
+          "startingColumn": 48,
+          "startingLine": 665
         }
       },
       {
         "comment": "",
         "key": "%lld terms",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 637
+          "startingColumn": 22,
+          "startingLine": 646
         }
       },
       {
@@ -31,7 +31,7 @@
         "key": "No terms found",
         "location": {
           "startingColumn": 18,
-          "startingLine": 736
+          "startingLine": 744
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "Try a different search or category",
         "location": {
           "startingColumn": 18,
-          "startingLine": 739
+          "startingLine": 747
         }
       },
       {
@@ -47,7 +47,7 @@
         "key": "Copy",
         "location": {
           "startingColumn": 39,
-          "startingLine": 846
+          "startingLine": 854
         }
       },
       {
@@ -55,7 +55,7 @@
         "key": "Copied to clipboard",
         "location": {
           "startingColumn": 22,
-          "startingLine": 864
+          "startingLine": 872
         }
       }
     ]

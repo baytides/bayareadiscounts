@@ -7,7 +7,7 @@
         "key": "More",
         "location": {
           "startingColumn": 30,
-          "startingLine": 34
+          "startingLine": 38
         }
       },
       {
@@ -15,7 +15,7 @@
         "key": "Layout",
         "location": {
           "startingColumn": 16,
-          "startingLine": 75
+          "startingLine": 79
         }
       },
       {
@@ -23,7 +23,7 @@
         "key": "More Features",
         "location": {
           "startingColumn": 22,
-          "startingLine": 60
+          "startingLine": 64
         }
       },
       {
@@ -31,7 +31,7 @@
         "key": "Access additional tools and settings",
         "location": {
           "startingColumn": 22,
-          "startingLine": 63
+          "startingLine": 67
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "Unknown destination",
         "location": {
           "startingColumn": 18,
-          "startingLine": 173
+          "startingLine": 191
         }
       },
       {
@@ -47,7 +47,7 @@
         "key": "Customize Navigation",
         "location": {
           "startingColumn": 22,
-          "startingLine": 132
+          "startingLine": 136
         }
       }
     ]

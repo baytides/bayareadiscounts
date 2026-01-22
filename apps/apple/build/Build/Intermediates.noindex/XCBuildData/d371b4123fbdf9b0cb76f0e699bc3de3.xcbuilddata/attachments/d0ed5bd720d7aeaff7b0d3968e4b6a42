@@ -1,4 +1,0 @@
-module BayNavigatorCore {
-header "BayNavigatorCore-Swift.h"
-export *
-}
