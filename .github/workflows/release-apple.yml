@@ -70,19 +70,20 @@ jobs:
 
       - name: Build iOS archive
         run: |
-          # Use Automatic signing - Xcode will use the installed provisioning profile
+          # Use CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=YES to let each target
+          # use its default signing configuration (avoids SPM package signing issues)
           xcodebuild -project BayNavigator.xcodeproj \
             -scheme "Bay Navigator (iOS)" \
             -destination 'generic/platform=iOS' \
             -configuration Release \
             -archivePath $RUNNER_TEMP/BayNavigator-iOS.xcarchive \
             archive \
-            CODE_SIGN_STYLE=Automatic \
-            DEVELOPMENT_TEAM=C5U8Z5536K
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGNING_ALLOWED=YES
 
       - name: Export iOS IPA
         run: |
-          # Create export options plist
+          # Create export options plist with provisioning profile mapping
           cat > $RUNNER_TEMP/ExportOptions.plist << EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -96,6 +97,13 @@ jobs:
             <true/>
             <key>signingStyle</key>
             <string>manual</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>org.baytides.navigator</key>
+              <string>Bay Navigator Distribution</string>
+            </dict>
+            <key>signingCertificate</key>
+            <string>Apple Distribution</string>
           </dict>
           </plist>
           EOF
@@ -196,15 +204,16 @@ jobs:
 
       - name: Build macOS archive
         run: |
-          # macOS Developer ID distribution doesn't require provisioning profiles
+          # Use CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=YES to let each target
+          # use its default signing configuration (avoids SPM package signing issues)
           xcodebuild -project BayNavigator.xcodeproj \
             -scheme "Bay Navigator (macOS)" \
             -destination 'generic/platform=macOS' \
             -configuration Release \
             -archivePath $RUNNER_TEMP/BayNavigator-macOS.xcarchive \
             archive \
-            CODE_SIGN_STYLE=Automatic \
-            DEVELOPMENT_TEAM=C5U8Z5536K
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGNING_ALLOWED=YES
 
       - name: Export macOS app
         run: |
@@ -342,18 +351,20 @@ jobs:
 
       - name: Build visionOS archive
         run: |
-          # Use Automatic signing - Xcode will use the installed provisioning profile
+          # Use CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=YES to let each target
+          # use its default signing configuration (avoids SPM package signing issues)
           xcodebuild -project BayNavigator.xcodeproj \
             -scheme "Bay Navigator (visionOS)" \
             -destination 'generic/platform=visionOS' \
             -configuration Release \
             -archivePath $RUNNER_TEMP/BayNavigator-visionOS.xcarchive \
             archive \
-            CODE_SIGN_STYLE=Automatic \
-            DEVELOPMENT_TEAM=C5U8Z5536K
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGNING_ALLOWED=YES
 
       - name: Export visionOS IPA
         run: |
+          # Create export options plist with provisioning profile mapping
           cat > $RUNNER_TEMP/ExportOptions.plist << EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -367,6 +378,13 @@ jobs:
             <true/>
             <key>signingStyle</key>
             <string>manual</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>org.baytides.navigator</key>
+              <string>Bay Navigator Distribution</string>
+            </dict>
+            <key>signingCertificate</key>
+            <string>Apple Distribution</string>
           </dict>
           </plist>
           EOF
