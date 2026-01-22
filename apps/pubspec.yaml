@@ -46,6 +46,9 @@ dependencies:
   # Maps (open-source MapLibre)
   maplibre_gl: ^0.25.0
 
+  # Animations (Lottie)
+  lottie: ^3.3.1
+
   # Desktop
   window_manager: ^0.5.1
 
@@ -61,6 +64,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/animations/
     - assets/images/favicons/
     # Representative photos organized by level/chamber-or-county/district-or-city
     # Federal
