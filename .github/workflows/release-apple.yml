@@ -1,0 +1,452 @@
+name: Release Apple Apps (Native Swift)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 0.1.001)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: apps/apple
+
+jobs:
+  build-ios:
+    name: Build iOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Install Apple certificate and provisioning profile
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          # Create temporary keychain
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          KEYCHAIN_PASSWORD=$(openssl rand -base64 32)
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
+          # Import certificate
+          CERTIFICATE_PATH=$RUNNER_TEMP/certificate.p12
+          echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH"
+          security import "$CERTIFICATE_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+          # Install provisioning profile
+          PROFILE_PATH=$RUNNER_TEMP/profile.mobileprovision
+          echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+          # Extract UUID from provisioning profile and copy with correct name
+          PROFILE_UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(/usr/bin/security cms -D -i "$PROFILE_PATH"))
+          cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (iOS)"
+
+      - name: Build iOS archive
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (iOS)" \
+            -destination 'generic/platform=iOS' \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/BayNavigator-iOS.xcarchive \
+            archive \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=C5U8Z5536K
+
+      - name: Export iOS IPA
+        run: |
+          # Create export options plist
+          cat > $RUNNER_TEMP/ExportOptions.plist << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store</string>
+            <key>teamID</key>
+            <string>C5U8Z5536K</string>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>signingStyle</key>
+            <string>manual</string>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/BayNavigator-iOS.xcarchive \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export-ios
+
+      - name: Get version from tag
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+          REF_NAME: ${{ github.ref }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "VERSION=$INPUT_VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=${REF_NAME#refs/tags/v}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Rename iOS artifact
+        run: |
+          cp "$RUNNER_TEMP/export-ios/Bay Navigator.ipa" bay-navigator-ios.ipa
+
+      - name: Upload iOS artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: ios-app
+          path: apps/apple/bay-navigator-ios.ipa
+
+      - name: Upload to TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+        run: |
+          if [ -z "$APP_STORE_CONNECT_API_KEY_ID" ]; then
+            echo "Skipping TestFlight upload: App Store Connect credentials not configured"
+            exit 0
+          fi
+
+          # Create API key file
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > ~/.appstoreconnect/private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
+
+          # Upload to App Store Connect
+          xcrun altool --upload-app \
+            --type ios \
+            --file bay-navigator-ios.ipa \
+            --apiKey $APP_STORE_CONNECT_API_KEY_ID \
+            --apiIssuer $APP_STORE_CONNECT_API_ISSUER_ID
+
+      - name: Cleanup keychain
+        if: always()
+        run: |
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db || true
+
+  build-macos:
+    name: Build macOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Install Apple certificate
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+        run: |
+          # Create temporary keychain
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          KEYCHAIN_PASSWORD=$(openssl rand -base64 32)
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
+          # Import certificate
+          CERTIFICATE_PATH=$RUNNER_TEMP/certificate.p12
+          echo "$MACOS_CERTIFICATE" | base64 --decode > "$CERTIFICATE_PATH"
+          security import "$CERTIFICATE_PATH" -P "$MACOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (macOS)"
+
+      - name: Build macOS archive
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (macOS)" \
+            -destination 'generic/platform=macOS' \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/BayNavigator-macOS.xcarchive \
+            archive \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=C5U8Z5536K
+
+      - name: Export macOS app
+        run: |
+          # Create export options plist
+          cat > $RUNNER_TEMP/ExportOptions.plist << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>developer-id</string>
+            <key>teamID</key>
+            <string>C5U8Z5536K</string>
+            <key>signingStyle</key>
+            <string>manual</string>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/BayNavigator-macOS.xcarchive \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export-macos
+
+      - name: Create DMG
+        run: |
+          brew install create-dmg
+
+          APP_PATH="$RUNNER_TEMP/export-macos/Bay Navigator.app"
+
+          create-dmg \
+            --volname "Bay Navigator" \
+            --window-pos 200 120 \
+            --window-size 600 400 \
+            --icon-size 100 \
+            --icon "Bay Navigator.app" 150 185 \
+            --hide-extension "Bay Navigator.app" \
+            --app-drop-link 450 185 \
+            "Bay-Navigator-macOS.dmg" \
+            "$APP_PATH" || true
+
+          # If create-dmg fails, create a simple zip
+          if [ ! -f "Bay-Navigator-macOS.dmg" ]; then
+            cd "$RUNNER_TEMP/export-macos"
+            zip -r "$GITHUB_WORKSPACE/apps/apple/Bay-Navigator-macOS.zip" "Bay Navigator.app"
+          fi
+
+      - name: Notarize app
+        continue-on-error: true
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: C5U8Z5536K
+        run: |
+          if [ -z "$APPLE_ID" ] || [ -z "$APPLE_APP_PASSWORD" ]; then
+            echo "Skipping notarization: Apple credentials not configured"
+            exit 0
+          fi
+
+          if [ -f "Bay-Navigator-macOS.dmg" ]; then
+            xcrun notarytool submit "Bay-Navigator-macOS.dmg" \
+              --apple-id "$APPLE_ID" \
+              --password "$APPLE_APP_PASSWORD" \
+              --team-id "$APPLE_TEAM_ID" \
+              --wait
+
+            xcrun stapler staple "Bay-Navigator-macOS.dmg"
+          fi
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: macos-app
+          path: |
+            apps/apple/Bay-Navigator-macOS.dmg
+            apps/apple/Bay-Navigator-macOS.zip
+          if-no-files-found: warn
+
+      - name: Cleanup keychain
+        if: always()
+        run: |
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db || true
+
+  build-visionos:
+    name: Build visionOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          # Use Xcode 16.4 which includes visionOS 2.5 SDK
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+          echo "Available SDKs:"
+          xcodebuild -showsdks | grep -i xros || echo "Checking for visionOS..."
+
+      - name: Install Apple certificate and provisioning profile
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          VISIONOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.VISIONOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          # Create temporary keychain
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          KEYCHAIN_PASSWORD=$(openssl rand -base64 32)
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
+          # Import certificate
+          CERTIFICATE_PATH=$RUNNER_TEMP/certificate.p12
+          echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH"
+          security import "$CERTIFICATE_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+          # Install provisioning profile
+          if [ -n "$VISIONOS_PROVISIONING_PROFILE_BASE64" ]; then
+            PROFILE_PATH=$RUNNER_TEMP/profile.mobileprovision
+            echo "$VISIONOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
+            mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+            PROFILE_UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(/usr/bin/security cms -D -i "$PROFILE_PATH"))
+            cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
+          fi
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (visionOS)"
+
+      - name: Build visionOS archive
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (visionOS)" \
+            -destination 'generic/platform=visionOS' \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/BayNavigator-visionOS.xcarchive \
+            archive \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=C5U8Z5536K
+
+      - name: Export visionOS IPA
+        run: |
+          cat > $RUNNER_TEMP/ExportOptions.plist << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store</string>
+            <key>teamID</key>
+            <string>C5U8Z5536K</string>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>signingStyle</key>
+            <string>manual</string>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/BayNavigator-visionOS.xcarchive \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export-visionos
+
+      - name: Rename visionOS artifact
+        run: |
+          cp "$RUNNER_TEMP/export-visionos/Bay Navigator.ipa" bay-navigator-visionos.ipa
+
+      - name: Upload visionOS artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: visionos-app
+          path: apps/apple/bay-navigator-visionos.ipa
+
+      - name: Upload to TestFlight
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+        run: |
+          if [ -z "$APP_STORE_CONNECT_API_KEY_ID" ]; then
+            echo "Skipping TestFlight upload: App Store Connect credentials not configured"
+            exit 0
+          fi
+
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > ~/.appstoreconnect/private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
+
+          xcrun altool --upload-app \
+            --type visionos \
+            --file bay-navigator-visionos.ipa \
+            --apiKey $APP_STORE_CONNECT_API_KEY_ID \
+            --apiIssuer $APP_STORE_CONNECT_API_ISSUER_ID
+
+      - name: Cleanup keychain
+        if: always()
+        run: |
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db || true
+
+  create-release:
+    name: Create GitHub Release
+    needs: [build-ios, build-macos, build-visionos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v7
+        with:
+          path: artifacts
+
+      - name: List artifacts
+        run: find artifacts -type f
+
+      - name: Get version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+          REF_NAME: ${{ github.ref_name }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "version=$INPUT_VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "version=${REF_NAME#refs/tags/v}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Bay Navigator v${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref_name }}
+          draft: true
+          generate_release_notes: true
+          files: |
+            artifacts/ios-app/*
+            artifacts/macos-app/*
+            artifacts/visionos-app/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

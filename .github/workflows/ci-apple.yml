@@ -1,0 +1,130 @@
+name: CI - Apple Platforms (Native Swift)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/apple/**'
+      - '.github/workflows/ci-apple.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'apps/apple/**'
+      - '.github/workflows/ci-apple.yml'
+
+concurrency:
+  group: ci-apple-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: apps/apple
+
+jobs:
+  build-ios:
+    name: Build iOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (iOS)"
+
+      - name: Build iOS (Debug)
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (iOS)" \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -configuration Debug \
+            build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+  build-macos:
+    name: Build macOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (macOS)"
+
+      - name: Build macOS (Debug)
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (macOS)" \
+            -destination 'platform=macOS' \
+            -configuration Debug \
+            build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+  build-visionos:
+    name: Build visionOS
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Select Xcode version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+          echo "Available SDKs:"
+          xcodebuild -showsdks | grep -i xros || echo "Checking for visionOS..."
+
+      - name: Resolve Swift Package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (visionOS)"
+
+      - name: Build visionOS (Debug)
+        run: |
+          xcodebuild -project BayNavigator.xcodeproj \
+            -scheme "Bay Navigator (visionOS)" \
+            -destination 'platform=visionOS Simulator,name=Apple Vision Pro' \
+            -configuration Debug \
+            build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+  swift-lint:
+    name: Swift Lint
+    runs-on: macos-15
+    continue-on-error: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: Run SwiftLint
+        working-directory: apps/apple
+        run: swiftlint lint --reporter github-actions-logging || true
