@@ -2,30 +2,31 @@ import SwiftUI
 import BayNavigatorCore
 
 /// Safety settings view for configuring privacy and safety features
+/// Designed for users who may need enhanced privacy, such as DV survivors or LGBTQ youth
 struct SafetySettingsView: View {
     @StateObject private var viewModel = SafetySettingsViewModel()
+    @State private var showingClearHistoryAlert = false
     @State private var showingClearDataAlert = false
     @State private var showingPINSetup = false
     @State private var showingPINChange = false
     @State private var showingPINRemove = false
     @State private var showingPanicWipeWarning = false
+    @State private var showingOfflineModeInfo = false
+
+    private var torStatusColor: Color {
+        guard let status = viewModel.torStatus else { return .secondary }
+        if status.isConnected {
+            return .green
+        } else if status.isEnabled && status.isOrbotInstalled {
+            return .orange
+        } else if status.isEnabled {
+            return .red
+        }
+        return .secondary
+    }
 
     var body: some View {
         List {
-            // Incognito Mode Section
-            Section {
-                Toggle("Incognito Mode", isOn: $viewModel.incognitoModeEnabled)
-                    .onChange(of: viewModel.incognitoModeEnabled) { _, newValue in
-                        Task {
-                            await viewModel.setIncognitoMode(newValue)
-                        }
-                    }
-            } header: {
-                Label("Privacy Mode", systemImage: "eye.slash")
-            } footer: {
-                Text("When enabled, your browsing history, searches, and viewed programs will not be saved. Data is cleared when you exit the app.")
-            }
-
             // PIN Protection Section
             Section {
                 if viewModel.hasPINSet {
@@ -65,9 +66,9 @@ struct SafetySettingsView: View {
                     }
                 }
             } header: {
-                Label("PIN Protection", systemImage: "lock.shield")
+                Label("App Security", systemImage: "lock.shield")
             } footer: {
-                Text("Protect the app with a 6-8 digit PIN. You can also enable biometric authentication for faster access.")
+                Text("Protect the app with a PIN code to prevent unauthorized access to your saved programs and profile information.")
             }
 
             // Panic Wipe Section
@@ -85,9 +86,9 @@ struct SafetySettingsView: View {
                         }
 
                     if viewModel.panicWipeEnabled {
-                        Stepper(value: $viewModel.maxFailedAttempts, in: 1...10) {
+                        Stepper(value: $viewModel.maxFailedAttempts, in: 3...10) {
                             HStack {
-                                Text("Failed Attempts Limit")
+                                Text("Failed Attempts")
                                 Spacer()
                                 Text("\(viewModel.maxFailedAttempts)")
                                     .foregroundStyle(.secondary)
@@ -100,10 +101,63 @@ struct SafetySettingsView: View {
                         }
                     }
                 } header: {
-                    Label("Emergency Wipe", systemImage: "exclamationmark.triangle")
+                    Label("Emergency Protection", systemImage: "exclamationmark.shield")
                 } footer: {
-                    Text("Automatically delete all app data after \(viewModel.maxFailedAttempts) failed PIN attempts. Use this if you're concerned someone may try to access your data.")
+                    Text("Automatically delete all app data after \(viewModel.maxFailedAttempts) failed PIN attempts. This protects your information if someone tries to access your device.")
                 }
+            }
+
+            // Encrypted Storage Section
+            Section {
+                Toggle("Encrypted Storage", isOn: $viewModel.encryptionEnabled)
+                    .onChange(of: viewModel.encryptionEnabled) { _, newValue in
+                        Task {
+                            await viewModel.setEncryptionEnabled(newValue)
+                        }
+                    }
+            } header: {
+                Label("Data Encryption", systemImage: "lock.doc")
+            } footer: {
+                Text("Add an extra layer of encryption to sensitive data stored on your device, such as your profile and saved programs.")
+            }
+
+            // Offline Mode Section
+            Section {
+                Toggle("Offline Mode", isOn: $viewModel.offlineModeEnabled)
+                    .onChange(of: viewModel.offlineModeEnabled) { _, newValue in
+                        Task {
+                            await viewModel.setOfflineModeEnabled(newValue)
+                        }
+                    }
+
+                if viewModel.offlineModeEnabled {
+                    HStack {
+                        Image(systemName: "wifi.slash")
+                            .foregroundStyle(.orange)
+                        Text("Network requests are blocked")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Button {
+                    Task {
+                        await viewModel.refreshCache()
+                    }
+                } label: {
+                    HStack {
+                        Label("Update Cached Data", systemImage: "arrow.clockwise")
+                        Spacer()
+                        if viewModel.isRefreshingCache {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(viewModel.isRefreshingCache || viewModel.offlineModeEnabled)
+            } header: {
+                Label("Offline Mode", systemImage: "wifi.slash")
+            } footer: {
+                Text("When enabled, the app will only use cached data and won't make any network requests. This prevents anyone monitoring your network from seeing that you're using Bay Navigator. Update cached data regularly while online.")
             }
 
             // Quick Exit Section
@@ -131,101 +185,104 @@ struct SafetySettingsView: View {
             } header: {
                 Label("Quick Exit", systemImage: "escape")
             } footer: {
-                Text("Quickly navigate to a safe website and clear app state. The quick exit button appears on sensitive screens.")
+                Text("Shows a floating button to quickly navigate to a different website if you need to leave the app immediately.")
             }
 
-            // Shake to Clear Section
+            // Tor/Orbot Section
             Section {
-                Toggle("Shake to Clear", isOn: $viewModel.shakeToClearEnabled)
-                    .onChange(of: viewModel.shakeToClearEnabled) { _, newValue in
+                Toggle("Route Through Tor", isOn: $viewModel.torEnabled)
+                    .onChange(of: viewModel.torEnabled) { _, newValue in
                         Task {
-                            await viewModel.setShakeToClearEnabled(newValue)
-                        }
-                    }
-            } header: {
-                Label("Shake Detection", systemImage: "iphone.radiowaves.left.and.right")
-            } footer: {
-                Text("Shake your device 3 times to quickly clear your browsing history and recent activity. A confirmation dialog will appear first.")
-            }
-
-            // Network Privacy Section
-            Section {
-                Toggle("Network Monitoring", isOn: $viewModel.networkMonitoringEnabled)
-                    .onChange(of: viewModel.networkMonitoringEnabled) { _, newValue in
-                        Task {
-                            await viewModel.setNetworkMonitoringEnabled(newValue)
+                            await viewModel.setTorEnabled(newValue)
                         }
                     }
 
-                if viewModel.networkMonitoringEnabled {
-                    Toggle("Show Warnings", isOn: $viewModel.networkWarningsEnabled)
-                        .onChange(of: viewModel.networkWarningsEnabled) { _, newValue in
-                            Task {
-                                await viewModel.setNetworkWarningsEnabled(newValue)
-                            }
-                        }
-
-                    if let status = viewModel.networkStatus {
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack {
-                                Image(systemName: status.level.systemImage)
-                                    .foregroundStyle(colorForPrivacyLevel(status.level))
-                                Text(status.connectionType)
-                                Spacer()
-                                if status.warning != nil {
-                                    Image(systemName: "exclamationmark.triangle.fill")
-                                        .foregroundStyle(.orange)
-                                }
-                            }
-
-                            if let suggestion = status.suggestion {
-                                Text(suggestion)
+                if viewModel.torEnabled {
+                    // Show Tor status
+                    HStack {
+                        Image(systemName: viewModel.torStatus?.isConnected == true ? "checkmark.shield.fill" : "exclamationmark.triangle.fill")
+                            .foregroundStyle(torStatusColor)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(viewModel.torStatus?.message ?? "Checking...")
+                                .font(.subheadline)
+                            if viewModel.torStatus?.isConnected == true {
+                                Text("Using .onion address")
                                     .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-
-                            // Show trust button if we have SSID and it's not already trusted
-                            if let ssid = status.ssid, status.level != .good {
-                                Button {
-                                    Task {
-                                        await viewModel.trustCurrentNetwork(ssid)
-                                    }
-                                } label: {
-                                    Label("Trust \"\(ssid)\"", systemImage: "checkmark.shield")
-                                }
-                                .buttonStyle(.bordered)
-                                .tint(.green)
-                                .controlSize(.small)
+                                    .foregroundStyle(.green)
                             }
                         }
+                    }
+
+                    if viewModel.torStatus?.isOrbotInstalled == false {
+                        Link(destination: URL(string: "https://apps.apple.com/app/orbot/id1609461599")!) {
+                            HStack {
+                                Label("Install Orbot", systemImage: "arrow.down.app")
+                                Spacer()
+                                Image(systemName: "arrow.up.right")
+                                    .font(.caption)
+                            }
+                        }
+                    } else if viewModel.torStatus?.isProxyAvailable == false {
+                        Button {
+                            Task {
+                                await viewModel.openOrbot()
+                            }
+                        } label: {
+                            HStack {
+                                Label("Open Orbot", systemImage: "arrow.up.forward.app")
+                                Spacer()
+                                Image(systemName: "arrow.up.right")
+                                    .font(.caption)
+                            }
+                        }
+                    }
+
+                    Button {
+                        Task {
+                            await viewModel.refreshTorStatus()
+                        }
+                    } label: {
+                        Label("Refresh Status", systemImage: "arrow.clockwise")
                     }
                 }
             } header: {
-                Label("Network Privacy", systemImage: "wifi.exclamationmark")
+                Label("Tor Network", systemImage: "network.badge.shield.half.filled")
             } footer: {
-                Text("Monitor your network connection and receive warnings when using public WiFi networks. You can mark your home/work networks as trusted.\n\nNetwork identification uses location permission on-device only — your location is never sent to any server.")
+                Text("When enabled and Orbot is running, the app connects through Tor to our .onion hidden service. This hides your activity from network monitors and provides end-to-end encryption.")
             }
 
-            // Encrypted Storage Section
+            // Ask Carl Privacy Section
             Section {
-                Toggle("Encrypted Storage", isOn: $viewModel.encryptionEnabled)
-                    .onChange(of: viewModel.encryptionEnabled) { _, newValue in
+                Toggle("Share Profile with Carl", isOn: $viewModel.shareProfileWithCarl)
+                    .onChange(of: viewModel.shareProfileWithCarl) { _, newValue in
                         Task {
-                            await viewModel.setEncryptionEnabled(newValue)
+                            await viewModel.setShareProfileWithCarlEnabled(newValue)
                         }
                     }
             } header: {
-                Label("Data Encryption", systemImage: "lock.doc")
+                Label("Ask Carl", systemImage: "sparkles")
             } footer: {
-                Text("Store sensitive data with additional encryption using your device's secure enclave.")
+                Text("When enabled, Carl can use your profile information (location, age, qualifications) to give more personalized program recommendations. Your data stays on-device and is only used to provide context to the AI - it is never stored or shared.")
+            }
+
+            // Analytics & Crash Reporting Section
+            Section {
+                Toggle("Send Crash Reports", isOn: $viewModel.crashReportingEnabled)
+                    .onChange(of: viewModel.crashReportingEnabled) { _, newValue in
+                        Task {
+                            await viewModel.setCrashReportingEnabled(newValue)
+                        }
+                    }
+            } header: {
+                Label("Analytics", systemImage: "chart.bar")
+            } footer: {
+                Text("Help improve Bay Navigator by sending anonymous crash reports. No personal data is ever collected.")
             }
 
             // Clear Data Section
             Section {
-                Button("Clear All History", role: .destructive) {
-                    Task {
-                        await viewModel.clearHistory()
-                    }
+                Button("Clear Browsing History") {
+                    showingClearHistoryAlert = true
                 }
 
                 Button("Clear All App Data", role: .destructive) {
@@ -234,7 +291,7 @@ struct SafetySettingsView: View {
             } header: {
                 Label("Data Management", systemImage: "trash")
             } footer: {
-                Text("Clearing all app data will remove your profile, preferences, favorites, and history. This cannot be undone.")
+                Text("Clear your browsing history or delete all app data including your profile, preferences, and saved programs.")
             }
         }
         .navigationTitle("Safety & Privacy")
@@ -280,6 +337,16 @@ struct SafetySettingsView: View {
                 }
             }
         }
+        .alert("Clear History?", isPresented: $showingClearHistoryAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Clear", role: .destructive) {
+                Task {
+                    await viewModel.clearHistory()
+                }
+            }
+        } message: {
+            Text("This will clear your browsing history and recently viewed programs.")
+        }
         .alert("Clear All Data?", isPresented: $showingClearDataAlert) {
             Button("Cancel", role: .cancel) {}
             Button("Clear All", role: .destructive) {
@@ -288,7 +355,7 @@ struct SafetySettingsView: View {
                 }
             }
         } message: {
-            Text("This will permanently delete your profile, preferences, favorites, and all history. This action cannot be undone.")
+            Text("This will permanently delete your profile, preferences, saved programs, and all history. This action cannot be undone.")
         }
         .alert("Enable Panic Wipe?", isPresented: $showingPanicWipeWarning) {
             Button("Cancel", role: .cancel) {
@@ -303,34 +370,25 @@ struct SafetySettingsView: View {
             Text("After \(viewModel.maxFailedAttempts) failed PIN attempts, ALL app data will be permanently deleted. Make sure you remember your PIN!")
         }
     }
-
-    private func colorForPrivacyLevel(_ level: NetworkPrivacyLevel) -> Color {
-        switch level {
-        case .good: return .green
-        case .moderate: return .blue
-        case .caution: return .orange
-        case .offline: return .gray
-        case .unknown: return .gray
-        }
-    }
 }
 
 // MARK: - View Model
 
 @MainActor
 class SafetySettingsViewModel: ObservableObject {
-    @Published var incognitoModeEnabled = false
     @Published var hasPINSet = false
     @Published var biometricEnabled = false
     @Published var panicWipeEnabled = false
-    @Published var maxFailedAttempts = 3
+    @Published var maxFailedAttempts = 5
     @Published var quickExitEnabled = false
     @Published var selectedQuickExitUrl = SafetyService.quickExitDestinations[0].url
-    @Published var shakeToClearEnabled = false
-    @Published var networkMonitoringEnabled = false
-    @Published var networkWarningsEnabled = false
-    @Published var networkStatus: NetworkPrivacyStatus?
     @Published var encryptionEnabled = false
+    @Published var offlineModeEnabled = false
+    @Published var isRefreshingCache = false
+    @Published var torEnabled = false
+    @Published var torStatus: TorStatus?
+    @Published var crashReportingEnabled = true
+    @Published var shareProfileWithCarl = false
 
     var biometricType: BiometricType {
         SafetyService.shared.canUseBiometrics()
@@ -339,25 +397,22 @@ class SafetySettingsViewModel: ObservableObject {
     func loadSettings() async {
         let service = SafetyService.shared
 
-        incognitoModeEnabled = await service.isIncognitoModeEnabled()
         hasPINSet = await service.hasPinSet()
         biometricEnabled = await service.isBiometricEnabled()
         panicWipeEnabled = await service.isPanicWipeEnabled()
         maxFailedAttempts = await service.getMaxFailedAttempts()
         quickExitEnabled = await service.isQuickExitEnabled()
         selectedQuickExitUrl = await service.getQuickExitUrl()
-        shakeToClearEnabled = await service.isShakeToClearEnabled()
-        networkMonitoringEnabled = await service.isNetworkMonitoringEnabled()
-        networkWarningsEnabled = await service.isNetworkWarningsEnabled()
         encryptionEnabled = await service.isEncryptionEnabled()
+        offlineModeEnabled = await service.isOfflineModeEnabled()
+        torEnabled = await service.isTorEnabled()
+        crashReportingEnabled = await service.isCrashReportingEnabled()
+        shareProfileWithCarl = await service.isShareProfileWithCarlEnabled()
 
-        if networkMonitoringEnabled {
-            networkStatus = await service.getNetworkPrivacyStatus()
+        // Load Tor status if enabled
+        if torEnabled {
+            await refreshTorStatus()
         }
-    }
-
-    func setIncognitoMode(_ enabled: Bool) async {
-        await SafetyService.shared.setIncognitoModeEnabled(enabled)
     }
 
     func setBiometricEnabled(_ enabled: Bool) async {
@@ -381,29 +436,6 @@ class SafetySettingsViewModel: ObservableObject {
         await SafetyService.shared.setQuickExitUrl(url)
     }
 
-    func setShakeToClearEnabled(_ enabled: Bool) async {
-        await SafetyService.shared.setShakeToClearEnabled(enabled)
-    }
-
-    func setNetworkMonitoringEnabled(_ enabled: Bool) async {
-        await SafetyService.shared.setNetworkMonitoringEnabled(enabled)
-        if enabled {
-            networkStatus = await SafetyService.shared.getNetworkPrivacyStatus()
-        } else {
-            networkStatus = nil
-        }
-    }
-
-    func setNetworkWarningsEnabled(_ enabled: Bool) async {
-        await SafetyService.shared.setNetworkWarningsEnabled(enabled)
-    }
-
-    func trustCurrentNetwork(_ ssid: String) async {
-        await SafetyService.shared.addTrustedNetwork(ssid)
-        // Refresh network status
-        networkStatus = await SafetyService.shared.getNetworkPrivacyStatus()
-    }
-
     func setEncryptionEnabled(_ enabled: Bool) async {
         if enabled {
             let result = await SafetyService.shared.enableEncryption()
@@ -418,6 +450,38 @@ class SafetySettingsViewModel: ObservableObject {
         }
     }
 
+    func setOfflineModeEnabled(_ enabled: Bool) async {
+        await SafetyService.shared.setOfflineModeEnabled(enabled)
+        offlineModeEnabled = enabled
+    }
+
+    func refreshCache() async {
+        isRefreshingCache = true
+        await APIService.shared.preCacheAllData()
+        isRefreshingCache = false
+    }
+
+    func setTorEnabled(_ enabled: Bool) async {
+        await SafetyService.shared.setTorEnabled(enabled)
+        torEnabled = enabled
+        if enabled {
+            await refreshTorStatus()
+        } else {
+            torStatus = nil
+        }
+    }
+
+    func refreshTorStatus() async {
+        torStatus = await SafetyService.shared.getTorStatus()
+    }
+
+    func openOrbot() async {
+        await SafetyService.shared.openOrbot()
+        // Wait a moment then refresh status
+        try? await Task.sleep(for: .seconds(1))
+        await refreshTorStatus()
+    }
+
     func clearHistory() async {
         await SafetyService.shared.clearAllHistory()
     }
@@ -425,6 +489,16 @@ class SafetySettingsViewModel: ObservableObject {
     func clearAllData() async {
         await SafetyService.shared.clearAllData()
         await loadSettings()
+    }
+
+    func setCrashReportingEnabled(_ enabled: Bool) async {
+        await SafetyService.shared.setCrashReportingEnabled(enabled)
+        crashReportingEnabled = enabled
+    }
+
+    func setShareProfileWithCarlEnabled(_ enabled: Bool) async {
+        await SafetyService.shared.setShareProfileWithCarlEnabled(enabled)
+        shareProfileWithCarl = enabled
     }
 }
 

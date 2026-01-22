@@ -5,6 +5,8 @@ import BayNavigatorCore
 struct AskCarlView: View {
     @Environment(SmartAssistantViewModel.self) private var assistantVM
     @Environment(ProgramsViewModel.self) private var programsVM
+    @Environment(SettingsViewModel.self) private var settingsVM
+    @Environment(UserPrefsViewModel.self) private var userPrefsVM
     @Environment(\.openURL) private var openURL
     @Environment(\.colorScheme) private var colorScheme
 
@@ -25,29 +27,84 @@ struct AskCarlView: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            headerView
+        Group {
+            if settingsVM.aiSearchEnabled {
+                VStack(spacing: 0) {
+                    // Header
+                    headerView
 
-            // Messages or empty state
-            if assistantVM.messages.isEmpty {
-                emptyStateView
+                    // Messages or empty state
+                    if assistantVM.messages.isEmpty {
+                        emptyStateView
+                    } else {
+                        messagesListView
+                    }
+
+                    // Input bar
+                    inputBarView
+                }
+                .background(backgroundColor)
+                .alert("Crisis Support", isPresented: Binding(
+                    get: { assistantVM.showCrisisAlert },
+                    set: { assistantVM.showCrisisAlert = $0 }
+                )) {
+                    crisisAlertButtons
+                } message: {
+                    Text(crisisAlertMessage)
+                }
+                .task {
+                    // Configure Tor if enabled
+                    await assistantVM.configureTor(enabled: settingsVM.useOnion)
+                    // Set user preferences for personalized responses
+                    assistantVM.setUserPreferences(userPrefsVM)
+                }
+                .onChange(of: settingsVM.useOnion) { _, useTor in
+                    Task {
+                        await assistantVM.configureTor(enabled: useTor)
+                    }
+                }
             } else {
-                messagesListView
+                aiDisabledView
+            }
+        }
+    }
+
+    // MARK: - AI Disabled View
+
+    private var aiDisabledView: some View {
+        VStack(spacing: 24) {
+            Spacer()
+
+            Image(systemName: "sparkles.slash")
+                .font(.system(size: 64))
+                .foregroundStyle(.secondary)
+
+            VStack(spacing: 12) {
+                Text("AI Features Disabled")
+                    .font(.title2.bold())
+
+                Text("Ask Carl requires AI features to be enabled. You can enable AI in Settings.")
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 32)
             }
 
-            // Input bar
-            inputBarView
+            Button {
+                // Navigate to settings
+            } label: {
+                Label("Open Settings", systemImage: "gearshape")
+                    .font(.headline)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 12)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(.appPrimary)
+
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(backgroundColor)
-        .alert("Crisis Support", isPresented: Binding(
-            get: { assistantVM.showCrisisAlert },
-            set: { assistantVM.showCrisisAlert = $0 }
-        )) {
-            crisisAlertButtons
-        } message: {
-            Text(crisisAlertMessage)
-        }
     }
 
     // MARK: - Header View
@@ -85,9 +142,9 @@ struct AskCarlView: View {
                         assistantVM.clearConversation()
                     }
                 } label: {
-                    Image(systemName: "arrow.counterclockwise")
+                    Image(systemName: "trash")
                         .font(.body.weight(.medium))
-                        .foregroundStyle(Color.appPrimary)
+                        .foregroundStyle(Color.appDanger)
                         .frame(width: 40, height: 40)
                         #if os(iOS)
                         .background(.regularMaterial, in: Circle())
@@ -96,7 +153,7 @@ struct AskCarlView: View {
                         #endif
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel("Start new conversation")
+                .accessibilityLabel("Clear conversation")
                 .accessibilityHint("Clears the current chat history")
             }
         }
@@ -416,6 +473,8 @@ struct AskCarlView: View {
             return "If you're in immediate danger, please call 911 right away."
         case .mentalHealth:
             return "If you're having thoughts of suicide or self-harm, help is available 24/7."
+        case .domesticViolence:
+            return "If you're experiencing domestic violence, confidential help is available 24/7."
         case .none:
             return ""
         }
@@ -436,6 +495,15 @@ struct AskCarlView: View {
             }
             Button("Text HOME to 741741") {
                 sendSMS(to: "741741", body: "HOME")
+            }
+            Button("Cancel", role: .cancel) { }
+
+        case .domesticViolence:
+            Button("Call National DV Hotline") {
+                callPhone("1-800-799-7233")
+            }
+            Button("Text START to 88788") {
+                sendSMS(to: "88788", body: "START")
             }
             Button("Cancel", role: .cancel) { }
 
@@ -732,6 +800,8 @@ struct CrisisCardView: View {
             return "Emergency Help"
         case .mentalHealth:
             return "Crisis Support"
+        case .domesticViolence:
+            return "Domestic Violence Support"
         }
     }
 
@@ -741,6 +811,8 @@ struct CrisisCardView: View {
             return "If you are in immediate danger, please call emergency services."
         case .mentalHealth:
             return "You are not alone. Free, confidential help is available 24/7."
+        case .domesticViolence:
+            return "Confidential support is available 24/7. You are not alone."
         }
     }
 
@@ -751,11 +823,13 @@ struct CrisisCardView: View {
                 onPhoneCall?("911")
             case .mentalHealth:
                 onPhoneCall?("988")
+            case .domesticViolence:
+                onPhoneCall?("1-800-799-7233")
             }
         } label: {
             HStack {
                 Image(systemName: "phone.fill")
-                Text(crisisType == .emergency ? "Call 911" : "Call 988 Suicide & Crisis Lifeline")
+                Text(primaryButtonText)
             }
             .font(.headline)
             .foregroundStyle(.white)
@@ -764,17 +838,35 @@ struct CrisisCardView: View {
             .background(Color.appDanger, in: RoundedRectangle(cornerRadius: 10))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(crisisType == .emergency ? "Call 911" : "Call 988 Suicide and Crisis Lifeline")
+        .accessibilityLabel(primaryButtonText)
+    }
+
+    private var primaryButtonText: String {
+        switch crisisType {
+        case .emergency:
+            return "Call 911"
+        case .mentalHealth:
+            return "Call 988 Suicide & Crisis Lifeline"
+        case .domesticViolence:
+            return "Call National DV Hotline"
+        }
     }
 
     @ViewBuilder
     private var secondaryActionButton: some View {
         Button {
-            onTextMessage?("741741", "HOME")
+            switch crisisType {
+            case .mentalHealth:
+                onTextMessage?("741741", "HOME")
+            case .domesticViolence:
+                onTextMessage?("88788", "START")
+            case .emergency:
+                break // No secondary action for emergency
+            }
         } label: {
             HStack {
                 Image(systemName: "message.fill")
-                Text("Text HOME to 741741")
+                Text(secondaryButtonText)
             }
             .font(.subheadline.weight(.medium))
             .foregroundStyle(Color.appDanger)
@@ -790,66 +882,18 @@ struct CrisisCardView: View {
             )
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Text HOME to 741741 for crisis support")
-    }
-}
-
-// MARK: - Flow Layout
-
-/// A simple flow layout for wrapping content horizontally
-struct FlowLayout: Layout {
-    var spacing: CGFloat = 8
-
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let result = layout(proposal: proposal, subviews: subviews)
-        return result.size
+        .accessibilityLabel(secondaryButtonText)
     }
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        let result = layout(proposal: proposal, subviews: subviews)
-        for (index, placement) in result.placements.enumerated() {
-            subviews[index].place(
-                at: CGPoint(
-                    x: bounds.minX + placement.x,
-                    y: bounds.minY + placement.y
-                ),
-                proposal: ProposedViewSize(placement.size)
-            )
+    private var secondaryButtonText: String {
+        switch crisisType {
+        case .mentalHealth:
+            return "Text HOME to 741741"
+        case .domesticViolence:
+            return "Text START to 88788"
+        case .emergency:
+            return "" // No secondary action for emergency
         }
-    }
-
-    private struct LayoutResult {
-        var size: CGSize
-        var placements: [(x: CGFloat, y: CGFloat, size: CGSize)]
-    }
-
-    private func layout(proposal: ProposedViewSize, subviews: Subviews) -> LayoutResult {
-        let maxWidth = proposal.width ?? .infinity
-        var placements: [(x: CGFloat, y: CGFloat, size: CGSize)] = []
-        var currentX: CGFloat = 0
-        var currentY: CGFloat = 0
-        var lineHeight: CGFloat = 0
-        var totalWidth: CGFloat = 0
-
-        for subview in subviews {
-            let size = subview.sizeThatFits(.unspecified)
-
-            if currentX + size.width > maxWidth && currentX > 0 {
-                currentX = 0
-                currentY += lineHeight + spacing
-                lineHeight = 0
-            }
-
-            placements.append((x: currentX, y: currentY, size: size))
-            currentX += size.width + spacing
-            lineHeight = max(lineHeight, size.height)
-            totalWidth = max(totalWidth, currentX - spacing)
-        }
-
-        return LayoutResult(
-            size: CGSize(width: totalWidth, height: currentY + lineHeight),
-            placements: placements
-        )
     }
 }
 
@@ -859,4 +903,5 @@ struct FlowLayout: Layout {
     AskCarlView()
         .environment(SmartAssistantViewModel())
         .environment(ProgramsViewModel())
+        .environment(SettingsViewModel())
 }

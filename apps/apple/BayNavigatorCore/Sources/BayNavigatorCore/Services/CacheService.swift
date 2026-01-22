@@ -28,6 +28,10 @@ public actor CacheService {
         case userBirthYear = "baynavigator:user_birth_year"
         case userQualifications = "baynavigator:user_qualifications"
         case userIsMilitary = "baynavigator:user_is_military"
+        case userProfileColorIndex = "baynavigator:user_profile_color_index"
+        // Privacy settings
+        case crashReportingEnabled = "baynavigator:crash_reporting_enabled"
+        case shareProfileWithCarl = "baynavigator:share_profile_with_carl"
     }
 
     private struct CachedData<T: Codable>: Codable {
@@ -318,6 +322,41 @@ public actor CacheService {
         } else {
             defaults.removeObject(forKey: CacheKey.userIsMilitary.rawValue)
         }
+    }
+
+    public func getUserProfileColorIndex() -> Int {
+        let value = defaults.integer(forKey: CacheKey.userProfileColorIndex.rawValue)
+        return value
+    }
+
+    public func setUserProfileColorIndex(_ index: Int) {
+        defaults.set(index, forKey: CacheKey.userProfileColorIndex.rawValue)
+    }
+
+    // MARK: - Privacy Settings
+
+    public func getCrashReportingEnabled() -> Bool {
+        // Default to true (opt-in by default) if not set
+        if defaults.object(forKey: CacheKey.crashReportingEnabled.rawValue) == nil {
+            return true
+        }
+        return defaults.bool(forKey: CacheKey.crashReportingEnabled.rawValue)
+    }
+
+    public func setCrashReportingEnabled(_ enabled: Bool) {
+        defaults.set(enabled, forKey: CacheKey.crashReportingEnabled.rawValue)
+    }
+
+    public func getShareProfileWithCarl() -> Bool {
+        // Default to false (opt-in required) if not set
+        if defaults.object(forKey: CacheKey.shareProfileWithCarl.rawValue) == nil {
+            return false
+        }
+        return defaults.bool(forKey: CacheKey.shareProfileWithCarl.rawValue)
+    }
+
+    public func setShareProfileWithCarl(_ enabled: Bool) {
+        defaults.set(enabled, forKey: CacheKey.shareProfileWithCarl.rawValue)
     }
 
     // MARK: - Cache Management

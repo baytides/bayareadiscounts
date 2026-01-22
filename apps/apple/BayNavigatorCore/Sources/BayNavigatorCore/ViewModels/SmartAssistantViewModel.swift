@@ -5,12 +5,17 @@ import SwiftUI
 @Observable
 public final class SmartAssistantViewModel {
     private let assistantService = SmartAssistantService.shared
+    private let safetyService = SafetyService.shared
 
     public var messages: [ChatMessage] = []
     public var inputText: String = ""
     public var isLoading: Bool = false
     public var showCrisisAlert: Bool = false
     public var detectedCrisisType: CrisisType?
+    public var useTor: Bool = false  // Whether to route requests through Tor
+
+    // Profile context for personalized responses
+    private var userPrefs: UserPrefsViewModel?
 
     private var conversationHistory: [[String: String]] = []
 
@@ -18,12 +23,27 @@ public final class SmartAssistantViewModel {
         // Add welcome message
         messages.append(ChatMessage(
             role: .assistant,
-            content: "Hi! I'm here to help you find programs and services in the Bay Area. You can ask me things like:\n\n- \"I need help paying my electric bill\"\n- \"What food assistance is available for seniors?\"\n- \"I'm a veteran looking for housing help\"\n\nWhat can I help you find today?"
+            content: "Hi! I'm Carl, your Bay Area benefits guide. I can help you find programs for food, healthcare, housing, utilities, and more.\n\nWhat can I help you with today?"
         ))
+    }
+
+    /// Set user preferences for personalized context
+    public func setUserPreferences(_ prefs: UserPrefsViewModel) {
+        self.userPrefs = prefs
     }
 
     public var quickPrompts: [String] {
         ["Food assistance", "Utility bill help", "Healthcare"]
+    }
+
+    /// Configure Tor for Ask Carl
+    public func configureTor(enabled: Bool, host: String = "127.0.0.1", port: Int = 9050) async {
+        useTor = enabled
+        if enabled {
+            await assistantService.configureTorProxy(host: host, port: port)
+        } else {
+            await assistantService.disableTorProxy()
+        }
     }
 
     @MainActor
@@ -44,9 +64,15 @@ public final class SmartAssistantViewModel {
         isLoading = true
 
         do {
-            let result = try await assistantService.performAISearch(
+            // Build profile context if user has opted in
+            let profileContext = await buildProfileContext()
+
+            // Use the tiered search (quick answers first, then AI)
+            let result = try await assistantService.search(
                 query: message,
-                conversationHistory: conversationHistory
+                conversationHistory: conversationHistory,
+                useTor: useTor,
+                profileContext: profileContext
             )
 
             // Update conversation history
@@ -62,7 +88,14 @@ public final class SmartAssistantViewModel {
             messages.append(ChatMessage(
                 role: .assistant,
                 content: result.message,
-                programs: result.programs
+                programs: result.programs,
+                tier: result.tier
+            ))
+        } catch SmartAssistantError.torNotConfigured {
+            messages.append(ChatMessage(
+                role: .assistant,
+                content: "Tor is enabled but not configured. Please check that Tor is running on your device, or disable Tor in Privacy settings to use standard connection.",
+                isError: true
             ))
         } catch {
             messages.append(ChatMessage(
@@ -78,9 +111,44 @@ public final class SmartAssistantViewModel {
     public func clearConversation() {
         messages = [ChatMessage(
             role: .assistant,
-            content: "Hi! I'm here to help you find programs and services in the Bay Area. You can ask me things like:\n\n- \"I need help paying my electric bill\"\n- \"What food assistance is available for seniors?\"\n- \"I'm a veteran looking for housing help\"\n\nWhat can I help you find today?"
+            content: "Hi! I'm Carl, your Bay Area benefits guide. I can help you find programs for food, healthcare, housing, utilities, and more.\n\nWhat can I help you with today?"
         )]
         conversationHistory = []
+    }
+
+    // MARK: - Profile Context
+
+    /// Build profile context if user has opted in to sharing with Carl
+    private func buildProfileContext() async -> ProfileContext? {
+        // Check if user has opted in
+        let isEnabled = await safetyService.isShareProfileWithCarlEnabled()
+        guard isEnabled, let prefs = userPrefs else { return nil }
+
+        // Convert birth year to age range for privacy
+        let ageRange: String? = {
+            guard let birthYear = prefs.birthYear else { return nil }
+            let currentYear = Calendar.current.component(.year, from: Date())
+            let age = currentYear - birthYear
+            switch age {
+            case 0..<18: return "under 18"
+            case 18..<25: return "18-24"
+            case 25..<35: return "25-34"
+            case 35..<45: return "35-44"
+            case 45..<55: return "45-54"
+            case 55..<62: return "55-61"
+            case 62..<65: return "62-64"
+            case 65...: return "65+"
+            default: return nil
+            }
+        }()
+
+        return ProfileContext(
+            county: prefs.selectedCounty,
+            city: prefs.city,
+            ageRange: ageRange,
+            isMilitaryOrVeteran: prefs.isMilitaryOrVeteran ?? false,
+            qualifications: prefs.qualifications
+        )
     }
 }
 
@@ -92,6 +160,7 @@ public struct ChatMessage: Identifiable, Sendable {
     public let content: String
     public var programs: [AIProgram]?
     public var isError: Bool = false
+    public var tier: String?  // "quick_answer", "llm", "llm_tor"
     public let timestamp = Date()
 
     public enum MessageRole: Sendable {
@@ -99,10 +168,11 @@ public struct ChatMessage: Identifiable, Sendable {
         case assistant
     }
 
-    public init(role: MessageRole, content: String, programs: [AIProgram]? = nil, isError: Bool = false) {
+    public init(role: MessageRole, content: String, programs: [AIProgram]? = nil, isError: Bool = false, tier: String? = nil) {
         self.role = role
         self.content = content
         self.programs = programs
         self.isError = isError
+        self.tier = tier
     }
 }

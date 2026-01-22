@@ -74,6 +74,19 @@ public actor SafetyService {
     private let shakeToClearEnabledKey = "baynavigator:shake_to_clear_enabled"
     private let encryptionEnabledKey = "baynavigator:encryption_enabled"
     private let biometricEnabledKey = "baynavigator:biometric_enabled"
+    private let offlineModeKey = "baynavigator:offline_mode"
+    private let torEnabledKey = "baynavigator:tor_enabled"
+    private let crashReportingEnabledKey = "baynavigator:crash_reporting_enabled"
+    private let shareProfileWithCarlKey = "baynavigator:share_profile_with_carl"
+
+    // MARK: - Tor/Onion Configuration
+
+    /// The onion address for Bay Navigator's Tor hidden service
+    public static let onionBaseURL = "http://7u42bzioq3cbud5rmey3sfx4odvjfryjifwx4ozonihdtdrykwjifkad.onion/api"
+
+    /// Orbot's SOCKS5 proxy port
+    public static let orbotProxyPort: UInt16 = 9050
+    public static let orbotProxyHost = "127.0.0.1"
 
     // MARK: - Keychain Keys
 
@@ -86,7 +99,7 @@ public actor SafetyService {
     private var sessionRecentPrograms: [String] = []
     private var sessionSearchHistory: [String] = []
 
-    #if canImport(CoreMotion)
+    #if os(iOS) || os(watchOS)
     private let motionManager = CMMotionManager()
     private var shakeHandler: (() -> Void)?
     #endif
@@ -537,7 +550,7 @@ public actor SafetyService {
         UserDefaults.standard.set(enabled, forKey: shakeToClearEnabledKey)
     }
 
-    #if canImport(CoreMotion)
+    #if os(iOS) || os(watchOS)
     /// Start monitoring for shake gestures
     public func startShakeDetection(handler: @escaping @Sendable () -> Void) {
         guard motionManager.isAccelerometerAvailable else { return }
@@ -776,6 +789,182 @@ public actor SafetyService {
         #else
         return nil
         #endif
+    }
+
+    // MARK: - Offline Mode
+
+    /// Check if offline mode is enabled
+    public func isOfflineModeEnabled() -> Bool {
+        UserDefaults.standard.bool(forKey: offlineModeKey)
+    }
+
+    /// Enable or disable offline mode
+    public func setOfflineModeEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: offlineModeKey)
+    }
+
+    // MARK: - Tor/Orbot Integration
+
+    /// Check if Tor routing is enabled
+    public func isTorEnabled() -> Bool {
+        UserDefaults.standard.bool(forKey: torEnabledKey)
+    }
+
+    /// Enable or disable Tor routing
+    public func setTorEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: torEnabledKey)
+    }
+
+    /// Check if Orbot is installed on the device
+    @MainActor
+    public func isOrbotInstalled() -> Bool {
+        #if canImport(UIKit) && !os(watchOS)
+        guard let url = URL(string: "orbot://") else { return false }
+        return UIApplication.shared.canOpenURL(url)
+        #else
+        return false
+        #endif
+    }
+
+    /// Open Orbot app to start Tor connection
+    @MainActor
+    public func openOrbot() {
+        #if canImport(UIKit) && !os(watchOS)
+        if let url = URL(string: "orbot://") {
+            UIApplication.shared.open(url, options: [:])
+        }
+        #endif
+    }
+
+    /// Check if Orbot's SOCKS5 proxy is responding
+    /// This verifies that Orbot is running and Tor is connected
+    public func isOrbotProxyAvailable() async -> Bool {
+        // Try to connect to Orbot's SOCKS5 proxy port
+        let host = Self.orbotProxyHost
+        let port = Self.orbotProxyPort
+
+        return await withCheckedContinuation { continuation in
+            let connection = NWConnection(
+                host: NWEndpoint.Host(host),
+                port: NWEndpoint.Port(integerLiteral: port),
+                using: .tcp
+            )
+
+            connection.stateUpdateHandler = { state in
+                switch state {
+                case .ready:
+                    connection.cancel()
+                    continuation.resume(returning: true)
+                case .failed, .cancelled:
+                    continuation.resume(returning: false)
+                default:
+                    break
+                }
+            }
+
+            connection.start(queue: .global())
+
+            // Timeout after 2 seconds
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                if connection.state != .ready {
+                    connection.cancel()
+                }
+            }
+        }
+    }
+
+    /// Get the current Tor connection status
+    public func getTorStatus() async -> TorStatus {
+        guard isTorEnabled() else {
+            return TorStatus(
+                isEnabled: false,
+                isOrbotInstalled: await MainActor.run { isOrbotInstalled() },
+                isProxyAvailable: false,
+                message: "Tor routing is disabled"
+            )
+        }
+
+        let installed = await MainActor.run { isOrbotInstalled() }
+        guard installed else {
+            return TorStatus(
+                isEnabled: true,
+                isOrbotInstalled: false,
+                isProxyAvailable: false,
+                message: "Orbot is not installed. Install Orbot to use Tor."
+            )
+        }
+
+        let proxyAvailable = await isOrbotProxyAvailable()
+        if proxyAvailable {
+            return TorStatus(
+                isEnabled: true,
+                isOrbotInstalled: true,
+                isProxyAvailable: true,
+                message: "Connected via Tor"
+            )
+        } else {
+            return TorStatus(
+                isEnabled: true,
+                isOrbotInstalled: true,
+                isProxyAvailable: false,
+                message: "Orbot is installed but not running. Open Orbot to connect."
+            )
+        }
+    }
+
+    /// Create a URLSessionConfiguration configured for Tor proxy
+    /// Note: On iOS, SOCKS proxy configuration uses string keys
+    public nonisolated func createTorProxyConfiguration() -> URLSessionConfiguration {
+        let config = URLSessionConfiguration.default
+
+        #if os(macOS)
+        config.connectionProxyDictionary = [
+            kCFNetworkProxiesSOCKSEnable as String: true,
+            kCFNetworkProxiesSOCKSProxy as String: Self.orbotProxyHost,
+            kCFNetworkProxiesSOCKSPort as String: Self.orbotProxyPort
+        ]
+        #else
+        // On iOS, use string keys directly since the CF constants are unavailable
+        config.connectionProxyDictionary = [
+            "SOCKSEnable": 1,
+            "SOCKSProxy": Self.orbotProxyHost,
+            "SOCKSPort": Self.orbotProxyPort
+        ]
+        #endif
+
+        config.timeoutIntervalForRequest = 30 // Tor can be slower
+        config.timeoutIntervalForResource = 60
+        return config
+    }
+
+    // MARK: - Crash Reporting & Analytics
+
+    /// Check if crash reporting is enabled (default: true for opt-in)
+    public func isCrashReportingEnabled() -> Bool {
+        // Default to true if not explicitly set
+        if UserDefaults.standard.object(forKey: crashReportingEnabledKey) == nil {
+            return true
+        }
+        return UserDefaults.standard.bool(forKey: crashReportingEnabledKey)
+    }
+
+    /// Enable or disable crash reporting
+    public func setCrashReportingEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: crashReportingEnabledKey)
+        // TODO: When Sentry is integrated, call SentrySDK.close() or reconfigure here
+    }
+
+    // MARK: - Share Profile with Carl
+
+    /// Check if sharing profile with Carl is enabled (default: false, opt-in required)
+    public func isShareProfileWithCarlEnabled() -> Bool {
+        // Default to false - user must explicitly opt in
+        return UserDefaults.standard.bool(forKey: shareProfileWithCarlKey)
+    }
+
+    /// Enable or disable sharing profile with Carl
+    public func setShareProfileWithCarlEnabled(_ enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: shareProfileWithCarlKey)
     }
 
     // MARK: - Encrypted Storage
@@ -1122,5 +1311,25 @@ public struct EncryptionResult: Sendable {
     public init(success: Bool, message: String) {
         self.success = success
         self.message = message
+    }
+}
+
+/// Tor connection status
+public struct TorStatus: Sendable {
+    public let isEnabled: Bool
+    public let isOrbotInstalled: Bool
+    public let isProxyAvailable: Bool
+    public let message: String
+
+    public init(isEnabled: Bool, isOrbotInstalled: Bool, isProxyAvailable: Bool, message: String) {
+        self.isEnabled = isEnabled
+        self.isOrbotInstalled = isOrbotInstalled
+        self.isProxyAvailable = isProxyAvailable
+        self.message = message
+    }
+
+    /// Whether Tor is fully functional (enabled, installed, and proxy running)
+    public var isConnected: Bool {
+        isEnabled && isOrbotInstalled && isProxyAvailable
     }
 }

@@ -1,15 +1,24 @@
 import Foundation
 
-/// Service for AI-powered smart search functionality using Ollama LLM
+/// Service for AI-powered smart search functionality
+/// Uses a tiered approach: Quick Answers first, then AI API if needed
 public actor SmartAssistantService {
     public static let shared = SmartAssistantService()
 
     private let assistantEndpoint = "https://ai.baytides.org/api/chat"
+    // Tor-compatible endpoint (same, but uses .onion if available)
+    private let torEndpoint = "https://ai.baytides.org/api/chat"  // TODO: Add .onion endpoint when available
+
     // API key from environment or fallback
     private let apiKey = ProcessInfo.processInfo.environment["OLLAMA_API_KEY"]
         ?? "bnav_a76a835781d394a03aaf1662d76fd1f05e78da85bf8edf27c8f26fbb9d2b79f0"
-    private let session: URLSession
+
+    private var standardSession: URLSession
+    private var torSession: URLSession?
     private let requestTimeout: TimeInterval = 45
+    private let torRequestTimeout: TimeInterval = 90 // Tor is slower
+
+    private let quickAnswers = QuickAnswersService.shared
 
     // System prompt for Carl - CONDENSED for faster API responses
     private let systemPrompt = """
@@ -40,7 +49,45 @@ public actor SmartAssistantService {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = requestTimeout
         config.timeoutIntervalForResource = requestTimeout
-        self.session = URLSession(configuration: config)
+        self.standardSession = URLSession(configuration: config)
+    }
+
+    // MARK: - Tor Configuration
+
+    /// Configure Tor proxy for requests using SafetyService's configuration
+    /// This ensures consistent Tor settings across all services
+    public func configureTorProxy(host: String = "127.0.0.1", port: Int = 9050) async {
+        let safetyService = SafetyService.shared
+        let proxyAvailable = await safetyService.isOrbotProxyAvailable()
+
+        if proxyAvailable {
+            let config = safetyService.createTorProxyConfiguration()
+            config.timeoutIntervalForRequest = torRequestTimeout
+            config.timeoutIntervalForResource = torRequestTimeout
+            self.torSession = URLSession(configuration: config)
+            print("[SmartAssistant] Tor proxy configured via SafetyService")
+        } else {
+            print("[SmartAssistant] Tor proxy not available (Orbot not running)")
+            self.torSession = nil
+        }
+    }
+
+    /// Disable Tor proxy
+    public func disableTorProxy() {
+        self.torSession = nil
+        print("[SmartAssistant] Tor proxy disabled")
+    }
+
+    /// Check if Tor is configured and available
+    public var isTorEnabled: Bool {
+        get async {
+            await SafetyService.shared.isTorEnabled()
+        }
+    }
+
+    /// Check if Tor session is ready for use
+    public var isTorSessionReady: Bool {
+        torSession != nil
     }
 
     // MARK: - PII Sanitization
@@ -62,6 +109,77 @@ public actor SmartAssistantService {
         return result
     }
 
+    // MARK: - Search (Tiered Approach)
+
+    /// Main search function - uses quick answers first, then AI if needed
+    public func search(
+        query: String,
+        conversationHistory: [[String: String]] = [],
+        useTor: Bool = false,
+        profileContext: ProfileContext? = nil
+    ) async throws -> AISearchResult {
+        // Tier 1: Check for quick answer match first (instant, no network)
+        if let quickMatch = await quickAnswers.matchQuery(query) {
+            return buildResultFromQuickAnswer(quickMatch)
+        }
+
+        // Tier 2: Use AI API
+        return try await performAISearch(
+            query: query,
+            conversationHistory: conversationHistory,
+            useTor: useTor,
+            profileContext: profileContext
+        )
+    }
+
+    /// Build AISearchResult from a quick answer match
+    private func buildResultFromQuickAnswer(_ match: QuickAnswerResult) -> AISearchResult {
+        let response = match.response
+
+        // Build message from quick answer
+        var message = ""
+
+        if let title = response.title {
+            message += "**\(title)**\n\n"
+        }
+
+        if let msg = response.message {
+            message += msg
+        } else if let summary = response.summary {
+            message += summary
+        }
+
+        // Add resource info if present
+        if let resource = response.resource {
+            message += "\n\n📞 **\(resource.name)**"
+            if let phone = resource.phone {
+                message += " - \(phone)"
+            }
+            if let action = resource.action {
+                message += "\n\(action)"
+            }
+        }
+
+        // Add guide link if present
+        if let guideUrl = response.guideUrl, let guideText = response.guideText {
+            message += "\n\n📖 [\(guideText)](https://baynavigator.org\(guideUrl))"
+        }
+
+        // Add apply link if present
+        if let applyUrl = response.applyUrl, let applyText = response.applyText {
+            message += "\n\n✅ [\(applyText)](\(applyUrl))"
+        }
+
+        return AISearchResult(
+            message: message,
+            programs: [],
+            programsFound: 0,
+            location: nil,
+            quickAnswer: nil,
+            tier: "quick_answer"
+        )
+    }
+
     // MARK: - AI Search
 
     /// Perform an AI-powered search using the Ollama LLM
@@ -69,18 +187,38 @@ public actor SmartAssistantService {
         query: String,
         conversationHistory: [[String: String]] = [],
         location: String? = nil,
-        county: String? = nil
+        county: String? = nil,
+        useTor: Bool = false,
+        profileContext: ProfileContext? = nil
     ) async throws -> AISearchResult {
-        guard let url = URL(string: assistantEndpoint) else {
+        let endpoint = useTor ? torEndpoint : assistantEndpoint
+        guard let url = URL(string: endpoint) else {
             throw SmartAssistantError.invalidURL
+        }
+
+        // Select appropriate session
+        let session: URLSession
+        if useTor {
+            guard let torSession = torSession else {
+                throw SmartAssistantError.torNotConfigured
+            }
+            session = torSession
+        } else {
+            session = standardSession
         }
 
         // Sanitize the query to remove PII
         let sanitizedQuery = sanitizeQuery(query)
 
+        // Build system prompt with optional profile context
+        var effectiveSystemPrompt = systemPrompt
+        if let profile = profileContext {
+            effectiveSystemPrompt += "\n\n" + profile.toPromptContext()
+        }
+
         // Build messages array for Ollama chat API
         var messages: [[String: String]] = [
-            ["role": "system", "content": systemPrompt]
+            ["role": "system", "content": effectiveSystemPrompt]
         ]
 
         // Add conversation history (sanitized)
@@ -138,43 +276,52 @@ public actor SmartAssistantService {
             programsFound: 0,
             location: nil,
             quickAnswer: nil,
-            tier: "llm"
+            tier: useTor ? "llm_tor" : "llm"
         )
-    }
-
-    /// Simplified search for quick program lookup
-    public func search(query: String) async throws -> AISearchResult {
-        try await performAISearch(query: query)
     }
 
     // MARK: - Crisis Detection
 
     /// Check if a query contains crisis keywords
-    public func detectCrisis(_ query: String) -> CrisisType? {
+    public func detectCrisis(_ query: String) async -> CrisisType? {
+        // First check quick answers for crisis patterns
+        if let crisisResponse = await quickAnswers.matchCrisis(query) {
+            if crisisResponse.type == "crisis" {
+                // Determine crisis type from the response
+                if let resource = crisisResponse.resource {
+                    if resource.phone == "988" {
+                        return .mentalHealth
+                    } else if resource.phone == "1-800-799-7233" {
+                        return .domesticViolence
+                    }
+                }
+                return .emergency
+            }
+        }
+
+        // Fallback to simple keyword detection
         let lowerQuery = query.lowercased()
 
-        // Emergency keywords
         let emergencyKeywords = [
             "emergency", "danger", "hurt", "attack", "abuse",
             "violence", "domestic violence", "unsafe", "threatened"
         ]
 
-        // Mental health crisis keywords
         let mentalHealthKeywords = [
             "suicide", "suicidal", "kill myself", "end my life",
             "don't want to live", "want to die", "self-harm",
             "cutting", "hurting myself", "crisis", "desperate"
         ]
 
-        for keyword in emergencyKeywords {
-            if lowerQuery.contains(keyword) {
-                return .emergency
-            }
-        }
-
         for keyword in mentalHealthKeywords {
             if lowerQuery.contains(keyword) {
                 return .mentalHealth
+            }
+        }
+
+        for keyword in emergencyKeywords {
+            if lowerQuery.contains(keyword) {
+                return .emergency
             }
         }
 
@@ -187,14 +334,12 @@ public actor SmartAssistantService {
     public func shouldUseAISearch(_ query: String) -> Bool {
         guard query.count >= 10 else { return false }
 
-        // Demographic/eligibility terms that suggest complex queries
         let demographicTerms = [
             "senior", "elderly", "veteran", "disabled", "disability",
             "student", "low-income", "homeless", "immigrant", "lgbtq",
             "family", "child", "parent", "youth", "teen"
         ]
 
-        // Natural language patterns
         let naturalPatterns = [
             "i need", "i'm looking", "help with", "how can i", "where can i",
             "looking for", "need help", "can you help", "what programs",
@@ -203,17 +348,14 @@ public actor SmartAssistantService {
 
         let lowerQuery = query.lowercased()
 
-        // Check for demographic terms
         for term in demographicTerms {
             if lowerQuery.contains(term) { return true }
         }
 
-        // Check for natural language patterns
         for pattern in naturalPatterns {
             if lowerQuery.contains(pattern) { return true }
         }
 
-        // Multiple words with spaces suggest natural language
         let wordCount = query.split(separator: " ").filter { $0.count > 2 }.count
         if wordCount >= 4 { return true }
 
@@ -226,6 +368,7 @@ public actor SmartAssistantService {
 public enum CrisisType: Sendable {
     case emergency
     case mentalHealth
+    case domesticViolence
 }
 
 public enum SmartAssistantError: LocalizedError, Sendable {
@@ -234,6 +377,7 @@ public enum SmartAssistantError: LocalizedError, Sendable {
     case httpError(Int)
     case serverError(String)
     case decodingError
+    case torNotConfigured
 
     public var errorDescription: String? {
         switch self {
@@ -247,6 +391,8 @@ public enum SmartAssistantError: LocalizedError, Sendable {
             return message
         case .decodingError:
             return "Failed to decode response"
+        case .torNotConfigured:
+            return "Tor proxy is not configured. Enable Tor in Privacy settings."
         }
     }
 }
@@ -290,7 +436,7 @@ public struct AISearchResponse: Codable, Sendable {
 struct OllamaResponse: Codable {
     let model: String?
     let message: OllamaMessage?
-    let response: String?  // Alternative format for non-chat completions
+    let response: String?
     let done: Bool?
 }
 
@@ -321,7 +467,6 @@ struct ErrorResponse: Codable {
 
 // MARK: - Quick Answer Types
 
-/// Quick answer from cached responses (Tier 1)
 public struct QuickAnswer: Codable, Sendable {
     public let type: String
     public let title: String?
@@ -337,10 +482,7 @@ public struct QuickAnswer: Codable, Sendable {
     public let applyText: String?
     public let search: String?
 
-    /// Check if this is a crisis response
     public var isCrisis: Bool { type == "crisis" }
-
-    /// Check if this needs user clarification
     public var needsClarification: Bool { type == "clarify" }
 }
 
@@ -362,4 +504,59 @@ public struct CountyContact: Codable, Sendable {
     public let name: String
     public let phone: String
     public let agency: String
+}
+
+// MARK: - Profile Context for Personalized Responses
+
+/// Profile context for personalized AI responses
+/// Contains abstracted user attributes - never raw PII
+public struct ProfileContext: Sendable {
+    public let county: String?
+    public let city: String?
+    public let ageRange: String?  // e.g., "18-25", "65+", not exact age
+    public let isMilitaryOrVeteran: Bool
+    public let qualifications: [String]  // e.g., ["student", "caregiver"]
+
+    public init(
+        county: String? = nil,
+        city: String? = nil,
+        ageRange: String? = nil,
+        isMilitaryOrVeteran: Bool = false,
+        qualifications: [String] = []
+    ) {
+        self.county = county
+        self.city = city
+        self.ageRange = ageRange
+        self.isMilitaryOrVeteran = isMilitaryOrVeteran
+        self.qualifications = qualifications
+    }
+
+    /// Convert profile to a privacy-respecting prompt context
+    /// Uses abstracted categories rather than specific personal details
+    public func toPromptContext() -> String {
+        var parts: [String] = []
+
+        if let city = city, !city.isEmpty {
+            parts.append("located in \(city)")
+        } else if let county = county, !county.isEmpty {
+            parts.append("in \(county) County")
+        }
+
+        if let ageRange = ageRange, !ageRange.isEmpty {
+            parts.append("age \(ageRange)")
+        }
+
+        if isMilitaryOrVeteran {
+            parts.append("veteran or military")
+        }
+
+        if !qualifications.isEmpty {
+            let formattedQuals = qualifications.map { $0.replacingOccurrences(of: "-", with: " ") }
+            parts.append(formattedQuals.joined(separator: ", "))
+        }
+
+        guard !parts.isEmpty else { return "" }
+
+        return "USER CONTEXT: The user is \(parts.joined(separator: "; ")). Use this to prioritize relevant programs but still ask clarifying questions as needed."
+    }
 }
