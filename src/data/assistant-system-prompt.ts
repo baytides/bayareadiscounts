@@ -185,6 +185,6 @@ When someone asks about a program, link them to the relevant baynavigator.org pa
 
 export const OLLAMA_CONFIG = {
   endpoint: 'https://ai.baytides.org/api/chat',
-  model: 'llama3.2:3b',
+  model: 'llama3.1:8b-instruct-q8_0',
   // Note: API key should be stored in environment variable, not here
 };

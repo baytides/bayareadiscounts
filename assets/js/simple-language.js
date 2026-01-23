@@ -233,11 +233,141 @@
     init();
   }
 
+  // =========================================================================
+  // PRE-GENERATED SIMPLIFIED DESCRIPTIONS
+  // =========================================================================
+
+  let simplifiedDescriptions = null;
+  let descriptionsLoading = false;
+
+  /**
+   * Load pre-generated simplified descriptions from static JSON
+   */
+  async function loadSimplifiedDescriptions() {
+    if (simplifiedDescriptions !== null) return simplifiedDescriptions;
+    if (descriptionsLoading) {
+      // Wait for existing load to complete
+      return new Promise((resolve) => {
+        const check = setInterval(() => {
+          if (!descriptionsLoading) {
+            clearInterval(check);
+            resolve(simplifiedDescriptions || {});
+          }
+        }, 50);
+      });
+    }
+
+    descriptionsLoading = true;
+
+    try {
+      const response = await fetch('/data/simple-descriptions.json');
+      if (response.ok) {
+        const data = await response.json();
+        simplifiedDescriptions = data.programs || {};
+        console.log(
+          `[Simple Language] Loaded ${Object.keys(simplifiedDescriptions).length} simplified descriptions`
+        );
+      } else {
+        console.warn('[Simple Language] Could not load simplified descriptions');
+        simplifiedDescriptions = {};
+      }
+    } catch (error) {
+      console.warn('[Simple Language] Error loading simplified descriptions:', error);
+      simplifiedDescriptions = {};
+    }
+
+    descriptionsLoading = false;
+    return simplifiedDescriptions;
+  }
+
+  /**
+   * Get simplified text for a program field
+   * @param {string} programId - The program ID
+   * @param {string} field - Field name: 'description', 'what_they_offer', or 'how_to_get_it'
+   * @returns {string|null} - Simplified text or null if not available
+   */
+  function getSimplifiedText(programId, field) {
+    if (!simplifiedDescriptions) return null;
+    const program = simplifiedDescriptions[programId];
+    if (!program) return null;
+    return program[field] || null;
+  }
+
+  /**
+   * Check if simplified descriptions are available for a program
+   */
+  function hasSimplifiedDescription(programId) {
+    if (!simplifiedDescriptions) return false;
+    return !!simplifiedDescriptions[programId];
+  }
+
+  /**
+   * Apply simplified descriptions to program cards on the page
+   */
+  function applySimplifiedDescriptions() {
+    if (!document.body.classList.contains('simple-language')) return;
+    if (!simplifiedDescriptions) return;
+
+    // Find all program cards with data-program-id
+    document.querySelectorAll('[data-program-id]').forEach((card) => {
+      const programId = card.getAttribute('data-program-id');
+      if (!programId || card.classList.contains('sl-desc-applied')) return;
+
+      const simplified = simplifiedDescriptions[programId];
+      if (!simplified) return;
+
+      // Mark as applied
+      card.classList.add('sl-desc-applied');
+
+      // Update description if element exists
+      const descEl = card.querySelector('.program-description, .program-benefit');
+      if (descEl && simplified.description) {
+        descEl.setAttribute('data-original', descEl.textContent);
+        descEl.textContent = simplified.description;
+      }
+    });
+  }
+
+  /**
+   * Restore original descriptions when simple language is disabled
+   */
+  function restoreOriginalDescriptions() {
+    document.querySelectorAll('.sl-desc-applied').forEach((card) => {
+      card.classList.remove('sl-desc-applied');
+
+      const descEl = card.querySelector('.program-description, .program-benefit');
+      if (descEl && descEl.hasAttribute('data-original')) {
+        descEl.textContent = descEl.getAttribute('data-original');
+        descEl.removeAttribute('data-original');
+      }
+    });
+  }
+
+  // Override applyEnhancements to include description loading
+  const originalApplyEnhancements = applyEnhancements;
+  applyEnhancements = async function () {
+    originalApplyEnhancements();
+    await loadSimplifiedDescriptions();
+    applySimplifiedDescriptions();
+  };
+
+  // Override removeEnhancements to restore descriptions
+  const originalRemoveEnhancements = removeEnhancements;
+  removeEnhancements = function () {
+    originalRemoveEnhancements();
+    restoreOriginalDescriptions();
+  };
+
   // Expose API for external use
   window.simpleLanguage = {
     getExplanation: getExplanation,
     glossary: glossary,
     eligibilityExplanations: eligibilityExplanations,
     categoryExplanations: categoryExplanations,
+    // New APIs for simplified descriptions
+    loadDescriptions: loadSimplifiedDescriptions,
+    getSimplifiedText: getSimplifiedText,
+    hasSimplifiedDescription: hasSimplifiedDescription,
+    applySimplifiedDescriptions: applySimplifiedDescriptions,
   };
 })();

@@ -620,7 +620,7 @@ CRISIS: 911 emergency, 988 suicide/crisis, 1-800-799-7233 DV.''';
               if (_aiApiKey.isNotEmpty) 'X-API-Key': _aiApiKey,
             },
             body: jsonEncode({
-              'model': 'llama3.1:8b-instruct-q4_K_M',
+              'model': 'llama3.1:8b-instruct-q8_0',
               'messages': messages,
               'stream': false,  // Non-streaming for simplicity in Flutter
               'options': {

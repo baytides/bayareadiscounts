@@ -4,6 +4,12 @@ on:
   # Run weekly on Sundays at 2 AM UTC
   schedule:
     - cron: '0 2 * * 0'
+  # Trigger on program data changes
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/**/*.yml'
+      - 'scripts/generate-simple-language*.cjs'
   # Allow manual trigger
   workflow_dispatch:
 
@@ -22,17 +28,23 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Generate simple language data
+      - name: Generate simple language word data (Azure)
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
           AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
         run: node scripts/generate-simple-language.cjs
 
+      - name: Generate simple program descriptions (Carl)
+        continue-on-error: true
+        env:
+          CARL_API_KEY: ${{ secrets.PUBLIC_OLLAMA_API_KEY }}
+        run: node scripts/generate-simple-language-descriptions.cjs
+
       - name: Check for changes
         id: changes
         run: |
-          if git diff --quiet public/data/simple-language.json; then
+          if git diff --quiet public/data/simple-language.json public/data/simple-descriptions.json .simple-language-hashes.json 2>/dev/null; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -43,10 +55,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add public/data/simple-language.json
+          git add public/data/simple-language.json public/data/simple-descriptions.json .simple-language-hashes.json 2>/dev/null || true
           git commit -m "chore: Update simple language data [skip ci]
 
-          Weekly automated update of simplified word alternatives for WCAG 2.2 AAA compliance.
+          Automated update of simplified content for WCAG 2.2 AAA compliance.
 
-          🤖 Generated with Azure OpenAI"
+          🤖 Generated with Azure OpenAI (word alternatives) and Carl (program descriptions)"
           git push

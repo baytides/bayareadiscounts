@@ -240,7 +240,7 @@ public actor SmartAssistantService {
         }
 
         let body: [String: Any] = [
-            "model": "llama3.1:8b-instruct-q4_K_M",
+            "model": "llama3.1:8b-instruct-q8_0",
             "messages": messages,
             "stream": false,
             "options": [

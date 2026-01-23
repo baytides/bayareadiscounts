@@ -38,7 +38,7 @@ const PROVIDER_STATS = {
     name: 'DigitalOcean',
     renewableEnergy: 100, // North American data centers
     carbonNeutralSince: 2021,
-    note: 'Powers Bay Tides AI Chat (Ollama/Llama 3.2 3B)',
+    note: 'Powers Bay Tides AI Chat (Ollama/Llama 3.1 8B)',
   },
   azureOpenAI: {
     name: 'Azure OpenAI',
@@ -180,7 +180,7 @@ async function getOllamaStats() {
       totalChats: data.totalChats || 0,
       chatsToday: data.chatsToday || 0,
       chatsThisMonth: data.chatsThisMonth || 0,
-      model: data.model || 'llama3.2:3b',
+      model: data.model || 'llama3.1:8b-instruct-q8_0',
       provider: data.provider || 'DigitalOcean',
       source: 'ollama_stats_api',
     };
@@ -280,8 +280,8 @@ async function main() {
   };
 
   // Calculate emissions (use 0 if data unavailable)
-  // Note: AI Chat uses smaller model (3B vs 8B), so lower emissions factor
-  const AI_CHAT_QUERY_GRAMS = 0.8; // Llama 3.2 3B is more efficient than GPT-4o-mini
+  // Note: AI Chat uses self-hosted Llama 3.1 8B on DigitalOcean's renewable-powered servers
+  const AI_CHAT_QUERY_GRAMS = 0.8; // Llama 3.1 8B on renewable energy
   const grossEmissions = {
     cdn: (usage.cdnRequests || 0) * CARBON_FACTORS.cdnRequestGrams,
     ai: (usage.aiQueries || 0) * CARBON_FACTORS.aiQueryGrams,
