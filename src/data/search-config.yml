@@ -35,10 +35,10 @@ synonyms:
   # Healthcare
   medi-cal: [medicaid, health insurance, healthcare, medical]
   medicaid: [medi-cal, health insurance, healthcare]
-  medicare: [health insurance, senior health, 65, retirement health]
+  medicare: [health insurance, senior health, '65', retirement health]
   health insurance: [medi-cal, medicaid, covered california, healthcare]
   covered california: [health insurance, aca, obamacare, marketplace]
-  mental health: [counseling, therapy, behavioral health, 988, crisis]
+  mental health: [counseling, therapy, behavioral health, '988', crisis]
   doctor: [healthcare, clinic, medical, physician]
   dental: [dentist, teeth, denti-cal, oral health]
 
@@ -62,7 +62,7 @@ synonyms:
   # Seniors
   senior: [elderly, older adult, 60+, 65+, aging, retiree]
   elderly: [senior, older adult, aging]
-  retirement: [senior, pension, social security, 65]
+  retirement: [senior, pension, social security, '65']
   retiree: [senior, retired, pension, social security]
 
   # Veterans
