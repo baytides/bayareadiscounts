@@ -9,7 +9,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = path.join(__dirname, '..', 'data-exports', 'city-councils', 'civicplus-data.json');
+const inputPath = path.join(
+  __dirname,
+  '..',
+  'data-exports',
+  'city-councils',
+  'civicplus-data.json'
+);
 const data = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 
 // Helper to escape Swift strings
@@ -42,19 +48,45 @@ function extractDistrict(title) {
 function isValidOfficial(name) {
   if (!name) return false;
   const noise = [
-    'contact', 'contact us', 'current assignments', 'agenda center',
-    'city clerk', 'city manager', 'city attorney', 'staff',
-    '&ntilde;', '&#', 'useful links', 'social media', 'jan ', 'feb ',
-    'mar ', 'apr ', 'may ', 'jun ', 'jul ', 'aug ', 'sep ', 'oct ',
-    'nov ', 'dec ', 'mon,', 'tue,', 'wed,', 'thu,', 'fri,', 'sat,', 'sun,',
-    'saratoga'
+    'contact',
+    'contact us',
+    'current assignments',
+    'agenda center',
+    'city clerk',
+    'city manager',
+    'city attorney',
+    'staff',
+    '&ntilde;',
+    '&#',
+    'useful links',
+    'social media',
+    'jan ',
+    'feb ',
+    'mar ',
+    'apr ',
+    'may ',
+    'jun ',
+    'jul ',
+    'aug ',
+    'sep ',
+    'oct ',
+    'nov ',
+    'dec ',
+    'mon,',
+    'tue,',
+    'wed,',
+    'thu,',
+    'fri,',
+    'sat,',
+    'sun,',
+    'saratoga',
   ];
   const nameLower = name.toLowerCase();
   // Must have at least a first and last name (space in between)
-  if (!name.includes(' ') || name.split(' ').filter(w => w.length > 1).length < 2) {
+  if (!name.includes(' ') || name.split(' ').filter((w) => w.length > 1).length < 2) {
     return false;
   }
-  return !noise.some(n => nameLower.includes(n)) && name.length > 4;
+  return !noise.some((n) => nameLower.includes(n)) && name.length > 4;
 }
 
 // Normalize title
@@ -88,7 +120,7 @@ for (const [cityName, cityData] of Object.entries(data)) {
   if (!cityData.officials || cityData.officials.length === 0) continue;
 
   // Filter valid officials
-  const validOfficials = cityData.officials.filter(o => isValidOfficial(o.name));
+  const validOfficials = cityData.officials.filter((o) => isValidOfficial(o.name));
   if (validOfficials.length === 0) continue;
 
   const cityKey = cityName.toLowerCase();
@@ -129,8 +161,8 @@ console.error('// Cities with full data (photos, emails):');
 
 for (const [cityName, cityData] of Object.entries(data)) {
   if (!cityData.officials) continue;
-  const withPhotos = cityData.officials.filter(o => o.localPhotoPath);
-  const withEmails = cityData.officials.filter(o => o.email);
+  const withPhotos = cityData.officials.filter((o) => o.localPhotoPath);
+  const withEmails = cityData.officials.filter((o) => o.email);
   if (withPhotos.length > 0 || withEmails.length > 0) {
     console.error(`//   ${cityName}: ${withPhotos.length} photos, ${withEmails.length} emails`);
   }

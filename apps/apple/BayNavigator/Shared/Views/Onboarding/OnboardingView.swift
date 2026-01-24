@@ -30,6 +30,7 @@ struct OnboardingView: View {
     @State private var isMilitaryOrVeteran: Bool = false
     @State private var selectedQualifications: Set<String> = []
     @State private var selectedColorIndex: Int = 0
+    @State private var shareProfileWithCarl: Bool = true  // Default ON for better UX, user can disable
 
     // MARK: - Location State
 
@@ -800,6 +801,36 @@ struct OnboardingView: View {
                 }
             }
 
+            // Carl personalization toggle
+            VStack(alignment: .leading, spacing: 8) {
+                Toggle(isOn: $shareProfileWithCarl) {
+                    HStack(spacing: 12) {
+                        Image(systemName: "sparkles")
+                            .font(.body)
+                            .foregroundStyle(Color.appPrimary)
+                            .frame(width: 24)
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Personalize Ask Carl")
+                                .font(.subheadline.weight(.medium))
+
+                            Text("Let Carl use your profile to give better recommendations")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .tint(Color.appPrimary)
+
+                Text("Your data stays on-device and is never stored by Carl. You can change this anytime in Settings → Safety.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .padding(.leading, 36)
+            }
+            .padding()
+            .background(Color.appPrimary.opacity(0.05))
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+
             // Privacy reminder
             HStack(spacing: 12) {
                 Image(systemName: "checkmark.shield")
@@ -1252,7 +1283,7 @@ struct OnboardingView: View {
             await updateProcessingMessage("Personalizing your experience...")
             try? await Task.sleep(nanoseconds: 800_000_000)
 
-            // Save preferences
+            // Save preferences (legacy single-user prefs)
             await userPrefsVM.savePreferences(
                 firstName: firstName.isEmpty ? nil : firstName,
                 city: detectedCity,
@@ -1264,6 +1295,30 @@ struct OnboardingView: View {
                 groups: [],
                 profileColorIndex: selectedColorIndex
             )
+
+            // Save Carl personalization preference
+            await SafetyService.shared.setShareProfileWithCarlEnabled(shareProfileWithCarl)
+
+            // Create profile in ProfileService (multi-profile system)
+            // Only create if no profiles exist yet (avoid duplicates on re-onboarding)
+            let existingProfiles = await ProfileService.shared.getProfiles()
+            if existingProfiles.isEmpty {
+                let profileName = firstName.isEmpty ? "My Profile" : firstName
+                var qualificationsForProfile = Array(selectedQualifications)
+                if isMilitaryOrVeteran {
+                    qualificationsForProfile.append("veteran")
+                }
+                _ = await ProfileService.shared.createProfile(
+                    name: profileName,
+                    city: detectedCity,
+                    zipCode: detectedZipCode,
+                    county: detectedCounty,
+                    birthYear: selectedBirthYear,
+                    relationship: .myself,
+                    colorIndex: selectedColorIndex,
+                    qualifications: qualificationsForProfile
+                )
+            }
 
             // Mark onboarding complete
             await userPrefsVM.completeOnboarding()

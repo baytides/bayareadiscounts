@@ -21,7 +21,15 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory for storing official photos (matches Flutter asset structure)
-const PHOTOS_DIR = path.join(__dirname, '..', 'apps', 'assets', 'images', 'representatives', 'local');
+const PHOTOS_DIR = path.join(
+  __dirname,
+  '..',
+  'apps',
+  'assets',
+  'images',
+  'representatives',
+  'local'
+);
 
 // Bay Area cities using CivicPlus
 const CIVICPLUS_CITIES = [
@@ -101,7 +109,8 @@ const COUNCIL_PAGE_PATTERNS = [
   '/cms/one.aspx?pageId=',
 ];
 
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+const USER_AGENT =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 /**
  * Convert a string to a URL-friendly slug
@@ -195,8 +204,7 @@ function fetchPage(url, maxRedirects = 5) {
     const options = {
       headers: {
         'User-Agent': USER_AGENT,
-        Accept:
-          'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5',
         Connection: 'keep-alive',
       },
@@ -288,9 +296,7 @@ function extractEmail(html) {
  */
 function extractPhone(html) {
   // Look for phone patterns
-  const phoneMatch = html.match(
-    /\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/
-  );
+  const phoneMatch = html.match(/\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/);
   if (phoneMatch) {
     // Format consistently
     const digits = phoneMatch[0].replace(/\D/g, '');
@@ -339,9 +345,7 @@ function parseProfilePage(html, baseUrl) {
   }
 
   // Extract photo URL
-  const photoMatch = html.match(
-    /<img[^>]*src=['"]([^'"]*ImageRepository[^'"]+)['"][^>]*/i
-  );
+  const photoMatch = html.match(/<img[^>]*src=['"]([^'"]*ImageRepository[^'"]+)['"][^>]*/i);
   if (photoMatch) {
     let photoUrl = photoMatch[1];
     if (photoUrl.startsWith('/')) {
@@ -396,7 +400,8 @@ function findCouncilLinks(html, baseUrl) {
   const links = [];
 
   // Pattern: links containing council member keywords
-  const linkPattern = /<a[^>]*href=['"]([^'"]+)['"][^>]*>([^<]*(?:mayor|council|supervisor|vice)[^<]*)<\/a>/gi;
+  const linkPattern =
+    /<a[^>]*href=['"]([^'"]+)['"][^>]*>([^<]*(?:mayor|council|supervisor|vice)[^<]*)<\/a>/gi;
   let match;
   while ((match = linkPattern.exec(html)) !== null) {
     let href = match[1];
@@ -498,19 +503,25 @@ async function scrapeCity(city) {
           // Only include if it looks like an elected official
           const titleLower = (official.title || '').toLowerCase();
           const deptLower = (official.department || '').toLowerCase();
-          if (titleLower.includes('mayor') ||
-              titleLower.includes('council') ||
-              titleLower.includes('supervisor') ||
-              titleLower.includes('vice') ||
-              deptLower.includes('council') ||
-              deptLower.includes('elected')) {
-
+          if (
+            titleLower.includes('mayor') ||
+            titleLower.includes('council') ||
+            titleLower.includes('supervisor') ||
+            titleLower.includes('vice') ||
+            deptLower.includes('council') ||
+            deptLower.includes('elected')
+          ) {
             // Download photo if available
             if (official.photoUrl) {
               const countySlug = slugify(city.county);
               const citySlug = slugify(city.name);
               const nameSlug = slugify(official.name).replace(/-+/g, '_'); // Use underscores like existing photos
-              const localPhotoPath = await downloadPhoto(official.photoUrl, countySlug, citySlug, nameSlug);
+              const localPhotoPath = await downloadPhoto(
+                official.photoUrl,
+                countySlug,
+                citySlug,
+                nameSlug
+              );
               if (localPhotoPath) {
                 official.localPhotoPath = localPhotoPath;
                 console.log(`    Downloaded photo for ${official.name}`);
@@ -537,7 +548,12 @@ async function scrapeCity(city) {
       );
       for (const match of nameMatches) {
         const name = stripHtml(match[1]);
-        if (name && !seenNames.has(name.toLowerCase()) && !name.includes('City') && !name.includes('Council')) {
+        if (
+          name &&
+          !seenNames.has(name.toLowerCase()) &&
+          !name.includes('City') &&
+          !name.includes('Council')
+        ) {
           seenNames.add(name.toLowerCase());
           result.officials.push({
             name,
@@ -617,7 +633,9 @@ async function main() {
 
   console.log('\nBy County:');
   for (const [county, stats] of Object.entries(byCounty)) {
-    console.log(`  ${county}: ${stats.withData}/${stats.cities} cities, ${stats.officials} officials`);
+    console.log(
+      `  ${county}: ${stats.withData}/${stats.cities} cities, ${stats.officials} officials`
+    );
   }
 }
 

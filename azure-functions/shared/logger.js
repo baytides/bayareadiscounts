@@ -11,7 +11,7 @@
  *
  * Usage:
  *   const { createLogger } = require('../shared/logger');
- *   const logger = createLogger(context, 'smart-assistant');
+ *   const logger = createLogger(context, 'carbon-stats');
  *   logger.info('Processing request', { userId: '123', query: 'food assistance' });
  *   logger.error('Search failed', { error: err.message, stack: err.stack });
  */

@@ -68,7 +68,6 @@ baynavigator/
 │   ├── linux/              # Linux configuration
 │   └── visionos/           # visionOS configuration
 ├── azure-functions/        # Serverless backend
-│   ├── smart-assistant/    # AI-powered search
 │   ├── carbon-stats/       # Sustainability metrics
 │   ├── congress-lookup/    # Representative finder
 │   ├── partnership-form/   # Contact form handler

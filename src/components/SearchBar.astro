@@ -210,7 +210,6 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
                   type="text"
                   id="popover-zip-input"
                   placeholder="ZIP code or city"
-                  list="city-list"
                   class="px-3 py-2 text-sm rounded-md border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white w-36 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
                 <button
@@ -409,38 +408,6 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
     </button>
   </div>
 </div>
-
-<!-- City autocomplete datalist -->
-<datalist id="city-list">
-  <option value="Alameda"></option>
-  <option value="Albany"></option>
-  <option value="Berkeley"></option>
-  <option value="Concord"></option>
-  <option value="Daly City"></option>
-  <option value="Dublin"></option>
-  <option value="Emeryville"></option>
-  <option value="Fremont"></option>
-  <option value="Hayward"></option>
-  <option value="Livermore"></option>
-  <option value="Milpitas"></option>
-  <option value="Mountain View"></option>
-  <option value="Newark"></option>
-  <option value="Oakland"></option>
-  <option value="Palo Alto"></option>
-  <option value="Pleasanton"></option>
-  <option value="Redwood City"></option>
-  <option value="Richmond"></option>
-  <option value="San Francisco"></option>
-  <option value="San Jose"></option>
-  <option value="San Leandro"></option>
-  <option value="San Mateo"></option>
-  <option value="San Rafael"></option>
-  <option value="Santa Clara"></option>
-  <option value="Sunnyvale"></option>
-  <option value="Union City"></option>
-  <option value="Vallejo"></option>
-  <option value="Walnut Creek"></option>
-</datalist>
 
 <script>
   import Fuse from 'fuse.js';
@@ -769,6 +736,18 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
     'Santa Clara County': { lat: 37.3541, lng: -121.9552 },
     'Solano County': { lat: 38.2721, lng: -121.9399 },
     'Sonoma County': { lat: 38.578, lng: -122.9888 },
+  };
+
+  const COUNTY_TO_CITY: Record<string, string> = {
+    'Alameda County': 'Oakland',
+    'Contra Costa County': 'Concord',
+    'Marin County': 'San Rafael',
+    'Napa County': 'Napa',
+    'San Francisco': 'San Francisco',
+    'San Mateo County': 'Redwood City',
+    'Santa Clara County': 'San Jose',
+    'Solano County': 'Fairfield',
+    'Sonoma County': 'Santa Rosa',
   };
 
   // Refinement state
@@ -2148,9 +2127,10 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
     if (currentLocation) {
       // Show city name if available, otherwise show county
       if (locationValue) {
+        const fallbackCity = COUNTY_TO_CITY[currentLocation.county];
         const displayName = currentLocation.city
           ? capitalizeCityName(currentLocation.city)
-          : currentLocation.county;
+          : fallbackCity || currentLocation.county;
         locationValue.textContent = displayName;
       }
       if (locationSource) {
@@ -2184,10 +2164,12 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
       (position) => {
         const { latitude, longitude } = position.coords;
         const county = findNearestCounty(latitude, longitude);
+        const city = COUNTY_TO_CITY[county];
 
         currentLocation = {
           source: 'gps',
           county: county,
+          city: city,
         };
 
         updateLocationDisplay();
@@ -2196,7 +2178,7 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
         useGpsBtn.textContent = originalText;
         (useGpsBtn as HTMLButtonElement).disabled = false;
 
-        announceToScreenReader(`Location set to ${county}.`);
+        announceToScreenReader(`Location set to ${city ? capitalizeCityName(city) : county}.`);
       },
       () => {
         announceToScreenReader('Could not get your location. Please enter a ZIP code or city.');
@@ -2224,7 +2206,9 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
       updateLocationDisplay();
       localStorage.setItem('baynavigator_location', JSON.stringify(currentLocation));
       // Announce the city if we know it, otherwise announce county
-      const locationName = result.city ? capitalizeCityName(result.city) : result.county;
+      const locationName = result.city
+        ? capitalizeCityName(result.city)
+        : COUNTY_TO_CITY[result.county] || result.county;
       announceToScreenReader(`Location set to ${locationName}.`);
     } else {
       announceToScreenReader('Location not found. Please try a different ZIP code or city.');
@@ -2482,12 +2466,13 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   function updateLocationQuickButton() {
     if (!locationQuickText) return;
     if (currentLocation) {
+      const fallbackCity = COUNTY_TO_CITY[currentLocation.county];
       const displayName = currentLocation.city
         ? capitalizeCityName(currentLocation.city)
-        : currentLocation.county;
+        : fallbackCity || currentLocation.county;
       locationQuickText.textContent = displayName;
       // Also store for API calls
-      localStorage.setItem('userLocation', currentLocation.city || '');
+      localStorage.setItem('userLocation', currentLocation.city || fallbackCity || '');
       localStorage.setItem('userCounty', currentLocation.county || '');
     } else {
       locationQuickText.textContent = 'Set location';
@@ -2598,7 +2583,9 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
       updateLocationQuickButton();
       localStorage.setItem('baynavigator_location', JSON.stringify(currentLocation));
       closeLocationPopover();
-      const locationName = result.city ? capitalizeCityName(result.city) : result.county;
+      const locationName = result.city
+        ? capitalizeCityName(result.city)
+        : COUNTY_TO_CITY[result.county] || result.county;
       announceToScreenReader(`Location set to ${locationName}.`);
     } else {
       announceToScreenReader('Location not found. Please try a different ZIP code or city.');
@@ -2647,11 +2634,11 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   }
 
   .search-hints {
-    @apply flex flex-wrap items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400 md:text-sm;
+    @apply flex flex-wrap items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 md:text-base;
   }
 
   .search-hints-label {
-    @apply text-[0.55rem] font-semibold uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 md:text-[0.65rem];
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 md:text-sm;
   }
 
   .search-hints-list {
@@ -2659,7 +2646,7 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   }
 
   .search-hint-btn {
-    @apply rounded-full border border-neutral-200 bg-white/80 px-2.5 py-1 text-[0.7rem] text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700 dark:border-neutral-700 dark:bg-neutral-900/70 dark:text-neutral-200 dark:hover:text-primary-300 md:px-3 md:py-1.5 md:text-xs;
+    @apply rounded-full border border-neutral-200 bg-white/80 px-3 py-1.5 text-xs text-neutral-700 transition-colors hover:border-primary-300 hover:text-primary-700 dark:border-neutral-700 dark:bg-neutral-900/70 dark:text-neutral-200 dark:hover:text-primary-300 md:text-sm;
   }
 
   .location-pill {

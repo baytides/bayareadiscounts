@@ -20,7 +20,15 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory for storing official photos (matches Flutter asset structure)
-const PHOTOS_DIR = path.join(__dirname, '..', 'apps', 'assets', 'images', 'representatives', 'local');
+const PHOTOS_DIR = path.join(
+  __dirname,
+  '..',
+  'apps',
+  'assets',
+  'images',
+  'representatives',
+  'local'
+);
 const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'city-councils');
 
 // Bay Area cities using ProudCity
@@ -43,7 +51,8 @@ const PROUDCITY_CITIES = [
   { name: 'Windsor', url: 'https://www.townofwindsor.com', county: 'Sonoma' },
 ];
 
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+const USER_AGENT =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 function slugify(str) {
   return str
@@ -229,8 +238,9 @@ async function scrapeViaApi(city) {
           const content = person.content?.rendered || '';
 
           // Look for council-related terms
-          const isCouncil = /mayor|council|supervisor|elected/i.test(title) ||
-                           /mayor|council|supervisor|elected/i.test(content);
+          const isCouncil =
+            /mayor|council|supervisor|elected/i.test(title) ||
+            /mayor|council|supervisor|elected/i.test(content);
 
           if (isCouncil || staff.length < 20) {
             // Get featured image
@@ -284,7 +294,10 @@ async function scrapeViaHtml(city) {
       // Pattern: cards with names and photos
 
       // Try to find council member sections
-      const sections = html.match(/<(?:div|article|li)[^>]*class="[^"]*(?:council|member|official|staff)[^"]*"[^>]*>[\s\S]*?<\/(?:div|article|li)>/gi) || [];
+      const sections =
+        html.match(
+          /<(?:div|article|li)[^>]*class="[^"]*(?:council|member|official|staff)[^"]*"[^>]*>[\s\S]*?<\/(?:div|article|li)>/gi
+        ) || [];
 
       for (const section of sections) {
         // Extract name from heading
@@ -360,7 +373,12 @@ async function scrapeCity(city) {
         const countySlug = slugify(city.county);
         const citySlug = slugify(city.name);
         const nameSlug = slugify(official.name).replace(/-+/g, '_');
-        const localPhotoPath = await downloadPhoto(official.photoUrl, countySlug, citySlug, nameSlug);
+        const localPhotoPath = await downloadPhoto(
+          official.photoUrl,
+          countySlug,
+          citySlug,
+          nameSlug
+        );
         if (localPhotoPath) {
           official.localPhotoPath = localPhotoPath;
           console.log(`    Downloaded photo for ${official.name}`);

@@ -77,10 +77,7 @@ for (const [cityName, cityData] of Object.entries(data)) {
 // Helper to escape Swift strings
 function escapeSwift(str) {
   if (!str) return '';
-  return str
-    .replace(/\\/g, '\\\\')
-    .replace(/"/g, '\\"')
-    .replace(/\n/g, '\\n');
+  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
 }
 
 // Helper to format optional string

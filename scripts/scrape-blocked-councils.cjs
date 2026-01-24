@@ -21,60 +21,144 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory for storing official photos (matches Flutter asset structure)
-const PHOTOS_DIR = path.join(__dirname, '..', 'apps', 'assets', 'images', 'representatives', 'local');
+const PHOTOS_DIR = path.join(
+  __dirname,
+  '..',
+  'apps',
+  'assets',
+  'images',
+  'representatives',
+  'local'
+);
 const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'city-councils');
 
 // Cities that block regular HTTP requests
 const BLOCKED_CITIES = [
   // Alameda County - Akamai protected
-  { name: 'Oakland', url: 'https://www.oaklandca.gov', county: 'Alameda',
-    councilPath: '/officials/city-council' },
+  {
+    name: 'Oakland',
+    url: 'https://www.oaklandca.gov',
+    county: 'Alameda',
+    councilPath: '/officials/city-council',
+  },
 
   // Contra Costa County - Various WAFs
-  { name: 'Brentwood', url: 'https://www.brentwoodca.gov', county: 'Contra Costa',
-    councilPath: '/city-government/city-council' },
-  { name: 'Hercules', url: 'https://www.ci.hercules.ca.us', county: 'Contra Costa',
-    councilPath: '/government/city-council' },
-  { name: 'Martinez', url: 'https://www.cityofmartinez.org', county: 'Contra Costa',
-    councilPath: '/government/city_council' },
-  { name: 'Pittsburg', url: 'https://www.pittsburgca.gov', county: 'Contra Costa',
-    councilPath: '/government/city-council' },
-  { name: 'Walnut Creek', url: 'https://www.walnut-creek.org', county: 'Contra Costa',
-    councilPath: '/government/city-council' },
+  {
+    name: 'Brentwood',
+    url: 'https://www.brentwoodca.gov',
+    county: 'Contra Costa',
+    councilPath: '/city-government/city-council',
+  },
+  {
+    name: 'Hercules',
+    url: 'https://www.ci.hercules.ca.us',
+    county: 'Contra Costa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Martinez',
+    url: 'https://www.cityofmartinez.org',
+    county: 'Contra Costa',
+    councilPath: '/government/city_council',
+  },
+  {
+    name: 'Pittsburg',
+    url: 'https://www.pittsburgca.gov',
+    county: 'Contra Costa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Walnut Creek',
+    url: 'https://www.walnut-creek.org',
+    county: 'Contra Costa',
+    councilPath: '/government/city-council',
+  },
 
   // Marin County
-  { name: 'Novato', url: 'https://www.novato.org', county: 'Marin',
-    councilPath: '/government/city-council' },
-  { name: 'Sausalito', url: 'https://www.sausalito.gov', county: 'Marin',
-    councilPath: '/government/city-council' },
+  {
+    name: 'Novato',
+    url: 'https://www.novato.org',
+    county: 'Marin',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Sausalito',
+    url: 'https://www.sausalito.gov',
+    county: 'Marin',
+    councilPath: '/government/city-council',
+  },
 
   // Napa County
-  { name: 'American Canyon', url: 'https://www.americancanyon.gov', county: 'Napa',
-    councilPath: '/government/city-council' },
-  { name: 'Calistoga', url: 'https://ci.calistoga.ca.us', county: 'Napa',
-    councilPath: '/government/city-council' },
-  { name: 'Napa', url: 'https://www.cityofnapa.org', county: 'Napa',
-    councilPath: '/government/city-council' },
-  { name: 'St. Helena', url: 'https://www.cityofsthelena.org', county: 'Napa',
-    councilPath: '/government/city-council' },
-  { name: 'Yountville', url: 'https://www.townofyountville.com', county: 'Napa',
-    councilPath: '/government/town-council' },
+  {
+    name: 'American Canyon',
+    url: 'https://www.americancanyon.gov',
+    county: 'Napa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Calistoga',
+    url: 'https://ci.calistoga.ca.us',
+    county: 'Napa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Napa',
+    url: 'https://www.cityofnapa.org',
+    county: 'Napa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'St. Helena',
+    url: 'https://www.cityofsthelena.org',
+    county: 'Napa',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Yountville',
+    url: 'https://www.townofyountville.com',
+    county: 'Napa',
+    councilPath: '/government/town-council',
+  },
 
   // Sonoma County
-  { name: 'Healdsburg', url: 'https://healdsburg.gov', county: 'Sonoma',
-    councilPath: '/government/city-council' },
-  { name: 'Santa Rosa', url: 'https://srcity.org', county: 'Sonoma',
-    councilPath: '/government/city-council' },
+  {
+    name: 'Healdsburg',
+    url: 'https://healdsburg.gov',
+    county: 'Sonoma',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Santa Rosa',
+    url: 'https://srcity.org',
+    county: 'Sonoma',
+    councilPath: '/government/city-council',
+  },
 
   // Solano County
-  { name: 'Fairfield', url: 'https://www.fairfield.ca.gov', county: 'Solano',
-    councilPath: '/government/city-council' },
-  { name: 'Suisun City', url: 'https://www.suisun.com', county: 'Solano',
-    councilPath: '/government/city-council' },
-  { name: 'Vacaville', url: 'https://www.cityofvacaville.com', county: 'Solano',
-    councilPath: '/government/city-council' },
-  { name: 'Vallejo', url: 'https://www.cityofvallejo.net', county: 'Solano',
-    councilPath: '/government/city-council' },
+  {
+    name: 'Fairfield',
+    url: 'https://www.fairfield.ca.gov',
+    county: 'Solano',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Suisun City',
+    url: 'https://www.suisun.com',
+    county: 'Solano',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Vacaville',
+    url: 'https://www.cityofvacaville.com',
+    county: 'Solano',
+    councilPath: '/government/city-council',
+  },
+  {
+    name: 'Vallejo',
+    url: 'https://www.cityofvallejo.net',
+    county: 'Solano',
+    councilPath: '/government/city-council',
+  },
 ];
 
 function slugify(str) {
@@ -223,7 +307,8 @@ async function scrapeCouncilPage(page, city) {
           const nextEl = h.nextElementSibling;
           let title = 'Council Member';
           if (nextEl && /mayor|council|supervisor/i.test(nextEl.textContent)) {
-            if (/mayor/i.test(nextEl.textContent) && !/vice/i.test(nextEl.textContent)) title = 'Mayor';
+            if (/mayor/i.test(nextEl.textContent) && !/vice/i.test(nextEl.textContent))
+              title = 'Mayor';
             else if (/vice\s*mayor/i.test(nextEl.textContent)) title = 'Vice Mayor';
           }
 
@@ -239,7 +324,7 @@ async function scrapeCouncilPage(page, city) {
 
     // Dedupe by name
     const seen = new Set();
-    return results.filter(r => {
+    return results.filter((r) => {
       if (seen.has(r.name)) return false;
       seen.add(r.name);
       return true;
@@ -254,7 +339,13 @@ async function scrapeCouncilPage(page, city) {
       const countySlug = slugify(city.county);
       const citySlug = slugify(city.name);
       const nameSlug = slugify(official.name).replace(/-+/g, '_');
-      const localPhotoPath = await downloadPhotoWithBrowser(page, official.photoUrl, countySlug, citySlug, nameSlug);
+      const localPhotoPath = await downloadPhotoWithBrowser(
+        page,
+        official.photoUrl,
+        countySlug,
+        citySlug,
+        nameSlug
+      );
       if (localPhotoPath) {
         official.localPhotoPath = localPhotoPath;
         console.log(`    Downloaded photo for ${official.name}`);
@@ -287,14 +378,12 @@ async function main() {
 
   const browser = await playwright.chromium.launch({
     headless: true,
-    args: [
-      '--disable-blink-features=AutomationControlled',
-      '--no-sandbox',
-    ],
+    args: ['--disable-blink-features=AutomationControlled', '--no-sandbox'],
   });
 
   const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     viewport: { width: 1920, height: 1080 },
     locale: 'en-US',
   });

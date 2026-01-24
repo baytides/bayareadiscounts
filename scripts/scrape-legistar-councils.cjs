@@ -66,20 +66,14 @@ function formatOfficial(person, officeRecord) {
 
   // Determine role from title or member type
   let role = 'Member';
-  if (
-    title.toLowerCase().includes('mayor') ||
-    memberType.toLowerCase().includes('mayor')
-  ) {
+  if (title.toLowerCase().includes('mayor') || memberType.toLowerCase().includes('mayor')) {
     role = 'Mayor';
   } else if (
     title.toLowerCase().includes('president') ||
     memberType.toLowerCase().includes('president')
   ) {
     role = 'President';
-  } else if (
-    title.toLowerCase().includes('chair') ||
-    memberType.toLowerCase().includes('chair')
-  ) {
+  } else if (title.toLowerCase().includes('chair') || memberType.toLowerCase().includes('chair')) {
     role = 'Chair';
   } else if (title.toLowerCase().includes('supervisor')) {
     role = 'Supervisor';
@@ -135,10 +129,7 @@ async function scrapeCity(cityName, config) {
       // Sort by end date and take most recent
       const recentRecords = allRecords
         .filter((r) => r.OfficeRecordEndDate)
-        .sort(
-          (a, b) =>
-            new Date(b.OfficeRecordEndDate) - new Date(a.OfficeRecordEndDate)
-        )
+        .sort((a, b) => new Date(b.OfficeRecordEndDate) - new Date(a.OfficeRecordEndDate))
         .slice(0, 15); // Take top 15 most recent
 
       console.log(`  Found ${recentRecords.length} recent records`);

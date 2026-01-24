@@ -20,7 +20,15 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory for storing official photos (matches Flutter asset structure)
-const PHOTOS_DIR = path.join(__dirname, '..', 'apps', 'assets', 'images', 'representatives', 'local');
+const PHOTOS_DIR = path.join(
+  __dirname,
+  '..',
+  'apps',
+  'assets',
+  'images',
+  'representatives',
+  'local'
+);
 const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'city-councils');
 
 // Bay Area cities using Granicus OpenCities
@@ -57,7 +65,8 @@ const COUNCIL_PATHS = [
   '/our-city/mayor-and-city-council',
 ];
 
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+const USER_AGENT =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 function slugify(str) {
   return str
@@ -171,7 +180,8 @@ function fetchPage(url, maxRedirects = 5) {
 }
 
 function extractJsonLd(html) {
-  const scripts = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi) || [];
+  const scripts =
+    html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi) || [];
   const jsonLdData = [];
 
   for (const script of scripts) {
@@ -193,8 +203,11 @@ function parseGranicusCouncilPage(html, baseUrl) {
   // Try to find JSON-LD data first
   const jsonLd = extractJsonLd(html);
   for (const data of jsonLd) {
-    if (data['@type'] === 'Person' || (Array.isArray(data) && data.some(d => d['@type'] === 'Person'))) {
-      const people = Array.isArray(data) ? data.filter(d => d['@type'] === 'Person') : [data];
+    if (
+      data['@type'] === 'Person' ||
+      (Array.isArray(data) && data.some((d) => d['@type'] === 'Person'))
+    ) {
+      const people = Array.isArray(data) ? data.filter((d) => d['@type'] === 'Person') : [data];
       for (const person of people) {
         if (person.name && person.jobTitle) {
           officials.push({
@@ -218,10 +231,14 @@ function parseGranicusCouncilPage(html, baseUrl) {
   // Look for council member cards/sections
 
   // Pattern 1: .views-row with council member info
-  const viewsRows = html.match(/<div[^>]*class="[^"]*views-row[^"]*"[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi) || [];
+  const viewsRows =
+    html.match(/<div[^>]*class="[^"]*views-row[^"]*"[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi) || [];
 
   // Pattern 2: .council-member or .elected-official divs
-  const councilDivs = html.match(/<div[^>]*class="[^"]*(?:council-member|elected-official|staff-member)[^"]*"[^>]*>[\s\S]*?<\/div>/gi) || [];
+  const councilDivs =
+    html.match(
+      /<div[^>]*class="[^"]*(?:council-member|elected-official|staff-member)[^"]*"[^>]*>[\s\S]*?<\/div>/gi
+    ) || [];
 
   // Pattern 3: Article cards
   const articleCards = html.match(/<article[^>]*>[\s\S]*?<\/article>/gi) || [];
@@ -230,8 +247,9 @@ function parseGranicusCouncilPage(html, baseUrl) {
 
   for (const section of allSections) {
     // Try to extract name
-    const nameMatch = section.match(/<h[2-4][^>]*>([^<]+)<\/h[2-4]>/i) ||
-                     section.match(/class="[^"]*(?:name|title)[^"]*"[^>]*>([^<]+)</i);
+    const nameMatch =
+      section.match(/<h[2-4][^>]*>([^<]+)<\/h[2-4]>/i) ||
+      section.match(/class="[^"]*(?:name|title)[^"]*"[^>]*>([^<]+)</i);
     if (!nameMatch) continue;
 
     const name = nameMatch[1].trim();
@@ -244,8 +262,9 @@ function parseGranicusCouncilPage(html, baseUrl) {
     const title = titleMatch ? titleMatch[0] : 'Council Member';
 
     // Try to extract email
-    const emailMatch = section.match(/href="mailto:([^"]+)"/i) ||
-                      section.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+    const emailMatch =
+      section.match(/href="mailto:([^"]+)"/i) ||
+      section.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
     const email = emailMatch ? emailMatch[1] : null;
 
     // Try to extract photo
@@ -274,7 +293,7 @@ function parseGranicusCouncilPage(html, baseUrl) {
 
   // Dedupe by name
   const seen = new Set();
-  return officials.filter(o => {
+  return officials.filter((o) => {
     if (seen.has(o.name)) return false;
     seen.add(o.name);
     return true;
@@ -341,16 +360,22 @@ async function scrapeCity(city) {
   // Download photos and filter to council members
   for (const official of officials) {
     const titleLower = (official.title || '').toLowerCase();
-    if (titleLower.includes('mayor') ||
-        titleLower.includes('council') ||
-        titleLower.includes('supervisor') ||
-        titleLower.includes('president')) {
-
+    if (
+      titleLower.includes('mayor') ||
+      titleLower.includes('council') ||
+      titleLower.includes('supervisor') ||
+      titleLower.includes('president')
+    ) {
       if (official.photoUrl) {
         const countySlug = slugify(city.county);
         const citySlug = slugify(city.name);
         const nameSlug = slugify(official.name).replace(/-+/g, '_');
-        const localPhotoPath = await downloadPhoto(official.photoUrl, countySlug, citySlug, nameSlug);
+        const localPhotoPath = await downloadPhoto(
+          official.photoUrl,
+          countySlug,
+          citySlug,
+          nameSlug
+        );
         if (localPhotoPath) {
           official.localPhotoPath = localPhotoPath;
           console.log(`    Downloaded photo for ${official.name}`);

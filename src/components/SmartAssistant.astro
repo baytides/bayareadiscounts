@@ -235,11 +235,21 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
   let programsCache = null;
   let userLocation = null;
 
-  // Detect if running in app (check for baynavigator:// URL scheme support)
-  const isApp =
-    window.location.href.includes('localhost') ||
-    document.referrer.includes('baynavigator://') ||
-    navigator.userAgent.includes('BayNavigator');
+  // Detect if running in app - check multiple signals for robust detection
+  const isApp = (() => {
+    // Check user agent (set by native apps)
+    if (navigator.userAgent.includes('BayNavigator')) return true;
+    // Check if loaded in localhost (development or app WebView)
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+      return true;
+    // Check referrer from deep link
+    if (document.referrer.includes('baynavigator://')) return true;
+    // Check if window.webkit exists (iOS WKWebView)
+    if (window.webkit?.messageHandlers?.baynavigator) return true;
+    // Check for Flutter/Capacitor bridge
+    if (window.flutter_inappwebview || window.Capacitor) return true;
+    return false;
+  })();
 
   // Crisis detection keywords
   const EMERGENCY_KEYWORDS = [
@@ -312,7 +322,7 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     return [];
   }
 
-  // Search programs for RAG
+  // Search programs for RAG - enhanced keyword matching with better relevance
   async function searchPrograms(query, location = null) {
     const programs = await loadPrograms();
     if (!programs.length) return [];
@@ -320,106 +330,280 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     const queryLower = query.toLowerCase();
     const queryTerms = queryLower.split(/\s+/).filter((t) => t.length > 2);
 
+    // Expanded keyword mapping for better intent detection
+    const intentKeywords = {
+      food: [
+        'food',
+        'hungry',
+        'eat',
+        'meal',
+        'grocery',
+        'snap',
+        'calfresh',
+        'wic',
+        'pantry',
+        'ebt',
+        'stamps',
+        'nutrition',
+        'feeding',
+        'lunch',
+        'dinner',
+        'breakfast',
+      ],
+      healthcare: [
+        'health',
+        'medical',
+        'doctor',
+        'insurance',
+        'medi-cal',
+        'medicaid',
+        'clinic',
+        'dental',
+        'vision',
+        'hospital',
+        'prescription',
+        'medicine',
+        'sick',
+        'mental health',
+        'therapy',
+        'counseling',
+        'covered california',
+      ],
+      housing: [
+        'housing',
+        'rent',
+        'home',
+        'shelter',
+        'homeless',
+        'section 8',
+        'apartment',
+        'eviction',
+        'landlord',
+        'tenant',
+        'voucher',
+        'hud',
+        'unhoused',
+        'sleeping',
+      ],
+      utilities: [
+        'utility',
+        'utilities',
+        'electric',
+        'electricity',
+        'gas',
+        'pge',
+        'pg&e',
+        'water',
+        'bill',
+        'care program',
+        'liheap',
+        'fera',
+        'energy',
+        'internet',
+        'phone',
+        'lifeline',
+        'wifi',
+        'broadband',
+      ],
+      cash: [
+        'cash',
+        'money',
+        'income',
+        'calworks',
+        'ssi',
+        'ssdi',
+        'welfare',
+        'general assistance',
+        'disability',
+        'unemployed',
+        'unemployment',
+        'edd',
+        'benefits',
+      ],
+      seniors: [
+        'senior',
+        'seniors',
+        'elderly',
+        'older',
+        'aging',
+        '65',
+        'medicare',
+        'retirement',
+        'retired',
+        'aarp',
+      ],
+      veterans: [
+        'veteran',
+        'veterans',
+        'military',
+        'va ',
+        'army',
+        'navy',
+        'marine',
+        'air force',
+        'service member',
+        'vet',
+      ],
+      families: [
+        'family',
+        'families',
+        'child',
+        'children',
+        'kids',
+        'baby',
+        'infant',
+        'parent',
+        'pregnant',
+        'childcare',
+        'daycare',
+        'mother',
+        'father',
+        'mom',
+        'dad',
+      ],
+      legal: [
+        'legal',
+        'lawyer',
+        'attorney',
+        'court',
+        'immigration',
+        'eviction defense',
+        'rights',
+        'citizenship',
+        'visa',
+        'asylum',
+      ],
+      jobs: [
+        'job',
+        'jobs',
+        'work',
+        'employment',
+        'career',
+        'training',
+        'workforce',
+        'resume',
+        'hire',
+        'hiring',
+      ],
+      transportation: [
+        'transit',
+        'bus',
+        'bart',
+        'muni',
+        'clipper',
+        'ride',
+        'transportation',
+        'paratransit',
+        'car',
+      ],
+    };
+
+    // Common program name mappings (what users might say -> program keywords)
+    const programAliases = {
+      'food stamps': 'calfresh',
+      snap: 'calfresh',
+      ebt: 'calfresh',
+      welfare: 'calworks',
+      tanf: 'calworks',
+      'free healthcare': 'medi-cal',
+      medicaid: 'medi-cal',
+      aca: 'covered california',
+      obamacare: 'covered california',
+      'utility discount': 'care program',
+      'pge discount': 'care program',
+      'free phone': 'lifeline',
+      'obama phone': 'lifeline',
+    };
+
     // Score programs based on relevance
     const scored = programs.map((program) => {
       let score = 0;
       const name = (program.name || '').toLowerCase();
       const desc = (program.description || '').toLowerCase();
+      const fullDesc = (program.fullDescription || '').toLowerCase();
       const category = (program.category || '').toLowerCase();
-      const counties = (program.counties || []).map((c) => c.toLowerCase());
+      const keywords = (program.keywords || '').toLowerCase();
+      const areas = (program.areas || []).map((a) => a.toLowerCase());
 
-      // Name matches are most important
-      for (const term of queryTerms) {
-        if (name.includes(term)) score += 10;
-        if (category.includes(term)) score += 5;
-        if (desc.includes(term)) score += 2;
-      }
+      // Check for exact phrase match (highest priority)
+      if (name.includes(queryLower)) score += 25;
+      if (queryLower.length > 5 && desc.includes(queryLower)) score += 15;
 
-      // Category keyword matching
-      const categoryKeywords = {
-        food: ['food', 'hungry', 'eat', 'meal', 'grocery', 'snap', 'calfresh', 'wic', 'pantry'],
-        healthcare: [
-          'health',
-          'medical',
-          'doctor',
-          'insurance',
-          'medi-cal',
-          'medicaid',
-          'clinic',
-          'dental',
-          'vision',
-        ],
-        housing: ['housing', 'rent', 'home', 'shelter', 'homeless', 'section 8', 'apartment'],
-        utilities: [
-          'utility',
-          'electric',
-          'gas',
-          'pge',
-          'pg&e',
-          'water',
-          'bill',
-          'care program',
-          'liheap',
-        ],
-        cash: [
-          'cash',
-          'money',
-          'income',
-          'calworks',
-          'ssi',
-          'ssdi',
-          'welfare',
-          'general assistance',
-        ],
-      };
-
-      for (const [cat, keywords] of Object.entries(categoryKeywords)) {
-        for (const kw of keywords) {
-          if (queryLower.includes(kw) && category.includes(cat)) {
-            score += 8;
+      // Check program aliases
+      for (const [alias, programName] of Object.entries(programAliases)) {
+        if (queryLower.includes(alias)) {
+          if (name.includes(programName) || keywords.includes(programName)) {
+            score += 20;
           }
         }
       }
 
-      // Location filtering
+      // Direct term matches
+      for (const term of queryTerms) {
+        if (name.includes(term)) score += 12; // Name match is strongest
+        if (keywords.includes(term)) score += 8; // Keywords are important
+        if (category.includes(term)) score += 6;
+        if (desc.includes(term)) score += 3;
+      }
+
+      // Intent-based matching
+      for (const [intent, intentWords] of Object.entries(intentKeywords)) {
+        const matchedKeyword = intentWords.find((kw) => queryLower.includes(kw));
+        if (matchedKeyword) {
+          // Check if program matches this intent via category
+          if (category.includes(intent)) {
+            score += 10;
+          }
+          // Also check if program name/desc/keywords contains the keyword
+          if (name.includes(matchedKeyword)) score += 8;
+          if (keywords.includes(matchedKeyword)) score += 5;
+          if (desc.includes(matchedKeyword)) score += 3;
+        }
+      }
+
+      // Location filtering - boost matching, penalize non-matching
       if (location && location.county) {
         const countyLower = location.county.toLowerCase();
-        if (
-          counties.some(
-            (c) =>
-              c.includes(countyLower) || c === 'bay area' || c === 'statewide' || c === 'nationwide'
-          )
-        ) {
-          score += 5;
+        const isAvailable = areas.some(
+          (a) =>
+            a.includes(countyLower) ||
+            a.includes('bay area') ||
+            a.includes('statewide') ||
+            a.includes('nationwide') ||
+            a.includes('all counties') ||
+            a.includes('california')
+        );
+
+        if (isAvailable) {
+          score += 6; // Boost local programs
         } else if (
-          counties.length &&
-          !counties.some(
-            (c) => c.includes('bay area') || c.includes('statewide') || c.includes('nationwide')
-          )
+          areas.length > 0 &&
+          !areas.some((a) => a.includes('statewide') || a.includes('nationwide'))
         ) {
-          // Penalize programs not available in user's county
-          score -= 10;
+          score -= 10; // Penalize programs clearly not in user's area
         }
       }
 
       return { program, score };
     });
 
-    // Return top 5 relevant programs
+    // Return top 5 relevant programs with score > 5 (filter out weak matches)
     return scored
-      .filter((s) => s.score > 0)
+      .filter((s) => s.score > 5)
       .sort((a, b) => b.score - a.score)
       .slice(0, 5)
       .map((s) => s.program);
   }
 
   // Generate program link based on platform
+  // Uses program.id which matches what the apps expect (e.g., "211-bay-area")
   function getProgramLink(program) {
-    const slug =
-      program.slug || program.id || program.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const programId = program.id;
     if (isApp) {
-      return `baynavigator://program/${slug}`;
+      // Deep link format: baynavigator://program/program-id
+      return `baynavigator://program/${programId}`;
     }
+    // Web: search by exact program name for best match
     return `/directory?q=${encodeURIComponent(program.name)}`;
   }
 
@@ -513,21 +697,26 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     sendBtn?.setAttribute('disabled', 'true');
     const loadingEl = addLoadingIndicator();
 
+    // Declare outside try so it's accessible in catch block
+    let relevantPrograms = [];
+
     try {
       // Search for relevant programs (RAG)
-      const relevantPrograms = await searchPrograms(message, userLocation);
+      relevantPrograms = await searchPrograms(message, userLocation);
 
-      // Build context for the AI
+      // Build context for the AI with rich program details
       let ragContext = '';
       if (relevantPrograms.length > 0) {
-        ragContext = `\n\n[RELEVANT PROGRAMS FROM BAY NAVIGATOR DATABASE]\n`;
+        ragContext = `\n\n[MATCHING PROGRAMS - mention these by name when relevant!]\n`;
         relevantPrograms.forEach((p, i) => {
-          ragContext += `${i + 1}. ${p.name}`;
-          if (p.category) ragContext += ` (${p.category})`;
-          if (p.description) ragContext += `: ${p.description.substring(0, 150)}`;
+          ragContext += `${i + 1}. **${p.name}**`;
+          if (p.category) ragContext += ` [${p.category}]`;
           ragContext += '\n';
+          if (p.description) ragContext += `   ${p.description.substring(0, 200)}\n`;
+          if (p.phone) ragContext += `   Phone: ${p.phone}\n`;
+          if (p.website) ragContext += `   Has website on Bay Navigator\n`;
         });
-        ragContext += `\nUse these programs in your response when relevant. Link users to view them on Bay Navigator.`;
+        ragContext += `\nMention these programs by name. Users will see clickable cards below your response.`;
       }
 
       // Add location context
@@ -544,8 +733,13 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
         { role: 'user', content: message },
       ];
 
-      // Stream the response
+      // Add timeout for slow connections (30 seconds)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+      // Stream the response with optimized settings for speed and quality
       const response = await fetch(effectiveEndpoint, {
+        signal: controller.signal,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -556,11 +750,19 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
           messages: messages,
           stream: true,
           options: {
-            temperature: 0.7,
-            num_predict: 500,
+            temperature: 0.5, // Lower for more consistent, focused responses
+            num_predict: 250, // Concise responses (system prompt says 2-3 sentences)
+            num_ctx: 3072, // Reduced context window (faster, sufficient for chat)
+            top_k: 30, // More focused token selection = faster + more coherent
+            top_p: 0.85, // Slightly tighter nucleus sampling
+            repeat_penalty: 1.15, // Stronger repetition avoidance
+            num_batch: 512, // Process tokens in larger batches for speed
+            num_thread: 4, // Use multiple CPU threads if available
           },
         }),
       });
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Failed to get response');
@@ -604,14 +806,24 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
       if (relevantPrograms.length > 0) {
         addProgramCards(relevantPrograms);
       }
+
+      // Add follow-up suggestions based on context
+      addFollowUpSuggestions(message, fullResponse, userLocation);
     } catch (error) {
       console.error('Assistant error:', error);
       loadingEl?.remove();
-      addMessage(
-        "I'm having trouble connecting. Please try again or search the programs directly.",
-        'assistant',
-        true
-      );
+
+      // Show helpful error message with fallback
+      const errorMessage =
+        error.name === 'AbortError'
+          ? 'That took too long. Try a shorter question, or search the directory directly.'
+          : "I'm having trouble connecting. You can search the programs directly at baynavigator.org/directory";
+      addMessage(errorMessage, 'assistant', true);
+
+      // Still show program cards if we found any (RAG still works even if AI fails)
+      if (relevantPrograms && relevantPrograms.length > 0) {
+        addProgramCards(relevantPrograms);
+      }
     } finally {
       isLoading = false;
       sendBtn?.removeAttribute('disabled');
@@ -695,6 +907,81 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     });
 
     wrapper.appendChild(cardsContainer);
+    messagesContainer?.appendChild(wrapper);
+    messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+  }
+
+  // Add contextual follow-up suggestions
+  function addFollowUpSuggestions(userMessage, aiResponse, location) {
+    const lowerMsg = userMessage.toLowerCase();
+    const lowerResp = aiResponse.toLowerCase();
+    const suggestions = [];
+
+    // Don't show suggestions if we just asked for location
+    if (lowerResp.includes('what city') || lowerResp.includes('what zip')) {
+      return;
+    }
+
+    // Generate contextual follow-ups based on topic
+    if (lowerMsg.includes('food') || lowerResp.includes('calfresh') || lowerResp.includes('food')) {
+      if (!location) suggestions.push('I live in San Francisco');
+      suggestions.push('What are the income limits?');
+      suggestions.push('Where can I apply?');
+    } else if (
+      lowerMsg.includes('health') ||
+      lowerResp.includes('medi-cal') ||
+      lowerResp.includes('healthcare')
+    ) {
+      if (!location) suggestions.push('I live in Oakland');
+      suggestions.push('What does Medi-Cal cover?');
+      suggestions.push('I need dental care');
+    } else if (
+      lowerMsg.includes('rent') ||
+      lowerMsg.includes('housing') ||
+      lowerResp.includes('section 8')
+    ) {
+      suggestions.push('How do I get on the waitlist?');
+      suggestions.push("I'm facing eviction");
+    } else if (
+      lowerMsg.includes('utility') ||
+      lowerMsg.includes('electric') ||
+      lowerMsg.includes('bill')
+    ) {
+      suggestions.push('How do I sign up for CARE?');
+      suggestions.push('Help with internet too');
+    } else if (!location) {
+      // If no topic detected and no location, suggest providing location
+      suggestions.push("I'm in San Jose");
+      suggestions.push("I'm in the East Bay");
+    }
+
+    // Always offer to explore more
+    if (suggestions.length < 3) {
+      suggestions.push('What else is available?');
+    }
+
+    // Only show 2-3 suggestions
+    const finalSuggestions = suggestions.slice(0, 3);
+    if (finalSuggestions.length === 0) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'flex flex-wrap gap-2 mt-3';
+
+    finalSuggestions.forEach((suggestion) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className =
+        'text-xs px-3 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors';
+      btn.textContent = suggestion;
+      btn.addEventListener('click', () => {
+        if (input && !isLoading) {
+          input.value = suggestion;
+          sendMessage();
+        }
+      });
+      wrapper.appendChild(btn);
+    });
+
     messagesContainer?.appendChild(wrapper);
     messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
   }

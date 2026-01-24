@@ -21,7 +21,16 @@ const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const DATA_FILE = path.join(ROOT_DIR, 'data-exports', 'city-councils', 'civicplus-data.json');
-const CIVIC_SERVICE_PATH = path.join(ROOT_DIR, 'apps', 'apple', 'BayNavigatorCore', 'Sources', 'BayNavigatorCore', 'Services', 'CivicService.swift');
+const CIVIC_SERVICE_PATH = path.join(
+  ROOT_DIR,
+  'apps',
+  'apple',
+  'BayNavigatorCore',
+  'Sources',
+  'BayNavigatorCore',
+  'Services',
+  'CivicService.swift'
+);
 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
@@ -54,18 +63,44 @@ function extractDistrict(title) {
 function isValidOfficial(name) {
   if (!name) return false;
   const noise = [
-    'contact', 'contact us', 'current assignments', 'agenda center',
-    'city clerk', 'city manager', 'city attorney', 'staff',
-    '&ntilde;', '&#', 'useful links', 'social media', 'jan ', 'feb ',
-    'mar ', 'apr ', 'may ', 'jun ', 'jul ', 'aug ', 'sep ', 'oct ',
-    'nov ', 'dec ', 'mon,', 'tue,', 'wed,', 'thu,', 'fri,', 'sat,', 'sun,',
-    'saratoga'
+    'contact',
+    'contact us',
+    'current assignments',
+    'agenda center',
+    'city clerk',
+    'city manager',
+    'city attorney',
+    'staff',
+    '&ntilde;',
+    '&#',
+    'useful links',
+    'social media',
+    'jan ',
+    'feb ',
+    'mar ',
+    'apr ',
+    'may ',
+    'jun ',
+    'jul ',
+    'aug ',
+    'sep ',
+    'oct ',
+    'nov ',
+    'dec ',
+    'mon,',
+    'tue,',
+    'wed,',
+    'thu,',
+    'fri,',
+    'sat,',
+    'sun,',
+    'saratoga',
   ];
   const nameLower = name.toLowerCase();
-  if (!name.includes(' ') || name.split(' ').filter(w => w.length > 1).length < 2) {
+  if (!name.includes(' ') || name.split(' ').filter((w) => w.length > 1).length < 2) {
     return false;
   }
-  return !noise.some(n => nameLower.includes(n)) && name.length > 4;
+  return !noise.some((n) => nameLower.includes(n)) && name.length > 4;
 }
 
 function normalizeTitle(title) {
@@ -125,7 +160,7 @@ async function main() {
     try {
       execSync('node scripts/scrape-civicplus-councils.cjs', {
         cwd: ROOT_DIR,
-        stdio: 'inherit'
+        stdio: 'inherit',
       });
     } catch (err) {
       console.error('Scraper failed:', err.message);
@@ -152,11 +187,11 @@ async function main() {
 
   for (const [cityName, cityData] of Object.entries(data)) {
     if (cityData.officials && cityData.officials.length > 0) {
-      const validOfficials = cityData.officials.filter(o => isValidOfficial(o.name));
+      const validOfficials = cityData.officials.filter((o) => isValidOfficial(o.name));
       if (validOfficials.length > 0) {
         citiesWithData++;
         totalOfficials += validOfficials.length;
-        if (validOfficials.some(o => o.localPhotoPath)) {
+        if (validOfficials.some((o) => o.localPhotoPath)) {
           citiesWithPhotos++;
         }
       }
@@ -185,7 +220,7 @@ async function main() {
   for (const [cityName, cityData] of Object.entries(data)) {
     if (!cityData.officials || cityData.officials.length === 0) continue;
 
-    const validOfficials = cityData.officials.filter(o => isValidOfficial(o.name));
+    const validOfficials = cityData.officials.filter((o) => isValidOfficial(o.name));
     if (validOfficials.length === 0) continue;
 
     const cityKey = cityName.toLowerCase();
@@ -196,14 +231,16 @@ async function main() {
 
     if (match) {
       // City exists - check if we have better data
-      const hasPhotos = validOfficials.some(o => o.localPhotoPath);
-      const hasEmails = validOfficials.some(o => o.email);
+      const hasPhotos = validOfficials.some((o) => o.localPhotoPath);
+      const hasEmails = validOfficials.some((o) => o.email);
 
       if (hasPhotos || hasEmails) {
         // We have better data - update
         const newSwift = generateSwiftForCity(cityKey, validOfficials);
         swiftContent = swiftContent.replace(match[0], newSwift);
-        console.log(`  ✓ Updated: ${cityName} (${validOfficials.length} officials, photos: ${hasPhotos}, emails: ${hasEmails})`);
+        console.log(
+          `  ✓ Updated: ${cityName} (${validOfficials.length} officials, photos: ${hasPhotos}, emails: ${hasEmails})`
+        );
         updatedCities++;
       }
     } else {
@@ -225,10 +262,13 @@ async function main() {
     // Step 6: Verify build (uses hardcoded command, safe from injection)
     console.log('Step 6: Verifying Swift build...');
     try {
-      execSync('xcodebuild -scheme "Bay Navigator (iOS)" -destination "generic/platform=iOS" build 2>&1 | tail -5', {
-        cwd: path.join(ROOT_DIR, 'apps', 'apple'),
-        stdio: 'inherit'
-      });
+      execSync(
+        'xcodebuild -scheme "Bay Navigator (iOS)" -destination "generic/platform=iOS" build 2>&1 | tail -5',
+        {
+          cwd: path.join(ROOT_DIR, 'apps', 'apple'),
+          stdio: 'inherit',
+        }
+      );
       console.log('\n✓ Build succeeded!\n');
     } catch (err) {
       console.error('\n✗ Build failed! Rolling back...');
@@ -244,7 +284,7 @@ async function main() {
   console.log('=== Update Complete ===');
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('Error:', err);
   process.exit(1);
 });

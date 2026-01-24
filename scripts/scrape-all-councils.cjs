@@ -27,9 +27,12 @@ const OUTPUT_DIR = path.join(ROOT_DIR, 'data-exports', 'city-councils');
 
 const args = process.argv.slice(2);
 
-const SPECIFIC_FLAG = args.includes('--civicplus') || args.includes('--granicus') ||
-                      args.includes('--proudcity') || args.includes('--wikipedia') ||
-                      args.includes('--blocked');
+const SPECIFIC_FLAG =
+  args.includes('--civicplus') ||
+  args.includes('--granicus') ||
+  args.includes('--proudcity') ||
+  args.includes('--wikipedia') ||
+  args.includes('--blocked');
 const SKIP_BLOCKED = args.includes('--skip-blocked');
 const SKIP_WIKIPEDIA = args.includes('--skip-wikipedia');
 
@@ -204,7 +207,7 @@ async function main() {
         for (const city of cities) {
           const cityPath = path.join(countyPath, city);
           if (fs.statSync(cityPath).isDirectory()) {
-            const photos = fs.readdirSync(cityPath).filter(f => f.endsWith('.jpg'));
+            const photos = fs.readdirSync(cityPath).filter((f) => f.endsWith('.jpg'));
             photoCount += photos.length;
           }
         }

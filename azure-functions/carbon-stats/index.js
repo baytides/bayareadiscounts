@@ -36,10 +36,9 @@ const PROVIDER_STATS = {
     waterPositiveTarget: 2030,
     source: 'https://github.blog/2021-04-22-environmental-sustainability-github/',
   },
-  cloudflareAI: {
-    name: 'Cloudflare Workers AI',
-    model: 'Llama 3.1 8B',
-    use: 'Smart Search',
+  cloudflareProxy: {
+    name: 'Cloudflare Workers (AI Proxy)',
+    use: 'Carl AI Chat Proxy',
     renewableEnergy: 100,
     netZeroSince: 2025,
     runsOnCloudflare: true,
@@ -59,7 +58,7 @@ const PROVIDER_STATS = {
 // Carbon factors (grams CO2e) - based on industry research
 const CARBON_FACTORS = {
   pageViewGrams: 0.2, // Average static site page view
-  smartSearchQueryGrams: 0.5, // Cloudflare Workers AI (Llama 3.1 8B) - smaller model on edge
+  aiChatQueryGrams: 0.5, // Carl AI Chat via Cloudflare proxy to DigitalOcean
   simpleLangQueryGrams: 1.5, // Azure OpenAI (GPT-4o-mini) - runs weekly for accessibility
   ciMinuteGrams: 0.4, // GitHub Actions minute (renewable-offset)
   cdnRequestGrams: 0.0001, // Cloudflare edge request
@@ -266,7 +265,7 @@ async function getCloudflareAIStats(context) {
             limit: 1000
             filter: {
               date_gt: "${dateFilter}"
-              scriptName: "smart-assistant"
+              scriptName: "baynavigator-ai-proxy"
             }
           ) {
             sum {
@@ -384,7 +383,7 @@ async function getCarbonStats(context) {
   const usage = {
     cdnRequests: cloudflareStats?.requests ?? 50000,
     cdnBytesTransferred: cloudflareStats?.bytesTransferred ?? 0,
-    smartSearchQueries: cloudflareAIStats?.totalCalls ?? 500, // Cloudflare Workers AI
+    aiChatQueries: cloudflareAIStats?.totalCalls ?? 500, // Carl AI Chat via Cloudflare proxy
     simpleLangQueries: azureOpenAIStats?.totalCalls ?? 10, // Azure OpenAI (weekly)
     ciRuns: githubStats?.totalRuns ?? 30,
     ciMinutes: githubStats?.estimatedMinutes ?? 120,
@@ -401,7 +400,7 @@ async function getCarbonStats(context) {
   // Calculate emissions (all offset by renewable energy commitments)
   const grossEmissions = {
     cdn: usage.cdnRequests * CARBON_FACTORS.cdnRequestGrams,
-    smartSearch: usage.smartSearchQueries * CARBON_FACTORS.smartSearchQueryGrams,
+    aiChat: usage.aiChatQueries * CARBON_FACTORS.aiChatQueryGrams,
     simpleLang: usage.simpleLangQueries * CARBON_FACTORS.simpleLangQueryGrams,
     ci: usage.ciMinutes * CARBON_FACTORS.ciMinuteGrams,
   };
@@ -431,8 +430,8 @@ async function getCarbonStats(context) {
       cdnRequests: usage.cdnRequests,
       cdnBytesTransferred: usage.cdnBytesTransferred,
       cdnCacheHitRate: cloudflareStats?.cacheHitRate ?? null,
-      aiQueries: usage.smartSearchQueries + usage.simpleLangQueries, // Combined for dashboard
-      smartSearchQueries: usage.smartSearchQueries, // Cloudflare Workers AI
+      aiQueries: usage.aiChatQueries + usage.simpleLangQueries, // Combined for dashboard
+      aiChatQueries: usage.aiChatQueries, // Carl AI Chat via Cloudflare proxy
       simpleLangQueries: usage.simpleLangQueries, // Azure OpenAI
       ciRuns: usage.ciRuns,
       ciMinutes: usage.ciMinutes,
@@ -446,13 +445,11 @@ async function getCarbonStats(context) {
         percent:
           totalGrossGrams > 0 ? ((grossEmissions.cdn / totalGrossGrams) * 100).toFixed(1) : '0',
       },
-      smartSearch: {
-        grams: grossEmissions.smartSearch.toFixed(1),
+      aiChat: {
+        grams: grossEmissions.aiChat.toFixed(1),
         percent:
-          totalGrossGrams > 0
-            ? ((grossEmissions.smartSearch / totalGrossGrams) * 100).toFixed(1)
-            : '0',
-        provider: 'Cloudflare Workers AI (Llama 3.1 8B)',
+          totalGrossGrams > 0 ? ((grossEmissions.aiChat / totalGrossGrams) * 100).toFixed(1) : '0',
+        provider: 'Carl AI Chat (Llama 3.1 8B on DigitalOcean)',
       },
       simpleLang: {
         grams: grossEmissions.simpleLang.toFixed(1),
@@ -490,7 +487,7 @@ async function getCarbonStats(context) {
       'Azure has been carbon neutral since 2012',
       'GitHub Actions runners are powered by renewable energy',
       'Cloudflare operates a carbon-neutral network (net-zero since 2025)',
-      'Smart Search uses Cloudflare Workers AI (Llama 3.1 8B) on edge',
+      'Carl AI Chat uses self-hosted Llama 3.1 8B on DigitalOcean via Cloudflare proxy',
       'Simple Language (accessibility) uses Azure OpenAI (GPT-4o-mini) weekly',
       'Usage data is refreshed hourly from live APIs',
     ],

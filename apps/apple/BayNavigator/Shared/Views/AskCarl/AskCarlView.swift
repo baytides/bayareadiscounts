@@ -345,6 +345,12 @@ struct AskCarlView: View {
                     }
                 }
             }
+            #if os(iOS)
+            .onTapGesture {
+                // Dismiss keyboard when tapping on messages area
+                isInputFocused = false
+            }
+            #endif
         }
     }
 
@@ -451,6 +457,16 @@ struct AskCarlView: View {
                     .onSubmit {
                         sendMessage(inputText)
                     }
+                    #if os(iOS)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("Done") {
+                                isInputFocused = false
+                            }
+                        }
+                    }
+                    #endif
                     .accessibilityLabel("Message input")
                     .accessibilityHint("Type your question for Carl")
 

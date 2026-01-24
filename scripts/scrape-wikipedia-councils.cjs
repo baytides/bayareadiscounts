@@ -20,7 +20,15 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'city-councils');
-const PHOTOS_DIR = path.join(__dirname, '..', 'apps', 'assets', 'images', 'representatives', 'local');
+const PHOTOS_DIR = path.join(
+  __dirname,
+  '..',
+  'apps',
+  'assets',
+  'images',
+  'representatives',
+  'local'
+);
 
 // Bay Area cities to look up on Wikipedia
 // Format: { cityName, wikipediaTitle, county }
@@ -105,7 +113,11 @@ const WIKIPEDIA_CITIES = [
   { name: 'San Bruno', wikipedia: 'San Bruno, California', county: 'San Mateo' },
   { name: 'San Carlos', wikipedia: 'San Carlos, California', county: 'San Mateo' },
   { name: 'San Mateo', wikipedia: 'San Mateo, California', county: 'San Mateo' },
-  { name: 'South San Francisco', wikipedia: 'South San Francisco, California', county: 'San Mateo' },
+  {
+    name: 'South San Francisco',
+    wikipedia: 'South San Francisco, California',
+    county: 'San Mateo',
+  },
   { name: 'Woodside', wikipedia: 'Woodside, California', county: 'San Mateo' },
 
   // Santa Clara County (15 cities)
@@ -222,23 +234,25 @@ function fetchJson(url) {
       timeout: 30000,
     };
 
-    https.get(url, options, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
-
-      const chunks = [];
-      res.on('data', (chunk) => chunks.push(chunk));
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')));
-        } catch (e) {
-          reject(new Error('Invalid JSON'));
+    https
+      .get(url, options, (res) => {
+        if (res.statusCode !== 200) {
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
         }
-      });
-      res.on('error', reject);
-    }).on('error', reject);
+
+        const chunks = [];
+        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('end', () => {
+          try {
+            resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')));
+          } catch (e) {
+            reject(new Error('Invalid JSON'));
+          }
+        });
+        res.on('error', reject);
+      })
+      .on('error', reject);
   });
 }
 
@@ -311,7 +325,10 @@ function parseInfobox(wikitext) {
 
       // Store person wiki link for photo lookup
       const personLink = extractPersonWikiLink(rawValue);
-      if (personLink && (key.includes('leader') || key.includes('mayor') || key.includes('manager'))) {
+      if (
+        personLink &&
+        (key.includes('leader') || key.includes('mayor') || key.includes('manager'))
+      ) {
         personLinks[key] = personLink;
       }
 
@@ -395,7 +412,9 @@ function parseCouncilTable(wikitext) {
   const members = [];
 
   // Find the Current Council section (various naming patterns)
-  const currentMatch = wikitext.match(/==\s*Current\s+(?:Council|Members|City Council|councilmembers|composition)\s*==\s*([\s\S]*?)(?:==\s*[^=]|$)/i);
+  const currentMatch = wikitext.match(
+    /==\s*Current\s+(?:Council|Members|City Council|councilmembers|composition)\s*==\s*([\s\S]*?)(?:==\s*[^=]|$)/i
+  );
   if (!currentMatch) return members;
 
   const tableSection = currentMatch[1];
@@ -408,7 +427,13 @@ function parseCouncilTable(wikitext) {
 
   for (const row of rows) {
     // Skip header rows and empty rows
-    if (!row.trim() || row.includes('!District') || row.includes('!Councilmember') || row.includes('!Member')) continue;
+    if (
+      !row.trim() ||
+      row.includes('!District') ||
+      row.includes('!Councilmember') ||
+      row.includes('!Member')
+    )
+      continue;
 
     // Try to extract district and name from this row
     let name = null;
@@ -441,7 +466,12 @@ function parseCouncilTable(wikitext) {
       if (/,\s*(?:California|San Jose|Oakland)/i.test(linkTarget)) continue;
 
       // Skip area/neighborhood names (they usually have specific patterns)
-      if (/(?:San Jose|Valley|Hills?|Creek|Park|Town|Village|District|Heights|Beach|East|West|North|South|Downtown|Central)\s*$/i.test(linkText)) continue;
+      if (
+        /(?:San Jose|Valley|Hills?|Creek|Park|Town|Village|District|Heights|Beach|East|West|North|South|Downtown|Central)\s*$/i.test(
+          linkText
+        )
+      )
+        continue;
       if (/^(?:East|West|North|South|Central|Downtown)\s+/i.test(linkText)) continue;
 
       // Check if it looks like a person name (First Last pattern, not a place)
@@ -467,7 +497,11 @@ function parseCouncilTable(wikitext) {
 
       members.push({
         name,
-        title: isMayor ? 'Mayor' : (district ? `Council Member, District ${district}` : 'Council Member'),
+        title: isMayor
+          ? 'Mayor'
+          : district
+            ? `Council Member, District ${district}`
+            : 'Council Member',
         district: isMayor ? null : district,
         isMayor,
       });
@@ -656,7 +690,11 @@ async function fetchWikipediaData(cityInfo, downloadPhotos = true) {
         rawName = rawName.replace(/\s*\([^)]*(?:party|democrat|republican)[^)]*\)/gi, '').trim();
 
         // Skip if it still looks like a list or garbage
-        if (rawName.includes('Vice Mayor') || rawName.includes('Councilmember') || rawName.length > 50) {
+        if (
+          rawName.includes('Vice Mayor') ||
+          rawName.includes('Councilmember') ||
+          rawName.length > 50
+        ) {
           continue;
         }
 
@@ -729,7 +767,9 @@ async function fetchWikipediaData(cityInfo, downloadPhotos = true) {
     if (cityInfo.name === 'San Francisco') {
       councilData = await fetchSFSupervisors();
       if (councilData && councilData.members.length > 0) {
-        console.log(`    Found ${councilData.members.length} supervisors from SF Board of Supervisors page`);
+        console.log(
+          `    Found ${councilData.members.length} supervisors from SF Board of Supervisors page`
+        );
       }
     } else {
       councilData = await fetchCouncilPage(cityInfo.name);
@@ -741,7 +781,7 @@ async function fetchWikipediaData(cityInfo, downloadPhotos = true) {
     if (councilData && councilData.members.length > 0) {
       for (const member of councilData.members) {
         // Don't duplicate if we already have this person
-        if (!officials.some(o => o.name === member.name)) {
+        if (!officials.some((o) => o.name === member.name)) {
           officials.push({
             name: member.name,
             title: member.title,
@@ -796,7 +836,7 @@ async function main() {
     results[city.name] = data;
 
     if (data && data.officials.length > 0) {
-      console.log(`  Found: ${data.officials.map(o => `${o.name} (${o.title})`).join(', ')}`);
+      console.log(`  Found: ${data.officials.map((o) => `${o.name} (${o.title})`).join(', ')}`);
     } else if (data && data.error) {
       console.log(`  Error: ${data.error}`);
     } else {
@@ -823,7 +863,7 @@ async function main() {
     if (data.officials && data.officials.length > 0) {
       citiesWithMayor++;
       totalOfficials += data.officials.length;
-      totalPhotos += data.officials.filter(o => o.localPhotoPath).length;
+      totalPhotos += data.officials.filter((o) => o.localPhotoPath).length;
     }
   }
 
