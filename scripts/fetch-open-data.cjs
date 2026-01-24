@@ -34,14 +34,36 @@ const PORTALS = [
 
 // Keywords for filtering useful datasets
 const USEFUL_KEYWORDS = [
-  'park', 'library', 'facility', 'service', 'center', 'recreation',
-  'police', 'fire', 'station', 'school', 'hospital', 'clinic',
-  'transit', 'bus', 'route', 'stop', 'bart', 'bike',
-  'permit', 'license', 'business',
-  'wifi', 'hotspot',
-  '311', 'request',
-  'event', 'meeting',
-  'street', 'road', 'parking',
+  'park',
+  'library',
+  'facility',
+  'service',
+  'center',
+  'recreation',
+  'police',
+  'fire',
+  'station',
+  'school',
+  'hospital',
+  'clinic',
+  'transit',
+  'bus',
+  'route',
+  'stop',
+  'bart',
+  'bike',
+  'permit',
+  'license',
+  'business',
+  'wifi',
+  'hotspot',
+  '311',
+  'request',
+  'event',
+  'meeting',
+  'street',
+  'road',
+  'parking',
 ];
 
 /**
@@ -49,27 +71,31 @@ const USEFUL_KEYWORDS = [
  */
 function fetchJson(url, timeout = 30000) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; BayNavigator/1.0)',
-        'Accept': 'application/json',
+    const req = https.get(
+      url,
+      {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; BayNavigator/1.0)',
+          Accept: 'application/json',
+        },
       },
-    }, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
-
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(data));
-        } catch (e) {
-          reject(new Error('Invalid JSON'));
+      (res) => {
+        if (res.statusCode !== 200) {
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
         }
-      });
-    });
+
+        let data = '';
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => {
+          try {
+            resolve(JSON.parse(data));
+          } catch (e) {
+            reject(new Error('Invalid JSON'));
+          }
+        });
+      }
+    );
 
     req.on('error', reject);
     req.setTimeout(timeout, () => {
@@ -107,12 +133,12 @@ async function fetchSocrataPortal(portal) {
     console.log(`  Found ${result.totalDatasets} total datasets`);
 
     // Filter to useful datasets
-    const useful = allDatasets.filter(ds => {
+    const useful = allDatasets.filter((ds) => {
       const name = (ds.resource?.name || '').toLowerCase();
       const desc = (ds.resource?.description || '').toLowerCase();
       const tags = (ds.classification?.domain_tags || []).join(' ').toLowerCase();
       const combined = name + ' ' + desc + ' ' + tags;
-      return USEFUL_KEYWORDS.some(kw => combined.includes(kw));
+      return USEFUL_KEYWORDS.some((kw) => combined.includes(kw));
     });
 
     console.log(`  ${useful.length} match useful keywords`);
@@ -133,7 +159,6 @@ async function fetchSocrataPortal(portal) {
       };
       result.datasets.push(dataset);
     }
-
   } catch (e) {
     result.error = e.message;
     console.log(`  Error: ${e.message}`);
@@ -170,9 +195,9 @@ async function fetchCkanPortal(portal) {
     console.log(`  Found ${result.totalDatasets} total datasets`);
 
     // Filter to useful packages by name
-    const usefulNames = packageNames.filter(name => {
+    const usefulNames = packageNames.filter((name) => {
       const nameLower = name.toLowerCase();
-      return USEFUL_KEYWORDS.some(kw => nameLower.includes(kw));
+      return USEFUL_KEYWORDS.some((kw) => nameLower.includes(kw));
     });
 
     console.log(`  ${usefulNames.length} match useful keywords`);
@@ -192,9 +217,9 @@ async function fetchCkanPortal(portal) {
             id: pkg.id,
             name: pkg.title || pkg.name,
             description: pkg.notes?.substring(0, 500),
-            tags: pkg.tags?.map(t => t.name),
+            tags: pkg.tags?.map((t) => t.name),
             updatedAt: pkg.metadata_modified,
-            resources: pkg.resources?.map(r => ({
+            resources: pkg.resources?.map((r) => ({
               name: r.name,
               format: r.format,
               url: r.url,
@@ -204,15 +229,13 @@ async function fetchCkanPortal(portal) {
         }
 
         // Small delay between requests
-        await new Promise(r => setTimeout(r, 200));
-
+        await new Promise((r) => setTimeout(r, 200));
       } catch (e) {
         // Skip failed packages
       }
     }
 
     console.log(`  Successfully fetched ${result.datasets.length} dataset details`);
-
   } catch (e) {
     result.error = e.message;
     console.log(`  Error: ${e.message}`);
@@ -228,12 +251,12 @@ async function main() {
   const args = process.argv.slice(2);
   const listMode = args.includes('--list');
   const allMode = args.includes('--all');
-  const portalArg = args.find(a => a.startsWith('--portal='));
+  const portalArg = args.find((a) => a.startsWith('--portal='));
 
   if (listMode) {
     console.log('Available Open Data Portals:');
     console.log('============================\n');
-    PORTALS.forEach(p => {
+    PORTALS.forEach((p) => {
       console.log(`  --portal="${p.name}" (${p.type})`);
     });
     console.log('\nUse --all to fetch from all portals');
@@ -259,12 +282,10 @@ async function main() {
     portalsToProcess = PORTALS;
   } else {
     const portalName = portalArg.split('=')[1].replace(/"/g, '');
-    portalsToProcess = PORTALS.filter(p =>
-      p.name.toLowerCase() === portalName.toLowerCase()
-    );
+    portalsToProcess = PORTALS.filter((p) => p.name.toLowerCase() === portalName.toLowerCase());
     if (portalsToProcess.length === 0) {
       console.error(`Portal not found: ${portalName}`);
-      console.log('Available:', PORTALS.map(p => p.name).join(', '));
+      console.log('Available:', PORTALS.map((p) => p.name).join(', '));
       return;
     }
   }
@@ -300,7 +321,9 @@ async function main() {
   let totalDatasets = 0;
   for (const r of results) {
     totalDatasets += r.datasets?.length || 0;
-    console.log(`  ${r.name}: ${r.datasets?.length || 0} useful datasets (${r.totalDatasets} total)`);
+    console.log(
+      `  ${r.name}: ${r.datasets?.length || 0} useful datasets (${r.totalDatasets} total)`
+    );
   }
   console.log(`\nTotal useful datasets: ${totalDatasets}`);
   console.log(`Output directory: ${OUTPUT_DIR}`);

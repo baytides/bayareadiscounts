@@ -47,7 +47,8 @@ You just need a library card—usually free for residents.`,
       'san mateo': {
         name: 'San Mateo County Libraries + City Libraries',
         website: 'smcl.org',
-        cardInfo: 'Free for county residents. Redwood City, Burlingame, San Mateo have their own systems too.',
+        cardInfo:
+          'Free for county residents. Redwood City, Burlingame, San Mateo have their own systems too.',
         highlights: [
           'Tutor.com for live homework help',
           'Creativebug for arts & crafts classes',
@@ -124,33 +125,21 @@ You just need a library card—usually free for residents.`,
         name: 'Sonoma County Library',
         website: 'sonomalibrary.org',
         cardInfo: 'Free for residents.',
-        highlights: [
-          'Brainfuse HelpNow',
-          'LinkedIn Learning',
-          'Great Spanish-language collection',
-        ],
+        highlights: ['Brainfuse HelpNow', 'LinkedIn Learning', 'Great Spanish-language collection'],
         tutoring: 'Brainfuse HelpNow',
       },
       napa: {
         name: 'Napa County Library',
         website: 'countyofnapa.org/library',
         cardInfo: 'Free for residents.',
-        highlights: [
-          'Brainfuse tutoring',
-          'Creativebug',
-          'Bilingual story times',
-        ],
+        highlights: ['Brainfuse tutoring', 'Creativebug', 'Bilingual story times'],
         tutoring: 'Brainfuse HelpNow',
       },
       solano: {
         name: 'Solano County Library',
         website: 'solanolibrary.com',
         cardInfo: 'Free for residents.',
-        highlights: [
-          'Brainfuse tutoring and job help',
-          'LinkedIn Learning',
-          'Creativebug',
-        ],
+        highlights: ['Brainfuse tutoring and job help', 'LinkedIn Learning', 'Creativebug'],
         tutoring: 'Brainfuse HelpNow',
       },
     },
@@ -158,8 +147,10 @@ You just need a library card—usually free for residents.`,
     tutoringServices: {
       brainfuse: {
         name: 'Brainfuse HelpNow',
-        description: 'Free live tutoring in any subject, writing lab, test prep. Available through most Bay Area libraries.',
-        subjects: 'Math, science, English, social studies, foreign languages, SAT/ACT prep, GED prep',
+        description:
+          'Free live tutoring in any subject, writing lab, test prep. Available through most Bay Area libraries.',
+        subjects:
+          'Math, science, English, social studies, foreign languages, SAT/ACT prep, GED prep',
         hours: 'Usually 1pm-10pm PT, 7 days a week',
         howToAccess: 'Log in with your library card through your library website',
       },
@@ -205,7 +196,10 @@ You can enroll at any time during the school year. Schools must accept you even 
       alameda: { name: 'Alameda County Office of Education', website: 'acoe.org' },
       'san mateo': { name: 'San Mateo County Office of Education', website: 'smcoe.org' },
       'santa clara': { name: 'Santa Clara County Office of Education', website: 'sccoe.org' },
-      'contra costa': { name: 'Contra Costa County Office of Education', website: 'cccoe.k12.ca.us' },
+      'contra costa': {
+        name: 'Contra Costa County Office of Education',
+        website: 'cccoe.k12.ca.us',
+      },
       marin: { name: 'Marin County Office of Education', website: 'marinschools.org' },
       sonoma: { name: 'Sonoma County Office of Education', website: 'scoe.org' },
       napa: { name: 'Napa County Office of Education', website: 'napacoe.org' },
@@ -237,12 +231,42 @@ Main systems:
 - Low-income discount: Clipper START (50% off!) - clippercard.com/start`,
 
     discountPrograms: [
-      { name: 'Clipper START', description: '50% off transit for low-income riders', eligibility: 'Income under 200% federal poverty level', website: 'clipperstartcard.com' },
-      { name: 'Youth Clipper', description: 'Discounted fares for ages 5-18', eligibility: 'Ages 5-18', website: 'clippercard.com' },
-      { name: 'Senior Clipper', description: 'Discounted fares for 65+', eligibility: 'Age 65+', website: 'clippercard.com' },
-      { name: 'RTC Clipper', description: 'Discount for people with disabilities', eligibility: 'Must apply through your transit agency', website: 'clippercard.com' },
-      { name: 'Free Muni for Youth', description: 'Free Muni for SF youth', eligibility: 'SF residents ages 5-18', website: 'sfmta.com' },
-      { name: 'Free Muni for Seniors/Disabled', description: 'Free Muni for SF seniors and disabled', eligibility: 'SF residents 65+ or with disabilities, low-income', website: 'sfmta.com' },
+      {
+        name: 'Clipper START',
+        description: '50% off transit for low-income riders',
+        eligibility: 'Income under 200% federal poverty level',
+        website: 'clipperstartcard.com',
+      },
+      {
+        name: 'Youth Clipper',
+        description: 'Discounted fares for ages 5-18',
+        eligibility: 'Ages 5-18',
+        website: 'clippercard.com',
+      },
+      {
+        name: 'Senior Clipper',
+        description: 'Discounted fares for 65+',
+        eligibility: 'Age 65+',
+        website: 'clippercard.com',
+      },
+      {
+        name: 'RTC Clipper',
+        description: 'Discount for people with disabilities',
+        eligibility: 'Must apply through your transit agency',
+        website: 'clippercard.com',
+      },
+      {
+        name: 'Free Muni for Youth',
+        description: 'Free Muni for SF youth',
+        eligibility: 'SF residents ages 5-18',
+        website: 'sfmta.com',
+      },
+      {
+        name: 'Free Muni for Seniors/Disabled',
+        description: 'Free Muni for SF seniors and disabled',
+        eligibility: 'SF residents 65+ or with disabilities, low-income',
+        website: 'sfmta.com',
+      },
     ],
 
     bikeShare: `Bay Wheels (Lyft) is the main bike share—stations all over SF, Oakland, Berkeley, and San Jose. First ride free, then pay per trip or get a membership.`,
@@ -254,14 +278,54 @@ Main systems:
   sports: {
     overview: `The Bay Area is a great sports town! Our teams:`,
     teams: [
-      { name: 'Golden State Warriors', sport: 'NBA Basketball', arena: 'Chase Center, SF', funFact: '4 championships since 2015!' },
-      { name: 'San Francisco Giants', sport: 'MLB Baseball', arena: 'Oracle Park, SF', funFact: '3 World Series in 2010, 2012, 2014' },
-      { name: "Oakland A's", sport: 'MLB Baseball', arena: 'Oakland Coliseum (for now)', funFact: 'Future uncertain but loyal fans' },
-      { name: 'San Francisco 49ers', sport: 'NFL Football', arena: "Levi's Stadium, Santa Clara", funFact: '5 Super Bowl wins' },
-      { name: 'San Jose Sharks', sport: 'NHL Hockey', arena: 'SAP Center, San Jose', funFact: 'Great game atmosphere!' },
-      { name: 'San Jose Earthquakes', sport: 'MLS Soccer', arena: 'PayPal Park, San Jose', funFact: 'One of original MLS teams' },
-      { name: 'Bay FC', sport: "NWSL Women's Soccer", arena: 'PayPal Park, San Jose', funFact: "Bay Area's newest team - 2024!" },
-      { name: 'Oakland Roots', sport: 'USL Championship Soccer', arena: 'Pioneer Stadium, Hayward', funFact: 'Strong community focus' },
+      {
+        name: 'Golden State Warriors',
+        sport: 'NBA Basketball',
+        arena: 'Chase Center, SF',
+        funFact: '4 championships since 2015!',
+      },
+      {
+        name: 'San Francisco Giants',
+        sport: 'MLB Baseball',
+        arena: 'Oracle Park, SF',
+        funFact: '3 World Series in 2010, 2012, 2014',
+      },
+      {
+        name: "Oakland A's",
+        sport: 'MLB Baseball',
+        arena: 'Oakland Coliseum (for now)',
+        funFact: 'Future uncertain but loyal fans',
+      },
+      {
+        name: 'San Francisco 49ers',
+        sport: 'NFL Football',
+        arena: "Levi's Stadium, Santa Clara",
+        funFact: '5 Super Bowl wins',
+      },
+      {
+        name: 'San Jose Sharks',
+        sport: 'NHL Hockey',
+        arena: 'SAP Center, San Jose',
+        funFact: 'Great game atmosphere!',
+      },
+      {
+        name: 'San Jose Earthquakes',
+        sport: 'MLS Soccer',
+        arena: 'PayPal Park, San Jose',
+        funFact: 'One of original MLS teams',
+      },
+      {
+        name: 'Bay FC',
+        sport: "NWSL Women's Soccer",
+        arena: 'PayPal Park, San Jose',
+        funFact: "Bay Area's newest team - 2024!",
+      },
+      {
+        name: 'Oakland Roots',
+        sport: 'USL Championship Soccer',
+        arena: 'Pioneer Stadium, Hayward',
+        funFact: 'Strong community focus',
+      },
     ],
     cheapTickets: `Pro tip: Check out SeatGeek, StubHub, or Gametime right before games for deals. Student discounts available for some teams. Warriors and Giants games can be pricey, but A's and Sharks often have affordable options!`,
   },
@@ -275,7 +339,8 @@ Main systems:
     regional: {
       name: 'East Bay Regional Parks',
       website: 'ebparks.org',
-      description: '73 parks across Alameda and Contra Costa counties. Hiking, swimming, camping, nature programs.',
+      description:
+        '73 parks across Alameda and Contra Costa counties. Hiking, swimming, camping, nature programs.',
       highlights: ['Tilden', 'Redwood Regional', 'Point Pinole', 'Lake Chabot'],
     },
 
@@ -288,7 +353,8 @@ Main systems:
         'Henry Cowell Redwoods',
         'Samuel P. Taylor',
       ],
-      discount: 'Golden Bear Pass: Free day-use for low-income Californians! parks.ca.gov/goldenbearpass',
+      discount:
+        'Golden Bear Pass: Free day-use for low-income Californians! parks.ca.gov/goldenbearpass',
     },
 
     nationalParks: {
@@ -349,9 +415,9 @@ Some services vary by whether you're in an incorporated city or unincorporated c
   // ============================================
   responses: {
     schools: [
-      "Schools in the Bay Area are a mixed bag—some amazing, some struggling. It really depends on the neighborhood. What city are you looking at? I can give you some info.",
-      "Looking for school info? I can help! Are you trying to enroll, looking for after-school programs, or checking out different areas?",
-      "School stuff! I know a bit about this. The California School Dashboard (caschooldashboard.org) has official data, but I can share what I know about your area too. Where are you looking?",
+      'Schools in the Bay Area are a mixed bag—some amazing, some struggling. It really depends on the neighborhood. What city are you looking at? I can give you some info.',
+      'Looking for school info? I can help! Are you trying to enroll, looking for after-school programs, or checking out different areas?',
+      'School stuff! I know a bit about this. The California School Dashboard (caschooldashboard.org) has official data, but I can share what I know about your area too. Where are you looking?',
     ],
     libraries: [
       "Oh, I love talking about libraries! They're seriously underrated—free tutoring, museum passes, streaming services, all with a library card. What are you looking for specifically?",
@@ -359,13 +425,13 @@ Some services vary by whether you're in an incorporated city or unincorporated c
       "Need library info? They've got so much more than books now—free tutoring, online courses, even museum passes! What city are you in?",
     ],
     tutoring: [
-      "Free tutoring? Your library has you covered! Most Bay Area libraries offer Brainfuse HelpNow—live tutoring in any subject. You just need a library card. What city are you in?",
-      "Looking for tutoring help? Check your local library! They usually offer free live tutoring through Brainfuse or Tutor.com. Which library system are you near?",
+      'Free tutoring? Your library has you covered! Most Bay Area libraries offer Brainfuse HelpNow—live tutoring in any subject. You just need a library card. What city are you in?',
+      'Looking for tutoring help? Check your local library! They usually offer free live tutoring through Brainfuse or Tutor.com. Which library system are you near?',
       "Good news—your library probably has free tutoring! It's called Brainfuse or Tutor.com depending on the county. Live help, any subject. Want me to look up your area?",
     ],
     transit: [
-      "Transit in the Bay is... a lot of different systems that mostly work together. The key is getting a Clipper card. Where are you trying to get from/to?",
-      "Bay Area transit! BART for trains, Muni in SF, Caltrain to the Peninsula, and a bunch of bus systems. What do you need to know?",
+      'Transit in the Bay is... a lot of different systems that mostly work together. The key is getting a Clipper card. Where are you trying to get from/to?',
+      'Bay Area transit! BART for trains, Muni in SF, Caltrain to the Peninsula, and a bunch of bus systems. What do you need to know?',
       "Need transit help? Pro tip: Clipper START gets you 50% off all Bay Area transit if you're low-income. Where are you trying to go?",
     ],
     sports: [
@@ -373,8 +439,8 @@ Some services vary by whether you're in an incorporated city or unincorporated c
       "Looking to catch a game? We've got plenty of teams! Warriors and Giants games can be pricey, but A's and Sharks are more affordable. What sport do you follow?",
     ],
     parks: [
-      "The Bay Area has amazing parks! What are you looking for—hiking, playgrounds, picnic spots? And where are you located?",
-      "Parks are one of the best free things about the Bay. East Bay Regional Parks are incredible, and Golden Gate National Rec Area is free. What kind of outdoor stuff do you like?",
+      'The Bay Area has amazing parks! What are you looking for—hiking, playgrounds, picnic spots? And where are you located?',
+      'Parks are one of the best free things about the Bay. East Bay Regional Parks are incredible, and Golden Gate National Rec Area is free. What kind of outdoor stuff do you like?',
       "Looking to get outside? We've got everything from urban parks to real wilderness. Pro tip: Golden Bear Pass gets you free state park access if you're low-income!",
     ],
   },

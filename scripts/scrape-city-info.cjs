@@ -41,12 +41,22 @@ const BAY_AREA_ENTITIES = [
   { county: 'Alameda', name: 'Newark', type: 'City', url: 'https://www.newarkca.gov' },
   { county: 'Alameda', name: 'Oakland', type: 'City', url: 'https://www.oaklandca.gov' },
   { county: 'Alameda', name: 'Piedmont', type: 'City', url: 'https://piedmont.ca.gov' },
-  { county: 'Alameda', name: 'Pleasanton', type: 'City', url: 'https://www.cityofpleasantonca.gov' },
+  {
+    county: 'Alameda',
+    name: 'Pleasanton',
+    type: 'City',
+    url: 'https://www.cityofpleasantonca.gov',
+  },
   { county: 'Alameda', name: 'San Leandro', type: 'City', url: 'https://www.sanleandro.org' },
   { county: 'Alameda', name: 'Union City', type: 'City', url: 'https://www.unioncityca.gov' },
 
   // Contra Costa County
-  { county: 'Contra Costa', name: 'Contra Costa County', type: 'County', url: 'https://www.contracosta.ca.gov' },
+  {
+    county: 'Contra Costa',
+    name: 'Contra Costa County',
+    type: 'County',
+    url: 'https://www.contracosta.ca.gov',
+  },
   { county: 'Contra Costa', name: 'Antioch', type: 'City', url: 'https://www.antiochca.gov' },
   { county: 'Contra Costa', name: 'Brentwood', type: 'City', url: 'https://www.brentwoodca.gov' },
   { county: 'Contra Costa', name: 'Clayton', type: 'City', url: 'https://claytonca.gov' },
@@ -61,11 +71,21 @@ const BAY_AREA_ENTITIES = [
   { county: 'Contra Costa', name: 'Orinda', type: 'City', url: 'https://cityoforinda.org' },
   { county: 'Contra Costa', name: 'Pinole', type: 'City', url: 'https://www.ci.pinole.ca.us' },
   { county: 'Contra Costa', name: 'Pittsburg', type: 'City', url: 'https://www.pittsburgca.gov' },
-  { county: 'Contra Costa', name: 'Pleasant Hill', type: 'City', url: 'https://www.pleasanthillca.org' },
+  {
+    county: 'Contra Costa',
+    name: 'Pleasant Hill',
+    type: 'City',
+    url: 'https://www.pleasanthillca.org',
+  },
   { county: 'Contra Costa', name: 'Richmond', type: 'City', url: 'https://www.ci.richmond.ca.us' },
   { county: 'Contra Costa', name: 'San Pablo', type: 'City', url: 'https://www.sanpabloca.gov' },
   { county: 'Contra Costa', name: 'San Ramon', type: 'City', url: 'https://www.sanramon.ca.gov' },
-  { county: 'Contra Costa', name: 'Walnut Creek', type: 'City', url: 'https://www.walnutcreekca.gov' },
+  {
+    county: 'Contra Costa',
+    name: 'Walnut Creek',
+    type: 'City',
+    url: 'https://www.walnutcreekca.gov',
+  },
 
   // Marin County
   { county: 'Marin', name: 'Marin County', type: 'County', url: 'https://www.marincounty.org' },
@@ -107,7 +127,12 @@ const BAY_AREA_ENTITIES = [
   { county: 'San Mateo', name: 'Menlo Park', type: 'City', url: 'https://www.menlopark.org' },
   { county: 'San Mateo', name: 'Millbrae', type: 'City', url: 'https://www.ci.millbrae.ca.us' },
   { county: 'San Mateo', name: 'Pacifica', type: 'City', url: 'https://www.cityofpacifica.org' },
-  { county: 'San Mateo', name: 'Portola Valley', type: 'Town', url: 'https://www.portolavalley.net' },
+  {
+    county: 'San Mateo',
+    name: 'Portola Valley',
+    type: 'Town',
+    url: 'https://www.portolavalley.net',
+  },
   { county: 'San Mateo', name: 'Redwood City', type: 'City', url: 'https://www.redwoodcity.org' },
   { county: 'San Mateo', name: 'San Bruno', type: 'City', url: 'https://www.sanbruno.ca.gov' },
   { county: 'San Mateo', name: 'San Carlos', type: 'City', url: 'https://www.cityofsancarlos.org' },
@@ -116,17 +141,42 @@ const BAY_AREA_ENTITIES = [
   { county: 'San Mateo', name: 'Woodside', type: 'Town', url: 'https://www.woodsideca.gov' },
 
   // Santa Clara County
-  { county: 'Santa Clara', name: 'Santa Clara County', type: 'County', url: 'https://www.sccgov.org' },
+  {
+    county: 'Santa Clara',
+    name: 'Santa Clara County',
+    type: 'County',
+    url: 'https://www.sccgov.org',
+  },
   { county: 'Santa Clara', name: 'Campbell', type: 'City', url: 'https://www.campbellca.gov' },
   { county: 'Santa Clara', name: 'Cupertino', type: 'City', url: 'https://www.cupertino.org' },
   { county: 'Santa Clara', name: 'Gilroy', type: 'City', url: 'https://www.cityofgilroy.org' },
   { county: 'Santa Clara', name: 'Los Altos', type: 'City', url: 'https://www.losaltosca.gov' },
-  { county: 'Santa Clara', name: 'Los Altos Hills', type: 'Town', url: 'https://www.losaltoshills.ca.gov' },
+  {
+    county: 'Santa Clara',
+    name: 'Los Altos Hills',
+    type: 'Town',
+    url: 'https://www.losaltoshills.ca.gov',
+  },
   { county: 'Santa Clara', name: 'Los Gatos', type: 'Town', url: 'https://www.losgatosca.gov' },
   { county: 'Santa Clara', name: 'Milpitas', type: 'City', url: 'https://www.milpitas.gov' },
-  { county: 'Santa Clara', name: 'Monte Sereno', type: 'City', url: 'https://www.cityofmontesereno.org' },
-  { county: 'Santa Clara', name: 'Morgan Hill', type: 'City', url: 'https://www.morgan-hill.ca.gov' },
-  { county: 'Santa Clara', name: 'Mountain View', type: 'City', url: 'https://www.mountainview.gov' },
+  {
+    county: 'Santa Clara',
+    name: 'Monte Sereno',
+    type: 'City',
+    url: 'https://www.cityofmontesereno.org',
+  },
+  {
+    county: 'Santa Clara',
+    name: 'Morgan Hill',
+    type: 'City',
+    url: 'https://www.morgan-hill.ca.gov',
+  },
+  {
+    county: 'Santa Clara',
+    name: 'Mountain View',
+    type: 'City',
+    url: 'https://www.mountainview.gov',
+  },
   { county: 'Santa Clara', name: 'Palo Alto', type: 'City', url: 'https://www.paloalto.gov' },
   { county: 'Santa Clara', name: 'San Jose', type: 'City', url: 'https://www.sanjoseca.gov' },
   { county: 'Santa Clara', name: 'Santa Clara', type: 'City', url: 'https://www.santaclaraca.gov' },
@@ -156,22 +206,97 @@ const BAY_AREA_ENTITIES = [
   { county: 'Sonoma', name: 'Windsor', type: 'Town', url: 'https://www.townofwindsor.com' },
 
   // Regional Agencies (serve entire Bay Area)
-  { county: 'Regional', name: 'Association of Bay Area Governments (ABAG)', type: 'Regional Agency', url: 'https://abag.ca.gov' },
-  { county: 'Regional', name: 'Metropolitan Transportation Commission (MTC)', type: 'Regional Agency', url: 'https://mtc.ca.gov' },
-  { county: 'Regional', name: 'Bay Area Air Quality Management District (BAAQMD)', type: 'Regional Agency', url: 'https://www.baaqmd.gov' },
-  { county: 'Regional', name: 'Bay Conservation and Development Commission (BCDC)', type: 'Regional Agency', url: 'https://www.bcdc.ca.gov' },
-  { county: 'Regional', name: 'Bay Area Rapid Transit (BART)', type: 'Regional Agency', url: 'https://www.bart.gov' },
-  { county: 'Regional', name: 'Caltrain', type: 'Regional Agency', url: 'https://www.caltrain.com' },
-  { county: 'Regional', name: 'AC Transit', type: 'Regional Agency', url: 'https://www.actransit.org' },
-  { county: 'Regional', name: 'Golden Gate Transit', type: 'Regional Agency', url: 'https://www.goldengate.org' },
-  { county: 'Regional', name: 'San Francisco Municipal Transportation Agency (SFMTA)', type: 'Regional Agency', url: 'https://www.sfmta.com' },
-  { county: 'Regional', name: 'Valley Transportation Authority (VTA)', type: 'Regional Agency', url: 'https://www.vta.org' },
-  { county: 'Regional', name: 'SamTrans', type: 'Regional Agency', url: 'https://www.samtrans.com' },
-  { county: 'Regional', name: 'Bay Area Toll Authority', type: 'Regional Agency', url: 'https://www.bayareatolls.com' },
+  {
+    county: 'Regional',
+    name: 'Association of Bay Area Governments (ABAG)',
+    type: 'Regional Agency',
+    url: 'https://abag.ca.gov',
+  },
+  {
+    county: 'Regional',
+    name: 'Metropolitan Transportation Commission (MTC)',
+    type: 'Regional Agency',
+    url: 'https://mtc.ca.gov',
+  },
+  {
+    county: 'Regional',
+    name: 'Bay Area Air Quality Management District (BAAQMD)',
+    type: 'Regional Agency',
+    url: 'https://www.baaqmd.gov',
+  },
+  {
+    county: 'Regional',
+    name: 'Bay Conservation and Development Commission (BCDC)',
+    type: 'Regional Agency',
+    url: 'https://www.bcdc.ca.gov',
+  },
+  {
+    county: 'Regional',
+    name: 'Bay Area Rapid Transit (BART)',
+    type: 'Regional Agency',
+    url: 'https://www.bart.gov',
+  },
+  {
+    county: 'Regional',
+    name: 'Caltrain',
+    type: 'Regional Agency',
+    url: 'https://www.caltrain.com',
+  },
+  {
+    county: 'Regional',
+    name: 'AC Transit',
+    type: 'Regional Agency',
+    url: 'https://www.actransit.org',
+  },
+  {
+    county: 'Regional',
+    name: 'Golden Gate Transit',
+    type: 'Regional Agency',
+    url: 'https://www.goldengate.org',
+  },
+  {
+    county: 'Regional',
+    name: 'San Francisco Municipal Transportation Agency (SFMTA)',
+    type: 'Regional Agency',
+    url: 'https://www.sfmta.com',
+  },
+  {
+    county: 'Regional',
+    name: 'Valley Transportation Authority (VTA)',
+    type: 'Regional Agency',
+    url: 'https://www.vta.org',
+  },
+  {
+    county: 'Regional',
+    name: 'SamTrans',
+    type: 'Regional Agency',
+    url: 'https://www.samtrans.com',
+  },
+  {
+    county: 'Regional',
+    name: 'Bay Area Toll Authority',
+    type: 'Regional Agency',
+    url: 'https://www.bayareatolls.com',
+  },
   { county: 'Regional', name: '511 SF Bay', type: 'Regional Agency', url: 'https://511.org' },
-  { county: 'Regional', name: 'Bay Area Water Supply & Conservation Agency (BAWSCA)', type: 'Regional Agency', url: 'https://bawsca.org' },
-  { county: 'Regional', name: 'East Bay Municipal Utility District (EBMUD)', type: 'Regional Agency', url: 'https://www.ebmud.com' },
-  { county: 'Regional', name: 'San Francisco Public Utilities Commission (SFPUC)', type: 'Regional Agency', url: 'https://www.sfpuc.org' },
+  {
+    county: 'Regional',
+    name: 'Bay Area Water Supply & Conservation Agency (BAWSCA)',
+    type: 'Regional Agency',
+    url: 'https://bawsca.org',
+  },
+  {
+    county: 'Regional',
+    name: 'East Bay Municipal Utility District (EBMUD)',
+    type: 'Regional Agency',
+    url: 'https://www.ebmud.com',
+  },
+  {
+    county: 'Regional',
+    name: 'San Francisco Public Utilities Commission (SFPUC)',
+    type: 'Regional Agency',
+    url: 'https://www.sfpuc.org',
+  },
 ];
 
 // Pages specific to regional transit/utility agencies
@@ -381,7 +506,7 @@ const DELAY_BETWEEN_CITIES = 3000; // 3 seconds
  * Sleep for specified milliseconds
  */
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -410,13 +535,13 @@ async function extractPageInfo(page) {
     // Extract phone numbers
     const phoneRegex = /\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
     const pageText = document.body.innerText;
-    const phones = [...new Set((pageText.match(phoneRegex) || []))];
+    const phones = [...new Set(pageText.match(phoneRegex) || [])];
     info.phones = phones.slice(0, 10); // Limit to 10
 
     // Extract emails
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     const emails = new Set();
-    emailLinks.forEach(a => {
+    emailLinks.forEach((a) => {
       const email = a.href.replace('mailto:', '').split('?')[0];
       if (email && email.includes('@')) {
         emails.add(email.toLowerCase());
@@ -429,9 +554,9 @@ async function extractPageInfo(page) {
       /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln|Court|Ct|Place|Pl)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi,
     ];
     const addresses = new Set();
-    addressPatterns.forEach(pattern => {
+    addressPatterns.forEach((pattern) => {
       const matches = pageText.match(pattern) || [];
-      matches.forEach(m => addresses.add(m.trim()));
+      matches.forEach((m) => addresses.add(m.trim()));
     });
     info.addresses = [...addresses].slice(0, 5);
 
@@ -441,29 +566,38 @@ async function extractPageInfo(page) {
       /(?:m-f|mon-fri|monday-friday)[\s:]+\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)?/gi,
     ];
     const hours = new Set();
-    hoursPatterns.forEach(pattern => {
+    hoursPatterns.forEach((pattern) => {
       const matches = pageText.match(pattern) || [];
-      matches.forEach(m => hours.add(m.trim()));
+      matches.forEach((m) => hours.add(m.trim()));
     });
     info.hours = [...hours].slice(0, 5);
 
     // Extract department names from headings and lists
     const headings = document.querySelectorAll('h1, h2, h3, h4');
     const deptKeywords = ['department', 'office', 'division', 'services', 'bureau', 'agency'];
-    headings.forEach(h => {
+    headings.forEach((h) => {
       const text = h.innerText.toLowerCase();
-      if (deptKeywords.some(kw => text.includes(kw))) {
+      if (deptKeywords.some((kw) => text.includes(kw))) {
         info.departments.push(h.innerText.trim());
       }
     });
     info.departments = [...new Set(info.departments)].slice(0, 20);
 
     // Extract service names
-    const serviceKeywords = ['apply', 'request', 'report', 'pay', 'register', 'schedule', 'submit', 'file'];
+    const serviceKeywords = [
+      'apply',
+      'request',
+      'report',
+      'pay',
+      'register',
+      'schedule',
+      'submit',
+      'file',
+    ];
     const links = document.querySelectorAll('a');
-    links.forEach(link => {
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase();
-      if (serviceKeywords.some(kw => text.includes(kw)) && text.length < 100) {
+      if (serviceKeywords.some((kw) => text.includes(kw)) && text.length < 100) {
         info.services.push({
           name: link.innerText.trim(),
           url: link.href,
@@ -473,11 +607,29 @@ async function extractPageInfo(page) {
     info.services = info.services.slice(0, 20);
 
     // Extract important links (police, fire, library, parks, etc.)
-    const importantKeywords = ['police', 'fire', 'library', 'parks', 'recreation', 'housing', 'permit', 'utility', 'water', 'trash', 'garbage', 'emergency', 'council', 'meeting'];
-    links.forEach(link => {
+    const importantKeywords = [
+      'police',
+      'fire',
+      'library',
+      'parks',
+      'recreation',
+      'housing',
+      'permit',
+      'utility',
+      'water',
+      'trash',
+      'garbage',
+      'emergency',
+      'council',
+      'meeting',
+    ];
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase();
       const href = link.href.toLowerCase();
-      if ((importantKeywords.some(kw => text.includes(kw) || href.includes(kw))) && link.href.startsWith('http')) {
+      if (
+        importantKeywords.some((kw) => text.includes(kw) || href.includes(kw)) &&
+        link.href.startsWith('http')
+      ) {
         info.links.push({
           name: link.innerText.trim().substring(0, 100),
           url: link.href,
@@ -486,11 +638,13 @@ async function extractPageInfo(page) {
     });
     // Dedupe by URL
     const seenUrls = new Set();
-    info.links = info.links.filter(l => {
-      if (seenUrls.has(l.url)) return false;
-      seenUrls.add(l.url);
-      return true;
-    }).slice(0, 30);
+    info.links = info.links
+      .filter((l) => {
+        if (seenUrls.has(l.url)) return false;
+        seenUrls.add(l.url);
+        return true;
+      })
+      .slice(0, 30);
 
     return info;
   });
@@ -510,14 +664,14 @@ async function fetchSitemap(page, baseUrl) {
     try {
       const response = await page.goto(sitemapUrl, {
         waitUntil: 'domcontentloaded',
-        timeout: 10000
+        timeout: 10000,
       });
 
       if (response && response.ok()) {
         const content = await page.content();
         // Extract URLs from sitemap XML
         const urlMatches = content.match(/<loc>([^<]+)<\/loc>/g) || [];
-        const urls = urlMatches.map(match => match.replace(/<\/?loc>/g, ''));
+        const urls = urlMatches.map((match) => match.replace(/<\/?loc>/g, ''));
 
         if (urls.length > 0) {
           console.log(`    Found sitemap with ${urls.length} URLs`);
@@ -539,27 +693,27 @@ async function discoverPagesFromHomepage(page, baseUrl) {
 
   // Keywords to look for in navigation links
   const importantPatterns = {
-    'contact': ['contact', 'reach us', 'get in touch'],
-    'departments': ['department', 'agencies', 'offices', 'divisions'],
-    'services': ['service', 'resident', 'citizen', 'how do i', 'online services'],
-    'calendar': ['calendar', 'events', 'meetings', 'agenda'],
-    'news': ['news', 'announcement', 'press', 'alert', 'update'],
-    'emergency': ['emergency', 'police', 'fire', 'safety', 'public safety'],
-    'housing': ['housing', 'rent', 'affordable'],
-    'library': ['library', 'libraries'],
-    'parks': ['park', 'recreation', 'rec center'],
-    'utilities': ['utility', 'water', 'trash', 'garbage', 'sewer', 'billing'],
-    'permits': ['permit', 'license', 'building', 'planning', 'zoning'],
-    'jobs': ['job', 'career', 'employment', 'work for'],
-    'government': ['government', 'council', 'board', 'commission', 'mayor'],
-    'faq': ['faq', 'help', 'question', 'how to'],
-    'transit': ['transit', 'schedule', 'route', 'fare', 'station', 'bus', 'train'],
+    contact: ['contact', 'reach us', 'get in touch'],
+    departments: ['department', 'agencies', 'offices', 'divisions'],
+    services: ['service', 'resident', 'citizen', 'how do i', 'online services'],
+    calendar: ['calendar', 'events', 'meetings', 'agenda'],
+    news: ['news', 'announcement', 'press', 'alert', 'update'],
+    emergency: ['emergency', 'police', 'fire', 'safety', 'public safety'],
+    housing: ['housing', 'rent', 'affordable'],
+    library: ['library', 'libraries'],
+    parks: ['park', 'recreation', 'rec center'],
+    utilities: ['utility', 'water', 'trash', 'garbage', 'sewer', 'billing'],
+    permits: ['permit', 'license', 'building', 'planning', 'zoning'],
+    jobs: ['job', 'career', 'employment', 'work for'],
+    government: ['government', 'council', 'board', 'commission', 'mayor'],
+    faq: ['faq', 'help', 'question', 'how to'],
+    transit: ['transit', 'schedule', 'route', 'fare', 'station', 'bus', 'train'],
   };
 
   try {
     await page.goto(baseUrl, {
       waitUntil: 'domcontentloaded',
-      timeout: 20000
+      timeout: 20000,
     });
     await sleep(1000);
 
@@ -568,7 +722,7 @@ async function discoverPagesFromHomepage(page, baseUrl) {
       const results = [];
       const allLinks = document.querySelectorAll('a[href]');
 
-      allLinks.forEach(link => {
+      allLinks.forEach((link) => {
         const href = link.href;
         const text = link.innerText.trim().toLowerCase();
 
@@ -578,7 +732,11 @@ async function discoverPagesFromHomepage(page, baseUrl) {
             url: href,
             text: text,
             // Check if it's in navigation (nav, header, footer)
-            isNav: !!(link.closest('nav') || link.closest('header') || link.closest('[role="navigation"]'))
+            isNav: !!(
+              link.closest('nav') ||
+              link.closest('header') ||
+              link.closest('[role="navigation"]')
+            ),
           });
         }
       });
@@ -589,13 +747,13 @@ async function discoverPagesFromHomepage(page, baseUrl) {
     // Categorize discovered links
     for (const link of links) {
       for (const [category, patterns] of Object.entries(importantPatterns)) {
-        if (patterns.some(p => link.text.includes(p) || link.url.toLowerCase().includes(p))) {
+        if (patterns.some((p) => link.text.includes(p) || link.url.toLowerCase().includes(p))) {
           // Prefer nav links, but accept any
           if (!discoveredPages.has(link.url) || link.isNav) {
             discoveredPages.set(link.url, {
               name: link.text.substring(0, 50),
               category: category,
-              isNav: link.isNav
+              isNav: link.isNav,
             });
           }
           break;
@@ -604,7 +762,6 @@ async function discoverPagesFromHomepage(page, baseUrl) {
     }
 
     console.log(`    Discovered ${discoveredPages.size} important pages from homepage`);
-
   } catch (e) {
     console.log(`    Error discovering pages: ${e.message.substring(0, 50)}`);
   }
@@ -616,16 +773,61 @@ async function discoverPagesFromHomepage(page, baseUrl) {
  * Filter sitemap URLs to only important pages
  */
 function filterSitemapUrls(urls, baseUrl, entityType) {
-  const importantKeywords = entityType === 'Regional Agency'
-    ? ['contact', 'schedule', 'fare', 'route', 'station', 'map', 'alert', 'news', 'accessibility', 'ticket', 'clipper', 'parking', 'bike', 'plan', 'project', 'meeting', 'about', 'service']
-    : ['contact', 'department', 'service', 'calendar', 'event', 'news', 'emergency', 'police', 'fire', 'library', 'park', 'recreation', 'housing', 'utility', 'water', 'trash', 'permit', 'job', 'career', 'council', 'faq', 'meeting', 'agenda', 'about'];
+  const importantKeywords =
+    entityType === 'Regional Agency'
+      ? [
+          'contact',
+          'schedule',
+          'fare',
+          'route',
+          'station',
+          'map',
+          'alert',
+          'news',
+          'accessibility',
+          'ticket',
+          'clipper',
+          'parking',
+          'bike',
+          'plan',
+          'project',
+          'meeting',
+          'about',
+          'service',
+        ]
+      : [
+          'contact',
+          'department',
+          'service',
+          'calendar',
+          'event',
+          'news',
+          'emergency',
+          'police',
+          'fire',
+          'library',
+          'park',
+          'recreation',
+          'housing',
+          'utility',
+          'water',
+          'trash',
+          'permit',
+          'job',
+          'career',
+          'council',
+          'faq',
+          'meeting',
+          'agenda',
+          'about',
+        ];
 
-  const filtered = urls.filter(url => {
+  const filtered = urls.filter((url) => {
     const path = url.replace(baseUrl, '').toLowerCase();
     // Include homepage
     if (path === '/' || path === '') return true;
     // Include pages matching important keywords
-    return importantKeywords.some(kw => path.includes(kw));
+    return importantKeywords.some((kw) => path.includes(kw));
   });
 
   // Limit to avoid scraping too many pages
@@ -665,9 +867,9 @@ async function scrapeCity(page, entity) {
   if (sitemapUrls && sitemapUrls.length > 5) {
     result.discoveryMethod = 'sitemap';
     const filtered = filterSitemapUrls(sitemapUrls, entity.url, entity.type);
-    pagesToScrape = filtered.map(url => ({
+    pagesToScrape = filtered.map((url) => ({
       url: url,
-      name: url.replace(entity.url, '').replace(/^\//, '') || 'Homepage'
+      name: url.replace(entity.url, '').replace(/^\//, '') || 'Homepage',
     }));
     console.log(`    Using ${pagesToScrape.length} pages from sitemap`);
   }
@@ -681,7 +883,7 @@ async function scrapeCity(page, entity) {
       result.discoveryMethod = result.discoveryMethod ? 'sitemap+crawl' : 'crawl';
       for (const [url, info] of discoveredPages) {
         // Don't add if already from sitemap
-        if (!pagesToScrape.some(p => p.url === url)) {
+        if (!pagesToScrape.some((p) => p.url === url)) {
           pagesToScrape.push({ url, name: info.name, category: info.category });
         }
       }
@@ -692,21 +894,24 @@ async function scrapeCity(page, entity) {
   // PRIORITY 3: Fall back to guessing paths
   if (pagesToScrape.length < 5) {
     console.log('  Method 3: Falling back to predefined paths...');
-    result.discoveryMethod = result.discoveryMethod ? result.discoveryMethod + '+fallback' : 'fallback';
+    result.discoveryMethod = result.discoveryMethod
+      ? result.discoveryMethod + '+fallback'
+      : 'fallback';
 
-    const fallbackPages = entity.type === 'Regional Agency' ? REGIONAL_PAGES_TO_SCRAPE : PAGES_TO_SCRAPE;
+    const fallbackPages =
+      entity.type === 'Regional Agency' ? REGIONAL_PAGES_TO_SCRAPE : PAGES_TO_SCRAPE;
     const fallbackSorted = [...fallbackPages].sort((a, b) => a.priority - b.priority).slice(0, 20);
 
     for (const pageConfig of fallbackSorted) {
       const fullUrl = `${entity.url}${pageConfig.path}`;
-      if (!pagesToScrape.some(p => p.url === fullUrl)) {
+      if (!pagesToScrape.some((p) => p.url === fullUrl)) {
         pagesToScrape.push({ url: fullUrl, name: pageConfig.name });
       }
     }
   }
 
   // Always ensure homepage is included
-  if (!pagesToScrape.some(p => p.url === entity.url || p.url === entity.url + '/')) {
+  if (!pagesToScrape.some((p) => p.url === entity.url || p.url === entity.url + '/')) {
     pagesToScrape.unshift({ url: entity.url, name: 'Homepage' });
   }
 
@@ -717,12 +922,16 @@ async function scrapeCity(page, entity) {
     try {
       await page.goto(pageConfig.url, {
         waitUntil: 'domcontentloaded',
-        timeout: 20000
+        timeout: 20000,
       });
 
       // Check if page loaded successfully (not 404)
       const title = await page.title();
-      if (title && !title.toLowerCase().includes('404') && !title.toLowerCase().includes('not found')) {
+      if (
+        title &&
+        !title.toLowerCase().includes('404') &&
+        !title.toLowerCase().includes('not found')
+      ) {
         await sleep(800);
 
         const pageInfo = await extractPageInfo(page);
@@ -752,20 +961,22 @@ async function scrapeCity(page, entity) {
 
   // Dedupe services and links by URL
   const seenServiceUrls = new Set();
-  result.services = result.services.filter(s => {
+  result.services = result.services.filter((s) => {
     if (seenServiceUrls.has(s.url)) return false;
     seenServiceUrls.add(s.url);
     return true;
   });
 
   const seenLinkUrls = new Set();
-  result.importantLinks = result.importantLinks.filter(l => {
+  result.importantLinks = result.importantLinks.filter((l) => {
     if (seenLinkUrls.has(l.url)) return false;
     seenLinkUrls.add(l.url);
     return true;
   });
 
-  console.log(`  Summary: ${result.allPhones.length} phones, ${result.allEmails.length} emails, ${result.departments.length} depts, ${result.services.length} services`);
+  console.log(
+    `  Summary: ${result.allPhones.length} phones, ${result.allEmails.length} emails, ${result.departments.length} depts, ${result.services.length} services`
+  );
   console.log(`  Pages scraped: ${Object.keys(result.pages).length}`);
 
   return result;
@@ -778,7 +989,7 @@ async function main() {
   // Parse arguments
   const args = process.argv.slice(2);
   const quickMode = args.includes('--quick');
-  const countyArg = args.find(a => a.startsWith('--county='));
+  const countyArg = args.find((a) => a.startsWith('--county='));
   const filterCounty = countyArg ? countyArg.split('=')[1] : null;
 
   console.log('Bay Area City & County Website Scraper');
@@ -788,7 +999,7 @@ async function main() {
   let entities = BAY_AREA_ENTITIES;
 
   if (filterCounty) {
-    entities = entities.filter(e => e.county.toLowerCase() === filterCounty.toLowerCase());
+    entities = entities.filter((e) => e.county.toLowerCase() === filterCounty.toLowerCase());
     console.log(`Filtering to ${filterCounty} county (${entities.length} entities)`);
   }
 
@@ -820,7 +1031,8 @@ async function main() {
   });
 
   const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     viewport: { width: 1920, height: 1080 },
     locale: 'en-US',
   });
@@ -846,7 +1058,6 @@ async function main() {
         byCounty[entity.county] = [];
       }
       byCounty[entity.county].push(result);
-
     } catch (e) {
       console.log(`  Error: ${e.message}`);
       results.push({

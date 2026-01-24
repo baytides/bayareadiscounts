@@ -25,7 +25,7 @@ const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'consolidated');
 function loadJsonFiles(dir) {
   if (!fs.existsSync(dir)) return [];
 
-  const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'));
   const results = [];
 
   for (const file of files) {
@@ -49,10 +49,10 @@ function aggregateFromPages(entity) {
   const emails = new Set();
   const addresses = new Set();
 
-  for (const page of (entity.pages || [])) {
-    (page.phones || []).forEach(p => phones.add(p));
-    (page.emails || []).forEach(e => emails.add(e));
-    (page.addresses || []).forEach(a => addresses.add(a));
+  for (const page of entity.pages || []) {
+    (page.phones || []).forEach((p) => phones.add(p));
+    (page.emails || []).forEach((e) => emails.add(e));
+    (page.addresses || []).forEach((a) => addresses.add(a));
   }
 
   return {
@@ -147,7 +147,11 @@ function extractContacts(sitemapData, noSitemapData) {
 
     const aggregated = aggregateFromPages(entity);
 
-    if (aggregated.phones.length > 0 || aggregated.emails.length > 0 || aggregated.addresses.length > 0) {
+    if (
+      aggregated.phones.length > 0 ||
+      aggregated.emails.length > 0 ||
+      aggregated.addresses.length > 0
+    ) {
       contacts.push({
         name: entity.name,
         county: entity.county,
@@ -254,34 +258,19 @@ async function main() {
   console.log('\nSaving outputs...');
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'all-entities.json'),
-    JSON.stringify(entities, null, 2)
-  );
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'all-entities.json'), JSON.stringify(entities, null, 2));
   console.log('  Saved all-entities.json');
 
-  fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'all-services.json'),
-    JSON.stringify(services, null, 2)
-  );
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'all-services.json'), JSON.stringify(services, null, 2));
   console.log('  Saved all-services.json');
 
-  fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'all-contacts.json'),
-    JSON.stringify(contacts, null, 2)
-  );
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'all-contacts.json'), JSON.stringify(contacts, null, 2));
   console.log('  Saved all-contacts.json');
 
-  fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'open-datasets.json'),
-    JSON.stringify(datasets, null, 2)
-  );
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'open-datasets.json'), JSON.stringify(datasets, null, 2));
   console.log('  Saved open-datasets.json');
 
-  fs.writeFileSync(
-    path.join(OUTPUT_DIR, 'summary.json'),
-    JSON.stringify(summary, null, 2)
-  );
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'summary.json'), JSON.stringify(summary, null, 2));
   console.log('  Saved summary.json');
 
   // Print summary

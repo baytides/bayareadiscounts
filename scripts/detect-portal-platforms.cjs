@@ -46,30 +46,34 @@ function fetchUrl(url, options = {}) {
     const protocol = url.startsWith('https') ? https : http;
     const timeout = options.timeout || 10000;
 
-    const req = protocol.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; BayNavigator/1.0)',
-        'Accept': 'text/html,application/json,*/*',
+    const req = protocol.get(
+      url,
+      {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; BayNavigator/1.0)',
+          Accept: 'text/html,application/json,*/*',
+        },
+        timeout,
       },
-      timeout,
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => {
-        data += chunk;
-        // Only need first 5KB to detect platform
-        if (data.length > 5000) {
-          req.destroy();
-        }
-      });
-      res.on('end', () => {
-        resolve({
-          status: res.statusCode,
-          headers: res.headers,
-          body: data.substring(0, 5000),
-          finalUrl: res.headers.location || url,
+      (res) => {
+        let data = '';
+        res.on('data', (chunk) => {
+          data += chunk;
+          // Only need first 5KB to detect platform
+          if (data.length > 5000) {
+            req.destroy();
+          }
         });
-      });
-    });
+        res.on('end', () => {
+          resolve({
+            status: res.statusCode,
+            headers: res.headers,
+            body: data.substring(0, 5000),
+            finalUrl: res.headers.location || url,
+          });
+        });
+      }
+    );
 
     req.on('error', (e) => {
       resolve({ error: e.message, status: 0 });
@@ -114,7 +118,9 @@ async function detectPlatform(portal) {
 
   // Check Socrata discovery API (central)
   const domain = portal.url.replace('https://', '').replace('http://', '').split('/')[0];
-  const socrataDiscovery = await fetchUrl(`https://api.us.socrata.com/api/catalog/v1?domains=${domain}&limit=1`);
+  const socrataDiscovery = await fetchUrl(
+    `https://api.us.socrata.com/api/catalog/v1?domains=${domain}&limit=1`
+  );
   if (socrataDiscovery.status === 200 && socrataDiscovery.body.includes('"results"')) {
     const parsed = JSON.parse(socrataDiscovery.body);
     if (parsed.results && parsed.results.length > 0) {
@@ -128,7 +134,10 @@ async function detectPlatform(portal) {
 
   // Check for CKAN
   const ckanApi = await fetchUrl(`${portal.url}/api/3/action/package_list`);
-  if (ckanApi.status === 200 && (ckanApi.body.includes('"success"') || ckanApi.body.includes('"result"'))) {
+  if (
+    ckanApi.status === 200 &&
+    (ckanApi.body.includes('"success"') || ckanApi.body.includes('"result"'))
+  ) {
     result.platform = 'ckan';
     result.apiEndpoint = `${portal.url}/api/3/action`;
     result.catalogEndpoint = `${portal.url}/api/3/action/package_list`;
@@ -170,7 +179,11 @@ async function detectPlatform(portal) {
     if (homepage.body.includes('socrata') || homepage.body.includes('Socrata')) {
       result.platform = 'socrata-like';
       result.notes.push('Socrata branding found but API not accessible');
-    } else if (homepage.body.includes('arcgis') || homepage.body.includes('ArcGIS') || homepage.body.includes('esri')) {
+    } else if (
+      homepage.body.includes('arcgis') ||
+      homepage.body.includes('ArcGIS') ||
+      homepage.body.includes('esri')
+    ) {
       result.platform = 'arcgis-like';
       result.notes.push('ArcGIS branding found but standard API not accessible');
     } else if (homepage.body.includes('ckan') || homepage.body.includes('CKAN')) {

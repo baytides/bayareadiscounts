@@ -32,7 +32,12 @@ const SAMPLE_ENTITIES = [
   { county: 'Alameda', name: 'Berkeley', type: 'City', url: 'https://berkeleyca.gov' },
   { county: 'Marin', name: 'Sausalito', type: 'City', url: 'https://www.sausalito.gov' },
   { county: 'Alameda', name: 'Alameda County', type: 'County', url: 'https://www.acgov.org' },
-  { county: 'Regional', name: 'Bay Area Rapid Transit (BART)', type: 'Regional Agency', url: 'https://www.bart.gov' },
+  {
+    county: 'Regional',
+    name: 'Bay Area Rapid Transit (BART)',
+    type: 'Regional Agency',
+    url: 'https://www.bart.gov',
+  },
 ];
 
 // City/County pages
@@ -65,7 +70,7 @@ const DELAY_BETWEEN_PAGES = 1500;
 const DELAY_BETWEEN_SITES = 3000;
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -97,13 +102,13 @@ async function extractPageInfo(page) {
 
     // Extract phone numbers
     const phoneRegex = /\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
-    const phones = [...new Set((pageText.match(phoneRegex) || []))];
+    const phones = [...new Set(pageText.match(phoneRegex) || [])];
     info.phones = phones.slice(0, 10);
 
     // Extract emails
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     const emails = new Set();
-    emailLinks.forEach(a => {
+    emailLinks.forEach((a) => {
       const email = a.href.replace('mailto:', '').split('?')[0];
       if (email && email.includes('@')) {
         emails.add(email.toLowerCase());
@@ -116,9 +121,9 @@ async function extractPageInfo(page) {
       /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln|Court|Ct|Place|Pl)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi,
     ];
     const addresses = new Set();
-    addressPatterns.forEach(pattern => {
+    addressPatterns.forEach((pattern) => {
       const matches = pageText.match(pattern) || [];
-      matches.forEach(m => addresses.add(m.trim()));
+      matches.forEach((m) => addresses.add(m.trim()));
     });
     info.addresses = [...addresses].slice(0, 5);
 
@@ -128,29 +133,38 @@ async function extractPageInfo(page) {
       /(?:m-f|mon-fri|monday-friday)[\s:]+\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)?/gi,
     ];
     const hours = new Set();
-    hoursPatterns.forEach(pattern => {
+    hoursPatterns.forEach((pattern) => {
       const matches = pageText.match(pattern) || [];
-      matches.forEach(m => hours.add(m.trim()));
+      matches.forEach((m) => hours.add(m.trim()));
     });
     info.hours = [...hours].slice(0, 5);
 
     // Extract department names
     const headings = document.querySelectorAll('h1, h2, h3, h4');
     const deptKeywords = ['department', 'office', 'division', 'services', 'bureau', 'agency'];
-    headings.forEach(h => {
+    headings.forEach((h) => {
       const text = h.innerText.toLowerCase();
-      if (deptKeywords.some(kw => text.includes(kw))) {
+      if (deptKeywords.some((kw) => text.includes(kw))) {
         info.departments.push(h.innerText.trim());
       }
     });
     info.departments = [...new Set(info.departments)].slice(0, 20);
 
     // Extract service names
-    const serviceKeywords = ['apply', 'request', 'report', 'pay', 'register', 'schedule', 'submit', 'file'];
+    const serviceKeywords = [
+      'apply',
+      'request',
+      'report',
+      'pay',
+      'register',
+      'schedule',
+      'submit',
+      'file',
+    ];
     const links = document.querySelectorAll('a');
-    links.forEach(link => {
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase();
-      if (serviceKeywords.some(kw => text.includes(kw)) && text.length < 100) {
+      if (serviceKeywords.some((kw) => text.includes(kw)) && text.length < 100) {
         info.services.push({
           name: link.innerText.trim(),
           url: link.href,
@@ -162,9 +176,9 @@ async function extractPageInfo(page) {
     // Extract events/calendar items
     const eventKeywords = ['event', 'meeting', 'workshop', 'class', 'program'];
     const dateRegex = /(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2}/gi;
-    links.forEach(link => {
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase();
-      if (eventKeywords.some(kw => text.includes(kw)) || dateRegex.test(text)) {
+      if (eventKeywords.some((kw) => text.includes(kw)) || dateRegex.test(text)) {
         info.events.push({
           name: link.innerText.trim().substring(0, 150),
           url: link.href,
@@ -174,11 +188,34 @@ async function extractPageInfo(page) {
     info.events = info.events.slice(0, 15);
 
     // Extract important links
-    const importantKeywords = ['police', 'fire', 'library', 'parks', 'recreation', 'housing', 'permit', 'utility', 'water', 'trash', 'garbage', 'emergency', 'council', 'meeting', 'schedule', 'fare', 'map', 'station', 'route'];
-    links.forEach(link => {
+    const importantKeywords = [
+      'police',
+      'fire',
+      'library',
+      'parks',
+      'recreation',
+      'housing',
+      'permit',
+      'utility',
+      'water',
+      'trash',
+      'garbage',
+      'emergency',
+      'council',
+      'meeting',
+      'schedule',
+      'fare',
+      'map',
+      'station',
+      'route',
+    ];
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase();
       const href = link.href.toLowerCase();
-      if ((importantKeywords.some(kw => text.includes(kw) || href.includes(kw))) && link.href.startsWith('http')) {
+      if (
+        importantKeywords.some((kw) => text.includes(kw) || href.includes(kw)) &&
+        link.href.startsWith('http')
+      ) {
         info.links.push({
           name: link.innerText.trim().substring(0, 100),
           url: link.href,
@@ -186,14 +223,18 @@ async function extractPageInfo(page) {
       }
     });
     const seenUrls = new Set();
-    info.links = info.links.filter(l => {
-      if (seenUrls.has(l.url)) return false;
-      seenUrls.add(l.url);
-      return true;
-    }).slice(0, 30);
+    info.links = info.links
+      .filter((l) => {
+        if (seenUrls.has(l.url)) return false;
+        seenUrls.add(l.url);
+        return true;
+      })
+      .slice(0, 30);
 
     // Extract main content (first 1000 chars of article/main content)
-    const main = document.querySelector('main, article, [role="main"], .main-content, #main-content');
+    const main = document.querySelector(
+      'main, article, [role="main"], .main-content, #main-content'
+    );
     if (main) {
       info.mainContent = main.innerText.substring(0, 1000);
     }
@@ -235,11 +276,15 @@ async function scrapeEntity(page, entity) {
 
       await page.goto(fullUrl, {
         waitUntil: 'domcontentloaded',
-        timeout: 20000
+        timeout: 20000,
       });
 
       const title = await page.title();
-      if (title && !title.toLowerCase().includes('404') && !title.toLowerCase().includes('not found')) {
+      if (
+        title &&
+        !title.toLowerCase().includes('404') &&
+        !title.toLowerCase().includes('not found')
+      ) {
         await sleep(1000);
 
         const pageInfo = await extractPageInfo(page);
@@ -254,12 +299,19 @@ async function scrapeEntity(page, entity) {
         result.events.push(...pageInfo.events);
         result.importantLinks.push(...pageInfo.links);
 
-        console.log(`    ✓ Found: ${pageInfo.phones.length} phones, ${pageInfo.emails.length} emails`);
+        console.log(
+          `    ✓ Found: ${pageInfo.phones.length} phones, ${pageInfo.emails.length} emails`
+        );
         if (pageInfo.departments.length > 0) {
           console.log(`      Departments: ${pageInfo.departments.slice(0, 3).join(', ')}...`);
         }
         if (pageInfo.services.length > 0) {
-          console.log(`      Services: ${pageInfo.services.slice(0, 3).map(s => s.name).join(', ')}...`);
+          console.log(
+            `      Services: ${pageInfo.services
+              .slice(0, 3)
+              .map((s) => s.name)
+              .join(', ')}...`
+          );
         }
       } else {
         console.log(`    ✗ Page not found`);
@@ -279,21 +331,21 @@ async function scrapeEntity(page, entity) {
 
   // Dedupe services and events by URL
   const seenServiceUrls = new Set();
-  result.services = result.services.filter(s => {
+  result.services = result.services.filter((s) => {
     if (seenServiceUrls.has(s.url)) return false;
     seenServiceUrls.add(s.url);
     return true;
   });
 
   const seenEventUrls = new Set();
-  result.events = result.events.filter(e => {
+  result.events = result.events.filter((e) => {
     if (seenEventUrls.has(e.url)) return false;
     seenEventUrls.add(e.url);
     return true;
   });
 
   const seenLinkUrls = new Set();
-  result.importantLinks = result.importantLinks.filter(l => {
+  result.importantLinks = result.importantLinks.filter((l) => {
     if (seenLinkUrls.has(l.url)) return false;
     seenLinkUrls.add(l.url);
     return true;
@@ -333,7 +385,8 @@ async function main() {
   });
 
   const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     viewport: { width: 1920, height: 1080 },
     locale: 'en-US',
   });
@@ -399,7 +452,12 @@ async function main() {
         console.log(`  Sample depts: ${r.departments.slice(0, 3).join(', ')}`);
       }
       if (r.services.length > 0) {
-        console.log(`  Sample services: ${r.services.slice(0, 3).map(s => s.name).join(', ')}`);
+        console.log(
+          `  Sample services: ${r.services
+            .slice(0, 3)
+            .map((s) => s.name)
+            .join(', ')}`
+        );
       }
     }
   }

@@ -33,12 +33,22 @@ const BAY_AREA_ENTITIES = [
   { county: 'Alameda', name: 'Newark', type: 'City', url: 'https://www.newarkca.gov' },
   { county: 'Alameda', name: 'Oakland', type: 'City', url: 'https://www.oaklandca.gov' },
   { county: 'Alameda', name: 'Piedmont', type: 'City', url: 'https://piedmont.ca.gov' },
-  { county: 'Alameda', name: 'Pleasanton', type: 'City', url: 'https://www.cityofpleasantonca.gov' },
+  {
+    county: 'Alameda',
+    name: 'Pleasanton',
+    type: 'City',
+    url: 'https://www.cityofpleasantonca.gov',
+  },
   { county: 'Alameda', name: 'San Leandro', type: 'City', url: 'https://www.sanleandro.org' },
   { county: 'Alameda', name: 'Union City', type: 'City', url: 'https://www.unioncityca.gov' },
 
   // Contra Costa County
-  { county: 'Contra Costa', name: 'Contra Costa County', type: 'County', url: 'https://www.contracosta.ca.gov' },
+  {
+    county: 'Contra Costa',
+    name: 'Contra Costa County',
+    type: 'County',
+    url: 'https://www.contracosta.ca.gov',
+  },
   { county: 'Contra Costa', name: 'Antioch', type: 'City', url: 'https://www.antiochca.gov' },
   { county: 'Contra Costa', name: 'Brentwood', type: 'City', url: 'https://www.brentwoodca.gov' },
   { county: 'Contra Costa', name: 'Clayton', type: 'City', url: 'https://claytonca.gov' },
@@ -53,11 +63,21 @@ const BAY_AREA_ENTITIES = [
   { county: 'Contra Costa', name: 'Orinda', type: 'City', url: 'https://cityoforinda.org' },
   { county: 'Contra Costa', name: 'Pinole', type: 'City', url: 'https://www.ci.pinole.ca.us' },
   { county: 'Contra Costa', name: 'Pittsburg', type: 'City', url: 'https://www.pittsburgca.gov' },
-  { county: 'Contra Costa', name: 'Pleasant Hill', type: 'City', url: 'https://www.pleasanthillca.org' },
+  {
+    county: 'Contra Costa',
+    name: 'Pleasant Hill',
+    type: 'City',
+    url: 'https://www.pleasanthillca.org',
+  },
   { county: 'Contra Costa', name: 'Richmond', type: 'City', url: 'https://www.ci.richmond.ca.us' },
   { county: 'Contra Costa', name: 'San Pablo', type: 'City', url: 'https://www.sanpabloca.gov' },
   { county: 'Contra Costa', name: 'San Ramon', type: 'City', url: 'https://www.sanramon.ca.gov' },
-  { county: 'Contra Costa', name: 'Walnut Creek', type: 'City', url: 'https://www.walnutcreekca.gov' },
+  {
+    county: 'Contra Costa',
+    name: 'Walnut Creek',
+    type: 'City',
+    url: 'https://www.walnutcreekca.gov',
+  },
 
   // Marin County
   { county: 'Marin', name: 'Marin County', type: 'County', url: 'https://www.marincounty.org' },
@@ -99,7 +119,12 @@ const BAY_AREA_ENTITIES = [
   { county: 'San Mateo', name: 'Menlo Park', type: 'City', url: 'https://www.menlopark.org' },
   { county: 'San Mateo', name: 'Millbrae', type: 'City', url: 'https://www.ci.millbrae.ca.us' },
   { county: 'San Mateo', name: 'Pacifica', type: 'City', url: 'https://www.cityofpacifica.org' },
-  { county: 'San Mateo', name: 'Portola Valley', type: 'Town', url: 'https://www.portolavalley.net' },
+  {
+    county: 'San Mateo',
+    name: 'Portola Valley',
+    type: 'Town',
+    url: 'https://www.portolavalley.net',
+  },
   { county: 'San Mateo', name: 'Redwood City', type: 'City', url: 'https://www.redwoodcity.org' },
   { county: 'San Mateo', name: 'San Bruno', type: 'City', url: 'https://www.sanbruno.ca.gov' },
   { county: 'San Mateo', name: 'San Carlos', type: 'City', url: 'https://www.cityofsancarlos.org' },
@@ -108,17 +133,42 @@ const BAY_AREA_ENTITIES = [
   { county: 'San Mateo', name: 'Woodside', type: 'Town', url: 'https://www.woodsideca.gov' },
 
   // Santa Clara County
-  { county: 'Santa Clara', name: 'Santa Clara County', type: 'County', url: 'https://www.sccgov.org' },
+  {
+    county: 'Santa Clara',
+    name: 'Santa Clara County',
+    type: 'County',
+    url: 'https://www.sccgov.org',
+  },
   { county: 'Santa Clara', name: 'Campbell', type: 'City', url: 'https://www.campbellca.gov' },
   { county: 'Santa Clara', name: 'Cupertino', type: 'City', url: 'https://www.cupertino.org' },
   { county: 'Santa Clara', name: 'Gilroy', type: 'City', url: 'https://www.cityofgilroy.org' },
   { county: 'Santa Clara', name: 'Los Altos', type: 'City', url: 'https://www.losaltosca.gov' },
-  { county: 'Santa Clara', name: 'Los Altos Hills', type: 'Town', url: 'https://www.losaltoshills.ca.gov' },
+  {
+    county: 'Santa Clara',
+    name: 'Los Altos Hills',
+    type: 'Town',
+    url: 'https://www.losaltoshills.ca.gov',
+  },
   { county: 'Santa Clara', name: 'Los Gatos', type: 'Town', url: 'https://www.losgatosca.gov' },
   { county: 'Santa Clara', name: 'Milpitas', type: 'City', url: 'https://www.milpitas.gov' },
-  { county: 'Santa Clara', name: 'Monte Sereno', type: 'City', url: 'https://www.cityofmontesereno.org' },
-  { county: 'Santa Clara', name: 'Morgan Hill', type: 'City', url: 'https://www.morgan-hill.ca.gov' },
-  { county: 'Santa Clara', name: 'Mountain View', type: 'City', url: 'https://www.mountainview.gov' },
+  {
+    county: 'Santa Clara',
+    name: 'Monte Sereno',
+    type: 'City',
+    url: 'https://www.cityofmontesereno.org',
+  },
+  {
+    county: 'Santa Clara',
+    name: 'Morgan Hill',
+    type: 'City',
+    url: 'https://www.morgan-hill.ca.gov',
+  },
+  {
+    county: 'Santa Clara',
+    name: 'Mountain View',
+    type: 'City',
+    url: 'https://www.mountainview.gov',
+  },
   { county: 'Santa Clara', name: 'Palo Alto', type: 'City', url: 'https://www.paloalto.gov' },
   { county: 'Santa Clara', name: 'San Jose', type: 'City', url: 'https://www.sanjoseca.gov' },
   { county: 'Santa Clara', name: 'Santa Clara', type: 'City', url: 'https://www.santaclaraca.gov' },
@@ -153,13 +203,38 @@ const BAY_AREA_ENTITIES = [
   { county: 'Regional', name: 'BAAQMD', type: 'Regional Agency', url: 'https://www.baaqmd.gov' },
   { county: 'Regional', name: 'BCDC', type: 'Regional Agency', url: 'https://www.bcdc.ca.gov' },
   { county: 'Regional', name: 'BART', type: 'Regional Agency', url: 'https://www.bart.gov' },
-  { county: 'Regional', name: 'Caltrain', type: 'Regional Agency', url: 'https://www.caltrain.com' },
-  { county: 'Regional', name: 'AC Transit', type: 'Regional Agency', url: 'https://www.actransit.org' },
-  { county: 'Regional', name: 'Golden Gate Transit', type: 'Regional Agency', url: 'https://www.goldengate.org' },
+  {
+    county: 'Regional',
+    name: 'Caltrain',
+    type: 'Regional Agency',
+    url: 'https://www.caltrain.com',
+  },
+  {
+    county: 'Regional',
+    name: 'AC Transit',
+    type: 'Regional Agency',
+    url: 'https://www.actransit.org',
+  },
+  {
+    county: 'Regional',
+    name: 'Golden Gate Transit',
+    type: 'Regional Agency',
+    url: 'https://www.goldengate.org',
+  },
   { county: 'Regional', name: 'SFMTA', type: 'Regional Agency', url: 'https://www.sfmta.com' },
   { county: 'Regional', name: 'VTA', type: 'Regional Agency', url: 'https://www.vta.org' },
-  { county: 'Regional', name: 'SamTrans', type: 'Regional Agency', url: 'https://www.samtrans.com' },
-  { county: 'Regional', name: 'Bay Area Toll Authority', type: 'Regional Agency', url: 'https://www.bayareatolls.com' },
+  {
+    county: 'Regional',
+    name: 'SamTrans',
+    type: 'Regional Agency',
+    url: 'https://www.samtrans.com',
+  },
+  {
+    county: 'Regional',
+    name: 'Bay Area Toll Authority',
+    type: 'Regional Agency',
+    url: 'https://www.bayareatolls.com',
+  },
   { county: 'Regional', name: '511 SF Bay', type: 'Regional Agency', url: 'https://511.org' },
   { county: 'Regional', name: 'BAWSCA', type: 'Regional Agency', url: 'https://bawsca.org' },
   { county: 'Regional', name: 'EBMUD', type: 'Regional Agency', url: 'https://www.ebmud.com' },
@@ -176,7 +251,7 @@ const SITEMAP_PATHS = [
 ];
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function checkSitemap(page, entity) {
@@ -198,7 +273,7 @@ async function checkSitemap(page, entity) {
     try {
       const response = await page.goto(sitemapUrl, {
         waitUntil: 'domcontentloaded',
-        timeout: 10000
+        timeout: 10000,
       });
 
       if (response && response.ok()) {
@@ -208,7 +283,7 @@ async function checkSitemap(page, entity) {
         if (content.includes('<urlset') || content.includes('<sitemapindex')) {
           // Extract URLs
           const urlMatches = content.match(/<loc>([^<]+)<\/loc>/g) || [];
-          const urls = urlMatches.map(match => match.replace(/<\/?loc>/g, ''));
+          const urls = urlMatches.map((match) => match.replace(/<\/?loc>/g, ''));
 
           if (urls.length > 0) {
             result.hasSitemap = true;
@@ -298,8 +373,12 @@ async function main() {
   console.log('SUMMARY');
   console.log('==========================');
   console.log(`Total entities: ${BAY_AREA_ENTITIES.length}`);
-  console.log(`With sitemap: ${withSitemap} (${Math.round(withSitemap / BAY_AREA_ENTITIES.length * 100)}%)`);
-  console.log(`Without sitemap: ${withoutSitemap} (${Math.round(withoutSitemap / BAY_AREA_ENTITIES.length * 100)}%)`);
+  console.log(
+    `With sitemap: ${withSitemap} (${Math.round((withSitemap / BAY_AREA_ENTITIES.length) * 100)}%)`
+  );
+  console.log(
+    `Without sitemap: ${withoutSitemap} (${Math.round((withoutSitemap / BAY_AREA_ENTITIES.length) * 100)}%)`
+  );
 
   // Group by county
   console.log('\nBy County:');
@@ -317,7 +396,7 @@ async function main() {
 
   // List those with sitemaps
   console.log('\nEntities WITH sitemaps:');
-  for (const r of results.filter(r => r.hasSitemap)) {
+  for (const r of results.filter((r) => r.hasSitemap)) {
     console.log(`  ${r.name}: ${r.urlCount} URLs`);
   }
 

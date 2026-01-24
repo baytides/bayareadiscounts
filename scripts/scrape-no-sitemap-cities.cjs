@@ -64,7 +64,12 @@ const ENTITIES = [
   { name: 'San Carlos', county: 'San Mateo', url: 'https://www.cityofsancarlos.org' },
 
   // Santa Clara (7)
-  { name: 'Santa Clara County', county: 'Santa Clara', url: 'https://www.sccgov.org', type: 'County' },
+  {
+    name: 'Santa Clara County',
+    county: 'Santa Clara',
+    url: 'https://www.sccgov.org',
+    type: 'County',
+  },
   { name: 'Monte Sereno', county: 'Santa Clara', url: 'https://www.cityofmontesereno.org' },
   { name: 'Morgan Hill', county: 'Santa Clara', url: 'https://www.morganhill.ca.gov' },
   { name: 'Mountain View', county: 'Santa Clara', url: 'https://www.mountainview.gov' },
@@ -96,7 +101,7 @@ const DELAY_BETWEEN_ENTITIES = 2500;
 const MAX_PAGES_PER_ENTITY = 40;
 
 function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
+  return new Promise((r) => setTimeout(r, ms));
 }
 
 // Keywords for identifying important navigation links
@@ -128,38 +133,54 @@ async function discoverPages(page, baseUrl) {
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await sleep(1500);
 
-    const links = await page.evaluate(({ base, keywords }) => {
-      const results = [];
-      const seen = new Set();
-      const allLinks = document.querySelectorAll('a[href]');
+    const links = await page.evaluate(
+      ({ base, keywords }) => {
+        const results = [];
+        const seen = new Set();
+        const allLinks = document.querySelectorAll('a[href]');
 
-      allLinks.forEach(link => {
-        const href = link.href;
-        const text = (link.innerText || link.textContent || '').trim().toLowerCase();
+        allLinks.forEach((link) => {
+          const href = link.href;
+          const text = (link.innerText || link.textContent || '').trim().toLowerCase();
 
-        // Skip external, empty, or duplicate links
-        if (!href || !href.startsWith(base) || seen.has(href) || text.length < 2 || text.length > 100) return;
-        seen.add(href);
+          // Skip external, empty, or duplicate links
+          if (
+            !href ||
+            !href.startsWith(base) ||
+            seen.has(href) ||
+            text.length < 2 ||
+            text.length > 100
+          )
+            return;
+          seen.add(href);
 
-        // Check if in navigation area
-        const isNav = !!(link.closest('nav') || link.closest('header') || link.closest('[role="navigation"]') || link.closest('.nav') || link.closest('.menu'));
+          // Check if in navigation area
+          const isNav = !!(
+            link.closest('nav') ||
+            link.closest('header') ||
+            link.closest('[role="navigation"]') ||
+            link.closest('.nav') ||
+            link.closest('.menu')
+          );
 
-        // Find matching category
-        let category = null;
-        for (const [cat, words] of Object.entries(keywords)) {
-          if (words.some(w => text.includes(w) || href.toLowerCase().includes(w))) {
-            category = cat;
-            break;
+          // Find matching category
+          let category = null;
+          for (const [cat, words] of Object.entries(keywords)) {
+            if (words.some((w) => text.includes(w) || href.toLowerCase().includes(w))) {
+              category = cat;
+              break;
+            }
           }
-        }
 
-        if (category) {
-          results.push({ url: href, text: text.substring(0, 60), category, isNav });
-        }
-      });
+          if (category) {
+            results.push({ url: href, text: text.substring(0, 60), category, isNav });
+          }
+        });
 
-      return results;
-    }, { base: baseUrl, keywords: NAV_KEYWORDS });
+        return results;
+      },
+      { base: baseUrl, keywords: NAV_KEYWORDS }
+    );
 
     // Prioritize nav links, dedupe by category
     for (const link of links) {
@@ -171,7 +192,6 @@ async function discoverPages(page, baseUrl) {
 
     // Also add homepage
     discovered.set('homepage', { url: baseUrl, text: 'Homepage', category: 'homepage' });
-
   } catch (e) {
     console.log(`    Error discovering pages: ${e.message.substring(0, 50)}`);
   }
@@ -209,10 +229,10 @@ async function extractPageInfo(page, url) {
 
     // Phones
     const phoneRegex = /\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
-    info.phones = [...new Set((info.content.match(phoneRegex) || []))].slice(0, 10);
+    info.phones = [...new Set(info.content.match(phoneRegex) || [])].slice(0, 10);
 
     // Emails
-    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
       const email = a.href.replace('mailto:', '').split('?')[0].toLowerCase();
       if (email.includes('@') && !info.emails.includes(email)) {
         info.emails.push(email);
@@ -221,8 +241,9 @@ async function extractPageInfo(page, url) {
     info.emails = info.emails.slice(0, 10);
 
     // Addresses
-    const addrRegex = /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi;
-    info.addresses = [...new Set((info.content.match(addrRegex) || []))].slice(0, 5);
+    const addrRegex =
+      /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi;
+    info.addresses = [...new Set(info.content.match(addrRegex) || [])].slice(0, 5);
 
     return info;
   }, url);
@@ -264,9 +285,9 @@ async function scrapeEntity(page, entity) {
           result.pages.push(info);
           result.pagesScraped++;
 
-          info.phones.forEach(p => result.aggregated.phones.add(p));
-          info.emails.forEach(e => result.aggregated.emails.add(e));
-          info.addresses.forEach(a => result.aggregated.addresses.add(a));
+          info.phones.forEach((p) => result.aggregated.phones.add(p));
+          info.emails.forEach((e) => result.aggregated.emails.add(e));
+          info.addresses.forEach((a) => result.aggregated.addresses.add(a));
         }
       } catch (e) {
         // Page failed, continue
@@ -278,8 +299,9 @@ async function scrapeEntity(page, entity) {
     result.aggregated.emails = [...result.aggregated.emails];
     result.aggregated.addresses = [...result.aggregated.addresses];
 
-    console.log(`  Done: ${result.pagesScraped} pages, ${result.aggregated.phones.length} phones, ${result.aggregated.emails.length} emails`);
-
+    console.log(
+      `  Done: ${result.pagesScraped} pages, ${result.aggregated.phones.length} phones, ${result.aggregated.emails.length} emails`
+    );
   } catch (e) {
     result.error = e.message;
     console.log(`  Error: ${e.message}`);
@@ -292,15 +314,15 @@ async function main() {
   const args = process.argv.slice(2);
   const listMode = args.includes('--list');
   const allMode = args.includes('--all');
-  const countyArg = args.find(a => a.startsWith('--county='));
+  const countyArg = args.find((a) => a.startsWith('--county='));
 
   if (listMode) {
-    const counties = [...new Set(ENTITIES.map(e => e.county))];
+    const counties = [...new Set(ENTITIES.map((e) => e.county))];
     console.log('Entities without sitemaps by county:\n');
     for (const county of counties) {
-      const entities = ENTITIES.filter(e => e.county === county);
+      const entities = ENTITIES.filter((e) => e.county === county);
       console.log(`${county} (${entities.length}):`);
-      entities.forEach(e => console.log(`  - ${e.name}: ${e.url}`));
+      entities.forEach((e) => console.log(`  - ${e.name}: ${e.url}`));
       console.log();
     }
     console.log(`Total: ${ENTITIES.length} entities`);
@@ -314,7 +336,7 @@ async function main() {
     console.log('  node scripts/scrape-no-sitemap-cities.cjs --list');
     console.log('  node scripts/scrape-no-sitemap-cities.cjs --county=Alameda');
     console.log('  node scripts/scrape-no-sitemap-cities.cjs --all\n');
-    const counties = [...new Set(ENTITIES.map(e => e.county))];
+    const counties = [...new Set(ENTITIES.map((e) => e.county))];
     console.log('Counties:', counties.join(', '));
     return;
   }
@@ -327,7 +349,7 @@ async function main() {
     outputFile = 'all-no-sitemap.json';
   } else {
     const county = countyArg.split('=')[1].replace(/"/g, '');
-    entities = ENTITIES.filter(e => e.county.toLowerCase() === county.toLowerCase());
+    entities = ENTITIES.filter((e) => e.county.toLowerCase() === county.toLowerCase());
     outputFile = `${county.toLowerCase().replace(/\s+/g, '-')}.json`;
 
     if (entities.length === 0) {
@@ -342,7 +364,9 @@ async function main() {
   try {
     playwright = require('playwright');
   } catch (e) {
-    console.error('Playwright not installed. Run: npm install playwright && npx playwright install chromium');
+    console.error(
+      'Playwright not installed. Run: npm install playwright && npx playwright install chromium'
+    );
     process.exit(1);
   }
 

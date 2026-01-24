@@ -18,7 +18,13 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_DIR = path.join(__dirname, '..', 'data-exports', 'city-info', 'by-county');
-const INVENTORY_FILE = path.join(__dirname, '..', 'data-exports', 'city-info', 'sitemaps-inventory.json');
+const INVENTORY_FILE = path.join(
+  __dirname,
+  '..',
+  'data-exports',
+  'city-info',
+  'sitemaps-inventory.json'
+);
 
 // Rate limiting - be respectful
 const DELAY_BETWEEN_PAGES = 1200; // 1.2 seconds between page scrapes
@@ -26,7 +32,7 @@ const DELAY_BETWEEN_ENTITIES = 2000; // 2 seconds between cities
 const MAX_PAGES_PER_ENTITY = 60; // Maximum pages to scrape per city
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -34,33 +40,87 @@ function sleep(ms) {
  */
 const IMPORTANT_KEYWORDS = [
   // Contact & Directory
-  'contact', 'directory', 'staff', 'department', 'office', 'division',
+  'contact',
+  'directory',
+  'staff',
+  'department',
+  'office',
+  'division',
   // Services
-  'service', 'resident', 'citizen', 'how-do-i', 'online',
+  'service',
+  'resident',
+  'citizen',
+  'how-do-i',
+  'online',
   // Calendar & Events
-  'calendar', 'event', 'meeting', 'agenda', 'schedule',
+  'calendar',
+  'event',
+  'meeting',
+  'agenda',
+  'schedule',
   // News
-  'news', 'announcement', 'alert', 'press', 'update',
+  'news',
+  'announcement',
+  'alert',
+  'press',
+  'update',
   // Emergency & Safety
-  'emergency', 'police', 'fire', 'safety', 'disaster',
+  'emergency',
+  'police',
+  'fire',
+  'safety',
+  'disaster',
   // Housing
-  'housing', 'rent', 'affordable', 'homeless',
+  'housing',
+  'rent',
+  'affordable',
+  'homeless',
   // Library & Parks
-  'library', 'park', 'recreation', 'facility',
+  'library',
+  'park',
+  'recreation',
+  'facility',
   // Utilities
-  'utility', 'water', 'trash', 'garbage', 'sewer', 'billing',
+  'utility',
+  'water',
+  'trash',
+  'garbage',
+  'sewer',
+  'billing',
   // Permits & Planning
-  'permit', 'license', 'building', 'planning', 'zoning',
+  'permit',
+  'license',
+  'building',
+  'planning',
+  'zoning',
   // Jobs
-  'job', 'career', 'employment', 'human-resources',
+  'job',
+  'career',
+  'employment',
+  'human-resources',
   // Government
-  'government', 'council', 'board', 'commission', 'mayor', 'supervisor',
+  'government',
+  'council',
+  'board',
+  'commission',
+  'mayor',
+  'supervisor',
   // Help
-  'faq', 'help', 'question',
+  'faq',
+  'help',
+  'question',
   // Transit (for regional)
-  'transit', 'fare', 'route', 'station', 'schedule', 'clipper', 'ticket',
+  'transit',
+  'fare',
+  'route',
+  'station',
+  'schedule',
+  'clipper',
+  'ticket',
   // About
-  'about', 'history', 'demographic',
+  'about',
+  'history',
+  'demographic',
 ];
 
 /**
@@ -68,12 +128,12 @@ const IMPORTANT_KEYWORDS = [
  */
 function filterSitemapUrls(urls, baseUrl) {
   // Always include homepage
-  const homepage = urls.find(u => {
+  const homepage = urls.find((u) => {
     const path = u.replace(baseUrl, '').replace(/\/$/, '');
     return path === '' || path === '/';
   });
 
-  const filtered = urls.filter(url => {
+  const filtered = urls.filter((url) => {
     const urlLower = url.toLowerCase();
     const path = urlLower.replace(baseUrl.toLowerCase(), '');
 
@@ -81,12 +141,13 @@ function filterSitemapUrls(urls, baseUrl) {
     if (path.length > 150) return false;
 
     // Skip common non-content pages
-    if (path.includes('/image') || path.includes('/file') || path.includes('/download')) return false;
+    if (path.includes('/image') || path.includes('/file') || path.includes('/download'))
+      return false;
     if (path.includes('.pdf') || path.includes('.jpg') || path.includes('.png')) return false;
     if (path.includes('?') || path.includes('&')) return false; // Query params
 
     // Include if matches important keywords
-    return IMPORTANT_KEYWORDS.some(kw => path.includes(kw));
+    return IMPORTANT_KEYWORDS.some((kw) => path.includes(kw));
   });
 
   // Ensure homepage is first
@@ -126,7 +187,14 @@ async function extractPageInfo(page, url) {
     }
 
     // Get main content text (for context)
-    const mainSelectors = ['main', 'article', '[role="main"]', '.content', '#content', '.main-content'];
+    const mainSelectors = [
+      'main',
+      'article',
+      '[role="main"]',
+      '.content',
+      '#content',
+      '.main-content',
+    ];
     let mainEl = null;
     for (const sel of mainSelectors) {
       mainEl = document.querySelector(sel);
@@ -140,13 +208,13 @@ async function extractPageInfo(page, url) {
 
     // Extract phone numbers
     const phoneRegex = /\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
-    const phones = [...new Set((info.mainContent.match(phoneRegex) || []))];
+    const phones = [...new Set(info.mainContent.match(phoneRegex) || [])];
     info.phones = phones.slice(0, 10);
 
     // Extract emails
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     const emails = new Set();
-    emailLinks.forEach(a => {
+    emailLinks.forEach((a) => {
       const email = a.href.replace('mailto:', '').split('?')[0];
       if (email && email.includes('@')) {
         emails.add(email.toLowerCase());
@@ -155,8 +223,9 @@ async function extractPageInfo(page, url) {
     info.emails = [...emails].slice(0, 10);
 
     // Extract addresses
-    const addressPattern = /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln|Court|Ct|Place|Pl)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi;
-    const addresses = [...new Set((info.mainContent.match(addressPattern) || []))];
+    const addressPattern =
+      /\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Lane|Ln|Court|Ct|Place|Pl)\.?[,\s]+[\w\s]+,\s*CA\s*\d{5}/gi;
+    const addresses = [...new Set(info.mainContent.match(addressPattern) || [])];
     info.addresses = addresses.slice(0, 5);
 
     // Extract hours
@@ -165,21 +234,40 @@ async function extractPageInfo(page, url) {
       /(?:m-f|mon-fri|monday-friday)[\s:]+\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)?/gi,
     ];
     const hours = new Set();
-    hoursPatterns.forEach(pattern => {
+    hoursPatterns.forEach((pattern) => {
       const matches = info.mainContent.match(pattern) || [];
-      matches.forEach(m => hours.add(m.trim()));
+      matches.forEach((m) => hours.add(m.trim()));
     });
     info.hours = [...hours].slice(0, 5);
 
     // Extract important links from this page
-    const importantKeywords = ['police', 'fire', 'library', 'parks', 'recreation', 'housing', 'permit', 'utility', 'emergency', 'council', 'contact', 'service'];
+    const importantKeywords = [
+      'police',
+      'fire',
+      'library',
+      'parks',
+      'recreation',
+      'housing',
+      'permit',
+      'utility',
+      'emergency',
+      'council',
+      'contact',
+      'service',
+    ];
     const links = document.querySelectorAll('a[href]');
     const seenUrls = new Set();
-    links.forEach(link => {
+    links.forEach((link) => {
       const text = link.innerText.toLowerCase().trim();
       const href = link.href;
-      if (href && href.startsWith('http') && !seenUrls.has(href) && text.length > 2 && text.length < 100) {
-        if (importantKeywords.some(kw => text.includes(kw) || href.toLowerCase().includes(kw))) {
+      if (
+        href &&
+        href.startsWith('http') &&
+        !seenUrls.has(href) &&
+        text.length > 2 &&
+        text.length < 100
+      ) {
+        if (importantKeywords.some((kw) => text.includes(kw) || href.toLowerCase().includes(kw))) {
           seenUrls.add(href);
           info.links.push({
             text: link.innerText.trim().substring(0, 80),
@@ -219,7 +307,7 @@ async function scrapeEntity(page, entity) {
     error: null,
   };
 
-  console.log(`\n[${ entity.name }] Starting scrape...`);
+  console.log(`\n[${entity.name}] Starting scrape...`);
   console.log(`  Sitemap: ${entity.sitemapUrl} (${entity.urlCount} total URLs)`);
 
   try {
@@ -236,7 +324,7 @@ async function scrapeEntity(page, entity) {
 
     const content = await page.content();
     const urlMatches = content.match(/<loc>([^<]+)<\/loc>/g) || [];
-    const allUrls = urlMatches.map(match => match.replace(/<\/?loc>/g, ''));
+    const allUrls = urlMatches.map((match) => match.replace(/<\/?loc>/g, ''));
 
     if (allUrls.length === 0) {
       result.error = 'No URLs found in sitemap';
@@ -258,7 +346,11 @@ async function scrapeEntity(page, entity) {
         });
 
         const title = await page.title();
-        if (title && !title.toLowerCase().includes('404') && !title.toLowerCase().includes('not found')) {
+        if (
+          title &&
+          !title.toLowerCase().includes('404') &&
+          !title.toLowerCase().includes('not found')
+        ) {
           await sleep(500); // Brief wait for JS rendering
 
           const pageInfo = await extractPageInfo(page, url);
@@ -266,9 +358,9 @@ async function scrapeEntity(page, entity) {
           result.pagesScraped++;
 
           // Aggregate contact info
-          pageInfo.phones.forEach(p => result.aggregated.phones.add(p));
-          pageInfo.emails.forEach(e => result.aggregated.emails.add(e));
-          pageInfo.addresses.forEach(a => result.aggregated.addresses.add(a));
+          pageInfo.phones.forEach((p) => result.aggregated.phones.add(p));
+          pageInfo.emails.forEach((e) => result.aggregated.emails.add(e));
+          pageInfo.addresses.forEach((a) => result.aggregated.addresses.add(a));
 
           // Progress indicator every 10 pages
           if ((i + 1) % 10 === 0) {
@@ -287,8 +379,9 @@ async function scrapeEntity(page, entity) {
     result.aggregated.emails = [...result.aggregated.emails];
     result.aggregated.addresses = [...result.aggregated.addresses];
 
-    console.log(`  Complete: ${result.pagesScraped} pages, ${result.aggregated.phones.length} phones, ${result.aggregated.emails.length} emails`);
-
+    console.log(
+      `  Complete: ${result.pagesScraped} pages, ${result.aggregated.phones.length} phones, ${result.aggregated.emails.length} emails`
+    );
   } catch (e) {
     result.error = e.message;
     console.log(`  Error: ${e.message}`);
@@ -302,7 +395,7 @@ async function scrapeEntity(page, entity) {
  */
 async function main() {
   const args = process.argv.slice(2);
-  const countyArg = args.find(a => a.startsWith('--county='));
+  const countyArg = args.find((a) => a.startsWith('--county='));
   const allMode = args.includes('--all');
   const listMode = args.includes('--list');
 
@@ -314,15 +407,15 @@ async function main() {
   }
 
   const inventory = JSON.parse(fs.readFileSync(INVENTORY_FILE, 'utf-8'));
-  const withSitemap = inventory.filter(e => e.hasSitemap && e.urlCount > 5);
+  const withSitemap = inventory.filter((e) => e.hasSitemap && e.urlCount > 5);
 
   // Get unique counties
-  const counties = [...new Set(withSitemap.map(e => e.county))];
+  const counties = [...new Set(withSitemap.map((e) => e.county))];
 
   if (listMode) {
     console.log('Available counties with sitemaps:');
     for (const county of counties) {
-      const count = withSitemap.filter(e => e.county === county).length;
+      const count = withSitemap.filter((e) => e.county === county).length;
       console.log(`  --county=${county} (${count} entities)`);
     }
     console.log(`\nTotal: ${withSitemap.length} entities with sitemaps`);
@@ -338,7 +431,7 @@ async function main() {
     console.log('  node scripts/scrape-sitemap-cities.cjs --list');
     console.log('\nAvailable counties:');
     for (const county of counties) {
-      const count = withSitemap.filter(e => e.county === county).length;
+      const count = withSitemap.filter((e) => e.county === county).length;
       console.log(`  ${county} (${count} entities)`);
     }
     console.log('\nRun multiple counties in parallel in separate terminals!');
@@ -355,7 +448,7 @@ async function main() {
     console.log(`Scraping ALL ${entities.length} entities with sitemaps`);
   } else {
     const county = countyArg.split('=')[1];
-    entities = withSitemap.filter(e => e.county.toLowerCase() === county.toLowerCase());
+    entities = withSitemap.filter((e) => e.county.toLowerCase() === county.toLowerCase());
     outputFileName = `${county.toLowerCase().replace(/\s+/g, '-')}.json`;
 
     if (entities.length === 0) {
@@ -388,7 +481,8 @@ async function main() {
   });
 
   const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     viewport: { width: 1920, height: 1080 },
   });
 
