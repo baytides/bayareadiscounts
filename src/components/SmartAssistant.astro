@@ -319,6 +319,7 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
   let userProfile = null; // From preferences (groups, county)
   let currentConversationId = null; // For history tracking
   let historyEnabled = false; // Will be set from CarlStorage
+  let shownProgramIds = new Set(); // Track programs already shown in this conversation
 
   // County to major city mapping (for user-friendly display)
   // Users see cities, counties are internal for program filtering only
@@ -453,7 +454,8 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
   }
 
   // Search programs for RAG - enhanced keyword matching with better relevance
-  async function searchPrograms(query, location = null) {
+  // excludeShown: if true, exclude programs already shown in this conversation
+  async function searchPrograms(query, location = null, excludeShown = false) {
     const programs = await loadPrograms();
     if (!programs.length) return [];
 
@@ -462,6 +464,11 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
 
     const queryLower = query.toLowerCase();
     const queryTerms = queryLower.split(/\s+/).filter((t) => t.length > 2);
+
+    // Detect if user wants alternatives (already tried, other options, more, etc.)
+    const wantsAlternatives =
+      /already|tried|other|more|else|different|alternative|another|besides/.test(queryLower);
+    const shouldExclude = excludeShown || wantsAlternatives;
 
     // Expanded keyword mapping for better intent detection
     const intentKeywords = {
@@ -751,13 +758,22 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
         }
       }
 
+      // Penalize programs already shown if user wants alternatives
+      if (shouldExclude && program.id && shownProgramIds.has(program.id)) {
+        score -= 50; // Heavy penalty to push to bottom
+      }
+
       return { program, score };
     });
 
     // Return top 5 relevant programs with score > 5 (filter out weak matches)
+    // If excluding shown programs, we may need more results to backfill
+    const minResults = shouldExclude ? 8 : 5;
     return scored
       .filter((s) => s.score > 5)
       .sort((a, b) => b.score - a.score)
+      .slice(0, minResults)
+      .filter((s) => !shouldExclude || !shownProgramIds.has(s.program.id)) // Final filter for excluded
       .slice(0, 5)
       .map((s) => s.program);
   }
@@ -927,6 +943,7 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     // Reset state
     conversationHistory = [];
     currentConversationId = null;
+    shownProgramIds.clear(); // Clear shown programs for fresh recommendations
 
     // Reset UI
     if (messagesContainer) {
@@ -1350,7 +1367,11 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     header.textContent = 'Related programs:';
     cardsContainer.appendChild(header);
 
+    // Track shown programs so we can offer alternatives if user says "already tried those"
     programs.forEach((program) => {
+      if (program.id) {
+        shownProgramIds.add(program.id);
+      }
       const card = document.createElement('a');
       card.href = getProgramLink(program);
       card.className =
