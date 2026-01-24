@@ -538,12 +538,37 @@ class ApiService {
   // AI SEARCH (Ollama LLM at ai.baytides.org)
   // ============================================
 
-  static const String _aiEndpoint = 'https://ai.baytides.org/api/chat';
+  /// Direct AI endpoint
+  static const String _directAIEndpoint = 'https://ai.baytides.org/api/chat';
+
+  /// CDN endpoints for AI (domain fronting - all route /api/chat to ai.baytides.org)
+  static const Map<String, String> _cdnAIEndpoints = {
+    'cloudflare': 'https://baynavigator-ai-proxy.autumn-disk-6090.workers.dev/api/chat',
+    'fastly': 'https://arguably-unique-hippo.global.ssl.fastly.net/api/chat',
+    'azure': 'https://baynavigator-bacwcda5f8csa3as.z02.azurefd.net/api/chat',
+  };
+
   // API key from build-time environment or fallback
   static const String _aiApiKey = String.fromEnvironment(
     'OLLAMA_API_KEY',
     defaultValue: 'bnav_a76a835781d394a03aaf1662d76fd1f05e78da85bf8edf27c8f26fbb9d2b79f0',
   );
+
+  /// Whether to use domain fronting for AI requests (for censorship circumvention)
+  static bool _useDomainFronting = false;
+
+  /// Selected CDN provider for domain fronting (cloudflare, fastly, azure)
+  static String _cdnProvider = 'cloudflare';
+
+  /// Enable or disable domain fronting for AI requests
+  static void setDomainFronting(bool enabled, {String provider = 'cloudflare'}) {
+    _useDomainFronting = enabled;
+    _cdnProvider = provider;
+  }
+
+  /// Get the appropriate AI endpoint based on privacy settings
+  static String get _aiEndpoint =>
+      _useDomainFronting ? (_cdnAIEndpoints[_cdnProvider] ?? _directAIEndpoint) : _directAIEndpoint;
   static const String _conversationHistoryCacheKey = 'baynavigator:conversation_history';
 
   // System prompt for Carl - CONDENSED for faster API responses

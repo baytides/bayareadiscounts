@@ -25,11 +25,7 @@ struct SettingsViewContent: View {
     @State private var showImmersiveSpace = false
     #endif
 
-    @State private var showProxyConfig = false
     @State private var showProfileEdit = false
-    @State private var proxyHost = ""
-    @State private var proxyPort = ""
-    @State private var proxyType: ProxyType = .socks5
     @State private var testingConnection = false
     @State private var connectionTestResult: PrivacyTestResult?
     @State private var cacheSize = "Calculating..."
@@ -276,27 +272,26 @@ struct SettingsViewContent: View {
         }
     }
 
+    // AI search toggle removed - AI features are always enabled
+    // Users can access Ask Carl for interactive AI assistance
     private var searchSection: some View {
         Section {
-            Toggle(isOn: Binding(
-                get: { settingsVM.aiSearchEnabled },
-                set: { settingsVM.aiSearchEnabled = $0 }
-            )) {
+            NavigationLink {
+                AskCarlView()
+            } label: {
                 HStack {
-                    Label("AI Features", systemImage: "sparkles")
-                    Text("BETA")
-                        .font(.caption2.bold())
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color.appAccent)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
+                    Label("Ask Carl", systemImage: "bubble.left.and.bubble.right.fill")
+                        .foregroundStyle(Color.appPrimary)
+                    Spacer()
+                    Text("AI Assistant")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
         } header: {
             Text("AI")
         } footer: {
-            Text("Enable AI-powered search and Ask Carl assistant. When disabled, Ask Carl will be unavailable.")
+            Text("Carl is your AI-powered assistant for finding Bay Area programs and resources.")
         }
     }
 
@@ -319,28 +314,115 @@ struct SettingsViewContent: View {
 
     private var privacySection: some View {
         Section {
-            // Custom proxy
-            Button {
-                showProxyConfig = true
-            } label: {
-                HStack {
-                    Image(systemName: "arrow.triangle.branch")
-                        .foregroundStyle(Color.appPrimary)
-                    VStack(alignment: .leading) {
-                        Text("Custom Proxy")
-                        if let config = settingsVM.proxyConfig {
-                            Text(config.description)
+            // Privacy mode picker
+            Picker("Privacy Mode", selection: Binding(
+                get: { settingsVM.privacyMode },
+                set: { settingsVM.privacyMode = $0 }
+            )) {
+                ForEach(PrivacyService.PrivacyMode.allCases) { mode in
+                    Label(mode.displayName, systemImage: mode.icon)
+                        .tag(mode)
+                }
+            }
+
+            // Current mode description
+            if let status = settingsVM.privacyStatus {
+                HStack(spacing: 12) {
+                    Image(systemName: status.icon)
+                        .foregroundStyle(status.isActive ? Color.appSuccess : Color.appWarning)
+                        .font(.title3)
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(status.description)
+                            .font(.subheadline)
+                        if let warning = status.warning {
+                            Text(warning)
                                 .font(.caption)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(Color.appWarning)
                         }
                     }
-                    Spacer()
-                    Image(systemName: "chevron.right")
+                }
+                .padding(.vertical, 4)
+            }
+
+            // CDN Provider picker (shown for domain fronting or when auto-detect is enabled)
+            if settingsVM.privacyMode == .domainFronting || settingsVM.autoDetectCensorship {
+                Picker("CDN Provider", selection: Binding(
+                    get: { settingsVM.cdnProvider },
+                    set: { settingsVM.cdnProvider = $0 }
+                )) {
+                    ForEach(PrivacyService.CDNProvider.allCases) { provider in
+                        Label(provider.displayName, systemImage: provider.icon)
+                            .tag(provider)
+                    }
+                }
+
+                // Provider description
+                Text(settingsVM.cdnProvider.description)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            // Auto-detect censorship toggle
+            Toggle(isOn: Binding(
+                get: { settingsVM.autoDetectCensorship },
+                set: { settingsVM.autoDetectCensorship = $0 }
+            )) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Auto-Detect Censorship")
+                    Text("Automatically use CDN routing if direct connection fails")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
             }
-            .buttonStyle(.plain)
+            .disabled(settingsVM.privacyMode != .standard)
+
+            #if os(iOS)
+            // Orbot integration (iOS only)
+            if settingsVM.privacyMode == .tor {
+                if settingsVM.orbotInstalled {
+                    Button {
+                        Task {
+                            await settingsVM.openOrbot()
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.up.forward.app")
+                                .foregroundStyle(Color.appPrimary)
+                            Text("Open Orbot")
+                            Spacer()
+                            if settingsVM.torAvailable {
+                                Text("Connected")
+                                    .font(.caption)
+                                    .foregroundStyle(Color.appSuccess)
+                            } else {
+                                Text("Not Running")
+                                    .font(.caption)
+                                    .foregroundStyle(Color.appWarning)
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    Link(destination: URL(string: "https://apps.apple.com/app/orbot/id1609461599")!) {
+                        HStack {
+                            Image(systemName: "arrow.down.app")
+                                .foregroundStyle(Color.appPrimary)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Install Orbot")
+                                Text("Required for Tor network access")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            Image(systemName: "arrow.up.right")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
+            #endif
 
             // Connection test
             Button {
@@ -371,24 +453,23 @@ struct SettingsViewContent: View {
                     VStack(alignment: .leading) {
                         Text(result.message)
                             .font(.caption)
-                        Text("\(result.latencyMs)ms latency")
+                        Text("\(result.latencyMs)ms • \(result.mode.displayName)")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
                 }
             }
         } header: {
-            Text("Advanced Privacy")
+            Text("Privacy & Censorship Circumvention")
         } footer: {
-            Text("Enhanced privacy options for censorship circumvention.")
-        }
-        .sheet(isPresented: $showProxyConfig) {
-            ProxyConfigSheet(
-                host: $proxyHost,
-                port: $proxyPort,
-                type: $proxyType
-            )
-            .environment(settingsVM)
+            switch settingsVM.privacyMode {
+            case .standard:
+                Text("Direct connection to Bay Navigator servers. Enable auto-detect for automatic fallback if blocked.")
+            case .domainFronting:
+                Text("Routes through Cloudflare CDN. Traffic appears as normal web browsing, bypassing most censorship.")
+            case .tor:
+                Text("Routes through Tor network for maximum privacy. Requires the Orbot app on iOS.")
+            }
         }
         .sheet(isPresented: $showProfileEdit) {
             ProfileEditSheet()
@@ -487,87 +568,6 @@ struct SettingsViewContent: View {
                 WebContentView(title: "Credits", url: SettingsViewModel.creditsURL)
             } label: {
                 Text("Credits")
-            }
-        }
-    }
-}
-
-// MARK: - Proxy Config Sheet
-
-struct ProxyConfigSheet: View {
-    @Binding var host: String
-    @Binding var port: String
-    @Binding var type: ProxyType
-
-    @Environment(SettingsViewModel.self) private var settingsVM
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Proxy Type") {
-                    Picker("Type", selection: $type) {
-                        ForEach(ProxyType.allCases) { proxyType in
-                            Text(proxyType.displayName).tag(proxyType)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
-
-                Section("Connection") {
-                    TextField("Host (e.g., 127.0.0.1)", text: $host)
-                        .textContentType(.URL)
-                        #if os(iOS)
-                        .keyboardType(.URL)
-                        #endif
-
-                    TextField("Port (e.g., 9050)", text: $port)
-                        #if os(iOS)
-                        .keyboardType(.numberPad)
-                        #endif
-                }
-
-                Section {
-                    Button("Save Configuration") {
-                        if let portNum = Int(port), portNum > 0, portNum <= 65535, !host.isEmpty {
-                            Task {
-                                await settingsVM.setProxyConfig(ProxyConfig(host: host, port: portNum, type: type))
-                                dismiss()
-                            }
-                        }
-                    }
-                    .disabled(host.isEmpty || port.isEmpty)
-
-                    if settingsVM.proxyConfig != nil {
-                        Button("Clear Configuration", role: .destructive) {
-                            Task {
-                                await settingsVM.clearProxyConfig()
-                                host = ""
-                                port = ""
-                                dismiss()
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Proxy Configuration")
-            #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
-            #endif
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-            }
-        }
-        .presentationDetents([.medium])
-        .onAppear {
-            if let config = settingsVM.proxyConfig {
-                host = config.host
-                port = String(config.port)
-                type = config.type
             }
         }
     }

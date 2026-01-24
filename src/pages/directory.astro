@@ -77,8 +77,7 @@ interface Program {
 
 /**
  * Generate a privacy-respecting map link.
- * Uses OpenStreetMap directions when coordinates are available,
- * otherwise falls back to OSM search by address.
+ * Uses Apple Maps for directions - privacy-respecting and works on all platforms.
  */
 function generateMapLink(
   address?: string,
@@ -86,9 +85,9 @@ function generateMapLink(
   latitude?: number,
   longitude?: number
 ): string | undefined {
-  // If we have coordinates, use direct OSM directions link
+  // If we have coordinates, use Apple Maps with coordinates
   if (latitude && longitude) {
-    return `https://www.openstreetmap.org/directions?to=${latitude},${longitude}`;
+    return `https://maps.apple.com/?daddr=${latitude},${longitude}`;
   }
 
   // Fall back to address search if no coordinates
@@ -98,8 +97,8 @@ function generateMapLink(
   const fullAddress = city ? `${address}, ${city}, CA` : address;
   const encoded = encodeURIComponent(fullAddress);
 
-  // Return OpenStreetMap search link
-  return `https://www.openstreetmap.org/search?query=${encoded}`;
+  // Return Apple Maps with address as destination
+  return `https://maps.apple.com/?daddr=${encoded}`;
 }
 
 let allPrograms: Program[] = [];

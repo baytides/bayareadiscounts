@@ -5,9 +5,11 @@ import Foundation
 public actor SmartAssistantService {
     public static let shared = SmartAssistantService()
 
-    private let assistantEndpoint = "https://ai.baytides.org/api/chat"
-    // Tor-compatible endpoint (same, but uses .onion if available)
-    private let torEndpoint = "https://ai.baytides.org/api/chat"  // TODO: Add .onion endpoint when available
+    /// Direct AI endpoint (used when not using domain fronting)
+    private static let directAIEndpoint = "https://ai.baytides.org/api/chat"
+
+    /// Privacy service for getting the correct endpoint based on privacy mode
+    private let privacyService = PrivacyService.shared
 
     // API key from environment or fallback
     private let apiKey = ProcessInfo.processInfo.environment["OLLAMA_API_KEY"]
@@ -50,6 +52,40 @@ public actor SmartAssistantService {
         config.timeoutIntervalForRequest = requestTimeout
         config.timeoutIntervalForResource = requestTimeout
         self.standardSession = URLSession(configuration: config)
+    }
+
+    // MARK: - Privacy-Aware Endpoint Resolution
+
+    /// Get the AI chat endpoint based on current privacy mode
+    /// All CDN providers (Cloudflare, Fastly, Azure) support /api/chat routing
+    /// - For domain fronting: Uses CDN URL + /api/chat
+    /// - For Tor: Uses direct endpoint (Tor handles privacy)
+    /// - For standard: Uses direct endpoint (or CDN if censored)
+    private func getAIChatEndpoint(useTor: Bool) async -> String {
+        let privacyMode = await privacyService.getPrivacyMode()
+
+        switch privacyMode {
+        case .domainFronting:
+            // All CDNs now support /api/chat routing to ai.baytides.org
+            let cdnProvider = await privacyService.getCDNProvider()
+            return "\(cdnProvider.reflectorURL)/api/chat"
+
+        case .tor:
+            // Tor uses direct endpoint (privacy is handled by Tor network)
+            return Self.directAIEndpoint
+
+        case .standard:
+            // Check if auto-detect censorship is enabled and we're censored
+            if await privacyService.isAutoDetectCensorshipEnabled() {
+                let isCensored = await privacyService.detectCensorship()
+                if isCensored {
+                    // Use user's preferred CDN for censored users
+                    let cdnProvider = await privacyService.getCDNProvider()
+                    return "\(cdnProvider.reflectorURL)/api/chat"
+                }
+            }
+            return Self.directAIEndpoint
+        }
     }
 
     // MARK: - Tor Configuration
@@ -191,18 +227,27 @@ public actor SmartAssistantService {
         useTor: Bool = false,
         profileContext: ProfileContext? = nil
     ) async throws -> AISearchResult {
-        let endpoint = useTor ? torEndpoint : assistantEndpoint
+        // Get the appropriate endpoint based on privacy mode
+        let endpoint = await getAIChatEndpoint(useTor: useTor)
         guard let url = URL(string: endpoint) else {
             throw SmartAssistantError.invalidURL
         }
 
-        // Select appropriate session
+        // Select appropriate session based on privacy mode
         let session: URLSession
-        if useTor {
+        let privacyMode = await privacyService.getPrivacyMode()
+
+        if useTor || privacyMode == .tor {
             guard let torSession = torSession else {
                 throw SmartAssistantError.torNotConfigured
             }
             session = torSession
+        } else if privacyMode == .domainFronting {
+            // Use privacy service's session configuration for domain fronting
+            let config = await privacyService.createURLSessionConfiguration()
+            config.timeoutIntervalForRequest = requestTimeout
+            config.timeoutIntervalForResource = requestTimeout
+            session = URLSession(configuration: config)
         } else {
             session = standardSession
         }

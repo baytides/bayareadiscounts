@@ -61,6 +61,12 @@ playwright-report/
 # Generated data
 _data/git.yml
 
+# Generated/cached files (build artifacts)
+.i18n-hashes.json
+link-validation-report.json
+verification-results.json
+proxy-resources.html
+
 # Data exports (for review before import)
 data-exports/
 

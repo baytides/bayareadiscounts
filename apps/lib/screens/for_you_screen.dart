@@ -399,26 +399,11 @@ class _ForYouScreenState extends State<ForYouScreen> {
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                'Representatives for your area. Not sure who\'s yours?',
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
-                                ),
-                              ),
-                            ),
-                            TextButton.icon(
-                              onPressed: () => _openFindMyRep(),
-                              icon: const Icon(Icons.open_in_new, size: 14),
-                              label: const Text('Find My Rep'),
-                              style: TextButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(horizontal: 8),
-                                visualDensity: VisualDensity.compact,
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          'Representatives for your area',
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                          ),
                         ),
                       ),
                     ),
@@ -880,13 +865,6 @@ class _ForYouScreenState extends State<ForYouScreen> {
       if (await canLaunchUrl(uri)) {
         await launchUrl(uri, mode: LaunchMode.externalApplication);
       }
-    }
-  }
-
-  Future<void> _openFindMyRep() async {
-    final uri = Uri.parse('https://baynavigator.org/findmyrep');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
   }
 

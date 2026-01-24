@@ -1,6 +1,7 @@
 import SwiftUI
 
 @Observable
+@MainActor
 public final class SettingsViewModel {
     public enum ThemeMode: String, CaseIterable, Identifiable, Sendable {
         case system = "System"
@@ -14,6 +15,7 @@ public final class SettingsViewModel {
         didSet {
             Task {
                 await CacheService.shared.setThemeMode(themeMode.rawValue)
+                await CacheService.shared.synchronize()
             }
         }
     }
@@ -24,6 +26,7 @@ public final class SettingsViewModel {
         didSet {
             Task {
                 await CacheService.shared.setWarmMode(warmModeEnabled)
+                await CacheService.shared.synchronize()
             }
         }
     }
@@ -37,45 +40,54 @@ public final class SettingsViewModel {
         }
     }
 
-    /// AI-powered search enabled
-    public var aiSearchEnabled: Bool = true {
-        didSet {
-            Task {
-                await CacheService.shared.setAISearchEnabled(aiSearchEnabled)
-            }
-        }
+    /// AI-powered search is now always enabled (toggle removed)
+    /// Users can access Ask Carl for interactive AI assistance
+    public var aiSearchEnabled: Bool {
+        get { true }
+        set { /* No-op: AI is always enabled */ }
     }
 
     // MARK: - Privacy Settings
 
-    /// Enable Tor/Onion routing for enhanced privacy
-    public var useOnion: Bool = false {
+    /// Current privacy mode (standard, domain fronting, or Tor)
+    public var privacyMode: PrivacyService.PrivacyMode = .standard {
         didSet {
             Task {
-                await PrivacyService.shared.setOnionEnabled(useOnion)
+                await privacyService.setPrivacyMode(privacyMode)
                 await refreshPrivacyStatus()
             }
         }
     }
 
-    /// Enable custom proxy
-    public var proxyEnabled: Bool = false {
+    /// Auto-detect censorship and switch to domain fronting
+    public var autoDetectCensorship: Bool = false {
         didSet {
             Task {
-                await PrivacyService.shared.setProxyEnabled(proxyEnabled)
+                await privacyService.setAutoDetectCensorship(autoDetectCensorship)
+            }
+        }
+    }
+
+    /// Selected CDN provider for domain fronting
+    public var cdnProvider: PrivacyService.CDNProvider = .cloudflare {
+        didSet {
+            Task {
+                await privacyService.setCDNProvider(cdnProvider)
                 await refreshPrivacyStatus()
             }
         }
     }
 
-    /// Current proxy configuration
-    public var proxyConfig: ProxyConfig?
-
-    /// Whether Tor is available on the system
+    /// Whether Tor/Orbot is available on the system
     public var torAvailable: Bool = false
 
-    /// Current privacy status
+    /// Current privacy status for UI display
     public var privacyStatus: PrivacyStatus?
+
+    #if os(iOS)
+    /// Whether Orbot app is installed (iOS only)
+    public var orbotInstalled: Bool = false
+    #endif
 
     public var colorScheme: ColorScheme? {
         switch themeMode {
@@ -89,81 +101,88 @@ public final class SettingsViewModel {
     private let privacyService = PrivacyService.shared
 
     public init() {
-        Task {
-            // Load theme settings
-            if let savedMode = await cache.getThemeMode(),
-               let mode = ThemeMode(rawValue: savedMode) {
-                await MainActor.run {
-                    self.themeMode = mode
-                }
-            }
-            let warmMode = await cache.getWarmMode()
-            await MainActor.run {
-                self.warmModeEnabled = warmMode
-            }
+        // Load settings synchronously from UserDefaults on init
+        // This ensures the UI has correct values immediately
+        let defaults = UserDefaults.standard
 
-            // Load locale setting
-            await LocalizationService.shared.initialize()
-            let savedLocale = await LocalizationService.shared.currentLocale
-            await MainActor.run {
-                self.currentLocale = savedLocale
-            }
-
-            // Load AI search setting
-            let aiEnabled = await cache.getAISearchEnabled()
-            await MainActor.run {
-                self.aiSearchEnabled = aiEnabled
-            }
-
-            // Load privacy settings
-            let onionEnabled = await privacyService.isOnionEnabled()
-            let proxyEnabledValue = await privacyService.isProxyEnabled()
-            let config = await privacyService.getProxyConfig()
-            let tor = await privacyService.isTorAvailable()
-            let status = await privacyService.getPrivacyStatus()
-
-            await MainActor.run {
-                self.useOnion = onionEnabled
-                self.proxyEnabled = proxyEnabledValue
-                self.proxyConfig = config
-                self.torAvailable = tor
-                self.privacyStatus = status
-            }
+        // Theme mode
+        if let savedMode = defaults.string(forKey: "baynavigator:theme_mode"),
+           let mode = ThemeMode(rawValue: savedMode) {
+            themeMode = mode
         }
+
+        // Warm mode
+        warmModeEnabled = defaults.bool(forKey: "baynavigator:warm_mode")
+
+        // Locale - use the localization service's sync method
+        currentLocale = LocalizationService.shared.getCurrentLocale()
+
+        // AI search
+        aiSearchEnabled = defaults.object(forKey: "baynavigator:ai_search_enabled") as? Bool ?? true
+
+        // Privacy mode - load synchronously
+        if let savedMode = defaults.string(forKey: "baynavigator:privacy_mode"),
+           let mode = PrivacyService.PrivacyMode(rawValue: savedMode) {
+            privacyMode = mode
+        }
+        autoDetectCensorship = defaults.bool(forKey: "baynavigator:auto_detect_censorship")
+
+        // CDN provider
+        if let savedProvider = defaults.string(forKey: "baynavigator:cdn_provider"),
+           let provider = PrivacyService.CDNProvider(rawValue: savedProvider) {
+            cdnProvider = provider
+        }
+
+        // Privacy settings that require async calls
+        Task {
+            await loadPrivacySettings()
+            // Also ensure localization service is initialized for translations
+            await LocalizationService.shared.initialize()
+        }
+    }
+
+    /// Load privacy settings asynchronously
+    private func loadPrivacySettings() async {
+        torAvailable = await privacyService.isTorAvailable()
+        privacyStatus = await privacyService.getPrivacyStatus()
+
+        #if os(iOS)
+        orbotInstalled = await privacyService.isOrbotInstalled()
+        #endif
     }
 
     // MARK: - Privacy Methods
 
     /// Refresh privacy status (call when settings change or to update Tor availability)
-    @MainActor
     public func refreshPrivacyStatus() async {
         torAvailable = await privacyService.isTorAvailable()
         privacyStatus = await privacyService.getPrivacyStatus()
-    }
 
-    /// Save proxy configuration
-    @MainActor
-    public func setProxyConfig(_ config: ProxyConfig) async {
-        await privacyService.setProxyConfig(config)
-        proxyConfig = config
-        proxyEnabled = true
-        await privacyService.setProxyEnabled(true)
-        await refreshPrivacyStatus()
-    }
-
-    /// Clear proxy configuration
-    @MainActor
-    public func clearProxyConfig() async {
-        await privacyService.clearProxyConfig()
-        proxyConfig = nil
-        proxyEnabled = false
-        await refreshPrivacyStatus()
+        #if os(iOS)
+        orbotInstalled = await privacyService.isOrbotInstalled()
+        #endif
     }
 
     /// Test privacy connection
     public func testPrivacyConnection() async -> PrivacyTestResult {
         await privacyService.testPrivacyConnection()
     }
+
+    #if os(iOS)
+    /// Open Orbot app (iOS only)
+    public func openOrbot() async {
+        await privacyService.openOrbot()
+    }
+
+    /// Get Orbot App Store URL
+    public var orbotAppStoreURL: URL {
+        get async {
+            await privacyService.orbotAppStoreURL
+        }
+    }
+    #endif
+
+    // MARK: - Cache Management
 
     public var cacheSize: String {
         get async {

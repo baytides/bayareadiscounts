@@ -22,6 +22,8 @@ export default [
       'tests/**',
       '**/partnerships/guidelines.astro', // Parser issue with complex nested HTML
       '**/map.astro', // Parser issue with complex TypeScript in script tags
+      '**/privacy.astro', // Parser issue with complex nested HTML
+      'workers/**', // Separate Cloudflare Worker project
     ],
   },
   {

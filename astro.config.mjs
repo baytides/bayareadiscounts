@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import compress from 'astro-compress';
 
 export default defineConfig({
   site: 'https://baynavigator.org',
@@ -31,6 +32,13 @@ export default defineConfig({
         }
         return item;
       },
+    }),
+    compress({
+      CSS: true,
+      HTML: true,
+      Image: false, // Skip images - they're already optimized
+      JavaScript: true,
+      SVG: true,
     }),
   ],
   markdown: {

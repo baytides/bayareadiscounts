@@ -1,19 +1,81 @@
 ---
 /**
- * Smart Assistant Component
+ * Smart Assistant Component - "Carl"
  * AI-powered chat interface to help users find relevant programs
- * Uses self-hosted Ollama (Llama 3.2) at ai.baytides.org
+ * Uses self-hosted Ollama (Llama 3.1) at ai.baytides.org
+ * Features: Streaming responses, RAG search, interactive program cards
  */
+import { SYSTEM_PROMPT, OLLAMA_CONFIG } from '../data/assistant-system-prompt';
+import zipcodes from '../data/zipcodes.yml';
+import cities from '../data/cities.yml';
 
 interface Props {
   apiEndpoint?: string;
   apiKey?: string;
+  useDomainFronting?: boolean;
+  cdnProvider?: 'cloudflare' | 'fastly' | 'azure';
 }
 
+// Build ZIP → City → County lookup at build time
+const zipToCity: Record<string, string> = zipcodes;
+const cityToCounty: Record<string, string> = {};
+
+// Add neighborhood aliases that map to their parent city
+const neighborhoodAliases: Record<string, string> = {
+  'redwood shores': 'Redwood City',
+  'foster city': 'Foster City', // Keep Foster City as its own city
+  'silicon valley': 'San Jose',
+  soma: 'San Francisco',
+  'the mission': 'San Francisco',
+  castro: 'San Francisco',
+  marina: 'San Francisco',
+  'financial district': 'San Francisco',
+  'downtown oakland': 'Oakland',
+  temescal: 'Oakland',
+  rockridge: 'Oakland',
+  fruitvale: 'Oakland',
+  'north beach': 'San Francisco',
+  haight: 'San Francisco',
+  'noe valley': 'San Francisco',
+  'bernal heights': 'San Francisco',
+  'potrero hill': 'San Francisco',
+  dogpatch: 'San Francisco',
+  'inner sunset': 'San Francisco',
+  'outer sunset': 'San Francisco',
+  'richmond district': 'San Francisco',
+  excelsior: 'San Francisco',
+  'visitacion valley': 'San Francisco',
+  bayview: 'San Francisco',
+  'hunters point': 'San Francisco',
+  'diamond heights': 'San Francisco',
+  'glen park': 'San Francisco',
+  'twin peaks': 'San Francisco',
+  'west portal': 'San Francisco',
+  parkside: 'San Francisco',
+  'sea cliff': 'San Francisco',
+};
+
+// Build city to county map
+for (const city of cities) {
+  cityToCounty[city.name.toLowerCase()] = city.county;
+}
+
+// Export for client-side use via define:vars
+const locationData = {
+  zipToCity,
+  cityToCounty,
+  neighborhoodAliases,
+};
+
 const {
-  apiEndpoint = 'https://ai.baytides.org/api/chat',
+  apiEndpoint = OLLAMA_CONFIG.endpoint,
   apiKey = import.meta.env.PUBLIC_OLLAMA_API_KEY || '',
+  useDomainFronting = false,
+  cdnProvider = 'cloudflare',
 } = Astro.props;
+
+// Use CDN endpoint when domain fronting is enabled
+const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProvider] : apiEndpoint;
 ---
 
 <!-- Floating Assistant Button -->
@@ -63,8 +125,8 @@ const {
         </svg>
       </div>
       <div>
-        <h2 id="assistant-title" class="font-semibold">Bay Navigator Assistant</h2>
-        <p class="text-xs text-primary-100">AI-powered program finder</p>
+        <h2 id="assistant-title" class="font-semibold">Ask Carl</h2>
+        <p class="text-xs text-primary-100">Your Bay Area resource guide</p>
       </div>
     </div>
     <button
@@ -89,16 +151,11 @@ const {
     <div class="assistant-message">
       <div class="bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]">
         <p class="text-sm text-neutral-800 dark:text-neutral-200">
-          Hi! I'm here to help you find programs and services in the Bay Area. You can ask me things
-          like:
+          Hi! I'm Carl, named after Karl the Fog. I'm here to help you find programs in the Bay
+          Area.
         </p>
-        <ul class="text-sm text-neutral-600 dark:text-neutral-300 mt-2 space-y-1">
-          <li>"I need help paying my electric bill"</li>
-          <li>"What food assistance is available for seniors?"</li>
-          <li>"I'm a veteran looking for housing help"</li>
-        </ul>
         <p class="text-sm text-neutral-800 dark:text-neutral-200 mt-2">
-          What can I help you find today?
+          What can I help you with today?
         </p>
       </div>
     </div>
@@ -107,19 +164,24 @@ const {
   <!-- Quick prompts -->
   <div id="quick-prompts" class="px-4 pb-2">
     <div class="flex flex-wrap gap-2">
-      <button type="button" class="quick-prompt-btn">Food assistance</button>
-      <button type="button" class="quick-prompt-btn">Utility bill help</button>
-      <button type="button" class="quick-prompt-btn">Healthcare</button>
-      <button type="button" id="view-saved-btn" class="quick-prompt-btn flex items-center gap-1">
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-        </svg>
-        Saved
-      </button>
+      <button
+        type="button"
+        class="quick-prompt-btn"
+        data-prompt="I need help finding food assistance">Food help</button
+      >
+      <button
+        type="button"
+        class="quick-prompt-btn"
+        data-prompt="I need help paying my electric bill">Utility bills</button
+      >
+      <button type="button" class="quick-prompt-btn" data-prompt="I need healthcare coverage"
+        >Healthcare</button
+      >
+      <button
+        type="button"
+        class="quick-prompt-btn"
+        data-prompt="I'm looking for housing assistance">Housing</button
+      >
     </div>
   </div>
 
@@ -150,12 +212,13 @@ const {
       </button>
     </form>
     <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-2 text-center">
-      AI responses are suggestions only. Always verify program details.
+      AI responses are suggestions only. Verify program details.
     </p>
   </div>
 </div>
 
-<script define:vars={{ apiEndpoint, apiKey }}>
+<script define:vars={{ effectiveEndpoint, apiKey, SYSTEM_PROMPT, locationData }}>
+  // DOM Elements
   const toggle = document.getElementById('assistant-toggle');
   const panel = document.getElementById('assistant-panel');
   const closeBtn = document.getElementById('assistant-close');
@@ -166,36 +229,17 @@ const {
   const quickPrompts = document.getElementById('quick-prompts');
   const notificationDot = document.getElementById('assistant-dot');
 
+  // State
   let conversationHistory = [];
   let isLoading = false;
+  let programsCache = null;
+  let userLocation = null;
 
-  // System prompt for Bay Navigator Assistant
-  const SYSTEM_PROMPT = `You are Bay Navigator Assistant, a helpful AI that helps people in the San Francisco Bay Area find social services, benefits programs, and community resources.
-
-Your Role:
-- Help users find relevant programs and services
-- Be warm, supportive, and non-judgmental
-- Keep responses concise (2-4 sentences)
-- Prioritize safety in crisis situations
-
-Key Programs:
-- CalFresh (food stamps): Apply at BenefitsCal.com
-- Medi-Cal (health insurance): Apply at BenefitsCal.com
-- Section 8 (housing vouchers): Contact local housing authority
-- CARE Program: 20% PG&E discount for low-income
-- CalWORKs: Cash aid for families with children
-- 211 Bay Area: Call 211 for help finding any service
-
-Crisis Resources (provide immediately when relevant):
-- Emergency: 911
-- Suicide/Crisis: 988 (call or text)
-- Domestic Violence: 1-800-799-7233
-- Homelessness: Call 211
-- Crisis Text Line: Text HOME to 741741
-
-Counties: San Francisco, Alameda, Contra Costa, San Mateo, Santa Clara, Marin, Napa, Solano, Sonoma
-
-When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
+  // Detect if running in app (check for baynavigator:// URL scheme support)
+  const isApp =
+    window.location.href.includes('localhost') ||
+    document.referrer.includes('baynavigator://') ||
+    navigator.userAgent.includes('BayNavigator');
 
   // Crisis detection keywords
   const EMERGENCY_KEYWORDS = [
@@ -208,10 +252,6 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     'domestic violence',
     'unsafe',
     'threatened',
-    'kidnap',
-    'abduct',
-    'murder',
-    'stabbed',
   ];
   const MENTAL_HEALTH_KEYWORDS = [
     'suicide',
@@ -221,17 +261,169 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     "don't want to live",
     'want to die',
     'self-harm',
-    'cutting',
-    'hurting myself',
     'crisis',
-    'desperate',
-    'depressed',
-    'depression',
-    'anxious',
-    'anxiety',
-    'worried',
   ];
 
+  // Location parsing
+  function parseLocation(text) {
+    const lowerText = text.toLowerCase();
+
+    // Check for ZIP code (5 digits)
+    const zipMatch = text.match(/\b(\d{5})\b/);
+    if (zipMatch) {
+      const zip = zipMatch[1];
+      const city = locationData.zipToCity[zip];
+      if (city) {
+        const county = locationData.cityToCounty[city.toLowerCase()];
+        return { zip, city, county, original: zip };
+      }
+    }
+
+    // Check for neighborhood aliases
+    for (const [neighborhood, city] of Object.entries(locationData.neighborhoodAliases)) {
+      if (lowerText.includes(neighborhood)) {
+        const county = locationData.cityToCounty[city.toLowerCase()];
+        return { city, county, neighborhood, original: neighborhood };
+      }
+    }
+
+    // Check for city names
+    for (const [cityName, county] of Object.entries(locationData.cityToCounty)) {
+      if (lowerText.includes(cityName)) {
+        return { city: cityName, county, original: cityName };
+      }
+    }
+
+    return null;
+  }
+
+  // Load programs for RAG search
+  async function loadPrograms() {
+    if (programsCache) return programsCache;
+    try {
+      const response = await fetch('/api/programs.json');
+      if (response.ok) {
+        programsCache = await response.json();
+        return programsCache;
+      }
+    } catch (e) {
+      console.error('Failed to load programs:', e);
+    }
+    return [];
+  }
+
+  // Search programs for RAG
+  async function searchPrograms(query, location = null) {
+    const programs = await loadPrograms();
+    if (!programs.length) return [];
+
+    const queryLower = query.toLowerCase();
+    const queryTerms = queryLower.split(/\s+/).filter((t) => t.length > 2);
+
+    // Score programs based on relevance
+    const scored = programs.map((program) => {
+      let score = 0;
+      const name = (program.name || '').toLowerCase();
+      const desc = (program.description || '').toLowerCase();
+      const category = (program.category || '').toLowerCase();
+      const counties = (program.counties || []).map((c) => c.toLowerCase());
+
+      // Name matches are most important
+      for (const term of queryTerms) {
+        if (name.includes(term)) score += 10;
+        if (category.includes(term)) score += 5;
+        if (desc.includes(term)) score += 2;
+      }
+
+      // Category keyword matching
+      const categoryKeywords = {
+        food: ['food', 'hungry', 'eat', 'meal', 'grocery', 'snap', 'calfresh', 'wic', 'pantry'],
+        healthcare: [
+          'health',
+          'medical',
+          'doctor',
+          'insurance',
+          'medi-cal',
+          'medicaid',
+          'clinic',
+          'dental',
+          'vision',
+        ],
+        housing: ['housing', 'rent', 'home', 'shelter', 'homeless', 'section 8', 'apartment'],
+        utilities: [
+          'utility',
+          'electric',
+          'gas',
+          'pge',
+          'pg&e',
+          'water',
+          'bill',
+          'care program',
+          'liheap',
+        ],
+        cash: [
+          'cash',
+          'money',
+          'income',
+          'calworks',
+          'ssi',
+          'ssdi',
+          'welfare',
+          'general assistance',
+        ],
+      };
+
+      for (const [cat, keywords] of Object.entries(categoryKeywords)) {
+        for (const kw of keywords) {
+          if (queryLower.includes(kw) && category.includes(cat)) {
+            score += 8;
+          }
+        }
+      }
+
+      // Location filtering
+      if (location && location.county) {
+        const countyLower = location.county.toLowerCase();
+        if (
+          counties.some(
+            (c) =>
+              c.includes(countyLower) || c === 'bay area' || c === 'statewide' || c === 'nationwide'
+          )
+        ) {
+          score += 5;
+        } else if (
+          counties.length &&
+          !counties.some(
+            (c) => c.includes('bay area') || c.includes('statewide') || c.includes('nationwide')
+          )
+        ) {
+          // Penalize programs not available in user's county
+          score -= 10;
+        }
+      }
+
+      return { program, score };
+    });
+
+    // Return top 5 relevant programs
+    return scored
+      .filter((s) => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map((s) => s.program);
+  }
+
+  // Generate program link based on platform
+  function getProgramLink(program) {
+    const slug =
+      program.slug || program.id || program.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    if (isApp) {
+      return `baynavigator://program/${slug}`;
+    }
+    return `/directory?q=${encodeURIComponent(program.name)}`;
+  }
+
+  // Detect crisis situation
   function detectCrisis(message) {
     const lowerMessage = message.toLowerCase();
     for (const keyword of EMERGENCY_KEYWORDS) {
@@ -243,7 +435,7 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     return null;
   }
 
-  // Check if user has used assistant before
+  // Initialize
   if (localStorage.getItem('assistantUsed')) {
     notificationDot?.remove();
   }
@@ -253,11 +445,12 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     const isOpen = !panel?.classList.contains('hidden');
     panel?.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', String(!isOpen));
-
     if (!isOpen) {
       input?.focus();
       localStorage.setItem('assistantUsed', 'true');
       notificationDot?.remove();
+      // Preload programs for RAG
+      loadPrograms();
     }
   });
 
@@ -276,17 +469,15 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
   });
 
   // Quick prompts
-  document.querySelectorAll('.quick-prompt-btn:not(#view-saved-btn)').forEach((btn) => {
+  document.querySelectorAll('.quick-prompt-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
+      const prompt = btn.dataset.prompt || btn.textContent;
       if (input && !isLoading) {
-        input.value = btn.textContent || '';
+        input.value = prompt;
         sendMessage();
       }
     });
   });
-
-  // View saved programs
-  document.getElementById('view-saved-btn')?.addEventListener('click', showSavedPrograms);
 
   // Form submit
   form?.addEventListener('submit', (e) => {
@@ -311,20 +502,50 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     addMessage(message, 'user');
     input.value = '';
 
+    // Parse location from message
+    const parsedLocation = parseLocation(message);
+    if (parsedLocation) {
+      userLocation = parsedLocation;
+    }
+
     // Show loading
     isLoading = true;
     sendBtn?.setAttribute('disabled', 'true');
     const loadingEl = addLoadingIndicator();
 
     try {
+      // Search for relevant programs (RAG)
+      const relevantPrograms = await searchPrograms(message, userLocation);
+
+      // Build context for the AI
+      let ragContext = '';
+      if (relevantPrograms.length > 0) {
+        ragContext = `\n\n[RELEVANT PROGRAMS FROM BAY NAVIGATOR DATABASE]\n`;
+        relevantPrograms.forEach((p, i) => {
+          ragContext += `${i + 1}. ${p.name}`;
+          if (p.category) ragContext += ` (${p.category})`;
+          if (p.description) ragContext += `: ${p.description.substring(0, 150)}`;
+          ragContext += '\n';
+        });
+        ragContext += `\nUse these programs in your response when relevant. Link users to view them on Bay Navigator.`;
+      }
+
+      // Add location context
+      let locationContext = '';
+      if (userLocation) {
+        locationContext = `\n\n[USER LOCATION]: ${userLocation.city || userLocation.neighborhood}`;
+        if (userLocation.county) locationContext += ` (${userLocation.county})`;
+      }
+
       // Build messages array for Ollama chat API
       const messages = [
-        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'system', content: SYSTEM_PROMPT + ragContext + locationContext },
         ...conversationHistory.slice(-6),
         { role: 'user', content: message },
       ];
 
-      const response = await fetch(apiEndpoint, {
+      // Stream the response
+      const response = await fetch(effectiveEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -333,7 +554,7 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
         body: JSON.stringify({
           model: 'llama3.1:8b-instruct-q8_0',
           messages: messages,
-          stream: false,
+          stream: true,
           options: {
             temperature: 0.7,
             num_predict: 500,
@@ -341,121 +562,202 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
         }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to get response');
+        throw new Error('Failed to get response');
+      }
+
+      // Remove loading indicator and create response bubble
+      loadingEl?.remove();
+      const responseBubble = createResponseBubble();
+      let fullResponse = '';
+
+      // Handle streaming response
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split('\n');
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          try {
+            const json = JSON.parse(line);
+            if (json.message?.content) {
+              fullResponse += json.message.content;
+              updateResponseBubble(responseBubble, fullResponse);
+            }
+          } catch (e) {
+            // Skip non-JSON lines
+          }
+        }
       }
 
       // Update conversation history
       conversationHistory.push({ role: 'user', content: message });
+      conversationHistory.push({ role: 'assistant', content: fullResponse });
 
-      // Extract assistant response from Ollama format
-      const assistantMessage =
-        data.message?.content ||
-        data.response ||
-        'I apologize, but I could not generate a response.';
-      conversationHistory.push({ role: 'assistant', content: assistantMessage });
-
-      // Add AI response to chat
-      addMessage(assistantMessage, 'assistant');
+      // Add program cards if we found relevant programs
+      if (relevantPrograms.length > 0) {
+        addProgramCards(relevantPrograms);
+      }
     } catch (error) {
       console.error('Assistant error:', error);
+      loadingEl?.remove();
       addMessage(
-        "I'm sorry, I'm having trouble connecting right now. Please try searching the programs directly or try again later.",
+        "I'm having trouble connecting. Please try again or search the programs directly.",
         'assistant',
         true
       );
     } finally {
-      loadingEl?.remove();
       isLoading = false;
       sendBtn?.removeAttribute('disabled');
     }
+  }
+
+  function createResponseBubble() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'assistant-message';
+
+    const bubble = document.createElement('div');
+    bubble.className =
+      'bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]';
+
+    const text = document.createElement('p');
+    text.className = 'text-sm text-neutral-800 dark:text-neutral-200 whitespace-pre-wrap';
+
+    bubble.appendChild(text);
+    wrapper.appendChild(bubble);
+    messagesContainer?.appendChild(wrapper);
+
+    return text;
+  }
+
+  function updateResponseBubble(element, text) {
+    if (element) {
+      element.textContent = text;
+      messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+    }
+  }
+
+  function addProgramCards(programs) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'assistant-message mt-2';
+
+    const cardsContainer = document.createElement('div');
+    cardsContainer.className = 'space-y-2';
+
+    // Header
+    const header = document.createElement('p');
+    header.className = 'text-xs text-neutral-500 dark:text-neutral-400 mb-2';
+    header.textContent = 'Related programs:';
+    cardsContainer.appendChild(header);
+
+    programs.forEach((program) => {
+      const card = document.createElement('a');
+      card.href = getProgramLink(program);
+      card.className =
+        'block bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 rounded-xl p-3 hover:border-primary-500 hover:shadow-md transition-all group';
+
+      const inner = document.createElement('div');
+      inner.className = 'flex items-center justify-between gap-2';
+
+      const content = document.createElement('div');
+      content.className = 'flex-1 min-w-0';
+
+      const name = document.createElement('h4');
+      name.className =
+        'font-medium text-sm text-neutral-900 dark:text-white truncate group-hover:text-primary-600';
+      name.textContent = program.name;
+      content.appendChild(name);
+
+      if (program.category) {
+        const cat = document.createElement('span');
+        cat.className = 'text-xs text-primary-600 dark:text-primary-400';
+        cat.textContent = program.category;
+        content.appendChild(cat);
+      }
+
+      inner.appendChild(content);
+
+      // Arrow icon
+      const arrow = document.createElement('div');
+      arrow.className = 'text-neutral-400 group-hover:text-primary-500 transition-colors';
+      arrow.innerHTML =
+        '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
+      inner.appendChild(arrow);
+
+      card.appendChild(inner);
+      cardsContainer.appendChild(card);
+    });
+
+    wrapper.appendChild(cardsContainer);
+    messagesContainer?.appendChild(wrapper);
+    messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
   }
 
   function showCrisisDialog(type) {
     const isEmergency = type === 'emergency';
     const dialog = document.createElement('div');
     dialog.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-4';
-    dialog.innerHTML = `
-      <div class="bg-white dark:bg-neutral-800 rounded-2xl max-w-md w-full p-6 shadow-2xl">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-full flex items-center justify-center ${isEmergency ? 'bg-red-100 dark:bg-red-900/30' : 'bg-blue-100 dark:bg-blue-900/30'}">
-            <svg class="w-6 h-6 ${isEmergency ? 'text-red-600' : 'text-blue-600'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              ${
-                isEmergency
-                  ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>'
-                  : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>'
-              }
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold ${isEmergency ? 'text-red-700 dark:text-red-400' : 'text-blue-700 dark:text-blue-400'}">
-            ${isEmergency ? 'Emergency Resources' : 'Crisis Support Available'}
-          </h3>
+
+    const content = document.createElement('div');
+    content.className = 'bg-white dark:bg-neutral-800 rounded-2xl max-w-md w-full p-6 shadow-2xl';
+
+    content.innerHTML = `
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center ${isEmergency ? 'bg-red-100 dark:bg-red-900/30' : 'bg-blue-100 dark:bg-blue-900/30'}">
+          <svg class="w-6 h-6 ${isEmergency ? 'text-red-600' : 'text-blue-600'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ${
+              isEmergency
+                ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>'
+                : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>'
+            }
+          </svg>
         </div>
-        <p class="text-neutral-600 dark:text-neutral-300 mb-6">
-          ${
-            isEmergency
-              ? 'If you or someone else is in immediate danger, please call 911.'
-              : "If you're experiencing a mental health crisis, help is available 24/7."
-          }
-        </p>
-        <div class="space-y-3">
-          ${
-            isEmergency
-              ? `
-            <a href="tel:911" class="flex items-center gap-4 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-red-100 dark:bg-red-900/50 flex items-center justify-center">
-                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-              </div>
+        <h3 class="text-lg font-bold ${isEmergency ? 'text-red-700 dark:text-red-400' : 'text-blue-700 dark:text-blue-400'}">
+          ${isEmergency ? 'Emergency Resources' : 'Crisis Support Available'}
+        </h3>
+      </div>
+      <p class="text-neutral-600 dark:text-neutral-300 mb-6">
+        ${
+          isEmergency
+            ? 'If you or someone else is in immediate danger, please call 911.'
+            : "If you're experiencing a mental health crisis, help is available 24/7."
+        }
+      </p>
+      <div class="space-y-3">
+        ${
+          isEmergency
+            ? `<a href="tel:911" class="flex items-center gap-4 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 hover:bg-red-100 transition-colors">
               <div class="flex-1">
                 <div class="font-semibold text-neutral-900 dark:text-white">Emergency Services</div>
-                <div class="text-sm text-red-600 dark:text-red-400 font-medium">Call 911</div>
+                <div class="text-sm text-red-600 font-medium">Call 911</div>
               </div>
-              <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          `
-              : `
-            <a href="tel:988" class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-              </div>
+            </a>`
+            : `<a href="tel:988" class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 transition-colors">
               <div class="flex-1">
                 <div class="font-semibold text-neutral-900 dark:text-white">988 Suicide & Crisis Lifeline</div>
-                <div class="text-sm text-blue-600 dark:text-blue-400 font-medium">Call or text 988</div>
+                <div class="text-sm text-blue-600 font-medium">Call or text 988</div>
               </div>
-              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
             </a>
-            <a href="sms:741741&body=HOME" class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                </svg>
-              </div>
+            <a href="sms:741741&body=HOME" class="flex items-center gap-4 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 transition-colors">
               <div class="flex-1">
                 <div class="font-semibold text-neutral-900 dark:text-white">Crisis Text Line</div>
-                <div class="text-sm text-blue-600 dark:text-blue-400 font-medium">Text HOME to 741741</div>
+                <div class="text-sm text-blue-600 font-medium">Text HOME to 741741</div>
               </div>
-              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          `
-          }
-        </div>
-        <button type="button" class="w-full mt-4 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200" id="crisis-dialog-close">
-          Continue searching
-        </button>
+            </a>`
+        }
       </div>
+      <button type="button" class="w-full mt-4 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-800" id="crisis-dialog-close">
+        Continue searching
+      </button>
     `;
+
+    dialog.appendChild(content);
     document.body.appendChild(dialog);
 
     dialog.addEventListener('click', (e) => {
@@ -470,15 +772,17 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
     wrapper.className = role === 'user' ? 'flex justify-end' : 'assistant-message';
 
     const bubble = document.createElement('div');
-
     if (role === 'user') {
       bubble.className = 'bg-primary-600 text-white rounded-2xl rounded-tr-sm p-3 max-w-[85%]';
     } else {
       bubble.className = `${isError ? 'bg-red-100 dark:bg-red-900/30' : 'bg-neutral-100 dark:bg-neutral-700'} rounded-2xl rounded-tl-sm p-3 max-w-[85%]`;
     }
 
-    bubble.innerHTML = `<p class="text-sm ${role === 'user' ? 'text-white' : 'text-neutral-800 dark:text-neutral-200'}">${escapeHtml(text)}</p>`;
+    const textEl = document.createElement('p');
+    textEl.className = `text-sm ${role === 'user' ? 'text-white' : 'text-neutral-800 dark:text-neutral-200'} whitespace-pre-wrap`;
+    textEl.textContent = text;
 
+    bubble.appendChild(textEl);
     wrapper.appendChild(bubble);
     messagesContainer?.appendChild(wrapper);
     messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
@@ -487,234 +791,24 @@ When in doubt, suggest calling 211 or visiting baynavigator.org for more help.`;
   function addLoadingIndicator() {
     const wrapper = document.createElement('div');
     wrapper.className = 'assistant-message loading-indicator';
-    wrapper.innerHTML = `
-      <div class="bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]">
-        <div class="flex gap-1">
-          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 0ms"></span>
-          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 150ms"></span>
-          <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 300ms"></span>
-        </div>
-      </div>
+
+    const bubble = document.createElement('div');
+    bubble.className =
+      'bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]';
+
+    const dots = document.createElement('div');
+    dots.className = 'flex gap-1';
+    dots.innerHTML = `
+      <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 0ms"></span>
+      <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 150ms"></span>
+      <span class="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style="animation-delay: 300ms"></span>
     `;
+
+    bubble.appendChild(dots);
+    wrapper.appendChild(bubble);
     messagesContainer?.appendChild(wrapper);
     messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
     return wrapper;
-  }
-
-  function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML.replace(/\n/g, '<br>');
-  }
-
-  function addProgramResults(programs, count) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'assistant-message space-y-3';
-
-    // Add result count message
-    const messageBubble = document.createElement('div');
-    messageBubble.className =
-      'bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]';
-    if (count === 0) {
-      messageBubble.innerHTML = `<p class="text-sm text-neutral-800 dark:text-neutral-200">I couldn't find matching programs. Try different keywords or browse by category on the main page.</p>`;
-    } else {
-      messageBubble.innerHTML = `<p class="text-sm text-neutral-800 dark:text-neutral-200">Found <strong>${count}</strong> program${count !== 1 ? 's' : ''} that may help:</p>`;
-    }
-    wrapper.appendChild(messageBubble);
-
-    // Add program cards if available
-    if (programs && programs.length > 0) {
-      const cardsContainer = document.createElement('div');
-      cardsContainer.className = 'space-y-2 mt-2';
-
-      programs.forEach((program) => {
-        const card = document.createElement('div');
-        card.className =
-          'bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 rounded-lg p-3 text-sm';
-
-        const programId = program.id || program.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        const hasPageCard = document.getElementById(`program-${programId}`);
-
-        card.innerHTML = `
-          <div class="flex items-start justify-between gap-2">
-            <div class="flex-1">
-              <h4 class="font-medium text-neutral-900 dark:text-white">${escapeHtml(program.name)}</h4>
-              ${program.category ? `<span class="text-xs text-primary-600 dark:text-primary-300">${escapeHtml(program.category)}</span>` : ''}
-            </div>
-            <button type="button" class="save-program-btn p-1 text-neutral-400 hover:text-primary-600 dark:hover:text-primary-300" data-program='${JSON.stringify(program).replace(/'/g, '&#39;')}' aria-label="Save program">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
-              </svg>
-            </button>
-          </div>
-          ${program.description ? `<p class="text-neutral-600 dark:text-neutral-300 mt-1">${escapeHtml(program.description)}</p>` : ''}
-          <div class="flex flex-wrap gap-2 mt-2">
-            ${hasPageCard ? `<a href="#program-${programId}" class="text-xs text-primary-700 dark:text-primary-300 hover:underline" onclick="closeAndScroll('program-${programId}')">View details</a>` : ''}
-            ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-300 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
-            ${program.website ? `<a href="${program.website}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary-600 dark:text-primary-300 hover:underline">Website</a>` : ''}
-          </div>
-        `;
-
-        cardsContainer.appendChild(card);
-      });
-
-      wrapper.appendChild(cardsContainer);
-
-      // Add save all button
-      const saveAllBtn = document.createElement('button');
-      saveAllBtn.type = 'button';
-      saveAllBtn.className =
-        'text-xs text-primary-700 dark:text-primary-300 hover:underline flex items-center gap-1 mt-2';
-      saveAllBtn.innerHTML = `
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
-        </svg>
-        Save all ${programs.length} programs
-      `;
-      saveAllBtn.addEventListener('click', () => savePrograms(programs));
-      wrapper.appendChild(saveAllBtn);
-    }
-
-    messagesContainer?.appendChild(wrapper);
-    messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
-
-    // Attach save handlers
-    wrapper.querySelectorAll('.save-program-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const program = JSON.parse(btn.dataset.program);
-        savePrograms([program]);
-        btn.innerHTML = `<svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>`;
-      });
-    });
-  }
-
-  function savePrograms(programs) {
-    const saved = JSON.parse(localStorage.getItem('savedPrograms') || '[]');
-    const existingIds = new Set(saved.map((p) => p.id || p.name));
-
-    programs.forEach((program) => {
-      const id = program.id || program.name;
-      if (!existingIds.has(id)) {
-        saved.push({
-          ...program,
-          savedAt: new Date().toISOString(),
-        });
-        existingIds.add(id);
-      }
-    });
-
-    localStorage.setItem('savedPrograms', JSON.stringify(saved));
-
-    // Show confirmation
-    const toast = document.createElement('div');
-    toast.className =
-      'fixed bottom-24 left-1/2 -translate-x-1/2 bg-neutral-900 text-white text-sm px-4 py-2 rounded-lg shadow-lg z-50';
-    toast.textContent =
-      programs.length === 1 ? 'Program saved!' : `${programs.length} programs saved!`;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2000);
-  }
-
-  // Close panel and scroll to program card
-  window.closeAndScroll = function (elementId) {
-    panel?.classList.add('hidden');
-    toggle?.setAttribute('aria-expanded', 'false');
-    setTimeout(() => {
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        element.classList.add('ring-2', 'ring-primary-500');
-        setTimeout(() => element.classList.remove('ring-2', 'ring-primary-500'), 2000);
-      }
-    }, 100);
-  };
-
-  function showSavedPrograms() {
-    const saved = JSON.parse(localStorage.getItem('savedPrograms') || '[]');
-
-    if (saved.length === 0) {
-      addMessage(
-        "You haven't saved any programs yet. When I show you programs, click the bookmark icon to save them for later.",
-        'assistant'
-      );
-      return;
-    }
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'assistant-message space-y-3';
-
-    const header = document.createElement('div');
-    header.className =
-      'bg-neutral-100 dark:bg-neutral-700 rounded-2xl rounded-tl-sm p-3 max-w-[85%]';
-    header.innerHTML = `<p class="text-sm text-neutral-800 dark:text-neutral-200">You have <strong>${saved.length}</strong> saved program${saved.length !== 1 ? 's' : ''}:</p>`;
-    wrapper.appendChild(header);
-
-    const cardsContainer = document.createElement('div');
-    cardsContainer.className = 'space-y-2 mt-2';
-
-    saved.forEach((program, index) => {
-      const card = document.createElement('div');
-      card.className =
-        'bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 rounded-lg p-3 text-sm';
-
-      const programId = program.id || program.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-
-      card.innerHTML = `
-        <div class="flex items-start justify-between gap-2">
-          <div class="flex-1">
-            <h4 class="font-medium text-neutral-900 dark:text-white">${escapeHtml(program.name)}</h4>
-            ${program.category ? `<span class="text-xs text-primary-600 dark:text-primary-300">${escapeHtml(program.category)}</span>` : ''}
-          </div>
-          <button type="button" class="remove-saved-btn p-1 text-neutral-400 hover:text-red-500" data-index="${index}" aria-label="Remove saved program">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-        ${program.description ? `<p class="text-neutral-600 dark:text-neutral-300 mt-1">${escapeHtml(program.description)}</p>` : ''}
-        <div class="flex flex-wrap gap-2 mt-2">
-          ${program.phone ? `<a href="tel:${program.phone.replace(/\D/g, '')}" class="text-xs text-neutral-600 dark:text-neutral-300 hover:text-primary-600">${escapeHtml(program.phone)}</a>` : ''}
-          ${program.website ? `<a href="${program.website}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary-600 dark:text-primary-300 hover:underline">Website</a>` : ''}
-        </div>
-      `;
-
-      cardsContainer.appendChild(card);
-    });
-
-    wrapper.appendChild(cardsContainer);
-
-    // Clear all button
-    const clearAllBtn = document.createElement('button');
-    clearAllBtn.type = 'button';
-    clearAllBtn.className = 'text-xs text-red-600 dark:text-red-400 hover:underline mt-2';
-    clearAllBtn.textContent = 'Clear all saved programs';
-    clearAllBtn.addEventListener('click', () => {
-      if (confirm('Remove all saved programs?')) {
-        localStorage.removeItem('savedPrograms');
-        wrapper.remove();
-        addMessage('All saved programs have been cleared.', 'assistant');
-      }
-    });
-    wrapper.appendChild(clearAllBtn);
-
-    messagesContainer?.appendChild(wrapper);
-    messagesContainer?.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
-
-    // Attach remove handlers
-    wrapper.querySelectorAll('.remove-saved-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const index = parseInt(btn.dataset.index);
-        const saved = JSON.parse(localStorage.getItem('savedPrograms') || '[]');
-        saved.splice(index, 1);
-        localStorage.setItem('savedPrograms', JSON.stringify(saved));
-        btn.closest('.bg-white, .dark\\:bg-neutral-800')?.remove();
-
-        if (saved.length === 0) {
-          wrapper.remove();
-          addMessage('All saved programs have been cleared.', 'assistant');
-        }
-      });
-    });
   }
 </script>
 

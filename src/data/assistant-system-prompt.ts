@@ -185,6 +185,13 @@ When someone asks about a program, link them to the relevant baynavigator.org pa
 
 export const OLLAMA_CONFIG = {
   endpoint: 'https://ai.baytides.org/api/chat',
+  // CDN endpoints for domain fronting (censorship circumvention)
+  // All CDNs route /api/chat to ai.baytides.org
+  cdnEndpoints: {
+    cloudflare: 'https://baynavigator-ai-proxy.autumn-disk-6090.workers.dev/api/chat',
+    fastly: 'https://arguably-unique-hippo.global.ssl.fastly.net/api/chat',
+    azure: 'https://baynavigator-bacwcda5f8csa3as.z02.azurefd.net/api/chat',
+  },
   model: 'llama3.1:8b-instruct-q8_0',
   // Note: API key should be stored in environment variable, not here
 };

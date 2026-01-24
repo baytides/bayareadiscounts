@@ -3,65 +3,53 @@ import Foundation
 public actor APIService {
     public static let shared = APIService()
 
-    private let clearnetBaseURL = "https://baynavigator.org/api"
     private let cache = CacheService.shared
+    private let privacyService = PrivacyService.shared
+    private let safetyService = SafetyService.shared
     private let cacheDuration: TimeInterval = 24 * 60 * 60 // 24 hours
-    private let requestTimeout: TimeInterval = 12
-    private let torRequestTimeout: TimeInterval = 30 // Tor is slower
 
-    /// Standard URLSession for clearnet requests
-    private let clearnetSession: URLSession
+    /// URLSession cache - recreated when privacy mode changes
+    private var currentSession: URLSession?
+    private var currentPrivacyMode: PrivacyService.PrivacyMode?
 
-    /// URLSession configured for Tor SOCKS5 proxy
-    private var torSession: URLSession?
-
-    private init() {
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = requestTimeout
-        config.timeoutIntervalForResource = requestTimeout
-        self.clearnetSession = URLSession(configuration: config)
-    }
+    private init() {}
 
     // MARK: - Session Management
 
-    /// Get the appropriate base URL based on Tor status
+    /// Get the appropriate base URL based on privacy settings
     private func getBaseURL() async -> String {
-        let safetyService = SafetyService.shared
-        let torEnabled = await safetyService.isTorEnabled()
-
-        if torEnabled {
-            let proxyAvailable = await safetyService.isOrbotProxyAvailable()
-            if proxyAvailable {
-                return SafetyService.onionBaseURL
-            }
-        }
-        return clearnetBaseURL
+        let baseURL = await privacyService.getBaseURL()
+        // Append /api path for API calls
+        return "\(baseURL)/api"
     }
 
-    /// Get the appropriate URLSession based on Tor status
+    /// Get the appropriate URLSession based on privacy settings
     private func getSession() async -> URLSession {
-        let safetyService = SafetyService.shared
-        let torEnabled = await safetyService.isTorEnabled()
+        let mode = await privacyService.getPrivacyMode()
 
-        if torEnabled {
-            let proxyAvailable = await safetyService.isOrbotProxyAvailable()
-            if proxyAvailable {
-                // Create or return Tor session
-                if torSession == nil {
-                    let config = safetyService.createTorProxyConfiguration()
-                    torSession = URLSession(configuration: config)
-                }
-                return torSession!
-            }
+        // Reuse session if mode hasn't changed
+        if let session = currentSession, mode == currentPrivacyMode {
+            return session
         }
 
-        // Fall back to clearnet
-        return clearnetSession
+        // Create new session for current privacy mode
+        let config = await privacyService.createURLSessionConfiguration()
+        let session = URLSession(configuration: config)
+        currentSession = session
+        currentPrivacyMode = mode
+        return session
+    }
+
+    /// Invalidate cached session (call when privacy settings change)
+    public func invalidateSession() {
+        currentSession?.invalidateAndCancel()
+        currentSession = nil
+        currentPrivacyMode = nil
     }
 
     /// Check if requests should be blocked (offline mode)
     private func shouldBlockRequests() async -> Bool {
-        await SafetyService.shared.isOfflineModeEnabled()
+        await safetyService.isOfflineModeEnabled()
     }
 
     // MARK: - API Calls

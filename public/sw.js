@@ -26,8 +26,6 @@ const STATIC_ASSETS = [
   '/favorites/',
   '/glossary',
   '/glossary/',
-  '/findmyrep',
-  '/findmyrep/',
   '/assets/images/logo/logo.webp',
   '/assets/images/favicons/favicon-192.webp',
   '/assets/images/favicons/favicon-512.webp',

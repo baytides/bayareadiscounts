@@ -250,43 +250,31 @@ struct ForYouViewContent: View {
     // MARK: - City Guide Section
 
     private func cityGuideSection(guide: CityGuide) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 12) {
+            // Header
             HStack {
                 Image(systemName: "building.2.fill")
                     .foregroundStyle(Color.appPrimary)
                     .accessibilityHidden(true)
-                Text("City Guide")
+                Text("\(guide.cityName) City Guide")
                     .font(.title2.bold())
                     .accessibilityAddTraits(.isHeader)
-
-                Spacer()
-
-                if let website = guide.cityWebsite, let url = URL(string: website) {
-                    Button {
-                        openURL(url)
-                    } label: {
-                        Text("Visit Site")
-                            .font(.subheadline)
-                    }
-                    .buttonStyle(.bordered)
-                    .tint(.appPrimary)
-                    .accessibilityLabel("Visit \(guide.cityName) website")
-                    .accessibilityHint("Opens the city's official website in a browser")
-                    .accessibilityAddTraits(.isLink)
-                }
             }
 
-            Text(guide.cityName)
-                .font(.headline)
-                .foregroundStyle(.secondary)
+            // Horizontal scrolling agency cards
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(guide.agencies) { agency in
+                        CityAgencyCardCompact(agency: agency) {
+                            if let website = agency.website, let url = URL(string: website) {
+                                openURL(url)
+                            }
+                        }
+                    }
 
-            LazyVGrid(columns: [
-                GridItem(.flexible()),
-                GridItem(.flexible())
-            ], spacing: 12) {
-                ForEach(guide.agencies) { agency in
-                    CityAgencyCard(agency: agency) {
-                        if let website = agency.website, let url = URL(string: website) {
+                    // Visit city website card
+                    if let website = guide.cityWebsite, let url = URL(string: website) {
+                        CityWebsiteCard(cityName: guide.cityName) {
                             openURL(url)
                         }
                     }
@@ -298,8 +286,11 @@ struct ForYouViewContent: View {
 
     // MARK: - Representatives Section
 
+    @State private var selectedRepresentative: Representative?
+
     private var representativesSection: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 12) {
+            // Header
             HStack {
                 Image(systemName: "person.badge.shield.checkmark.fill")
                     .foregroundStyle(Color.appPrimary)
@@ -307,50 +298,29 @@ struct ForYouViewContent: View {
                 Text("Your Representatives")
                     .font(.title2.bold())
                     .accessibilityAddTraits(.isHeader)
+            }
 
-                Spacer()
+            // Subheader
+            Text("Representatives for your area")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
 
-                Button {
-                    if let url = URL(string: "https://baynavigator.org/findmyrep") {
-                        openURL(url)
+            // Horizontal scrolling cards
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(civicVM.representatives.all) { rep in
+                        RepresentativeCardCompact(representative: rep) {
+                            selectedRepresentative = rep
+                        }
                     }
-                } label: {
-                    Text("Find My Rep")
-                        .font(.subheadline)
                 }
-                .buttonStyle(.bordered)
-                .tint(.appPrimary)
-                .accessibilityLabel("Find My Representative")
-                .accessibilityHint("Opens a tool to find your elected representatives")
-                .accessibilityAddTraits(.isLink)
             }
-
-            // Federal representatives
-            if !civicVM.representatives.federal.isEmpty {
-                RepresentativeLevelSection(
-                    level: .federal,
-                    representatives: civicVM.representatives.federal,
-                    onContact: { rep in contactRepresentative(rep) }
-                )
-            }
-
-            // State representatives
-            if !civicVM.representatives.state.isEmpty {
-                RepresentativeLevelSection(
-                    level: .state,
-                    representatives: civicVM.representatives.state,
-                    onContact: { rep in contactRepresentative(rep) }
-                )
-            }
-
-            // Local representatives
-            if !civicVM.representatives.local.isEmpty {
-                RepresentativeLevelSection(
-                    level: .local,
-                    representatives: civicVM.representatives.local,
-                    onContact: { rep in contactRepresentative(rep) }
-                )
-            }
+            .accessibilityLabel("Representatives carousel, \(civicVM.representatives.all.count) representatives")
+        }
+        .sheet(item: $selectedRepresentative) { rep in
+            RepresentativeDetailSheet(representative: rep, openURL: openURL)
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
         }
     }
 
@@ -500,96 +470,382 @@ struct CityAgencyCard: View {
     }
 }
 
-// MARK: - Representative Level Section
+// MARK: - City Agency Card Compact (Horizontal Scroll)
 
-struct RepresentativeLevelSection: View {
-    let level: RepresentativeLevel
-    let representatives: [Representative]
-    let onContact: (Representative) -> Void
+struct CityAgencyCardCompact: View {
+    let agency: CityAgency
+    let onTap: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            // Level badge
-            Text(level.displayName)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.white)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(level.badgeColor, in: Capsule())
-                .accessibilityAddTraits(.isHeader)
-                .accessibilityLabel("\(level.displayName) representatives")
+        Button(action: onTap) {
+            VStack(alignment: .leading, spacing: 8) {
+                // Icon
+                Image(systemName: agency.iconName)
+                    .font(.title2)
+                    .foregroundStyle(.white)
+                    .frame(width: 40, height: 40)
+                    .background(agency.color, in: RoundedRectangle(cornerRadius: 10))
+                    .accessibilityHidden(true)
 
-            ForEach(representatives) { rep in
-                RepresentativeCard(representative: rep, onContact: { onContact(rep) })
+                // Name
+                Text(agency.name)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+
+                // Description
+                Text(agency.description)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+
+                Spacer()
+
+                // Phone
+                if let phone = agency.phone {
+                    HStack(spacing: 4) {
+                        Image(systemName: "phone.fill")
+                            .font(.caption2)
+                        Text(phone)
+                            .font(.caption2)
+                    }
+                    .foregroundStyle(agency.color)
+                }
             }
+            .frame(width: 150, height: 140)
+            .padding(12)
+            #if os(iOS)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #elseif os(macOS)
+            .background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: 16))
+            #else
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #endif
         }
+        .buttonStyle(.plain)
+        #if os(visionOS)
+        .hoverEffect(.highlight)
+        #endif
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(agency.name), \(agency.description)")
+        .accessibilityHint("Opens \(agency.name) website")
+        .accessibilityAddTraits(.isLink)
     }
 }
 
-// MARK: - Representative Card
+// MARK: - City Website Card
 
-struct RepresentativeCard: View {
-    let representative: Representative
-    let onContact: () -> Void
+struct CityWebsiteCard: View {
+    let cityName: String
+    let onTap: () -> Void
 
     var body: some View {
-        Button(action: onContact) {
-            HStack(spacing: 12) {
-                // Avatar
-                Circle()
-                    .fill(representative.level.badgeColor.opacity(0.2))
-                    .frame(width: 50, height: 50)
-                    .overlay {
-                        Text(representative.name.prefix(1))
-                            .font(.title2.weight(.semibold))
-                            .foregroundStyle(representative.level.badgeColor)
+        Button(action: onTap) {
+            VStack(spacing: 12) {
+                Image(systemName: "globe")
+                    .font(.title)
+                    .foregroundStyle(Color.appPrimary)
+
+                Text("Visit\n\(cityName)")
+                    .font(.subheadline.weight(.medium))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.primary)
+
+                Text("Official Website")
+                    .font(.caption)
+                    .foregroundStyle(Color.appPrimary)
+            }
+            .frame(width: 150, height: 140)
+            .padding(12)
+            #if os(iOS)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #elseif os(macOS)
+            .background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: 16))
+            #else
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #endif
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.appPrimary.opacity(0.3), lineWidth: 2)
+            )
+        }
+        .buttonStyle(.plain)
+        #if os(visionOS)
+        .hoverEffect(.highlight)
+        #endif
+        .accessibilityLabel("Visit \(cityName) official website")
+        .accessibilityAddTraits(.isLink)
+    }
+}
+
+// MARK: - Representative Card Compact (Horizontal Scroll)
+
+struct RepresentativeCardCompact: View {
+    let representative: Representative
+    let onTap: () -> Void
+
+    /// Extract district number for compact display (e.g., "D-15")
+    private var districtDisplay: String? {
+        guard let district = representative.district else { return nil }
+        if let range = district.range(of: "District ") {
+            let districtNum = String(district[range.upperBound...]).trimmingCharacters(in: .whitespaces)
+            if !districtNum.isEmpty && districtNum.first?.isNumber == true {
+                return "D-\(districtNum)"
+            }
+        }
+        return nil
+    }
+
+    var body: some View {
+        Button(action: onTap) {
+            VStack(spacing: 8) {
+                // Photo
+                Group {
+                    if let photoUrl = representative.photoUrl, let url = URL(string: photoUrl) {
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            case .failure:
+                                initialsView
+                            case .empty:
+                                ProgressView()
+                                    .frame(width: 64, height: 64)
+                            @unknown default:
+                                initialsView
+                            }
+                        }
+                    } else {
+                        initialsView
                     }
-                    .accessibilityHidden(true)
+                }
+                .frame(width: 64, height: 64)
+                .clipShape(Circle())
 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(representative.name)
+                // Name
+                Text(representative.name)
+                    .font(.subheadline.weight(.semibold))
+                    .lineLimit(1)
+                    .foregroundStyle(.primary)
+
+                // Title
+                Text(representative.title)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+
+                // Level badge and district
+                HStack(spacing: 4) {
+                    Text(representative.level.displayName)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(representative.level.badgeColor, in: Capsule())
+
+                    if let districtDisplay = districtDisplay {
+                        Text(districtDisplay)
+                            .font(.caption2.weight(.medium))
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            #if os(iOS)
+                            .background(.regularMaterial, in: Capsule())
+                            #elseif os(macOS)
+                            .background(Color(nsColor: .windowBackgroundColor).opacity(0.8), in: Capsule())
+                            #else
+                            .background(.regularMaterial, in: Capsule())
+                            #endif
+                    }
+                }
+            }
+            .frame(width: 140)
+            .padding(12)
+            #if os(iOS)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #elseif os(macOS)
+            .background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: 16))
+            #else
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
+            #endif
+        }
+        .buttonStyle(.plain)
+        #if os(visionOS)
+        .hoverEffect(.highlight)
+        #endif
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(representative.name), \(representative.title), \(representative.level.displayName)")
+        .accessibilityHint("Double tap to view details and contact options")
+    }
+
+    private var initialsView: some View {
+        Circle()
+            .fill(representative.level.badgeColor.opacity(0.2))
+            .overlay {
+                Text(representative.name.prefix(1))
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(representative.level.badgeColor)
+            }
+    }
+}
+
+// MARK: - Representative Detail Sheet
+
+struct RepresentativeDetailSheet: View {
+    let representative: Representative
+    let openURL: OpenURLAction
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                // Photo
+                Group {
+                    if let photoUrl = representative.photoUrl, let url = URL(string: photoUrl) {
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            case .failure:
+                                initialsView
+                            case .empty:
+                                ProgressView()
+                                    .frame(width: 100, height: 100)
+                            @unknown default:
+                                initialsView
+                            }
+                        }
+                    } else {
+                        initialsView
+                    }
+                }
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+
+                // Name
+                Text(representative.name)
+                    .font(.title2.bold())
+
+                // Title
+                Text(representative.title)
+                    .font(.headline)
+                    .foregroundStyle(.secondary)
+
+                // Level and District
+                HStack(spacing: 8) {
+                    Text(representative.level.displayName)
                         .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(representative.level.badgeColor, in: Capsule())
 
-                    Text(representative.title)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-
-                    if let party = representative.party {
-                        Text(party)
-                            .font(.caption2)
+                    if let district = representative.district {
+                        Text(district)
+                            .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
                 }
 
-                Spacer()
+                // Party
+                if let party = representative.party {
+                    Text(party)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
 
-                Image(systemName: "chevron.right")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .accessibilityHidden(true)
+                // Bio
+                if let bio = representative.bio {
+                    Text(bio)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
+
+                // Contact buttons
+                VStack(spacing: 12) {
+                    if let website = representative.website, let url = URL(string: website) {
+                        ContactButton(
+                            icon: "globe",
+                            label: "Website",
+                            color: .appPrimary
+                        ) {
+                            openURL(url)
+                        }
+                    }
+
+                    if let email = representative.email, let url = URL(string: "mailto:\(email)") {
+                        ContactButton(
+                            icon: "envelope.fill",
+                            label: "Email",
+                            color: .orange
+                        ) {
+                            openURL(url)
+                        }
+                    }
+
+                    if let phone = representative.phone {
+                        let cleaned = phone.replacingOccurrences(of: " ", with: "")
+                            .replacingOccurrences(of: "-", with: "")
+                            .replacingOccurrences(of: "(", with: "")
+                            .replacingOccurrences(of: ")", with: "")
+                        if let url = URL(string: "tel:\(cleaned)") {
+                            ContactButton(
+                                icon: "phone.fill",
+                                label: "Call \(phone)",
+                                color: .green
+                            ) {
+                                openURL(url)
+                            }
+                        }
+                    }
+                }
+                .padding(.top, 8)
             }
-            .padding(12)
-            #if os(iOS)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
-            #elseif os(macOS)
-            .background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: 12))
-            #else
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
-            #endif
+            .padding(24)
         }
-        .buttonStyle(.plain)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(repAccessibilityLabel)
-        .accessibilityHint("Opens contact options for \(representative.name)")
     }
 
-    private var repAccessibilityLabel: String {
-        var label = "\(representative.name), \(representative.title)"
-        if let party = representative.party {
-            label += ", \(party)"
+    private var initialsView: some View {
+        Circle()
+            .fill(representative.level.badgeColor.opacity(0.2))
+            .overlay {
+                Text(representative.name.prefix(1))
+                    .font(.largeTitle.weight(.semibold))
+                    .foregroundStyle(representative.level.badgeColor)
+            }
+    }
+}
+
+// MARK: - Contact Button
+
+struct ContactButton: View {
+    let icon: String
+    let label: String
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: icon)
+                    .font(.body)
+                Text(label)
+                    .font(.body.weight(.medium))
+            }
+            .foregroundStyle(color)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(color.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
         }
-        return label
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(.isLink)
     }
 }
 

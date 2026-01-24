@@ -2,12 +2,14 @@ import SwiftUI
 
 /// ViewModel for managing WCAG 2.2 AAA accessibility settings
 @Observable
+@MainActor
 public final class AccessibilityViewModel {
     /// Current accessibility settings
     public var settings: AccessibilitySettings = .default {
         didSet {
             Task {
                 await cache.setAccessibilitySettings(settings)
+                await cache.synchronize()
             }
         }
     }
@@ -21,20 +23,22 @@ public final class AccessibilityViewModel {
     private let cache = CacheService.shared
 
     public init() {
-        Task {
-            await loadSettings()
+        // Load settings synchronously from cache on init
+        // This ensures the UI has correct values immediately
+        let savedSettings = UserDefaults.standard.data(forKey: "baynavigator:accessibility_settings")
+            .flatMap { try? JSONDecoder().decode(AccessibilitySettings.self, from: $0) }
+        if let saved = savedSettings {
+            settings = saved
         }
     }
 
     // MARK: - Loading
 
-    @MainActor
     public func loadSettings() async {
         settings = await cache.getAccessibilitySettings()
     }
 
     /// Update system preferences from environment (call from view)
-    @MainActor
     public func updateSystemPreferences(
         reduceMotion: Bool,
         boldText: Bool = false,
@@ -50,13 +54,11 @@ public final class AccessibilityViewModel {
     // MARK: - Presets
 
     /// Apply a preset configuration
-    @MainActor
     public func applyPreset(_ preset: AccessibilityPreset) {
         settings = preset.settings
     }
 
     /// Clear the active preset (resets to default)
-    @MainActor
     public func clearPreset() {
         settings = .default
     }
@@ -69,8 +71,8 @@ public final class AccessibilityViewModel {
     }
 
     // MARK: - Individual Setting Updates
+    // Note: All methods are implicitly @MainActor since the class is @MainActor
 
-    @MainActor
     public func setTextScale(_ scale: Double) {
         var newSettings = settings
         newSettings.textScale = max(0.8, min(2.0, scale))
@@ -78,7 +80,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setBoldText(_ enabled: Bool) {
         var newSettings = settings
         newSettings.boldText = enabled
@@ -86,7 +87,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setHighContrastMode(_ enabled: Bool) {
         var newSettings = settings
         newSettings.highContrastMode = enabled
@@ -94,7 +94,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setReduceTransparency(_ enabled: Bool) {
         var newSettings = settings
         newSettings.reduceTransparency = enabled
@@ -102,7 +101,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setDyslexiaFont(_ enabled: Bool) {
         var newSettings = settings
         newSettings.dyslexiaFont = enabled
@@ -110,7 +108,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setReduceMotion(_ enabled: Bool) {
         var newSettings = settings
         newSettings.reduceMotion = enabled
@@ -118,7 +115,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setPauseAnimations(_ enabled: Bool) {
         var newSettings = settings
         newSettings.pauseAnimations = enabled
@@ -126,7 +122,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setLineHeightMultiplier(_ multiplier: Double) {
         var newSettings = settings
         newSettings.lineHeightMultiplier = max(1.0, min(2.0, multiplier))
@@ -134,7 +129,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setLetterSpacing(_ spacing: Double) {
         var newSettings = settings
         newSettings.letterSpacing = max(0, min(0.1, spacing))
@@ -142,7 +136,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setWordSpacing(_ spacing: Double) {
         var newSettings = settings
         newSettings.wordSpacing = max(0, min(0.2, spacing))
@@ -150,7 +143,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setSimpleLanguageMode(_ enabled: Bool) {
         var newSettings = settings
         newSettings.simpleLanguageMode = enabled
@@ -158,7 +150,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setLargerTouchTargets(_ enabled: Bool) {
         var newSettings = settings
         newSettings.largerTouchTargets = enabled
@@ -166,7 +157,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setExtendedTimeouts(_ enabled: Bool) {
         var newSettings = settings
         newSettings.extendedTimeouts = enabled
@@ -174,7 +164,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setPreferCaptions(_ enabled: Bool) {
         var newSettings = settings
         newSettings.preferCaptions = enabled
@@ -182,7 +171,6 @@ public final class AccessibilityViewModel {
         settings = newSettings
     }
 
-    @MainActor
     public func setVisualAlerts(_ enabled: Bool) {
         var newSettings = settings
         newSettings.visualAlerts = enabled
@@ -192,7 +180,6 @@ public final class AccessibilityViewModel {
 
     // MARK: - Reset
 
-    @MainActor
     public func resetToDefaults() async {
         settings = .default
         await cache.resetAccessibilitySettings()

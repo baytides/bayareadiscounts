@@ -54,13 +54,13 @@ struct AskCarlView: View {
                 }
                 .task {
                     // Configure Tor if enabled
-                    await assistantVM.configureTor(enabled: settingsVM.useOnion)
+                    await assistantVM.configureTor(enabled: settingsVM.privacyMode == .tor)
                     // Set user preferences for personalized responses
                     assistantVM.setUserPreferences(userPrefsVM)
                 }
-                .onChange(of: settingsVM.useOnion) { _, useTor in
+                .onChange(of: settingsVM.privacyMode) { _, newMode in
                     Task {
-                        await assistantVM.configureTor(enabled: useTor)
+                        await assistantVM.configureTor(enabled: newMode == .tor)
                     }
                 }
             } else {

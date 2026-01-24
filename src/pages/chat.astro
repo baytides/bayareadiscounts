@@ -6,7 +6,16 @@ const title = 'Chat with Carl';
 const description =
   'Ask Carl, your Bay Area guide, to help you find programs and services. Named after Karl the Fog!';
 
-const apiEndpoint = 'https://ai.baytides.org/api/chat';
+// Direct AI endpoint
+const directApiEndpoint = 'https://ai.baytides.org/api/chat';
+// CDN endpoints for domain fronting (all route /api/chat to ai.baytides.org)
+const cdnEndpoints = {
+  cloudflare: 'https://baynavigator-ai-proxy.autumn-disk-6090.workers.dev/api/chat',
+  fastly: 'https://arguably-unique-hippo.global.ssl.fastly.net/api/chat',
+  azure: 'https://baynavigator-bacwcda5f8csa3as.z02.azurefd.net/api/chat',
+};
+// Default to direct endpoint (client-side JS can switch based on privacy settings)
+const apiEndpoint = directApiEndpoint;
 const apiKey = import.meta.env.PUBLIC_OLLAMA_API_KEY || '';
 ---
 

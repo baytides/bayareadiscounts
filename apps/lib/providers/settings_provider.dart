@@ -32,7 +32,8 @@ class SettingsProvider extends ChangeNotifier {
   List<CallingApp> _availableCallingApps = [CallingApp.system, CallingApp.other];
 
   bool get crashReportingEnabled => _crashReportingEnabled;
-  bool get aiSearchEnabled => _aiSearchEnabled;
+  // AI search is now always enabled - toggle removed
+  bool get aiSearchEnabled => true;
   bool get initialized => _initialized;
   DirectoryViewMode get directoryViewMode => _directoryViewMode;
 

@@ -249,46 +249,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   );
                 },
               ),
-              const Divider(height: 1, indent: 16),
-              Consumer<SettingsProvider>(
-                builder: (context, settings, child) {
-                  return SwitchListTile(
-                    secondary: const Text('✨', style: TextStyle(fontSize: 24)),
-                    title: Row(
-                      children: [
-                        const Text('AI-Powered Search'),
-                        const SizedBox(width: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 6, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            'Beta',
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey.shade800,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    subtitle: Text(
-                      settings.aiSearchEnabled
-                          ? 'Natural language search enabled'
-                          : 'Using basic keyword search only',
-                    ),
-                    value: settings.aiSearchEnabled,
-                    onChanged: (value) {
-                      HapticFeedback.lightImpact();
-                      settings.setAISearchEnabled(value);
-                    },
-                  );
-                },
-              ),
+              // AI search toggle removed - AI search is always enabled
+              // Use "Ask Carl" for interactive AI assistance
             ],
           ),
 

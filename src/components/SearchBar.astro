@@ -123,34 +123,23 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
       <span id="location-quick-text">Set location</span>
     </button>
 
-    <!-- AI Toggle -->
-    <div class="flex items-center gap-2">
-      <span
-        class="text-xs text-neutral-600 dark:text-neutral-300"
-        data-tooltip="Smart Search uses AI to understand your question and find relevant programs. Turn it off for simple keyword matching."
-        data-i18n-tooltip="search.smartSearchTooltip"
-        data-tooltip-position="left"
-        data-i18n="search.smartSearch"
-        tabindex="0">Smart search</span
-      ><span
-        class="ml-1 px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-neutral-200 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200"
-        >Beta</span
-      >
-      <button
-        type="button"
-        id="ai-toggle"
-        class="ai-toggle-btn ai-toggle-off"
-        role="switch"
-        aria-checked="false"
-        aria-label="Toggle AI-powered search"
-        data-tooltip="AI-powered search helps find programs using natural language. Turn off to use keyword search only."
-        data-tooltip-position="bottom"
-      >
-        <span class="ai-toggle-track">
-          <span class="ai-toggle-thumb"></span>
-        </span>
-      </button>
-    </div>
+    <!-- AI Search is now always on - use Carl for interactive AI assistance -->
+    <a
+      href="#"
+      id="ask-carl-link"
+      class="inline-flex items-center gap-1.5 text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded transition-colors"
+      onclick="document.getElementById('assistant-toggle')?.click(); return false;"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+        ></path>
+      </svg>
+      <span>Ask Carl</span>
+    </a>
   </div>
 
   <!-- Location popover (shown when location button clicked) -->
@@ -1207,7 +1196,7 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   const aiIndicator = document.getElementById('ai-indicator');
   const aiStatusText = document.getElementById('ai-status-text');
   const searchLoading = document.getElementById('search-loading');
-  const aiToggle = document.getElementById('ai-toggle');
+  // aiToggle removed - AI search is always enabled
   const hintButtons = document.querySelectorAll('.search-hint-btn');
 
   // Aria-live announcers for screen readers
@@ -1232,32 +1221,13 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   let lastAIQuery = '';
   let isOffline = !navigator.onLine;
 
-  // Load AI preference from localStorage (defaults to OFF - user must explicitly enable)
-  let aiEnabled = !isOffline && localStorage.getItem('aiSearchEnabled') === 'true';
+  // AI search is now always enabled (toggle removed - use Carl for interactive AI help)
+  let aiEnabled = !isOffline;
 
-  // Initialize toggle state
+  // No toggle to update - AI is always on when online
   function updateToggleState() {
-    if (aiToggle) {
-      // When offline, always show as off and disabled
-      const effectiveEnabled = aiEnabled && !isOffline;
-      aiToggle.setAttribute('aria-checked', String(effectiveEnabled));
-
-      if (isOffline) {
-        aiToggle.classList.add('ai-toggle-disabled');
-      } else {
-        aiToggle.classList.remove('ai-toggle-disabled');
-      }
-
-      if (effectiveEnabled) {
-        aiToggle.classList.add('ai-toggle-on');
-        aiToggle.classList.remove('ai-toggle-off');
-      } else {
-        aiToggle.classList.remove('ai-toggle-on');
-        aiToggle.classList.add('ai-toggle-off');
-      }
-    }
+    // No-op: toggle removed
   }
-  updateToggleState();
 
   // Show offline notice
   function showOfflineNotice() {
@@ -1282,53 +1252,19 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   }
 
   // Handle toggle click
-  aiToggle?.addEventListener('click', () => {
-    // If offline, show notice and don't toggle
-    if (isOffline) {
-      showOfflineNotice();
-      return;
-    }
-
-    aiEnabled = !aiEnabled;
-    localStorage.setItem('aiSearchEnabled', String(aiEnabled));
-    updateToggleState();
-
-    // If AI is now disabled, hide any AI indicators and chat
-    if (!aiEnabled) {
-      hideAIIndicator();
-      // Hide the chat if it's showing
-      const smartChatEl = document.getElementById('smart-chat-container');
-      smartChatEl?.classList.add('hidden');
-    }
-
-    // Re-run search with new setting
-    if (searchInput?.value) {
-      // If turning on AI with a query, start the chat
-      if (aiEnabled) {
-        const smartChatEl = document.getElementById('smart-chat-container');
-        if (smartChatEl) {
-          // Start chat conversation
-          startSmartChatConversation(searchInput.value);
-          performAISearch(searchInput.value);
-        }
-      } else {
-        performSearch();
-      }
-    }
-  });
+  // Toggle removed - AI search is always enabled when online
+  // aiToggle event listener no longer needed
 
   // Track online/offline status
   window.addEventListener('online', () => {
     isOffline = false;
-    // Restore AI enabled state from localStorage when coming back online
-    aiEnabled = localStorage.getItem('aiSearchEnabled') === 'true';
-    updateToggleState();
+    aiEnabled = true; // AI always enabled when online
   });
   window.addEventListener('offline', () => {
     isOffline = true;
+    aiEnabled = false;
     // If we were showing AI indicator, hide it
     hideAIIndicator();
-    updateToggleState();
   });
 
   // Detect if query needs AI assistance
@@ -3845,45 +3781,7 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
   }
 
   /* AI Toggle Pill Styles */
-  .ai-toggle-btn {
-    @apply relative inline-flex items-center cursor-pointer;
-  }
-
-  .ai-toggle-track {
-    @apply relative w-9 h-5 bg-neutral-300 dark:bg-neutral-600 rounded-full transition-colors duration-200;
-  }
-
-  .ai-toggle-on .ai-toggle-track {
-    @apply bg-primary-600 dark:bg-primary-500;
-  }
-
-  .ai-toggle-off .ai-toggle-track {
-    @apply bg-neutral-300 dark:bg-neutral-600;
-  }
-
-  .ai-toggle-thumb {
-    @apply absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-200;
-  }
-
-  .ai-toggle-on .ai-toggle-thumb {
-    @apply translate-x-4;
-  }
-
-  .ai-toggle-off .ai-toggle-thumb {
-    @apply translate-x-0;
-  }
-
-  .ai-toggle-btn:focus-visible .ai-toggle-track {
-    @apply ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-neutral-900;
-  }
-
-  .ai-toggle-disabled {
-    @apply opacity-50 cursor-not-allowed;
-  }
-
-  .ai-toggle-disabled .ai-toggle-track {
-    @apply bg-neutral-200 dark:bg-neutral-700;
-  }
+  /* AI toggle styles removed - toggle no longer used */
 
   .offline-notice {
     @apply absolute right-0 top-full mt-1 flex items-center gap-1.5 text-xs text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-lg px-3 py-2 shadow-sm z-50 whitespace-nowrap;
