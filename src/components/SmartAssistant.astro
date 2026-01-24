@@ -397,6 +397,254 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     'crisis',
   ];
 
+  // ============================================
+  // LIVE DATA APIs - Transit, Traffic, etc.
+  // ============================================
+
+  // Transit agency names for natural language
+  const TRANSIT_AGENCIES = {
+    BA: 'BART',
+    CT: 'Caltrain',
+    SF: 'Muni',
+    AC: 'AC Transit',
+    SC: 'VTA',
+    SM: 'SamTrans',
+    GG: 'Golden Gate Transit',
+    SA: 'SMART',
+    GF: 'Golden Gate Ferry',
+    SB: 'SF Bay Ferry',
+    CC: 'County Connection',
+    WH: 'Wheels',
+    MA: 'Marin Transit',
+    '3D': 'Tri Delta Transit',
+    WC: 'WestCAT',
+    CE: 'ACE Rail',
+    AM: 'Capitol Corridor',
+  };
+
+  // Keywords that trigger live transit data lookup
+  const TRANSIT_KEYWORDS = [
+    'bart',
+    'caltrain',
+    'muni',
+    'bus',
+    'train',
+    'transit',
+    'delay',
+    'delayed',
+    'late',
+    'running',
+    'service',
+    'alert',
+    'vta',
+    'samtrans',
+    'ac transit',
+    'ferry',
+    'smart train',
+    'commute',
+    'station',
+    'schedule',
+  ];
+
+  // Keywords that trigger traffic data lookup
+  const TRAFFIC_KEYWORDS = [
+    'traffic',
+    'accident',
+    'crash',
+    'closure',
+    'closed',
+    'road',
+    'highway',
+    'freeway',
+    'bridge',
+    'i-80',
+    'i-280',
+    'i-580',
+    'i-880',
+    'i-680',
+    '101',
+    '280',
+    'bay bridge',
+    'golden gate',
+    'san mateo bridge',
+    'dumbarton',
+    'richmond bridge',
+  ];
+
+  // Detect if query is about transit
+  function isTransitQuery(text) {
+    const lower = text.toLowerCase();
+    return TRANSIT_KEYWORDS.some((kw) => lower.includes(kw));
+  }
+
+  // Detect if query is about traffic
+  function isTrafficQuery(text) {
+    const lower = text.toLowerCase();
+    return TRAFFIC_KEYWORDS.some((kw) => lower.includes(kw));
+  }
+
+  // Detect specific transit agency from query
+  function detectTransitAgency(text) {
+    const lower = text.toLowerCase();
+    if (lower.includes('bart')) return 'BA';
+    if (lower.includes('caltrain')) return 'CT';
+    if (lower.includes('muni')) return 'SF';
+    if (lower.includes('vta')) return 'SC';
+    if (lower.includes('samtrans')) return 'SM';
+    if (lower.includes('ac transit') || lower.includes('actransit')) return 'AC';
+    if (lower.includes('golden gate ferry')) return 'GF';
+    if (lower.includes('golden gate') && !lower.includes('bridge')) return 'GG';
+    if (lower.includes('sf bay ferry') || lower.includes('bay ferry')) return 'SB';
+    if (lower.includes('smart train') || lower.includes('smart rail')) return 'SA';
+    if (lower.includes('ace') && lower.includes('train')) return 'CE';
+    if (lower.includes('capitol corridor')) return 'AM';
+    if (lower.includes('county connection')) return 'CC';
+    if (lower.includes('wheels') && lower.includes('bus')) return 'WH';
+    if (lower.includes('marin transit')) return 'MA';
+    if (lower.includes('tri delta') || lower.includes('tridelta')) return '3D';
+    if (lower.includes('westcat')) return 'WC';
+    return null; // No specific agency, get all alerts
+  }
+
+  // Fetch live transit alerts from 511.org via Azure Function
+  let transitAlertsCache = null;
+  let transitAlertsCacheTime = 0;
+  const TRANSIT_CACHE_TTL = 2 * 60 * 1000; // 2 minutes
+
+  async function fetchTransitAlerts(agencyFilter = null) {
+    try {
+      // Check cache first
+      const now = Date.now();
+      if (transitAlertsCache && now - transitAlertsCacheTime < TRANSIT_CACHE_TTL) {
+        const alerts = agencyFilter
+          ? transitAlertsCache.filter((a) => a.agencyId === agencyFilter)
+          : transitAlertsCache;
+        return alerts;
+      }
+
+      const response = await fetch(
+        'https://baytides-integrity.azurewebsites.net/api/transit-alerts',
+        {
+          signal: AbortSignal.timeout(5000), // 5 second timeout
+        }
+      );
+
+      if (!response.ok) {
+        console.warn('Transit alerts API returned', response.status);
+        return [];
+      }
+
+      const data = await response.json();
+      transitAlertsCache = data.alerts || [];
+      transitAlertsCacheTime = now;
+
+      // Filter by agency if specified
+      if (agencyFilter) {
+        return transitAlertsCache.filter((a) => a.agencyId === agencyFilter);
+      }
+      return transitAlertsCache;
+    } catch (error) {
+      console.warn('Failed to fetch transit alerts:', error);
+      return [];
+    }
+  }
+
+  // Fetch traffic events/incidents
+  let trafficEventsCache = null;
+  let trafficEventsCacheTime = 0;
+  const TRAFFIC_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+  async function fetchTrafficEvents() {
+    try {
+      // Check cache first
+      const now = Date.now();
+      if (trafficEventsCache && now - trafficEventsCacheTime < TRAFFIC_CACHE_TTL) {
+        return trafficEventsCache;
+      }
+
+      const response = await fetch('/api/traffic-events.json', {
+        signal: AbortSignal.timeout(5000),
+      });
+
+      if (!response.ok) {
+        console.warn('Traffic events API returned', response.status);
+        return [];
+      }
+
+      const data = await response.json();
+      trafficEventsCache = data.features || [];
+      trafficEventsCacheTime = now;
+      return trafficEventsCache;
+    } catch (error) {
+      console.warn('Failed to fetch traffic events:', error);
+      return [];
+    }
+  }
+
+  // Format transit alerts for Carl's context
+  function formatTransitAlertsForContext(alerts, agencyFilter = null) {
+    if (!alerts || alerts.length === 0) {
+      if (agencyFilter) {
+        const agencyName = TRANSIT_AGENCIES[agencyFilter] || agencyFilter;
+        return `\n\n[LIVE TRANSIT DATA]: Good news! ${agencyName} has no active service alerts right now. Service is running normally.`;
+      }
+      return '\n\n[LIVE TRANSIT DATA]: All Bay Area transit systems are running normally. No active service alerts.';
+    }
+
+    let context = '\n\n[LIVE TRANSIT DATA - CURRENT ALERTS]:\n';
+    context += 'Here are the active service alerts you should mention:\n\n';
+
+    // Group by agency for cleaner display
+    const byAgency = {};
+    alerts.slice(0, 8).forEach((alert) => {
+      const agency = alert.agency || TRANSIT_AGENCIES[alert.agencyId] || 'Unknown';
+      if (!byAgency[agency]) byAgency[agency] = [];
+      byAgency[agency].push(alert);
+    });
+
+    for (const [agency, agencyAlerts] of Object.entries(byAgency)) {
+      context += `**${agency}**:\n`;
+      agencyAlerts.forEach((alert) => {
+        context += `  - ${alert.title}`;
+        if (alert.timeAgo) context += ` (${alert.timeAgo})`;
+        context += '\n';
+      });
+      context += '\n';
+    }
+
+    context +=
+      'IMPORTANT: Share this information naturally in your response. Direct users to baynavigator.org/transit for live updates.';
+    return context;
+  }
+
+  // Format traffic events for Carl's context
+  function formatTrafficForContext(events, query = '') {
+    if (!events || events.length === 0) {
+      return '\n\n[LIVE TRAFFIC DATA]: No major traffic incidents reported right now. Roads are generally clear.';
+    }
+
+    // Filter for active events and prioritize by type
+    const activeEvents = events.filter((e) => e.properties?.status === 'ACTIVE').slice(0, 6);
+
+    if (activeEvents.length === 0) {
+      return '\n\n[LIVE TRAFFIC DATA]: No major traffic incidents reported right now.';
+    }
+
+    let context = '\n\n[LIVE TRAFFIC DATA - CURRENT INCIDENTS]:\n';
+    context += 'Here are current traffic conditions to mention:\n\n';
+
+    activeEvents.forEach((event) => {
+      const props = event.properties;
+      const type = props.type || 'INCIDENT';
+      const headline = props.headline || 'Traffic incident reported';
+      context += `- **${type}**: ${headline.substring(0, 150)}\n`;
+    });
+
+    context +=
+      '\nIMPORTANT: Summarize this naturally. For full details, direct users to 511.org or their navigation app.';
+    return context;
+  }
+
   // Location parsing
   function parseLocation(text) {
     const lowerText = text.toLowerCase();
@@ -1216,9 +1464,28 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
         }
       }
 
+      // Fetch live data if query is about transit or traffic
+      let liveDataContext = '';
+
+      // Check for transit-related queries
+      if (isTransitQuery(message)) {
+        const agencyFilter = detectTransitAgency(message);
+        const transitAlerts = await fetchTransitAlerts(agencyFilter);
+        liveDataContext += formatTransitAlertsForContext(transitAlerts, agencyFilter);
+      }
+
+      // Check for traffic-related queries
+      if (isTrafficQuery(message)) {
+        const trafficEvents = await fetchTrafficEvents();
+        liveDataContext += formatTrafficForContext(trafficEvents, message);
+      }
+
       // Build messages array for Ollama chat API
       const messages = [
-        { role: 'system', content: SYSTEM_PROMPT + ragContext + locationContext + profileContext },
+        {
+          role: 'system',
+          content: SYSTEM_PROMPT + ragContext + locationContext + profileContext + liveDataContext,
+        },
         ...conversationHistory.slice(-6),
         { role: 'user', content: message },
       ];

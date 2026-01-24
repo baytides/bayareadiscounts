@@ -1,10 +1,28 @@
 import AppIntents
 import SwiftUI
 
+#if canImport(FoundationModels)
+import FoundationModels
+#endif
+
 // MARK: - App Shortcuts Provider
 
 struct BayNavigatorShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
+        // Ask Carl - primary conversational interface
+        AppShortcut(
+            intent: AskCarlIntent(),
+            phrases: [
+                "Ask Carl \(\.$question)",
+                "Ask \(.applicationName) about \(\.$question)",
+                "Hey Carl, \(\.$question)",
+                "Carl, \(\.$question)",
+                "Help me find \(\.$question) in \(.applicationName)"
+            ],
+            shortTitle: "Ask Carl",
+            systemImageName: "bubble.left.and.bubble.right.fill"
+        )
+
         AppShortcut(
             intent: SearchProgramsIntent(),
             phrases: [
@@ -73,6 +91,142 @@ struct BayNavigatorShortcuts: AppShortcutsProvider {
             shortTitle: "Program Count",
             systemImageName: "number"
         )
+    }
+}
+
+// MARK: - Ask Carl Intent (Apple Intelligence Enhanced)
+
+/// Ask Carl - Conversational AI assistant for finding Bay Area programs
+/// Uses Apple Intelligence Foundation Models when available for on-device processing
+struct AskCarlIntent: AppIntent {
+    static var title: LocalizedStringResource = "Ask Carl"
+    static var description = IntentDescription("Ask Carl to help you find Bay Area social services and programs")
+
+    @Parameter(title: "Question", description: "What would you like help with?")
+    var question: String
+
+    @Parameter(title: "County", description: "Optional: Specify a county for location-specific results")
+    var county: CountyEntity?
+
+    // Carl's system prompt for Siri context
+    private static let carlSystemPrompt = """
+    You are Carl, a friendly and knowledgeable assistant for Bay Navigator, helping people in the Bay Area find free and low-cost social services.
+
+    Keep responses brief (2-3 sentences max) since this is a voice interface.
+    Be warm and helpful. If you don't know something, suggest they open the app for more options.
+    Focus on actionable information: program names, phone numbers, or next steps.
+    """
+
+    func perform() async throws -> some IntentResult & ProvidesDialog & ShowsSnippetView {
+        // Check if we can use on-device AI
+        #if canImport(FoundationModels)
+        if #available(iOS 18.1, macOS 15.1, visionOS 2.1, *), LanguageModelSession.isAvailable {
+            return try await performWithAppleIntelligence()
+        }
+        #endif
+
+        // Fallback: Open the app with the question
+        return await performWithAppHandoff()
+    }
+
+    #if canImport(FoundationModels)
+    @available(iOS 18.1, macOS 15.1, visionOS 2.1, *)
+    private func performWithAppleIntelligence() async throws -> some IntentResult & ProvidesDialog & ShowsSnippetView {
+        let session = LanguageModelSession()
+
+        // Build prompt with county context if available
+        var prompt = Self.carlSystemPrompt + "\n\n"
+        if let county = county {
+            prompt += "The user is asking about services in \(county.name).\n\n"
+        }
+        prompt += "User: \(question)\nCarl:"
+
+        // Generate response using on-device model
+        let response = try await session.respond(to: prompt)
+        let carlResponse = response.content.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        return .result(
+            dialog: "\(carlResponse)",
+            view: AskCarlSnippetView(
+                question: question,
+                response: carlResponse,
+                county: county?.name
+            )
+        )
+    }
+    #endif
+
+    private func performWithAppHandoff() async -> some IntentResult & ProvidesDialog & ShowsSnippetView {
+        // Build a helpful response directing to the app
+        let response = "I'd love to help you with that! Let me open Bay Navigator so we can explore your options together."
+
+        return .result(
+            dialog: "\(response)",
+            view: AskCarlSnippetView(
+                question: question,
+                response: response,
+                county: county?.name,
+                showOpenAppButton: true
+            )
+        )
+    }
+}
+
+/// Snippet view for Ask Carl responses in Siri
+struct AskCarlSnippetView: View {
+    let question: String
+    let response: String
+    let county: String?
+    var showOpenAppButton: Bool = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Carl avatar and response
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "sparkles")
+                    .font(.title2)
+                    .foregroundStyle(.tint)
+                    .frame(width: 32, height: 32)
+                    .background(Color.accentColor.opacity(0.1))
+                    .clipShape(Circle())
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Carl")
+                        .font(.caption.bold())
+                        .foregroundStyle(.secondary)
+
+                    Text(response)
+                        .font(.body)
+                }
+            }
+
+            // County context if provided
+            if let county = county {
+                HStack(spacing: 4) {
+                    Image(systemName: "mappin.circle.fill")
+                        .font(.caption)
+                    Text(county)
+                        .font(.caption)
+                }
+                .foregroundStyle(.secondary)
+            }
+
+            // Open app button if needed
+            if showOpenAppButton {
+                Link(destination: URL(string: "baynavigator://ask-carl?q=\(question.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")")!) {
+                    HStack {
+                        Image(systemName: "arrow.up.right.square")
+                        Text("Open Bay Navigator")
+                    }
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(Color.accentColor, in: RoundedRectangle(cornerRadius: 8))
+                }
+            }
+        }
+        .padding()
     }
 }
 

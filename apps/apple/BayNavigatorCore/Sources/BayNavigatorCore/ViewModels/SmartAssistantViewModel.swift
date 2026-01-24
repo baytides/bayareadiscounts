@@ -6,6 +6,8 @@ import SwiftUI
 public final class SmartAssistantViewModel {
     private let assistantService = SmartAssistantService.shared
     private let safetyService = SafetyService.shared
+    private let appleIntelligence = AppleIntelligenceService.shared
+    private let intentHandler = IntentActionHandler.shared
 
     public var messages: [ChatMessage] = []
     public var inputText: String = ""
@@ -14,16 +16,33 @@ public final class SmartAssistantViewModel {
     public var detectedCrisisType: CrisisType?
     public var useTor: Bool = false  // Whether to route requests through Tor
 
+    // Apple Intelligence state
+    public var useOnDeviceAI: Bool = true  // Prefer on-device when available
+    public var pendingIntentAction: IntentActionResult?
+    public var showIntentConfirmation: Bool = false
+
     // Profile context for personalized responses
     private var userPrefs: UserPrefsViewModel?
 
     private var conversationHistory: [[String: String]] = []
 
+    /// Whether Apple Intelligence Foundation Models are available
+    public var isAppleIntelligenceAvailable: Bool {
+        appleIntelligence.isFoundationModelsAvailable
+    }
+
     public init() {
-        // Add welcome message
+        // Add welcome message with device-appropriate greeting
+        let welcomeMessage: String
+        if appleIntelligence.isFoundationModelsAvailable {
+            welcomeMessage = "Hi! I'm Carl, your Bay Area benefits guide. I can help you find programs for food, healthcare, housing, utilities, and more.\n\nI'm running with Apple Intelligence for faster, more private responses. What can I help you with today?"
+        } else {
+            welcomeMessage = "Hi! I'm Carl, your Bay Area benefits guide. I can help you find programs for food, healthcare, housing, utilities, and more.\n\nWhat can I help you with today?"
+        }
+
         messages.append(ChatMessage(
             role: .assistant,
-            content: "Hi! I'm Carl, your Bay Area benefits guide. I can help you find programs for food, healthcare, housing, utilities, and more.\n\nWhat can I help you with today?"
+            content: welcomeMessage
         ))
     }
 
@@ -59,6 +78,16 @@ public final class SmartAssistantViewModel {
             showCrisisAlert = true
         }
 
+        // Check for system action intents (reminders, timers, etc.)
+        let detectedIntent = appleIntelligence.detectIntent(in: message)
+        if case .none = detectedIntent {
+            // No system intent, proceed with normal flow
+        } else {
+            // Handle the system intent
+            await handleSystemIntent(detectedIntent, originalMessage: message)
+            return
+        }
+
         // Add user message
         messages.append(ChatMessage(role: .user, content: message))
         isLoading = true
@@ -84,12 +113,18 @@ public final class SmartAssistantViewModel {
                 conversationHistory = Array(conversationHistory.suffix(10))
             }
 
+            // Determine tier based on what was used
+            var tier = result.tier
+            if useOnDeviceAI && appleIntelligence.isFoundationModelsAvailable {
+                tier = "apple_intelligence"
+            }
+
             // Add assistant response with programs
             messages.append(ChatMessage(
                 role: .assistant,
                 content: result.message,
                 programs: result.programs,
-                tier: result.tier
+                tier: tier
             ))
         } catch SmartAssistantError.torNotConfigured {
             messages.append(ChatMessage(
@@ -106,6 +141,120 @@ public final class SmartAssistantViewModel {
         }
 
         isLoading = false
+    }
+
+    // MARK: - System Intent Handling
+
+    /// Handle detected system intents (reminders, timers, calls, etc.)
+    @MainActor
+    private func handleSystemIntent(_ intent: AppleIntelligenceService.DetectedIntent, originalMessage: String) async {
+        // Add user message
+        messages.append(ChatMessage(role: .user, content: originalMessage))
+        isLoading = true
+
+        // Execute the intent
+        let result = await intentHandler.execute(intent: intent)
+
+        switch result {
+        case .openURL(let url, let message):
+            messages.append(ChatMessage(
+                role: .assistant,
+                content: message,
+                systemAction: .openURL(url)
+            ))
+
+        case .suggestAction(let message, let suggestion, let action):
+            messages.append(ChatMessage(
+                role: .assistant,
+                content: "\(message)\n\n\(suggestion)",
+                systemAction: .suggestion(action)
+            ))
+            pendingIntentAction = result
+            showIntentConfirmation = true
+
+        case .searchPrograms(let query):
+            // Fall through to regular search
+            isLoading = false
+            await sendMessage(query)
+            return
+
+        case .noAction:
+            // Fall through to regular processing
+            isLoading = false
+            await sendMessage(originalMessage)
+            return
+
+        case .failed(let message):
+            messages.append(ChatMessage(
+                role: .assistant,
+                content: message,
+                isError: true
+            ))
+        }
+
+        isLoading = false
+    }
+
+    /// Execute a pending system action (called when user confirms)
+    @MainActor
+    public func executePendingAction() async {
+        guard let action = pendingIntentAction else { return }
+        showIntentConfirmation = false
+
+        switch action {
+        case .openURL(let url, _):
+            #if os(iOS)
+            await UIApplication.shared.open(url)
+            #elseif os(macOS)
+            NSWorkspace.shared.open(url)
+            #endif
+
+        case .suggestAction(_, _, let suggestion):
+            switch suggestion {
+            case .openSiri:
+                // Open Siri via URL scheme (limited, but works for basic activation)
+                if let url = URL(string: "siri://") {
+                    #if os(iOS)
+                    await UIApplication.shared.open(url)
+                    #endif
+                }
+            case .openCalendar:
+                if let url = URL(string: "calshow://") {
+                    #if os(iOS)
+                    await UIApplication.shared.open(url)
+                    #elseif os(macOS)
+                    NSWorkspace.shared.open(url)
+                    #endif
+                }
+            case .openReminders:
+                if let url = URL(string: "x-apple-reminderkit://") {
+                    #if os(iOS)
+                    await UIApplication.shared.open(url)
+                    #elseif os(macOS)
+                    NSWorkspace.shared.open(url)
+                    #endif
+                }
+            case .openShortcuts:
+                if let url = URL(string: "shortcuts://") {
+                    #if os(iOS)
+                    await UIApplication.shared.open(url)
+                    #elseif os(macOS)
+                    NSWorkspace.shared.open(url)
+                    #endif
+                }
+            }
+
+        default:
+            break
+        }
+
+        pendingIntentAction = nil
+    }
+
+    /// Cancel a pending system action
+    public func cancelPendingAction() {
+        showIntentConfirmation = false
+        pendingIntentAction = nil
     }
 
     public func clearConversation() {
@@ -160,7 +309,8 @@ public struct ChatMessage: Identifiable, Sendable {
     public let content: String
     public var programs: [AIProgram]?
     public var isError: Bool = false
-    public var tier: String?  // "quick_answer", "llm", "llm_tor"
+    public var tier: String?  // "quick_answer", "llm", "llm_tor", "apple_intelligence"
+    public var systemAction: SystemAction?
     public let timestamp = Date()
 
     public enum MessageRole: Sendable {
@@ -168,11 +318,25 @@ public struct ChatMessage: Identifiable, Sendable {
         case assistant
     }
 
-    public init(role: MessageRole, content: String, programs: [AIProgram]? = nil, isError: Bool = false, tier: String? = nil) {
+    /// System actions that Carl can suggest or execute
+    public enum SystemAction: Sendable {
+        case openURL(URL)
+        case suggestion(IntentActionResult.SuggestedAction)
+    }
+
+    public init(
+        role: MessageRole,
+        content: String,
+        programs: [AIProgram]? = nil,
+        isError: Bool = false,
+        tier: String? = nil,
+        systemAction: SystemAction? = nil
+    ) {
         self.role = role
         self.content = content
         self.programs = programs
         self.isError = isError
         self.tier = tier
+        self.systemAction = systemAction
     }
 }

@@ -1,0 +1,426 @@
+{
+  "lastUpdated": "2026-01-24",
+  "source": "Official library websites and Wikipedia",
+  "counties": {
+    "alameda": {
+      "name": "Alameda County",
+      "libraries": [
+        {
+          "name": "Alameda County Library",
+          "jurisdiction": "county",
+          "website": "https://aclibrary.org",
+          "description": "County system with 11 branches serving Albany, Dublin, Fremont, Newark, Union City, and unincorporated areas",
+          "branches": 11
+        },
+        {
+          "name": "Alameda Free Library",
+          "jurisdiction": "city",
+          "city": "Alameda",
+          "website": "https://alamedafree.org",
+          "description": "City-operated library; not part of the county library system"
+        },
+        {
+          "name": "Berkeley Public Library",
+          "jurisdiction": "city",
+          "city": "Berkeley",
+          "website": "https://berkeleypubliclibrary.org",
+          "description": "City-operated library; not part of the county system"
+        },
+        {
+          "name": "Oakland Public Library",
+          "jurisdiction": "city",
+          "city": "Oakland",
+          "website": "https://oaklandlibrary.org",
+          "description": "City-operated library serving Oakland and also providing library services to Emeryville and Piedmont"
+        },
+        {
+          "name": "Hayward Public Library",
+          "jurisdiction": "city",
+          "city": "Hayward",
+          "website": "https://hayward-ca.gov/public-library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Livermore Public Library",
+          "jurisdiction": "city",
+          "city": "Livermore",
+          "website": "https://library.livermoreca.gov",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Pleasanton Public Library",
+          "jurisdiction": "city",
+          "city": "Pleasanton",
+          "website": "https://cityofpleasantonca.gov/pleasanton-library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "San Leandro Public Library",
+          "jurisdiction": "city",
+          "city": "San Leandro",
+          "website": "https://sanleandro.org/Public-Library",
+          "description": "City-operated library"
+        }
+      ]
+    },
+    "contra-costa": {
+      "name": "Contra Costa County",
+      "libraries": [
+        {
+          "name": "Contra Costa County Library",
+          "jurisdiction": "county",
+          "website": "https://ccclib.org",
+          "description": "County library with 26 branches serving various communities",
+          "branches": 26
+        },
+        {
+          "name": "Richmond Public Library",
+          "jurisdiction": "city",
+          "city": "Richmond",
+          "website": "https://richmondca.gov/Library",
+          "description": "City-operated library independent of the county system. County library cards and Richmond library cards are not interchangeable."
+        }
+      ]
+    },
+    "marin": {
+      "name": "Marin County",
+      "libraries": [
+        {
+          "name": "Marin County Free Library",
+          "jurisdiction": "county",
+          "website": "https://marinlibrary.org",
+          "description": "County library system with 10 branch libraries across Marin",
+          "branches": 10
+        },
+        {
+          "name": "Belvedere-Tiburon Library",
+          "jurisdiction": "city",
+          "city": "Tiburon/Belvedere",
+          "website": "https://beltiblibrary.org",
+          "description": "Community library funded by the Town of Tiburon and City of Belvedere, not part of the county system"
+        },
+        {
+          "name": "Larkspur Public Library",
+          "jurisdiction": "city",
+          "city": "Larkspur",
+          "website": "https://ci.larkspur.ca.us/Library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Mill Valley Public Library",
+          "jurisdiction": "city",
+          "city": "Mill Valley",
+          "website": "https://millvalleylibrary.org",
+          "description": "City-operated library"
+        },
+        {
+          "name": "San Anselmo Public Library",
+          "jurisdiction": "city",
+          "city": "San Anselmo",
+          "website": "https://sananselmo.gov/Library",
+          "description": "Town-operated library"
+        },
+        {
+          "name": "San Rafael Public Library",
+          "jurisdiction": "city",
+          "city": "San Rafael",
+          "website": "https://srpubliclibrary.org",
+          "description": "City-operated library with multiple branches in San Rafael"
+        },
+        {
+          "name": "Sausalito Public Library",
+          "jurisdiction": "city",
+          "city": "Sausalito",
+          "website": "https://sausalitolibrary.org",
+          "description": "City-operated library"
+        }
+      ],
+      "notes": "A Marin County Library card is generally accepted at all these city libraries through cooperative agreements."
+    },
+    "napa": {
+      "name": "Napa County",
+      "libraries": [
+        {
+          "name": "Napa County Library",
+          "jurisdiction": "county",
+          "website": "https://napalibrary.org",
+          "description": "County-wide library system with branches in the City of Napa, American Canyon, Calistoga, and Yountville. Also known as Napa City-County Library."
+        },
+        {
+          "name": "St. Helena Public Library",
+          "jurisdiction": "city",
+          "city": "St. Helena",
+          "website": "https://shpl.org",
+          "description": "City-operated library in St. Helena, established in 1894 and independent of the Napa County Library system. Issues its own library cards."
+        }
+      ]
+    },
+    "san-francisco": {
+      "name": "San Francisco",
+      "libraries": [
+        {
+          "name": "San Francisco Public Library",
+          "jurisdiction": "city-county",
+          "website": "https://sfpl.org",
+          "description": "Unified city-county library system serving San Francisco. Operates the Main Library at Civic Center and over two dozen branch libraries.",
+          "branches": 27
+        }
+      ]
+    },
+    "san-mateo": {
+      "name": "San Mateo County",
+      "libraries": [
+        {
+          "name": "San Mateo County Libraries",
+          "jurisdiction": "county",
+          "website": "https://smcl.org",
+          "description": "County library district operating 12 branch libraries, governed by a Joint Powers Authority. Branches include Atherton, Belmont, Brisbane, East Palo Alto, Foster City, Half Moon Bay, Millbrae, Portola Valley, San Carlos, Woodside, and the Pacifica libraries.",
+          "branches": 12
+        },
+        {
+          "name": "Burlingame Public Library",
+          "jurisdiction": "city",
+          "city": "Burlingame",
+          "website": "https://burlingame.org/library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Daly City Public Library",
+          "jurisdiction": "city",
+          "city": "Daly City",
+          "website": "https://dalycity.org/Library",
+          "description": "City-operated library with multiple branches in Daly City"
+        },
+        {
+          "name": "Menlo Park Library",
+          "jurisdiction": "city",
+          "city": "Menlo Park",
+          "website": "https://menlopark.org/library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Redwood City Public Library",
+          "jurisdiction": "city",
+          "city": "Redwood City",
+          "website": "https://redwoodcity.org/library",
+          "description": "City-operated library with 3 branches in Redwood City"
+        },
+        {
+          "name": "San Bruno Public Library",
+          "jurisdiction": "city",
+          "city": "San Bruno",
+          "website": "https://sanbruno.ca.gov/Library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "San Mateo Public Library",
+          "jurisdiction": "city",
+          "city": "San Mateo",
+          "website": "https://cityofsanmateo.org/library",
+          "description": "City-operated library with a main library and branches in San Mateo"
+        },
+        {
+          "name": "South San Francisco Public Library",
+          "jurisdiction": "city",
+          "city": "South San Francisco",
+          "website": "https://ssf.net/Library",
+          "description": "City-operated library with main and branch locations in South San Francisco"
+        }
+      ],
+      "notes": "Library services are provided through the Peninsula Library System (PLS), which includes SMCL and independent city libraries that share resources."
+    },
+    "santa-clara": {
+      "name": "Santa Clara County",
+      "libraries": [
+        {
+          "name": "Santa Clara County Library District",
+          "jurisdiction": "county",
+          "website": "https://sccld.org",
+          "description": "County library district with 8 branch libraries, serving Campbell, Cupertino, Gilroy, Los Altos, Milpitas, Morgan Hill, Saratoga, Los Altos Hills, Monte Sereno, and unincorporated areas. Headquarters in Campbell.",
+          "branches": 8
+        },
+        {
+          "name": "San Jose Public Library",
+          "jurisdiction": "city",
+          "city": "San Jose",
+          "website": "https://sjpl.org",
+          "description": "City-operated library system with 25+ branches, including the Dr. Martin Luther King Jr. Library which is jointly operated with San Jose State University.",
+          "branches": 25
+        },
+        {
+          "name": "Santa Clara City Library",
+          "jurisdiction": "city",
+          "city": "Santa Clara",
+          "website": "https://sclibrary.org",
+          "description": "City-operated library system in Santa Clara, CA"
+        },
+        {
+          "name": "Mountain View Public Library",
+          "jurisdiction": "city",
+          "city": "Mountain View",
+          "website": "https://mountainview.gov/library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Palo Alto City Library",
+          "jurisdiction": "city",
+          "city": "Palo Alto",
+          "website": "https://library.cityofpaloalto.org",
+          "description": "City-operated library system in Palo Alto"
+        },
+        {
+          "name": "Sunnyvale Public Library",
+          "jurisdiction": "city",
+          "city": "Sunnyvale",
+          "website": "https://sunnyvale.ca.gov/Library",
+          "description": "City-operated library"
+        },
+        {
+          "name": "Los Gatos Library",
+          "jurisdiction": "city",
+          "city": "Los Gatos",
+          "website": "https://losgatosca.gov/Library",
+          "description": "Town-operated library"
+        }
+      ]
+    },
+    "solano": {
+      "name": "Solano County",
+      "libraries": [
+        {
+          "name": "Solano County Library",
+          "jurisdiction": "county",
+          "website": "https://solanolibrary.com",
+          "description": "County library system with 9 branches, serving Dixon, Fairfield, Rio Vista, Suisun City, Vacaville, Vallejo, and adjacent unincorporated areas. Major branches include Fairfield's Civic Center Library and the JFK Library in Vallejo.",
+          "branches": 9
+        },
+        {
+          "name": "Benicia Public Library",
+          "jurisdiction": "city",
+          "city": "Benicia",
+          "website": "https://benicialibrary.org",
+          "description": "City-operated library; Benicia's library is independent of the Solano County Library system. Issues its own library cards. Partners in the SPLASH consortium."
+        }
+      ]
+    },
+    "sonoma": {
+      "name": "Sonoma County",
+      "libraries": [
+        {
+          "name": "Sonoma County Library",
+          "jurisdiction": "county",
+          "website": "https://sonomalibrary.org",
+          "description": "County-wide public library system (a joint powers authority) serving all nine cities in Sonoma County – Santa Rosa, Petaluma, Rohnert Park, Sonoma, Healdsburg, Sebastopol, Windsor, Cotati, Cloverdale – as well as unincorporated areas. Operates 13 branch libraries.",
+          "branches": 13
+        }
+      ],
+      "notes": "Since 1975, all public libraries in Sonoma County operate under one unified system. There are no separate city-run public libraries in Sonoma County."
+    }
+  },
+  "academicLibraries": [
+    {
+      "name": "Stanford University Libraries",
+      "city": "Stanford",
+      "county": "santa-clara",
+      "website": "https://library.stanford.edu",
+      "description": "Library system of Stanford University, encompassing 20+ libraries and millions of volumes"
+    },
+    {
+      "name": "UC Berkeley Libraries",
+      "city": "Berkeley",
+      "county": "alameda",
+      "website": "https://lib.berkeley.edu",
+      "description": "University of California, Berkeley's library system; one of the largest academic libraries in the U.S., with 26 libraries and over 14 million volumes"
+    },
+    {
+      "name": "UCSF Library",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://library.ucsf.edu",
+      "description": "University of California, San Francisco's academic health sciences library – a leading medical library"
+    },
+    {
+      "name": "San Jose State University Library (Dr. Martin Luther King Jr. Library)",
+      "city": "San Jose",
+      "county": "santa-clara",
+      "website": "https://sjlibrary.org",
+      "description": "Joint university and public library, serving as both SJSU's campus library and the main library of San Jose's public library system"
+    },
+    {
+      "name": "Santa Clara University Library",
+      "city": "Santa Clara",
+      "county": "santa-clara",
+      "website": "https://scu.edu/library",
+      "description": "Academic library of Santa Clara University"
+    },
+    {
+      "name": "San Francisco State University - J. Paul Leonard Library",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://library.sfsu.edu",
+      "description": "Academic library of SFSU, serving students and faculty on campus"
+    },
+    {
+      "name": "Cal State East Bay Library",
+      "city": "Hayward",
+      "county": "alameda",
+      "website": "https://library.csueastbay.edu",
+      "description": "University Library of California State University, East Bay"
+    },
+    {
+      "name": "Sonoma State University Library (Jean and Charles Schulz Information Center)",
+      "city": "Rohnert Park",
+      "county": "sonoma",
+      "website": "https://library.sonoma.edu",
+      "description": "Academic library of Sonoma State University"
+    },
+    {
+      "name": "University of San Francisco - Gleeson Library",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://library.usfca.edu",
+      "description": "Academic library of USF, a private university in San Francisco"
+    }
+  ],
+  "lawLibraries": [
+    {
+      "name": "UC Hastings College of the Law Library (UC Law SF Library)",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://library.uchastings.edu",
+      "description": "Law library supporting UC Law San Francisco, open to students and the public for legal research"
+    },
+    {
+      "name": "San Francisco Law Library",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://sflawlibrary.org",
+      "description": "Public law library for San Francisco, offering legal resources to the public"
+    },
+    {
+      "name": "Alameda County Law Library",
+      "city": "Oakland",
+      "county": "alameda",
+      "website": "https://acgov.org/law",
+      "description": "Public law library serving Alameda County's legal research needs"
+    }
+  ],
+  "medicalLibraries": [
+    {
+      "name": "Lane Medical Library",
+      "city": "Palo Alto",
+      "county": "santa-clara",
+      "website": "https://lane.stanford.edu",
+      "description": "Stanford University's medical library, serving Stanford Medicine"
+    }
+  ],
+  "specialLibraries": [
+    {
+      "name": "California Academy of Sciences Library",
+      "city": "San Francisco",
+      "county": "san-francisco",
+      "website": "https://research.calacademy.org/library",
+      "description": "Special library focusing on natural sciences, at the California Academy of Sciences museum in Golden Gate Park"
+    }
+  ]
+}
