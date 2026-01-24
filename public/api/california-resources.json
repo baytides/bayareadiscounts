@@ -1,0 +1,304 @@
+{
+  "generated": "2026-01-24T22:30:00.000Z",
+  "description": "California state government resources, services, and agencies",
+  "portals": {
+    "main": {
+      "name": "CA.gov",
+      "url": "https://www.ca.gov",
+      "description": "Official California state government portal"
+    },
+    "openData": {
+      "name": "California Open Data Portal",
+      "url": "https://data.ca.gov",
+      "description": "Open data from California state agencies",
+      "dataGov": "https://catalog.data.gov/organization/ca-gov",
+      "datasetCount": 4236
+    },
+    "legInfo": {
+      "name": "California Legislative Information",
+      "url": "https://leginfo.legislature.ca.gov",
+      "description": "California Constitution, codes, and legislation"
+    }
+  },
+  "serviceCategories": [
+    {
+      "name": "Assistance & Social Programs",
+      "url": "https://www.ca.gov/services/?category=assistance-and-social-programs",
+      "description": "Help with food, medical costs, and other benefits",
+      "keywords": ["food stamps", "CalFresh", "Medi-Cal", "CalWORKs", "SSI", "SNAP", "WIC", "welfare", "benefits"]
+    },
+    {
+      "name": "DMV & Auto",
+      "url": "https://www.ca.gov/services/?category=dmv-and-auto",
+      "description": "Driver's licenses, registration, insurance, tickets",
+      "keywords": ["dmv", "driver license", "registration", "vehicle", "ticket", "insurance", "smog"]
+    },
+    {
+      "name": "Jobs & Unemployment",
+      "url": "https://www.ca.gov/services/?category=jobs-and-unemployment",
+      "description": "Employment assistance, unemployment benefits, job training",
+      "keywords": ["unemployment", "EDD", "jobs", "employment", "career", "training", "disability"]
+    },
+    {
+      "name": "Health & Wellness",
+      "url": "https://www.ca.gov/services/?category=health-and-wellness",
+      "description": "Healthcare, family services, senior care",
+      "keywords": ["health", "medical", "medi-cal", "covered california", "mental health", "senior"]
+    },
+    {
+      "name": "Housing & Real Estate",
+      "url": "https://www.ca.gov/services/?category=housing-and-real-estate",
+      "description": "Property information, tenant resources, homebuying",
+      "keywords": ["housing", "rent", "property", "landlord", "tenant", "mortgage"]
+    },
+    {
+      "name": "Education",
+      "url": "https://www.ca.gov/services/?category=education",
+      "description": "Schools, colleges, financial aid",
+      "keywords": ["school", "college", "university", "financial aid", "fafsa", "education"]
+    },
+    {
+      "name": "Business",
+      "url": "https://www.ca.gov/services/?category=businesses",
+      "description": "Licenses, permits, starting a business",
+      "keywords": ["business", "license", "permit", "LLC", "corporation", "startup"]
+    },
+    {
+      "name": "Taxes",
+      "url": "https://www.ca.gov/services/?category=taxes",
+      "description": "Filing, refunds, credits",
+      "keywords": ["tax", "FTB", "refund", "eitc", "credits", "filing"]
+    },
+    {
+      "name": "Immigration",
+      "url": "https://www.ca.gov/services/?category=immigration",
+      "description": "Immigrant resources and family services",
+      "keywords": ["immigration", "immigrant", "visa", "citizenship", "DACA"]
+    },
+    {
+      "name": "Safety & Emergencies",
+      "url": "https://www.ca.gov/services/?category=safety-and-emergencies",
+      "description": "Emergency preparedness, public safety",
+      "keywords": ["emergency", "disaster", "fire", "earthquake", "safety"]
+    },
+    {
+      "name": "Personal Records",
+      "url": "https://www.ca.gov/services/?category=personal-records",
+      "description": "Birth certificates, name changes, vital records",
+      "keywords": ["birth certificate", "death certificate", "name change", "records"]
+    }
+  ],
+  "keyAgencies": [
+    {
+      "abbrev": "EDD",
+      "name": "Employment Development Department",
+      "url": "https://edd.ca.gov",
+      "description": "Unemployment, disability, paid family leave",
+      "phone": "1-800-300-5616",
+      "services": ["unemployment insurance", "disability insurance", "paid family leave", "job services"]
+    },
+    {
+      "abbrev": "DMV",
+      "name": "Department of Motor Vehicles",
+      "url": "https://www.dmv.ca.gov",
+      "description": "Driver's licenses, vehicle registration",
+      "phone": "1-800-777-0133",
+      "services": ["driver license", "ID card", "vehicle registration", "title transfer"]
+    },
+    {
+      "abbrev": "FTB",
+      "name": "Franchise Tax Board",
+      "url": "https://www.ftb.ca.gov",
+      "description": "State income taxes",
+      "phone": "1-800-852-5711",
+      "services": ["tax filing", "refunds", "CalEITC", "tax credits"]
+    },
+    {
+      "abbrev": "DHCS",
+      "name": "Department of Health Care Services",
+      "url": "https://www.dhcs.ca.gov",
+      "description": "Medi-Cal administration",
+      "services": ["Medi-Cal enrollment", "covered services", "provider information"]
+    },
+    {
+      "abbrev": "DSS",
+      "name": "Department of Social Services",
+      "url": "https://www.cdss.ca.gov",
+      "description": "CalFresh, CalWORKs, and social services",
+      "services": ["CalFresh", "CalWORKs", "foster care", "In-Home Supportive Services"]
+    },
+    {
+      "abbrev": "HCD",
+      "name": "Department of Housing and Community Development",
+      "url": "https://www.hcd.ca.gov",
+      "description": "Housing programs and assistance",
+      "services": ["housing assistance", "tenant resources", "homebuyer programs"]
+    },
+    {
+      "abbrev": "CDE",
+      "name": "California Department of Education",
+      "url": "https://www.cde.ca.gov",
+      "description": "K-12 education oversight",
+      "services": ["school information", "testing", "nutrition programs"]
+    },
+    {
+      "abbrev": "DIR",
+      "name": "Department of Industrial Relations",
+      "url": "https://www.dir.ca.gov",
+      "description": "Worker rights and workplace safety",
+      "phone": "1-844-522-6734",
+      "services": ["wage claims", "workers comp", "workplace safety", "labor law"]
+    },
+    {
+      "abbrev": "DFPI",
+      "name": "Department of Financial Protection and Innovation",
+      "url": "https://dfpi.ca.gov",
+      "description": "Consumer financial protection",
+      "phone": "1-866-275-2677",
+      "services": ["consumer complaints", "financial scams", "student loans"]
+    },
+    {
+      "abbrev": "CRD",
+      "name": "Civil Rights Department",
+      "url": "https://calcivilrights.ca.gov",
+      "description": "Discrimination complaints and civil rights",
+      "phone": "1-800-884-1684",
+      "services": ["discrimination complaints", "housing discrimination", "employment discrimination"]
+    },
+    {
+      "abbrev": "DOJ",
+      "name": "Department of Justice",
+      "url": "https://oag.ca.gov",
+      "description": "Attorney General, consumer protection",
+      "phone": "1-800-952-5225",
+      "services": ["consumer complaints", "background checks", "victim services"]
+    },
+    {
+      "abbrev": "Cal OES",
+      "name": "Governor's Office of Emergency Services",
+      "url": "https://www.caloes.ca.gov",
+      "description": "Emergency management and disaster response",
+      "services": ["disaster assistance", "emergency alerts", "preparedness"]
+    },
+    {
+      "abbrev": "CDPH",
+      "name": "California Department of Public Health",
+      "url": "https://www.cdph.ca.gov",
+      "description": "Public health programs and vital records",
+      "services": ["vital records", "immunizations", "disease prevention"]
+    },
+    {
+      "abbrev": "Covered CA",
+      "name": "Covered California",
+      "url": "https://www.coveredca.com",
+      "description": "Health insurance marketplace",
+      "phone": "1-800-300-1506",
+      "services": ["health insurance enrollment", "subsidies", "plan comparison"]
+    }
+  ],
+  "popularServices": [
+    {
+      "name": "Apply for CalFresh (Food Stamps)",
+      "url": "https://benefitscal.com",
+      "agency": "DSS",
+      "description": "Apply for food assistance online"
+    },
+    {
+      "name": "Apply for Medi-Cal",
+      "url": "https://benefitscal.com",
+      "agency": "DHCS",
+      "description": "Apply for free or low-cost health coverage"
+    },
+    {
+      "name": "File for Unemployment",
+      "url": "https://edd.ca.gov/unemployment",
+      "agency": "EDD",
+      "description": "File unemployment insurance claim"
+    },
+    {
+      "name": "Renew Driver's License",
+      "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/renew-your-driver-license-or-identification-card/",
+      "agency": "DMV",
+      "description": "Renew your California driver's license"
+    },
+    {
+      "name": "Get a REAL ID",
+      "url": "https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/real-id/",
+      "agency": "DMV",
+      "description": "Get a REAL ID driver's license or ID card"
+    },
+    {
+      "name": "Vehicle Registration",
+      "url": "https://www.dmv.ca.gov/portal/vehicle-registration/",
+      "agency": "DMV",
+      "description": "Register or renew vehicle registration"
+    },
+    {
+      "name": "File State Taxes",
+      "url": "https://www.ftb.ca.gov/file/index.html",
+      "agency": "FTB",
+      "description": "File California state tax return"
+    },
+    {
+      "name": "Get Birth Certificate",
+      "url": "https://www.cdph.ca.gov/Programs/CHSI/Pages/Vital-Records.aspx",
+      "agency": "CDPH",
+      "description": "Order birth, death, or marriage certificates"
+    },
+    {
+      "name": "File Wage Claim",
+      "url": "https://www.dir.ca.gov/dlse/howtofilewageclaim.htm",
+      "agency": "DIR",
+      "description": "Report unpaid wages or labor law violations"
+    },
+    {
+      "name": "Report Discrimination",
+      "url": "https://calcivilrights.ca.gov/complaintprocess/",
+      "agency": "CRD",
+      "description": "File a civil rights or discrimination complaint"
+    }
+  ],
+  "helplines": [
+    {
+      "name": "California 211",
+      "phone": "211",
+      "url": "https://211.org",
+      "description": "Community resources, food, housing, healthcare"
+    },
+    {
+      "name": "EDD Customer Service",
+      "phone": "1-800-300-5616",
+      "description": "Unemployment, disability, paid family leave"
+    },
+    {
+      "name": "DMV Customer Service",
+      "phone": "1-800-777-0133",
+      "description": "Driver's licenses, vehicle registration"
+    },
+    {
+      "name": "Covered California",
+      "phone": "1-800-300-1506",
+      "description": "Health insurance marketplace"
+    },
+    {
+      "name": "Franchise Tax Board",
+      "phone": "1-800-852-5711",
+      "description": "State tax questions"
+    },
+    {
+      "name": "Department of Justice Consumer Hotline",
+      "phone": "1-800-952-5225",
+      "description": "Consumer protection complaints"
+    },
+    {
+      "name": "Civil Rights Hotline",
+      "phone": "1-800-884-1684",
+      "description": "Discrimination complaints"
+    },
+    {
+      "name": "Labor Commissioner Hotline",
+      "phone": "1-844-522-6734",
+      "description": "Wage theft and labor law questions"
+    }
+  ]
+}

@@ -1594,6 +1594,120 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
     };
   }
 
+  // Cache for California resources
+  let californiaResourcesCache = null;
+
+  // Load California state resources
+  async function loadCaliforniaResources() {
+    if (californiaResourcesCache) return californiaResourcesCache;
+    try {
+      const response = await fetch('/api/california-resources.json');
+      if (response.ok) {
+        californiaResourcesCache = await response.json();
+        return californiaResourcesCache;
+      }
+    } catch (e) {
+      console.error('Failed to load California resources:', e);
+    }
+    return null;
+  }
+
+  // Search California state resources when user asks about state services
+  async function searchCaliforniaResources(query) {
+    const data = await loadCaliforniaResources();
+    if (!data) return null;
+
+    const queryLower = query.toLowerCase();
+
+    // Keywords that suggest user wants state agency/service info
+    const stateServiceKeywords = [
+      'edd',
+      'unemployment',
+      'disability insurance',
+      'paid family leave',
+      'dmv',
+      'driver license',
+      'real id',
+      'vehicle registration',
+      'ftb',
+      'state tax',
+      'california tax',
+      'medi-cal',
+      'covered california',
+      'health insurance',
+      'calfresh',
+      'food stamps',
+      'calworks',
+      'welfare',
+      'birth certificate',
+      'vital records',
+      'wage claim',
+      'labor board',
+      'unpaid wages',
+      'discrimination',
+      'civil rights',
+      'dfeh',
+      'consumer complaint',
+      'attorney general',
+      'state agency',
+      'california department',
+    ];
+
+    const isStateServiceQuery = stateServiceKeywords.some((kw) => queryLower.includes(kw));
+    if (!isStateServiceQuery) return null;
+
+    // Find matching agencies
+    const matchedAgencies = [];
+    for (const agency of data.keyAgencies) {
+      const abbrevMatch = queryLower.includes(agency.abbrev.toLowerCase());
+      const nameMatch = queryLower.includes(agency.name.toLowerCase());
+      const serviceMatch = agency.services?.some((s) => queryLower.includes(s.toLowerCase()));
+
+      if (abbrevMatch || nameMatch || serviceMatch) {
+        matchedAgencies.push(agency);
+      }
+    }
+
+    // Find matching services
+    const matchedServices = [];
+    for (const service of data.popularServices) {
+      const nameMatch = service.name
+        .toLowerCase()
+        .split(' ')
+        .some((word) => word.length > 3 && queryLower.includes(word));
+      if (nameMatch) {
+        matchedServices.push(service);
+      }
+    }
+
+    // Find matching helplines
+    const matchedHelplines = [];
+    for (const helpline of data.helplines) {
+      const nameMatch = helpline.name
+        .toLowerCase()
+        .split(' ')
+        .some((word) => word.length > 3 && queryLower.includes(word));
+      if (nameMatch) {
+        matchedHelplines.push(helpline);
+      }
+    }
+
+    if (
+      matchedAgencies.length === 0 &&
+      matchedServices.length === 0 &&
+      matchedHelplines.length === 0
+    ) {
+      return null;
+    }
+
+    return {
+      agencies: matchedAgencies.slice(0, 2),
+      services: matchedServices.slice(0, 3),
+      helplines: matchedHelplines.slice(0, 2),
+      portal: data.portals.main,
+    };
+  }
+
   // Search programs for RAG - enhanced keyword matching with better relevance
   // excludeShown: if true, exclude programs already shown in this conversation
   async function searchPrograms(query, location = null, excludeShown = false) {
@@ -2411,6 +2525,34 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
         californiaCodeContext += `\nIMPORTANT: California state law applies statewide. Point users to the official California Legislative Information site. Don't make up specific code sections or numbers - direct them to search the official source.`;
       }
 
+      // Check for California state agency/service queries
+      let californiaResourcesContext = '';
+      const californiaResourcesResult = await searchCaliforniaResources(message);
+      if (californiaResourcesResult) {
+        californiaResourcesContext = `\n\n[CALIFORNIA STATE RESOURCES]\n`;
+        if (californiaResourcesResult.agencies?.length > 0) {
+          californiaResourcesContext += `**Relevant State Agencies:**\n`;
+          for (const agency of californiaResourcesResult.agencies) {
+            californiaResourcesContext += `- **${agency.name}** (${agency.abbrev}): ${agency.url}`;
+            if (agency.phone) californiaResourcesContext += ` | Phone: ${agency.phone}`;
+            californiaResourcesContext += `\n  ${agency.description}\n`;
+          }
+        }
+        if (californiaResourcesResult.services?.length > 0) {
+          californiaResourcesContext += `\n**Quick Links:**\n`;
+          for (const service of californiaResourcesResult.services) {
+            californiaResourcesContext += `- ${service.name}: ${service.url}\n`;
+          }
+        }
+        if (californiaResourcesResult.helplines?.length > 0) {
+          californiaResourcesContext += `\n**Helplines:**\n`;
+          for (const helpline of californiaResourcesResult.helplines) {
+            californiaResourcesContext += `- ${helpline.name}: ${helpline.phone}\n`;
+          }
+        }
+        californiaResourcesContext += `\nProvide these specific state resources in your response.`;
+      }
+
       // Fetch live data if query matches specific topics
       let liveDataContext = '';
 
@@ -2477,6 +2619,7 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
             cityContactContext +
             municipalCodeContext +
             californiaCodeContext +
+            californiaResourcesContext +
             locationContext +
             profileContext +
             liveDataContext,
