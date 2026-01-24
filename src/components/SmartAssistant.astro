@@ -1886,7 +1886,9 @@ const effectiveEndpoint = useDomainFronting ? OLLAMA_CONFIG.cdnEndpoints[cdnProv
       const desc = (program.description || '').toLowerCase();
       const fullDesc = (program.fullDescription || '').toLowerCase();
       const category = (program.category || '').toLowerCase();
-      const keywords = (program.keywords || '').toLowerCase();
+      const keywords = (
+        Array.isArray(program.keywords) ? program.keywords.join(' ') : program.keywords || ''
+      ).toLowerCase();
       const areas = (program.areas || []).map((a) => a.toLowerCase());
 
       // Check for exact phrase match (highest priority)
