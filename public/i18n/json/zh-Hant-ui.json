@@ -51,7 +51,7 @@
     "smartSearchTooltip": "智慧搜尋利用 AI 理解你的問題並找到相關的程式。為了簡單的關鍵字匹配，請關閉它。",
     "noResults": "找不到符合你搜尋的程式。",
     "browseAll": "瀏覽所有節目",
-    "trySearching": "試著搜尋：",
+    "trySearching": "熱門搜尋：",
     "orAskQuestion": "或者提出一個問題：",
     "resultsCount": "{count}程式{s}發現",
     "aiPowered": "AI 驅動"

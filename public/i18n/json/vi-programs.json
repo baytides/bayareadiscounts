@@ -207,14 +207,6 @@
     "timeframe": "Đang diễn ra",
     "link_text": "Tìm kiếm tài trợ"
   },
-  "hip-housing-home-sharing": {
-    "name": "Chương trình chia sẻ nhà ở HIP",
-    "description": "Chương trình Chia sẻ Nhà của HIP Housing là một dịch vụ kết nối miễn phí kết nối các chủ nhà có thêm không gian với những cá nhân tương thích đang tìm kiếm các thỏa thuận nhà ở giá cả phải chăng ở Quận San Mateo.",
-    "what_they_offer": "- Dịch vụ kết nối nhà ở miễn phí\n- Bao gồm kiểm tra lý lịch\n- Sàng lọc khả năng tương thích\n- Kết nối chủ nhà và người thuê nhà\n- Lựa chọn nhà ở giá cả phải chăng\n- Hỗ trợ và hòa giải liên tục",
-    "how_to_get_it": "1. Liên hệ với HIP Housing\n2. Hoàn thành hồ sơ và phỏng vấn\n3. Trải qua kiểm tra lý lịch\n4. Nhận các trận đấu tương thích\n5. Gặp gỡ những người bạn cùng nhà tiềm năng\n6. Hoàn thiện việc sắp xếp nhà ở",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Đăng ký"
-  },
   "lifemoves-services": {
     "name": "Trung tâm Dịch vụ Cơ hội LifeMoves",
     "description": "LifeMoves cung cấp các dịch vụ toàn diện để giúp các cá nhân và gia đình vô gia cư chuyển sang nhà ở ổn định thông qua nơi trú ẩn, quản lý hồ sơ và các chương trình hỗ trợ.",
@@ -239,22 +231,6 @@
     "timeframe": "Đang diễn ra",
     "link_text": "Đăng ký"
   },
-  "cid-housing-modifications": {
-    "name": "Chương trình sửa đổi khả năng tiếp cận nhà ởSSI",
-    "description": "Trung tâm Độc lập của Người khuyết tật cung cấp các khoản trợ cấp cho các sửa đổi khả năng tiếp cận nhàSSI, giúp người cao niên và người khuyết tật ở lại nhà an toàn.",
-    "what_they_offer": "- Trợ cấp cho việc sửa đổi nhà\n- Lắp đặt đường dốc cho xe lăn\n- Lắp đặt thanh nắm\n- Nâng cấp khả năng truy cập phòng tắmSSI- Mở rộng ô cửa\n- Cải thiện khả năng truy cậpSSIkhác",
-    "how_to_get_it": "1. Liên hệ với CID San Mateo\n2. Hoàn thành quy trình đăng ký\n3. Chứng minh tình trạng khuyết tật hoặc đủ điều kiện về độ tuổi\n4. Đánh giá nhà được thực hiện\n5. Các sửa đổi đã được phê duyệt và lên lịch\n6. Công việc hoàn thành miễn phí",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Đăng ký"
-  },
-  "echo-housing": {
-    "name": "Nhà ở ECHO",
-    "description": "ECHO Housing là một tổ chức nhà ở công bằng điều tra các khiếu nại phân biệt đối xử, cung cấp tư vấn về nhà ở và làm việc để đảm bảo quyền tiếp cận nhà ở bình đẳng cho tất cả cư dân Vùng Vịnh.",
-    "what_they_offer": "- Điều tra phân biệt đối xử về nhà ở\n- Nộp đơn khiếu nại về nhà ở công bằng\n- Dịch vụ tư vấn nhà ở\n- Giáo dục quyền của người thuê nhà\n- Lập trường tuân thủ của chủ nhà aSSI- Giới thiệu pháp lý khi cần thiết",
-    "how_to_get_it": "1. Liên hệ với ECHO Housing\n2. Mô tả tình hình nhà ở của bạn\n3. Nộp đơn khiếu nại nếu xảy ra phân biệt đối xử\n4. Tiến hành điều tra\n5. Nhận lập trường và nguồn lực\n6. Hành động pháp lý nếu được bảo đảm",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nộp đơn khiếu nại"
-  },
   "smc-fixit-clinics": {
     "name": "Phòng khám Fixit",
     "description": "Phòng khám Fixit của Quận San Mateo là các sự kiện sửa chữa miễn phí, nơi các huấn luyện viên tình nguyện giúp cư dân sửa chữa các vật dụng bị hỏng, giảm lãng phí và tiết kiệm tiền thay thế.",
@@ -278,14 +254,6 @@
     "how_to_get_it": "1. Ghé thăm recyclestuff.org\n2. Nhập vật phẩm bạn muốn vứt bỏ\n3. Nhập mã zip của bạn\n4. Xem các tùy chọn lân cận\n5. Chọn vị trí thích hợp\n6. Trả khách hoặc lên lịch nhận hàng",
     "timeframe": "Đang diễn ra",
     "link_text": "Tìm kiếm"
-  },
-  "smc-refuel-your-fun": {
-    "name": "Tiếp nhiên liệu cho chương trình vui vẻ của bạn",
-    "description": "Chương trình ReFuel Your Fun của Quận San Mateo cung cấp chiết khấu nạp propan cho các xi lanh có thể tái sử dụng, cung cấp một giải pháp thay thế thân thiện với môi trường và tiết kiệm chi phí cho propan dùng một lần.",
-    "what_they_offer": "- Giảm giá nạp propan\n- Đối với xi lanh có thể tái sử dụng\n- Thay thế cho xi lanh 1 lb. sử dụng một lần\n- Giảm chất thải\n- Tiết kiệm tiền cho propan\n- Tùy chọn thân thiện với môi trường",
-    "how_to_get_it": "1. Nhận xi lanh propan có thể tái sử dụng\n2. Tìm địa điểm nạp tiền tham gia\n3. Mang theo xi lanh rỗng\n4. Nhận chiết khấu nạp tiền\n5. Tái sử dụng xi lanh để cắm trại / nướng\n6. Trả lại để nạp lại trong tương lai",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Tìm hiểu thêm"
   },
   "acs-discovery-shop-oakland": {
     "name": "Hiệp hội Ung thư Hoa Kỳ: Discovery Shop (Oakland)",
@@ -335,27 +303,11 @@
     "timeframe": "Đang diễn ra",
     "link_text": "Ghé thăm cửa hàng"
   },
-  "acs-discovery-shop-los-altos": {
-    "name": "Hiệp hội Ung thư Hoa Kỳ: Cửa hàng khám phá (Los Altos)",
-    "description": "Cửa hàng Khám phá Hiệp hội Ung thư Hoa Kỳ ở Los Altos là một cửa hàng tiết kiệm bán các mặt hàng cũ và cổ điển chất lượng, với số tiền thu được hỗ trợ nghiên cứu ung thư và các chương trình bệnh nhân. Người cao tuổi 55+ được giảm giá 10% vào thứ Ba.",
-    "what_they_offer": "- Chấp nhận quyên góp quần áo\n- Chấp nhận phụ kiện và đồ gia dụng\n- Chấp nhận khăn trải giường và đồ nội thất\n- Chấp nhận đồ sưu tầm và đồ cổ điển\n- Mua sắm tiết kiệm giá cả phải chăng\n- Tiền thu được tài trợ cho nghiên cứu ung thư",
-    "how_to_get_it": "1. Ghé thăm Discovery Shop tại 243 Main St, Los Altos\n2. Quyên góp các vật dụng đã qua sử dụng nhẹ nhàng\n3. Hoặc mua sắm hàng hóa giá cả phải chăng\n4. Mở cửa Thứ Hai-Thứ Bảy 10 giờ sáng - 6 giờ chiều, Chủ Nhật 10 giờ sáng - 5 giờ chiều\n5. Gọi (650) 949-0505 để biết thông tin",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Ghé thăm cửa hàng"
-  },
   "acs-discovery-shop-los-gatos": {
     "name": "Hiệp hội Ung thư Hoa Kỳ: Cửa hàng khám phá (Los Gatos)",
     "description": "Cửa hàng Khám phá Hiệp hội Ung thư Hoa Kỳ ở Los Gatos là một cửa hàng tiết kiệm bán các mặt hàng cũ và cổ điển chất lượng, với số tiền thu được hỗ trợ nghiên cứu ung thư và các chương trình bệnh nhân.",
     "what_they_offer": "- Chấp nhận quyên góp quần áo\n- Chấp nhận phụ kiện và đồ gia dụng\n- Chấp nhận khăn trải giường và đồ nội thất\n- Chấp nhận đồ sưu tầm và đồ cổ điển\n- Mua sắm tiết kiệm giá cả phải chăng\n- Tiền thu được tài trợ cho nghiên cứu ung thư",
     "how_to_get_it": "1. Ghé thăm Discovery Shop tại 150 W Main St, Los Gatos\n2. Quyên góp các vật dụng đã qua sử dụng nhẹ nhàng\n3. Hoặc mua sắm hàng hóa giá cả phải chăng\n4. Mở cửa Thứ Hai-Thứ Bảy 10 giờ sáng - 6 giờ chiều, Chủ Nhật 9 giờ sáng - 4 giờ chiều\n5. Gọi (408) 354-5917 để biết thông tin",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Ghé thăm cửa hàng"
-  },
-  "acs-discovery-shop-menlo-park": {
-    "name": "Hiệp hội Ung thư Hoa Kỳ: Cửa hàng khám phá (Menlo Park)",
-    "description": "Cửa hàng Khám phá của Hiệp hội Ung thư Hoa Kỳ ở Menlo Park là một cửa hàng tiết kiệm bán các mặt hàng cũ và cổ điển chất lượng, với số tiền thu được hỗ trợ nghiên cứu ung thư và các chương trình bệnh nhân. Quân đội được giảm giá 10% bất kỳ ngày nào; người cao tuổi 55+ được giảm giá 10% vào thứ Ba.",
-    "what_they_offer": "- Chấp nhận quyên góp quần áo\n- Chấp nhận phụ kiện và đồ gia dụng\n- Chấp nhận khăn trải giường và đồ nội thất\n- Chấp nhận đồ sưu tầm và đồ cổ điển\n- Mua sắm tiết kiệm giá cả phải chăng\n- Tiền thu được tài trợ cho nghiên cứu ung thư",
-    "how_to_get_it": "1. Ghé thăm Discovery Shop tại 748 Santa Cruz Ave, Menlo Park\n2. Quyên góp các vật dụng đã qua sử dụng nhẹ nhàng\n3. Hoặc mua sắm hàng hóa giá cả phải chăng\n4. Mở cửa Thứ Hai-Thứ Bảy 10 giờ sáng - 6 giờ chiều, Chủ Nhật 10 giờ sáng - 5 giờ chiều\n5. Gọi (650) 325-8939 để biết thông tin",
     "timeframe": "Đang diễn ra",
     "link_text": "Ghé thăm cửa hàng"
   },
@@ -511,198 +463,6 @@
     "timeframe": "Đang diễn ra",
     "link_text": "Lên lịch lấy hàng"
   },
-  "sf-lgbt-center": {
-    "name": "Trung tâm SF LGBT",
-    "description": "Trung tâm LGBT San Francisco là nền tảng củaLGBTQ+comMunity, cung cấp một loạt các chương trình và dịch vụ bao gồm lập trường tài chính, dịch vụ nhập cư, chương trình việc làm và các sự kiện comMunity.",
-    "what_they_offer": "- Chương trình Việc làm Chuyển giới (đào tạo và giới thiệu việc làm)\n- Dịch vụ pháp lý di trú và hỗ trợ DACA\n- Các chương trình lập trường tài chính\n- Các chương trình và dịch vụ thanh thiếu niên\n- ComMunity sự kiện và chương trình văn hóa\n- Không gian họp cho các tổ chứcLGBTQ+- Các dịch vụ và hoạt động dành cho người cao tuổi",
-    "how_to_get_it": "1. Ghé thăm Trung tâm LGBT SF trực tiếp hoặc trực tuyến\n2. Kiểm tra các yêu cầu về tính đủ điều kiện của chương trình\n3. Đăng ký dịch vụ hoặc chương trình\n4. Một số dịch vụ yêu cầu đặt lịch hẹn\n5. Dịch vụ thả vào cũng có thể",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Trung tâm truy cập"
-  },
-  "oakland-lgbtq-center": {
-    "name": "Trung tâm LGBTQ OaklandMunity",
-    "description": "Trung tâm Oakland LGBTQ ComMunicung cấp một không gian an toàn và khẳng định với các nhóm hỗ trợ, dịch vụ chăm sóc sức khỏe, chương trình cao cấp và các sự kiện cộng đồngMunitrong môi trường không có rượu và ma túy.",
-    "what_they_offer": "- Các nhóm hỗ trợ miễn phí và tư vấn đồng đẳng\n- Các dịch vụ và hoạt động dành cho người cao tuổi\n- Các chương trình dành cho thanh thiếu niên\n- Dịch vụ phòng khám chăm sóc sức khỏe\n- Nguồn lực về nhà ởSSI- Hỗ trợ phục hồi nghiện\n- ComMunity sự kiện (mở mic, đêm chơi game, biểu diễn kéo)",
-    "how_to_get_it": "1. Ghé thăm trung tâm trong giờ mở cửa\n2. Kiểm tra trang web để biết lịch trình sự kiện\n3. Tham gia các nhóm hỗ trợ (không cần đăng ký)\n4. Truy cập các dịch vụ thả vào\n5. Đăng ký các chương trình cụ thể khi cần thiết",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Trung tâm truy cập"
-  },
-  "pacific-center": {
-    "name": "Trung tâm Tăng trưởng Con người Thái Bình Dương",
-    "description": "Trung tâm Tăng trưởng Con người Thái Bình Dương là một trong những trung tâm lâu đời nhất trong cả nước, cung cấp các dịch vụ sức khỏe tâm thần đáp ứng văn hóa, các nhóm hỗ trợ đồng đẳng và các chương trình cộng đồngMuniở Berkeley.",
-    "what_they_offer": "- Trị liệu cá nhân, cặp vợ chồng và gia đình chi phí thấp\n- Liệu pháp cho các mối quan hệ đa tình\n- Hỗ trợ bạn đời của những người chuyển giới/không phù hợp giới tính\n- Các chương trình dành cho thanh thiếu niên\n- Lập trình cao cấp và các nhóm xã hội\n- Nhóm hỗ trợ ngang hàng\n- Phí thang trượt aVAilable",
-    "how_to_get_it": "1. Gọi điện hoặc ghé thăm Trung tâm Thái Bình Dương\n2. Lên lịch hẹn trị liệu\n3. Tham gia các nhóm hỗ trợ và sự kiện\n4. Phí dựa trên thang trượt\n5. Không ai quay lưng lại vì không có khả năng thanh toán",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận dịch vụ"
-  },
-  "rainbow-community-center": {
-    "name": "Trung tâm Rainbow ComMunity",
-    "description": "Trung tâm Rainbow ComMunity phục vụLGBTQ+các cá nhân và gia đình ở Quận Contra Costa với các dịch vụ sức khỏe tâm thần, xét nghiệm HIV, các chương trình thanh thiếu niên và các nguồn hỗ trợ của comMunity.",
-    "what_they_offer": "- Xét nghiệm HIV miễn phí\n- Tư vấn sức khỏe tâm thần\n- Chương trình thanh niên và người cao tuổi\n- Nhóm hỗ trợ ngang hàng\n- Tài nguyên cho những người sống sót sau tội ác thù ghét\n- Hỗ trợ bạo lực đối tác thân mật\n- ComMunity xã hội và sự kiện",
-    "how_to_get_it": "1. Ghé thăm Trung tâm Rainbow ComMunity\n2. Đi bộ để xét nghiệm HIV (không cần đặt lịch hẹn)\n3. Đăng ký dịch vụ tư vấn\n4. Tham gia các nhóm và chương trình hỗ trợ\n5. Kiểm tra trang web để biết lịch trình sự kiện",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp"
-  },
-  "billy-defrank-center": {
-    "name": "Billy DeFrankLGBTQ+ComMunity Trung tâm",
-    "description": "Trung tâm Billy DeFrankLGBTQ+ComMuniở San Jose cung cấp dịch vụ xét nghiệm HIV, truy cập máy tính, thư viện cho mượn, các nhóm hỗ trợ và các sự kiện cho cư dân South BayLGBTQ+.",
-    "what_they_offer": "- Xét nghiệm HIV miễn phí\n- Truy cập phòng máy tính\n-LGBTQ+thư viện cho mượn\n- Hỗ trợ các nhóm và cuộc họp\n- Chương trình dành cho người lớn và người cao tuổi\n- ComMunity sự kiện và tụ họp\n- Giới thiệu nguồn lực",
-    "how_to_get_it": "1. Ghé thăm trung tâm trong giờ mở cửa\n2. Đi bộ để nhận dịch vụ\n3. Đặt lịch xét nghiệm HIV\n4. Tham gia các nhóm và chương trình\n5. Kiểm tra trang web để biết lịch sự kiện",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Trung tâm truy cập"
-  },
-  "spahr-center": {
-    "name": "Trung tâm Spahr",
-    "description": "Trung tâm Spahr phục vụLGBTQ+của Quận Marin với các chương trình xã hội, hỗ trợ và phòng ngừa HIV, các nhóm thanh thiếu ni��n và hội thảo cao cấpSSItrong một môi trường thân thiện.",
-    "what_they_offer": "- Dịch vụ xét nghiệm và phòng ngừa HIV miễn phí\n- Các nhóm hỗ trợ HIV\n- Nhóm thanh thiếu niên\n- Đĩa cao cấpSSItrên các nhóm\n- Sự kiện và kết hợp xã hội\n- Giới thiệu nguồn lực\n- ComMunity hội thảo",
-    "how_to_get_it": "1. Ghé thăm Trung tâm Spahr ở San Rafael\n2. Kiểm tra trang web để biết lịch trình nhóm\n3. Đi bộ để xét nghiệm HIV\n4. Tham gia các chương trình, sự kiện\n5. Kêu gọi giới thiệu nguồn lực",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận dịch vụ"
-  },
-  "lgbtq-connection-napa": {
-    "name": "Kết nối LGBTQ",
-    "description": "LGBTQ Connection phục vụLGBTQ+comMunity của Quận Napa với các khóa đào tạo, hội thảo, chương trình chăm sóc sức khỏe, phát triển khả năng lãnh đạo và các sự kiện comMunity.",
-    "what_they_offer": "- ComMunity sự kiện và tụ họp\n- Đào tạo và hội thảo\n- Các chương trình chăm sóc sức khỏe\n- Phát triển khả năng lãnh đạo\n- Chương trình thanh thiếu niên\n- Giáo dục không gian an toàn",
-    "how_to_get_it": "1. Ghé thăm Kết nối LGBTQ ở Napa\n2. Kiểm tra trang web để biết các sự kiện và chương trình\n3. Đăng ký đào tạo, hội thảo\n4. Tham gia các cuộc tụ họp của comMunity\n5. Tham gia các chương trình lãnh đạo",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Kết nối"
-  },
-  "queer-lifespace": {
-    "name": "Không gian cuộc sống đồng tính",
-    "description": "Queer LifeSpace cung cấp dịch vụ tư vấn sức khỏe tâm thần chi phí thấp, dịch vụ lạm dụng chất gây nghiện và trị liệu nhóm choLGBTQ+comMunity trên cơ sở phí thang trượt.",
-    "what_they_offer": "- Liệu pháp cá nhân với chi phí thấp\n- Tư vấn lạm dụng chất gây nghiện\n- Liệu pháp nhóm seSSIons\n- Tư vấn cho các cặp vợ chồng\n- Phí thang trượt (một số thấp tới $20)\n-LGBTQ+-nhà trị liệu khẳng định",
-    "how_to_get_it": "1. Ghé thăm queerlifespace.org\n2. Hoàn thành mẫu tiếp nhận\n3. Đặt lịch tư vấn\n4. Thảo luận về phí dựa trên thu nhập\n5. Bắt đầu dịch vụ trị liệu",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận liệu pháp"
-  },
-  "lyric-youth": {
-    "name": "LYRIC (Trung tâm Thông tin và Giải trí Thanh niên Lavender)",
-    "description": "LYRIC cung cấp giáo dục, đào tạoCAREer, dịch vụ y tế, điều hướng nhà ở và phát triển khả năng lãnh đạo cho thanh thiếu niên LGBTQQ + từ 12-24 tuổi ở San Francisco.",
-    "what_they_offer": "- Chương trình nâng cao giáo dục\n-CAREđào tạo và giới thiệu việc làm\n- Nâng cao sức khỏe và PrEP/HIVCARE- Điều hướng nhà ở aSSI- Phát triển khả năng lãnh đạo\n- Dịch vụ thanh thiếu niên\n- Hỗ trợ sức khỏe tâm thần",
-    "how_to_get_it": "1. Truy cập LYRIC trong giờ ghé thăm\n2. Phải từ 12-24 tuổi\n3. Thanh niên LGBTQQ + và đồng minh chào đón\n4. Đăng ký các chương trình cụ thể\n5. Dịch vụ đi bộ aVAilable",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp"
-  },
-  "outlet-peninsula": {
-    "name": "Cửa hàng",
-    "description": "Outlet cung cấp dịch vụ tư vấn, nhóm hỗ trợ và tiếp cận cộng đồng cho thanh thiếu niênLGBTQ+và gia đình của họ trên khắp các quận San Mateo và Santa Clara với các địa điểm ở Thành phố Redwood, Mountain View và San Mateo.",
-    "what_they_offer": "- Dịch vụ tư vấn thanh thiếu niên miễn phí\n- Các nhóm hỗ trợ cho thanh thiếu niênLGBTQ+- Hỗ trợ cha mẹ và gia đình\n- Các chương trình tiếp cận trường học\n- Nhóm hỗ trợ người lớn\n- ComMunity giáo dục",
-    "how_to_get_it": "1. Liên hệ với Outlet tại địa điểm gần nhất của bạn\n2. Đặt lịch hẹn tư vấn\n3. Tham gia các nhóm hỗ trợ thanh thiếu niên hoặc phụ huynh\n4. Dịch vụ aVAphù hợp với lứa tuổi 13-25\n5. Các thành viên trong gia đình chào đón",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Tìm vị trí"
-  },
-  "api-wellness-transthrive": {
-    "name": "API Sức khỏe / TRANS:THRIVE",
-    "description": "API Wellness cung cấpCAREchính, đơn thuốc PrEP, xét nghiệm HIV/STD miễn phí và điều hành TRANS:THRIVE, một trung tâmCAREdành riêng cho người chuyển giới.",
-    "what_they_offer": "- Dịch vụ chínhCARE- Xét nghiệm HIV và STD miễn phí\n- Đơn thuốc và hỗ trợ PrEP\n- Trung tâm TRANS:THRIVE drop-inCARE- Nhóm hỗ trợ\n- ComMunity đi chơi và sự kiện\n- Sức khỏe chuyển giớiCARE",
-    "how_to_get_it": "1. Truy cập API Wellness hoặc TRANS:THRIVE\n2. Đi bộ để xét nghiệm HIV / STD\n3. Đặt lịch hẹn cho tiểu họcCARE4. Tham gia các dịch vụ TRANS:THRIVE\n5. Tham gia các nhóm hỗ trợ và sự kiện",
-    "timeframe": "Đang diễn ra",
-    "link_text": "NhậnCARE"
-  },
-  "openhouse-sf": {
-    "name": "Mở cửa",
-    "description": "Openhouse cung cấp nhà ở, các chương trình comMunity, quản lý hồ sơ và các dịch vụ sức khỏe tâm thần dành riêng cho người cao niênLGBTQ+ở San Francisco.",
-    "what_they_offer": "-LGBTQ+-khẳng định nhà ở cao cấp\n- Dịch vụ quản lý hồ sơ\n- Hỗ trợ sức khỏe tâm thần\n- Các chương trình và hoạt động xã hội\n- Các dịch vụ và nguồn lực dành cho người cao tuổi\n- ComMunity sự kiện xây dựng\n- Cơ hội tình nguyện",
-    "how_to_get_it": "1. Liên hệ với Openhouse để biết dịch vụ\n2. Đăng ký nhà ở cao cấp (có thể áp dụng danh sách chờ)\n3. Lên lịch tiếp nhận quản lý hồ sơ\n4. Tham gia các chương trình và hoạt động xã hội\n5. Phải làLGBTQ+cao cấp (thường là 55+)",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận dịch vụ"
-  },
-  "pflag-sf": {
-    "name": "PFLAG San Francisco",
-    "description": "PFLAG San Francisco cung cấp hỗ trợ, giáo dục và vận động cho các cá nhânLGBTQ+và gia đình của họ, với các cuộc họp hỗ trợ thường xuyên và các nguồn lực của comMunity.",
-    "what_they_offer": "- Các cuộc họp nhóm hỗ trợ hàng tháng\n- Hỗ trợ và giáo dục gia đình\n-LGBTQ+tài nguyên vận động\n- Chương trình diễn giả cho trường học/tổ chức\n- Kết nối với các nguồn lực địa phương\n- Tùy chọn hỗ trợ ảo",
-    "how_to_get_it": "1. Ghé thăm pflagsf.org để biết lịch họp\n2. Tham dự các cuộc họp hỗ trợ hàng tháng\n3. Liên hệ để được hỗ trợ cá nhân\n4. Yêu cầu diễn giả cho tổ chức của bạn\n5. Truy cập tài nguyên trực tuyến",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "trans-lifeline": {
-    "name": "Đường dây cứu sinh chuyển giới",
-    "description": "Trans Lifeline là một đường dây nóng cấp cơ sở cung cấp hỗ trợ trực tiếp về tinh thần và tài chính cho những người chuyển giới đang gặp khủng hoảng, với nhân viên hoàn toàn là các nhà điều hành chuyển giới.",
-    "what_they_offer": "- Đường dây nóng khủng hoảng 24/7 (nhân viên là người chuyển giới)\n- Hỗ trợ tinh thần trong khủng hoảng\n- Trợ cấp nhỏ cho các nhu cầu khẩn cấp\n- Thay đổi tên aSSItài trợ lập trường\n- Kết nối hỗ trợ ngang hàng\n- Giới thiệu nguồn lực",
-    "how_to_get_it": "1. Gọi cho đường dây nóng Trans Lifeline\n2. Hoa Kỳ:877-565-88603. Canada:877-330-63664. Tất cả các nhà khai thác đều là người chuyển giới\n5. Không có sự tham gia của cảnh sát mà không có sự đồng ý\n6. Đăng ký tài trợ vi mô trực tuyến",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp"
-  },
-  "trevor-project": {
-    "name": "Dự án Trevor",
-    "description": "Dự án Trevor cung cấp các dịch vụ can thiệp khủng hoảng và phòng chống tự tử 24/7 choLGBTQ+thanh thiếu niên từ 13-24 tuổi qua điện thoại, tin nhắn và trò chuyện.",
-    "what_they_offer": "- Đường dây nóng khủng hoảng 24/7 (1-866-488-7386)\n- Hỗ trợ văn bản (nhắn tin START gửi 678-678)\n- Hỗ trợ trò chuyện trực tuyến\n- TrevorSpace trực tuyến comMunity\n- Tài nguyên giáo dục\n- Cố vấn được đào tạo cho thanh thiếu niênLGBTQ+",
-    "how_to_get_it": "1. Gọi1-866-488-7386(24/7)\n2. Soạn tin BẮT ĐẦU gửi 678-678\n3. Trò chuyện trực tuyến tại thetrevorproject.org\n4. Tham gia TrevorSpace comMunity\n5. Dành cho lứa tuổi 13-24",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp"
-  },
-  "lgbt-asylum-project": {
-    "name": "Dự án tị nạn LGBT",
-    "description": "Dự án Tị nạn LGBT cung cấp đại diện pháp lý miễn phí và hỗ trợ choLGBTQ+những người xin tị nạn chạy trốn cuộc đàn áp dựa trên xu hướng tình dục hoặc bản dạng giới của họ.",
-    "what_they_offer": "- Đại diện pháp lý miễn phí cho các trường hợp tị nạn\n- Giúp chuẩn bị đơn xin tị nạn\n- Đại diện tòa án\n- Hỗ trợ quản lý hồ sơ\n- Kết nối với tài nguyên comMunity\n- Giới thiệu luật sư chuyên nghiệp",
-    "how_to_get_it": "1. Liên hệ với Dự án tị nạn LGBT\n2. Hoàn thành quy trình nhập học\n3. Phải là người xin tị nạnLGBTQ+4. Các trường hợp được xử lý bởi luật sư tình nguyện\n5. Tất cả các dịch vụ đều miễn phí",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp pháp lý"
-  },
-  "tgi-justice-project": {
-    "name": "Dự án Tư pháp TGI",
-    "description": "Dự án Công lý TGI hỗ trợ những người chuyển giới và liên giới tính hiện đang hoặc trước đây bị giam giữ, cung cấp các dịch vụ tái nhập cảnh, vận động chính sách và hỗ trợ cộng đồng.",
-    "what_they_offer": "- Dịch vụ hỗ trợ tái nhập cảnh\n- Vận động cho những người chuyển giới / liên giới tính bị giam giữ\n- Nhà ở aSSIlập trường\n- Thay đổi tên pháp lý/dấu hiệu giới tính\n- Tổ chức ComMunity\n- Hỗ trợ lẫn nhau",
-    "how_to_get_it": "1. Liên hệ với TGI Justice Project\n2. Các cá nhân chuyển giới / liên giới tính hiện tại hoặc trước đây bị giam giữ hoan nghênh\n3. Nhận hỗ trợ tái nhập cảnh\n4. Tiếp cận các dịch vụ vận động chính sách\n5. Tham gia các chương trình comMunity",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "el-la-para-translatinas": {
-    "name": "El / La Para TransLatinas",
-    "description": "El / La Para TransLatinas cung cấp các dịch vụ xây dựng, bảo vệ và hỗ trợ comMunidành riêng cho phụ nữ Latina chuyển giới ở Vùng Vịnh.",
-    "what_they_offer": "- ComMunity nhóm hỗ trợ\n- Nhập cư aSSIlập trường\n- Điều hướng sức khỏe\n- An toàn và vận động chính sách\n- Phát triển khả năng lãnh đạo\n- Hội thảo Biết Quyền của Bạn\n- Chương trình văn hóa",
-    "how_to_get_it": "1. Liên hệ với El / La Para TransLatinas\n2. Tham gia các nhóm và sự kiện comMunity\n3. Tiếp cận các dịch vụ hỗ trợ\n4. Tham gia hội thảo\n5. Dịch vụ bằng tiếng Tây Ban Nha và tiếng Anh",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "glbt-historical-society": {
-    "name": "Bảo tàng Hiệp hội Lịch sử GLBT",
-    "description": "Bảo tàng Hiệp hội Lịch sử GLBT ở Castro bảo tồn và trưng bày lịch sử, văn hóa và nghệ thuậtLGBTQ+, với admi miễn phíSSIvào các ngày và giảm tỷ lệ aVA.",
-    "what_they_offer": "- Chủ nhật đầu tiên miễn phí (miễn phí admiSSIhàng tháng)\n- Admi thông thườngSSIchỉ với $10\n- Người cao niên, sinh viên, quân đội: $7\n-LGBTQ+triển lãm lịch sử\n- Truy cập kho lưu trữ nghiên cứu\n- Chương trình giáo dục\n- ComMunity sự kiện",
-    "how_to_get_it": "1. Ghé thăm vào Chủ nhật đầu tiên miễn phí admiSSItrên\n2. Hoặc trả admiSSIthường xuyên ($ 10, $ 7 giảm)\n3. Kiểm tra trang web để biết các triển lãm hiện tại\n4. Truy cập kho lưu trữ theo lịch hẹn\n5. Tham gia các chương trình giáo dục",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Kế hoạch thăm khám"
-  },
-  "id-me-first-responders": {
-    "name": "ID.me Giảm giá cho người phản hồi đầu tiên",
-    "description": "ID.me cung cấp danh tính đã được xác minh cho những người phản ứng đầu tiên (lính cứu hỏa, EMT, nhân viên y tế, cảnh sát) để mở khóa chiết khấu độc quyền tại hàng trăm nhà bán lẻ, nhà hàng và nhà cung cấp dịch vụ.",
-    "what_they_offer": "- Xác minh danh tính một lần\n- Tiếp cận nhiều chiết khấu của nhà bán lẻ\n- Giảm 10-25% tại các thương hiệu lớn\n- Giảm giá công nghệ (Apple, Samsung, Dell)\n- Giảm giá du lịch (khách sạn, cho thuê xe hơi)\n- Tiết kiệm giải trí và đăng ký",
-    "how_to_get_it": "1. Tạo tài khoản ID.me miễn phí\n2. Xác minh trạng thái người phản hồi đầu tiên bằng thông tin đăng nhập\n3. Tải lên xác minh việc làm nếu cần\n4. Sau khi xác minh, hãy truy cập giảm giá thông qua ID.me Shop\n5. Chuyển xác minh trên tất cả các nhà bán lẻ tham gia",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Xác minh trạng thái"
-  },
-  "govx-first-responder": {
-    "name": "Giảm giá cho người phản hồi đầu tiên của GovX",
-    "description": "GovX là một nền tảng mua sắm trực tuyến độc quyền giảm giá tới 60% cho những người phản ứng đầu tiên đã được xác minh, quân đội và cơ quan thực thi pháp luật đối với quần áo, thiết bị và nhu yếu phẩm hàng ngày.",
-    "what_they_offer": "- Giảm giá tới 60% cho các thương hiệu lớn\n- Thiết bị chiến thuật và ngoài trời\n- Trang phục và giày dép\n- Điện tử và công nghệ\n- Du lịch và giải trí\n- Sản phẩm gia dụng và ô tô",
-    "how_to_get_it": "1. Đăng ký tại govx.com\n2. Xác minh trạng thái người phản hồi đầu tiên\n3. Cung cấp thông tin bộ phận hoặc cơ quan\n4. Truy cập giá thành viên độc quyền\n5. Mua sắm và tiết kiệm cho mọi đơn hàng",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Tham gia miễn phí"
-  },
-  "verizon-first-responders": {
-    "name": "Giảm giá cho Verizon First Responders",
-    "description": "Verizon cung cấp giảm giá hàng tháng liên tục cho các gói không dây cho những người phản ứng đầu tiên đã được xác minh bao gồm lính cứu hỏa, cảnh sát, EMT và nhân viên y tế.",
-    "what_they_offer": "- Giảm giá 25% cho một số gói Verizon Unlimited\n- Giảm giá định kỳ hàng tháng\n- AVAkhông phù hợp với khách hàng mới và khách hàng hiện tại\n- Có thể xếp chồng lên nhau với các chương trình khuyến mãi trên thiết bị\n- Áp dụng cho các dòng điện thoại, máy tính bảng và đồng hồ",
-    "how_to_get_it": "1. Truy cập cửa hàng hoặc trang web của Verizon\n2. Xác minh trạng thái người phản hồi đầu tiên thông qua ID.me\n3. Cung cấp thông tin đăng nhập của bộ phận\n4. Giảm giá áp dụng cho các gói hợp lệ\n5. Gia hạn xác minh hàng năm",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận chiết khấu"
-  },
-  "tmobile-first-responders": {
-    "name": "Giảm giá cho người phản hồi đầu tiên của T-Mobile",
-    "description": "T-Mobile cung cấp mức giá đặc biệt cho các gói không dây cho những người phản ứng đầu tiên bao gồm lính cứu hỏa, cảnh sát, EMT, nhân viên y tế và nhân viên điều phối911.",
-    "what_they_offer": "- Giảm giá 50% cho các dòng gia đình (tối đa 6 dòng trên Magenta)\n- Giảm giá 20% cho các gói Magenta MAX\n- Netflix được bao gồm trong một số gói\n- Không có hợp đồng dịch vụ hàng năm\n- Truy cập mạng 5G",
-    "how_to_get_it": "1. Truy cập cửa hàng hoặc trang web T-Mobile\n2. Chọn tùy chọn gói Người phản hồi đầu tiên\n3. Xác minh tình trạng việc làm\n4. Cung cấp bằng chứng về vai trò của người phản hồi đầu tiên\n5. Giảm giá được áp dụng tự động",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Tìm hiểu thêm"
-  },
-  "apple-veterans-military": {
-    "name": "Chương trình mua hàng dành cho cựu chiến binh và quân đội của Apple",
-    "description": "Apple giảm giá 10% cho các thành viên hiện tại và cựu chiến binh của Quân đội, Vệ binh Quốc gia và Lực lượng Dự bị Hoa Kỳ. Giảm giá cũng mở rộng cho các thành viên gia đình trực hệ trong cùng một hộ gia đình.",
-    "what_they_offer": "- Giảm giá 10% cho máy tính Mac\n- Giảm giá 10% trên iPad\n- Giảm giá 10% phụ kiện\n- Bảo hành và dịch vụ tương tự như mua hàng thông thường\n- MộtVAkhông được phép đối với các thành viên gia đình đủ điều kiện trong cùng một hộ gia đình",
-    "how_to_get_it": "1. Truy cập cửa hàng Cựu chiến binh và Quân đội của Apple trực tuyến\n2. Đăng nhập bằng xác minh ID.me\n3. Xác minh tình trạng quân nhân hoặc cựu chiến binh\n4. Truy cập giá 10% độc quyền\n5. Mua hàng bằng thanh toán Apple tiêu chuẩn (Trả góp hàng tháng bằng Apple Card không phải làVAilable)",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Mua ngay"
-  },
   "exploratorium-teacher-free": {
     "name": "Exploratorium Giáo viên miễn phí AdmiSSIon",
     "description": "Exploratorium cung cấp miễn phí cho giáo viên K-12, cho phép các nhà giáo dục khám phá các cuộc triển lãm và phát triển ý tưởng cho các hoạt động trong lớp học.",
@@ -718,54 +478,6 @@
     "how_to_get_it": "1. Truy cập trang web BAWP để biết thông tin chương trình\n2. Đăng ký Học viện Mùa hè hoặc các chương trình khác\n3. Mô tả bối cảnh và mục tiêu giảng dạy của bạn\n4. Tham dự chương trình seSSIons\n5. Tham gia mạng lưới giáo viên-tư vấn viên",
     "timeframe": "Các ứng dụng vào mùa xuân",
     "link_text": "Đăng ký ngay"
-  },
-  "teacher-id-me-discounts": {
-    "name": "ID.me Giảm giá cho giáo viên",
-    "description": "ID.me cung cấp danh tính đã được xác minh cho giáo viên và nhà giáo dục để mở khóa giảm giá độc quyền tại hàng trăm nhà bán lẻ về đồ dùng lớp học, công nghệ và vật dụng cá nhân.",
-    "what_they_offer": "- Giảm giá 10-25% tại các nhà bán lẻ lớn\n- Giảm giá vật tư lớp học (Staples, Office Depot)\n- Giảm giá công nghệ (Apple, Dell, HP)\n- Tiết kiệm giải trí và đăng ký\n- Xác minh một lần cho tất cả các nhà bán lẻ",
-    "how_to_get_it": "1. Tạo tài khoản ID.me miễn phí\n2. Xác minh trạng thái giáo viên/nhà giáo dục\n3. Tải lên ID trường học hoặc xác minh việc làm\n4. Sau khi xác minh, hãy truy cập giảm giá thông qua ID.me Shop\n5. Xác minh hoạt động trên tất cả các cửa hàng tham gia",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Xác minh trạng thái"
-  },
-  "sf-jobsnow": {
-    "name": "Việc làm SF ngay bây giờ!",
-    "description": "Việc làm SF ngay bây giờ! là chương trình việc làm được trợ cấp của San Francisco, cung cấp trợ cấp tiền lương cho những người sử dụng lao động thuê cư dân San Francisco thất nghiệp, giúp người tìm việc tìm việc dễ dàng hơn.",
-    "what_they_offer": "- Trợ cấp tiền lương cho người sử dụng lao động thuê bạn\n- Vị trí tuyển dụng aSSIlập trường\n- Cơ hội đào tạo\n-CAREer huấn luyện và hỗ trợ\n- Kết nối với các nhà tuyển dụng ở Vùng Vịnh\n- Hỗ trợ theo dõi sau khi đặt",
-    "how_to_get_it": "1. Truy cập trang web OEWD hoặc Trung tâm một cửaCAREtại địa phương\n2. Hoàn thành tuyển sinh và đánh giá\n3. Gặp gỡ chuyên gia việc làm\n4. Nhận vị trí việc làm aSSIlập trường\n5. Người sử dụng lao động nhận trợ cấp tiền lương khi bạn được tuyển dụng",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Bắt đầu"
-  },
-  "the-job-forum": {
-    "name": "Diễn đàn việc làm",
-    "description": "Diễn đàn Việc làm là một nhóm hỗ trợ mạng lưới và tìm kiếm việc làm miễn phí ở San Francisco cung cấp các hội thảo, sự kiện kết nối và huấn luyệnCAREcho người tìm việc.",
-    "what_they_offer": "- Các cuộc họp kết nối miễn phí hàng tuần\n- Hội thảo sơ yếu lý lịch và LinkedIn\n- Huấn luyện chuẩn bị phỏng vấn\n- Hỗ trợ chuyển đổiCAREer\n- Kết nối và giới thiệu nhà tuyển dụng\n- Hỗ trợ ngang hàng comMunity",
-    "how_to_get_it": "1. Truy cập trang web Diễn đàn việc làm\n2. Đăng ký họp hàng tuần (miễn phí)\n3. Tham dự các hội thảo và sự kiện kết nối\n4. Kết nối với huấn luyện viênCAREer\n5. Truy cập khách hàng tiềm năng và giới thiệu công việc",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Tham gia cuộc họp"
-  },
-  "oewd-citybuild": {
-    "name": "Học viện CityBuild",
-    "description": "Học viện CityBuild là chương trình đào tạo xây dựng trước khi học nghề của San Francisco, cung cấp đào tạo việc làm miễn phí và vị trí cho các sinh viên xây dựng công đoànCARE.",
-    "what_they_offer": "- Đào tạo xây dựng miễn phí 18 tuần\n- Vị trí học nghề công đoàn\n- OSHA và chứng nhận an toàn\n- Đọc toán và bản thiết kế\n- Dịch vụ hỗ trợ (vận chuyển, dụng cụ)\n- Vị trí vào các ngành nghề (điện, ống nước, mộc)",
-    "how_to_get_it": "1. Tham dự buổi định hướng CityBuild seSSIon\n2. Hoàn thành hồ sơ và phỏng vấn\n3. Vượt qua các bài kiểm tra đánh giá\n4. Cam kết chương trình 18 tuần đầy đủ\n5. Tốt nghiệp và vào học nghề công đoàn",
-    "timeframe": "Nhiều nhóm thuần tập hàng năm",
-    "link_text": "Đăng ký ngay"
-  },
-  "oewd-techsf": {
-    "name": "Công nghệ SF",
-    "description": "TechSF cung cấp các dịch vụ đào tạo và giới thiệu việc làm công nghệ miễn phí cho cư dân San Francisco đang tìm kiếmCAREnhân viên trong ngành công nghệ.",
-    "what_they_offer": "- Đào tạo kỹ năng công nghệ miễn phí\n- Học bổng bootcamp lập trình\n- Chứng chỉ hỗ trợ CNTT\n- Vị trí tuyển dụng aSSIlập trường\n- Kết nối thực tập\n-CAREer cố vấn",
-    "how_to_get_it": "1. Truy cập trang web TechSF\n2. Hoàn thành biểu mẫu quan tâm\n3. Tham dự buổi định hướng seSSIon\n4. Đăng ký chương trình đào tạo\n5. Nhận hỗ trợ giới thiệu việc làm",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Bắt đầu"
-  },
-  "meda-workforce": {
-    "name": "Phát triển lực lượng lao động MEDA",
-    "description": "MiSSItrên Cơ quan Phát triển Kinh tế (MEDA) cung cấp các dịch vụ phát triển lực lượng lao động, đào tạo việc làm vàCAREer tập trung vào các mối quan hệ cộng đồng người Latinh và thu nhập thấp ở MiSSIcủa San Francisco.",
-    "what_they_offer": "- Đào tạo sẵn sàng cho công việc\n- Hội thảo phát triển kỹ năng\n- Vị trí tuyển dụng aSSIlập trường\n-CAREer huấn luyện và lập kế hoạch\n- Đào tạo kiến thức kỹ thuật số\n- Tích hợp huấn luyện tài chính",
-    "how_to_get_it": "1. Ghé thăm văn phòng MEDA tại MiSSIon\n2. Hoàn thành đánh giá đầu vào\n3. Gặp huấn luyện viênCAREer\n4. Đăng ký các chương trình đào tạo\n5. Nhận hỗ trợ tìm kiếm việc làm liên tục",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận trợ giúp"
   },
   "iiba-immigration": {
     "name": "Viện Di trú Vùng Vịnh",
@@ -790,14 +502,6 @@
     "how_to_get_it": "1. Gọi cho Nhóm Tiếp cận Người vô gia cư SF theo số415-734-42332. Hoặc gọi 311 để biết thông tin về nơi trú ẩn\n3. Kết nối với đường phố nếu không có nơi trú ẩn\n4. Hoàn thành cửa hàng tại trung tâm điều hướng\n5. Nhận giới thiệu về nhà ở và dịch vụ",
     "timeframe": "Đang diễn ra",
     "link_text": "Nhận trợ giúp"
-  },
-  "project-homeless-connect": {
-    "name": "Dự án Homeless Connect",
-    "description": "Dự án Kết nối người vô gia cư tổ chức các sự kiện và các dịch vụ liên tục kết nối những người vô gia cư với các nguồn lực thiết yếu vàCARE.",
-    "what_they_offer": "- Sự kiện tài nguyên comMunity lớn\n- Phối hợpCAREliên tục\n- Cắt tóc và vật dụng vệ sinh miễn phí\n- Giới thiệu y tế và nha khoaCARE- Dịch vụ pháp lý\n- Lập trường ghi danh phúc lợi aSSI- Điều hướng nhà ở",
-    "how_to_get_it": "1. Tham dự các sự kiện của Project Homeless Connect\n2. Truy cập trung tâm dịch vụ của họ để được hỗ trợ liên tục\n3. Truy cập các dịch vụ miễn phí mà không cần đặt lịch hẹn\n4. Kết nối với người quản lý hồ sơ\n5. Nhận giới thiệu về nhà ở và phúc lợi",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận dịch vụ"
   },
   "family-caregiver-alliance": {
     "name": "FamilyCAREgiver Alliance / Bay AreaCAREtrung tâm tài nguyên cho đi",
@@ -887,108 +591,12 @@
     "timeframe": "24/7",
     "link_text": "Nhận hỗ trợ"
   },
-  "la-casa-madres": {
-    "name": "La Casa de las Madres",
-    "description": "La Casa de las Madres cung cấp các dịch vụ hỗ trợ toàn diện cho các cá nhân và gia đình đang tìm kiếm sự an toàn, cung cấp đường dây khủng hoảng 24/7, nơi trú ẩn khẩn cấp, tư vấn, vận động pháp lý và các chương trình dành cho trẻ em trên khắp San Francisco.",
-    "what_they_offer": "- Hỗ trợ đường dây khủng hoảng 24/7\n- Dịch vụ nơi trú ẩn khẩn cấp\n- Tư vấn cá nhân và nhóm\n- Vận động pháp lý và đồng hành cùng tòa án\n- Các chương trình dành cho trẻ em và thanh thiếu niên\n- Nhà ở chuyển tiếp aSSIlập trường\n- Các chương trình trao quyền kinh tế\n- Hỗ trợ bằng tiếng Anh và tiếng Tây Ban Nha",
-    "how_to_get_it": "1. Gọi đường dây khủng hoảng 24 giờ:877-503-18502. Đường dây khủng hoảng dành cho thanh thiếu niên:877-923-07003. Dòng văn bản:415-200-35754. Nói chuyện với người ủng hộ được đào tạo\n5. Nhận hỗ trợ lập kế hoạch an toàn\n6. Tiếp cận nơi trú ẩn và dịch vụ khi cần thiết",
-    "timeframe": "24/7",
-    "link_text": "Nhận trợ giúp"
-  },
-  "woman-inc-sf": {
-    "name": "W.O.M.A.N., Inc.",
-    "description": "W.O.M.A.N., Inc. đã phục vụ Khu vực Vịnh San Francisco từ năm 1978, cung cấp các dịch vụ can thiệp, tư vấn, vận động và hỗ trợ khủng hoảng cho những cá nhân gặp phải tình huống gia đình không an toàn.",
-    "what_they_offer": "- Đường dây khủng hoảng 24 giờ\n- Tư vấn cá nhân seSSIons\n- Nhóm hỗ trợ\n- Vận động pháp lý\n- Lập kế hoạch an toàn\n- Chương trình Latinx với nhân viên nói tiếng Tây Ban Nha\n- ComMunity giáo dục\n- Giới thiệu đến các nguồn lực",
-    "how_to_get_it": "1. Gọi đường dây khủng hoảng:415-864-47222. Đối với chương trình Latinx:415-969-68113. Email cho các cuộc hẹn\n4. Giờ đi bộ aVAkhông thể\n5. Tất cả các dịch vụ được bảo mật\n6. Không cần bảo hiểm",
-    "timeframe": "Đường dây khủng hoảng 24/7",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "safe-place-oakland": {
-    "name": "Một Nơi An Toàn",
-    "description": "Nơi an toàn cung cấp các dịch vụ hỗ trợ toàn diện bao gồm nơi trú ẩn khẩn cấp, vận động pháp lý, tư vấn và giáo dục cho các cá nhân và gia đình ở Vịnh Đông đang tìm kiếm sự an toàn.",
-    "what_they_offer": "- Đường dây nóng khủng hoảng 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Vận động pháp lý và hỗ trợ tòa án\n- Tư vấn cá nhân và nhóm\n- Dịch vụ dành cho trẻ em\n- Nhà ở chuyển tiếp\n- ComMunity tiếp cận và giáo dục\n- Hỗ trợ bằng nhiều ngôn ngữ",
-    "how_to_get_it": "1. Gọi đến hotline 24/24:510-536-72332. Nói chuyện với người ủng hộ được đào tạo\n3. Nhận kế hoạch an toàn\n4. Truy cập nơi trú ẩn nếu cần\n5. Kết nối với các dịch vụ đang diễn ra\n6. Tất cả các dịch vụ miễn phí và bảo mật",
-    "timeframe": "24/7",
-    "link_text": "Nhận trợ giúp"
-  },
-  "building-futures-alameda": {
-    "name": "Xây dựng tương lai",
-    "description": "Building Futures cung cấp nơi trú ẩn, dịch vụ hỗ trợ và con đường ổn định cho các cá nhân và gia đình ở Quận Alameda đang phải đối mặt với tình trạng vô gia cư hoặc tình huống gia đình không an toàn.",
-    "what_they_offer": "- Đường dây khủng hoảng 24 giờ\n- Nơi trú ẩn khẩn cấp tại Sister Me Home\n- Tư vấn miễn phí seSSIons\n- Đi cùng tòa án\n- Chương trình dành cho trẻ em\n- Điều hướng nhà ở\n- Nhóm hỗ tr��\n- Dịch vụ bằng tiếng Anh và tiếng Tây Ban Nha",
-    "how_to_get_it": "1. Gọi đường dây khủng hoảng:1-866-292-96882. Nói chuyện với người ủng hộ\n3. Hoàn thành đánh giá đầu vào\n4. Truy cập nơi trú ẩn khẩn cấp\n5. Nhận quản lý hồ sơ liên tục\n6. Làm việc hướng tới nhà ở lâu dài",
-    "timeframe": "24/7",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "stand-contra-costa": {
-    "name": "ĐỨNG! Dành cho gia đình không có bạo lực",
-    "description": "ĐỨNG! cung cấp các dịch vụ an toàn gia đình toàn diện trên khắp Quận Contra Costa, bao gồm can thiệp khủng hoảng, nơi trú ẩn khẩn cấp, tư vấn, dịch vụ pháp lý và giáo dục phòng ngừa.",
-    "what_they_offer": "- Đường dây khủng hoảng 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Tư vấn cá nhân và gia đình\n- Vận động pháp lý\n- Nhóm hỗ trợ\n- Dịch vụ thanh thiếu niên\n- Giáo dục phòng ngừa\n- Chương trình can thiệp người đánh đập được chứng nhận",
-    "how_to_get_it": "1. Gọi đường dây 24 giờ:888-215-55552. Hoặc nhắn tin:925-956-80373. Nói chuyện với người ủng hộ được đào tạo\n4. Nhận kế hoạch an toàn\n5. Tiếp cận nơi trú ẩn và dịch vụ\n6. Tất cả các dịch vụ được bảo mật",
-    "timeframe": "24/7",
-    "link_text": "Nhận trợ giúp"
-  },
-  "cora-san-mateo": {
-    "name": "CORA (ComMunity Vượt qua Lạm dụng Mối quan hệ)",
-    "description": "CORA phục vụ Quận San Mateo với các dịch vụ hỗ trợ toàn diện bao gồm đường dây nóng 24 giờ, nơi trú ẩn khẩn cấp, tư vấn, dịch vụ pháp lý và các chương trình giáo dục của com[[DNT21]ty.",
-    "what_they_offer": "- Đường dây nóng khủng hoảng 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Tư vấn cá nhân và nhóm\n- Trợ giúp vận động pháp lý và lệnh cấm\n- Tư vấn trẻ em\n- Nhà ở chuyển tiếp\n- Hỗ trợ bằng nhiều ngôn ngữ\n- ComMunity giáo dục",
-    "how_to_get_it": "1. Gọi hotline:800-300-10802. Nói chuyện với người ủng hộ được đào tạo\n3. Cùng nhau lập kế hoạch an toàn\n4. Truy cập nơi trú ẩn nếu cần\n5. Kết nối với tư vấn\n6. Nhận hỗ trợ pháp lý",
-    "timeframe": "24/7",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "next-door-santa-clara": {
-    "name": "Giải pháp Next Door",
-    "description": "Next Door Solutions cung cấp các dịch vụ hỗ trợ toàn diện ở Hạt Santa Clara bao gồm can thiệp khủng hoảng, nơi trú ẩn khẩn cấp, tư vấn, trợ giúp pháp lý và các chương trình trao quyền kinh tế.",
-    "what_they_offer": "- Đường dây nóng khủng hoảng 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Dịch vụ tư vấn\n- Vận động pháp lý\n- Dịch vụ dành cho trẻ em\n- Trao quyền kinh tế\n- Nhóm hỗ trợ\n- Dịch vụ đa ngôn ngữ",
-    "how_to_get_it": "1. Gọi đường dây khủng hoảng:408-279-29622. Nói chuyện với người ủng hộ\n3. Nhận kế hoạch an toàn\n4. Tiếp cận nơi trú ẩn và dịch vụ\n5. Kết nối với bộ phận hỗ trợ liên tục\n6. Tất cả các dịch vụ miễn phí và bảo mật",
-    "timeframe": "24/7",
-    "link_text": "Nhận trợ giúp"
-  },
-  "narika-south-asian": {
-    "name": "Narika",
-    "description": "Narika cung cấp các dịch vụ hỗ trợ cụ thể về văn hóa cho các cá nhân và gia đình Nam Á, cung cấp đường dây trợ giúp bí mật, quản lý hồ sơ, vận động pháp lý và các nhóm hỗ trợ bằng nhiều ngôn ngữ Nam Á.",
-    "what_they_offer": "- Đường dây trợ giúp bảo mật\n- Quản lý hồ sơ\n- Vận động pháp lý\n- Nhóm hỗ trợ\n- Nhập cư aSSIlập trường\n- Hỗ trợ nhà ở\n- Dịch vụ bằng tiếng Hindi, tiếng Urdu, tiếng Punjabi, tiếng Bengali, tiếng Tamil, v.v.\n- Cách tiếp cận nhạy cảm về văn hóa",
-    "how_to_get_it": "1. Gọi đường dây trợ giúp:800-215-73082. Hoặc email: narika@narika.org\n3. Nói chuyện với người ủng hộ được đào tạo\n4. Dịch vụ bằng ngôn ngữ của bạn\n5. Nhận hỗ trợ nhạy cảm về văn hóa\n6. Truy cập tài nguyên và giới thiệu",
-    "timeframe": "Đang diễn ra",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "asian-womens-shelter": {
-    "name": "Nơi trú ẩn dành cho phụ nữ châu Á",
-    "description": "Asian Women's Shelter cung cấp các dịch vụ toàn diện, đa ngôn ngữ bao gồm nơi trú ẩn khẩn cấp, tư vấn, vận động pháp lý và các chương trình hỗ trợ phục vụ các cộng đồngMunicủa người Châu Á và Đảo Th��i Bình Dương trên khắp Vùng Vịnh.",
-    "what_they_offer": "- Đường dây khủng hoảng đa ngôn ngữ 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Dịch vụ tư vấn\n- Vận động pháp lý\n- Quản lý hồ sơ\n- Chương trình dành cho trẻ em\n- Hỗ trợ 40+ ngôn ngữ châu Á\n- Nhập cư aSSIlập trường",
-    "how_to_get_it": "1. Gọi đường dây khủng hoảng:877-751-08802. Các dịch vụ bằng ngôn ngữ của bạn aVAilable\n3. Nói chuyện với người ủng hộ được đào tạo\n4. Nhận kế hoạch an toàn\n5. Tiếp cận nơi trú ẩn và dịch vụ\n6. Tất cả các dịch vụ được bảo mật",
-    "timeframe": "24/7",
-    "link_text": "Nhận trợ giúp"
-  },
-  "maitri-south-bay": {
-    "name": "Tiếng Maitri",
-    "description": "Maitri phục vụ các gia đình Nam Á ở Vùng Vịnh, cung cấp các dịch vụ hỗ trợ cụ thể về văn hóa bao gồm đường dây trợ giúp, nơi trú ẩn khẩn cấp, tư vấn và lập trường pháp lý bằng nhiều ngôn ngữ.",
-    "what_they_offer": "- Đường dây trợ giúp 24 giờ\n- Nơi trú ẩn khẩn cấp\n- Quản lý hồ sơ\n- Vận động pháp lý\n- Dịch vụ tư vấn\n- Nhóm hỗ trợ\n- Nhập cư aSSIlập trường\n- Dịch vụ bằng tiếng Hindi, Gujarati, Tamil, v.v.",
-    "how_to_get_it": "1. Gọi đường dây trợ giúp:888-862-48742. Dịch vụ bằng ngôn ngữ của bạn\n3. Nói chuyện với người ủng hộ được đào tạo\n4. Nhận hỗ trợ bảo mật\n5. Truy cập nơi trú ẩn nếu cần\n6. Kết nối với các dịch vụ đang diễn ra",
-    "timeframe": "24/7",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "family-justice-center-alameda": {
-    "name": "Trung tâm Tư pháp Gia đình Quận Alameda",
-    "description": "Trung tâm Tư pháp Gia đình Quận Alameda tập hợp nhiều cơ quan dưới một mái nhà để cung cấp các dịch vụ toàn diện bao gồm trợ giúp pháp lý, tư vấn, vận động nạn nhân và hỗ trợ cho các gia đình đang tìm kiếm sự an toàn.",
-    "what_they_offer": "- Trung tâm dịch vụ một cửa\n- Lập trường pháp lý aSSI- Vận động nạn nhân\n- Dịch vụ tư vấn\n- Trợ giúp lệnh cách ly\n- Nhập cư aSSIlập trường\n- Dịch vụ dành cho trẻ em\n- Nhiều đại lý ở một địa điểm",
-    "how_to_get_it": "1. Gọi:510-267-88002. Chào đón đi bộ trong giờ làm việc\n3. Khuyến nghị đặt lịch hẹn nhưng không bắt buộc\n4. Truy cập nhiều dịch vụ trong một lần truy cập\n5. Tất cả các dịch vụ miễn phí và bảo mật\n6. Giải thích aVAilable",
-    "timeframe": "Thứ Hai-Thứ Sáu 8:30 sáng - 5 giờ chiều",
-    "link_text": "Nhận trợ giúp"
-  },
   "ywca-silicon-valley": {
     "name": "Silicon YWCAVAlley",
     "description": "YWCA SiliconVAlley cung cấp các dịch vụ hỗ trợ bao gồm nơi trú ẩn khẩn cấp, nhà ở chuyển tiếp, tư vấn và vận động cho các cá nhân và gia đình ở Hạt Santa Clara.",
     "what_they_offer": "- Nơi trú ẩn khẩn cấp\n- Nhà ở chuyển tiếp\n- Dịch vụ tư vấn\n- Vận động pháp lý\n- Nhóm hỗ trợ\n- Chương trình dành cho trẻ em\n- Trao quyền kinh tế\n- ComMunity giáo dục",
     "how_to_get_it": "1. Gọi cho San Jose:408-295-40112. Hoặc nắngVAle:408-749-07933. Nói chuyện với điều phối viên tiếp nhận\n4. Hoàn thành đánh giá\n5. Tiếp cận nơi trú ẩn và dịch vụ\n6. Nhận hỗ trợ liên tục",
     "timeframe": "Đang diễn ra",
-    "link_text": "Nhận hỗ trợ"
-  },
-  "love-is-respect": {
-    "name": "Tình yêu là sự tôn trọng",
-    "description": "Love Is Respect cung cấp hỗ trợ cho những người trẻ tuổi từ 13-26 điều hướng các mối quan hệ, cung cấp đường dây trợ giúp 24/7, hỗ trợ bằng văn bản và trò chuyện trực tuyến với những người ủng hộ đồng đẳng được đào tạo.",
-    "what_they_offer": "- Hỗ trợ qua điện thoại 24/7\n- Hỗ trợ văn bản (nhắn tin LOVEIS gửi 22522)\n- Trò chuyện trực tuyến\n- Những người ủng hộ đồng đẳng từ 18-26 tuổi\n- Giáo dục mối quan hệ\n- Lập kế hoạch an toàn\n- Giới thiệu nguồn lực địa phương\n- Hỗ trợ cho mọi giới tính",
-    "how_to_get_it": "1. Gọi:1-866-331-94742. Nhắn tin LOVEIS gửi 22522\n3. Trò chuyện trực tuyến tại loveisrespect.org\n4. Những người ủng hộ ngang hàng aVAilable 24/7\n5. Bảo mật và không phán xét\n6. Không có câu hỏi nào quá nhỏ",
-    "timeframe": "24/7",
     "link_text": "Nhận hỗ trợ"
   },
   "calvet-college-fee-waiver": {
@@ -5620,5 +5228,229 @@
     "how_to_get_it": "1. Hoàn thành ứng dụng RTC / Clipper Access tại clippercard.com\n2. Cung cấp bằng chứng khuyết tật (thẻMedicare, tài liệuSSI/SSDIhoặc chứng nhận y tế)\n3. Gửi đơn đăng ký trực tuyến hoặc qua đường bưu điện\n4. Sau khi được phê duyệt, hãy nhận thẻ Clipper Access qua đường bưu điện\n5. Nạp tiền mặtVAlue và đi xe với chiết khấu tự động",
     "timeframe": "Đang diễn ra",
     "link_text": "Đăng ký quyền truy cập Clipper"
+  },
+  "headspace-teachers-free": {
+    "name": "Headspace dành cho nhà giáo dục",
+    "description": "Headspace cung cấp quyền truy cập miễn phí cho giáo viên K-12 ở Hoa Kỳ, cung cấp các bài tập thiền, ngủ và chánh niệm để hỗ trợ sức khỏe của nhà giáo dục.",
+    "what_they_offer": "- Đăng ký Headspace miễn phí cho giáo viên K-12\n- Thiền có hướng dẫn\n- Âm thanh giấc ngủ và bài tập\n- Công cụ giảm căng thẳng và lo lắng\n- Tập trung âm nhạc và bài tập\n- Thông thường $69.99/nămVAlue",
+    "how_to_get_it": "1. Ghé thăm headspace.com/educators\n2. Xác minh tình trạng giáo viên K-12 thông qua SheerID\n3. Tạo tài khoản Headspace miễn phí\n4. Truy cập nội dung cao cấp đầy đủ\n5. Phải được tuyển dụng tích cực là nhà giáo dục K-12 tại Hoa Kỳ",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận quyền truy cập miễn phí"
+  },
+  "cal-grant": {
+    "name": "Cal Grant",
+    "description": "Cal Grants là tiền miễn phí từ tiểu bang California để giúp sinh viên đủ điều kiện trả học phí và lệ phí đại học tại các trường cao đẳng và đại học California.",
+    "what_they_offer": "- Cal Grant A: Bao gồm học phí/lệ phí tại các trường cao đẳng UC, CSU hoặc priVAte (lên đến $12,570)\n- Cal Grant B: Trợ cấp sinh hoạt cộng với học phí cho sinh viên có thu nhập thấp\n- Cal Grant C: Tài trợ đào tạo kỹ thuật dạy nghề/CAREer\n- Có thể gia hạn lên đến 4 năm\n- Không yêu cầu hoàn trả (không phải khoản vay)",
+    "how_to_get_it": "1. Hoàn thành Đơn đăng ký FAFSA hoặc Đạo luật Ước mơ California trước hạn chót ngày 2 tháng Ba\n2. Gửi điểm trung bình đã xác minh cho Ủy ban Hỗ trợ Sinh viên CaliforniaSSItrên\n3. Phải là cư dân California ít nhất 1 năm\n4. Phải theo học trường cao đẳng California đủ điều kiện\n5. Phải đáp ứng các yêu cầu về thu nhập và tài sản\n6. Phải duy trì tiến độ học tập đạt yêu cầu",
+    "timeframe": "Hàng năm (áp dụng trước ngày 2 tháng 3)",
+    "link_text": "Đăng ký ngay"
+  },
+  "fafsa-help": {
+    "name": "Trợ giúp FAFSA miễn phí",
+    "description": "Trợ giúp miễn phí để hoàn thành FAFSA (Đơn xin Hỗ trợ Sinh viên Liên bang Miễn phí) là mộtVAcó thể thông qua các hội thảo Tiền mặt cho Đại học California và các chương trình khác.",
+    "what_they_offer": "- Hội thảo hoàn thành FAFSA trực tiếp miễn phí\n- Trợ giúp với Đơn đăng ký Đạo luật Ước mơ California\n- Lập trường trực tiếp với các biểu mẫu hỗ trợ tài chính\n- Các tùy chọn ảo và trực tiếp aVAilable\n- Song ngữ aSSIở nhiều địa điểm\n- Giúp hiểu các giải thưởng hỗ trợ tài chính",
+    "how_to_get_it": "1. Tìm hội thảo Cash for College gần bạn\n2. Mang theo các giấy tờ cần thiết (tờ khai thuế, số An sinh xã hội, v.v.)\n3. Làm việc với các tình nguyện viên được đào tạo để hoàn thành FAFSA\n4. Nhận trợ giúp để hiểu các bước tiếp theo\n5. Hội thảo được tổ chức tại trường học, thư viện, trung tâm",
+    "timeframe": "Tháng Mười - Tháng Ba (FAFSA mở cửa vào ngày 1 tháng Mười)",
+    "link_text": "Tìm một hội thảo"
+  },
+  "pell-grant": {
+    "name": "Trợ cấp Pell Liên bang",
+    "description": "Federal Pell Grant cung cấp tiền miễn phí cho sinh viên đại học có nhu cầu tài chính. Không giống như các khoản vay, Pell Grants không cần phải hoàn trả.",
+    "what_they_offer": "- Lên đến $ 7,395 mỗi năm (2024-2025)\n- Miễn phí tiền - không cần hoàn trả\n- Có thể được sử dụng cho học phí, lệ phí, sách vở và chi phí sinh hoạt\n- AVAilable ở hầu hết các trường cao đẳng và đại học\n- Có thể kết hợp với các hỗ trợ tài chính khác",
+    "how_to_get_it": "1. Hoàn thành FAFSA tại studentaid.gov\n2. Phải chứng minh nhu cầu tài chính (dựa trên EFC)\n3. Phải theo học bằng đại học\n4. Phải đăng ký ít nhất nửa thời gian\n5. Phải là công dân Hoa Kỳ hoặc người không phải là công dân đủ điều kiện\n6. Số tiền phụ thuộc vào nhu cầu tài chính, chi phí tham dự và tình trạng ghi danh",
+    "timeframe": "Hàng năm (gia hạn FAFSA mỗi năm)",
+    "link_text": "Tìm hiểu thêm"
+  },
+  "head-start-bay-area": {
+    "name": "Bắt đầu / Bắt đầu sớm",
+    "description": "Head Start cung cấp các dịch vụ giáo dục mầm non, sức khỏe, dinh dưỡng và hỗ trợ gia đình miễn phí cho trẻ em từ các gia đình có thu nhập thấp từ sơ sinh đến 5 tuổi.",
+    "what_they_offer": "- Giáo dục mầm non miễn phí cho trẻ 3-5 tuổi\n- Bắt đầu sớm cho trẻ sơ sinh và trẻ mới biết đi (0-3)\n- Khám sức khỏe và phát triển\n- Bữa ăn bổ dưỡng và đồ ăn nhẹ\n- Dịch vụ hỗ trợ gia đình và sự tham gia của phụ huynh\n- Dịch vụ người khuyết tật và hỗ trợ hòa nhập\n- Tùy chọn cả ngày và bán ngày aVAkhông thể",
+    "how_to_get_it": "1. Thu nhập phải bằng hoặc thấp hơn hướng dẫn về nghèo đói của liên bang\n2. Hoặc trẻ em đang được nuôi dưỡngCARE, vô gia cư hoặc nhận được lập trường công khai\n3. Liên hệ với đại lý Head Start tại địa phương để đăng ký\n4. Hoàn thành đơn đăng ký và cung cấp tài liệu thu nhập\n5. Trẻ em được ưu tiên dựa trên nhu cầu",
+    "timeframe": "Năm học (đơn đăng ký được chấp nhận quanh năm)",
+    "link_text": "Tìm một chương trình"
+  },
+  "ca-state-preschool": {
+    "name": "Chương trình Mầm non Tiểu bang California (CSPP)",
+    "description": "Chương trình Mầm non Tiểu bang California cung cấp trường mầm non miễn phí hoặc chi phí thấp cho trẻ 3 và 4 tuổi đủ điều kiện thu nhập để chuẩn bị cho chúng đi học mẫu giáo.",
+    "what_they_offer": "- Trường mầm non miễn phí cho trẻ đủ điều kiện (3-4 tuổi)\n- Các chương trình bán ngày và cả ngày aVAilable\n- Chương trình giảng dạy phù hợp với sự phát triển\n- Bữa ăn bổ dưỡng và đồ ăn nhẹ\n- Cơ hội tham gia của phụ huynh\n- Hỗ trợ chuyển tiếp lên mẫu giáo",
+    "how_to_get_it": "1. Phải đáp ứng đủ điều kiện thu nhập (thường dưới 85% Thu nhập Trung bình của Tiểu bang)\n2. Trẻ em phải từ 3 hoặc 4 tuổi\n3. Các chương trình aVAcó thể áp dụng tại các khu học chánh và các tổ chức comMunity\n4. Liên hệ với khu học chánh địa phương hoặc cơ quan giới thiệu và nguồn lực\n5. Hoàn thành đơn đăng ký và xác minh thu nhập",
+    "timeframe": "Năm học",
+    "link_text": "Tìm một chương trình"
+  },
+  "adult-school-sf": {
+    "name": "Giáo dục Người lớn của Cao đẳng Thành phố San Francisco",
+    "description": "City College of San Francisco cung cấp các lớp giáo dục người lớn miễn phí bao gồm luyện thi GED, ESL, quốc tịch và đào tạoCAREer.",
+    "what_they_offer": "- Miễn phí chuẩn bị GED và bằng tốt nghiệp trung học\n- Các lớp học ESL (tiếng Anh như ngôn ngữ thứ hai) miễn phí\n- Chuẩn bị nhập quốc tịch Hoa Kỳ\n- Kỹ năng cơ bản và khả năng đọc viết\n-CAREer và giáo dục kỹ thuật\n- Lớp học tin học\n- Nhiều địa điểm trên khắp San Francisco",
+    "how_to_get_it": "1. Truy cập trang web CCSF hoặc trung tâm giáo dục người lớn\n2. Làm bài kiểm tra xếp lớp nếu được yêu cầu\n3. Đăng ký lớp học\n4. Các lớp học miễn phí cho cư dân California\n5. Lịch trình linh hoạt bao gồm các tùy chọn buổi tối và cuối tuần",
+    "timeframe": "Đang diễn ra (dựa trên học kỳ)",
+    "link_text": "Đăng ký ngay"
+  },
+  "alameda-adult-school": {
+    "name": "Giáo dục dành cho người lớn Oakland &CAREer",
+    "description": "Oakland Adult &CAREer Education cung cấp các lớp học miễn phí cho người lớn bao gồm luyện thi GED, ESL, bằng tốt nghiệp trung học và đào tạoCAREer.",
+    "what_they_offer": "- Các chương trình GED và bằng tốt nghiệp trung học phổ thông miễn phí\n- ESL (Tiếng Anh như ngôn ngữ thứ hai) ở tất cả các cấp độ\n-CAREer giáo dục kỹ thuật\n- Lớp học kỹ thuật số và máy tính\n- Chuẩn bị quốc tịch\n- Lớp giáo dục phụ huynh",
+    "how_to_get_it": "1. Ghé thăm trung tâm giáo dục Oakland Adult &CAREer\n2. Hoàn thành đăng ký và đánh giá\n3. Ghi danh vào các lớp học phù hợp\n4. Các lớp học miễn phí cho người lớn đủ điều kiện",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Đăng ký ngay"
+  },
+  "smc-adult-education": {
+    "name": "San Mateo Adult & ComMunity Giáo dục",
+    "description": "San Mateo Adult & ComMunity Education cung cấp các lớp học miễn phí và chi phí thấp cho người lớn bao gồm ESL, luyện thi GED, quyền công dân và các kỹ năngCAREer.",
+    "what_they_offer": "- Các lớp ESL ở tất cả các cấp độ (miễn phí)\n- Chuẩn bị cho GED và trung học phổ thông\n- Các lớp học Quốc tịch Hoa Kỳ\n-CAREer giáo dục kỹ thuật\n- Kiến thức về máy tính và kỹ thuật số\n- Giáo dục phụ huynh",
+    "how_to_get_it": "1. Ghé thăm Trường Người lớn San Mateo\n2. Hoàn tất đăng ký\n3. Làm bài kiểm tra xếp lớp cho ESL nếu cần\n4. Ghi danh vào các lớp học",
+    "timeframe": "Đang diễn ra (dựa trên học kỳ)",
+    "link_text": "Đăng ký ngay"
+  },
+  "scusd-adult-education": {
+    "name": "Giáo dục người lớn San Jose",
+    "description": "Giáo dục Người lớn của Học khu Thống nhất San Jose cung cấp các lớp học miễn phí cho người lớn bao gồm đào tạo ESL, GED, quyền công dân vàCAREer.",
+    "what_they_offer": "- Các lớp học ESL miễn phí ở tất cả các cấp độ\n- Chuẩn bị GED và bằng tốt nghiệp trung học phổ thông\n- Chuẩn bị quốc tịch\n-CAREer và giáo dục kỹ thuật\n- Lớp học kỹ thuật số\n- Giáo dục phụ huynh",
+    "how_to_get_it": "1. Ghé thăm trung tâm Giáo dục Người lớn San Jose\n2. Hoàn tất đăng ký\n3. Đánh giá xếp lớp\n4. Ghi danh vào các lớp học thích hợp",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Đăng ký ngay"
+  },
+  "khan-academy": {
+    "name": "Học viện Khan",
+    "description": "Khan Academy cung cấp giáo dục trực tuyến miễn phí với các bài học video và bài tập thực hành bao gồm toán, khoa học, nhân văn, luyện thi SAT, v.v.",
+    "what_they_offer": "- Bài học video miễn phí về hàng nghìn chủ đề\n- Thực hành các bài tập với phản hồi tức thì\n- Bảng điều khiển học tập được cá nhân hóa\n- SAT, LSAT và luyện thi khác (quan hệ đối tác SAT chính thức)\n- K-12 toán, khoa học và nhân văn\n- Chuẩn bị khóa học AP\n- Các khóa học trình độ cao đẳng",
+    "how_to_get_it": "1. Ghé thăm khanacademy.org\n2. Tạo tài khoản miễn phí\n3. Bắt đầu học theo tốc độ của riêng bạn\n4. Theo dõi tiến trình trên bảng điều khiển được cá nhân hóa\n5. AVAcó thể sử dụng trên web và ứng dụng di động",
+    "timeframe": "Luôn luôn có thể",
+    "link_text": "Bắt đầu học"
+  },
+  "free-library-tutoring": {
+    "name": "Các chương trình dạy kèm thư viện miễn phí",
+    "description": "Các thư viện công cộng của Vùng Vịnh cung cấp các chương trình trợ giúp dạy kèm và làm bài tập về nhà miễn phí cho học sinh ở mọi lứa tuổi, bao gồm các dịch vụ dạy kèm trực tuyến có thẻ thư viện.",
+    "what_they_offer": "- Dạy kèm trực tiếp miễn phí (trực tiếp và trực tuyến)\n- Trợ giúp làm bài tập về nhà trong tất cả các môn học\n- Hỗ trợ đọc và đọc viết\n- Dạy kèm toán\n- Tài nguyên luyện thi SAT / ACT\n- Dạy kèm trực tuyến th��ng qua Brainfuse hoặc Tutor.com (VAries của thư viện)",
+    "how_to_get_it": "1. Nhận thẻ thư viện miễn phí từ thư viện địa phương của bạn\n2. Kiểm tra trang web thư viện để biết các chương trình dạy kèm\n3. Nhiều thư viện cung cấp Brainfuse HelpNow hoặc dạy kèm trực tuyến tương tự\n4. Lịch dạy kèm trực tiếpVAtheo địa điểm\n5. Một số chương trình yêu cầu cuộc hẹn",
+    "timeframe": "Đang diễn ra (VAries theo thư viện)",
+    "link_text": "Tìm thư viện của bạn"
+  },
+  "trio-upward-bound": {
+    "name": "TRIO hướng lên",
+    "description": "TRIO Upward Bound giúp học sinh trung học từ các gia đình có thu nhập thấp và sinh viên đại học thế hệ đầu tiên chuẩn bị và thành công trong giáo dục đại học.",
+    "what_they_offer": "- Dạy kèm và hướng dẫn học tập\n- Tham quan và khám phá khuôn viên trường đại học\n- Luyện thi SAT / ACT\n- Hỗ trợ tài chính và hướng dẫn học bổng\n- Các chương trình mùa hè trong khuôn viên trường đại học\n- Cố vấn và tư vấn cá nhân\n- Trợ giúp nộp đơn vào đại học",
+    "how_to_get_it": "1. Phải học trung học phổ thông (thường là lớp 9-12)\n2. Phải là sinh viên đại học thế hệ đầu tiên có thu nhập thấp hoặc tiềm năng\n3. Các chương trình nằm tại các trường cao đẳng trên khắp Vùng Vịnh\n4. Liên hệ với chương trình Upward Bound tại địa phương để đăng ký\n5. Đơn đăng ký thường bao gồm phỏng vấn và đánh giá",
+    "timeframe": "Trong năm học và mùa hè",
+    "link_text": "Tìm một chương trình"
+  },
+  "eops": {
+    "name": "EOPS/CARE(Chương trình Cơ hội Mở rộng)",
+    "description": "EOPS cung cấp hỗ trợ học tập và tài chính cho sinh viên đại học có thu nhập thấp, trong khiCAREcung cấp hỗ trợ bổ sung cho các bậc cha mẹ đơn thân theo lập trường công cộng.",
+    "what_they_offer": "- Đăng ký ưu tiên\n- Đặt phiếu mua hàng và vật tư\n- Tư vấn học tập\n- Chuyển aSSIstance\n- Hỗ trợ tài trợ (ngoài các hỗ trợ tài chính khác)\n-CAREchương trình: trẻ emCAREaSSI, phiếu ăn uống, trợ cấp bổ sung cho cha mẹ đơn thân",
+    "how_to_get_it": "1. Phải đăng ký tại California ComMunity College\n2. Phải đáp ứng các yêu cầu về tính đủ điều kiện về thu nhập\n3. Phải được phân biệt về mặt giáo dụcVAntaged\n4. Phải đăng ký ít nhất 12 đơn vị\n5. Đăng ký thông qua văn phòng EOPS của trường đại học\n6.CARE: phải là cha mẹ đơn thân nhận CalWORKs/TANF",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Tìm trường đại học của bạn"
+  },
+  "school-meals-program": {
+    "name": "Bữa ăn miễn phí và giảm giá ở trường",
+    "description": "Các trường học ở California cung cấp bữa sáng và bữa trưa miễn phí cho những học sinh đủ điều kiện dựa trên thu nhập gia đình và nhiều học khu hiện cung cấp các bữa ăn miễn phí phổ quát cho tất cả học sinh.",
+    "what_they_offer": "- Bữa sáng và bữa trưa miễn phí hoặc giảm giá\n- Nhiều quận California hiện cung cấp bữa ăn miễn phí cho TẤT CẢ học sinh\n- Bữa ăn bổ dưỡng đáp ứng các tiêu chuẩn dinh dưỡng liên bang\n- AVAkhông thể sử dụng trong năm học\n- Một số học khu cung cấp các chương trình bữa ăn mùa hè",
+    "how_to_get_it": "1. Hoàn thành đơn đăng ký bữa ăn miễn phí / giảm giá thông qua trường học của bạn\n2. Thu nhập hộ gia đình phải bằng hoặc dưới 185% mức hộ nghèo để được giảm giá\n3. Thu nhập hộ gia đình bằng hoặc dưới 130% đối với bữa ăn miễn phí\n4. Trẻ em trongCalFresh, CalWORKs hoặc nuôi dưỡngCAREtự động đủ điều kiện\n5. Nhiều quận ở California cung cấp các bữa ăn miễn phí phổ quát bất kể thu nhập",
+    "timeframe": "Năm học",
+    "link_text": "Nộp đơn tại trường của bạn"
+  },
+  "summer-meals": {
+    "name": "Bữa ăn mùa hè cho trẻ em",
+    "description": "Các bữa ăn mùa hè miễn phí dành cho trẻ em và thanh thiếu niên từ 18 tuổi trở xuống tại trường học, công viên, thư viện và các địa điểm cộng đồng trên khắp Vùng Vịnh khi trường học nghỉ học.",
+    "what_they_offer": "- Bữa sáng và/hoặc bữa trưa miễn phí\n- Không cần đăng ký tại hầu hết các trang web\n- Không xác minh thu nhập\n- AVAcó thể sử dụng tại công viên, thư viện, trường học, trung tâm comMunity\n- Dành cho tất cả trẻ em từ 18 tuổi trở xuống",
+    "how_to_get_it": "1. Soạn tin \"FOOD\" gửi 304-304 để tìm các địa điểm lân cận\n2. Hoặc gọi2-1-1để biết địa điểm bữa ăn mùa hè\n3. Truy cập trang web CA Summer Meal Finder\n4. Chỉ cần xuất hiện - không cần giấy tờ\n5. Các trang web hoạt động trong suốt những tháng mùa hè",
+    "timeframe": "Những tháng mùa hè (Tháng Sáu-Tháng Tám)",
+    "link_text": "Tìm trang web"
+  },
+  "bay-area-legal-aid": {
+    "name": "Bay Area Legal Aid(BayLegal)",
+    "description": "Bay Area Legal Aidlà nhà cung cấp trợ giúp pháp lý dân sự lớn nhất ở Vùng Vịnh, cung cấp trợ giúp pháp lý miễn phí cho các cá nhân có thu nhập thấp về nhà ở, phúc lợi công cộng, sức khỏeCARE, người tiêu dùng và các vấn đề luật gia đình.",
+    "what_they_offer": "- Luật nhà ở (bảo vệ trục xuất, khả năng sinh sống,Section 8)\n- Phúc lợi công cộng (CalFresh,Medi-Cal, kháng cáo CalWORKs)\n- Các vấn đề về sức khỏe và bảo hiểm\n- Quyền của người tiêu dùng và các vấn đề dEBT- Lệnh hạn chế bạo lực gia đình\n- Nhập cư aSSIlập trường\n- Dịch vụ luật cao cấp",
+    "how_to_get_it": "1. Gọi đường dây tiếp nhận theo số800-551-55542. Hoặc đăng ký trực tuyến tại baylegal.org\n3. Phải đáp ứng đủ điều kiện thu nhập (thường là 200% FPL trở xuống)\n4. Hoàn thành việc tiếp nhận qua điện thoại hoặc trực tuyến\n5. Nếu đủ điều kiện, hãy nhận tư vấn pháp lý, dịch vụ tóm tắt hoặc đại diện",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "legal-aid-at-work": {
+    "name": "Trợ giúp pháp lý tại nơi làm việc",
+    "description": "Trợ giúp pháp lý tại nơi làm việc cung cấp các dịch vụ và nguồn lực pháp lý miễn phí cho người lao động gặp vấn đề về việc làm, bao gồm phân biệt đối xử, trộm cắp tiền lương và chấm dứt hợp đồng lao động sai trái.",
+    "what_they_offer": "- Phòng khám pháp lý miễn phí cho người lao động\n- Tư vấn và đại diện luật việc làm\n- Trợ giúp về khiếu nại phân biệt đối xử và quấy rối\n- Phục hồi trộm cắp tiền lương aSSIlập trường\n- Chỗ ở cho người khuyết tật và mang thai\n- Giáo dục quyền của người lao động\n- Tài nguyên Biết Quyền của Bạn bằng nhiều ngôn ngữ",
+    "how_to_get_it": "1. Gọi cho Phòng khám Quyền của Người lao động theo số415-864-82082. Hoặc tham dự một phòng khám pháp lý miễn phí (kiểm tra trang web để biết lịch trình)\n3. Dịch vụ aVAilable bất kể tình trạng nhập cư\n4. Hoàn thành việc tiếp nhận để xác định tính đủ điều kiện để đại diện\n5. Nhận tư vấn pháp lý, giới thiệu hoặc đại diện",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "centro-legal-de-la-raza": {
+    "name": "Centro Legal de la Raza",
+    "description": "Centro Legal de la Raza cung cấp các dịch vụ pháp lý song ngữ miễn phí cho các tổ chức có thu nhập thấp ở Vịnh Đông, chuyên về nhập cư, nhà ở và quyền của người lao động.",
+    "what_they_offer": "- Dịch vụ pháp lý nhập cư (đơn bảo lãnh gia đình, DACA, tị nạn, quốc tịch)\n- Quyền của người thuê nhà và bảo vệ trục xuất\n- Quyền của người lao động và yêu cầu tiền lương\n- ComMunity giáo dục và tiếp cận cộng đồng\n- Dịch vụ song ngữ (tiếng Anh/tiếng Tây Ban Nha)\n- Hội thảo Biết Quyền của Bạn",
+    "how_to_get_it": "1. Gọi510-437-1554để tiếp nhận\n2. Hoặc thăm khám trong giờ phòng khám không hẹn trước\n3. Phải đáp ứng các nguyên tắc về thu nhập\n4. Hoàn thành tuyển sinh và sàng lọc tính đủ điều kiện\n5. Nhận tư vấn hoặc đại diện pháp lý",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "asian-law-caucus": {
+    "name": "Cuộc họp kín luật châu Á",
+    "description": "Asian Law Caucus cung cấp các dịch vụ pháp lý miễn phí và vận động cho các mối quan hệ của người châu Á và Đảo Thái Bình Dương, tập trung vào nhập cư, quyền của người lao động và nhà ở.",
+    "what_they_offer": "- Dịch vụ pháp lý nhập cư (gia đình, tị nạn, DACA, quốc tịch)\n- Quyền của người lao động và phân biệt đối xử trong việc làm\n- Quyền về nhà ở và người thuê nhà\n- Vận động dân quyền\n- Dịch vụ tiếp cận ngôn ngữ\n- Hội thảo giáo dục ComMunity",
+    "how_to_get_it": "1. Gọi đường dây tiếp nhận theo số415-896-17012. Hoàn thành sàng lọc tính đủ điều kiện\n3. Dịch vụ ưu tiên cho thành viên API comMunity\n4. Phải đáp ứng các nguyên tắc về thu nhập cho hầu hết các dịch vụ\n5. Nhận tư vấn hoặc đại diện pháp lý",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "la-raza-centro-legal": {
+    "name": "La Raza Centro Pháp lý",
+    "description": "La Raza Centro Legal cung cấp các dịch vụ pháp lý miễn phí cho các cộng đồng người Latinh và nhập cư ở San Francisco, chuyên về nhập cư, nhà ở và quyền của người lao động.",
+    "what_they_offer": "- Dịch vụ pháp lý nhập cư (đơn bảo lãnh gia đình, DACA, tị nạn, quốc tịch)\n- Quyền của người thuê nhà và bảo vệ trục xuất\n- Quyền của người lao động và yêu cầu tiền lương\n- ComMunity giáo dục\n- Dịch vụ song ngữ (tiếng Anh/tiếng Tây Ban Nha)",
+    "how_to_get_it": "1. Gọi415-575-3500để tiếp nhận\n2. Phải đáp ứng các nguyên tắc về thu nhập\n3. Hoàn thành sàng lọc đầu vào\n4. Nhận tư vấn pháp lý hoặc đại diện",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "eviction-defense-collaborative": {
+    "name": "Hợp tác phòng thủ trục xuất",
+    "description": "Erigion Defense Collaborative cung cấp trợ giúp pháp lý miễn phí cho những người thuê nhà ở San Francisco đối mặt với việc bị trục xuất, cung cấp lập trườngSSItrong ngày tại tòa án.",
+    "what_they_offer": "- Tư vấn pháp lý miễn phí cho người thuê nhà bị trục xuất\n- Trợ giúp trong ngày tại Tòa án Tối cao SF\n- Giúp ứng phó với các vụ kiện giam giữ bất hợp pháp\n- Đàm phán với chủ nhà\n- Đại diện đầy đủ trong một số trường hợp\n- Giáo dục quyền của người thuê nhà",
+    "how_to_get_it": "1. Ghé thăm văn phòng EDC tại Tòa án Tối cao SF (Tòa án Trung tâm Hành chính)\n2. Hoặc gọi điện để đặt lịch hẹn\n3. Mang theo thông báo trục xuất của bạn và bất kỳ giấy tờ tòa án nào\n4. AVAcó thể áp dụng cho tất cả người thuê nhà bất kể thu nhập\n5. Giờ phòng khám không hẹn trước aVAilable",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
+  },
+  "tenants-union-sf": {
+    "name": "Liên minh người thuê nhà San Francisco",
+    "description": "Hiệp hội Người thuê nhà San Francisco cung cấp dịch vụ tư vấn, giáo dục và vận động cho người thuê nhà để giúp người thuê nhà hiểu và thực hiện các quyền của họ theo luật kiểm soát tiền thuê nhà SF.",
+    "what_they_offer": "- Tư vấn và tư vấn cho người thuê nhà (miễn phí cho thành viên)\n- Giúp hiểu luật kiểm soát tiền thuê nhà\n- Lập trường ASSIvới các khiếu nại về khả năng sinh sống\n- Hướng dẫn phòng vệ trục xuất\n- Hội thảo về quyền của người thuê nhà\n- Vận động cho các chính sách thân thiện với người thuê nhà",
+    "how_to_get_it": "1. Trở thành thành viên (thang trượt $ 50 / năm)\n2. Tham dự giờ tư vấn thả vào\n3. Gọi cho đường dây tư vấn để được tư vấn\n4. Tham dự hội thảo miễn phí về quyền của người thuê nhà\n5. Được giới thiệu đến các dịch vụ pháp lý nếu cần",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Tham gia/Nhận trợ giúp"
+  },
+  "court-self-help-sf": {
+    "name": "Trung tâm Tự trợ giúp của Tòa án Tối cao SF",
+    "description": "Trung tâm Tự trợ giúp của Tòa án Tối cao SF cung cấp thông tin pháp lý miễn phí và lập trườngSSIcho những người đại diện cho mình trong các vấn đề của tòa án.",
+    "what_they_offer": "- Trợ giúp miễn phí về các biểu mẫu và thủ tục của tòa án\n- Lập trườngSSIvới các vấn đề luật gia đình (ly hôn, quyền nuôi con, cấp dưỡng)\n- Trợ giúp với các lệnh cách ly\n- Tòa án khiếu nại nhỏ aSSIlập trường\n- Hướng dẫn trục xuất/giam giữ bất hợp pháp\n- Giới thiệu đến tổ chức trợ giúp pháp lý",
+    "how_to_get_it": "1. Ghé thăm Trung tâm Tự trợ giúp tại Tòa án Trung tâm Hành chính SF\n2. Hoặc gọi điện để biết thông tin\n3. Không cần đặt lịch hẹn cho nhiều dịch vụ\n4. Mang theo giấy tờ tòa án và thông tin vụ án của bạn\n5. Nhân viên không thể tư vấn pháp lý nhưng có thể giúp đỡ về các biểu mẫu và thủ tục",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Trung tâm truy cập"
+  },
+  "court-self-help-alameda": {
+    "name": "Trung tâm Tự trợ giúp của Tòa án Quận Alameda",
+    "description": "Trung tâm Tự trợ giúp của Thư viện Luật Quận Alameda cung cấp lập trường miễn phí cho những người đại diện cho mình trong các vấn đề của tòa án.",
+    "what_they_offer": "- Trợ giúp miễn phí về các biểu mẫu và thủ tục của tòa án\n- Luật gia đình aSSIlập trường (ly hôn, quyền nuôi con, cấp dưỡng)\n- Trợ giúp lệnh cách ly\n- Hướng dẫn khiếu nại nhỏ\n- Vấn đề chủ nhà-người thuê nhà\n- Giới thiệu đến các dịch vụ pháp lý",
+    "how_to_get_it": "1. Ghé thăm Trung tâm Tự trợ giúp tại Thư viện Luật Quận Alameda\n2. Hoặc truy cập các tài nguyên trực tuyến tại acgov.org/law\n3. Mang theo giấy tờ tòa án của bạn\n4. Nhân viên có thể trợ giúp về các biểu mẫu nhưng không thể tư vấn pháp lý",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Trung tâm truy cập"
+  },
+  "court-self-help-santa-clara": {
+    "name": "Trung tâm Tự trợ giúp Quận Santa Clara",
+    "description": "Trung tâm Tự trợ giúp Quận Santa Clara cung cấp lập trườngSSImiễn phí cho những người đại diện cho mình trong các vấn đề của tòa án.",
+    "what_they_offer": "- Trợ giúp miễn phí về các biểu mẫu và thủ tục của tòa án\n- Hội thảo luật gia đình (ly hôn, quyền nuôi con, hỗ trợ)\n- Lệnh cấm lập trường aSSI- Trợ giúp của tòa án khiếu nại nhỏ\n- Tài nguyên phòng thủ trục xuất\n- Hướng dẫn thu thập DEBT",
+    "how_to_get_it": "1. Ghé thăm Trung tâm Tự trợ giúp tại tòa án trung tâm thành phố San Jose\n2. Hoặc truy cập các tài nguyên trực tuyến và hội thảo ảo\n3. Kiểm tra trang web để biết lịch trình hội thảo\n4. Mang theo giấy tờ tòa án và thông tin vụ án của bạn",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Trung tâm truy cập"
+  },
+  "ilrc": {
+    "name": "Trung tâm Nguồn lực Pháp lý Nhập cư (ILRC)",
+    "description": "Trung tâm Nguồn lực Pháp lý Nhập cư cung cấp đào tạo pháp lý, nguồn lực và vận động để quảng báVAvề quyền của người nhập cư, với các nguồn lực miễn phí cho người nhập cư và các nhà cung cấp dịch vụ pháp lý.",
+    "what_they_offer": "- Tài nguyên Biết Quyền của Bạn bằng nhiều ngôn ngữ\n- Hướng dẫn và hướng dẫn pháp lý nhập cư\n- Đào tạo cho các nhà cung cấp dịch vụ pháp lý\n- Vận động chính sách cho quyền của người nhập cư\n- Thẻ đỏ vì khẳng định quyền\n- Tài nguyên giáo dục Com[[DNT21]ty",
+    "how_to_get_it": "1. Truy cập ilrc.org để biết tài nguyên miễn phí\n2. Tải xuống tài liệu Biết quyền của bạn\n3. Tìm nhà cung cấp dịch vụ pháp lý thông qua danh bạ của họ\n4. Truy cập hướng dẫn và hướng dẫn luật nhập cư\n5. Đặt Thẻ đỏ để phân phối comMunity",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Truy cập tài nguyên"
+  },
+  "catholic-charities-immigration": {
+    "name": "Dịch vụ nhập cư từ thiện Công giáo",
+    "description": "Tổ chức từ thiện Công giáo cung cấp các dịch vụ pháp lý nhập cư giá cả phải chăng trên khắp Vùng Vịnh, bao gồm trợ giúp về quốc tịch, thẻ xanh, tị nạn và đơn bảo lãnh gia đình.",
+    "what_they_offer": "- Đơn xin nhập quốc tịch và nhập tịch\n- Đơn xin và gia hạn thẻ xanh\n- Đơn bảo lãnh dựa trên gia đình\n- Đơn đăng ký và gia hạn DACA\n- Đơn xin tị nạn\n- Dịch vụ tái định cư cho người tị nạn\n- Tư vấn pháp lý chi phí thấp",
+    "how_to_get_it": "1. Gọi cho văn phòng từ thiện Công giáo địa phương của bạn\n2. Lên lịch tư vấn pháp luật\n3. Phí thang trượt dựa trên thu nhập\n4. Mang theo tất cả các giấy tờ nhập cảnh đến cuộc hẹn\n5. Nhận lập trườngSSIvới đơn đăng ký và đại diện",
+    "timeframe": "Đang diễn ra",
+    "link_text": "Nhận trợ giúp"
   }
 }

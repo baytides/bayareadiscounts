@@ -51,7 +51,7 @@
     "smartSearchTooltip": "智能搜索利用人工智能理解你的问题并找到相关的程序。关闭它以便进行简单的关键词匹配。",
     "noResults": "找不到符合你搜索的程序。",
     "browseAll": "浏览所有节目",
-    "trySearching": "尝试搜索：",
+    "trySearching": "热门搜索：",
     "orAskQuestion": "或者提出一个问题：",
     "resultsCount": "{count}程序{s}发现",
     "aiPowered": "人工智能驱动"

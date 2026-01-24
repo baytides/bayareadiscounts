@@ -51,7 +51,7 @@
     "smartSearchTooltip": "Gumagamit ang Smart Search ng AI upang maunawaan ang iyong tanong at makahanap ng mga programang releVAnt. I-off ito para sa simpleng pagtutugma ng keyword.",
     "noResults": "Walang natagpuang mga programa na tumutugma sa iyong paghahanap.",
     "browseAll": "Mag-browse sa Lahat ng Mga Programa",
-    "trySearching": "Subukang maghanap para sa:",
+    "trySearching": "Mga tanyag na paghahanap:",
     "orAskQuestion": "O magtanong:",
     "resultsCount": "{count}program{s}natagpuan",
     "aiPowered": "Pinapatakbo ng AI"

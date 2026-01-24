@@ -51,7 +51,7 @@
     "smartSearchTooltip": "Tìm kiếm thông minh sử dụng AI để hiểu câu hỏi của bạn và tìm các chương trình liên quan. Tắt tính năng này để khớp từ khóa đơn giản.",
     "noResults": "Không tìm thấy chương trình nào phù hợp với tìm kiếm của bạn.",
     "browseAll": "Duyệt qua tất cả các chương trình",
-    "trySearching": "Thử tìm kiếm:",
+    "trySearching": "Tìm kiếm phổ biến:",
     "orAskQuestion": "Hoặc đặt một câu hỏi:",
     "resultsCount": "Tìm thấy chương trình{count}{s}",
     "aiPowered": "Hỗ trợ AI"

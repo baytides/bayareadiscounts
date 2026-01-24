@@ -59,7 +59,7 @@ export const ui: TranslationData = {
       'Smart Search uses AI to understand your question and find relevant programs. Turn it off for simple keyword matching.',
     noResults: 'No programs found matching your search.',
     browseAll: 'Browse All Programs',
-    trySearching: 'Try searching for:',
+    trySearching: 'Popular searches:',
     orAskQuestion: 'Or ask a question:',
     resultsCount: '{count} program{s} found',
     aiPowered: 'AI-powered',
