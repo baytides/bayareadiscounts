@@ -550,7 +550,7 @@ export const OLLAMA_CONFIG = {
     fastly: 'https://arguably-unique-hippo.global.ssl.fastly.net/api/chat',
     azure: 'https://baynavigator-bacwcda5f8csa3as.z02.azurefd.net/api/chat',
   },
-  // SmolLM3-3B: Fast 3B model for Carl (~3x faster than 8B)
-  // llama3.1:8b-instruct-q8_0 still available on server for other uses
-  model: 'alibayram/smollm3',
+  // Qwen2.5-0.5B: Ultra-fast 0.5B model for Carl (~1.5s responses)
+  // Other models on server: alibayram/smollm3, llama3.1:8b-instruct-q8_0
+  model: 'qwen2.5:0.5b',
 };
