@@ -1738,6 +1738,95 @@ const modelName = OLLAMA_CONFIG.model;
     };
   }
 
+  // Detect if a message is primarily just a location response (not a help request)
+  // Returns true if we should skip showing program cards
+  function isLocationOnlyMessage(text, hadLocationBefore) {
+    const lower = text.toLowerCase().trim();
+    const words = lower.split(/\s+/).filter((w) => w.length > 0);
+
+    // Very short messages that are just locations
+    if (words.length <= 3) {
+      // ZIP code only
+      if (/^\d{5}$/.test(lower.replace(/\s/g, ''))) return true;
+      // City name only (check if it matches known cities)
+      const cityPatterns = [
+        'oakland',
+        'berkeley',
+        'fremont',
+        'hayward',
+        'san jose',
+        'sunnyvale',
+        'sf',
+        'san francisco',
+        'daly city',
+        'richmond',
+        'concord',
+        'vallejo',
+        'santa rosa',
+        'palo alto',
+        'mountain view',
+        'redwood city',
+        'san mateo',
+        'walnut creek',
+        'pleasanton',
+        'livermore',
+        'san rafael',
+        'napa',
+        'petaluma',
+      ];
+      if (cityPatterns.some((city) => lower === city || lower === city.replace(' ', '')))
+        return true;
+    }
+
+    // Messages like "I'm in Oakland" or "Oakland 94612" - location + filler only
+    const locationFillers = [
+      'i am in',
+      "i'm in",
+      'im in',
+      'i live in',
+      'my zip is',
+      'zip code is',
+      'in',
+    ];
+    const stripped = locationFillers.reduce((s, f) => s.replace(f, ''), lower).trim();
+    if (/^[\w\s]+\s*\d{0,5}$/.test(stripped) && stripped.length < 25) return true;
+
+    // Check for actual help request keywords (if present, show programs)
+    const helpKeywords = [
+      'help',
+      'need',
+      'looking for',
+      'find',
+      'where',
+      'how',
+      'what',
+      'can i',
+      'food',
+      'housing',
+      'rent',
+      'medical',
+      'health',
+      'bill',
+      'utility',
+      'job',
+      'assistance',
+      'program',
+      'benefit',
+      'apply',
+      'qualify',
+      'eligible',
+    ];
+    const hasHelpIntent = helpKeywords.some((kw) => lower.includes(kw));
+
+    // If they had no location before and this message has a location,
+    // it's likely just answering Carl's location question
+    if (!hadLocationBefore && !hasHelpIntent) {
+      return true;
+    }
+
+    return false;
+  }
+
   // Search programs for RAG - enhanced keyword matching with better relevance
   // excludeShown: if true, exclude programs already shown in this conversation
   async function searchPrograms(query, location = null, excludeShown = false) {
@@ -2544,11 +2633,17 @@ const modelName = OLLAMA_CONFIG.model;
     addMessage(message, 'user');
     input.value = '';
 
+    // Track if we already had a location before this message
+    const hadLocationBefore = !!userLocation;
+
     // Parse location from message
     const parsedLocation = await parseLocation(message);
     if (parsedLocation) {
       userLocation = parsedLocation;
     }
+
+    // Determine if this message is just a location response (skip showing programs)
+    const isJustLocation = isLocationOnlyMessage(message, hadLocationBefore);
 
     // Show loading
     isLoading = true;
@@ -2848,8 +2943,9 @@ const modelName = OLLAMA_CONFIG.model;
       // Save conversation to local history (if enabled)
       saveCurrentConversation();
 
-      // Add program cards if we found relevant programs
-      if (relevantPrograms.length > 0) {
+      // Add program cards if we found relevant programs AND this isn't just a location response
+      // Skip showing programs when user is just answering "what's your location?"
+      if (relevantPrograms.length > 0 && !isJustLocation) {
         addProgramCards(relevantPrograms);
       }
 
@@ -2889,7 +2985,8 @@ const modelName = OLLAMA_CONFIG.model;
       addMessage(errorMessage, 'assistant', true);
 
       // Still show program cards if we found any (RAG still works even if AI fails)
-      if (relevantPrograms && relevantPrograms.length > 0) {
+      // But not if this was just a location response
+      if (relevantPrograms && relevantPrograms.length > 0 && !isJustLocation) {
         addProgramCards(relevantPrograms);
       }
     } finally {
