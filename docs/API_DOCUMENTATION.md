@@ -820,7 +820,7 @@ describe('Programs API', () => {
 
 ## AI Chat API - Meet Carl
 
-Bay Navigator includes **Carl**, an AI-powered assistant named after Karl the Fog (spelled with a C for Chat!). Carl helps users find programs and services in the Bay Area. The AI API is self-hosted on DigitalOcean using Ollama with Llama 3.2 3B.
+Bay Navigator includes **Carl**, an AI-powered assistant named after Karl the Fog (spelled with a C for Chat!). Carl helps users find programs and services in the Bay Area. The AI API is self-hosted on Azure VM using Ollama with Llama 3.1 8B.
 
 ### Base URL
 

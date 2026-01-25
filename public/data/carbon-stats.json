@@ -77,11 +77,11 @@
       "carbonNeutralSince": 2019,
       "renewableEnergy": 100
     },
-    "digitalOcean": {
-      "name": "DigitalOcean",
+    "azureVM": {
+      "name": "Azure Virtual Machine",
       "renewableEnergy": 100,
-      "carbonNeutralSince": 2021,
-      "note": "Powers Bay Tides AI Chat (Ollama/Llama 3.1 8B)"
+      "carbonNeutralSince": 2012,
+      "note": "Powers Carl AI Chat (Ollama/Llama 3.1 8B)"
     },
     "azureOpenAI": {
       "name": "Azure OpenAI",
@@ -107,7 +107,7 @@
     "Azure has been carbon neutral since 2012",
     "GitHub Actions runners are powered by renewable energy",
     "Cloudflare operates a carbon-neutral network",
-    "DigitalOcean powers 100% of NA data centers with renewable energy",
+    "Azure VM runs on 100% renewable energy infrastructure",
     "Bay Tides AI Chat logs are anonymized - no IP addresses stored",
     "Usage data is updated daily via GitHub Actions"
   ]

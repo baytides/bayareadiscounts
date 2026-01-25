@@ -34,11 +34,11 @@ const PROVIDER_STATS = {
     carbonNeutralSince: 2019,
     renewableEnergy: 100,
   },
-  digitalOcean: {
-    name: 'DigitalOcean',
-    renewableEnergy: 100, // North American data centers
-    carbonNeutralSince: 2021,
-    note: 'Powers Bay Tides AI Chat (Ollama/Llama 3.1 8B)',
+  azureVM: {
+    name: 'Azure Virtual Machine',
+    renewableEnergy: 100,
+    carbonNeutralSince: 2012,
+    note: 'Powers Carl AI Chat (Ollama/Llama 3.1 8B)',
   },
   azureOpenAI: {
     name: 'Azure OpenAI',
@@ -181,7 +181,7 @@ async function getOllamaStats() {
       chatsToday: data.chatsToday || 0,
       chatsThisMonth: data.chatsThisMonth || 0,
       model: data.model || 'llama3.1:8b-instruct-q8_0',
-      provider: data.provider || 'DigitalOcean',
+      provider: data.provider || 'Azure VM',
       source: 'ollama_stats_api',
     };
   } catch (error) {
@@ -280,7 +280,7 @@ async function main() {
   };
 
   // Calculate emissions (use 0 if data unavailable)
-  // Note: AI Chat uses self-hosted Llama 3.1 8B on DigitalOcean's renewable-powered servers
+  // Note: AI Chat uses self-hosted Llama 3.1 8B on Azure VM's renewable-powered servers
   const AI_CHAT_QUERY_GRAMS = 0.8; // Llama 3.1 8B on renewable energy
   const grossEmissions = {
     cdn: (usage.cdnRequests || 0) * CARBON_FACTORS.cdnRequestGrams,
@@ -348,7 +348,7 @@ async function main() {
       'Azure has been carbon neutral since 2012',
       'GitHub Actions runners are powered by renewable energy',
       'Cloudflare operates a carbon-neutral network',
-      'DigitalOcean powers 100% of NA data centers with renewable energy',
+      'Azure VM runs on 100% renewable energy infrastructure',
       'Bay Tides AI Chat logs are anonymized - no IP addresses stored',
       'Usage data is updated daily via GitHub Actions',
     ],

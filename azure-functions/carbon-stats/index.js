@@ -58,7 +58,7 @@ const PROVIDER_STATS = {
 // Carbon factors (grams CO2e) - based on industry research
 const CARBON_FACTORS = {
   pageViewGrams: 0.2, // Average static site page view
-  aiChatQueryGrams: 0.5, // Carl AI Chat via Cloudflare proxy to DigitalOcean
+  aiChatQueryGrams: 0.5, // Carl AI Chat via Cloudflare proxy to Azure VM
   simpleLangQueryGrams: 1.5, // Azure OpenAI (GPT-4o-mini) - runs weekly for accessibility
   ciMinuteGrams: 0.4, // GitHub Actions minute (renewable-offset)
   cdnRequestGrams: 0.0001, // Cloudflare edge request
@@ -449,7 +449,7 @@ async function getCarbonStats(context) {
         grams: grossEmissions.aiChat.toFixed(1),
         percent:
           totalGrossGrams > 0 ? ((grossEmissions.aiChat / totalGrossGrams) * 100).toFixed(1) : '0',
-        provider: 'Carl AI Chat (Llama 3.1 8B on DigitalOcean)',
+        provider: 'Carl AI Chat (Llama 3.1 8B on Azure VM)',
       },
       simpleLang: {
         grams: grossEmissions.simpleLang.toFixed(1),
@@ -487,7 +487,7 @@ async function getCarbonStats(context) {
       'Azure has been carbon neutral since 2012',
       'GitHub Actions runners are powered by renewable energy',
       'Cloudflare operates a carbon-neutral network (net-zero since 2025)',
-      'Carl AI Chat uses self-hosted Llama 3.1 8B on DigitalOcean via Cloudflare proxy',
+      'Carl AI Chat uses self-hosted Llama 3.1 8B on Azure VM via Cloudflare proxy',
       'Simple Language (accessibility) uses Azure OpenAI (GPT-4o-mini) weekly',
       'Usage data is refreshed hourly from live APIs',
     ],
