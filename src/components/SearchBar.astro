@@ -2605,6 +2605,19 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
 
   // Initialize location quick button on load
   updateLocationQuickButton();
+
+  // Initialize search from URL query parameter
+  // This enables deep-linking to search results (e.g., from Carl assistant links)
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialQuery = urlParams.get('q');
+  if (initialQuery && searchInput) {
+    (searchInput as HTMLInputElement).value = initialQuery;
+    updateInputState();
+    // Perform the search after a short delay to ensure DOM is ready
+    setTimeout(() => {
+      void performSearch();
+    }, 100);
+  }
 </script>
 
 <style>
