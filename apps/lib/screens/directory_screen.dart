@@ -23,9 +23,14 @@ class DirectoryScreenState extends State<DirectoryScreen> {
   final FocusNode _searchFocusNode = FocusNode();
   final LayerLink _searchLayerLink = LayerLink();
   final ApiService _apiService = ApiService();
+  final ScrollController _scrollController = ScrollController();
 
   OverlayEntry? _recentSearchesOverlay;
   bool _showRecentSearches = false;
+
+  // Pagination state
+  static const int _itemsPerPage = 20;
+  int _currentPage = 0;
 
   /// Focus the search field (called from keyboard shortcut)
   void focusSearch() {
@@ -52,10 +57,164 @@ class DirectoryScreenState extends State<DirectoryScreen> {
     _searchController.dispose();
     _searchFocusNode.removeListener(_onSearchFocusChange);
     _searchFocusNode.dispose();
+    _scrollController.dispose();
     // Remove overlay without setState (already disposing)
     _recentSearchesOverlay?.remove();
     _recentSearchesOverlay = null;
     super.dispose();
+  }
+
+  /// Reset to first page when filters/search change
+  void _resetPagination() {
+    if (_currentPage != 0) {
+      setState(() => _currentPage = 0);
+    }
+  }
+
+  /// Get paginated programs from full list
+  List<dynamic> _getPaginatedPrograms(List<dynamic> allPrograms) {
+    final startIndex = _currentPage * _itemsPerPage;
+    final endIndex = (startIndex + _itemsPerPage).clamp(0, allPrograms.length);
+    return allPrograms.sublist(startIndex, endIndex);
+  }
+
+  /// Navigate to a specific page
+  void _goToPage(int page, int totalPages) {
+    if (page >= 0 && page < totalPages) {
+      setState(() => _currentPage = page);
+      // Scroll to top of list
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
+    }
+  }
+
+  /// Build pagination controls
+  Widget _buildPaginationControls(int totalItems, ThemeData theme, bool isDark) {
+    final totalPages = (totalItems / _itemsPerPage).ceil();
+    if (totalPages <= 1) return const SizedBox.shrink();
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Previous button
+          IconButton(
+            onPressed: _currentPage > 0
+                ? () => _goToPage(_currentPage - 1, totalPages)
+                : null,
+            icon: const Icon(Icons.chevron_left),
+            tooltip: 'Previous page',
+            style: IconButton.styleFrom(
+              backgroundColor: _currentPage > 0
+                  ? (isDark ? AppColors.darkCard : AppColors.lightCard)
+                  : null,
+            ),
+          ),
+          const SizedBox(width: 8),
+
+          // Page numbers
+          ..._buildPageNumbers(totalPages, isDark),
+
+          const SizedBox(width: 8),
+          // Next button
+          IconButton(
+            onPressed: _currentPage < totalPages - 1
+                ? () => _goToPage(_currentPage + 1, totalPages)
+                : null,
+            icon: const Icon(Icons.chevron_right),
+            tooltip: 'Next page',
+            style: IconButton.styleFrom(
+              backgroundColor: _currentPage < totalPages - 1
+                  ? (isDark ? AppColors.darkCard : AppColors.lightCard)
+                  : null,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Build page number buttons with ellipsis for many pages
+  List<Widget> _buildPageNumbers(int totalPages, bool isDark) {
+    final List<Widget> pageButtons = [];
+    const int maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      // Show all pages
+      for (int i = 0; i < totalPages; i++) {
+        pageButtons.add(_buildPageButton(i, totalPages, isDark));
+      }
+    } else {
+      // Show first, last, current and neighbors with ellipsis
+      final Set<int> pagesToShow = {
+        0, // First
+        totalPages - 1, // Last
+        _currentPage, // Current
+        if (_currentPage > 0) _currentPage - 1, // Previous
+        if (_currentPage < totalPages - 1) _currentPage + 1, // Next
+      };
+
+      final sortedPages = pagesToShow.toList()..sort();
+
+      for (int i = 0; i < sortedPages.length; i++) {
+        final page = sortedPages[i];
+
+        // Add ellipsis if there's a gap
+        if (i > 0 && sortedPages[i] - sortedPages[i - 1] > 1) {
+          pageButtons.add(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                '...',
+                style: TextStyle(
+                  color: isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
+                ),
+              ),
+            ),
+          );
+        }
+
+        pageButtons.add(_buildPageButton(page, totalPages, isDark));
+      }
+    }
+
+    return pageButtons;
+  }
+
+  Widget _buildPageButton(int page, int totalPages, bool isDark) {
+    final isSelected = page == _currentPage;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 2),
+      child: Material(
+        color: isSelected
+            ? AppColors.primary
+            : (isDark ? AppColors.darkCard : AppColors.lightCard),
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          onTap: () => _goToPage(page, totalPages),
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(
+              '${page + 1}',
+              style: TextStyle(
+                color: isSelected
+                    ? Colors.white
+                    : (isDark ? AppColors.darkText : AppColors.lightText),
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   void _onSearchFocusChange() {
@@ -114,6 +273,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
       _apiService.addRecentSearch(query);
     }
     _hideRecentSearches();
+    _resetPagination();
 
     // Try AI search for natural language queries
     final provider = context.read<ProgramsProvider>();
@@ -850,11 +1010,25 @@ class DirectoryScreenState extends State<DirectoryScreen> {
               );
             }
 
-            final programs = provider.filteredPrograms;
+            // Pagination setup
+            final allPrograms = provider.filteredPrograms;
+            final totalPages = (allPrograms.length / _itemsPerPage).ceil();
+
+            // Ensure current page is valid
+            if (_currentPage >= totalPages && totalPages > 0) {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (mounted) {
+                  setState(() => _currentPage = totalPages - 1);
+                }
+              });
+            }
+
+            final paginatedPrograms = _getPaginatedPrograms(allPrograms);
 
             return RefreshIndicator(
               onRefresh: () => provider.loadData(forceRefresh: true),
               child: CustomScrollView(
+                controller: _scrollController,
                 slivers: [
                   // Header with app title (mobile only)
                   if (!useDesktopLayout)
@@ -932,6 +1106,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                           ),
                           onChanged: (value) {
                             provider.setSearchQuery(value);
+                            _resetPagination();
                             if (value.isNotEmpty) {
                               _hideRecentSearches();
                             }
@@ -1094,14 +1269,20 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                     child: Consumer<SettingsProvider>(
                       builder: (context, settingsProvider, child) {
                         final isCondensed = settingsProvider.directoryViewMode == DirectoryViewMode.condensed;
+                        final startItem = _currentPage * _itemsPerPage + 1;
+                        final endItem = ((_currentPage + 1) * _itemsPerPage).clamp(1, allPrograms.length);
+                        final showPageInfo = totalPages > 1;
+
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Row(
                             children: [
                               Text(
                                 provider.aiSearchResults != null
-                                    ? '${programs.length} AI result${programs.length == 1 ? '' : 's'}'
-                                    : '${programs.length} program${programs.length == 1 ? '' : 's'}',
+                                    ? '${allPrograms.length} AI result${allPrograms.length == 1 ? '' : 's'}'
+                                    : showPageInfo
+                                        ? '$startItem-$endItem of ${allPrograms.length} programs'
+                                        : '${allPrograms.length} program${allPrograms.length == 1 ? '' : 's'}',
                                 style: theme.textTheme.bodySmall?.copyWith(
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -1151,7 +1332,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                   ),
 
                   // Program list or empty state
-                  if (programs.isEmpty)
+                  if (allPrograms.isEmpty)
                     SliverFillRemaining(
                       hasScrollBody: false,
                       child: Center(
@@ -1202,7 +1383,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                             sliver: SliverList(
                               delegate: SliverChildBuilderDelegate(
                                 (context, index) {
-                                  final program = programs[index];
+                                  final program = paginatedPrograms[index];
                                   return Padding(
                                     padding: const EdgeInsets.only(bottom: 8),
                                     child: ProgramCard(
@@ -1224,7 +1405,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                                     ),
                                   );
                                 },
-                                childCount: programs.length,
+                                childCount: paginatedPrograms.length,
                               ),
                             ),
                           );
@@ -1262,7 +1443,7 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                                 ),
                                 delegate: SliverChildBuilderDelegate(
                                   (context, index) {
-                                    final program = programs[index];
+                                    final program = paginatedPrograms[index];
                                     return ProgramCard(
                                       program: program,
                                       isFavorite: provider.isFavorite(program.id),
@@ -1281,13 +1462,19 @@ class DirectoryScreenState extends State<DirectoryScreen> {
                                       },
                                     );
                                   },
-                                  childCount: programs.length,
+                                  childCount: paginatedPrograms.length,
                                 ),
                               );
                             },
                           ),
                         );
                       },
+                    ),
+
+                  // Pagination controls
+                  if (totalPages > 1)
+                    SliverToBoxAdapter(
+                      child: _buildPaginationControls(allPrograms.length, theme, isDark),
                     ),
 
                   // Bottom padding
