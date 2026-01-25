@@ -63,7 +63,9 @@ function loadAllPrograms() {
   const suppressedIds = loadSuppressedIds();
   const programs = [];
 
-  const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith('.yml') && !NON_PROGRAM_FILES.includes(f));
+  const files = fs
+    .readdirSync(DATA_DIR)
+    .filter((f) => f.endsWith('.yml') && !NON_PROGRAM_FILES.includes(f));
 
   for (const file of files) {
     const filePath = path.join(DATA_DIR, file);
