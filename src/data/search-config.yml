@@ -12,7 +12,7 @@ synonyms:
     [section 8, rental assistance, shelter, homeless, eviction, rent help, affordable housing]
   health: [medi-cal, healthcare, medical, doctor, clinic, mental health, dental]
   utilities: [utility, liheap, care program, pgcap, bill help, energy assistance]
-  community: [211, social services, nonprofit, resources]
+  community: ['211', social services, nonprofit, resources]
 
   # Food assistance programs
   food stamps: [snap, calfresh, ebt, food assistance, grocery help]
