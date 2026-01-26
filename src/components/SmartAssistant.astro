@@ -1583,6 +1583,109 @@ const modelName = OLLAMA_CONFIG.model;
   }
 
   // ============================================
+  // CALIFORNIA CODES CONTENT (Actual law text)
+  // Pre-scraped from California Legislature website
+  // ============================================
+  let californiaCodesContentCache = null;
+
+  async function loadCaliforniaCodesContent() {
+    if (californiaCodesContentCache) return californiaCodesContentCache;
+    try {
+      const response = await fetch('/data/california-codes-content.json', {
+        signal: AbortSignal.timeout(3000),
+      });
+      if (response.ok) {
+        californiaCodesContentCache = await response.json();
+        console.log(
+          'Loaded California codes content:',
+          californiaCodesContentCache.totals?.sections,
+          'sections'
+        );
+      }
+    } catch (error) {
+      console.warn('Failed to load California codes content:', error);
+    }
+    return californiaCodesContentCache;
+  }
+
+  // Search California codes content for actual law text
+  async function searchCaliforniaCodesContent(query) {
+    const cache = await loadCaliforniaCodesContent();
+    if (!cache || !cache.sections) return null;
+
+    const queryLower = query.toLowerCase();
+    const matchedSections = [];
+
+    // First, check keyword index for direct matches
+    if (cache.byKeyword) {
+      for (const [keyword, refs] of Object.entries(cache.byKeyword)) {
+        if (queryLower.includes(keyword.toLowerCase())) {
+          for (const ref of refs) {
+            // Find the full section data
+            const section = cache.sections.find(
+              (s) => s.code === ref.code && s.section === ref.section
+            );
+            if (section && !matchedSections.find((m) => m.section === section.section)) {
+              matchedSections.push(section);
+            }
+          }
+        }
+      }
+    }
+
+    // If no keyword matches, search section titles and text
+    if (matchedSections.length === 0) {
+      for (const section of cache.sections) {
+        const titleMatch = section.title?.toLowerCase().includes(queryLower);
+        const textMatch = section.text?.toLowerCase().includes(queryLower);
+        const keywordMatch = section.keywords?.some((k) => queryLower.includes(k.toLowerCase()));
+        if (titleMatch || textMatch || keywordMatch) {
+          matchedSections.push(section);
+        }
+      }
+    }
+
+    // Return top 3 most relevant sections with actual text
+    return matchedSections.slice(0, 3);
+  }
+
+  function formatCaliforniaCodesContentForContext(sections) {
+    if (!sections || sections.length === 0) {
+      return '';
+    }
+
+    let context = '\n\n[CALIFORNIA LAW - ACTUAL TEXT]:\n';
+    context += 'The following are excerpts from official California state law:\n\n';
+
+    for (const section of sections) {
+      const codeName =
+        section.code === 'CIV'
+          ? 'Civil Code'
+          : section.code === 'LAB'
+            ? 'Labor Code'
+            : section.code === 'FAM'
+              ? 'Family Code'
+              : section.code === 'VEH'
+                ? 'Vehicle Code'
+                : section.code === 'UIC'
+                  ? 'Unemployment Insurance Code'
+                  : section.code === 'WIC'
+                    ? 'Welfare and Institutions Code'
+                    : section.code;
+
+      context += `**California ${codeName} Section ${section.section}** - ${section.title}\n`;
+      // Include first 800 chars of actual law text
+      const excerpt = section.text?.substring(0, 800) || '';
+      const ellipsis = section.text?.length > 800 ? '...' : '';
+      context += `"${excerpt}${ellipsis}"\n`;
+      context += `Source: ${section.url}\n\n`;
+    }
+
+    context += `IMPORTANT: Quote this actual law text in your response. Cite the specific code section (e.g., "California Civil Code Section 1950.5 states..."). You now have the real law text - do NOT make up information. If the user's question isn't covered by these sections, tell them these are the closest matches and they should consult the full code.`;
+    return context;
+  }
+
+  // ============================================
   // LIBRARY DIGITAL RESOURCES (from static JSON)
   // ============================================
   function getLibraryResourcesForContext(query, county = null) {
@@ -3590,6 +3693,7 @@ const modelName = OLLAMA_CONFIG.model;
       let municipalCodeResult = null;
       let californiaCodeResult = null;
       let californiaResourcesResult = null;
+      let californiaCodesContentResult = null; // Actual law text from scraped codes
 
       const apiCalls = [];
 
@@ -3633,6 +3737,12 @@ const modelName = OLLAMA_CONFIG.model;
             californiaCodeResult = r;
           })
         );
+        // Also search for actual law text content
+        apiCalls.push(
+          searchCaliforniaCodesContent(message).then((r) => {
+            californiaCodesContentResult = r;
+          })
+        );
       }
       // Legal and immigrant services - state resources + possibly city contacts
       else if (queryType === 'legal' || queryType === 'immigrant_services') {
@@ -3644,6 +3754,12 @@ const modelName = OLLAMA_CONFIG.model;
         apiCalls.push(
           searchCityContacts(message, userLocation).then((r) => {
             cityContactResult = r;
+          })
+        );
+        // Also search for actual law text content
+        apiCalls.push(
+          searchCaliforniaCodesContent(message).then((r) => {
+            californiaCodesContentResult = r;
           })
         );
       }
@@ -3661,6 +3777,9 @@ const modelName = OLLAMA_CONFIG.model;
           }),
           searchCaliforniaResources(message).then((r) => {
             californiaResourcesResult = r;
+          }),
+          searchCaliforniaCodesContent(message).then((r) => {
+            californiaCodesContentResult = r;
           })
         );
       }
@@ -3744,6 +3863,14 @@ const modelName = OLLAMA_CONFIG.model;
         californiaResourcesContext += `\nProvide these specific state resources in your response.`;
       }
 
+      // Format California codes content (ACTUAL LAW TEXT - priority context)
+      let californiaCodesContentContext = '';
+      if (californiaCodesContentResult && californiaCodesContentResult.length > 0) {
+        californiaCodesContentContext = formatCaliforniaCodesContentForContext(
+          californiaCodesContentResult
+        );
+      }
+
       // Fetch live data if query matches specific topics
       let liveDataContext = '';
 
@@ -3822,6 +3949,7 @@ const modelName = OLLAMA_CONFIG.model;
             cityContactContext +
             municipalCodeContext +
             californiaCodeContext +
+            californiaCodesContentContext + // Actual law text - priority!
             californiaResourcesContext +
             locationContext +
             profileContext +

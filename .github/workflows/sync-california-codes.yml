@@ -1,0 +1,52 @@
+name: Sync California Codes
+
+on:
+  # Run weekly on Sunday at 7 AM UTC (11 PM PST Saturday / 12 AM PDT Sunday)
+  schedule:
+    - cron: '0 7 * * 0'
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on changes to sync script
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-california-codes.cjs'
+
+jobs:
+  sync-california-codes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Sync California codes from Legislature website
+        run: node scripts/sync-california-codes.cjs --verbose
+        continue-on-error: true
+
+      - name: Check for changes and commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Add the generated cache file
+          git add public/data/california-codes-content.json 2>/dev/null || true
+
+          # Check if there are staged changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: Sync California codes content [skip ci]
+
+          Automated sync of California state law text for Carl to cite.
+
+          Source: California Legislature (leginfo.legislature.ca.gov)"
+            git push
+          fi
