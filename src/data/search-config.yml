@@ -6,6 +6,14 @@
 # Synonym mappings - when user searches for key, also match values
 # Format: search_term: [synonym1, synonym2, ...]
 synonyms:
+  # Category-level synonyms (matches category names to key programs)
+  food: [calfresh, food bank, food pantry, meals on wheels, snap, wic, groceries, meals, hungry]
+  housing:
+    [section 8, rental assistance, shelter, homeless, eviction, rent help, affordable housing]
+  health: [medi-cal, healthcare, medical, doctor, clinic, mental health, dental]
+  utilities: [utility, liheap, care program, pgcap, bill help, energy assistance]
+  community: [211, social services, nonprofit, resources]
+
   # Food assistance programs
   food stamps: [snap, calfresh, ebt, food assistance, grocery help]
   snap: [food stamps, calfresh, ebt, food assistance]
@@ -78,8 +86,9 @@ synonyms:
   diapers: [baby, infant, wic, family]
 
   # Employment (expanded)
-  job: [employment, work, career, hiring, workforce]
-  jobs: [employment, work, career, hiring, workforce]
+  job: [employment, work, career, hiring, workforce, caljobs, job training]
+  jobs: [employment, work, career, hiring, workforce, caljobs, job training]
+  employment: [job, jobs, job training, caljobs, workforce, career, hiring]
   unemployed: [job seeker, unemployment, laid off, jobless, edd, ui]
   unemployment: [unemployed, job seeker, laid off, edd, ui benefits]
   job training: [career, workforce, skills, employment, vocational]
@@ -92,6 +101,7 @@ synonyms:
   interview: [job search, resume, career, employment]
 
   # Legal (expanded)
+  legal: [legal aid, lawyer, attorney, tenant rights, immigration, eviction help]
   legal aid: [lawyer, attorney, legal help, legal services, free lawyer]
   lawyer: [attorney, legal aid, legal help, legal services]
   attorney: [lawyer, legal aid, legal help]
@@ -102,6 +112,7 @@ synonyms:
   immigration: [immigrant, refugee, daca, asylum, visa, citizenship, naturalization]
 
   # Education (expanded)
+  education: [school, college, ged, financial aid, fafsa, adult education, tutoring]
   college: [university, higher education, student, tuition, community college]
   university: [college, higher education, student, tuition]
   tuition: [college, financial aid, scholarship, education, fafsa]
@@ -120,6 +131,7 @@ synonyms:
   school meals: [free lunch, reduced lunch, summer meals, school breakfast]
 
   # Transportation
+  transportation: [transit, bus pass, clipper, paratransit, muni, bart]
   bus pass: [transit, muni, bart, transportation, clipper]
   transit: [bus, muni, bart, transportation, clipper]
   paratransit: [disability transport, accessible transit, dial-a-ride]

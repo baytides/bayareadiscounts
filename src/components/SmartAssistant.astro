@@ -913,6 +913,388 @@ const modelName = OLLAMA_CONFIG.model;
     return PUBLIC_SERVICES_KEYWORDS.some((kw) => lower.includes(kw));
   }
 
+  // Keywords for local rules/municipal code queries
+  const LOCAL_RULES_KEYWORDS = [
+    'pet',
+    'pets',
+    'animal',
+    'chicken',
+    'pig',
+    'livestock',
+    'fence',
+    'noise',
+    'permit',
+    'zoning',
+    'adu',
+    'granny flat',
+    'parking',
+    'rv',
+    'camper',
+    'tree',
+    'building',
+    'rental',
+    'airbnb',
+    'short-term',
+    'ordinance',
+    'code',
+    'rules',
+    'allowed',
+    'legal',
+    'can i have',
+    'am i allowed',
+  ];
+
+  // Keywords for benefits/eligibility queries
+  const BENEFITS_KEYWORDS = [
+    'food',
+    'hungry',
+    'groceries',
+    'snap',
+    'calfresh',
+    'ebt',
+    'health',
+    'insurance',
+    'medi-cal',
+    'medicare',
+    'medicaid',
+    'housing',
+    'rent',
+    'shelter',
+    'homeless',
+    'section 8',
+    'utilities',
+    'pge',
+    'bills',
+    'electric',
+    'gas',
+    'cash',
+    'welfare',
+    'calworks',
+    'ssi',
+    'disability',
+    'unemployment',
+    'childcare',
+    'daycare',
+    'wic',
+    'help',
+    'assistance',
+    'benefits',
+    'qualify',
+    'eligible',
+    'apply',
+  ];
+
+  // Keywords for employment/job queries
+  const EMPLOYMENT_KEYWORDS = [
+    'job',
+    'jobs',
+    'employment',
+    'unemployed',
+    'unemployment',
+    'career',
+    'resume',
+    'hiring',
+    'work',
+    'laid off',
+    'fired',
+    'edd',
+    'job training',
+    'workforce',
+  ];
+
+  // Keywords for legal help queries
+  const LEGAL_KEYWORDS = [
+    'lawyer',
+    'attorney',
+    'legal aid',
+    'legal help',
+    'tenant rights',
+    'eviction',
+    'landlord',
+    'immigration lawyer',
+    'custody',
+    'divorce',
+    'court',
+    'sue',
+    'lawsuit',
+  ];
+
+  // Keywords for education queries
+  const EDUCATION_KEYWORDS = [
+    'college',
+    'university',
+    'tuition',
+    'financial aid',
+    'fafsa',
+    'scholarship',
+    'ged',
+    'adult school',
+    'esl',
+    'english class',
+    'tutoring',
+    'head start',
+    'preschool',
+    'school meals',
+  ];
+
+  // Keywords for senior-specific queries
+  const SENIOR_KEYWORDS = [
+    'senior',
+    'elderly',
+    'older adult',
+    'medicare',
+    'retirement',
+    'social security',
+    'aging',
+    'meals on wheels',
+    '65',
+    'over 60',
+  ];
+
+  // Keywords for veteran queries
+  const VETERAN_KEYWORDS = [
+    'veteran',
+    'military',
+    'va ',
+    'va benefits',
+    'gi bill',
+    'service member',
+    'armed forces',
+    'army',
+    'navy',
+    'marine',
+    'air force',
+  ];
+
+  // Keywords for disability queries
+  const DISABILITY_KEYWORDS = [
+    'disability',
+    'disabled',
+    'ssi',
+    'ssdi',
+    'ada',
+    'accessible',
+    'wheelchair',
+    'paratransit',
+    'blind',
+    'deaf',
+    'special needs',
+  ];
+
+  // Keywords for immigrant queries
+  const IMMIGRANT_KEYWORDS = [
+    'immigrant',
+    'immigration',
+    'refugee',
+    'asylum',
+    'daca',
+    'visa',
+    'citizenship',
+    'naturalization',
+    'undocumented',
+    'green card',
+    'uscis',
+  ];
+
+  // Keywords for crisis/emergency
+  const CRISIS_KEYWORDS = [
+    'suicide',
+    'kill myself',
+    'want to die',
+    'crisis',
+    'domestic violence',
+    'abuse',
+    'assault',
+    'safe surrender',
+    'emergency',
+    'danger',
+    'threatened',
+    'hurt',
+    'unsafe',
+  ];
+
+  // Classify query type to determine which APIs to call and what context is needed
+  function classifyQueryType(text) {
+    const lower = text.toLowerCase();
+
+    // Crisis takes priority - respond immediately with resources
+    if (CRISIS_KEYWORDS.some((kw) => lower.includes(kw))) return 'crisis';
+
+    // Transit/traffic - no location needed
+    if (isTransitQuery(text)) return 'transit';
+    if (isTrafficQuery(text)) return 'traffic';
+
+    // Local rules - needs specific city for municipal code
+    if (LOCAL_RULES_KEYWORDS.some((kw) => lower.includes(kw))) return 'local_rules';
+
+    // Public services (police, fire, hospital) - needs location
+    if (isPublicServicesQuery(text)) return 'public_services';
+
+    // Community resources (food pantry, shelter) - needs location
+    if (isCommunityResourceQuery(text)) return 'community_resources';
+
+    // Food trucks - needs location
+    if (isFoodTruckQuery(text)) return 'food_trucks';
+
+    // Specific population groups - may need additional context
+    if (SENIOR_KEYWORDS.some((kw) => lower.includes(kw))) return 'senior_benefits';
+    if (VETERAN_KEYWORDS.some((kw) => lower.includes(kw))) return 'veteran_benefits';
+    if (DISABILITY_KEYWORDS.some((kw) => lower.includes(kw))) return 'disability_benefits';
+    if (IMMIGRANT_KEYWORDS.some((kw) => lower.includes(kw))) return 'immigrant_services';
+
+    // Topic-specific queries
+    if (EMPLOYMENT_KEYWORDS.some((kw) => lower.includes(kw))) return 'employment';
+    if (LEGAL_KEYWORDS.some((kw) => lower.includes(kw))) return 'legal';
+    if (EDUCATION_KEYWORDS.some((kw) => lower.includes(kw))) return 'education';
+
+    // General benefits - needs location + possibly demographics
+    if (BENEFITS_KEYWORDS.some((kw) => lower.includes(kw))) return 'benefits';
+
+    // Library/facilities - needs location
+    if (isLibraryQuery(text)) return 'library';
+    if (isFacilitiesQuery(text)) return 'facilities';
+
+    // Default to general
+    return 'general';
+  }
+
+  // Check if we have enough context to answer the query
+  function hasRequiredContext(queryType, userLocation, userProfile) {
+    const hasCity = !!(userLocation?.city || userLocation?.zip);
+    const hasCounty = !!(userLocation?.county || userProfile?.county);
+
+    switch (queryType) {
+      case 'crisis':
+        // Respond immediately - no context needed
+        return true;
+
+      case 'transit':
+      case 'traffic':
+        // No location needed for transit/traffic status
+        return true;
+
+      case 'local_rules':
+      case 'public_services':
+        // Need specific city for municipal code or local services
+        return hasCity;
+
+      case 'community_resources':
+      case 'food_trucks':
+      case 'facilities':
+      case 'library':
+        // Need at least city or county for filtering
+        return hasCity || hasCounty;
+
+      case 'senior_benefits':
+      case 'veteran_benefits':
+      case 'disability_benefits':
+      case 'immigrant_services':
+      case 'employment':
+      case 'legal':
+      case 'education':
+      case 'benefits':
+        // Need at least county for program filtering
+        return hasCounty;
+
+      default:
+        return true;
+    }
+  }
+
+  // Generate context-gathering question based on query type and missing info
+  function getContextQuestion(queryType, userLocation, userProfile) {
+    const hasCity = !!(userLocation?.city || userLocation?.zip);
+    const hasCounty = !!(userLocation?.county || userProfile?.county);
+    const hasLocation = hasCity || hasCounty;
+
+    switch (queryType) {
+      case 'crisis':
+        // Never delay crisis response with questions
+        return null;
+
+      case 'local_rules':
+        if (!hasCity) {
+          return "Good question! Local rules vary by city. What's your city or ZIP code?";
+        }
+        break;
+
+      case 'public_services':
+        if (!hasCity) {
+          return "I can help you find that! What's your city or ZIP code?";
+        }
+        break;
+
+      case 'community_resources':
+        if (!hasLocation) {
+          return "I'd love to help you find resources nearby. What's your city or ZIP code?";
+        }
+        break;
+
+      case 'food_trucks':
+        if (!hasLocation) {
+          return "I can check what's around! What's your city or ZIP code?";
+        }
+        break;
+
+      case 'senior_benefits':
+        if (!hasLocation) {
+          return "Happy to help! What's your city or ZIP code? That'll help me find senior programs near you.";
+        }
+        break;
+
+      case 'veteran_benefits':
+        if (!hasLocation) {
+          return "Thank you for your service! What's your city or ZIP code? I'll find VA resources and veteran programs near you.";
+        }
+        break;
+
+      case 'disability_benefits':
+        if (!hasLocation) {
+          return "I can help with that! What's your city or ZIP code? That'll help me find the right programs and services.";
+        }
+        break;
+
+      case 'immigrant_services':
+        if (!hasLocation) {
+          return "I can help find resources for you. What's your city or ZIP code? Many services are available regardless of immigration status.";
+        }
+        break;
+
+      case 'employment':
+        if (!hasLocation) {
+          return "Let's find job resources for you! What's your city or ZIP code?";
+        }
+        break;
+
+      case 'legal':
+        if (!hasLocation) {
+          return "I can help you find legal assistance. What's your city or ZIP code? Many areas have free legal aid.";
+        }
+        break;
+
+      case 'education':
+        if (!hasLocation) {
+          return "Great that you're looking into education! What's your city or ZIP code so I can find programs near you?";
+        }
+        break;
+
+      case 'benefits':
+        if (!hasLocation) {
+          return "I can help with that! What's your city or ZIP code? And if you're comfortable sharing, your birth year can help me find the right programs.";
+        }
+        break;
+
+      case 'facilities':
+      case 'library':
+        if (!hasLocation) {
+          return "Sure! What's your city or ZIP code so I can find what's near you?";
+        }
+        break;
+    }
+
+    return null; // No question needed, we have enough context
+  }
+
   // Detect specific transit agency from query
   function detectTransitAgency(text) {
     const lower = text.toLowerCase();
@@ -2393,12 +2775,35 @@ const modelName = OLLAMA_CONFIG.model;
       return { program, score };
     });
 
-    // Return top 5 relevant programs with score > 15 (filter out weak matches)
-    // Higher threshold (was 5) to prevent showing irrelevant programs like "Pet Help Finder" for job queries
+    // Return top 5 relevant programs with score > 25 (filter out weak matches)
+    // Threshold raised from 15 to 25 to prevent showing irrelevant programs
+    // A score of 25 requires at least one strong match (name/keyword) plus supporting matches
+    // Example: name match (+12) + keyword match (+8) + intent category (+10) = 30 ✓
+    // Example: intent category (+10) + profile boost (+8) = 18 ✗ (not enough without name/keyword)
     // If excluding shown programs, we may need more results to backfill
     const minResults = shouldExclude ? 8 : 5;
-    let results = scored
-      .filter((s) => s.score > 15)
+
+    // First, require at least one "strong" match (query term in name or keywords)
+    // This prevents programs from qualifying purely through category/profile matching
+    const withStrongMatchCheck = scored.map((s) => {
+      const name = (s.program.name || '').toLowerCase();
+      const keywords = (
+        Array.isArray(s.program.keywords) ? s.program.keywords.join(' ') : s.program.keywords || ''
+      ).toLowerCase();
+
+      const hasStrongMatch =
+        name.includes(queryLower) ||
+        queryTerms.some((t) => name.includes(t) || keywords.includes(t));
+
+      // Halve the score if no strong match (makes it much harder to pass threshold)
+      return {
+        ...s,
+        score: hasStrongMatch ? s.score : Math.floor(s.score / 2),
+      };
+    });
+
+    let results = withStrongMatchCheck
+      .filter((s) => s.score > 25)
       .sort((a, b) => b.score - a.score)
       .slice(0, minResults)
       .filter((s) => !shouldExclude || !shownProgramIds.has(s.program.id)) // Final filter for excluded
@@ -3010,6 +3415,20 @@ const modelName = OLLAMA_CONFIG.model;
             ragContext += `   → ${p.whatTheyOffer.split('\n')[0].substring(0, 100)}\n`;
         });
         ragContext += `\nIMPORTANT: Mention 2-3 of these programs BY NAME in your response. The user will see clickable cards for each program after your message.`;
+      } else {
+        // No programs found - provide guidance links instead
+        ragContext = `\n\n[NO SPECIFIC PROGRAMS FOUND]\n`;
+        ragContext += `No programs matched the search. Help the user by:\n`;
+        ragContext += `1. Suggesting they check the directory at baynavigator.org/directory\n`;
+        ragContext += `2. Pointing to relevant eligibility guides:\n`;
+        ragContext += `   - Food help: baynavigator.org/eligibility/food-assistance\n`;
+        ragContext += `   - Healthcare: baynavigator.org/eligibility/healthcare\n`;
+        ragContext += `   - Housing: baynavigator.org/eligibility/housing-assistance\n`;
+        ragContext += `   - Utilities: baynavigator.org/eligibility/utility-programs\n`;
+        ragContext += `   - Cash aid: baynavigator.org/eligibility/cash-assistance\n`;
+        ragContext += `   - All guides: baynavigator.org/eligibility\n`;
+        ragContext += `3. Recommending they call 211 for personalized referrals\n`;
+        ragContext += `\nDO NOT make up program names or links. Only use the URLs listed above.`;
       }
 
       // Add location context (always use city/zip for user-facing, county is internal only)
@@ -3041,17 +3460,150 @@ const modelName = OLLAMA_CONFIG.model;
           student: 'a student',
         };
 
+        // Eligibility hints based on user groups
+        const eligibilityHints = {
+          senior:
+            'Likely eligible for: Medicare (65+), possibly Medi-Cal dual eligibility if low-income, senior meal programs, Meals on Wheels.',
+          veteran:
+            'Likely eligible for: VA healthcare, VA pension if low-income, CalVet home loans, veteran preference for jobs/housing.',
+          disabled:
+            'Likely eligible for: SSI or SSDI, Medi-Cal, paratransit, accessible housing, In-Home Supportive Services (IHSS).',
+          family:
+            'Likely eligible for: CalWORKs (cash aid), childcare subsidies, WIC, Head Start, school meal programs.',
+          'low-income':
+            'Likely eligible for: CalFresh (~$234/mo), Medi-Cal, CARE program (PG&E discount), LIHEAP, Section 8 waitlist.',
+          homeless:
+            'Likely eligible for: Coordinated Entry, emergency shelter, rapid rehousing, CalFresh (expedited), Medi-Cal.',
+          immigrant:
+            'Many programs available regardless of status: emergency Medi-Cal, WIC, school meals, food banks, some CalFresh.',
+          student:
+            'Likely eligible for: FAFSA, Cal Grant, work-study, CalFresh (if working 20+ hrs), student health insurance.',
+        };
+
         if (userProfile.groups?.length > 0) {
           const descriptions = userProfile.groups.map((g) => groupDescriptions[g]).filter(Boolean);
+          const hints = userProfile.groups.map((g) => eligibilityHints[g]).filter(Boolean);
+
           if (descriptions.length > 0) {
-            profileContext = `\n\n[USER PROFILE]: User is ${descriptions.join(', ')}. Prioritize programs that serve these groups. Use natural language, not bureaucratic terms.`;
+            profileContext = `\n\n[USER PROFILE]: User is ${descriptions.join(', ')}.`;
+            if (hints.length > 0) {
+              profileContext += `\n\n[ELIGIBILITY HINTS FOR THIS USER]:\n${hints.join('\n')}`;
+            }
+            profileContext += `\n\nPrioritize programs matching their profile. Use natural language, not bureaucratic terms.`;
           }
         }
       }
 
-      // Check for city/government contact queries
+      // Classify query type to determine which APIs to call
+      const queryType = classifyQueryType(message);
+
+      // Check if we need more context before answering
+      const contextQuestion = getContextQuestion(queryType, userLocation, userProfile);
+
+      // If we need context and this isn't a location-only response, ask for it
+      if (contextQuestion && !isJustLocation && !parsedLocation) {
+        // We need more info - ask the user instead of making API calls
+        loadingEl?.remove();
+        const responseBubble = createResponseBubble();
+        updateResponseBubble(responseBubble, contextQuestion);
+        conversationHistory.push({ role: 'user', content: message });
+        conversationHistory.push({ role: 'assistant', content: contextQuestion });
+        setCarlState('idle');
+        isLoading = false;
+        sendBtn?.removeAttribute('disabled');
+        return;
+      }
+
+      // Smart API routing: Only call APIs relevant to the query type
+      // This reduces latency and avoids unnecessary processing
+      let cityContactResult = null;
+      let municipalCodeResult = null;
+      let californiaCodeResult = null;
+      let californiaResourcesResult = null;
+
+      const apiCalls = [];
+
+      // Local rules queries need municipal code + city contacts
+      if (queryType === 'local_rules') {
+        apiCalls.push(
+          searchMunicipalCode(message, userLocation).then((r) => {
+            municipalCodeResult = r;
+          })
+        );
+        apiCalls.push(
+          searchCityContacts(message, userLocation).then((r) => {
+            cityContactResult = r;
+          })
+        );
+      }
+      // Public services (police, fire, hospital) need city contacts
+      else if (queryType === 'public_services') {
+        apiCalls.push(
+          searchCityContacts(message, userLocation).then((r) => {
+            cityContactResult = r;
+          })
+        );
+      }
+      // Benefits/eligibility queries need state resources
+      else if (
+        queryType === 'benefits' ||
+        queryType === 'senior_benefits' ||
+        queryType === 'veteran_benefits' ||
+        queryType === 'disability_benefits' ||
+        queryType === 'employment' ||
+        queryType === 'education'
+      ) {
+        apiCalls.push(
+          searchCaliforniaResources(message).then((r) => {
+            californiaResourcesResult = r;
+          })
+        );
+        apiCalls.push(
+          searchCaliforniaCode(message).then((r) => {
+            californiaCodeResult = r;
+          })
+        );
+      }
+      // Legal and immigrant services - state resources + possibly city contacts
+      else if (queryType === 'legal' || queryType === 'immigrant_services') {
+        apiCalls.push(
+          searchCaliforniaResources(message).then((r) => {
+            californiaResourcesResult = r;
+          })
+        );
+        apiCalls.push(
+          searchCityContacts(message, userLocation).then((r) => {
+            cityContactResult = r;
+          })
+        );
+      }
+      // General queries - run all in parallel (original behavior)
+      else if (queryType === 'general') {
+        apiCalls.push(
+          searchCityContacts(message, userLocation).then((r) => {
+            cityContactResult = r;
+          }),
+          searchMunicipalCode(message, userLocation).then((r) => {
+            municipalCodeResult = r;
+          }),
+          searchCaliforniaCode(message).then((r) => {
+            californiaCodeResult = r;
+          }),
+          searchCaliforniaResources(message).then((r) => {
+            californiaResourcesResult = r;
+          })
+        );
+      }
+      // Transit/traffic/library/facilities/food_trucks/community_resources/crisis
+      // These have their own dedicated fetches or don't need these APIs
+
+      // Wait for relevant API calls to complete
+      if (apiCalls.length > 0) {
+        await Promise.all(apiCalls);
+      }
+
+      // Format city/government contact results
       let cityContactContext = '';
-      const cityContactResult = await searchCityContacts(message, userLocation);
       if (cityContactResult) {
         cityContactContext = `\n\n[CITY GOVERNMENT CONTACTS]\n`;
         cityContactContext += `**${cityContactResult.city}** (${cityContactResult.county} County)\n`;
@@ -3071,9 +3623,8 @@ const modelName = OLLAMA_CONFIG.model;
         cityContactContext += `\nProvide these specific contacts in your response.`;
       }
 
-      // Check for municipal code/ordinance queries
+      // Format municipal code/ordinance results
       let municipalCodeContext = '';
-      const municipalCodeResult = await searchMunicipalCode(message, userLocation);
       if (municipalCodeResult) {
         municipalCodeContext = `\n\n[MUNICIPAL CODE REFERENCE]\n`;
         municipalCodeContext += `**${municipalCodeResult.name}** ${municipalCodeResult.type === 'County' ? 'County' : ''} Municipal Code\n`;
@@ -3084,9 +3635,8 @@ const modelName = OLLAMA_CONFIG.model;
         municipalCodeContext += `\nIMPORTANT: You don't have the specific code sections memorized. Tell the user you can point them to where they can find the official rules, and provide the municipal code link. Suggest they search the code for relevant terms or contact the city/county directly for specific questions. Don't make up specific rules or numbers.`;
       }
 
-      // Check for California state law queries
+      // Format California state law results
       let californiaCodeContext = '';
-      const californiaCodeResult = await searchCaliforniaCode(message);
       if (californiaCodeResult) {
         californiaCodeContext = `\n\n[CALIFORNIA STATE LAW REFERENCE]\n`;
         californiaCodeContext += `Relevant California codes:\n`;
@@ -3097,9 +3647,8 @@ const modelName = OLLAMA_CONFIG.model;
         californiaCodeContext += `\nIMPORTANT: California state law applies statewide. Point users to the official California Legislative Information site. Don't make up specific code sections or numbers - direct them to search the official source.`;
       }
 
-      // Check for California state agency/service queries
+      // Format California state agency/service results
       let californiaResourcesContext = '';
-      const californiaResourcesResult = await searchCaliforniaResources(message);
       if (californiaResourcesResult) {
         californiaResourcesContext = `\n\n[CALIFORNIA STATE RESOURCES]\n`;
         if (californiaResourcesResult.agencies?.length > 0) {
@@ -3227,12 +3776,12 @@ const modelName = OLLAMA_CONFIG.model;
           stream: true,
           think: false, // Disable thinking mode for faster responses
           options: {
-            temperature: 0.5, // Lower for more consistent, focused responses
-            num_predict: 300, // Allow longer responses
-            num_ctx: 8192, // Larger context for system prompt + RAG context
+            temperature: 0.4, // Lower for more consistent, focused responses (reduced from 0.5)
+            num_predict: 250, // Slightly shorter responses for speed (reduced from 300)
+            num_ctx: 6144, // Reduced context for faster inference (was 8192)
             top_k: 40, // Slightly wider token selection for better quality
-            top_p: 0.9, // Standard nucleus sampling
-            repeat_penalty: 1.1, // Moderate repetition avoidance
+            top_p: 0.85, // Tighter nucleus sampling for focus (was 0.9)
+            repeat_penalty: 1.15, // Slightly higher to reduce repetition (was 1.1)
           },
         }),
       });

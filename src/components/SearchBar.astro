@@ -1180,9 +1180,63 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
     });
   }
 
+  // Category name mappings for category-based search matching
+  // Maps search terms to actual category values in the data
+  const CATEGORY_MAPPINGS: Record<string, { categories: string[]; boostKeywords: string[] }> = {
+    food: {
+      categories: ['Food'],
+      boostKeywords: [
+        'calfresh',
+        'food bank',
+        'pantry',
+        'snap',
+        'wic',
+        'meals',
+        'groceries',
+        'hungry',
+      ],
+    },
+    housing: {
+      categories: ['Community Services'],
+      boostKeywords: ['shelter', 'rent', 'section 8', 'homeless', 'housing', 'eviction'],
+    },
+    health: {
+      categories: ['Health'],
+      boostKeywords: ['medi-cal', 'clinic', 'medical', 'doctor', 'healthcare'],
+    },
+    healthcare: {
+      categories: ['Health'],
+      boostKeywords: ['medi-cal', 'clinic', 'medical', 'doctor', 'healthcare'],
+    },
+    medical: {
+      categories: ['Health'],
+      boostKeywords: ['medi-cal', 'clinic', 'doctor', 'hospital'],
+    },
+    jobs: {
+      categories: ['Community Services'],
+      boostKeywords: ['employment', 'job', 'career', 'workforce', 'hiring'],
+    },
+    employment: {
+      categories: ['Community Services'],
+      boostKeywords: ['job', 'career', 'workforce', 'hiring', 'work'],
+    },
+    legal: {
+      categories: ['Legal Services'],
+      boostKeywords: ['lawyer', 'attorney', 'legal aid', 'court'],
+    },
+    utilities: {
+      categories: ['Utilities'],
+      boostKeywords: ['pge', 'care program', 'liheap', 'energy', 'electric', 'gas'],
+    },
+  };
+
+  // Maximum category-boosted results to prevent overwhelming results
+  const MAX_CATEGORY_RESULTS = 25;
+
   function collectSearchResults(terms: string[]) {
     const resultsById = new Map();
 
+    // First, do fuzzy search for all terms (primary results)
     terms.forEach((term) => {
       const results = fuse.search(term);
       results.forEach((result) => {
@@ -1196,6 +1250,60 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
           resultsById.set(id, { id, score });
         }
       });
+    });
+
+    // Then, if we have very few results AND the query matches a category,
+    // add top programs from that category (tiered boost based on relevance)
+    terms.forEach((term) => {
+      const termLower = term.toLowerCase();
+      const mapping = CATEGORY_MAPPINGS[termLower];
+
+      // Only boost if we have less than 10 fuzzy results
+      if (mapping && resultsById.size < 10) {
+        const categoryPrograms: Array<{ program: (typeof programs)[0]; relevanceScore: number }> =
+          [];
+
+        programs.forEach((program) => {
+          if (!matchesActiveFilters(program)) return;
+          // Skip if already in results
+          if (resultsById.has(program.id)) return;
+
+          const programCategory = program.category || '';
+          if (
+            !mapping.categories.some((cat) => programCategory.toLowerCase() === cat.toLowerCase())
+          ) {
+            return;
+          }
+
+          // Calculate relevance score based on boost keywords in name/description
+          const name = (program.name || '').toLowerCase();
+          const desc = (program.description || '').toLowerCase();
+          const keywords = (program.keywords || []).join(' ').toLowerCase();
+
+          let relevanceScore = 0.5; // Base score for category match (worse than fuzzy match)
+
+          // Boost based on matching keywords
+          mapping.boostKeywords.forEach((kw) => {
+            if (name.includes(kw))
+              relevanceScore -= 0.15; // Strong boost for name match
+            else if (keywords.includes(kw)) relevanceScore -= 0.08;
+            else if (desc.includes(kw)) relevanceScore -= 0.03;
+          });
+
+          // Ensure score stays in valid range (0-1, lower is better)
+          relevanceScore = Math.max(0.1, Math.min(0.9, relevanceScore));
+
+          categoryPrograms.push({ program, relevanceScore });
+        });
+
+        // Sort by relevance and take top N
+        categoryPrograms
+          .sort((a, b) => a.relevanceScore - b.relevanceScore)
+          .slice(0, MAX_CATEGORY_RESULTS)
+          .forEach(({ program, relevanceScore }) => {
+            resultsById.set(program.id, { id: program.id, score: relevanceScore });
+          });
+      }
     });
 
     return resultsById;
@@ -2288,13 +2396,23 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
         city: result.city,
       };
       updateLocationDisplay();
+      updateLocationQuickButton();
       localStorage.setItem('baynavigator_location', JSON.stringify(currentLocation));
       // Announce the city if we know it, otherwise announce county
       const locationName = result.city
         ? capitalizeCityName(result.city)
         : COUNTY_TO_CITY[result.county] || result.county;
       announceToScreenReader(`Location set to ${locationName}.`);
+      // Dispatch event to trigger re-search with new location
+      window.dispatchEvent(new CustomEvent('locationChanged'));
     } else {
+      // Show visual feedback for invalid location
+      zipCityInput.classList.add('border-red-500', 'focus:ring-red-500');
+      zipCityInput.placeholder = 'Not found - try another';
+      setTimeout(() => {
+        zipCityInput.classList.remove('border-red-500', 'focus:ring-red-500');
+        zipCityInput.placeholder = 'ZIP code or city';
+      }, 3000);
       announceToScreenReader('Location not found. Please try a different ZIP code or city.');
     }
   }
@@ -2671,7 +2789,16 @@ const sizeClasses = size === 'large' ? 'py-4 pl-12 pr-12 text-lg' : 'py-3 pl-10 
         ? capitalizeCityName(result.city)
         : COUNTY_TO_CITY[result.county] || result.county;
       announceToScreenReader(`Location set to ${locationName}.`);
+      // Dispatch event to trigger re-search with new location
+      window.dispatchEvent(new CustomEvent('locationChanged'));
     } else {
+      // Show visual feedback for invalid location
+      popoverZipInput.classList.add('border-red-500', 'focus:ring-red-500');
+      popoverZipInput.placeholder = 'Not found - try another';
+      setTimeout(() => {
+        popoverZipInput.classList.remove('border-red-500', 'focus:ring-red-500');
+        popoverZipInput.placeholder = 'ZIP code or city';
+      }, 3000);
       announceToScreenReader('Location not found. Please try a different ZIP code or city.');
     }
   }
