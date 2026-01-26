@@ -41,24 +41,22 @@ jobs:
           CARL_API_KEY: ${{ secrets.PUBLIC_OLLAMA_API_KEY }}
         run: node scripts/generate-simple-language-descriptions.cjs
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet public/data/simple-language.json public/data/simple-descriptions.json .simple-language-hashes.json 2>/dev/null; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit and push changes
-        if: steps.changes.outputs.changed == 'true'
+      - name: Check for changes and commit
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+
+          # Add any changed files (ignore errors if files don't exist)
           git add public/data/simple-language.json public/data/simple-descriptions.json .simple-language-hashes.json 2>/dev/null || true
-          git commit -m "chore: Update simple language data [skip ci]
+
+          # Check if there are staged changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: Update simple language data [skip ci]
 
           Automated update of simplified content for WCAG 2.2 AAA compliance.
 
           🤖 Generated with Azure OpenAI (word alternatives) and Carl (program descriptions)"
-          git push
+            git push
+          fi
