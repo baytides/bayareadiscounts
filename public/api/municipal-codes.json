@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-24T21:48:36.749Z",
+  "generated": "2026-01-26T04:07:12.353Z",
   "total": 109,
   "commonSections": {
     "noise": {
@@ -173,8 +173,8 @@
       "name": "Solano County",
       "type": "County",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/solano_county",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SolanoCounty/",
+      "platform": "codepublishing"
     },
     {
       "name": "Sonoma County",
@@ -194,8 +194,8 @@
       "name": "Albany",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/albany",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Albany/",
+      "platform": "codepublishing"
     },
     {
       "name": "Berkeley",
@@ -208,22 +208,22 @@
       "name": "Dublin",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/dublin",
-      "platform": "municode"
+      "municipalCodeUrl": "https://qcode.us/codes/dublin/",
+      "platform": "qcode"
     },
     {
       "name": "Emeryville",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/emeryville",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Emeryville/",
+      "platform": "codepublishing"
     },
     {
       "name": "Fremont",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/fremont",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Fremont/",
+      "platform": "codepublishing"
     },
     {
       "name": "Hayward",
@@ -236,8 +236,8 @@
       "name": "Livermore",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/livermore",
-      "platform": "municode"
+      "municipalCodeUrl": "https://qcode.us/codes/livermore/",
+      "platform": "qcode"
     },
     {
       "name": "Newark",
@@ -257,43 +257,43 @@
       "name": "Piedmont",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/piedmont",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Piedmont/",
+      "platform": "codepublishing"
     },
     {
       "name": "Pleasanton",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/pleasanton",
-      "platform": "municode"
+      "municipalCodeUrl": "https://library.qcode.us/lib/pleasanton_ca/pub/municipal_code",
+      "platform": "qcode"
     },
     {
       "name": "San Leandro",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_leandro",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SanLeandro/",
+      "platform": "codepublishing"
     },
     {
       "name": "Union City",
       "type": "City",
       "county": "Alameda",
-      "municipalCodeUrl": "https://library.municode.com/ca/union_city",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/UnionCity/",
+      "platform": "codepublishing"
     },
     {
       "name": "Antioch",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/antioch",
-      "platform": "municode"
+      "municipalCodeUrl": "https://codelibrary.amlegal.com/codes/antioch/latest/antioch_ca/0-0-0-1",
+      "platform": "amlegal"
     },
     {
       "name": "Brentwood",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/brentwood",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Brentwood/",
+      "platform": "codepublishing"
     },
     {
       "name": "Clayton",
@@ -306,15 +306,15 @@
       "name": "Concord",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/concord",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Concord/",
+      "platform": "codepublishing"
     },
     {
       "name": "Danville",
       "type": "Town",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/danville",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Danville/",
+      "platform": "codepublishing"
     },
     {
       "name": "El Cerrito",
@@ -327,8 +327,8 @@
       "name": "Hercules",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/hercules",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Hercules/",
+      "platform": "codepublishing"
     },
     {
       "name": "Lafayette",
@@ -341,8 +341,8 @@
       "name": "Martinez",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/martinez",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Martinez/",
+      "platform": "codepublishing"
     },
     {
       "name": "Moraga",
@@ -355,8 +355,8 @@
       "name": "Oakley",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/oakley",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Oakley/",
+      "platform": "codepublishing"
     },
     {
       "name": "Orinda",
@@ -369,22 +369,22 @@
       "name": "Pinole",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/pinole",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Pinole/",
+      "platform": "codepublishing"
     },
     {
       "name": "Pittsburg",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/pittsburg",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Pittsburg/",
+      "platform": "codepublishing"
     },
     {
       "name": "Pleasant Hill",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/pleasant_hill",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/PleasantHill/",
+      "platform": "codepublishing"
     },
     {
       "name": "Richmond",
@@ -397,29 +397,29 @@
       "name": "San Pablo",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_pablo",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SanPablo/",
+      "platform": "codepublishing"
     },
     {
       "name": "San Ramon",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_ramon",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SanRamon/",
+      "platform": "codepublishing"
     },
     {
       "name": "Walnut Creek",
       "type": "City",
       "county": "Contra Costa",
-      "municipalCodeUrl": "https://library.municode.com/ca/walnut_creek",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/WalnutCreek/",
+      "platform": "codepublishing"
     },
     {
       "name": "Belvedere",
       "type": "City",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/belvedere",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Belvedere/",
+      "platform": "codepublishing"
     },
     {
       "name": "Corte Madera",
@@ -432,22 +432,22 @@
       "name": "Fairfax",
       "type": "Town",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/fairfax",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Fairfax/",
+      "platform": "codepublishing"
     },
     {
       "name": "Larkspur",
       "type": "City",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/larkspur",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Larkspur/",
+      "platform": "codepublishing"
     },
     {
       "name": "Mill Valley",
       "type": "City",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/mill_valley",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/MillValley/",
+      "platform": "codepublishing"
     },
     {
       "name": "Novato",
@@ -460,8 +460,8 @@
       "name": "Ross",
       "type": "Town",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/ross",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Ross/",
+      "platform": "codepublishing"
     },
     {
       "name": "San Anselmo",
@@ -481,8 +481,8 @@
       "name": "Sausalito",
       "type": "City",
       "county": "Marin",
-      "municipalCodeUrl": "https://library.municode.com/ca/sausalito",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Sausalito/",
+      "platform": "codepublishing"
     },
     {
       "name": "Tiburon",
@@ -495,43 +495,43 @@
       "name": "American Canyon",
       "type": "City",
       "county": "Napa",
-      "municipalCodeUrl": "https://library.municode.com/ca/american_canyon",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/AmericanCanyon/",
+      "platform": "codepublishing"
     },
     {
       "name": "Calistoga",
       "type": "City",
       "county": "Napa",
-      "municipalCodeUrl": "https://library.municode.com/ca/calistoga",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Calistoga/",
+      "platform": "codepublishing"
     },
     {
       "name": "Napa",
       "type": "City",
       "county": "Napa",
-      "municipalCodeUrl": "https://library.municode.com/ca/napa",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Napa/",
+      "platform": "codepublishing"
     },
     {
       "name": "St. Helena",
       "type": "City",
       "county": "Napa",
-      "municipalCodeUrl": "https://library.municode.com/ca/st._helena",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/StHelena/",
+      "platform": "codepublishing"
     },
     {
       "name": "Yountville",
       "type": "Town",
       "county": "Napa",
-      "municipalCodeUrl": "https://library.municode.com/ca/yountville",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Yountville/",
+      "platform": "codepublishing"
     },
     {
       "name": "Atherton",
       "type": "Town",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/atherton",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Atherton/",
+      "platform": "codepublishing"
     },
     {
       "name": "Belmont",
@@ -551,15 +551,15 @@
       "name": "Burlingame",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/burlingame",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Burlingame/",
+      "platform": "codepublishing"
     },
     {
       "name": "Colma",
       "type": "Town",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/colma",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Colma/",
+      "platform": "codepublishing"
     },
     {
       "name": "Daly City",
@@ -579,15 +579,15 @@
       "name": "Foster City",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/foster_city",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/FosterCity/",
+      "platform": "codepublishing"
     },
     {
       "name": "Half Moon Bay",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/half_moon_bay",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/HalfMoonBay/",
+      "platform": "codepublishing"
     },
     {
       "name": "Hillsborough",
@@ -600,15 +600,15 @@
       "name": "Menlo Park",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/menlo_park",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/MenloPark/",
+      "platform": "codepublishing"
     },
     {
       "name": "Millbrae",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/millbrae",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Millbrae/",
+      "platform": "codepublishing"
     },
     {
       "name": "Pacifica",
@@ -635,29 +635,29 @@
       "name": "San Bruno",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_bruno",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SanBruno/",
+      "platform": "codepublishing"
     },
     {
       "name": "San Carlos",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_carlos",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SanCarlos/",
+      "platform": "codepublishing"
     },
     {
       "name": "San Mateo",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/san_mateo",
-      "platform": "municode"
+      "municipalCodeUrl": "https://law.cityofsanmateo.org/us/ca/cities/san-mateo/code",
+      "platform": "cityofsanmateo"
     },
     {
       "name": "South San Francisco",
       "type": "City",
       "county": "San Mateo",
-      "municipalCodeUrl": "https://library.municode.com/ca/south_san_francisco",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SouthSanFrancisco/",
+      "platform": "codepublishing"
     },
     {
       "name": "Woodside",
@@ -677,15 +677,15 @@
       "name": "Cupertino",
       "type": "City",
       "county": "Santa Clara",
-      "municipalCodeUrl": "https://library.municode.com/ca/cupertino",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Cupertino/",
+      "platform": "codepublishing"
     },
     {
       "name": "Gilroy",
       "type": "City",
       "county": "Santa Clara",
-      "municipalCodeUrl": "https://library.municode.com/ca/gilroy",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Gilroy/",
+      "platform": "codepublishing"
     },
     {
       "name": "Los Altos",
@@ -698,8 +698,8 @@
       "name": "Los Altos Hills",
       "type": "Town",
       "county": "Santa Clara",
-      "municipalCodeUrl": "https://library.municode.com/ca/los_altos_hills",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/LosAltosHills/",
+      "platform": "codepublishing"
     },
     {
       "name": "Los Gatos",
@@ -754,8 +754,8 @@
       "name": "Santa Clara",
       "type": "City",
       "county": "Santa Clara",
-      "municipalCodeUrl": "https://library.municode.com/ca/santa_clara",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/SantaClara/",
+      "platform": "codepublishing"
     },
     {
       "name": "Saratoga",
@@ -775,29 +775,29 @@
       "name": "Benicia",
       "type": "City",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/benicia",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Benicia/",
+      "platform": "codepublishing"
     },
     {
       "name": "Dixon",
       "type": "City",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/dixon",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Dixon/",
+      "platform": "codepublishing"
     },
     {
       "name": "Fairfield",
       "type": "City",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/fairfield",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Fairfield/",
+      "platform": "codepublishing"
     },
     {
       "name": "Rio Vista",
       "type": "City",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/rio_vista",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/RioVista/",
+      "platform": "codepublishing"
     },
     {
       "name": "Suisun City",
@@ -810,8 +810,8 @@
       "name": "Vacaville",
       "type": "City",
       "county": "Solano",
-      "municipalCodeUrl": "https://library.municode.com/ca/vacaville",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Vacaville/",
+      "platform": "codepublishing"
     },
     {
       "name": "Vallejo",
@@ -824,29 +824,29 @@
       "name": "Cloverdale",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/cloverdale",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Cloverdale/",
+      "platform": "codepublishing"
     },
     {
       "name": "Cotati",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/cotati",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Cotati/",
+      "platform": "codepublishing"
     },
     {
       "name": "Healdsburg",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/healdsburg",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Healdsburg/",
+      "platform": "codepublishing"
     },
     {
       "name": "Petaluma",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/petaluma",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Petaluma/",
+      "platform": "codepublishing"
     },
     {
       "name": "Rohnert Park",
@@ -859,22 +859,22 @@
       "name": "Santa Rosa",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/santa_rosa",
-      "platform": "municode"
+      "municipalCodeUrl": "https://qcode.us/codes/santarosa/",
+      "platform": "qcode"
     },
     {
       "name": "Sebastopol",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/sebastopol",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Sebastopol/",
+      "platform": "codepublishing"
     },
     {
       "name": "Sonoma",
       "type": "City",
       "county": "Sonoma",
-      "municipalCodeUrl": "https://library.municode.com/ca/sonoma",
-      "platform": "municode"
+      "municipalCodeUrl": "https://www.codepublishing.com/CA/Sonoma/",
+      "platform": "codepublishing"
     },
     {
       "name": "Windsor",

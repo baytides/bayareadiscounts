@@ -71,11 +71,15 @@ function main() {
     process.exit(1);
   }
 
-  const data = JSON.parse(fs.readFileSync(INPUT_PATH, 'utf-8'));
+  const rawData = JSON.parse(fs.readFileSync(INPUT_PATH, 'utf-8'));
+
+  // Handle both array format and object format with .codes
+  const inputCodes = Array.isArray(rawData) ? rawData : rawData.codes;
 
   // Process and fix URLs
-  const codes = data.codes.map((code) => {
-    let url = code.municipalCodeUrl;
+  const codes = inputCodes.map((code) => {
+    // Handle both codeUrl and municipalCodeUrl field names
+    let url = code.municipalCodeUrl || code.codeUrl;
 
     // Apply fixes
     if (URL_FIXES[code.name]) {
